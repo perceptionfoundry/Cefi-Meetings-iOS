@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign InVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_BG" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-DJ-wrx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="g6R-uX-I0V">
+                                <rect key="frame" x="93" y="104" width="189" height="85.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eox-d1-25x" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="246" width="302" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-a2-h2L">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="0.90595206567796616" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="rPk-a2-h2L" firstAttribute="leading" secondItem="Eox-d1-25x" secondAttribute="leading" id="91b-mn-vdO"/>
+                                    <constraint firstAttribute="bottom" secondItem="rPk-a2-h2L" secondAttribute="bottom" id="B9O-OG-lmf"/>
+                                    <constraint firstItem="rPk-a2-h2L" firstAttribute="top" secondItem="Eox-d1-25x" secondAttribute="top" id="kcz-sr-U64"/>
+                                    <constraint firstAttribute="trailing" secondItem="rPk-a2-h2L" secondAttribute="trailing" id="ssl-om-TIF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-No-XmZ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="36.5" y="313" width="302" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-jv-NHN">
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="0.90141684322033899" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="EOu-jv-NHN" firstAttribute="top" secondItem="1Hj-No-XmZ" secondAttribute="top" id="GZi-BV-UB0"/>
+                                    <constraint firstAttribute="bottom" secondItem="EOu-jv-NHN" secondAttribute="bottom" id="NVN-l7-j5d"/>
+                                    <constraint firstItem="EOu-jv-NHN" firstAttribute="leading" secondItem="1Hj-No-XmZ" secondAttribute="leading" id="Z7g-DU-DU3"/>
+                                    <constraint firstAttribute="trailing" secondItem="EOu-jv-NHN" secondAttribute="trailing" id="qJs-GC-gdO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVT-PC-jkg" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="112.5" y="403.5" width="150" height="46.5"/>
+                                <color key="backgroundColor" red="0.34927457571029663" green="0.56815886497497559" blue="0.22732043266296387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="ENTRAR">
+                                    <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="rn7-mt-C2n" kind="show" id="3i4-bq-med"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-bA-Ne4">
+                                <rect key="frame" x="0.0" y="602.5" width="375" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Olvidaste tu contraseña?">
+                                    <color key="titleColor" red="0.21607834100723267" green="0.26470938324928284" blue="0.042990989983081818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Hj-No-XmZ" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.806" id="0hh-ek-XYV"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.07" id="4iT-EU-wVN"/>
+                            <constraint firstItem="g6R-uX-I0V" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="ANg-Kb-LpE"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="CL7-QL-JZu"/>
+                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" id="Cfd-dw-3e2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qqf-DJ-wrx" secondAttribute="bottom" id="Ech-lL-g9K"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.28" id="GFK-cG-LvY"/>
+                            <constraint firstItem="Eox-d1-25x" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="Gty-3e-crH"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.4" id="HAU-3Z-mJm"/>
+                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.85" id="Ruy-zA-Wyp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qqf-DJ-wrx" secondAttribute="trailing" id="Rzf-um-Er4"/>
+                            <constraint firstItem="1Hj-No-XmZ" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.01" id="YFT-Zi-RBM"/>
+                            <constraint firstItem="Eox-d1-25x" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="Ywy-l8-hb1"/>
+                            <constraint firstItem="Eox-d1-25x" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.806" id="c7K-gE-Aub"/>
+                            <constraint firstItem="g6R-uX-I0V" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.503" id="f11-nT-4ul"/>
+                            <constraint firstItem="1Hj-No-XmZ" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="gQk-tH-oh3"/>
+                            <constraint firstItem="g6R-uX-I0V" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="0.44" id="kJ3-0X-zxN"/>
+                            <constraint firstItem="g6R-uX-I0V" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.1275" id="kJD-iV-6FC"/>
+                            <constraint firstItem="Qqf-DJ-wrx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEF-DB-WWf"/>
+                            <constraint firstItem="Eox-d1-25x" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="0.81" id="pHC-4Q-7EL"/>
+                            <constraint firstItem="1Hj-No-XmZ" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="ueU-oh-4yo"/>
+                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="xhH-1N-DJu"/>
+                            <constraint firstItem="Qqf-DJ-wrx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="zJx-0Y-ee4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
+        </scene>
+        <!--DashboardVC-->
+        <scene sceneID="GBx-G8-nv7">
+            <objects>
+                <viewController id="rn7-mt-C2n" customClass="DashboardVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ht3-it-4pA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjA-uH-fgm">
+                                <rect key="frame" x="144" y="164" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Contact"/>
+                                <connections>
+                                    <segue destination="iug-9T-oHv" kind="show" id="KZp-Dh-hyf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5p-pf-tfY">
+                                <rect key="frame" x="160" y="268" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Visit"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqq-KQ-jDh">
+                                <rect key="frame" x="147" y="368" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Contracts"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NL3-Be-TEs">
+                                <rect key="frame" x="138" y="456" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pending Docs"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zLz-Lo-nKZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FlK-HJ-QqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="43"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="jwP-YY-qPa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contact" id="iug-9T-oHv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oU-If-Yl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="26"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO" width="190" height="86"/>
+        <image name="signin_BG" width="375" height="667"/>
+    </resources>
+</document>
