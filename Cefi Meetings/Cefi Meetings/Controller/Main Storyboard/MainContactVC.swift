@@ -12,6 +12,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     @IBOutlet weak var Contact_Table: UITableView!
+    @IBOutlet weak var NaviBar: UINavigationBar!
     
     
     let sample =  [["name": "Absher", "company":"logi"],
@@ -70,8 +71,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         super.viewDidLoad()
         
        // Making navigation bar transparent
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        NaviBar.setBackgroundImage(UIImage(), for: .default)
+        NaviBar.shadowImage = UIImage()
         
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
@@ -135,7 +136,6 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         print(workKey)
         
-        print(section_Index[indexPath.row])
 
         if let wordValue = wordsDic[workKey.uppercased()]{
 
