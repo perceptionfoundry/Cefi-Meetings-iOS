@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F66F21FB547C00269506 /* MainContractsVC.swift */; };
+		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
+		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
+		F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F68121FB6A5F00269506 /* MainPendingVC.swift */; };
 		F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */; };
 		F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */; };
 		F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8621F97F7D00BE90CA /* Main.storyboard */; };
@@ -26,6 +30,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F258F66F21FB547C00269506 /* MainContractsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContractsVC.swift; sourceTree = "<group>"; };
+		F258F67121FB54A500269506 /* Contract_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract_TableViewCell.swift; sourceTree = "<group>"; };
+		F258F67321FB62C400269506 /* AvenirLTStd-HeavyOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-HeavyOblique.otf"; sourceTree = "<group>"; };
+		F258F67421FB62C400269506 /* AvenirLTStd-BookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-BookOblique.otf"; sourceTree = "<group>"; };
+		F258F67521FB62C400269506 /* AvenirLTStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Black.otf"; sourceTree = "<group>"; };
+		F258F67621FB62C400269506 /* AvenirLTStd-LightOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-LightOblique.otf"; sourceTree = "<group>"; };
+		F258F67721FB62C500269506 /* AvenirLTStd-BlackOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-BlackOblique.otf"; sourceTree = "<group>"; };
+		F258F67821FB62C500269506 /* AvenirLTStd-MediumOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-MediumOblique.otf"; sourceTree = "<group>"; };
+		F258F67921FB62C500269506 /* AvenirLTStd-Oblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Oblique.otf"; sourceTree = "<group>"; };
+		F258F67A21FB62C500269506 /* AvenirLTStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Light.otf"; sourceTree = "<group>"; };
+		F258F67B21FB62C500269506 /* AvenirLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.otf"; sourceTree = "<group>"; };
+		F258F67C21FB62C500269506 /* AvenirLTStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Medium.otf"; sourceTree = "<group>"; };
+		F258F67D21FB62C500269506 /* AvenirLTStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Heavy.otf"; sourceTree = "<group>"; };
+		F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
+		F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pending_TableViewCell.swift; sourceTree = "<group>"; };
+		F258F68121FB6A5F00269506 /* MainPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPendingVC.swift; sourceTree = "<group>"; };
 		F2AC6C7F21F97F7D00BE90CA /* Cefi Meetings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cefi Meetings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -95,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */,
+				F258F67121FB54A500269506 /* Contract_TableViewCell.swift */,
+				F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +147,18 @@
 		F2DABFB321F9E12B009FEFCC /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				F258F67521FB62C400269506 /* AvenirLTStd-Black.otf */,
+				F258F67721FB62C500269506 /* AvenirLTStd-BlackOblique.otf */,
+				F258F67B21FB62C500269506 /* AvenirLTStd-Book.otf */,
+				F258F67421FB62C400269506 /* AvenirLTStd-BookOblique.otf */,
+				F258F67D21FB62C500269506 /* AvenirLTStd-Heavy.otf */,
+				F258F67321FB62C400269506 /* AvenirLTStd-HeavyOblique.otf */,
+				F258F67A21FB62C500269506 /* AvenirLTStd-Light.otf */,
+				F258F67621FB62C400269506 /* AvenirLTStd-LightOblique.otf */,
+				F258F67C21FB62C500269506 /* AvenirLTStd-Medium.otf */,
+				F258F67821FB62C500269506 /* AvenirLTStd-MediumOblique.otf */,
+				F258F67921FB62C500269506 /* AvenirLTStd-Oblique.otf */,
+				F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -155,9 +189,11 @@
 		F2DABFCC21FA17D4009FEFCC /* Main Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */,
 				F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */,
 				F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */,
+				F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */,
+				F258F66F21FB547C00269506 /* MainContractsVC.swift */,
+				F258F68121FB6A5F00269506 /* MainPendingVC.swift */,
 			);
 			path = "Main Storyboard";
 			sourceTree = "<group>";
@@ -240,17 +276,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
+				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
 				F2DABFBF21F9E3D7009FEFCC /* UnderlinedTextField.swift in Sources */,
 				F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */,
 				F2DABFC421F9E3D7009FEFCC /* Custom_Label.swift in Sources */,
 				F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */,
 				F2DABFC321F9E3D7009FEFCC /* Custom_ImageView.swift in Sources */,
 				F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */,
+				F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */,
 				F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */,
 				F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */,
 				F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */,
 				F2DABFBE21F9E3D7009FEFCC /* customTF.swift in Sources */,
+				F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */,
 				F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
 			);
