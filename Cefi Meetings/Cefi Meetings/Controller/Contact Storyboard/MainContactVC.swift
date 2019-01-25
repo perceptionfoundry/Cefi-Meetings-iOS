@@ -22,21 +22,38 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                    ["name": "Zubair", "company":"Panacloud"],
                    ]
     
-    let section_Index = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    
+    
+//    let section_Index = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     
     
     var wordSection = [String]()
     var wordsDic = [String:[[String:String]]]()
     
+    
+    
     func generateWordDic(){
         
         for word in sample{
-            let key = "\(word["name"]?.startIndex)"
-            let upper = key.uppercased()
+            
+            let key = (word["name"]?.first)
+            
+            let upper = String(key!).uppercased()
+            
+            
+            wordSection.append(upper)
+            
+            
             
             if var wordValues = wordsDic[upper]{
+
+
+               
+
                 wordValues.append(word)
                 wordsDic[upper] = wordValues
+
+
             }
             else{
                 wordsDic[upper] = [word]
@@ -64,29 +81,33 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         Contact_Table.reloadData()
     }
   
+    
+    // setting number of section in table
     func numberOfSections(in tableView: UITableView) -> Int {
-        return section_Index.count
+        return wordSection.count
     }
     
    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//
-//
-//        return section_Index[section]
-//    }
-    
+
+    // Configure number item in row of section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        let workKey = wordSection[section]
-//
-//        if let wordValues = wordsDic[workKey]{
-//            return wordValues.count
-//        }
-//
-        return 1
+        
+//        List of all section KEY
+        
+        let workKey = wordSection[section]
+
+
+        if let wordValues = wordsDic[workKey]{
+            return wordValues.count
+        }
+
+        return 0
+
     }
     
+    
+    // Configure Section look and attribute
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         
@@ -95,31 +116,43 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let label = UILabel()
         label.textColor = UIColor.white
         label.frame = CGRect(x: 15, y: -5, width: 100, height: 35)
-        label.text = section_Index[section]
+        label.text = wordSection[section]
         
         view.addSubview(label)
         
         return view
     }
     
+    
+    // Associating items in cell
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) as! Contact_TableViewCell
         
 //
-//        let workKey = wordSection[indexPath.section]
-//
-//        if let wordValue = wordsDic[workKey.uppercased()]{
-//
-//        cell.personName.text = wordValue[indexPath.section]["Name"]
-//
-//        }
+        let workKey = wordSection[indexPath.section]
+        
+        print(workKey)
+        
+        print(section_Index[indexPath.row])
+
+        if let wordValue = wordsDic[workKey.uppercased()]{
+
+
+            print(wordValue[indexPath.row])
+        
+        cell.personName.text = wordValue[indexPath.row]["name"]
+        cell.companyName.text = wordValue[indexPath.row]["company"]
+
+
+        }
         return cell
     }
 
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return section_Index
+        return wordSection
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
