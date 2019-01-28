@@ -10,9 +10,22 @@ import UIKit
 
 class DashboardVC: UIViewController {
 
+    
+    @IBOutlet var optionButtons: [UIButton]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        
     }
 
+    
+    // ********* Switching to Respect selected option Tab index *****************
+    @IBAction func buttonAction(_ sender: UIButton) {
+        
+    self.tabBarController?.selectedIndex = sender.tag
+    }
+    
+    
 }

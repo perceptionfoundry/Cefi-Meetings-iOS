@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cefi Meetings/Controller/Main Storyboard/MainContactVC.swift"
-            timestampString = "570351870.407323"
+            timestampString = "570386438.486372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "newContactAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

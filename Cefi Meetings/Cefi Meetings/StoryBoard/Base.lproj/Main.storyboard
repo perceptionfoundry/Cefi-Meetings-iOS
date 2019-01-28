@@ -191,41 +191,44 @@
                                         <rect key="frame" x="143" y="14.5" width="1" height="258"/>
                                         <color key="backgroundColor" red="0.90197283029556274" green="0.90193891525268555" blue="0.90196198225021362" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leq-kU-Mj3">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leq-kU-Mj3">
                                         <rect key="frame" x="14.5" y="20" width="114.5" height="103.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="leq-kU-Mj3" secondAttribute="height" multiplier="10:9" id="xpV-n8-Z10"/>
                                         </constraints>
                                         <state key="normal" image="Contact_Button"/>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="qcq-dx-IUm"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-u2-LQ3">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-u2-LQ3">
                                         <rect key="frame" x="158" y="20" width="114.5" height="103.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8mj-u2-LQ3" secondAttribute="height" multiplier="10:9" id="4fo-w6-82I"/>
                                         </constraints>
                                         <state key="normal" image="Visit_Button"/>
                                         <connections>
-                                            <segue destination="yce-ko-b6j" kind="show" id="qBq-AL-ri1"/>
+                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="SDC-Hy-WAy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gow-jL-8E9">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gow-jL-8E9">
                                         <rect key="frame" x="14.5" y="163.5" width="114.5" height="103"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gow-jL-8E9" secondAttribute="height" multiplier="10:9" id="tdw-1e-JSz"/>
                                         </constraints>
                                         <state key="normal" image="Contract_Button"/>
                                         <connections>
-                                            <segue destination="ISr-8F-Ycl" kind="show" id="rZX-SB-p70"/>
+                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="gES-fR-xas"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD1-9B-d4u">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD1-9B-d4u">
                                         <rect key="frame" x="158" y="163.5" width="114.5" height="103"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FD1-9B-d4u" secondAttribute="height" multiplier="10:9" id="8Nq-dW-DE9"/>
                                         </constraints>
                                         <state key="normal" image="Pending_Button"/>
                                         <connections>
-                                            <segue destination="8X3-Gq-dn8" kind="show" id="du9-iV-QXi"/>
+                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="0Tg-JN-x5j"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-gZ-g97">
@@ -344,6 +347,12 @@ We hope you have a great and productive day!</string>
                         <viewLayoutGuide key="safeArea" id="zLz-Lo-nKZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home_Logo" id="8Oj-s8-2RN"/>
+                    <connections>
+                        <outletCollection property="optionButtons" destination="leq-kU-Mj3" collectionClass="NSMutableArray" id="57s-oG-3ka"/>
+                        <outletCollection property="optionButtons" destination="8mj-u2-LQ3" collectionClass="NSMutableArray" id="7q5-bT-iCh"/>
+                        <outletCollection property="optionButtons" destination="gow-jL-8E9" collectionClass="NSMutableArray" id="JyP-zn-hvG"/>
+                        <outletCollection property="optionButtons" destination="FD1-9B-d4u" collectionClass="NSMutableArray" id="lfg-qk-oqF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlK-HJ-QqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,7 +366,7 @@ We hope you have a great and productive day!</string>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oU-If-Yl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7688" y="901.34932533733138"/>
+            <point key="canvasLocation" x="7589" y="1355"/>
         </scene>
         <!--Main PendingVC-->
         <scene sceneID="XbJ-QY-rga">
@@ -533,7 +542,7 @@ We hope you have a great and productive day!</string>
         <!--Tab Bar Controller-->
         <scene sceneID="NT8-iR-CcS">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sJ0-yR-ykt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Dashboard" automaticallyAdjustsScrollViewInsets="NO" id="sJ0-yR-ykt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YM6-Lw-kk6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -547,8 +556,8 @@ We hope you have a great and productive day!</string>
                         <segue destination="rn7-mt-C2n" kind="relationship" relationship="viewControllers" id="GyO-vZ-AY5"/>
                         <segue destination="yce-ko-b6j" kind="relationship" relationship="viewControllers" id="pH6-pc-nsB"/>
                         <segue destination="ISr-8F-Ycl" kind="relationship" relationship="viewControllers" id="izp-Di-gsj"/>
-                        <segue destination="8X3-Gq-dn8" kind="relationship" relationship="viewControllers" id="7GT-Yp-P9w"/>
                         <segue destination="D6c-Yt-nCK" kind="relationship" relationship="viewControllers" id="59x-rD-z93"/>
+                        <segue destination="8X3-Gq-dn8" kind="relationship" relationship="viewControllers" id="7GT-Yp-P9w"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOf-F2-ljN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -697,7 +706,12 @@ We hope you have a great and productive day!</string>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kZO-l5-paW" secondAttribute="height" multiplier="9:11" id="Ype-50-ZZk"/>
                                 </constraints>
-                                <state key="normal" image="filtering"/>
+                                <state key="normal" image="filtering">
+                                    <color key="titleColor" red="0.94208574300000003" green="0.3412106037" blue="0.34108710289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tAH-nw-tub" kind="show" id="D4Z-vK-2s0"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T67-ga-YJl">
                                 <rect key="frame" x="0.0" y="189.5" width="375" height="428.5"/>
@@ -1074,7 +1088,7 @@ We hope you have a great and productive day!</string>
         <!--Contact-->
         <scene sceneID="0Gq-cK-xWd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="D6c-Yt-nCK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="test" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="D6c-Yt-nCK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Contact" image="contact_tab" id="eb5-qM-VRi"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -1090,6 +1104,268 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="6103.1999999999998" y="1162.6686656671666"/>
         </scene>
+        <!--Contacts-->
+        <scene sceneID="Geq-09-sC1">
+            <objects>
+                <viewController id="tAH-nw-tub" customClass="UserFilterVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kpf-bt-ddr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-mE-AKM">
+                                <rect key="frame" x="9.5" y="82" width="356" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWM-Ud-ylG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="47" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="P1b-4G-RqM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-Bq-ThN" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="0.0" width="69.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="aqj-e7-eQ8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="People">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-vv-l5t" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="138.5" y="0.0" width="112" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="txV-pz-84f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Companies">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-ZA-iXa" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="261.5" y="0.0" width="94.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="TDw-SQ-y2u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Dealers">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34901960780000002" green="0.56862745100000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kz9-ff-vzs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="Contacts" id="gq3-Dj-wAj">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Jm5-C1-z7u">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qfv-Xd-5uv">
+                                                <rect key="frame" x="16" y="11" width="44" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="back_button"/>
+                                                <connections>
+                                                    <action selector="cancelAction:" destination="tAH-nw-tub" eventType="touchUpInside" id="y7s-UC-aKk"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="6R7-77-0pQ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lQv-O7-8kg">
+                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="add_button"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGb-e9-Tdf">
+                                <rect key="frame" x="28.5" y="153.5" width="56" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HA-nE-1Hu">
+                                <rect key="frame" x="321" y="151" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2HA-nE-1Hu" secondAttribute="height" multiplier="1:1" id="5Qq-cC-AfZ"/>
+                                </constraints>
+                                <state key="normal" image="X_button"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="tAH-nw-tub" eventType="touchUpInside" id="3qI-IM-2os"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiv-jG-9pe">
+                                <rect key="frame" x="307.5" y="224" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showGlobalList:" destination="tAH-nw-tub" eventType="valueChanged" id="fB9-Yr-YXI"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Global Contact List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43Y-1A-uST">
+                                <rect key="frame" x="22.5" y="228.5" width="180.5" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3o-nF-CMC">
+                                <rect key="frame" x="20" y="300" width="110" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBi-aR-epW">
+                                <rect key="frame" x="19" y="279" width="337.5" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-J6-Qk5">
+                                <rect key="frame" x="19" y="342.5" width="337.5" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Result Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ9-hl-Ehy">
+                                <rect key="frame" x="19" y="369" width="300" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-bv-OKs">
+                                <rect key="frame" x="0.0" y="396.5" width="375" height="221.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Filter" rowHeight="63" id="aPj-wb-wFg" customClass="Contact_Filter_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPj-wb-wFg" id="d00-7t-1fK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzd-4j-MJa">
+                                                    <rect key="frame" x="22.5" y="11.5" width="300" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                                    <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mml-bO-Kgs">
+                                                    <rect key="frame" x="23.5" y="32" width="225" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                    <color key="textColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mml-bO-Kgs" firstAttribute="centerX" secondItem="d00-7t-1fK" secondAttribute="centerX" multiplier="0.725" id="364-2y-MfD"/>
+                                                <constraint firstItem="mml-bO-Kgs" firstAttribute="centerY" secondItem="d00-7t-1fK" secondAttribute="centerY" multiplier="1.3" id="6Vq-dZ-hpM"/>
+                                                <constraint firstItem="nzd-4j-MJa" firstAttribute="centerX" secondItem="d00-7t-1fK" secondAttribute="centerX" multiplier="0.92" id="8AM-Re-pgy"/>
+                                                <constraint firstItem="mml-bO-Kgs" firstAttribute="width" secondItem="d00-7t-1fK" secondAttribute="width" multiplier="0.6" id="J2l-9n-SMJ"/>
+                                                <constraint firstItem="nzd-4j-MJa" firstAttribute="width" secondItem="d00-7t-1fK" secondAttribute="width" multiplier="0.8" id="MOr-6L-WgE"/>
+                                                <constraint firstItem="nzd-4j-MJa" firstAttribute="centerY" secondItem="d00-7t-1fK" secondAttribute="centerY" multiplier="0.7" id="mcd-jg-yrA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="businessName" destination="mml-bO-Kgs" id="JZB-cR-Tk3"/>
+                                            <outlet property="userName" destination="nzd-4j-MJa" id="dlh-64-kez"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZBi-aR-epW" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="1w5-j2-8Xc"/>
+                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="1ys-q1-XK0"/>
+                            <constraint firstItem="ZBi-aR-epW" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.9" id="53O-rW-Ak4"/>
+                            <constraint firstItem="A3o-nF-CMC" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.975" id="7FI-lb-jhs"/>
+                            <constraint firstItem="2ah-bv-OKs" firstAttribute="top" secondItem="FZ9-hl-Ehy" secondAttribute="bottom" id="7ce-aD-TdG"/>
+                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.9" id="83x-wo-89f"/>
+                            <constraint firstItem="A3o-nF-CMC" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.4" id="Gej-0e-gVy"/>
+                            <constraint firstItem="2ah-bv-OKs" firstAttribute="leading" secondItem="lK4-m7-1IN" secondAttribute="leading" id="Ime-WJ-J6D"/>
+                            <constraint firstItem="HGb-e9-Tdf" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.525" id="KEH-60-gf1"/>
+                            <constraint firstItem="HGb-e9-Tdf" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.3" id="LBR-YT-y6O"/>
+                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.001" id="Lsx-l3-CbM"/>
+                            <constraint firstItem="43Y-1A-uST" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.6" id="MPz-ZP-Wym"/>
+                            <constraint firstItem="aiv-jG-9pe" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.77" id="MW3-pB-Lqq"/>
+                            <constraint firstItem="FZ9-hl-Ehy" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.8" id="MYx-mB-lLO"/>
+                            <constraint firstItem="kz9-ff-vzs" firstAttribute="top" secondItem="lK4-m7-1IN" secondAttribute="top" id="OpV-bL-mVU"/>
+                            <constraint firstItem="lK4-m7-1IN" firstAttribute="trailing" secondItem="2ah-bv-OKs" secondAttribute="trailing" id="Osc-oJ-Iwl"/>
+                            <constraint firstItem="V3E-mE-AKM" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="QZi-TJ-9Zx"/>
+                            <constraint firstItem="kz9-ff-vzs" firstAttribute="trailing" secondItem="lK4-m7-1IN" secondAttribute="trailing" id="UBU-cH-d2n"/>
+                            <constraint firstItem="V3E-mE-AKM" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.95" id="Uu1-zP-EIK"/>
+                            <constraint firstItem="ZBi-aR-epW" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.875" id="V5l-PS-Ij0"/>
+                            <constraint firstItem="aiv-jG-9pe" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.75" id="WgP-co-dfK"/>
+                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="1.075" id="Yvc-0K-Kdu"/>
+                            <constraint firstItem="V3E-mE-AKM" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.3" id="jb3-fo-Chn"/>
+                            <constraint firstItem="43Y-1A-uST" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.75" id="l1C-ks-BT0"/>
+                            <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.9" id="liG-ec-zcI"/>
+                            <constraint firstItem="2HA-nE-1Hu" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.8" id="m1k-TL-Cj6"/>
+                            <constraint firstItem="lK4-m7-1IN" firstAttribute="bottom" secondItem="2ah-bv-OKs" secondAttribute="bottom" id="maC-AB-m5P"/>
+                            <constraint firstItem="ZBi-aR-epW" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.001" id="mxP-aS-CyA"/>
+                            <constraint firstItem="kz9-ff-vzs" firstAttribute="leading" secondItem="lK4-m7-1IN" secondAttribute="leading" id="nR6-4t-YZo"/>
+                            <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="1.2" id="pyl-Hw-NIo"/>
+                            <constraint firstItem="2HA-nE-1Hu" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.525" id="qxF-jk-Bec"/>
+                            <constraint firstItem="2HA-nE-1Hu" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.05" id="y96-Bn-rWa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lK4-m7-1IN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="1wd-LS-PH5">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="B8Z-Mh-egu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6LL-Oz-YE8">
+                                <rect key="frame" x="16" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Menu"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="m1I-AV-U13">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="v1N-Oc-Rmn">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="add_button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="NaviBar" destination="kz9-ff-vzs" id="LrA-XE-Mg9"/>
+                        <outlet property="filterTable" destination="2ah-bv-OKs" id="taY-MT-x5w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoj-iL-BDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8144.8000000000002" y="1141.9790104947526"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Contact_Button" width="60" height="54"/>
@@ -1102,7 +1378,9 @@ We hope you have a great and productive day!</string>
         <image name="Pending_Button" width="42" height="57.5"/>
         <image name="Setting_Button" width="20" height="20"/>
         <image name="Visit_Button" width="54.5" height="63"/>
+        <image name="X_button" width="14" height="14"/>
         <image name="add_button" width="83" height="30"/>
+        <image name="back_button" width="44" height="19"/>
         <image name="cell_right_arrow" width="7.5" height="12"/>
         <image name="cell_right_arrow_gray" width="7.5" height="12"/>
         <image name="contact_tab" width="25" height="22"/>
@@ -1113,9 +1391,4 @@ We hope you have a great and productive day!</string>
         <image name="signin_BG" width="375" height="667"/>
         <image name="visit_tab" width="19.5" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7GT-Yp-P9w"/>
-        <segue reference="izp-Di-gsj"/>
-        <segue reference="pH6-pc-nsB"/>
-    </inferredMetricsTieBreakers>
 </document>

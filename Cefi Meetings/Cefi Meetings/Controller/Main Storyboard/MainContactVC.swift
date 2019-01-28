@@ -142,6 +142,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
             print(wordValue[indexPath.row])
         
+            cell.selectionStyle = .none
+            
         cell.personName.text = wordValue[indexPath.row]["name"]
         cell.companyName.text = wordValue[indexPath.row]["company"]
 
@@ -150,6 +152,20 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
 
+    
+    // ************** See Particular user detail ****************
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Segue to User Contail detail  Viewcontroller
+        
+        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return wordSection
@@ -160,13 +176,20 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    
+    // ***********  Create new contact ************
+    
     @IBAction func newContactAction(_ sender: Any) {
         
         
-        print("*********")
-//        performSegue(withIdentifier: "Contact_Segue", sender: nil)
-//
-        self.present(UIStoryboard(name: "Contact", bundle: nil).instantiateViewController(withIdentifier: "New_Contact") , animated: true, completion: nil)
+
+        
+        // Segue to New Contact  Viewcontroller
+        
+        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contact")
+        self.navigationController?.pushViewController(vc, animated: true)
         
         
     }

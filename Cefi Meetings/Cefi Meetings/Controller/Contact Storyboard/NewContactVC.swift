@@ -10,21 +10,32 @@ import UIKit
 
 class NewContactVC: UIViewController {
 
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
+    @IBOutlet weak var businessName: UITextField!
+    @IBOutlet weak var contactName: UITextField!
+    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var emailAddress: UITextField!
+    @IBOutlet weak var industryCategory: UITextField!
+    @IBOutlet weak var typeCategory: UITextField!
+    @IBOutlet weak var referredBy: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func doneAction(_ sender: Any) {
     }
-    */
+    @IBAction func cancelAction(_ sender: Any) {
+        
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
 
+    }
+    
 }
