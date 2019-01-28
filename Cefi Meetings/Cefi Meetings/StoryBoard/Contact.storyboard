@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yFH-oz-SZw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New ContactVC-->
+        <scene sceneID="Wgq-qU-rLp">
+            <objects>
+                <viewController storyboardIdentifier="New_Contact" id="yFH-oz-SZw" customClass="NewContactVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v5S-9R-3In">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-BO-9z5">
+                                <rect key="frame" x="36.5" y="82" width="43" height="32"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKB-4I-Zg5">
+                                <rect key="frame" x="239.5" y="84.5" width="121" height="30"/>
+                                <state key="normal" image="done_Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rh0-OL-pcf">
+                                <rect key="frame" x="122" y="33.5" width="131" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="business_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="5WG-jt-GxO">
+                                <rect key="frame" x="35" y="159" width="12.5" height="11.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nna-YW-egC">
+                                <rect key="frame" x="64.5" y="155" width="96" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkG-SP-JUN">
+                                <rect key="frame" x="201.5" y="155" width="150" height="20"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-No-qwE">
+                                <rect key="frame" x="36" y="216.5" width="12.5" height="13.5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-tz-VK2">
+                                <rect key="frame" x="38.5" y="275" width="7.5" height="11.5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="4xB-fs-Iyr">
+                                <rect key="frame" x="35.5" y="333.5" width="12" height="10"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="industry_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="Nuu-FS-zGm">
+                                <rect key="frame" x="36" y="389" width="10.5" height="12"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="type_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Xx-Aqn">
+                                <rect key="frame" x="35" y="447.5" width="15" height="12"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="referred_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-UG-soK">
+                                <rect key="frame" x="35" y="510" width="14" height="10.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-dt-6ey">
+                                <rect key="frame" x="64.5" y="270.5" width="96" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCK-lB-Wzq">
+                                <rect key="frame" x="65" y="328.5" width="35" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-2I-57I">
+                                <rect key="frame" x="65" y="385" width="50" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-QX-ddL">
+                                <rect key="frame" x="69.5" y="443.5" width="30" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referred by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ3-Ut-VRY">
+                                <rect key="frame" x="71.5" y="505.5" width="73" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-DD-gFt">
+                                <rect key="frame" x="66.5" y="213.5" width="92" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.5" id="0GR-RW-JzT"/>
+                            <constraint firstItem="nna-YW-egC" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="1d2-wQ-MZN"/>
+                            <constraint firstItem="Mgg-DD-gFt" firstAttribute="centerY" secondItem="0Qf-No-qwE" secondAttribute="centerY" id="2Lm-FU-6ZA"/>
+                            <constraint firstItem="xXV-tz-VK2" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="3AC-Hy-Eom"/>
+                            <constraint firstItem="nna-YW-egC" firstAttribute="centerY" secondItem="5WG-jt-GxO" secondAttribute="centerY" id="3lT-KC-wlr"/>
+                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="4VP-Pi-leU"/>
+                            <constraint firstItem="oCK-lB-Wzq" firstAttribute="centerY" secondItem="4xB-fs-Iyr" secondAttribute="centerY" id="5hS-HC-4e3"/>
+                            <constraint firstItem="Nuu-FS-zGm" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.15" id="6RA-Xp-b1X"/>
+                            <constraint firstItem="PkG-SP-JUN" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="AXg-HW-69R"/>
+                            <constraint firstItem="0Qf-No-qwE" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.65" id="BBJ-iR-HFL"/>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="BTm-Hv-TgC"/>
+                            <constraint firstItem="4xB-fs-Iyr" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.032" id="Dky-Dm-CZ2"/>
+                            <constraint firstItem="Nuu-FS-zGm" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.018" id="EI8-Fg-5yj"/>
+                            <constraint firstItem="iKB-4I-Zg5" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.6" id="F1J-TZ-kgb"/>
+                            <constraint firstItem="H2i-2I-57I" firstAttribute="centerY" secondItem="Nuu-FS-zGm" secondAttribute="centerY" id="H9U-Vz-SLg"/>
+                            <constraint firstItem="0Qf-No-qwE" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.225" id="JV3-Gu-VnG"/>
+                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.04" id="MSc-ig-yT7"/>
+                            <constraint firstItem="5WG-jt-GxO" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="MfE-Jy-hQP"/>
+                            <constraint firstItem="4xB-fs-Iyr" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="Mlu-AP-1hP"/>
+                            <constraint firstItem="5WG-jt-GxO" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="Mvn-4v-Cve"/>
+                            <constraint firstItem="Do3-dt-6ey" firstAttribute="centerY" secondItem="xXV-tz-VK2" secondAttribute="centerY" id="NkW-cs-yhb"/>
+                            <constraint firstItem="Do3-dt-6ey" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="RwX-BP-Viz"/>
+                            <constraint firstItem="Mgg-DD-gFt" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="Tyh-07-SXe"/>
+                            <constraint firstItem="oCK-lB-Wzq" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.44" id="U1L-iN-Fwl"/>
+                            <constraint firstItem="PkG-SP-JUN" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.48" id="UBx-iW-hMY"/>
+                            <constraint firstItem="xXV-tz-VK2" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.225" id="UT6-7c-I71"/>
+                            <constraint firstItem="0Qf-No-qwE" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.02" id="UhH-zx-pSd"/>
+                            <constraint firstItem="JQ3-Ut-VRY" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.575" id="Vgf-C3-94o"/>
+                            <constraint firstItem="BSd-QX-ddL" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.45" id="Xtd-cY-HhE"/>
+                            <constraint firstItem="xXV-tz-VK2" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.02" id="biL-AV-o26"/>
+                            <constraint firstItem="H2i-2I-57I" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.48" id="bkZ-9W-Gns"/>
+                            <constraint firstItem="Nuu-FS-zGm" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.029" id="cze-c0-WGr"/>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.224" id="dTE-cC-AtH"/>
+                            <constraint firstItem="bxI-BO-9z5" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.31" id="gOZ-Qr-nvB"/>
+                            <constraint firstItem="5WG-jt-GxO" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.48" id="hOF-cx-zdm"/>
+                            <constraint firstItem="0Qf-No-qwE" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.033" id="hax-Kt-AJv"/>
+                            <constraint firstItem="BSd-QX-ddL" firstAttribute="centerY" secondItem="erN-Xx-Aqn" secondAttribute="centerY" id="htb-Og-120"/>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.037" id="iBV-fS-YEB"/>
+                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.32" id="kFC-hw-Eir"/>
+                            <constraint firstItem="Nuu-FS-zGm" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="lEo-pq-6fQ"/>
+                            <constraint firstItem="Rh0-OL-pcf" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.14" id="lSI-D4-Sr7"/>
+                            <constraint firstItem="4xB-fs-Iyr" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="m1R-oJ-kPf"/>
+                            <constraint firstItem="5WG-jt-GxO" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.0335" id="muD-yT-Z1T"/>
+                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.227" id="ssJ-qg-8Dd"/>
+                            <constraint firstItem="Rh0-OL-pcf" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="tNh-Pk-zQI"/>
+                            <constraint firstItem="bxI-BO-9z5" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.285" id="waz-lW-pFE"/>
+                            <constraint firstItem="PkG-SP-JUN" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.4" id="wrB-kU-SaC"/>
+                            <constraint firstItem="xXV-tz-VK2" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.817" id="x4i-7T-ToC"/>
+                            <constraint firstItem="iKB-4I-Zg5" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.29" id="yiW-My-ngg"/>
+                            <constraint firstItem="4xB-fs-Iyr" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.985" id="zkR-5W-TMV"/>
+                            <constraint firstItem="JQ3-Ut-VRY" firstAttribute="centerY" secondItem="Oxv-UG-soK" secondAttribute="centerY" id="zlp-yo-63y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3xf-Yo-9YC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJh-0T-8of" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320.80000000000001" y="-92.203898050974516"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="business_newContact" width="13.5" height="12"/>
+        <image name="contact_newContact" width="12" height="13.5"/>
+        <image name="done_Button" width="121" height="30"/>
+        <image name="email_newContact" width="12" height="10"/>
+        <image name="industry_newContact" width="11.5" height="12"/>
+        <image name="phone_newContact" width="8" height="12"/>
+        <image name="referred_newContact" width="14.5" height="10"/>
+        <image name="type_newContact" width="15" height="12"/>
+    </resources>
+</document>

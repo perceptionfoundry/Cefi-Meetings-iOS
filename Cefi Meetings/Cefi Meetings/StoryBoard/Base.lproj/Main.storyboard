@@ -197,9 +197,6 @@
                                             <constraint firstAttribute="width" secondItem="leq-kU-Mj3" secondAttribute="height" multiplier="10:9" id="xpV-n8-Z10"/>
                                         </constraints>
                                         <state key="normal" image="Contact_Button"/>
-                                        <connections>
-                                            <segue destination="kUn-9K-fBv" kind="show" id="md6-yB-0Cc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-u2-LQ3">
                                         <rect key="frame" x="158" y="20" width="114.5" height="103.5"/>
@@ -360,7 +357,7 @@ We hope you have a great and productive day!</string>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oU-If-Yl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2736" y="25.187406296851577"/>
+            <point key="canvasLocation" x="7688" y="901.34932533733138"/>
         </scene>
         <!--Main PendingVC-->
         <scene sceneID="XbJ-QY-rga">
@@ -371,7 +368,7 @@ We hope you have a great and productive day!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xqg-zY-crD">
-                                <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
+                                <rect key="frame" x="0.0" y="84.5" width="375" height="533.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="hnv-04-QMG">
                                         <rect key="frame" x="47" y="27.5" width="281.5" height="25"/>
@@ -498,13 +495,13 @@ We hope you have a great and productive day!</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Docs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NR8-dv-eIr">
-                                <rect key="frame" x="110" y="35" width="155" height="33"/>
+                                <rect key="frame" x="110" y="31.5" width="155" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <color key="textColor" red="0.94208574295043945" green="0.34121060371398926" blue="0.34108710289001465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vr-wh-u3g">
-                                <rect key="frame" x="23.5" y="25" width="47" height="53"/>
+                                <rect key="frame" x="23.5" y="21" width="47" height="53.5"/>
                                 <state key="normal" image="Menu"/>
                             </button>
                         </subviews>
@@ -539,6 +536,7 @@ We hope you have a great and productive day!</string>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="sJ0-yR-ykt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YM6-Lw-kk6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -549,8 +547,8 @@ We hope you have a great and productive day!</string>
                         <segue destination="rn7-mt-C2n" kind="relationship" relationship="viewControllers" id="GyO-vZ-AY5"/>
                         <segue destination="yce-ko-b6j" kind="relationship" relationship="viewControllers" id="pH6-pc-nsB"/>
                         <segue destination="ISr-8F-Ycl" kind="relationship" relationship="viewControllers" id="izp-Di-gsj"/>
-                        <segue destination="kUn-9K-fBv" kind="relationship" relationship="viewControllers" id="Asv-SB-I0Z"/>
                         <segue destination="8X3-Gq-dn8" kind="relationship" relationship="viewControllers" id="7GT-Yp-P9w"/>
+                        <segue destination="D6c-Yt-nCK" kind="relationship" relationship="viewControllers" id="59x-rD-z93"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOf-F2-ljN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -582,7 +580,7 @@ We hope you have a great and productive day!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-dP-xvh">
-                                <rect key="frame" x="9.5" y="89.5" width="356" height="27"/>
+                                <rect key="frame" x="9.5" y="82" width="356" height="27"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-Kq-lH6" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="27"/>
@@ -659,7 +657,7 @@ We hope you have a great and productive day!</string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-vi-iHL" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="20.5" y="134" width="285" height="46.5"/>
+                                <rect key="frame" x="20.5" y="123" width="285" height="46.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
                                         <rect key="frame" x="11" y="11.5" width="219.5" height="23.5"/>
@@ -695,14 +693,14 @@ We hope you have a great and productive day!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZO-l5-paW">
-                                <rect key="frame" x="331.5" y="144" width="21.5" height="26.5"/>
+                                <rect key="frame" x="331.5" y="133" width="21.5" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kZO-l5-paW" secondAttribute="height" multiplier="9:11" id="Ype-50-ZZk"/>
                                 </constraints>
                                 <state key="normal" image="filtering"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T67-ga-YJl">
-                                <rect key="frame" x="0.0" y="200.5" width="375" height="466.5"/>
+                                <rect key="frame" x="0.0" y="189.5" width="375" height="428.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contact" rowHeight="78" id="aHu-D7-YnM" customClass="Contact_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -758,6 +756,9 @@ We hope you have a great and productive day!</string>
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="add_button"/>
+                                                <connections>
+                                                    <action selector="newContactAction:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="taj-uV-bGh"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -802,14 +803,16 @@ We hope you have a great and productive day!</string>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="Contact_Table" destination="T67-ga-YJl" id="Ue6-YV-yCh"/>
-                        <outlet property="NaviBar" destination="Qo5-gf-XSm" id="GZW-iM-fQI"/>
+                        <outlet property="Contact_Table" destination="T67-ga-YJl" id="m0g-5V-xXA"/>
+                        <outlet property="NaviBar" destination="Qo5-gf-XSm" id="TNq-GX-iHO"/>
+                        <segue destination="iug-9T-oHv" kind="show" identifier="Contact_Segue" id="Xcf-o5-ssI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXl-dC-UmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6103.1999999999998" y="1162.6686656671666"/>
+            <point key="canvasLocation" x="7042.3999999999996" y="1162.6686656671666"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="bN2-s6-RDB">
@@ -820,7 +823,7 @@ We hope you have a great and productive day!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-nf-cj1">
-                                <rect key="frame" x="9.5" y="89.5" width="356" height="27"/>
+                                <rect key="frame" x="9.5" y="82" width="356" height="27"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUA-O2-PLP" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="172.5" height="27"/>
@@ -861,7 +864,7 @@ We hope you have a great and productive day!</string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-om-1I4" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="20.5" y="134" width="285" height="46.5"/>
+                                <rect key="frame" x="20.5" y="123" width="285" height="46.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-X4-RgH">
                                         <rect key="frame" x="11" y="11.5" width="219.5" height="23.5"/>
@@ -897,14 +900,14 @@ We hope you have a great and productive day!</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-uI-H55">
-                                <rect key="frame" x="331.5" y="144" width="21.5" height="26.5"/>
+                                <rect key="frame" x="331.5" y="133" width="21.5" height="26.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hWK-uI-H55" secondAttribute="height" multiplier="9:11" id="p7b-3b-pXW"/>
                                 </constraints>
                                 <state key="normal" image="filtering"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-00-Uzk">
-                                <rect key="frame" x="0.0" y="200.5" width="375" height="466.5"/>
+                                <rect key="frame" x="0.0" y="189.5" width="375" height="428.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contract" rowHeight="57" id="Bw9-5m-Yp8" customClass="Contract_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -1049,25 +1052,6 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="2333.5999999999999" y="1768.9655172413795"/>
         </scene>
-        <!--Contacts-->
-        <scene sceneID="XOq-cz-h0r">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="kUn-9K-fBv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" image="contact_tab" id="ynC-nt-pbz"/>
-                    <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gZP-g4-pJP">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aMx-Dy-qy2" kind="relationship" relationship="rootViewController" id="TRz-M4-0Kg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dwY-rK-59j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5164" y="1162.6686656671666"/>
-        </scene>
         <!--Pending Docs-->
         <scene sceneID="SRT-ER-C6z">
             <objects>
@@ -1086,6 +1070,25 @@ We hope you have a great and productive day!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKJ-YZ-ae7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4612" y="185.75712143928038"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="0Gq-cK-xWd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="D6c-Yt-nCK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contact" image="contact_tab" id="eb5-qM-VRi"/>
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FO6-7z-qR1">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aMx-Dy-qy2" kind="relationship" relationship="rootViewController" id="Cte-ZR-zNy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjc-Gn-Pdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6103.1999999999998" y="1162.6686656671666"/>
         </scene>
     </scenes>
     <resources>
@@ -1111,9 +1114,8 @@ We hope you have a great and productive day!</string>
         <image name="visit_tab" width="19.5" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="du9-iV-QXi"/>
-        <segue reference="md6-yB-0Cc"/>
-        <segue reference="rZX-SB-p70"/>
-        <segue reference="qBq-AL-ri1"/>
+        <segue reference="7GT-Yp-P9w"/>
+        <segue reference="izp-Di-gsj"/>
+        <segue reference="pH6-pc-nsB"/>
     </inferredMetricsTieBreakers>
 </document>

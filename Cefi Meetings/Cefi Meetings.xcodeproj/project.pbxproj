@@ -11,6 +11,8 @@
 		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
 		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
 		F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F68121FB6A5F00269506 /* MainPendingVC.swift */; };
+		F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F288347121FED4E700CA09C6 /* Contact.storyboard */; };
+		F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347321FEDBE200CA09C6 /* NewContactVC.swift */; };
 		F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */; };
 		F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */; };
 		F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8621F97F7D00BE90CA /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pending_TableViewCell.swift; sourceTree = "<group>"; };
 		F258F68121FB6A5F00269506 /* MainPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPendingVC.swift; sourceTree = "<group>"; };
+		F288347121FED4E700CA09C6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		F288347321FEDBE200CA09C6 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
 		F2AC6C7F21F97F7D00BE90CA /* Cefi Meetings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cefi Meetings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				F2AC6C8621F97F7D00BE90CA /* Main.storyboard */,
+				F288347121FED4E700CA09C6 /* Contact.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 		F2DABFCD21FA17E3009FEFCC /* Contact Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F288347321FEDBE200CA09C6 /* NewContactVC.swift */,
 			);
 			path = "Contact Storyboard";
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */,
+				F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */,
 				F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */,
 				F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */,
 			);
@@ -280,6 +287,7 @@
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
 				F2DABFBF21F9E3D7009FEFCC /* UnderlinedTextField.swift in Sources */,
+				F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */,
 				F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */,
 				F2DABFC421F9E3D7009FEFCC /* Custom_Label.swift in Sources */,
 				F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */,

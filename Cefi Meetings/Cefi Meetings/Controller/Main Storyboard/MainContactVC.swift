@@ -160,4 +160,17 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    @IBAction func newContactAction(_ sender: Any) {
+        
+        
+        print("*********")
+//        performSegue(withIdentifier: "Contact_Segue", sender: nil)
+//
+        self.present(UIStoryboard(name: "Contact", bundle: nil).instantiateViewController(withIdentifier: "New_Contact") , animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    
 }
