@@ -1,0 +1,6 @@
+framework module Pods_Cefi_Meetings {
+  umbrella header "Pods-Cefi Meetings-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
 		F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F66F21FB547C00269506 /* MainContractsVC.swift */; };
 		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
 		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
@@ -22,9 +23,12 @@
 		F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8621F97F7D00BE90CA /* Main.storyboard */; };
 		F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8921F97F7E00BE90CA /* Assets.xcassets */; };
 		F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8B21F97F7E00BE90CA /* LaunchScreen.storyboard */; };
+		F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */; };
+		F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBC22001FF200E6C76D /* userSettingVC.swift */; };
+		F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */; };
+		F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EC122002C6B00E6C76D /* VisitTableViewCell.swift */; };
+		F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */; };
 		F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */; };
-		F2DABFBE21F9E3D7009FEFCC /* customTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB621F9E3D7009FEFCC /* customTF.swift */; };
-		F2DABFBF21F9E3D7009FEFCC /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB721F9E3D7009FEFCC /* UnderlinedTextField.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -33,9 +37,14 @@
 		F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */; };
 		F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */; };
 		F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */; };
+		F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBC8E8220039DD0079C47D /* VisitVC.swift */; };
+		F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cefi_Meetings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.debug.xcconfig"; sourceTree = "<group>"; };
+		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
 		F258F66F21FB547C00269506 /* MainContractsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContractsVC.swift; sourceTree = "<group>"; };
 		F258F67121FB54A500269506 /* Contract_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract_TableViewCell.swift; sourceTree = "<group>"; };
 		F258F67321FB62C400269506 /* AvenirLTStd-HeavyOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-HeavyOblique.otf"; sourceTree = "<group>"; };
@@ -65,9 +74,12 @@
 		F2AC6C8921F97F7E00BE90CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2AC6C8C21F97F7E00BE90CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2AC6C8E21F97F7E00BE90CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsVC.swift; sourceTree = "<group>"; };
+		F2B02EBC22001FF200E6C76D /* userSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userSettingVC.swift; sourceTree = "<group>"; };
+		F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
+		F2B02EC122002C6B00E6C76D /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
+		F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitTableViewCell.xib; sourceTree = "<group>"; };
 		F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Segment.swift; sourceTree = "<group>"; };
-		F2DABFB621F9E3D7009FEFCC /* customTF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTF.swift; sourceTree = "<group>"; };
-		F2DABFB721F9E3D7009FEFCC /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -76,6 +88,8 @@
 		F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContactVC.swift; sourceTree = "<group>"; };
 		F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TableViewCell.swift; sourceTree = "<group>"; };
+		F2FBC8E8220039DD0079C47D /* VisitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVC.swift; sourceTree = "<group>"; };
+		F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +97,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1877EF4FB7AE5C1C7E23EB0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9544559DFE0CDDF7C7032B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */,
+				DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F288347921FF537200CA09C6 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +138,8 @@
 			children = (
 				F2AC6C8121F97F7D00BE90CA /* Cefi Meetings */,
 				F2AC6C8021F97F7D00BE90CA /* Products */,
+				9544559DFE0CDDF7C7032B76 /* Pods */,
+				1877EF4FB7AE5C1C7E23EB0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +172,7 @@
 		F2AC6C9421F99BC300BE90CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2B02EC022002BF700E6C76D /* xib */,
 				F288347921FF537200CA09C6 /* TableView */,
 			);
 			path = View;
@@ -164,6 +199,15 @@
 				F2DABFCC21FA17D4009FEFCC /* Main Storyboard */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2B02EC022002BF700E6C76D /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				F2B02EC122002C6B00E6C76D /* VisitTableViewCell.swift */,
+				F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 		F2DABFB321F9E12B009FEFCC /* Font */ = {
@@ -194,8 +238,7 @@
 				F2DABFBC21F9E3D7009FEFCC /* Custom_Label.swift */,
 				F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */,
 				F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */,
-				F2DABFB621F9E3D7009FEFCC /* customTF.swift */,
-				F2DABFB721F9E3D7009FEFCC /* UnderlinedTextField.swift */,
+				F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -218,6 +261,10 @@
 				F258F66F21FB547C00269506 /* MainContractsVC.swift */,
 				F258F68121FB6A5F00269506 /* MainPendingVC.swift */,
 				F288347C21FF61AD00CA09C6 /* UserFilterVC.swift */,
+				F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */,
+				F2B02EBC22001FF200E6C76D /* userSettingVC.swift */,
+				F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */,
+				F2FBC8E8220039DD0079C47D /* VisitVC.swift */,
 			);
 			path = "Main Storyboard";
 			sourceTree = "<group>";
@@ -238,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2AC6C9121F97F7E00BE90CA /* Build configuration list for PBXNativeTarget "Cefi Meetings" */;
 			buildPhases = (
+				C8AFC5D316C9451CCA5C2E86 /* [CP] Check Pods Manifest.lock */,
 				F2AC6C7B21F97F7D00BE90CA /* Sources */,
 				F2AC6C7C21F97F7D00BE90CA /* Frameworks */,
 				F2AC6C7D21F97F7D00BE90CA /* Resources */,
+				B93D30B5BE21B0C73B41F354 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */,
 				F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */,
 				F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */,
 				F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */,
@@ -298,6 +348,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B93D30B5BE21B0C73B41F354 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HCSStarRatingView/HCSStarRatingView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HCSStarRatingView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8AFC5D316C9451CCA5C2E86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cefi Meetings-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2AC6C7B21F97F7D00BE90CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -305,9 +394,12 @@
 			files = (
 				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
+				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,
+				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
+				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
+				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
-				F2DABFBF21F9E3D7009FEFCC /* UnderlinedTextField.swift in Sources */,
 				F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */,
 				F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */,
 				F2DABFC421F9E3D7009FEFCC /* Custom_Label.swift in Sources */,
@@ -319,12 +411,13 @@
 				F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */,
 				F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */,
 				F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */,
-				F2DABFBE21F9E3D7009FEFCC /* customTF.swift in Sources */,
 				F288347821FF536300CA09C6 /* UserDetailContract_TableView.swift in Sources */,
 				F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */,
 				F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */,
+				F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */,
 				F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
+				F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +561,7 @@
 		};
 		F2AC6C9221F97F7E00BE90CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +580,7 @@
 		};
 		F2AC6C9321F97F7E00BE90CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

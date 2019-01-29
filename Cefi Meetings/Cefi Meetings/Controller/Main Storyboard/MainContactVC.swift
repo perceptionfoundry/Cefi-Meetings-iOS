@@ -112,7 +112,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         
-        view.backgroundColor = UIColor.init(hexColor: "59913A")
+        view.backgroundColor = UIColor.gray
         
         let label = UILabel()
         label.textColor = UIColor.white
