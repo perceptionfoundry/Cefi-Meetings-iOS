@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A1A9A212593944CB7BB362C55E319B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		67D34CF37EE40AC99BE94603EFD0A2B4 /* HCSStarRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F786967DE0152441882833CF047080E /* HCSStarRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8D4386AC229BF4410A676B4C05FF21B /* Pods-Cefi Meetings-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3113A3501DDC3B4C6F1CA24A938AECD7 /* Pods-Cefi Meetings-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C470A57C9B5C407B3965D9B53FA67138 /* Pods-Cefi Meetings-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62DBAFE61875BCA12D94881BB09273 /* Pods-Cefi Meetings-dummy.m */; };
+		34DF5AACBC9BC9BCC986662D61E6A7B5 /* TagListView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD2060C191A038E735AF19935119639A /* TagListView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67D34CF37EE40AC99BE94603EFD0A2B4 /* HCSStarRatingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA9BB48B7EA25C84950FFD2805DB5B1 /* HCSStarRatingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72C608B854579B72467C784E2724D246 /* Pods-Cefi Meetings-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE62DBAFE61875BCA12D94881BB09273 /* Pods-Cefi Meetings-dummy.m */; };
+		98CCFE322004980F6428450CD8C2AE54 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7927349787E677188D737B52C16354 /* TagListView.swift */; };
+		BCCEAB157E9E873040678464A8C877CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		CC56241CB6E80FCBA4FFD8631611A1C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CEC56FA07B6B2AC76C2793AD2E25483B /* HCSStarRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FD171AD45BDAA8A691259759C79FAE /* HCSStarRatingView-dummy.m */; };
-		E456C905FBC55EE412B56D0D175375F9 /* HCSStarRatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 710D285FA1CDBDB864333F7F1D1011E9 /* HCSStarRatingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5A493266E718EAC3F68314C59A9F0D7 /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA4111CCCCF9B5842D71FE637756458 /* HCSStarRatingView.m */; };
+		CEC56FA07B6B2AC76C2793AD2E25483B /* HCSStarRatingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BAFA8847EA02B89632AAE77E6872F7 /* HCSStarRatingView-dummy.m */; };
+		D0EDC364DF3490939B1A30E440415F09 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2FFC4A08B2D0BACC7886DB92826B8D /* CloseButton.swift */; };
+		DB173260C2B4F5E3B20FA96AB6F4287E /* Pods-Cefi Meetings-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3113A3501DDC3B4C6F1CA24A938AECD7 /* Pods-Cefi Meetings-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0CA4953077C7B8B2E9B4C5E865D0D6D /* TagListView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B8B5D396355FD093993761B6E6B9 /* TagListView-dummy.m */; };
+		E456C905FBC55EE412B56D0D175375F9 /* HCSStarRatingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C09AB033DFE9F356F549F004ACB914C /* HCSStarRatingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA9A239F86AD62FDD21F3B04E160EC1F /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03178C11C7991CAF32A685335AF12 /* TagView.swift */; };
+		EE1E7826027C6E89894A1BA156F2421B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F5A493266E718EAC3F68314C59A9F0D7 /* HCSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3531C04DBF1C1764CA99E1E9CAEEF /* HCSStarRatingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		36A275F4FF42037A479370EA054072FF /* PBXContainerItemProxy */ = {
+		997EBCE9CAA4D3BDEE74EA8E5F16BD63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E532596A79F4E5D57DA36889737F1BD;
+			remoteInfo = TagListView;
+		};
+		ADAD9D461E8482506F2542923C63B6F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -28,36 +41,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		019CBA279192BA910E2561AA95064E79 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BA4111CCCCF9B5842D71FE637756458 /* HCSStarRatingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCSStarRatingView.m; path = HCSStarRatingView/HCSStarRatingView.m; sourceTree = "<group>"; };
-		20FD171AD45BDAA8A691259759C79FAE /* HCSStarRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HCSStarRatingView-dummy.m"; sourceTree = "<group>"; };
+		2C7927349787E677188D737B52C16354 /* TagListView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagListView.swift; path = TagListView/TagListView.swift; sourceTree = "<group>"; };
 		3113A3501DDC3B4C6F1CA24A938AECD7 /* Pods-Cefi Meetings-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cefi Meetings-umbrella.h"; sourceTree = "<group>"; };
+		413004C9ABB6180BA1DBBA7517CDEF92 /* TagListView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TagListView.xcconfig; sourceTree = "<group>"; };
+		4C09AB033DFE9F356F549F004ACB914C /* HCSStarRatingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCSStarRatingView.h; path = HCSStarRatingView/HCSStarRatingView.h; sourceTree = "<group>"; };
 		5066DEDF54D77623C1085D4EFDD9BC83 /* Pods-Cefi Meetings-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cefi Meetings-frameworks.sh"; sourceTree = "<group>"; };
 		51FA821B89CF84E2B0A8EFB690133AB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BD67C3281D2011769A15CF7553A41C3 /* HCSStarRatingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HCSStarRatingView.framework; path = HCSStarRatingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AD693DBE41CBE15F6FFFCCD55117554 /* HCSStarRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HCSStarRatingView.modulemap; sourceTree = "<group>"; };
+		60CE49765654C3A1C7A00C49A12D055B /* TagListView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TagListView.framework; path = TagListView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631172F58D1D6480916B83825040CF0F /* Pods-Cefi Meetings.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cefi Meetings.modulemap"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6C4C1AF67AC766317B6D983DDF95205B /* Pods-Cefi Meetings-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cefi Meetings-acknowledgements.markdown"; sourceTree = "<group>"; };
-		710D285FA1CDBDB864333F7F1D1011E9 /* HCSStarRatingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCSStarRatingView.h; path = HCSStarRatingView/HCSStarRatingView.h; sourceTree = "<group>"; };
-		7228A8D95294F572A1CF6C09781AA2D6 /* HCSStarRatingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HCSStarRatingView.modulemap; sourceTree = "<group>"; };
 		739B08CAEE27B48FFA7893A25F703E68 /* Pods-Cefi Meetings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cefi Meetings.debug.xcconfig"; sourceTree = "<group>"; };
-		73DEAAB8AC3640A74F33803EF2F868CB /* HCSStarRatingView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HCSStarRatingView.xcconfig; sourceTree = "<group>"; };
+		75FBBE6A98D53B68BAD75062185F32CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86814C273191BB3586A057D0E0A69331 /* Pods-Cefi Meetings-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cefi Meetings-resources.sh"; sourceTree = "<group>"; };
-		8BE412A1DF20483227B4A6114F9EF4D3 /* HCSStarRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-prefix.pch"; sourceTree = "<group>"; };
-		8F786967DE0152441882833CF047080E /* HCSStarRatingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-umbrella.h"; sourceTree = "<group>"; };
+		8E8BB1325A5B33776946389780F87599 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9411E6CD0F3AEB094AA4E1BD308531DB /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cefi_Meetings.framework; path = "Pods-Cefi Meetings.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA9C0742D7F5BAB43C1DD2FB9D5E121 /* HCSStarRatingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HCSStarRatingView.framework; path = HCSStarRatingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BAFA8847EA02B89632AAE77E6872F7 /* HCSStarRatingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HCSStarRatingView-dummy.m"; sourceTree = "<group>"; };
+		AAA9BB48B7EA25C84950FFD2805DB5B1 /* HCSStarRatingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-umbrella.h"; sourceTree = "<group>"; };
 		AF593CE9956B70984096D5BE09E6ED7A /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
-		BCD1A0DAD42B94284E3350AE897BD438 /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cefi_Meetings.framework; path = "Pods-Cefi Meetings.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4B03178C11C7991CAF32A685335AF12 /* TagView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TagView.swift; path = TagListView/TagView.swift; sourceTree = "<group>"; };
+		BD2060C191A038E735AF19935119639A /* TagListView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-umbrella.h"; sourceTree = "<group>"; };
 		BE62DBAFE61875BCA12D94881BB09273 /* Pods-Cefi Meetings-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cefi Meetings-dummy.m"; sourceTree = "<group>"; };
+		C2C3531C04DBF1C1764CA99E1E9CAEEF /* HCSStarRatingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCSStarRatingView.m; path = HCSStarRatingView/HCSStarRatingView.m; sourceTree = "<group>"; };
+		C7A19E67700E608883AD710FC55C6534 /* HCSStarRatingView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HCSStarRatingView.xcconfig; sourceTree = "<group>"; };
+		D1D2B8B5D396355FD093993761B6E6B9 /* TagListView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TagListView-dummy.m"; sourceTree = "<group>"; };
+		DEC4295D44C6155B65516F6C6A19599A /* TagListView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TagListView.modulemap; sourceTree = "<group>"; };
+		DF8B563CE4EAAD8E70DF3D15854D90C3 /* TagListView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TagListView-prefix.pch"; sourceTree = "<group>"; };
+		E04530254818A0D0514BA8ADC97B475E /* HCSStarRatingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HCSStarRatingView-prefix.pch"; sourceTree = "<group>"; };
+		ED2FFC4A08B2D0BACC7886DB92826B8D /* CloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CloseButton.swift; path = TagListView/CloseButton.swift; sourceTree = "<group>"; };
 		F96F16EE78E145C7F85B915966E954B2 /* Pods-Cefi Meetings-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cefi Meetings-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		61E5603FADAC627E01AD45D4651C0423 /* Frameworks */ = {
+		0360FF95140580A1F97B4E872551C6AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A1A9A212593944CB7BB362C55E319B7 /* Foundation.framework in Frameworks */,
+				BCCEAB157E9E873040678464A8C877CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B92FCEC9D270C8A260AA59C6FA0A67B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1E7826027C6E89894A1BA156F2421B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,11 +103,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		551F0326544F0FD321D0A6712A744A27 /* Products */ = {
+		409ABB7D73F367084C17420A9016BACA /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
-				5BD67C3281D2011769A15CF7553A41C3 /* HCSStarRatingView.framework */,
-				BCD1A0DAD42B94284E3350AE897BD438 /* Pods_Cefi_Meetings.framework */,
+				ED2FFC4A08B2D0BACC7886DB92826B8D /* CloseButton.swift */,
+				2C7927349787E677188D737B52C16354 /* TagListView.swift */,
+				B4B03178C11C7991CAF32A685335AF12 /* TagView.swift */,
+				CAEE161A678C5FF32DE7BDEF70303D6E /* Support Files */,
+			);
+			name = TagListView;
+			path = TagListView;
+			sourceTree = "<group>";
+		};
+		59013B75DDBB68BD14C987710CF54E87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DA9C0742D7F5BAB43C1DD2FB9D5E121 /* HCSStarRatingView.framework */,
+				9411E6CD0F3AEB094AA4E1BD308531DB /* Pods_Cefi_Meetings.framework */,
+				60CE49765654C3A1C7A00C49A12D055B /* TagListView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,32 +130,30 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9EF26EB72DF2312AC6BBE947B4FE383E /* Pods */,
-				551F0326544F0FD321D0A6712A744A27 /* Products */,
+				8EDCAFCF09745B1C543B917531A79721 /* Pods */,
+				59013B75DDBB68BD14C987710CF54E87 /* Products */,
 				B98D9D2FE05CD0C8F947B533A2D50E46 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9EF26EB72DF2312AC6BBE947B4FE383E /* Pods */ = {
+		8EDCAFCF09745B1C543B917531A79721 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C1E38FD8A11841A27105A84A195DD167 /* HCSStarRatingView */,
+				B13049B11DFD8240007976CC0185F5EE /* HCSStarRatingView */,
+				409ABB7D73F367084C17420A9016BACA /* TagListView */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A9C2F92367A5FEB206A2BABF4E7159BF /* Support Files */ = {
+		B13049B11DFD8240007976CC0185F5EE /* HCSStarRatingView */ = {
 			isa = PBXGroup;
 			children = (
-				7228A8D95294F572A1CF6C09781AA2D6 /* HCSStarRatingView.modulemap */,
-				73DEAAB8AC3640A74F33803EF2F868CB /* HCSStarRatingView.xcconfig */,
-				20FD171AD45BDAA8A691259759C79FAE /* HCSStarRatingView-dummy.m */,
-				8BE412A1DF20483227B4A6114F9EF4D3 /* HCSStarRatingView-prefix.pch */,
-				8F786967DE0152441882833CF047080E /* HCSStarRatingView-umbrella.h */,
-				019CBA279192BA910E2561AA95064E79 /* Info.plist */,
+				4C09AB033DFE9F356F549F004ACB914C /* HCSStarRatingView.h */,
+				C2C3531C04DBF1C1764CA99E1E9CAEEF /* HCSStarRatingView.m */,
+				F9AB78793075ABBF9B55C26869700E6E /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/HCSStarRatingView";
+			name = HCSStarRatingView;
+			path = HCSStarRatingView;
 			sourceTree = "<group>";
 		};
 		B98D9D2FE05CD0C8F947B533A2D50E46 /* Targets Support Files */ = {
@@ -130,15 +172,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C1E38FD8A11841A27105A84A195DD167 /* HCSStarRatingView */ = {
+		CAEE161A678C5FF32DE7BDEF70303D6E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				710D285FA1CDBDB864333F7F1D1011E9 /* HCSStarRatingView.h */,
-				1BA4111CCCCF9B5842D71FE637756458 /* HCSStarRatingView.m */,
-				A9C2F92367A5FEB206A2BABF4E7159BF /* Support Files */,
+				8E8BB1325A5B33776946389780F87599 /* Info.plist */,
+				DEC4295D44C6155B65516F6C6A19599A /* TagListView.modulemap */,
+				413004C9ABB6180BA1DBBA7517CDEF92 /* TagListView.xcconfig */,
+				D1D2B8B5D396355FD093993761B6E6B9 /* TagListView-dummy.m */,
+				DF8B563CE4EAAD8E70DF3D15854D90C3 /* TagListView-prefix.pch */,
+				BD2060C191A038E735AF19935119639A /* TagListView-umbrella.h */,
 			);
-			name = HCSStarRatingView;
-			path = HCSStarRatingView;
+			name = "Support Files";
+			path = "../Target Support Files/TagListView";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -167,6 +212,20 @@
 			path = "Target Support Files/Pods-Cefi Meetings";
 			sourceTree = "<group>";
 		};
+		F9AB78793075ABBF9B55C26869700E6E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AD693DBE41CBE15F6FFFCCD55117554 /* HCSStarRatingView.modulemap */,
+				C7A19E67700E608883AD710FC55C6534 /* HCSStarRatingView.xcconfig */,
+				A7BAFA8847EA02B89632AAE77E6872F7 /* HCSStarRatingView-dummy.m */,
+				E04530254818A0D0514BA8ADC97B475E /* HCSStarRatingView-prefix.pch */,
+				AAA9BB48B7EA25C84950FFD2805DB5B1 /* HCSStarRatingView-umbrella.h */,
+				75FBBE6A98D53B68BAD75062185F32CF /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HCSStarRatingView";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -179,33 +238,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1E4BBF31AFDD1D16979684F0F0500D4 /* Headers */ = {
+		6147BEB44047FF9513A1D0B24AD80084 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8D4386AC229BF4410A676B4C05FF21B /* Pods-Cefi Meetings-umbrella.h in Headers */,
+				DB173260C2B4F5E3B20FA96AB6F4287E /* Pods-Cefi Meetings-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D3F1D00586DEFEED42FEF082A84AECD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DF5AACBC9BC9BCC986662D61E6A7B5 /* TagListView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2CD99FC26BFA9786345E62239B52824E /* Pods-Cefi Meetings */ = {
+		2F242C9AFF28AB4FC98643F913E5F625 /* Pods-Cefi Meetings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7A61E352196D023E61C31551A748BA75 /* Build configuration list for PBXNativeTarget "Pods-Cefi Meetings" */;
+			buildConfigurationList = 197187C09845E298AF9859A616079C35 /* Build configuration list for PBXNativeTarget "Pods-Cefi Meetings" */;
 			buildPhases = (
-				5519FB677E667CEA64493973EB2D46D1 /* Sources */,
-				61E5603FADAC627E01AD45D4651C0423 /* Frameworks */,
-				A1E4BBF31AFDD1D16979684F0F0500D4 /* Headers */,
+				BF2B4CA642D4B799E136452D26EB3C4E /* Sources */,
+				0360FF95140580A1F97B4E872551C6AB /* Frameworks */,
+				6147BEB44047FF9513A1D0B24AD80084 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4A2C8E53B92C80A2368DA3A67D307E1D /* PBXTargetDependency */,
+				4CCDB001138D416414A596DD1E160ECD /* PBXTargetDependency */,
+				EC3BCCA86703DDD618E4CE6A5EE8046C /* PBXTargetDependency */,
 			);
 			name = "Pods-Cefi Meetings";
 			productName = "Pods-Cefi Meetings";
-			productReference = BCD1A0DAD42B94284E3350AE897BD438 /* Pods_Cefi_Meetings.framework */;
+			productReference = 9411E6CD0F3AEB094AA4E1BD308531DB /* Pods_Cefi_Meetings.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		45FF4A7AFE5D8E17D01023C53AED87FF /* HCSStarRatingView */ = {
@@ -222,7 +290,24 @@
 			);
 			name = HCSStarRatingView;
 			productName = HCSStarRatingView;
-			productReference = 5BD67C3281D2011769A15CF7553A41C3 /* HCSStarRatingView.framework */;
+			productReference = 9DA9C0742D7F5BAB43C1DD2FB9D5E121 /* HCSStarRatingView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4E532596A79F4E5D57DA36889737F1BD /* TagListView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB81F55AE0B6B87B94EFE0D3B7FEBED8 /* Build configuration list for PBXNativeTarget "TagListView" */;
+			buildPhases = (
+				718FFCA04C9651F0BEA8911BC169C8B6 /* Sources */,
+				B92FCEC9D270C8A260AA59C6FA0A67B6 /* Frameworks */,
+				9D3F1D00586DEFEED42FEF082A84AECD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TagListView;
+			productName = TagListView;
+			productReference = 60CE49765654C3A1C7A00C49A12D055B /* TagListView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -242,12 +327,13 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 551F0326544F0FD321D0A6712A744A27 /* Products */;
+			productRefGroup = 59013B75DDBB68BD14C987710CF54E87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				45FF4A7AFE5D8E17D01023C53AED87FF /* HCSStarRatingView */,
-				2CD99FC26BFA9786345E62239B52824E /* Pods-Cefi Meetings */,
+				2F242C9AFF28AB4FC98643F913E5F625 /* Pods-Cefi Meetings */,
+				4E532596A79F4E5D57DA36889737F1BD /* TagListView */,
 			);
 		};
 /* End PBXProject section */
@@ -262,22 +348,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5519FB677E667CEA64493973EB2D46D1 /* Sources */ = {
+		718FFCA04C9651F0BEA8911BC169C8B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C470A57C9B5C407B3965D9B53FA67138 /* Pods-Cefi Meetings-dummy.m in Sources */,
+				D0EDC364DF3490939B1A30E440415F09 /* CloseButton.swift in Sources */,
+				E0CA4953077C7B8B2E9B4C5E865D0D6D /* TagListView-dummy.m in Sources */,
+				98CCFE322004980F6428450CD8C2AE54 /* TagListView.swift in Sources */,
+				EA9A239F86AD62FDD21F3B04E160EC1F /* TagView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF2B4CA642D4B799E136452D26EB3C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72C608B854579B72467C784E2724D246 /* Pods-Cefi Meetings-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4A2C8E53B92C80A2368DA3A67D307E1D /* PBXTargetDependency */ = {
+		4CCDB001138D416414A596DD1E160ECD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HCSStarRatingView;
 			target = 45FF4A7AFE5D8E17D01023C53AED87FF /* HCSStarRatingView */;
-			targetProxy = 36A275F4FF42037A479370EA054072FF /* PBXContainerItemProxy */;
+			targetProxy = ADAD9D461E8482506F2542923C63B6F6 /* PBXContainerItemProxy */;
+		};
+		EC3BCCA86703DDD618E4CE6A5EE8046C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TagListView;
+			target = 4E532596A79F4E5D57DA36889737F1BD /* TagListView */;
+			targetProxy = 997EBCE9CAA4D3BDEE74EA8E5F16BD63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -340,9 +443,81 @@
 			};
 			name = Release;
 		};
+		0EB57DFDDF3099328F01F17AA025A220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 739B08CAEE27B48FFA7893A25F703E68 /* Pods-Cefi Meetings.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cefi Meetings/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		127B88AC79FD34A5653D355A89BE0471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF593CE9956B70984096D5BE09E6ED7A /* Pods-Cefi Meetings.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cefi Meetings/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		492F7CD4B8EA4F9BB66F20BF7F6C46F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73DEAAB8AC3640A74F33803EF2F868CB /* HCSStarRatingView.xcconfig */;
+			baseConfigurationReference = C7A19E67700E608883AD710FC55C6534 /* HCSStarRatingView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -373,7 +548,7 @@
 		};
 		4C53BD992306B0069276DA1F147D2F08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73DEAAB8AC3640A74F33803EF2F868CB /* HCSStarRatingView.xcconfig */;
+			baseConfigurationReference = C7A19E67700E608883AD710FC55C6534 /* HCSStarRatingView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -396,75 +571,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		61ABBA571C37C53E18EB62BA010F7C31 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 739B08CAEE27B48FFA7893A25F703E68 /* Pods-Cefi Meetings.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Cefi Meetings/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		78093942F7F86FB14B80B42FA2429E0E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF593CE9956B70984096D5BE09E6ED7A /* Pods-Cefi Meetings.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Cefi Meetings/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -535,9 +641,83 @@
 			};
 			name = Debug;
 		};
+		CFF23602109A896FBC944CD224D4E3F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413004C9ABB6180BA1DBBA7517CDEF92 /* TagListView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TagListView/TagListView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TagListView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TagListView/TagListView.modulemap";
+				PRODUCT_MODULE_NAME = TagListView;
+				PRODUCT_NAME = TagListView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FF37BF584848DF1F0CB4F95465A17B86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413004C9ABB6180BA1DBBA7517CDEF92 /* TagListView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TagListView/TagListView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TagListView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TagListView/TagListView.modulemap";
+				PRODUCT_MODULE_NAME = TagListView;
+				PRODUCT_NAME = TagListView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		197187C09845E298AF9859A616079C35 /* Build configuration list for PBXNativeTarget "Pods-Cefi Meetings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EB57DFDDF3099328F01F17AA025A220 /* Debug */,
+				127B88AC79FD34A5653D355A89BE0471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -556,11 +736,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A61E352196D023E61C31551A748BA75 /* Build configuration list for PBXNativeTarget "Pods-Cefi Meetings" */ = {
+		CB81F55AE0B6B87B94EFE0D3B7FEBED8 /* Build configuration list for PBXNativeTarget "TagListView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				61ABBA571C37C53E18EB62BA010F7C31 /* Debug */,
-				78093942F7F86FB14B80B42FA2429E0E /* Release */,
+				CFF23602109A896FBC944CD224D4E3F1 /* Debug */,
+				FF37BF584848DF1F0CB4F95465A17B86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

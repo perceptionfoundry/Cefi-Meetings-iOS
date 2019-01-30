@@ -8,7 +8,7 @@ target 'Cefi Meetings' do
   # Pods for Cefi Meetings
 
 pod 'HCSStarRatingView'
-
+pod 'TagListView'
 
 
 end

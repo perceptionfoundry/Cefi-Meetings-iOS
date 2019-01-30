@@ -25,8 +25,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-//    let section_Index = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    
+    var contactDelegate : contactdelegate?
+    var segueStatus  = false
     
     var wordSection = [String]()
     var wordsDic = [String:[[String:String]]]()
@@ -157,13 +157,34 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let workKey = wordSection[indexPath.section]
+
+        if segueStatus == true{
+            
+            if let wordValue = wordsDic[workKey.uppercased()]{
+                
+                
+                print(wordValue[indexPath.row])
+                
+              
+                
+                self.contactDelegate?.contactName(userName: wordValue[indexPath.row]["name"]!)
+                self.segueStatus = false
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+            
+           
+        }
+        
+        else{
         // Segue to User Contail detail  Viewcontroller
         
         let storyboard = UIStoryboard(name: "Contact", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
         self.navigationController?.pushViewController(vc, animated: true)
-        
+        }
     }
     
     
