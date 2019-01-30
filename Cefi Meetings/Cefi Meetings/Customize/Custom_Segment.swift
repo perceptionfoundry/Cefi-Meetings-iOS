@@ -78,15 +78,18 @@ class Custom_Segment: UIControl {
         
         for buttonTitle in buttonTitles{
             let button = UIButton(type: .system)
-            button.setTitle(buttonTitle, for: .normal)
+            button.titleLabel?.textAlignment = .center
+
+            button.setTitle("  \(buttonTitle)  ", for: .normal)
             button.setTitleColor(textColor, for: .normal)
+            
             button.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside )
             buttons.append(button)
         }
         
         buttons[0].setTitleColor(selectorTextColor, for: .normal )
         
-        let   selectorWidth = frame.width/CGFloat(buttonTitles.count)
+        let   selectorWidth = frame.width/CGFloat(buttonTitles.count) + 10
         selector = UIView(frame: CGRect(x: 0, y: 0, width: selectorWidth, height: frame.height))
         selector.layer.cornerRadius = frame.height/2
         selector.backgroundColor = selectorColor
@@ -94,7 +97,7 @@ class Custom_Segment: UIControl {
         
         let stack = UIStackView(arrangedSubviews: buttons)
         stack.axis = .horizontal
-        stack.alignment = .fill
+        stack.alignment = .center
         stack.distribution = .fillProportionally
         addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false

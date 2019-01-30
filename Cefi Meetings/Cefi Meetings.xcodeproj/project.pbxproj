@@ -28,6 +28,8 @@
 		F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */; };
 		F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EC122002C6B00E6C76D /* VisitTableViewCell.swift */; };
 		F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */; };
+		F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */; };
+		F2B58AB02201B38E00396F9E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B58AAF2201B38E00396F9E /* Contract.storyboard */; };
 		F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
@@ -79,6 +81,8 @@
 		F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyVC.swift; sourceTree = "<group>"; };
 		F2B02EC122002C6B00E6C76D /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
 		F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitTableViewCell.xib; sourceTree = "<group>"; };
+		F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contractFilterVC.swift; sourceTree = "<group>"; };
+		F2B58AAF2201B38E00396F9E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
 		F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Segment.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				F2AC6C8621F97F7D00BE90CA /* Main.storyboard */,
 				F288347121FED4E700CA09C6 /* Contact.storyboard */,
+				F2B58AAF2201B38E00396F9E /* Contract.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				F2B02EBC22001FF200E6C76D /* userSettingVC.swift */,
 				F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */,
 				F2FBC8E8220039DD0079C47D /* VisitVC.swift */,
+				F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */,
 			);
 			path = "Main Storyboard";
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */,
 				F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */,
 				F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */,
+				F2B58AB02201B38E00396F9E /* Contract.storyboard in Resources */,
 				F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +417,7 @@
 				F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */,
 				F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */,
 				F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */,
+				F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */,
 				F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */,
 				F288347821FF536300CA09C6 /* UserDetailContract_TableView.swift in Sources */,
 				F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */,

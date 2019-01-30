@@ -1,41 +1,39 @@
 //
-//  MainContractsVC.swift
+//  contractFilterVC.swift
 //  Cefi Meetings
 //
-//  Created by Syed ShahRukh Haider on 25/01/2019.
+//  Created by Syed ShahRukh Haider on 30/01/2019.
 //  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
 //
 
 import UIKit
 
-class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var NaviBar: UINavigationBar!
-
-    @IBOutlet weak var contract_Table: UITableView!
+    @IBOutlet weak var filterTable: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contract_Table.delegate = self
-        contract_Table.dataSource = self
+        filterTable.delegate = self
+        filterTable.dataSource = self
         
         
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
         NaviBar.shadowImage = UIImage()
         
-        contract_Table.reloadData()
-
+        filterTable.reloadData()
+        
     }
     
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -43,12 +41,6 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         return cell
     }
-  
-    @IBAction func addContractAction(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
-        
-        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+
+
 }
