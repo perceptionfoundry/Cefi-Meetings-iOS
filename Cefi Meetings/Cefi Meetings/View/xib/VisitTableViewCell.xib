@@ -186,6 +186,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="b2T-kA-Dcx" secondAttribute="bottom" id="EPu-rA-g1O"/>
                     <constraint firstItem="b2T-kA-Dcx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ar2-Sl-K0k"/>

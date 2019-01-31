@@ -18,8 +18,9 @@ class NewContactVC: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var industryCategory: UITextField!
-    @IBOutlet weak var typeCategory: UITextField!
-    @IBOutlet weak var referredBy: UITextField!
+    @IBOutlet weak var streetCategory: UITextField!
+    @IBOutlet weak var townCity: UITextField!
+    @IBOutlet weak var Territory: UITextField!
     
     
     

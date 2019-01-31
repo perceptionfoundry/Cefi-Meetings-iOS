@@ -13,9 +13,22 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var visitTable: UITableView!
     
+  
     
-var selectedSkill = [Int]()
+    @IBOutlet weak var timeLabel: UILabel!
+    var selectedSkill = [Int]()
     
+    
+    
+    var dummyData = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
+                     ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
+                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
+                     ["Type":"Initial-Meeting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
+    
+    
+    
+    
+    ]
     
     
     override func viewDidLoad() {
@@ -37,7 +50,7 @@ var selectedSkill = [Int]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return dummyData.count
     }
  
     
@@ -51,8 +64,62 @@ var selectedSkill = [Int]()
         let cell = tableView.dequeueReusableCell(withIdentifier: "Visit", for: indexPath) as! VisitTableViewCell
 
         cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
 //
+        
+        
+        var type = dummyData[indexPath.row]["Type"]
+        
+        if type == "Dealer"{
+            
+//            cell.topView.backgroundColor = UIColor(red: 14.0, green: 65.0, blue: 3.0, alpha: 1)
+            cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+            cell.userNameLabel.textColor = UIColor.white
+            cell.businessNameLabel.textColor = UIColor.white
+            cell.timeLabel.textColor = UIColor.white
+            cell.callNowButton.setImage(UIImage(named: "call_now_light"), for: .normal)
+            
+            cell.typeLabel.text = dummyData[indexPath.row]["Type"]
+            cell.businessNameLabel.text = dummyData[indexPath.row]["Business"]
+            cell.userNameLabel.text = dummyData[indexPath.row]["User"]
+           
+            let rating = Int(dummyData[indexPath.row]["Rating"]!)
+            let value = Double(exactly: rating!)
+            cell.ratingStar.value = CGFloat(value!)
+            
+            cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
+            
+        }
+  
+        else if type == "Client" || type == "Follow-Up" || type == "Initial-Meeting" {
+            
+        cell.topView.backgroundColor = UIColor.white
+
+        cell.typeLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+
+        cell.userNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+        cell.businessNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+        cell.timeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+            
+            cell.typeLabel.text = dummyData[indexPath.row]["Type"]
+            cell.businessNameLabel.text = dummyData[indexPath.row]["Business"]
+            cell.userNameLabel.text = dummyData[indexPath.row]["User"]
+            
+            let rating = Int(dummyData[indexPath.row]["Rating"]!)
+            let value = Double(exactly: rating!)
+            cell.ratingStar.value = CGFloat(value!)
+            
+            cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
+        }
+        
+        
+        
+       
+        
+
+        
+        
         
         if self.selectedSkill.contains(indexPath.row){
 
@@ -123,14 +190,17 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
        
         
           return 210
-            
-            
-     
-       
-       
         
     }
     
-
+    @IBAction func addButtonAction(_ sender: Any) {
+        
+        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
+        
+        let vc = storyboardRef.instantiateViewController(withIdentifier: "New_Visit")
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 }

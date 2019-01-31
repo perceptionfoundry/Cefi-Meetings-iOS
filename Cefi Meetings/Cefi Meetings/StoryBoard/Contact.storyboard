@@ -68,11 +68,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="industry_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="Nuu-FS-zGm">
                                 <rect key="frame" x="36" y="389" width="10.5" height="12"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="type_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Xx-Aqn">
-                                <rect key="frame" x="35" y="447.5" width="15" height="12"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city_contact" translatesAutoresizingMaskIntoConstraints="NO" id="erN-Xx-Aqn">
+                                <rect key="frame" x="37" y="447.5" width="11" height="12"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="referred_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-UG-soK">
-                                <rect key="frame" x="35" y="510" width="14" height="10.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city_contact" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-UG-soK">
+                                <rect key="frame" x="36.5" y="509.5" width="11" height="11.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgg-DD-gFt">
                                 <rect key="frame" x="66.5" y="213.5" width="92" height="20"/>
@@ -98,14 +98,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-QX-ddL">
-                                <rect key="frame" x="69.5" y="443.5" width="30" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-QX-ddL">
+                                <rect key="frame" x="66.5" y="443.5" width="92" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referred by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ3-Ut-VRY">
-                                <rect key="frame" x="71.5" y="505.5" width="73" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Town / City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQ3-Ut-VRY">
+                                <rect key="frame" x="72.5" y="505.5" width="70.5" height="20"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,19 +129,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tl5-dQ-f4H">
-                                <rect key="frame" x="211" y="385" width="131" height="20"/>
+                                <rect key="frame" x="206.5" y="385" width="131" height="20"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-oz-pNW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Line 1" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-oz-pNW">
                                 <rect key="frame" x="211" y="443.5" width="131" height="20"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose from Contact" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-Bq-WZK">
-                                <rect key="frame" x="206.5" y="505.5" width="140.5" height="20"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRO-Bq-WZK">
+                                <rect key="frame" x="201.5" y="567" width="140.5" height="20"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -149,11 +149,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="KbO-g7-rGx">
                                 <rect key="frame" x="346.5" y="390" width="10" height="10"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="GEF-2K-SHv">
-                                <rect key="frame" x="346.5" y="448.5" width="10" height="10"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Lmf-fo-SfL">
-                                <rect key="frame" x="346.5" y="510.5" width="10" height="9.5"/>
+                                <rect key="frame" x="346.5" y="572.5" width="10" height="9.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Z-SD-xcW">
                                 <rect key="frame" x="19" y="193" width="337.5" height="0.5"/>
@@ -183,15 +180,30 @@
                                 <rect key="frame" x="19" y="541" width="337.5" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Territory/State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-jU-ucv">
+                                <rect key="frame" x="68" y="565.5" width="89" height="20"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city_contact" translatesAutoresizingMaskIntoConstraints="NO" id="2VY-OS-Ezx">
+                                <rect key="frame" x="37" y="569.5" width="10.5" height="11.5"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZ6-cE-IlQ">
+                                <rect key="frame" x="201.5" y="505.5" width="150" height="20"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Oxv-UG-soK" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.5" id="0GR-RW-JzT"/>
                             <constraint firstItem="Lmf-fo-SfL" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.014" id="0Yh-t1-LyI"/>
-                            <constraint firstItem="GEF-2K-SHv" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.0275" id="0eE-yJ-LEQ"/>
                             <constraint firstItem="NaO-cb-4Bn" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="0lH-fb-YGI"/>
                             <constraint firstItem="nna-YW-egC" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="1d2-wQ-MZN"/>
                             <constraint firstItem="Mgg-DD-gFt" firstAttribute="centerY" secondItem="0Qf-No-qwE" secondAttribute="centerY" id="2Lm-FU-6ZA"/>
+                            <constraint firstItem="Ax6-jU-ucv" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="2f3-ZI-cRg"/>
                             <constraint firstItem="uBx-BW-IXY" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="387-1F-sfZ"/>
                             <constraint firstItem="xXV-tz-VK2" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="3AC-Hy-Eom"/>
                             <constraint firstItem="nna-YW-egC" firstAttribute="centerY" secondItem="5WG-jt-GxO" secondAttribute="centerY" id="3lT-KC-wlr"/>
@@ -201,11 +213,14 @@
                             <constraint firstItem="oCK-lB-Wzq" firstAttribute="centerY" secondItem="4xB-fs-Iyr" secondAttribute="centerY" id="5hS-HC-4e3"/>
                             <constraint firstItem="Nuu-FS-zGm" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.15" id="6RA-Xp-b1X"/>
                             <constraint firstItem="KbO-g7-rGx" firstAttribute="centerY" secondItem="Tl5-dQ-f4H" secondAttribute="centerY" id="6rs-F1-3nu"/>
+                            <constraint firstItem="LZ6-cE-IlQ" firstAttribute="centerY" secondItem="JQ3-Ut-VRY" secondAttribute="centerY" id="9F8-jp-Akr"/>
                             <constraint firstItem="PkG-SP-JUN" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="AXg-HW-69R"/>
                             <constraint firstItem="NaO-cb-4Bn" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="Amy-cK-jEG"/>
                             <constraint firstItem="0Qf-No-qwE" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.65" id="BBJ-iR-HFL"/>
-                            <constraint firstItem="Oxv-UG-soK" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="BTm-Hv-TgC"/>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="BTm-Hv-TgC"/>
+                            <constraint firstItem="2VY-OS-Ezx" firstAttribute="centerY" secondItem="Ax6-jU-ucv" secondAttribute="centerY" id="CMN-Oe-he0"/>
                             <constraint firstItem="pjr-oz-pNW" firstAttribute="centerY" secondItem="BSd-QX-ddL" secondAttribute="centerY" id="CUR-Vx-1oa"/>
+                            <constraint firstItem="2VY-OS-Ezx" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="CX9-uI-PmX"/>
                             <constraint firstItem="4xB-fs-Iyr" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.032" id="Dky-Dm-CZ2"/>
                             <constraint firstItem="Nuu-FS-zGm" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.018" id="EI8-Fg-5yj"/>
                             <constraint firstItem="KbO-g7-rGx" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.875" id="Eig-Fc-lIN"/>
@@ -218,8 +233,7 @@
                             <constraint firstItem="7J8-Bk-U7D" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.4" id="I7l-a9-xJ2"/>
                             <constraint firstItem="0Qf-No-qwE" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.225" id="JV3-Gu-VnG"/>
                             <constraint firstItem="i0p-Qg-Azw" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="LpH-LV-hVh"/>
-                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.04" id="MSc-ig-yT7"/>
-                            <constraint firstItem="GEF-2K-SHv" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="MfC-PL-RP6"/>
+                            <constraint firstItem="erN-Xx-Aqn" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.03" id="MSc-ig-yT7"/>
                             <constraint firstItem="5WG-jt-GxO" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="MfE-Jy-hQP"/>
                             <constraint firstItem="4xB-fs-Iyr" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="Mlu-AP-1hP"/>
                             <constraint firstItem="5WG-jt-GxO" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.0175" id="Mvn-4v-Cve"/>
@@ -233,6 +247,7 @@
                             <constraint firstItem="X2R-sQ-ZGM" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="QAB-xa-2F0"/>
                             <constraint firstItem="Do3-dt-6ey" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="RwX-BP-Viz"/>
                             <constraint firstItem="KbO-g7-rGx" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.015" id="T15-8O-5PL"/>
+                            <constraint firstItem="LZ6-cE-IlQ" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="TFs-DD-HKp"/>
                             <constraint firstItem="Q6Z-SD-xcW" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.001" id="Tdt-QB-8yL"/>
                             <constraint firstItem="Mgg-DD-gFt" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="Tyh-07-SXe"/>
                             <constraint firstItem="oCK-lB-Wzq" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.44" id="U1L-iN-Fwl"/>
@@ -241,18 +256,21 @@
                             <constraint firstItem="JQ3-Ut-VRY" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.575" id="Vgf-C3-94o"/>
                             <constraint firstItem="NMp-oJ-PpP" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.576" id="Vuf-ux-CUH"/>
                             <constraint firstItem="uBx-BW-IXY" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.73" id="Vv2-b7-4Hj"/>
-                            <constraint firstItem="BSd-QX-ddL" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.45" id="Xtd-cY-HhE"/>
-                            <constraint firstItem="cRO-Bq-WZK" firstAttribute="centerY" secondItem="JQ3-Ut-VRY" secondAttribute="centerY" id="Ybk-7e-mZz"/>
+                            <constraint firstItem="BSd-QX-ddL" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.6" id="Xtd-cY-HhE"/>
+                            <constraint firstItem="cRO-Bq-WZK" firstAttribute="centerY" secondItem="JQ3-Ut-VRY" secondAttribute="centerY" multiplier="1.12" id="Ybk-7e-mZz"/>
                             <constraint firstItem="Q6Z-SD-xcW" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.563" id="Yix-yk-WjK"/>
+                            <constraint firstItem="LZ6-cE-IlQ" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.4" id="b1Q-fb-ozh"/>
                             <constraint firstItem="LiR-CT-s17" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="bWg-97-3lX"/>
                             <constraint firstItem="xXV-tz-VK2" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.02" id="biL-AV-o26"/>
                             <constraint firstItem="H2i-2I-57I" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.48" id="bkZ-9W-Gns"/>
                             <constraint firstItem="i0p-Qg-Azw" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.403" id="c3b-rf-ym0"/>
                             <constraint firstItem="X2R-sQ-ZGM" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="cV0-xw-6pQ"/>
                             <constraint firstItem="Nuu-FS-zGm" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.029" id="cze-c0-WGr"/>
+                            <constraint firstItem="Ax6-jU-ucv" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.675" id="d0m-2I-wsT"/>
                             <constraint firstItem="Oxv-UG-soK" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.224" id="dTE-cC-AtH"/>
                             <constraint firstItem="NMp-oJ-PpP" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.001" id="dl9-w4-bjz"/>
                             <constraint firstItem="NaO-cb-4Bn" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.001" id="e07-3h-zrf"/>
+                            <constraint firstItem="2VY-OS-Ezx" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.225" id="eT3-U2-NLD"/>
                             <constraint firstItem="x5B-Vm-WOM" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="fTt-If-uVg"/>
                             <constraint firstItem="NaO-cb-4Bn" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.9" id="gNp-fO-N5e"/>
                             <constraint firstItem="bxI-BO-9z5" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.31" id="gOZ-Qr-nvB"/>
@@ -262,27 +280,26 @@
                             <constraint firstItem="0Qf-No-qwE" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.033" id="hax-Kt-AJv"/>
                             <constraint firstItem="NMp-oJ-PpP" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="hkl-F1-Rqq"/>
                             <constraint firstItem="BSd-QX-ddL" firstAttribute="centerY" secondItem="erN-Xx-Aqn" secondAttribute="centerY" id="htb-Og-120"/>
-                            <constraint firstItem="Oxv-UG-soK" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.037" id="iBV-fS-YEB"/>
+                            <constraint firstItem="Oxv-UG-soK" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.03" id="iBV-fS-YEB"/>
                             <constraint firstItem="PkG-SP-JUN" firstAttribute="centerY" secondItem="nna-YW-egC" secondAttribute="centerY" id="ibo-q7-yGR"/>
                             <constraint firstItem="X2R-sQ-ZGM" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.235" id="jUz-jp-Wsl"/>
                             <constraint firstItem="erN-Xx-Aqn" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.32" id="kFC-hw-Eir"/>
                             <constraint firstItem="Nuu-FS-zGm" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="lEo-pq-6fQ"/>
-                            <constraint firstItem="GEF-2K-SHv" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.875" id="lLw-Rv-9u9"/>
                             <constraint firstItem="KbO-g7-rGx" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.027" id="lQI-u6-W7S"/>
                             <constraint firstItem="Rh0-OL-pcf" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.14" id="lSI-D4-Sr7"/>
                             <constraint firstItem="4xB-fs-Iyr" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.22" id="m1R-oJ-kPf"/>
                             <constraint firstItem="x5B-Vm-WOM" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="1.066" id="mV2-at-SZ1"/>
                             <constraint firstItem="5WG-jt-GxO" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.0335" id="muD-yT-Z1T"/>
-                            <constraint firstItem="GEF-2K-SHv" firstAttribute="centerY" secondItem="pjr-oz-pNW" secondAttribute="centerY" id="n4h-2C-JeL"/>
+                            <constraint firstItem="2VY-OS-Ezx" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.0275" id="n48-I9-Zn7"/>
                             <constraint firstItem="Q6Z-SD-xcW" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="oZQ-KP-ff6"/>
                             <constraint firstItem="Tl5-dQ-f4H" firstAttribute="centerY" secondItem="H2i-2I-57I" secondAttribute="centerY" id="s6S-zr-hiN"/>
                             <constraint firstItem="x5B-Vm-WOM" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.001" id="sCG-jA-M3y"/>
                             <constraint firstItem="erN-Xx-Aqn" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="0.227" id="ssJ-qg-8Dd"/>
                             <constraint firstItem="Rh0-OL-pcf" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" id="tNh-Pk-zQI"/>
                             <constraint firstItem="980-vf-ddS" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.4" id="tq7-cR-daW"/>
-                            <constraint firstItem="cRO-Bq-WZK" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="uvs-OP-Oz0"/>
+                            <constraint firstItem="cRO-Bq-WZK" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.45" id="uvs-OP-Oz0"/>
                             <constraint firstItem="i0p-Qg-Azw" firstAttribute="height" secondItem="v5S-9R-3In" secondAttribute="height" multiplier="0.001" id="uyk-IN-JKo"/>
-                            <constraint firstItem="Tl5-dQ-f4H" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="vtw-AY-AFk"/>
+                            <constraint firstItem="Tl5-dQ-f4H" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.45" id="vtw-AY-AFk"/>
                             <constraint firstItem="pjr-oz-pNW" firstAttribute="centerX" secondItem="3xf-Yo-9YC" secondAttribute="centerX" multiplier="1.475" id="wEV-UY-8F6"/>
                             <constraint firstItem="bxI-BO-9z5" firstAttribute="centerY" secondItem="3xf-Yo-9YC" secondAttribute="centerY" multiplier="0.285" id="waz-lW-pFE"/>
                             <constraint firstItem="uBx-BW-IXY" firstAttribute="width" secondItem="v5S-9R-3In" secondAttribute="width" multiplier="0.9" id="wbr-o2-2ya"/>
@@ -299,14 +316,15 @@
                         <viewLayoutGuide key="safeArea" id="3xf-Yo-9YC"/>
                     </view>
                     <connections>
+                        <outlet property="Territory" destination="cRO-Bq-WZK" id="VQL-i2-LWd"/>
                         <outlet property="businessName" destination="PkG-SP-JUN" id="d90-bH-UMu"/>
                         <outlet property="contactName" destination="LiR-CT-s17" id="E2i-Vb-rrp"/>
                         <outlet property="doneButton" destination="iKB-4I-Zg5" id="LNN-jb-hH1"/>
                         <outlet property="emailAddress" destination="7J8-Bk-U7D" id="a1c-4s-tyw"/>
                         <outlet property="industryCategory" destination="Tl5-dQ-f4H" id="Odt-Cf-uem"/>
                         <outlet property="phoneNumber" destination="980-vf-ddS" id="7QJ-LO-KB2"/>
-                        <outlet property="referredBy" destination="cRO-Bq-WZK" id="m3p-Qw-hJU"/>
-                        <outlet property="typeCategory" destination="pjr-oz-pNW" id="Jn0-I1-Fqt"/>
+                        <outlet property="streetCategory" destination="pjr-oz-pNW" id="2Sk-fS-t3b"/>
+                        <outlet property="townCity" destination="LZ6-cE-IlQ" id="3pK-P4-Aad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJh-0T-8of" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,6 +620,7 @@
         <image name="back_button" width="44" height="19"/>
         <image name="business_newContact" width="13.5" height="12"/>
         <image name="cell_right_arrow" width="7.5" height="12"/>
+        <image name="city_contact" width="10.5" height="12"/>
         <image name="contact_newContact" width="12" height="13.5"/>
         <image name="create_contract_Label" width="220" height="72"/>
         <image name="done_Button" width="121" height="30"/>
@@ -612,7 +631,5 @@
         <image name="phone_newContact" width="8" height="12"/>
         <image name="phone_user_detail" width="47" height="47"/>
         <image name="red_pending_doc" width="7.5" height="9"/>
-        <image name="referred_newContact" width="14.5" height="10"/>
-        <image name="type_newContact" width="15" height="12"/>
     </resources>
 </document>

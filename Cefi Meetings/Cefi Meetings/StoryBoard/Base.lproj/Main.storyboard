@@ -764,6 +764,9 @@ We hope you have a great and productive day!</string>
                                             <constraint firstAttribute="width" secondItem="1I5-jf-W1I" secondAttribute="height" multiplier="1:1" id="9Fc-eQ-xP7"/>
                                         </constraints>
                                         <state key="normal" image="+_button"/>
+                                        <connections>
+                                            <action selector="addButtonAction:" destination="yce-ko-b6j" eventType="touchUpInside" id="oIG-ll-5Pc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-qd-d5R">
                                         <rect key="frame" x="161.5" y="19" width="52" height="29"/>
@@ -801,7 +804,8 @@ We hope you have a great and productive day!</string>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U9-Ta-uoW">
                                 <rect key="frame" x="0.0" y="103.5" width="375" height="514.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.95699999999999996" green="0.95683962106704712" blue="0.95686405897140503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Visit" rowHeight="110" id="ayn-oH-VEE" customClass="VisitTableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
@@ -874,19 +878,19 @@ We hope you have a great and productive day!</string>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-FR-fMX">
                                                                     <rect key="frame" x="36" y="18" width="169" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
-                                                                    <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M31-cu-IH7">
                                                                     <rect key="frame" x="36" y="43.5" width="202.5" height="25"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                                    <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inD-1i-AYm">
                                                                     <rect key="frame" x="37.5" y="75.5" width="236.5" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
-                                                                    <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:15 am" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7L-MU-dxk">
@@ -897,7 +901,7 @@ We hope you have a great and productive day!</string>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-Mw-my2" customClass="HCSStarRatingView">
                                                                     <rect key="frame" x="29.5" y="105.5" width="101" height="11.5"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="tintColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyStarColor">
@@ -922,7 +926,7 @@ We hope you have a great and productive day!</string>
                                                                     <state key="normal" image="call_now"/>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" red="0.05464480072259903" green="0.25295370817184448" blue="0.011642963625490665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.275" id="7ay-zm-psU"/>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="centerY" secondItem="M31-cu-IH7" secondAttribute="centerY" id="BB1-LV-Xjx"/>
@@ -983,6 +987,7 @@ We hope you have a great and productive day!</string>
                                                 <constraint firstAttribute="trailing" secondItem="Vcq-KB-pof" secondAttribute="trailing" id="rIq-P7-jvz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="bottomView" destination="HZY-La-Pgd" id="Fd2-2v-ryu"/>
                                             <outlet property="businessNameLabel" destination="inD-1i-AYm" id="qg6-90-dhg"/>
@@ -1013,12 +1018,22 @@ We hope you have a great and productive day!</string>
                     <navigationItem key="navigationItem" id="Ywh-kQ-j3E"/>
                     <connections>
                         <outlet property="dateLabel" destination="vhf-KE-AyF" id="M0e-CV-kR6"/>
+                        <outlet property="timeLabel" destination="vhf-KE-AyF" id="0yv-DJ-AxQ"/>
                         <outlet property="visitTable" destination="6U9-Ta-uoW" id="wXo-u8-9rb"/>
+                        <segue destination="MpR-p6-a9I" kind="show" identifier="Visit" id="Uia-r4-wpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL5-S7-BF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2141.5999999999999" y="1736.5817091454273"/>
+        </scene>
+        <!--Visit-->
+        <scene sceneID="o3A-19-pYm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Visit" id="MpR-p6-a9I" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbD-c7-MAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="1618"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="SsE-pF-Skj">
@@ -2272,10 +2287,6 @@ I bet you’re still using Bootstrap too…</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nfu-9z-ag7">
-                                <rect key="frame" x="26" y="192.5" width="323" height="31"/>
-                                <color key="tintColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-nT-6YX" customClass="Custom_Segment" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="19" y="319.5" width="337.5" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2397,6 +2408,47 @@ I bet you’re still using Bootstrap too…</string>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXu-AG-AjK" customClass="RangeSlider" customModule="SwiftRangeSlider">
+                                <rect key="frame" x="28" y="197.5" width="319" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackTintColor">
+                                        <color key="value" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="trackHighlightTintColor">
+                                        <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="stepValue">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="knobHasShadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelColor">
+                                        <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="knobBorderThickness">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="knobBorderTintColor">
+                                        <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -2406,6 +2458,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="3cs-67-5Rv"/>
                             <constraint firstItem="D9h-DG-cBE" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="4Gr-wO-mL8"/>
                             <constraint firstItem="ZKu-lU-Kc7" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.3" id="6Pq-FO-uBw"/>
+                            <constraint firstItem="hXu-AG-AjK" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="76q-iS-XXk"/>
                             <constraint firstItem="8Ev-RH-OBp" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="CaJ-MW-RNI"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.825" id="E2e-Vu-QWe"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.35" id="EOt-Mm-3Bq"/>
@@ -2420,7 +2473,6 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="Lvg-BZ-cCf"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="MS9-mT-uA3"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="N4a-eh-JRB"/>
-                            <constraint firstItem="Nfu-9z-ag7" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="P6T-EY-Agl"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="QUp-Kj-AFE"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.02" id="RSs-to-BSh"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.06" id="Rdh-eD-DPh"/>
@@ -2429,15 +2481,15 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.225" id="SZR-xM-dkz"/>
                             <constraint firstAttribute="trailing" secondItem="D9h-DG-cBE" secondAttribute="trailing" id="Uuh-5E-RhR"/>
                             <constraint firstItem="iCC-FN-dMe" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="VkL-gL-T3Q"/>
-                            <constraint firstItem="Nfu-9z-ag7" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="WTV-38-qAK"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.3" id="WcM-hb-Trx"/>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="XHz-dh-g1G"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="YTz-9B-C1e"/>
-                            <constraint firstItem="Nfu-9z-ag7" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.65" id="aEZ-Ks-YlM"/>
+                            <constraint firstItem="hXu-AG-AjK" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.03" id="bIV-qg-LLG"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="bLb-lw-KvF"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="cb7-uh-YOj"/>
                             <constraint firstItem="ZKu-lU-Kc7" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.95" id="d3A-p0-0WJ"/>
                             <constraint firstItem="iCC-FN-dMe" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.95" id="fvJ-gg-bn1"/>
+                            <constraint firstItem="hXu-AG-AjK" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="gJU-7D-gla"/>
                             <constraint firstItem="SZs-dH-A4Q" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.25" id="jOT-P9-37S"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.9" id="jwM-Xh-hR3"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="top" secondItem="d8P-bl-QQn" secondAttribute="top" id="m0z-E6-rsW"/>
@@ -2446,6 +2498,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="o7U-Ns-z7F"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.4" id="py3-H2-D8i"/>
                             <constraint firstItem="iCC-FN-dMe" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.3" id="tbZ-bi-gjL"/>
+                            <constraint firstItem="hXu-AG-AjK" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.65" id="wDJ-Cf-vhY"/>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="xUR-VW-Zqy"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.45" id="xc7-ze-NCs"/>
                         </constraints>
@@ -2474,7 +2527,7 @@ I bet you’re still using Bootstrap too…</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68u-Ev-mbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5932" y="2202"/>
+            <point key="canvasLocation" x="5932" y="2201.649175412294"/>
         </scene>
     </scenes>
     <resources>

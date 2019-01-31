@@ -14,7 +14,6 @@ class VisitTableViewCell: UITableViewCell {
     @IBOutlet weak var topView: Custom_View!
     @IBOutlet weak var bottomView: Custom_View!
     
-    @IBOutlet weak var topview_Vertical: NSLayoutConstraint!
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
