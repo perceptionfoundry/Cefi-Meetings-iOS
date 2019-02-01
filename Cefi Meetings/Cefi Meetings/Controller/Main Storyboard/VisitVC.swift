@@ -90,6 +90,10 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
             
+            
+            cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+            cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
+            
         }
   
         else if type == "Client" || type == "Follow-Up" || type == "Initial-Meeting" {
@@ -111,6 +115,12 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.ratingStar.value = CGFloat(value!)
             
             cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
+            
+            
+            cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+            cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
+
+            
         }
         
         
@@ -191,6 +201,19 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
         
           return 210
         
+    }
+    
+    @objc func startMeeting(){
+     
+    }
+    
+    
+    @objc func detailView(){
+        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
+        
+        let vc = storyboardRef.instantiateViewController(withIdentifier: "Visit_Detail")
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {

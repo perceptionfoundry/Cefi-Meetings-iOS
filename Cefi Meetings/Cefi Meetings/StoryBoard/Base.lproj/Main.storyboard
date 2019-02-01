@@ -989,6 +989,8 @@ We hope you have a great and productive day!</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="bottomDetailButton" destination="mLx-do-khy" id="l6j-7Y-UZI"/>
+                                            <outlet property="bottomStartButton" destination="EXy-k1-YQt" id="f1k-OM-pYa"/>
                                             <outlet property="bottomView" destination="HZY-La-Pgd" id="Fd2-2v-ryu"/>
                                             <outlet property="businessNameLabel" destination="inD-1i-AYm" id="qg6-90-dhg"/>
                                             <outlet property="callNowButton" destination="Era-kC-OM6" id="77w-wx-ldC"/>

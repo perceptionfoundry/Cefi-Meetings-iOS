@@ -41,7 +41,18 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contract", for: indexPath) as! Contract_TableViewCell
         
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Detail")
+//        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
   
     @IBAction func addContractAction(_ sender: Any) {

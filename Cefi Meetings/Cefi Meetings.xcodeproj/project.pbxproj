@@ -19,6 +19,8 @@
 		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
 		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
 		F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F68121FB6A5F00269506 /* MainPendingVC.swift */; };
+		F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FED22048F870010CE86 /* ContractDetailVC.swift */; };
+		F27D7FF02204AD9E0010CE86 /* VisitDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */; };
 		F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F288347121FED4E700CA09C6 /* Contact.storyboard */; };
 		F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347321FEDBE200CA09C6 /* NewContactVC.swift */; };
 		F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347521FF41BB00CA09C6 /* UserDetailVC.swift */; };
@@ -77,6 +79,8 @@
 		F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pending_TableViewCell.swift; sourceTree = "<group>"; };
 		F258F68121FB6A5F00269506 /* MainPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPendingVC.swift; sourceTree = "<group>"; };
+		F27D7FED22048F870010CE86 /* ContractDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailVC.swift; sourceTree = "<group>"; };
+		F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDetailVC.swift; sourceTree = "<group>"; };
 		F288347121FED4E700CA09C6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
 		F288347321FEDBE200CA09C6 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
 		F288347521FF41BB00CA09C6 /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			children = (
 				F22034F92201D01700F8BE39 /* NewContractVC.swift */,
 				F22034FC2201D0FD00F8BE39 /* ContractTypeVC.swift */,
+				F27D7FED22048F870010CE86 /* ContractDetailVC.swift */,
 			);
 			path = "Contract Storyboard";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				F224F1032203486E00DD332F /* ReferralContractType.swift */,
 				F224F10522034E9000DD332F /* ReferralNewContactVC.swift */,
 				F224F10722035A7C00DD332F /* NewVisit.swift */,
+				F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */,
 			);
 			path = Visit;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,
 				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
+				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
 				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
@@ -490,6 +497,7 @@
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
 				F224F10822035A7C00DD332F /* NewVisit.swift in Sources */,
 				F288347821FF536300CA09C6 /* UserDetailContract_TableView.swift in Sources */,
+				F27D7FF02204AD9E0010CE86 /* VisitDetailVC.swift in Sources */,
 				F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */,
 				F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */,
 				F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  NewVisit.swift
+//  VisitDetailVC.swift
 //  Cefi Meetings
 //
-//  Created by Syed ShahRukh Haider on 31/01/2019.
+//  Created by Syed ShahRukh Haider on 01/02/2019.
 //  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
 //
 
@@ -11,15 +11,15 @@ import GoogleMaps
 import GooglePlaces
 
 
-class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
-   
+class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
+    
     
     struct meetup {
         var name : String
         var lat : Double
         var long : Double
     }
-  
+    
     
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var contactTF: UITextField!
@@ -29,6 +29,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
     @IBOutlet weak var reminderTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
     
+    @IBOutlet weak var editButton: Custom_Button!
     @IBOutlet weak var detailButton_Y_Constraint: NSLayoutConstraint!
     
     
@@ -37,14 +38,22 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
     
+    
+    var editOn = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        contractTF.isEnabled = false
+        dateTF.isEnabled = false
+        timeTF.isEnabled = false
+        reminderTF.isEnabled = false
+        locationTF.isEnabled = false
         
         
-        
-        mapView.isHidden = true
-      locationTF.delegate = self
+//        mapView.isHidden = true
+        locationTF.delegate = self
         
         
         // Initialize device Current location delegate & respective functions
@@ -55,7 +64,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
         
         
         
-        detailButton_Y_Constraint.constant = -200
+      
         
         
         
@@ -73,10 +82,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
         self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
         
-
+        
     }
     
-  
+    
     @IBAction func contractDetailAction(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Contract", bundle: nil)
@@ -87,16 +96,47 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
     }
     
     
-    @IBAction func cancelButtonAction(_ sender: Any) {
-        
+    @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
- 
-
+    
+    @IBAction func editButtonAction(_ sender: Any) {
+       
+        if editOn == false{
+            editOn = true
+            editButton.backgroundColor = UIColor(red: 0.667, green: 0.667, blue: 0.667, alpha: 1)
+            
+            editButton.shadowOpacity = 10
+            editButton.shadowRadius = 2
+            editButton.shadowColor = UIColor.darkGray
+            contractTF.isEnabled = true
+            dateTF.isEnabled = true
+            timeTF.isEnabled = true
+            reminderTF.isEnabled = true
+            locationTF.isEnabled = true
+        }
+        
+        else{
+            editOn = false
+            editButton.backgroundColor = UIColor.clear
+            editButton.shadowOpacity = 0
+            editButton.shadowRadius = 0
+            
+            contractTF.isEnabled = false
+            dateTF.isEnabled = false
+            timeTF.isEnabled = false
+            reminderTF.isEnabled = false
+            locationTF.isEnabled = false
+        }
+        
+       
+        
+        
+    }
 }
 
 
-extension NewVisit: GMSAutocompleteViewControllerDelegate {
+extension VisitDetailVC: GMSAutocompleteViewControllerDelegate {
     
     // GOOGLE AUTOCOMPLETE DELEGATE FUNCTIONS
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
@@ -109,13 +149,13 @@ extension NewVisit: GMSAutocompleteViewControllerDelegate {
         
         chosenPlace = meetup(name: place.formattedAddress!, lat: lat, long: long )
         
-//        self.dismiss(animated: true, completion: nil)
+        //        self.dismiss(animated: true, completion: nil)
         
         self.dismiss(animated: true) {
             
-            self.mapView.isHidden = false
-            self.detailButton_Y_Constraint.constant = 0
-
+//            self.mapView.isHidden = false
+//            self.detailButton_Y_Constraint.constant = 0
+            
         }
         
         
@@ -129,3 +169,4 @@ extension NewVisit: GMSAutocompleteViewControllerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
