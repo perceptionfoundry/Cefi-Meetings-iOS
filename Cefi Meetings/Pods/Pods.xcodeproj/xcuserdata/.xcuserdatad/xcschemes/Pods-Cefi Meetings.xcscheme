@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2B4846D288876AAAAD27F45704C2A12"
+               BlueprintIdentifier = "C6B54AE5867076DFF7E833BFAE02549B"
                BlueprintName = "Pods-Cefi Meetings"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-Cefi Meetings.framework">

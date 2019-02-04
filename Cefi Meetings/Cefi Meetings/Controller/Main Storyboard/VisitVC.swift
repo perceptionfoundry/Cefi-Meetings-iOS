@@ -205,6 +205,11 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
     
     @objc func startMeeting(){
      
+        let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "Dealer")
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     

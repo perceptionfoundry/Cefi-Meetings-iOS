@@ -39,7 +39,6 @@
 		F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */; };
 		F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */; };
 		F2B58AB02201B38E00396F9E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B58AAF2201B38E00396F9E /* Contract.storyboard */; };
-		F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -48,6 +47,11 @@
 		F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */; };
 		F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */; };
 		F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */; };
+		F2ED7596220887AE00C4286F /* DealerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED7595220887AE00C4286F /* DealerVC.swift */; };
+		F2ED75982208921200C4286F /* DealerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED75972208921200C4286F /* DealerTableCell.swift */; };
+		F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */; };
+		F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B112208A70600FE5CF1 /* DealerListVC.swift */; };
+		F2F74B142208AA4B00FE5CF1 /* AddDealerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */; };
 		F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBC8E8220039DD0079C47D /* VisitVC.swift */; };
 		F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */; };
 /* End PBXBuildFile section */
@@ -101,7 +105,6 @@
 		F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitTableViewCell.xib; sourceTree = "<group>"; };
 		F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contractFilterVC.swift; sourceTree = "<group>"; };
 		F2B58AAF2201B38E00396F9E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
-		F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Segment.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -110,6 +113,11 @@
 		F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContactVC.swift; sourceTree = "<group>"; };
 		F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TableViewCell.swift; sourceTree = "<group>"; };
+		F2ED7595220887AE00C4286F /* DealerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerVC.swift; sourceTree = "<group>"; };
+		F2ED75972208921200C4286F /* DealerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableCell.swift; sourceTree = "<group>"; };
+		F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
+		F2F74B112208A70600FE5CF1 /* DealerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerListVC.swift; sourceTree = "<group>"; };
+		F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDealerVC.swift; sourceTree = "<group>"; };
 		F2FBC8E8220039DD0079C47D /* VisitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitVC.swift; sourceTree = "<group>"; };
 		F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +169,9 @@
 				F224F10522034E9000DD332F /* ReferralNewContactVC.swift */,
 				F224F10722035A7C00DD332F /* NewVisit.swift */,
 				F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */,
+				F2ED7595220887AE00C4286F /* DealerVC.swift */,
+				F2F74B112208A70600FE5CF1 /* DealerListVC.swift */,
+				F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */,
 			);
 			path = Visit;
 			sourceTree = "<group>";
@@ -173,6 +184,8 @@
 				F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */,
 				F288347721FF536300CA09C6 /* UserDetailContract_TableView.swift */,
 				F288347A21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift */,
+				F2ED75972208921200C4286F /* DealerTableCell.swift */,
+				F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -282,7 +295,6 @@
 				F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */,
 				F2DABFBB21F9E3D7009FEFCC /* Custom_ImageView.swift */,
 				F2DABFBC21F9E3D7009FEFCC /* Custom_Label.swift */,
-				F2DABFB521F9E3D6009FEFCC /* Custom_Segment.swift */,
 				F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */,
 				F2FBC8EA220084540079C47D /* UnderlinedTextField.swift */,
 			);
@@ -432,12 +444,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HCSStarRatingView/HCSStarRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/TTSegmentedControl/TTSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HCSStarRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRangeSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,25 +489,29 @@
 				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,
 				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
+				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,
 				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
 				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
 				F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */,
 				F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */,
+				F2ED7596220887AE00C4286F /* DealerVC.swift in Sources */,
 				F2DABFC421F9E3D7009FEFCC /* Custom_Label.swift in Sources */,
+				F2F74B142208AA4B00FE5CF1 /* AddDealerVC.swift in Sources */,
 				F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */,
+				F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */,
 				F288347D21FF61AD00CA09C6 /* UserFilterVC.swift in Sources */,
 				F2DABFC321F9E3D7009FEFCC /* Custom_ImageView.swift in Sources */,
 				F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */,
 				F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */,
+				F2ED75982208921200C4286F /* DealerTableCell.swift in Sources */,
 				F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */,
 				F22034FD2201D0FD00F8BE39 /* ContractTypeVC.swift in Sources */,
 				F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */,
 				F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */,
 				F22034FA2201D01800F8BE39 /* NewContractVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
-				F2DABFBD21F9E3D7009FEFCC /* Custom_Segment.swift in Sources */,
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
 				F224F10822035A7C00DD332F /* NewVisit.swift in Sources */,
 				F288347821FF536300CA09C6 /* UserDetailContract_TableView.swift in Sources */,

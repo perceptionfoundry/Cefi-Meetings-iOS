@@ -12,6 +12,7 @@ PODS:
   - HCSStarRatingView (1.5)
   - SwiftRangeSlider (2.0.0)
   - TagListView (1.3.2)
+  - TTSegmentedControl (0.4.7)
 
 DEPENDENCIES:
   - GoogleMaps
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - HCSStarRatingView
   - SwiftRangeSlider
   - TagListView
+  - TTSegmentedControl
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - HCSStarRatingView
     - SwiftRangeSlider
     - TagListView
+    - TTSegmentedControl
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
@@ -37,7 +40,8 @@ SPEC CHECKSUMS:
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   SwiftRangeSlider: f86e3b637c961120158fa1a89277c8343845cbe4
   TagListView: 0c7e9c26b9aff858224ee6b155f5fcacd9e27c83
+  TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
 
-PODFILE CHECKSUM: 56ebefde70f0cf5ef89ab5106070f8acfd077db8
+PODFILE CHECKSUM: 7935848cc7319a2022cd5ce146c288c19bc26898
 
 COCOAPODS: 1.5.2

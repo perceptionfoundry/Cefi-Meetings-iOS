@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import TTSegmentedControl
 
 class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
     
+    @IBOutlet weak var typeSegment: TTSegmentedControl!
+    
+    
+    @IBOutlet weak var statusSegment: TTSegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,8 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         filterTable.delegate = self
         filterTable.dataSource = self
         
+        typeSegment.itemTitles = ["Dealers","Prospects","Clients","Referrals"]
+        statusSegment.itemTitles = ["Open","Deal","Dead","Closed"]
         
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)

@@ -372,7 +372,7 @@
                                         <color key="backgroundColor" red="0.90197283029556274" green="0.90193891525268555" blue="0.90196198225021362" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leq-kU-Mj3">
-                                        <rect key="frame" x="14.5" y="20" width="114.5" height="103.5"/>
+                                        <rect key="frame" x="14.5" y="5.5" width="114.5" height="103.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="leq-kU-Mj3" secondAttribute="height" multiplier="10:9" id="xpV-n8-Z10"/>
                                         </constraints>
@@ -381,18 +381,8 @@
                                             <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="qcq-dx-IUm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-u2-LQ3">
-                                        <rect key="frame" x="158" y="20" width="114.5" height="103.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="8mj-u2-LQ3" secondAttribute="height" multiplier="10:9" id="4fo-w6-82I"/>
-                                        </constraints>
-                                        <state key="normal" image="Visit_Button"/>
-                                        <connections>
-                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="SDC-Hy-WAy"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gow-jL-8E9">
-                                        <rect key="frame" x="14.5" y="163.5" width="114.5" height="103"/>
+                                        <rect key="frame" x="14.5" y="149" width="114.5" height="103.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gow-jL-8E9" secondAttribute="height" multiplier="10:9" id="tdw-1e-JSz"/>
                                         </constraints>
@@ -402,7 +392,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD1-9B-d4u">
-                                        <rect key="frame" x="158" y="163.5" width="114.5" height="103"/>
+                                        <rect key="frame" x="158" y="149" width="114.5" height="103.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FD1-9B-d4u" secondAttribute="height" multiplier="10:9" id="8Nq-dW-DE9"/>
                                         </constraints>
@@ -418,7 +408,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlW-a1-Psm">
-                                        <rect key="frame" x="42" y="104.5" width="59.5" height="20.5"/>
+                                        <rect key="frame" x="49" y="104.5" width="59.5" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.12484120577573776" green="0.26858985424041748" blue="0.062648452818393707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -435,37 +425,47 @@
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mj-u2-LQ3">
+                                        <rect key="frame" x="158" y="5.5" width="114.5" height="103.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8mj-u2-LQ3" secondAttribute="height" multiplier="10:9" id="4fo-w6-82I"/>
+                                        </constraints>
+                                        <state key="normal" image="Visit_Button"/>
+                                        <connections>
+                                            <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="SDC-Hy-WAy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" id="22y-FZ-JY5"/>
-                                    <constraint firstItem="leq-kU-Mj3" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.5" id="236-O7-fyp"/>
+                                    <constraint firstItem="leq-kU-Mj3" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.4" id="236-O7-fyp"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.005" id="2R3-lc-g3e"/>
-                                    <constraint firstItem="8mj-u2-LQ3" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.5" id="3uk-gt-egv"/>
+                                    <constraint firstItem="8mj-u2-LQ3" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.4" id="3uk-gt-egv"/>
                                     <constraint firstItem="8mj-u2-LQ3" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="4Rj-mO-SE8"/>
-                                    <constraint firstItem="gow-jL-8E9" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.5" id="ACj-Ly-r2A"/>
-                                    <constraint firstItem="qlW-a1-Psm" firstAttribute="centerY" secondItem="leq-kU-Mj3" secondAttribute="centerY" multiplier="1.6" id="AUe-uu-OpF"/>
-                                    <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerX" secondItem="gow-jL-8E9" secondAttribute="centerX" id="DCS-ss-Z9f"/>
-                                    <constraint firstItem="qlW-a1-Psm" firstAttribute="centerX" secondItem="leq-kU-Mj3" secondAttribute="centerX" id="ECz-sJ-Zlk"/>
+                                    <constraint firstItem="gow-jL-8E9" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.4" id="ACj-Ly-r2A"/>
+                                    <constraint firstItem="glL-YJ-E9o" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.8" id="Ej4-Bv-1OP"/>
                                     <constraint firstItem="gow-jL-8E9" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="FSV-s9-blD"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="height" secondItem="IX3-Ph-dxr" secondAttribute="height" multiplier="0.9" id="FlD-O7-Q0N"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="height" secondItem="IX3-Ph-dxr" secondAttribute="height" multiplier="0.005" id="Hb1-lx-y3G"/>
-                                    <constraint firstItem="FD1-9B-d4u" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.5" id="KMn-oZ-iQL"/>
-                                    <constraint firstItem="glL-YJ-E9o" firstAttribute="centerY" secondItem="FD1-9B-d4u" secondAttribute="centerY" multiplier="1.2" id="Kds-6b-QZq"/>
-                                    <constraint firstItem="d4o-gZ-g97" firstAttribute="centerY" secondItem="8mj-u2-LQ3" secondAttribute="centerY" multiplier="1.6" id="L1U-XM-YyX"/>
+                                    <constraint firstItem="FD1-9B-d4u" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.4" id="KMn-oZ-iQL"/>
                                     <constraint firstItem="leq-kU-Mj3" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="Ozl-tB-ag3"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" id="Ozr-8w-GZa"/>
                                     <constraint firstItem="d4o-gZ-g97" firstAttribute="centerX" secondItem="8mj-u2-LQ3" secondAttribute="centerX" id="Phh-z1-PS7"/>
                                     <constraint firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="height" multiplier="1:1" id="PkG-Gc-hOW"/>
+                                    <constraint firstItem="qlW-a1-Psm" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.8" id="RUW-4A-Dbb"/>
+                                    <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="XON-fu-CP0"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" id="Xhj-Eh-uYo"/>
                                     <constraint firstItem="8mj-u2-LQ3" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="YdI-Re-7DQ"/>
                                     <constraint firstItem="leq-kU-Mj3" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="ctg-mS-OTk"/>
-                                    <constraint firstItem="glL-YJ-E9o" firstAttribute="centerX" secondItem="FD1-9B-d4u" secondAttribute="centerX" id="dqh-Q1-slO"/>
                                     <constraint firstItem="gow-jL-8E9" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="hrL-0k-DLR"/>
                                     <constraint firstItem="FD1-9B-d4u" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="ktv-Xn-Rav"/>
+                                    <constraint firstItem="glL-YJ-E9o" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="lcC-xs-D7S"/>
+                                    <constraint firstItem="d4o-gZ-g97" firstAttribute="centerY" secondItem="qlW-a1-Psm" secondAttribute="centerY" id="odb-yU-mHz"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" id="tOp-8W-EPv"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.9" id="ua5-Iq-T8K"/>
-                                    <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerY" secondItem="gow-jL-8E9" secondAttribute="centerY" multiplier="1.2" id="uqk-mb-QAt"/>
+                                    <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerY" secondItem="glL-YJ-E9o" secondAttribute="centerY" id="vRt-8v-wu6"/>
+                                    <constraint firstItem="qlW-a1-Psm" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.55" id="wRa-sM-Gms"/>
                                     <constraint firstItem="FD1-9B-d4u" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="zdu-ir-JB8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2289,7 +2289,7 @@ I bet you’re still using Bootstrap too…</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-nT-6YX" customClass="Custom_Segment" customModule="Cefi_Meetings" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-nT-6YX" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
                                 <rect key="frame" x="19" y="319.5" width="337.5" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2303,9 +2303,13 @@ I bet you’re still using Bootstrap too…</string>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
                                         <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useGradient" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
+                                        <color key="value" red="0.25459641220000001" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-rO-CI2" customClass="Custom_Segment" customModule="Cefi_Meetings" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-rO-CI2" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
                                 <rect key="frame" x="19" y="378.5" width="337.5" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2318,6 +2322,10 @@ I bet you’re still using Bootstrap too…</string>
                                     <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitle" value="Open,Deal,Dead,Closed"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
                                         <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useGradient" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
+                                        <color key="value" red="0.25459641220000001" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -2525,6 +2533,8 @@ I bet you’re still using Bootstrap too…</string>
                     <connections>
                         <outlet property="NaviBar" destination="kt3-5G-Adn" id="8GJ-Pr-NWh"/>
                         <outlet property="filterTable" destination="D9h-DG-cBE" id="tlu-qt-xMg"/>
+                        <outlet property="statusSegment" destination="6ic-rO-CI2" id="jkw-Tn-uQf"/>
+                        <outlet property="typeSegment" destination="CM4-nT-6YX" id="o84-Ee-wWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68u-Ev-mbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
