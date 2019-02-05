@@ -221,6 +221,12 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
             let vc = storyboard.instantiateViewController(withIdentifier: "Dealer")
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        else if visitCategory == "Client" {
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "Client")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
        
         

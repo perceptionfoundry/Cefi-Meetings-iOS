@@ -40,6 +40,7 @@
 		F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */; };
 		F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */; };
 		F2B58AB02201B38E00396F9E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B58AAF2201B38E00396F9E /* Contract.storyboard */; };
+		F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF7B2A220A03C00082A97F /* ClientVC.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -107,6 +108,7 @@
 		F2B02EC222002C6B00E6C76D /* VisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitTableViewCell.xib; sourceTree = "<group>"; };
 		F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contractFilterVC.swift; sourceTree = "<group>"; };
 		F2B58AAF2201B38E00396F9E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
+		F2BF7B2A220A03C00082A97F /* ClientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientVC.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F2F74B112208A70600FE5CF1 /* DealerListVC.swift */,
 				F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */,
 				F2322E7E2209DC9B0057479D /* ProspectingVC.swift */,
+				F2BF7B2A220A03C00082A97F /* ClientVC.swift */,
 			);
 			path = Visit;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */,
 				F224F1042203486E00DD332F /* ReferralContractType.swift in Sources */,
 				F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */,
+				F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */,
 				F2322E7F2209DC9B0057479D /* ProspectingVC.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
 				F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */,
