@@ -24,12 +24,11 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                      ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
                      ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
                      ["Type":"Initial-Meeting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
-    
-    
-    
-    
+
     ]
     
+    
+    var visitCategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,10 +153,12 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
-//         let cell = tableView.dequeueReusableCell(withIdentifier: "Visit", for: indexPath) as! VisitTableViewCell
 
         self.selectedSkill.append(indexPath.row)
 
+        cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+        visitCategory = dummyData[indexPath.row]["Type"]!
+            
         UIView.animate(withDuration: 1.0) {
             cell.topView.frame.origin.y = 20
             
@@ -173,7 +174,6 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
         
         
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
-//         let cell = tableView.dequeueReusableCell(withIdentifier: "Visit", for: indexPath) as! VisitTableViewCell
 
 
         if let i = self.selectedSkill.index(of: indexPath.row) {
@@ -205,10 +205,24 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
     
     @objc func startMeeting(){
      
-        let storyboard = UIStoryboard(name: "Visit", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "Dealer")
-        self.navigationController?.pushViewController(vc, animated: true)
+        if visitCategory == "Initial-Meeting"{
+            
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "Prospecting")
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+        else if visitCategory == "Dealer"{
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "Dealer")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+       
         
     }
     
