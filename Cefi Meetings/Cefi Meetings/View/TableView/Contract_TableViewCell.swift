@@ -12,7 +12,8 @@ class Contract_TableViewCell: UITableViewCell {
 
     @IBOutlet weak var firstValue: UILabel!
     @IBOutlet weak var nameValue: UILabel!
-    @IBOutlet weak var amountValue: UILabel!
+    @IBOutlet weak var quantity: UILabel!
+    @IBOutlet weak var pendingButton: UIButton!
     
 
 }

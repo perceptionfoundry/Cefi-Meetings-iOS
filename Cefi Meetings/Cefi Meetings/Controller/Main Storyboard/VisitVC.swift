@@ -23,7 +23,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var dummyData = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
                      ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
                      ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
-                     ["Type":"Initial-Meeting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
+                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
 
     ]
     
@@ -95,7 +95,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
   
-        else if type == "Client" || type == "Follow-Up" || type == "Initial-Meeting" {
+        else if type == "Client" || type == "Follow-Up" || type == "Prospecting" {
             
         cell.topView.backgroundColor = UIColor.white
 
@@ -206,7 +206,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
     @objc func startMeeting(){
      
         
-        if visitCategory == "Initial-Meeting"{
+        if visitCategory == "Prospecting"{
             
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             

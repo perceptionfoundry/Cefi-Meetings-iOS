@@ -20,6 +20,9 @@
 		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
 		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
 		F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F68121FB6A5F00269506 /* MainPendingVC.swift */; };
+		F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */; };
+		F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A786220B37B0001597CE /* BankCollectionViewCell.swift */; };
+		F261A789220B37BD001597CE /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */; };
 		F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FED22048F870010CE86 /* ContractDetailVC.swift */; };
 		F27D7FF02204AD9E0010CE86 /* VisitDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */; };
 		F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F288347121FED4E700CA09C6 /* Contact.storyboard */; };
@@ -86,6 +89,9 @@
 		F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pending_TableViewCell.swift; sourceTree = "<group>"; };
 		F258F68121FB6A5F00269506 /* MainPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPendingVC.swift; sourceTree = "<group>"; };
+		F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCollectionViewCell.swift; sourceTree = "<group>"; };
+		F261A786220B37B0001597CE /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
+		F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F27D7FED22048F870010CE86 /* ContractDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailVC.swift; sourceTree = "<group>"; };
 		F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDetailVC.swift; sourceTree = "<group>"; };
 		F288347121FED4E700CA09C6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
@@ -182,6 +188,16 @@
 			path = Visit;
 			sourceTree = "<group>";
 		};
+		F261A783220B376E001597CE /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */,
+				F261A786220B37B0001597CE /* BankCollectionViewCell.swift */,
+				F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		F288347921FF537200CA09C6 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +251,7 @@
 		F2AC6C9421F99BC300BE90CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F261A783220B376E001597CE /* CollectionView */,
 				F2B02EC022002BF700E6C76D /* xib */,
 				F288347921FF537200CA09C6 /* TableView */,
 			);
@@ -497,6 +514,7 @@
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
 				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,
 				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
+				F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
 				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
@@ -508,6 +526,7 @@
 				F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */,
 				F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */,
 				F288347D21FF61AD00CA09C6 /* UserFilterVC.swift in Sources */,
+				F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */,
 				F2DABFC321F9E3D7009FEFCC /* Custom_ImageView.swift in Sources */,
 				F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */,
 				F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */,
@@ -525,6 +544,7 @@
 				F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */,
 				F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */,
 				F2B02EC322002C6B00E6C76D /* VisitTableViewCell.swift in Sources */,
+				F261A789220B37BD001597CE /* EquipmentCollectionViewCell.swift in Sources */,
 				F224F1042203486E00DD332F /* ReferralContractType.swift in Sources */,
 				F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */,
 				F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */,

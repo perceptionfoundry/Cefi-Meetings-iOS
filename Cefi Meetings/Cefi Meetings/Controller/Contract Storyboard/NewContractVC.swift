@@ -8,7 +8,6 @@
 
 import UIKit
 import HCSStarRatingView
-import TagListView
 
 
 protocol typeDelegate {
@@ -20,8 +19,18 @@ protocol contactdelegate {
 }
 
 
-class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFieldDelegate {
+class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+ 
+    
 
+    
+    
+    @IBOutlet weak var taxCollectionView: UICollectionView!
+    
+    @IBOutlet weak var bankCollectionView: UICollectionView!
+    
+    @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
+    
     @IBOutlet weak var contractTypeTF: UITextField!
     @IBOutlet weak var contractNumberTF: UITextField!
     @IBOutlet weak var contactTF: UITextField!
@@ -29,7 +38,18 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
     @IBOutlet weak var amountTF: UITextField!
     @IBOutlet weak var ratingStar: HCSStarRatingView!
     
-    @IBOutlet weak var tagView: TagListView!
+    
+    
+    @IBOutlet weak var taxView: UIView!
+    @IBOutlet weak var taxViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var bankStateView: UIView!
+    @IBOutlet weak var bankViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var equipmentView: UIView!
+    @IBOutlet weak var equipmentViewHeight: NSLayoutConstraint!
+    
+//    @IBOutlet weak var tagView: TagListView!
     @IBOutlet weak var tagTF: UITextField!
     
     var tagArray = [String]()
@@ -44,13 +64,40 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
         contactTF.text = userName
     }
     
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tagView.delegate = self
+        
+        taxViewHeight.constant = 0
+        bankViewHeight.constant = 0
+        equipmentViewHeight.constant = 0
+
+        taxCollectionView.delegate = self
+        taxCollectionView.dataSource = self
+        
+        bankCollectionView.delegate = self
+        bankCollectionView.dataSource = self
+        
+        equipmentCollectionVIew.delegate = self
+        equipmentCollectionVIew.dataSource = self
+        
+        taxCollectionView.reloadData()
+        bankCollectionView.reloadData()
+        equipmentCollectionVIew.reloadData()
+
+        
+       
+        
+//        tagView.delegate = self
         
         contactTF.delegate = self
-        tagTF.delegate = self
+//        tagTF.delegate = self
         
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
 
@@ -61,6 +108,49 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
        
 
     }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
+        
+        if collectionView == self.taxCollectionView{
+            return 1
+        }
+        
+        else if collectionView == self.bankCollectionView{
+            return 3
+        }
+        
+        return 4
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        if collectionView == self.taxCollectionView{
+            
+            let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
+            
+            return taxCell
+
+        }
+        
+        else if collectionView == self.bankCollectionView{
+             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
+            
+            return bankCell
+        }
+        
+//
+        let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
+
+        
+        return equipmentCell
+    }
+    
+    
     
     @objc func typeSegue(){
         performSegue(withIdentifier: "Type", sender: nil)
@@ -73,30 +163,18 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
 //
             
             performSegue(withIdentifier: "Contact", sender: nil)
+            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            let vc = storyboard.instantiateViewController(withIdentifier: "Contact")
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
         
        
     }
     
   
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == tagTF{
-            
-            if tagTF.text?.isEmpty != true && tagArray.contains(tagTF.text!) != true{
-            
-            tagView.addTag(tagTF.text!)
-            tagArray.append(tagTF.text!)
-            tagTF.endEditing(true)
-                tagTF.text = ""
-                tagTF.clearsOnBeginEditing = true
-                
-                print(tagArray)
-            
-            }
-        }
-        
-        return true
-    }
+
     
    
    
@@ -121,24 +199,39 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
     }
     
     
-
-    
-    
-    
-    @IBAction func tagAddButton(_ sender: Any) {
+    @IBAction func taxSwitchAction(_ sender: UISwitch) {
         
-        if tagTF.text?.isEmpty != true && tagArray.contains(tagTF.text!) != true{
-            
-            tagView.addTag(tagTF.text!)
-            tagArray.append(tagTF.text!)
-            tagTF.endEditing(true)
-            tagTF.text = ""
-            tagTF.clearsOnBeginEditing = true
-            
-            print(tagArray)
+        if sender.isOn == true{
+        taxViewHeight.constant = 90
+        }
+        else{
+            taxViewHeight.constant = 0
+
+        }
+        
+    }
+    
+    @IBAction func bankSwitchAction(_ sender: UISwitch) {
+        if sender.isOn == true{
+            bankViewHeight.constant = 90
+        }
+        else{
+            bankViewHeight.constant = 0
             
         }
     }
+    
+    @IBAction func equipmentSwitchAction(_ sender: UISwitch) {
+        if sender.isOn == true{
+            equipmentViewHeight.constant = 90
+        }
+        else{
+            equipmentViewHeight.constant = 0
+            
+        }
+    }
+    
+  
     
     @IBAction func doneButtonAction(_ sender: Any) {
     }
@@ -151,18 +244,18 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFiel
 }
 
 
-
-extension NewContractVC: TagListViewDelegate{
-    
-    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-        
-        let index = tagArray.firstIndex(of: title)
-        
-        tagArray.remove(at: index!)
-        sender.removeAllTags()
-        sender.addTags(tagArray)
-        
-      
-    }
-    
-}
+//
+//extension NewContractVC: TagListViewDelegate{
+//
+//    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
+//
+//        let index = tagArray.firstIndex(of: title)
+//
+//        tagArray.remove(at: index!)
+//        sender.removeAllTags()
+//        sender.addTags(tagArray)
+//
+//
+//    }
+//
+//}
