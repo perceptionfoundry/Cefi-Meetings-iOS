@@ -62,10 +62,11 @@ class ProspectingVC: UIViewController {
         return 150
     }
     
-    @IBAction func addContactAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+    @IBAction func setupFollowUpAction(_ sender: Any) {
+        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contact")
+        let vc = storyboardRef.instantiateViewController(withIdentifier: "New_Visit")
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

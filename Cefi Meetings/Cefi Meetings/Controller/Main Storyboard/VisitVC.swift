@@ -16,7 +16,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     
     @IBOutlet weak var timeLabel: UILabel!
-    var selectedSkill = [Int]()
+    var selectedVisit = [Int]()
     
     
     
@@ -130,7 +130,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         
-        if self.selectedSkill.contains(indexPath.row){
+        if self.selectedVisit.contains(indexPath.row){
 
                 cell.topView.frame.origin.y = 20
 
@@ -154,9 +154,10 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
 let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
-        self.selectedSkill.append(indexPath.row)
+        self.selectedVisit.append(indexPath.row)
 
         cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+       
         visitCategory = dummyData[indexPath.row]["Type"]!
             
         UIView.animate(withDuration: 1.0) {
@@ -165,7 +166,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
             cell.bottomView.frame.origin.y = 60
         }
      
-        print(selectedSkill)
+        print(selectedVisit)
         
         
     }
@@ -176,7 +177,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
 
-        if let i = self.selectedSkill.index(of: indexPath.row) {
+        if let i = self.selectedVisit.index(of: indexPath.row) {
 
             UIView.animate(withDuration: 1.0) {
                 cell.topView.frame.origin.y = 50
@@ -184,9 +185,9 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
                 cell.bottomView.frame.origin.y = 50
             }
 
-            self.selectedSkill.remove(at: i)
+            self.selectedVisit.remove(at: i)
 
-            print(selectedSkill)
+            print(selectedVisit)
         
 
 

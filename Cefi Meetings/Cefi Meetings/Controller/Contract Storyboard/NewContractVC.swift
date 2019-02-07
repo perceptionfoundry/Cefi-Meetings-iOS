@@ -18,8 +18,12 @@ protocol contactdelegate {
     func contactName(userName : String)
 }
 
+protocol equipmentTypeDelegate {
+    func equipmentType(list: [String])
+}
 
-class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+
+class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
  
     
 
@@ -37,7 +41,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
     @IBOutlet weak var purchaseDateTF: UITextField!
     @IBOutlet weak var amountTF: UITextField!
     @IBOutlet weak var ratingStar: HCSStarRatingView!
-    
+    @IBOutlet weak var equipmentTF: UITextField!
+
     
     
     @IBOutlet weak var taxView: UIView!
@@ -50,7 +55,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
     @IBOutlet weak var equipmentViewHeight: NSLayoutConstraint!
     
 //    @IBOutlet weak var tagView: TagListView!
-    @IBOutlet weak var tagTF: UITextField!
     
     var tagArray = [String]()
     
@@ -64,9 +68,22 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
         contactTF.text = userName
     }
     
+    func equipmentType(list: [String]) {
+       self.equipmentValue = list
+        
+        if list.count > 1{
+            
+            var text = "\(list[0]), \(list.count - 1) more"
+            equipmentTF.text = text
+        }
+        else if list.count == 1{
+        equipmentTF.text = list[0]
+        }
+        
+    }
     
     
-    
+    var equipmentValue = [String]()
     
     
     
@@ -103,7 +120,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
 
         self.contractTypeTF.addGestureRecognizer(typeButton)
         
+        let equipmentButton = UITapGestureRecognizer(target: self, action: #selector(equipmentSegue))
         
+        self.equipmentTF.addGestureRecognizer(equipmentButton)
         
        
 
@@ -156,6 +175,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
         performSegue(withIdentifier: "Type", sender: nil)
     }
     
+    @objc func equipmentSegue(){
+        performSegue(withIdentifier: "Equipment_Type", sender: nil)
+
+        
+    }
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -194,6 +219,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate, UICollecti
             
             dest.contactDelegate = self
             dest.segueStatus = true
+        }
+        
+        else if segue.identifier == "Equipment_Type"{
+            let dest = segue.destination  as! EquipmentTypeVC
+            
+            dest.equipmentDelegate = self
+            dest.selectedTitle = equipmentValue
         }
        
     }
