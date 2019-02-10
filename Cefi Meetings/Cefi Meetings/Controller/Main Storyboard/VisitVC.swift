@@ -18,12 +18,18 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var timeLabel: UILabel!
     var selectedVisit = [Int]()
     
+    var selected = -1
+    
     
     
     var dummyData = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
                      ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
                      ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
                      ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
+                     ["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
+                     ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
+                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
+                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"]
 
     ]
     
@@ -37,6 +43,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         visitTable.dataSource = self
         
       
+        
         
         visitTable.allowsMultipleSelection = true
 
@@ -79,7 +86,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if type == "Dealer"{
             
-//            cell.topView.backgroundColor = UIColor(red: 14.0, green: 65.0, blue: 3.0, alpha: 1)
+            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
             cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
             cell.userNameLabel.textColor = UIColor.white
             cell.businessNameLabel.textColor = UIColor.white
@@ -139,18 +146,20 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if self.selectedVisit.contains(indexPath.row){
 
-                cell.topView.frame.origin.y = 20
-
-                cell.bottomView.frame.origin.y = 60
+//                cell.topView.frame.origin.y = 20
+//
+//                cell.bottomView.frame.origin.y = 60
            
 
         }
         else{
 
-                cell.topView.frame.origin.y = 50
-
-                cell.bottomView.frame.origin.y = 50
+//                cell.topView.frame.origin.y = 50
+//
+//                cell.bottomView.frame.origin.y = 50
            
+            visitTable.estimatedRowHeight = 160
+
         }
         
         
@@ -162,18 +171,41 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
         self.selectedVisit.append(indexPath.row)
+        
+        self.selected = indexPath.row
 
         cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
        
         visitCategory = dummyData[indexPath.row]["Type"]!
             
         UIView.animate(withDuration: 1.0) {
-            cell.topView.frame.origin.y = 20
 //
-            cell.bottomView.frame.origin.y = 60
+            let type = self.dummyData[indexPath.row]["Type"]
             
-//            self.visitTable.beginUpdates()
-//            self.visitTable.endUpdates()
+            
+            
+
+            
+            
+            self.visitTable.reloadRows(at: [indexPath], with: .automatic)
+            if type == "Dealer"{
+                
+                            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+                cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+                cell.userNameLabel.textColor = UIColor.white
+                cell.businessNameLabel.textColor = UIColor.white
+                cell.timeLabel.textColor = UIColor.white
+                cell.callNowButton.setImage(UIImage(named: "call_now_light"), for: .normal)
+                
+                
+                
+            }
+            
+
+//
+            
+//            return
+
         }
      
         print(selectedVisit)
@@ -181,49 +213,56 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
         
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        
-        let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
-
-
-        if let i = self.selectedVisit.index(of: indexPath.row) {
-
-            UIView.animate(withDuration: 1.0) {
-                cell.topView.frame.origin.y = 50
-                cell.bottomView.frame.origin.y = 50
-                
-//                self.visitTable.beginUpdates()
-//                self.visitTable.endUpdates()
-            }
-
-            self.selectedVisit.remove(at: i)
-
-            print(selectedVisit)
-        
-
-
-        }
-    
-        
-    }
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//
+//
+//        let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
+//
+//
+//        selected = -1
+//
+////        if let i = self.selectedVisit.index(of: indexPath.row) {
+////
+////            UIView.animate(withDuration: 1.0) {
+//////
+////                self.visitTable.estimatedRowHeight = 160
+////
+//                self.visitTable.reloadRows(at: [indexPath], with: .bottom)
+////
+////
+////
+////                return
+////
+////            }
+////
+////            self.selectedVisit.remove(at: i)
+////
+////            print(selectedVisit)
+////
+////
+////
+////        }
+//
+//
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-//        if self.selectedVisit.contains(indexPath.row){
-//
-//     return 210
-//
-////
-//        }
-       
-          return 160
+        if selected == indexPath.row{
 
+     return 210
+
+
+        }
+
+        else {
+          return 160
+        }
     }
   
     
-
+ 
     
     @objc func startMeeting(){
      
