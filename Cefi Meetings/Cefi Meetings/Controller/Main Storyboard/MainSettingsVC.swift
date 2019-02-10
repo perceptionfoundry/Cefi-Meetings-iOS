@@ -27,6 +27,12 @@ class MainSettingsVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     @IBAction func userButtonAction(_ sender: Any) {
     }
     

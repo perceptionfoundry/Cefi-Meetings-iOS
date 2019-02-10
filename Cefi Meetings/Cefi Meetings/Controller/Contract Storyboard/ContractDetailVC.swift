@@ -27,6 +27,8 @@ class ContractDetailVC: UIViewController {
         tagView.addTags(["Printing", "Healthcare","iOS Developer"])
     }
     
+    
+  
 
     @IBAction func cancelButtonAction(_ sender: Any) {
         

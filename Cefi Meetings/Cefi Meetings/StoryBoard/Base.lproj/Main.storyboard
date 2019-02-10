@@ -104,7 +104,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVT-PC-jkg" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="112.5" y="403.5" width="150" height="46.5"/>
                                 <color key="backgroundColor" red="0.34927457571029663" green="0.56815886497497559" blue="0.22732043266296387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="ENTRAR">
+                                <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -131,7 +131,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-bA-Ne4">
                                 <rect key="frame" x="0.0" y="602.5" width="375" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Olvidaste tu contraseña?">
+                                <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.21607834100723267" green="0.26470938324928284" blue="0.042990989983081818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
@@ -402,26 +402,26 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-gZ-g97">
-                                        <rect key="frame" x="198" y="104.5" width="34.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <rect key="frame" x="197.5" y="104.5" width="35.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlW-a1-Psm">
-                                        <rect key="frame" x="49" y="104.5" width="59.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <rect key="frame" x="48.5" y="104.5" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.12484120577573776" green="0.26858985424041748" blue="0.062648452818393707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contracts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOA-Ut-o3Q">
-                                        <rect key="frame" x="42" y="248.5" width="60" height="19.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <rect key="frame" x="41" y="248.5" width="62" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pending Docs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glL-YJ-E9o">
-                                        <rect key="frame" x="168.5" y="248" width="93.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <rect key="frame" x="168" y="248" width="94" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1049,7 +1049,7 @@ We hope you have a great and productive day!</string>
                                 <rect key="frame" x="9.5" y="82" width="356" height="27"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-Kq-lH6" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="47" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="5rI-7Y-q4Q"/>
                                         </constraints>
@@ -1067,17 +1067,17 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNw-Re-5nv" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="58" y="0.0" width="69.5" height="27"/>
+                                        <rect key="frame" x="67" y="0.0" width="69" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="ABG-5d-xfp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="People">
+                                        <state key="normal" title="Leads">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1085,17 +1085,17 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-Mh-BbO" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="138.5" y="0.0" width="112" height="27"/>
+                                        <rect key="frame" x="147" y="0.0" width="80" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="T2l-H4-h5J"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="Companies">
+                                        <state key="normal" title="Clients">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1103,7 +1103,7 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-2d-am7" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="261.5" y="0.0" width="94.5" height="27"/>
+                                        <rect key="frame" x="238" y="0.0" width="118" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="8FG-SX-w7t"/>
                                         </constraints>
@@ -1113,7 +1113,7 @@ We hope you have a great and productive day!</string>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34901960780000002" green="0.56862745100000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1666,7 +1666,7 @@ We hope you have a great and productive day!</string>
                                 <rect key="frame" x="9.5" y="82" width="356" height="27"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWM-Ud-ylG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="47" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="P1b-4G-RqM"/>
                                         </constraints>
@@ -1684,17 +1684,17 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-Bq-ThN" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="58" y="0.0" width="69.5" height="27"/>
+                                        <rect key="frame" x="67" y="0.0" width="69" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="aqj-e7-eQ8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="People">
+                                        <state key="normal" title="Leads">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1702,17 +1702,17 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-vv-l5t" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="138.5" y="0.0" width="112" height="27"/>
+                                        <rect key="frame" x="147" y="0.0" width="80" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="txV-pz-84f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="Companies">
+                                        <state key="normal" title="Clients">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1720,7 +1720,7 @@ We hope you have a great and productive day!</string>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-ZA-iXa" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="261.5" y="0.0" width="94.5" height="27"/>
+                                        <rect key="frame" x="238" y="0.0" width="118" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="TDw-SQ-y2u"/>
                                         </constraints>
@@ -1730,7 +1730,7 @@ We hope you have a great and productive day!</string>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34901960780000002" green="0.56862745100000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
@@ -1895,10 +1895,11 @@ We hope you have a great and productive day!</string>
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZzT-en-rEw">
-                                <rect key="frame" x="242.5" y="273" width="115" height="29"/>
+                                <rect key="frame" x="185.5" y="273" width="173" height="29"/>
                                 <segments>
                                     <segment title="Closed"/>
                                     <segment title="Open"/>
+                                    <segment title="Dead"/>
                                 </segments>
                                 <color key="tintColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
@@ -1958,7 +1959,7 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="top" secondItem="lK4-m7-1IN" secondAttribute="top" id="OpV-bL-mVU"/>
                             <constraint firstItem="lK4-m7-1IN" firstAttribute="trailing" secondItem="2ah-bv-OKs" secondAttribute="trailing" id="Osc-oJ-Iwl"/>
                             <constraint firstItem="V3E-mE-AKM" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="QZi-TJ-9Zx"/>
-                            <constraint firstItem="ZzT-en-rEw" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.6" id="S25-e2-hCe"/>
+                            <constraint firstItem="ZzT-en-rEw" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.45" id="S25-e2-hCe"/>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="trailing" secondItem="lK4-m7-1IN" secondAttribute="trailing" id="UBU-cH-d2n"/>
                             <constraint firstItem="V3E-mE-AKM" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.95" id="Uu1-zP-EIK"/>
                             <constraint firstItem="ZBi-aR-epW" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.775" id="V5l-PS-Ij0"/>
@@ -2499,7 +2500,6 @@ I bet you’re still using Bootstrap too…</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountValue" destination="Np8-Vz-mrI" id="ahu-gu-nyY"/>
                                             <outlet property="firstValue" destination="HC1-qK-lDN" id="zo3-3l-Ar4"/>
                                             <outlet property="nameValue" destination="Vrx-Ls-8zW" id="q14-1U-rCJ"/>
                                         </connections>

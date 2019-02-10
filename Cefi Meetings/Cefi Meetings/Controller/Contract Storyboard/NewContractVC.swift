@@ -130,6 +130,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         

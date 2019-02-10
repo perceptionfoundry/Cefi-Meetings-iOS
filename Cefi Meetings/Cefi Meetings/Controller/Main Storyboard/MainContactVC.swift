@@ -83,6 +83,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
   
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // setting number of section in table
     func numberOfSections(in tableView: UITableView) -> Int {
         return wordSection.count

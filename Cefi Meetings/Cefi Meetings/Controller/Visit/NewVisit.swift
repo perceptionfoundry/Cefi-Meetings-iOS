@@ -61,7 +61,11 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
         
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let autoCompleteController = GMSAutocompleteViewController()

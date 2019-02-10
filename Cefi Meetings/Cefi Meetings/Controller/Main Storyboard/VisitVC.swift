@@ -48,6 +48,13 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dummyData.count
     }
@@ -162,8 +169,11 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
             
         UIView.animate(withDuration: 1.0) {
             cell.topView.frame.origin.y = 20
-            
+//
             cell.bottomView.frame.origin.y = 60
+            
+//            self.visitTable.beginUpdates()
+//            self.visitTable.endUpdates()
         }
      
         print(selectedVisit)
@@ -181,8 +191,10 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
             UIView.animate(withDuration: 1.0) {
                 cell.topView.frame.origin.y = 50
-
                 cell.bottomView.frame.origin.y = 50
+                
+//                self.visitTable.beginUpdates()
+//                self.visitTable.endUpdates()
             }
 
             self.selectedVisit.remove(at: i)
@@ -197,12 +209,21 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
+
+
+//        if self.selectedVisit.contains(indexPath.row){
+//
+//     return 210
+//
+////
+//        }
        
-        
-          return 210
-        
+          return 160
+
     }
+  
+    
+
     
     @objc func startMeeting(){
      
@@ -226,6 +247,16 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             
             let vc = storyboard.instantiateViewController(withIdentifier: "Client")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        else if visitCategory == "Follow-Up"{
+            
+            
+            
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            
+            let vc = storyboard.instantiateViewController(withIdentifier: "Follow_Up")
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

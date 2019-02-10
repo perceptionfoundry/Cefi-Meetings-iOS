@@ -54,6 +54,7 @@
 		F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */; };
 		F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */; };
 		F2DABFCF21FA1FE1009FEFCC /* Contact_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */; };
+		F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBE418220DC2B800EFAF5B /* FollowUpVC.swift */; };
 		F2ED7596220887AE00C4286F /* DealerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED7595220887AE00C4286F /* DealerVC.swift */; };
 		F2ED75982208921200C4286F /* DealerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED75972208921200C4286F /* DealerTableCell.swift */; };
 		F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */; };
@@ -127,6 +128,7 @@
 		F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContactVC.swift; sourceTree = "<group>"; };
 		F2DABFCE21FA1FE1009FEFCC /* Contact_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TableViewCell.swift; sourceTree = "<group>"; };
+		F2EBE418220DC2B800EFAF5B /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
 		F2ED7595220887AE00C4286F /* DealerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerVC.swift; sourceTree = "<group>"; };
 		F2ED75972208921200C4286F /* DealerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableCell.swift; sourceTree = "<group>"; };
 		F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */,
 				F2322E7E2209DC9B0057479D /* ProspectingVC.swift */,
 				F2BF7B2A220A03C00082A97F /* ClientVC.swift */,
+				F2EBE418220DC2B800EFAF5B /* FollowUpVC.swift */,
 			);
 			path = Visit;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */,
 				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
 				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,

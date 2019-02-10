@@ -38,6 +38,12 @@ class ClientVC: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     @objc func dealerList(){
         
         performSegue(withIdentifier: "Dealer_List", sender: nil)

@@ -70,6 +70,12 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

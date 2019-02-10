@@ -39,6 +39,11 @@ class ProspectingVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
     @objc func dealerList(){
         

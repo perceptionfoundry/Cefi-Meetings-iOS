@@ -25,6 +25,13 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
 
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
         

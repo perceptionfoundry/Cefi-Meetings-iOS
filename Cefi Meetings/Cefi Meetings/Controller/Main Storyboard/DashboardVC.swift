@@ -20,7 +20,11 @@ class DashboardVC: UIViewController {
         
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
     // ********* Switching to Respect selected option Tab index *****************
     @IBAction func buttonAction(_ sender: UIButton) {
         
