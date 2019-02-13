@@ -20,7 +20,7 @@ class UnderlinedTextField: UITextField {
     override func draw(_ rect: CGRect) {
         let underline = CALayer()
         underline.borderColor = color.cgColor
-        underline.frame = CGRect(x: 0, y: self.frame.size.height - width , width:  self.frame.size.width, height: self.frame.size.height + 10)
+        underline.frame = CGRect(x: 5, y: self.frame.size.height - width , width:  self.frame.size.width, height: self.frame.size.height + 10)
         underline.borderWidth = width
         self.layer.addSublayer(underline)
         self.layer.masksToBounds = true
@@ -32,7 +32,7 @@ class UnderlinedTextField: UITextField {
         
         if(icon != nil){
             if(iconIndent>0){
-                let imageView = UIImageView(frame: CGRect(x: 50, y: 10, width: 16, height: 16))
+                let imageView = UIImageView(frame: CGRect(x: 60, y: 10, width: 16, height: 16))
                 imageView.center.y=self.icony
                 imageView.contentMode=UIView.ContentMode.scaleAspectFit
                 imageView.image = icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
@@ -40,12 +40,13 @@ class UnderlinedTextField: UITextField {
                 print(imageView.frame)
             }
             else{
-                let imageView = UIImageView(frame: CGRect(x: 50, y: 0, width: 16, height: 16))
+                let imageView = UIImageView(frame: CGRect(x: 60, y: 0, width: 16, height: 16))
                 imageView.contentMode=UIView.ContentMode.scaleAspectFit
                 imageView.image = icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 self.leftView = imageView
                 self.leftViewMode = UITextField.ViewMode.always
                 self.addSubview(imageView)
+                imageView.backgroundColor = UIColor.blue
             }
         }
         
@@ -68,10 +69,10 @@ class UnderlinedTextField: UITextField {
     
     // add image to textfield
     func withImage(direction: Direction, image: UIImage, colorSeparator: UIColor, colorBorder: UIColor){
-        let mainView = UIView(frame: CGRect(x: 20, y: 0, width: 50, height: 45))
+        let mainView = UIView(frame: CGRect(x: 5, y: 0, width: 50, height: 45))
         mainView.layer.cornerRadius = 5
         
-        let view = UIView(frame: CGRect(x: 20, y: 0, width: 50, height: 45))
+        let view = UIView(frame: CGRect(x: 0, y: 14, width: 30, height: 30))
        // view.backgroundColor = .white
         view.clipsToBounds = true
         view.layer.cornerRadius = 5
@@ -81,7 +82,7 @@ class UnderlinedTextField: UITextField {
         
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 20.0, y: 10.0, width: 24.0, height: 24.0)
+        imageView.frame = CGRect(x: 5, y: 0, width: 16.0, height: 16.0)
         view.addSubview(imageView)
         
         let seperatorView = UIView()
@@ -89,11 +90,11 @@ class UnderlinedTextField: UITextField {
         mainView.addSubview(seperatorView)
         
         if(Direction.Left == direction){ // image left
-            seperatorView.frame = CGRect(x: 45, y: 0, width: 5, height: 45)
+            seperatorView.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
             self.leftViewMode = .always
             self.leftView = mainView
         } else { // image right
-            seperatorView.frame = CGRect(x: 0, y: 0, width: 5, height: 45)
+            seperatorView.frame = CGRect(x: 0, y: 0, width: 0, height: 45)
             self.rightViewMode = .always
             self.rightView = mainView
         }

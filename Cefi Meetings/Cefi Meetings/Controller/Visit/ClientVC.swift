@@ -31,7 +31,8 @@ class ClientVC: UIViewController {
         EquipmentSegment.itemTitles = ["Yes", "Maybe", "No"]
         
         
-        
+        businessSegment.allowChangeThumbWidth = false
+        EquipmentSegment.allowChangeThumbWidth = false
         
         
         

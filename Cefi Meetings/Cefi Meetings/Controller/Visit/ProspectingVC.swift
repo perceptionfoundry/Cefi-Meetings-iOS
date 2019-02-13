@@ -32,7 +32,9 @@ class ProspectingVC: UIViewController {
         businessSegment.itemTitles = ["Deceased","Same","Increased"]
         EquipmentSegment.itemTitles = ["Yes", "Maybe", "No"]
         
-        
+        OutcomeSegment.allowChangeThumbWidth = false
+        businessSegment.allowChangeThumbWidth = false
+        EquipmentSegment.allowChangeThumbWidth = false
         
         
         

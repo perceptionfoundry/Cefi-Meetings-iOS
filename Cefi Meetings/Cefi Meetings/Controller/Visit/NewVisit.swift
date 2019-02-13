@@ -55,7 +55,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
         
         
         
-        detailButton_Y_Constraint.constant = -200
+//        detailButton_Y_Constraint.constant = -200
         
         
         

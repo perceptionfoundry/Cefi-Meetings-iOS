@@ -26,7 +26,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        saleStatus.allowChangeThumbWidth = false
+        newLead.allowChangeThumbWidth = false
         
         saleStatus.itemTitles = ["Increased","Same","Deceased"]
         newLead.itemTitles = ["Yes", "No"]
