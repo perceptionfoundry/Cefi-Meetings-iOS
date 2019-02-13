@@ -49,5 +49,8 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         return cell
     }
 
-
+    @IBAction func cancelAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

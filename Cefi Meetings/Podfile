@@ -8,13 +8,17 @@ target 'Cefi Meetings' do
   # Pods for Cefi Meetings
 
 pod 'HCSStarRatingView'
+
 pod 'TagListView'
+
 pod ‘SwiftRangeSlider’
+
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'GooglePlacePicker'
 
 pod ‘TTSegmentedControl’
 
+pod 'FSCalendar'
 
 end

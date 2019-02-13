@@ -46,6 +46,9 @@
 		F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */; };
 		F2B58AB02201B38E00396F9E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2B58AAF2201B38E00396F9E /* Contract.storyboard */; };
 		F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF7B2A220A03C00082A97F /* ClientVC.swift */; };
+		F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */; };
+		F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */; };
+		F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EF2213F659006ED05B /* CalendarVC.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -120,6 +123,9 @@
 		F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contractFilterVC.swift; sourceTree = "<group>"; };
 		F2B58AAF2201B38E00396F9E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
 		F2BF7B2A220A03C00082A97F /* ClientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientVC.swift; sourceTree = "<group>"; };
+		F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIGNUP.swift; sourceTree = "<group>"; };
+		F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		F2C8F5EF2213F659006ED05B /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				F2ED75972208921200C4286F /* DealerTableCell.swift */,
 				F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */,
 				F278D7B5220C6D0C00F1FE99 /* EquipmentTableViewCell.swift */,
+				F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 		F2AC6C8121F97F7D00BE90CA /* Cefi Meetings */ = {
 			isa = PBXGroup;
 			children = (
+				F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */,
 				F2DABFC521F9EDD3009FEFCC /* StoryBoard */,
 				F2DABFB421F9E385009FEFCC /* Customize */,
 				F2DABFB321F9E12B009FEFCC /* Font */,
@@ -358,6 +366,7 @@
 				F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */,
 				F2FBC8E8220039DD0079C47D /* VisitVC.swift */,
 				F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */,
+				F2C8F5EF2213F659006ED05B /* CalendarVC.swift */,
 			);
 			path = "Main Storyboard";
 			sourceTree = "<group>";
@@ -474,6 +483,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/HCSStarRatingView/HCSStarRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/TTSegmentedControl/TTSegmentedControl.framework",
@@ -481,6 +491,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HCSStarRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRangeSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTSegmentedControl.framework",
@@ -516,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */,
 				F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */,
 				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
@@ -526,6 +538,7 @@
 				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
+				F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */,
 				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
 				F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */,
 				F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */,
@@ -561,6 +574,7 @@
 				F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */,
 				F278D7B6220C6D0C00F1FE99 /* EquipmentTableViewCell.swift in Sources */,
 				F2322E7F2209DC9B0057479D /* ProspectingVC.swift in Sources */,
+				F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
 				F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */,
 			);

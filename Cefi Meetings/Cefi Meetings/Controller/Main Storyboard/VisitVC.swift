@@ -47,10 +47,18 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         visitTable.allowsMultipleSelection = true
 
+        let calendarTap = UITapGestureRecognizer(target: self, action: #selector(calendarView))
         
+        self.dateLabel.isUserInteractionEnabled = true
+        self.dateLabel.addGestureRecognizer(calendarTap)
         
         visitTable.reloadData()
 
+    }
+    
+    
+    @objc func calendarView(){
+        performSegue(withIdentifier: "Calendar", sender: nil)
     }
     
     
@@ -187,10 +195,10 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
             
             
-            self.visitTable.reloadRows(at: [indexPath], with: .automatic)
+            self.visitTable.reloadRows(at: [indexPath], with: .none)
             if type == "Dealer"{
                 
-                            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+                cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
                 cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
                 cell.userNameLabel.textColor = UIColor.white
                 cell.businessNameLabel.textColor = UIColor.white
@@ -251,7 +259,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
         if selected == indexPath.row{
 
-     return 210
+     return 220
 
 
         }

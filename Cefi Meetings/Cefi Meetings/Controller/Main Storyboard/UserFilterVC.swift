@@ -14,9 +14,14 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     @IBOutlet weak var filterTable: UITableView!
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
         NaviBar.shadowImage = UIImage()
@@ -42,8 +47,21 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         
         return cell
     }
+    
+    @IBAction func addContact(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contact")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
     @IBAction func showGlobalList(_ sender: Any) {
     }
+    
+    
+    
     @IBAction func cancelAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

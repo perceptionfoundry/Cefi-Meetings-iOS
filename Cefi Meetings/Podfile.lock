@@ -1,4 +1,5 @@
 PODS:
+  - FSCalendar (2.8.0)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -15,6 +16,7 @@ PODS:
   - TTSegmentedControl (0.4.7)
 
 DEPENDENCIES:
+  - FSCalendar
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -25,6 +27,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FSCalendar
     - GoogleMaps
     - GooglePlacePicker
     - GooglePlaces
@@ -34,6 +37,7 @@ SPEC REPOS:
     - TTSegmentedControl
 
 SPEC CHECKSUMS:
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
@@ -42,6 +46,6 @@ SPEC CHECKSUMS:
   TagListView: 0c7e9c26b9aff858224ee6b155f5fcacd9e27c83
   TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
 
-PODFILE CHECKSUM: 7935848cc7319a2022cd5ce146c288c19bc26898
+PODFILE CHECKSUM: d57d26214f6aa274e474b3c33c34dfb9b9e37d53
 
 COCOAPODS: 1.5.2

@@ -352,7 +352,7 @@
                                                 <rect key="frame" x="35" y="253" width="14" height="14"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="5e4-Th-ai6">
-                                                <rect key="frame" x="35.5" y="313" width="12" height="14"/>
+                                                <rect key="frame" x="36.5" y="313" width="9.5" height="14"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="bha-Po-pUa">
                                                 <rect key="frame" x="34" y="374" width="14.5" height="12"/>
@@ -464,7 +464,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="referred_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="aOv-1m-STI">
-                                                <rect key="frame" x="30.5" y="473" width="14" height="14"/>
+                                                <rect key="frame" x="30" y="472" width="15" height="16"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Referred By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06a-Yt-06o">
                                                 <rect key="frame" x="71.5" y="470" width="73" height="20"/>
@@ -529,14 +529,14 @@
                                             <constraint firstItem="3Dq-QP-CFJ" firstAttribute="centerX" secondItem="nSS-QC-Ngb" secondAttribute="centerX" multiplier="0.6" id="I0z-Wv-pbM"/>
                                             <constraint firstItem="3wQ-cd-tz4" firstAttribute="centerY" secondItem="nSS-QC-Ngb" secondAttribute="centerY" multiplier="0.35" id="K1D-Sx-uWz"/>
                                             <constraint firstItem="uii-rE-JhT" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.9" id="KjE-Rn-7Tz"/>
-                                            <constraint firstItem="5e4-Th-ai6" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.032" id="LNT-B4-HDW"/>
+                                            <constraint firstItem="5e4-Th-ai6" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.025" id="LNT-B4-HDW"/>
                                             <constraint firstItem="VDL-mh-noM" firstAttribute="centerY" secondItem="06a-Yt-06o" secondAttribute="centerY" id="LUN-bT-927"/>
                                             <constraint firstItem="TiG-oN-QtR" firstAttribute="height" secondItem="nSS-QC-Ngb" secondAttribute="height" multiplier="0.017" id="Lfp-PA-mkv"/>
                                             <constraint firstItem="pFR-5i-Hdz" firstAttribute="centerX" secondItem="nSS-QC-Ngb" secondAttribute="centerX" multiplier="1.7" id="Lh3-tA-Txg"/>
                                             <constraint firstItem="06a-Yt-06o" firstAttribute="centerX" secondItem="nSS-QC-Ngb" secondAttribute="centerX" multiplier="0.575" id="Lud-kx-zj9"/>
                                             <constraint firstItem="UZn-bF-ECI" firstAttribute="centerY" secondItem="mtY-jA-zEm" secondAttribute="centerY" id="Lx9-OJ-mi9"/>
                                             <constraint firstItem="LkJ-T2-EoO" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.9" id="MaQ-Ph-SEK"/>
-                                            <constraint firstItem="aOv-1m-STI" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.0375" id="O3q-lk-aL4"/>
+                                            <constraint firstItem="aOv-1m-STI" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.04" id="O3q-lk-aL4"/>
                                             <constraint firstItem="peu-aw-vEn" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.7" id="O4h-Cn-4gm"/>
                                             <constraint firstItem="3Dq-QP-CFJ" firstAttribute="centerY" secondItem="TiG-oN-QtR" secondAttribute="centerY" id="OWa-K7-N1y"/>
                                             <constraint firstItem="Vxq-kI-GaZ" firstAttribute="width" secondItem="nSS-QC-Ngb" secondAttribute="width" multiplier="0.027" id="Orv-y6-The"/>
@@ -606,7 +606,7 @@
                                             <constraint firstItem="gHp-UY-Kjs" firstAttribute="centerY" secondItem="08i-N5-o41" secondAttribute="centerY" id="vLN-XI-dU1"/>
                                             <constraint firstItem="5e4-Th-ai6" firstAttribute="centerY" secondItem="nSS-QC-Ngb" secondAttribute="centerY" multiplier="0.8" id="vqJ-Px-R7s"/>
                                             <constraint firstItem="lti-tb-bYW" firstAttribute="centerY" secondItem="nSS-QC-Ngb" secondAttribute="centerY" multiplier="1.38" id="xNh-xm-JVq"/>
-                                            <constraint firstItem="aOv-1m-STI" firstAttribute="height" secondItem="nSS-QC-Ngb" secondAttribute="height" multiplier="0.0175" id="xRh-Aa-r0h"/>
+                                            <constraint firstItem="aOv-1m-STI" firstAttribute="height" secondItem="nSS-QC-Ngb" secondAttribute="height" multiplier="0.02" id="xRh-Aa-r0h"/>
                                             <constraint firstItem="h7j-2m-eYt" firstAttribute="centerY" secondItem="nSS-QC-Ngb" secondAttribute="centerY" multiplier="0.5" id="yD3-jb-09X"/>
                                             <constraint firstItem="WVl-Bg-geU" firstAttribute="centerX" secondItem="nSS-QC-Ngb" secondAttribute="centerX" id="z3r-rt-cQn"/>
                                             <constraint firstItem="BPN-BK-zGT" firstAttribute="height" secondItem="nSS-QC-Ngb" secondAttribute="height" multiplier="0.001" id="zG0-CH-BAZ"/>
