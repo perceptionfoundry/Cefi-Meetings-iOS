@@ -13,6 +13,8 @@ import GooglePlaces
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    var apiBaseURL = "https://www.ceficrm.com/api/"
     var window: UIWindow?
 
     let GoogleAPIKey = "AIzaSyAdcVyixBYtthIiqtpZrSofxxutGgIq8Os"

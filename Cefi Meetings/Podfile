@@ -21,4 +21,6 @@ pod ‘TTSegmentedControl’
 
 pod 'FSCalendar'
 
+pod 'Alamofire'
+
 end
