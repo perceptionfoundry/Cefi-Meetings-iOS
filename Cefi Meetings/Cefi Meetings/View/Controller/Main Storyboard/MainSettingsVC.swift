@@ -40,5 +40,7 @@ class MainSettingsVC: UIViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
+        
+        present(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignIn") , animated: true, completion: nil)
     }
 }

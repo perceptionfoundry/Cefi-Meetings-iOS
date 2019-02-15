@@ -26,6 +26,7 @@
 		F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */; };
 		F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A786220B37B0001597CE /* BankCollectionViewCell.swift */; };
 		F261A789220B37BD001597CE /* EquipmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */; };
+		F27318162217320D0033C7B4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27318152217320D0033C7B4 /* SignInViewModel.swift */; };
 		F278D7B6220C6D0C00F1FE99 /* EquipmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278D7B5220C6D0C00F1FE99 /* EquipmentTableViewCell.swift */; };
 		F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */; };
 		F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FED22048F870010CE86 /* ContractDetailVC.swift */; };
@@ -104,6 +105,7 @@
 		F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCollectionViewCell.swift; sourceTree = "<group>"; };
 		F261A786220B37B0001597CE /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
 		F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		F27318152217320D0033C7B4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F278D7B5220C6D0C00F1FE99 /* EquipmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTableViewCell.swift; sourceTree = "<group>"; };
 		F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTypeVC.swift; sourceTree = "<group>"; };
 		F27D7FED22048F870010CE86 /* ContractDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailVC.swift; sourceTree = "<group>"; };
@@ -259,7 +261,6 @@
 				F2DABFC521F9EDD3009FEFCC /* StoryBoard */,
 				F2DABFB421F9E385009FEFCC /* Customize */,
 				F2DABFB321F9E12B009FEFCC /* Font */,
-				F2AC6C9721F99BFC00BE90CA /* Controller */,
 				F2AC6C9621F99BF100BE90CA /* Model */,
 				F2AC6C9521F99BD500BE90CA /* ViewModel */,
 				F2AC6C9421F99BC300BE90CA /* View */,
@@ -274,6 +275,7 @@
 		F2AC6C9421F99BC300BE90CA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2AC6C9721F99BFC00BE90CA /* Controller */,
 				F261A783220B376E001597CE /* CollectionView */,
 				F2B02EC022002BF700E6C76D /* xib */,
 				F288347921FF537200CA09C6 /* TableView */,
@@ -284,6 +286,7 @@
 		F2AC6C9521F99BD500BE90CA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F27318152217320D0033C7B4 /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,10 +304,10 @@
 		F2AC6C9721F99BFC00BE90CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F224F100220346B500DD332F /* Visit */,
-				F2DABFCD21FA17E3009FEFCC /* Contact Storyboard */,
 				F2DABFCC21FA17D4009FEFCC /* Main Storyboard */,
+				F2DABFCD21FA17E3009FEFCC /* Contact Storyboard */,
 				F22034FB2201D0DD00F8BE39 /* Contract Storyboard */,
+				F224F100220346B500DD332F /* Visit */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -364,8 +367,8 @@
 		F2DABFCC21FA17D4009FEFCC /* Main Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */,
 				F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */,
+				F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */,
 				F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */,
 				F258F66F21FB547C00269506 /* MainContractsVC.swift */,
 				F258F68121FB6A5F00269506 /* MainPendingVC.swift */,
@@ -588,6 +591,7 @@
 				F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */,
 				F278D7B6220C6D0C00F1FE99 /* EquipmentTableViewCell.swift in Sources */,
 				F2322E7F2209DC9B0057479D /* ProspectingVC.swift in Sources */,
+				F27318162217320D0033C7B4 /* SignInViewModel.swift in Sources */,
 				F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
 				F2FBC8E9220039DD0079C47D /* VisitVC.swift in Sources */,
