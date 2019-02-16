@@ -31,6 +31,7 @@
 		F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */; };
 		F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FED22048F870010CE86 /* ContractDetailVC.swift */; };
 		F27D7FF02204AD9E0010CE86 /* VisitDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */; };
+		F2867FCC22183ED900AFB19E /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2867FCB22183ED900AFB19E /* NewContactViewModel.swift */; };
 		F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F288347121FED4E700CA09C6 /* Contact.storyboard */; };
 		F288347421FEDBE200CA09C6 /* NewContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347321FEDBE200CA09C6 /* NewContactVC.swift */; };
 		F288347621FF41BB00CA09C6 /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347521FF41BB00CA09C6 /* UserDetailVC.swift */; };
@@ -110,6 +111,7 @@
 		F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTypeVC.swift; sourceTree = "<group>"; };
 		F27D7FED22048F870010CE86 /* ContractDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailVC.swift; sourceTree = "<group>"; };
 		F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDetailVC.swift; sourceTree = "<group>"; };
+		F2867FCB22183ED900AFB19E /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
 		F288347121FED4E700CA09C6 /* Contact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
 		F288347321FEDBE200CA09C6 /* NewContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactVC.swift; sourceTree = "<group>"; };
 		F288347521FF41BB00CA09C6 /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				F27318152217320D0033C7B4 /* SignInViewModel.swift */,
+				F2867FCB22183ED900AFB19E /* NewContactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
 				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,
+				F2867FCC22183ED900AFB19E /* NewContactViewModel.swift in Sources */,
 				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
 				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,

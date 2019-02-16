@@ -10,17 +10,83 @@ import Foundation
 import Alamofire
 
 
+
+
+
+
+
 class SignInViewModel{
     
+    
+   
+    
+    // variables for this class
+    
     var apiURL = ""
+    var status = false
+    var serverResponce = [String : Any]()
+
     
     
-    func signINProcess(API:String) -> Bool {
+    func testME (){
+        
+        print("hello")
+        
+            //
+            
+            
+        }
+        
+
+    
+    
+    func signINProcess(API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void) {
         
         
-        Alamofire.request(API, method: .post, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
         
-        return false
+     
+        
+        
+        // ****** Hitting ApiLink with required parameter **********
+        
+        Alamofire.request(API, method: .post, parameters: Textfields, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+
+            
+            // fetching response result from API
+            var value = response.result.value  as! [String : Any]
+
+         
+            // Storing Server status
+            let check  = value["success"] as? Double
+
+            
+            
+            
+            // ************* Action to taken as per server response ******************
+            
+            // ERROR OCCUR
+            if check == 0 {
+
+
+                let errorValue =  value["errors"] as! [String : String]
+
+
+                let errMessage = errorValue.values.first!
+
+                
+                completion(false, errMessage)
+
+
+            }
+
+                // NO ERROR OCCUR
+            else{
+                completion(true, nil)
+            }
+
+        }
     }
     
+    
+
 }

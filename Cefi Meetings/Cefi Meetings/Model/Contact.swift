@@ -38,10 +38,10 @@ struct Contact : Decodable{
     var state : String?
     var lat : String
     var long : String
-    var _id : String
-    var addedDate : String
-    var isActive : Bool
-    var totalContracts : Double
-    var __v : Int
+    var _id : String?
+    var addedDate : String?
+    var isActive : Bool?
+    var totalContracts : Double?
+    var __v : Int?
     
 }

@@ -22,65 +22,69 @@ class SignInVC: UIViewController {
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var apiLink = ""
     
+    var viewModel = SignInViewModel()
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/login"
-
-
+        
+        viewModel.testME()
     }
 
+    
+    
+
+    
     @IBAction func loginButtonAction(_ sender: Any) {
        
-        print("************")
-        print(self.apiLink)
-        print("************")
-        
+     
+        // ********* parameter that are required by API ************
         let signInParameter = [
             "email" : userNameTF?.text ?? "" ,
             "password" : passwordTF?.text ?? ""
             
-        ] as! [String : Any]
+            ] as [String : Any]
+        
+        
+        
+      
+        
+        
+        
+        
+        //  *************** Verifying both textfield is not left empty ***********
         if userNameTF.text?.isEmpty == false && passwordTF.text?.isEmpty == false{
+            
+            
+            
             
             // ****** Hitting ApiLink with required parameter **********
 
-            Alamofire.request(apiLink, method: .post, parameters: signInParameter, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            viewModel.signINProcess(API: self.apiLink, Textfields: signInParameter) { (status, err) in
                 
-                var value = response.result.value  as! [String : Any]
+               
                 
-                print("key = \(value.keys)")
-                print("value = \(value.values)")
-                
-                let check  = value["success"] as? Double
-                
-                if check == 0 {
+                if status == false{
                     
-                    
-                    print("here")
-                    
-                    let errorValue =  value["errors"] as! [String : String]
-                    //                print("error:\(message.values.first!)")
-                    
-                    
-                    let errMessage = errorValue.values.first!
-                    
-                    self.alertMessage(Title: "SignIn Error", Message: errMessage)
-                    
-                    
-                    
+                    self.alertMessage(Title: "Sign In Error", Message: err!)
                 }
-                
+                    
+                    
                 
                 else{
                     self.performSegue(withIdentifier: "Dashboard", sender: nil)
-                }
+                    }
+                
                 
             }
-            
-            
+
         }
         
         else{
@@ -88,6 +92,12 @@ class SignInVC: UIViewController {
         }
         
     }
+    
+    
+    
+    // ******* Function that will handle Alert Viewcontroller ************
+    
+    
     
     func alertMessage(Title : String, Message : String ){
         
@@ -98,4 +108,6 @@ class SignInVC: UIViewController {
         self.present(alertVC, animated: true, completion: nil)
     }
 }
+
+
 
