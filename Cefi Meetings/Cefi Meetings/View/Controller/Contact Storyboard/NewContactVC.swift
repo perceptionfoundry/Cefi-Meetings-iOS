@@ -21,7 +21,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
-    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var typeTF: UITextField!
     @IBOutlet weak var businessTF: UITextField!
     @IBOutlet weak var contactTF: UITextField!
@@ -33,15 +33,24 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
+    var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    var apiLink = ""
+    let viewModel = NewContactViewModel()
+    
     var chosenPlace : meetup?
     
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
     
+    
+    var mapCameraView: GMSMapView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        self.apiLink = "\(appGlobalVariable.apiBaseURL)contacts/addcontact"
+
         
         
         mapView.isHidden = true
@@ -55,8 +64,17 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         locationManager.startMonitoringSignificantLocationChanges()
         
         
+        let camera = GMSCameraPosition.camera(withLatitude: 37.621262, longitude: -122.378945, zoom: 12)
+        
+        mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
         
         
+        self.mapCameraView!.animate(to: camera)
+        
+        self.mapView.addSubview(self.mapCameraView!)
+        
+        
+
         
         
     }
@@ -79,6 +97,79 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
     }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        
+        
+        // ********* parameter that are required by API ************
+        let newContactParameter = ["userId" : "",
+                                    "businessName" : businessTF.text,
+                                     "contactName" : contactTF.text,
+                                    "phoneNumber" : phoneTF.text,
+                                    "email" : emailTF.text,
+                                    "industryType" : industryTF.text,
+                                    "contactType" : contactTF.text,
+                                    "referredBy" : referredTF.text,
+                                    "lat" : self.chosenPlace?.lat,
+                                    "long" : chosenPlace?.long                                    ] as [String : Any]
+        
+        
+        
+        
+        
+        
+        
+        
+        //  *************** Verifying both textfield is not left empty ***********
+        if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && referredTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
+            
+            
+            
+            
+            // ****** Hitting ApiLink with required parameter **********
+            
+            viewModel.newContactCreate(API: self.apiLink, Textfields: newContactParameter) { (status, err) in
+                
+                
+                
+                if status == false{
+                    
+                    self.alertMessage(Title: "Sign In Error", Message: err!)
+                }
+                    
+                    
+                    
+                else{
+                    self.performSegue(withIdentifier: "Dashboard", sender: nil)
+                }
+                
+                
+            }
+            
+        }
+            
+        else{
+            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
+        }
+        
+    }
+    
+    
+    // ******* Function that will handle Alert Viewcontroller ************
+    
+    
+    
+    func alertMessage(Title : String, Message : String ){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        let dismissButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        
+        alertVC.addAction(dismissButton)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    
+    
     
     
     @IBAction func contractDetailAction(_ sender: Any) {
@@ -117,12 +208,24 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
         
         self.dismiss(animated: true) {
             
+          
+            let camera = GMSCameraPosition.camera(withLatitude: (self.chosenPlace?.lat)!, longitude: (self.chosenPlace?.long)!, zoom: 12)
+            
+            self.mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
+            
+            
+            self.mapCameraView!.animate(to: camera)
+            
+            self.mapView.addSubview(self.mapCameraView!)
+            
             self.mapView.isHidden = false
             
         }
         
         
     }
+    
+   
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         print("Autocomplete ERROR \(error.localizedDescription)")

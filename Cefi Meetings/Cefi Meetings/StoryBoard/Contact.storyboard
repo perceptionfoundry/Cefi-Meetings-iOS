@@ -323,6 +323,9 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveButtonAction:" destination="HDb-QZ-EA1" eventType="touchUpInside" id="gZr-fG-Myf"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVl-Bg-geU">
                                                 <rect key="frame" x="122" y="10" width="131" height="29"/>
@@ -444,9 +447,9 @@
                                                 <rect key="frame" x="19" y="551.5" width="337.5" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-6g-Q3h" customClass="GMSMapView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOf-6g-Q3h">
                                                 <rect key="frame" x="37.5" y="580" width="300" height="200"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="industry_newContact" translatesAutoresizingMaskIntoConstraints="NO" id="ond-DD-EkZ">
                                                 <rect key="frame" x="31.5" y="421" width="12" height="14"/>
@@ -645,7 +648,7 @@
                         <outlet property="emailTF" destination="PbJ-Hg-AnM" id="k8q-Yo-G13"/>
                         <outlet property="industryTF" destination="08i-N5-o41" id="sC2-8v-Ll8"/>
                         <outlet property="locationTF" destination="peu-aw-vEn" id="lj8-C5-96c"/>
-                        <outlet property="mapView" destination="NOf-6g-Q3h" id="3Es-Tc-L1I"/>
+                        <outlet property="mapView" destination="NOf-6g-Q3h" id="VYZ-s2-IJG"/>
                         <outlet property="phoneTF" destination="UZn-bF-ECI" id="o90-hI-nxM"/>
                         <outlet property="referredTF" destination="VDL-mh-noM" id="gCW-xg-lRc"/>
                         <outlet property="typeTF" destination="dA6-dR-MGp" id="c2h-EK-oPs"/>

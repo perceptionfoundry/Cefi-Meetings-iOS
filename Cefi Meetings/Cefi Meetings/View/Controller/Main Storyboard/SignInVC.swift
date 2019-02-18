@@ -35,7 +35,6 @@ class SignInVC: UIViewController {
 
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/login"
         
-        viewModel.testME()
     }
 
     
@@ -46,9 +45,17 @@ class SignInVC: UIViewController {
        
      
         // ********* parameter that are required by API ************
+//        let signInParameter = [
+//            "email" : userNameTF?.text ?? "" ,
+//            "password" : passwordTF?.text ?? ""
+//
+//            ] as [String : Any]
+        
+        
+        // *********  BYpass signin process ********
         let signInParameter = [
-            "email" : userNameTF?.text ?? "" ,
-            "password" : passwordTF?.text ?? ""
+            "email" : "shahaider@ceficrm.com" ,
+            "password" : "qwerty"
             
             ] as [String : Any]
         

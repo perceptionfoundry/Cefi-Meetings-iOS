@@ -23,7 +23,7 @@ import Foundation
 //}
 
 
-struct Contact : Decodable{
+class Contact : Decodable{
     
     var userId : String
     var businessName : String
@@ -43,5 +43,21 @@ struct Contact : Decodable{
     var isActive : Bool?
     var totalContracts : Double?
     var __v : Int?
+    
+    
+    init(userID: String, businessName: String, contactName: String, phone: String, email: String, industryType : String, ContactType: String, referredBy: String, Lat: String, long : String ){
+        
+        self.userId = userID
+       self.businessName = businessName
+        self.contactName = contactName
+       self.phoneNumber = phone
+        self.email = email
+       self.industryType = industryType
+        self.contactType = ContactType
+        self.referredBy = referredBy
+        self.lat = Lat
+        self.long = long
+        
+    }
     
 }
