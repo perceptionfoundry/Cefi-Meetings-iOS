@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -14,6 +16,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var Contact_Table: UITableView!
     @IBOutlet weak var NaviBar: UINavigationBar!
     
+    
+    
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
     let sample =  [["name": "Absher", "company":"logi"],
                    ["name": "Faisal", "company":"fuzz"],
@@ -27,6 +32,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     var contactDelegate : contactdelegate?
     var segueStatus  = false
+    
+    
     
     var wordSection = [String]()
     var wordsDic = [String:[[String:String]]]()
@@ -73,6 +80,22 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
        // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
         NaviBar.shadowImage = UIImage()
+        
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
+        
+        let para = ["userId": appGlobalVariable.userID]
+        
+        print(para)
+        print(apiLink)
+      
+        Alamofire.request(apiLink, method: .get, parameters: para).responseString { (resp) in
+            print(resp.result.value)
+            }.responseJSON { (response) in
+                print("json \(response.result.value)")
+        }
+        
+   
         
         Contact_Table.delegate = self
         Contact_Table.dataSource = self

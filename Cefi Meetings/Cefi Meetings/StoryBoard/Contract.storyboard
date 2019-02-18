@@ -39,6 +39,9 @@
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="doneButtonAction:" destination="Ydm-H5-TWc" eventType="touchUpInside" id="SAo-av-9YC"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contract" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-Ag-5lE">
                                                 <rect key="frame" x="34.5" y="114.5" width="13.5" height="11"/>
@@ -422,8 +425,8 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last @ Tax Returns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-w4-sHW">
-                                                                <rect key="frame" x="5" y="20" width="105" height="16.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Certificate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfW-w4-sHW">
+                                                                <rect key="frame" x="5" y="19.5" width="116" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -762,20 +765,30 @@
                     </view>
                     <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="allpageSwitch" destination="ZFL-2k-FR9" id="siW-kG-dt9"/>
                         <outlet property="amountTF" destination="fZR-0B-00G" id="gUz-QP-fcN"/>
                         <outlet property="bankCollectionView" destination="idj-hh-uxD" id="4D5-fs-j0E"/>
                         <outlet property="bankStateView" destination="pLM-RQ-7gx" id="e6M-Q6-Z35"/>
+                        <outlet property="bankSwitch" destination="fHe-LF-PgF" id="rjs-hT-gzq"/>
                         <outlet property="bankViewHeight" destination="NMu-eA-lS1" id="lPh-xf-dmz"/>
+                        <outlet property="closingSwitch" destination="Sfe-YG-uxb" id="Cra-1d-2oN"/>
                         <outlet property="contactTF" destination="Exx-ZH-K3O" id="NVE-Ha-QBl"/>
                         <outlet property="contractNumberTF" destination="Yul-XN-NZQ" id="FH8-Md-YrF"/>
                         <outlet property="contractTypeTF" destination="nKZ-2w-P7K" id="XA1-21-jK1"/>
                         <outlet property="equipmentCollectionVIew" destination="4kR-QG-QYs" id="LTS-LO-Yyr"/>
+                        <outlet property="equipmentSwitch" destination="VGN-QS-iLx" id="Mc3-O4-yyZ"/>
                         <outlet property="equipmentTF" destination="mZi-5d-ShS" id="ND8-kJ-a6h"/>
                         <outlet property="equipmentView" destination="fSB-vX-n3d" id="S7A-0y-BA9"/>
                         <outlet property="equipmentViewHeight" destination="Moa-ZT-W6z" id="zQo-3b-nVR"/>
+                        <outlet property="everythingSwitch" destination="58Y-AU-dhP" id="zdq-up-uNu"/>
+                        <outlet property="insuranceSwitch" destination="FN9-wC-lRx" id="b6d-bR-1xU"/>
+                        <outlet property="invoiceSwitch" destination="86x-gZ-RRU" id="AXj-kP-DCG"/>
+                        <outlet property="missingText" destination="IKk-gC-X5T" id="cZL-hh-d7Y"/>
                         <outlet property="purchaseDateTF" destination="z54-IT-8Ab" id="S7z-Cr-s5r"/>
                         <outlet property="ratingStar" destination="G0i-yR-kiz" id="CaY-CN-A82"/>
+                        <outlet property="signorSwitch" destination="Gnr-Fu-YjS" id="nyp-Xk-Qn1"/>
                         <outlet property="taxCollectionView" destination="118-Rv-MLK" id="5VD-9U-3m5"/>
+                        <outlet property="taxSwitch" destination="7Eo-Oa-xae" id="x2h-Gq-GyG"/>
                         <outlet property="taxView" destination="QXT-9i-ckF" id="Kcz-dM-LQR"/>
                         <outlet property="taxViewHeight" destination="4EG-SP-DfG" id="BCc-uU-bEw"/>
                         <segue destination="sxh-Tg-0yR" kind="presentation" identifier="Contact" id="Jxh-TD-iXR"/>

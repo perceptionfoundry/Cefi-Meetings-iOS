@@ -55,6 +55,11 @@ class SignInViewModel{
             // fetching response result from API
             var value = response.result.value  as! [String : Any]
 
+            
+            print("**********************")
+            
+            print(value)
+            print("**********************")
          
             // Storing Server status
             let check  = value["success"] as? Double
@@ -81,7 +86,13 @@ class SignInViewModel{
 
                 // NO ERROR OCCUR
             else{
-                completion(true, nil)
+                
+                let userID = value["userId"] as! String
+               
+                
+                print(userID)
+                
+                completion(true, userID)
             }
 
         }

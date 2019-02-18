@@ -11,7 +11,34 @@ import GoogleMaps
 import GooglePlaces
 
 
-class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
+class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate{
+    
+    
+    func equipmentType(list: [String]) {
+        
+        self.industryValue = list
+        
+        if list.count > 1{
+            
+            let text = "\(list[0]), \(list.count - 1) more"
+            industryTF.text = text
+        }
+        else if list.count == 1{
+            industryTF.text = list[0]
+        }
+    }
+    
+    
+    
+    func typeName(name: String) {
+        typeTF.text = name
+    }
+    
+    
+    
+    
+ 
+    
     
     
     struct meetup {
@@ -37,13 +64,19 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     var apiLink = ""
     let viewModel = NewContactViewModel()
     
-    var chosenPlace : meetup?
     
+    var industryValue = [String]()
+    var referrred = "none"
+    
+    // ******** Map related Variable *********
+    var chosenPlace : meetup?
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
-    
-    
     var mapCameraView: GMSMapView?
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +88,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         mapView.isHidden = true
         locationTF.delegate = self
+        typeTF.delegate = self
+        referredTF.delegate = self
+        industryTF.delegate = self
+    
         
         
         // Initialize device Current location delegate & respective functions
@@ -62,23 +99,40 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
-        
-        
+    
         let camera = GMSCameraPosition.camera(withLatitude: 37.621262, longitude: -122.378945, zoom: 12)
         
         mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
-        
-        
+
         self.mapCameraView!.animate(to: camera)
         
         self.mapView.addSubview(self.mapCameraView!)
         
         
-
+        
+        
+        let typeTFTap = UITapGestureRecognizer(target: self, action: #selector(selectType))
+        
+        typeTF.addGestureRecognizer(typeTFTap)
+        
+        let industryTFTap = UITapGestureRecognizer(target: self, action: #selector(industriesType))
+        
+        industryTF.addGestureRecognizer(industryTFTap)
         
         
     }
     
+   
+    
+    @objc func selectType(){
+        performSegue(withIdentifier: "Contact_Type", sender: nil)
+    }
+  
+    @objc func industriesType(){
+        performSegue(withIdentifier: "Industry_Type", sender: nil)
+        
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -86,6 +140,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
+      
+        
+        if textField == locationTF {
         let autoCompleteController = GMSAutocompleteViewController()
         autoCompleteController.delegate = self
         
@@ -94,7 +153,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
+        }
         
+        else if textField == referredTF{
+            
+        }
         
     }
     
@@ -102,16 +165,16 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
         // ********* parameter that are required by API ************
-        let newContactParameter = ["userId" : "",
-                                    "businessName" : businessTF.text,
-                                     "contactName" : contactTF.text,
-                                    "phoneNumber" : phoneTF.text,
-                                    "email" : emailTF.text,
-                                    "industryType" : industryTF.text,
-                                    "contactType" : contactTF.text,
-                                    "referredBy" : referredTF.text,
-                                    "lat" : self.chosenPlace?.lat,
-                                    "long" : chosenPlace?.long                                    ] as [String : Any]
+        let newContactParameter = ["userId" : appGlobalVariable.userID,
+                                    "businessName" : businessTF.text!,
+                                     "contactName" : contactTF.text!,
+                                    "phoneNumber" : phoneTF.text!,
+                                    "email" : emailTF.text!,
+                                    "industryType" : industryTF.text!,
+                                    "contactType" : contactTF.text!,
+                                    "referredBy" : self.referrred,
+                                    "lat" : self.chosenPlace!.lat,
+                                    "long" : chosenPlace!.long                                    ] as [String : Any]
         
         
         
@@ -121,7 +184,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
         //  *************** Verifying both textfield is not left empty ***********
-        if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && referredTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
+        if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
             
             
             
@@ -140,7 +203,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
                     
                     
                 else{
-                    self.performSegue(withIdentifier: "Dashboard", sender: nil)
+                    
+                    self.navigationController?.popViewController(animated: true)
                 }
                 
                 
@@ -226,6 +290,24 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
     }
     
    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Contact_Type"{
+            
+            let dest = segue.destination  as! contactType
+            
+            dest.typeDelegate = self
+            dest.previousSelected = typeTF.text
+        }
+        
+        else if segue.identifier == "Industry_Type"{
+            let dest = segue.destination  as! IndustryType
+            
+            dest.equipmentDelegate = self
+            dest.selectedTitle = industryValue
+        }
+    }
+    
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         print("Autocomplete ERROR \(error.localizedDescription)")

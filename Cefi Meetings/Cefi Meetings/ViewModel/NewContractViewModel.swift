@@ -1,8 +1,8 @@
 //
-//  NewContactViewModel.swift
+//  NewContractViewModel.swift
 //  Cefi Meetings
 //
-//  Created by Syed ShahRukh Haider on 16/02/2019.
+//  Created by Syed ShahRukh Haider on 18/02/2019.
 //  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
 //
 
@@ -10,14 +10,11 @@ import Foundation
 import Alamofire
 
 
-class NewContactViewModel{
+class NewContractViewModel {
     
-//    var userDetail : Contact!
-
     
-
-    func newContactCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
-
+    func newContractCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
+        
         
         print(API)
         print(Textfields)
@@ -30,9 +27,9 @@ class NewContactViewModel{
             
             // fetching response result from API
             var value = response.result.value  as! [String : Any]
-
+            
             print("**********************")
-
+            
             print(value)
             print("**********************")
             
@@ -40,7 +37,7 @@ class NewContactViewModel{
             let check  = value["success"] as? Double
             
             
-//            print(check)
+            //            print(check)
             
             // ************* Action to taken as per server response ******************
             
@@ -68,7 +65,5 @@ class NewContactViewModel{
         
         
     }
-    
-    
     
 }

@@ -45,19 +45,14 @@ class SignInVC: UIViewController {
        
      
         // ********* parameter that are required by API ************
-//        let signInParameter = [
-//            "email" : userNameTF?.text ?? "" ,
-//            "password" : passwordTF?.text ?? ""
-//
-//            ] as [String : Any]
-        
-        
-        // *********  BYpass signin process ********
         let signInParameter = [
-            "email" : "shahaider@ceficrm.com" ,
-            "password" : "qwerty"
-            
+            "email" : userNameTF?.text ?? "" ,
+            "password" : passwordTF?.text ?? ""
+
             ] as [String : Any]
+        
+        
+       
         
         
         
@@ -86,6 +81,11 @@ class SignInVC: UIViewController {
                     
                 
                 else{
+                    
+                    self.appGlobalVariable.userID = err!
+                    
+                    print(self.appGlobalVariable.userID)
+                    
                     self.performSegue(withIdentifier: "Dashboard", sender: nil)
                     }
                 

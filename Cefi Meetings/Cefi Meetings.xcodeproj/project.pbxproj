@@ -54,6 +54,9 @@
 		F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */; };
 		F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */; };
 		F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EF2213F659006ED05B /* CalendarVC.swift */; };
+		F2CDD1E9221AD69C00DD29D3 /* contactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1E8221AD69C00DD29D3 /* contactType.swift */; };
+		F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1EA221AE18300DD29D3 /* IndustryType.swift */; };
+		F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -136,6 +139,9 @@
 		F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIGNUP.swift; sourceTree = "<group>"; };
 		F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		F2C8F5EF2213F659006ED05B /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		F2CDD1E8221AD69C00DD29D3 /* contactType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactType.swift; sourceTree = "<group>"; };
+		F2CDD1EA221AE18300DD29D3 /* IndustryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryType.swift; sourceTree = "<group>"; };
+		F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractViewModel.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 			children = (
 				F27318152217320D0033C7B4 /* SignInViewModel.swift */,
 				F2867FCB22183ED900AFB19E /* NewContactViewModel.swift */,
+				F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +398,8 @@
 			children = (
 				F288347321FEDBE200CA09C6 /* NewContactVC.swift */,
 				F288347521FF41BB00CA09C6 /* UserDetailVC.swift */,
+				F2CDD1E8221AD69C00DD29D3 /* contactType.swift */,
+				F2CDD1EA221AE18300DD29D3 /* IndustryType.swift */,
 			);
 			path = "Contact Storyboard";
 			sourceTree = "<group>";
@@ -556,6 +565,7 @@
 				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,
 				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */,
+				F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
 				F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */,
 				F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */,
@@ -578,6 +588,7 @@
 				F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */,
 				F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */,
 				F22034FA2201D01800F8BE39 /* NewContractVC.swift in Sources */,
+				F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */,
 				F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
@@ -594,6 +605,7 @@
 				F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */,
 				F2BF7B2B220A03C00082A97F /* ClientVC.swift in Sources */,
 				F278D7B6220C6D0C00F1FE99 /* EquipmentTableViewCell.swift in Sources */,
+				F2CDD1E9221AD69C00DD29D3 /* contactType.swift in Sources */,
 				F2322E7F2209DC9B0057479D /* ProspectingVC.swift in Sources */,
 				F27318162217320D0033C7B4 /* SignInViewModel.swift in Sources */,
 				F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */,

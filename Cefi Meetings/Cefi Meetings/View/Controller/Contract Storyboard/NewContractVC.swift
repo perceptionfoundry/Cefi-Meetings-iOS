@@ -30,9 +30,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     @IBOutlet weak var taxCollectionView: UICollectionView!
-    
     @IBOutlet weak var bankCollectionView: UICollectionView!
-    
     @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
     
     @IBOutlet weak var contractTypeTF: UITextField!
@@ -42,7 +40,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var amountTF: UITextField!
     @IBOutlet weak var ratingStar: HCSStarRatingView!
     @IBOutlet weak var equipmentTF: UITextField!
-
+    @IBOutlet weak var missingText: UITextView!
+    
     
     
     @IBOutlet weak var taxView: UIView!
@@ -54,7 +53,23 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var equipmentView: UIView!
     @IBOutlet weak var equipmentViewHeight: NSLayoutConstraint!
     
-//    @IBOutlet weak var tagView: TagListView!
+    @IBOutlet weak var taxSwitch: UISwitch!
+    @IBOutlet weak var bankSwitch: UISwitch!
+    @IBOutlet weak var equipmentSwitch: UISwitch!
+    @IBOutlet weak var insuranceSwitch: UISwitch!
+    @IBOutlet weak var signorSwitch: UISwitch!
+    @IBOutlet weak var invoiceSwitch: UISwitch!
+    @IBOutlet weak var closingSwitch: UISwitch!
+    @IBOutlet weak var allpageSwitch: UISwitch!
+    @IBOutlet weak var everythingSwitch: UISwitch!
+    
+    
+    let viewModel = NewContractViewModel()
+    
+    
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    
+    //    @IBOutlet weak var tagView: TagListView!
     
     var tagArray = [String]()
     
@@ -108,6 +123,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         bankCollectionView.reloadData()
         equipmentCollectionVIew.reloadData()
 
+        
         
        
         
@@ -273,6 +289,40 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
   
     
     @IBAction func doneButtonAction(_ sender: Any) {
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
+        
+        let ContractDic : [String : Any] = [
+            
+            "userId": appGlobalVariable.userID,
+            "contactId":"5c61817b3e2919343fd52c96",
+            "contractStatus":contactType!,
+            "projectedPurchaseDate":purchaseDateTF.text!,
+            "equipmentCost":equipmentTF.text!,
+            "equipmentDetails":equipmentValue,
+            "rating":ratingStar.value,
+            "isTaxReturnsAvailable": taxSwitch.isOn,
+            "isBankStatementAvailable": bankSwitch.isOn,
+            "isEquipmentImagesAvailable" : equipmentSwitch.isOn,
+            "isInsuranceAvailable"  : insuranceSwitch.isOn,
+            "isSignorAvailable" : signorSwitch.isOn,
+            "isInvoiceAvailable" : invoiceSwitch.isOn,
+            "isClosingFees" : closingSwitch.isOn,
+            "isAllPagesSigned" : allpageSwitch.isOn,
+            "isEverythingCompleted" : everythingSwitch.isOn,
+            "everyThingCompleted":"",
+            "missingText": missingText.text!
+            
+ 
+        ]
+        
+        viewModel.newContractCreate(API: apiLink, Textfields: ContractDic) { (status, result) in
+            
+            print(status)
+        }
+            
+     
+    
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
