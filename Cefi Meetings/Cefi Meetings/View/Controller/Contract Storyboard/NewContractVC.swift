@@ -296,7 +296,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
             "userId": appGlobalVariable.userID,
             "contactId":"5c61817b3e2919343fd52c96",
-            "contractStatus":contactType!,
+            "contractStatus": contractTypeTF.text!,
             "projectedPurchaseDate":purchaseDateTF.text!,
             "equipmentCost":equipmentTF.text!,
             "equipmentDetails":equipmentValue,
@@ -316,13 +316,63 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
  
         ]
         
-        viewModel.newContractCreate(API: apiLink, Textfields: ContractDic) { (status, result) in
+        
+        
+//        @IBOutlet weak var contractTypeTF: UITextField!
+//        @IBOutlet weak var contractNumberTF: UITextField!
+//        @IBOutlet weak var contactTF: UITextField!
+//        @IBOutlet weak var purchaseDateTF: UITextField!
+//        @IBOutlet weak var amountTF: UITextField!
+//        @IBOutlet weak var ratingStar: HCSStarRatingView!
+//        @IBOutlet weak var equipmentTF: UITextField!
+//        @IBOutlet weak var missingText: UITextView!
+        
+        //  *************** Verifying both textfield is not left empty ***********
+        if contractTypeTF.text?.isEmpty == false && contractNumberTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
             
-            print(status)
+            
+            
+            
+            // ****** Hitting ApiLink with required parameter **********
+            
+            viewModel.newContractCreate(API: apiLink, Textfields: ContractDic) { (status, err) in
+                
+                
+                
+                if status == false{
+                    
+                    self.alertMessage(Title: "Sign In Error", Message: err!)
+                }
+                    
+                    
+                    
+                else{
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+                
+            }
+            
         }
+            
+        else{
+            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
+        }
+        
             
      
     
+    }
+    
+    
+    func alertMessage(Title : String, Message : String ){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        let dismissButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        
+        alertVC.addAction(dismissButton)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
