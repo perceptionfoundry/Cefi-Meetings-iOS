@@ -15,6 +15,10 @@ import TagListView
 
 
 class ReferralNewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFieldDelegate {
+    func contactName(userName: String, id: String) {
+        
+    }
+    
     
     @IBOutlet weak var contractTypeTF: UITextField!
     @IBOutlet weak var contractNumberTF: UITextField!

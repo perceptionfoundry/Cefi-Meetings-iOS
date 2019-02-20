@@ -25,4 +25,6 @@ pod 'Alamofire'
 
 pod 'VACalendar'
 
+pod 'IQKeyboardManagerSwift'
+
 end

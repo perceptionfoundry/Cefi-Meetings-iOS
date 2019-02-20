@@ -270,7 +270,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
               
                 
-                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!)
+                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!)
                 self.segueStatus = false
                 self.dismiss(animated: true, completion: nil)
                 

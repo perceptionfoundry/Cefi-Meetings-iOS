@@ -15,7 +15,7 @@ protocol typeDelegate {
 }
 
 protocol contactdelegate {
-    func contactName(userName : String)
+    func contactName(userName : String, id : String)
 }
 
 protocol equipmentTypeDelegate {
@@ -79,8 +79,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.contractTypeTF.text = name
     }
     
-    func contactName(userName: String) {
+    func contactName(userName: String, id : String) {
         contactTF.text = userName
+        self.selectedContactID = id
     }
     
     func equipmentType(list: [String]) {
@@ -88,7 +89,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         if list.count > 1{
             
-            var text = "\(list[0]), \(list.count - 1) more"
+            let text = "\(list[0]), \(list.count - 1) more"
             equipmentTF.text = text
         }
         else if list.count == 1{
@@ -99,7 +100,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     var equipmentValue = [String]()
-    
+    var selectedContactID : String?
     
     
     override func viewDidLoad() {
