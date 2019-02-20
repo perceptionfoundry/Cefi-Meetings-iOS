@@ -13,6 +13,8 @@ import Alamofire
 class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    
+    //  OUTLET VARIBALE
     @IBOutlet weak var Contact_Table: UITableView!
     @IBOutlet weak var NaviBar: UINavigationBar!
     

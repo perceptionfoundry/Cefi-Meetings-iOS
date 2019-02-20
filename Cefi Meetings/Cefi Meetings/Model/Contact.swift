@@ -9,13 +9,7 @@
 import Foundation
 
 
-struct AllContactResp: Codable{
-    
-    var status : String?
-    var success : Bool?
-    var totalPendingDocument : Double?
-    var userContact : [Contact]?
-}
+
 
 
 

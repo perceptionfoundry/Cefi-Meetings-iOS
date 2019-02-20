@@ -1,71 +1,111 @@
 //
 //  Contract.swift
-//  Cefi Meetings
-//
-//  Created by Syed ShahRukh Haider on 14/02/2019.
-//  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
-//
+//  Model Generated using http://www.jsoncafe.com/ 
+//  Created on February 20, 2019
 
 import Foundation
 
+struct Contract : Codable {
 
-class Contract : Decodable{
+        let v : Int?
+        let id : String?
+        let addedDate : String?
+        let allPagesSignedImage : String?
+        let allPendingDocumentCounts : Int?
+        let bankStatements : [String]?
+        let closingFees : String?
+        let contactId : String?
+        let contractNumber : String?
+        let contractStatus : String?
+        let equipmentCost : String?
+        let equipmentDetails : [String]?
+        let equipmentImages : [String]?
+        let everyThingCompleted : String?
+        let insuranceCertificate : String?
+        let invoice : String?
+        let isAllPagesSigned : Bool?
+        let isBankStatementAvailable : Bool?
+        let isClosingFees : Bool?
+        let isEquipmentImagesAvailable : Bool?
+        let isEverythingCompleted : Bool?
+        let isInsuranceAvailable : Bool?
+        let isInvoiceAvailable : Bool?
+        let isSignorAvailable : Bool?
+        let isTaxReturnsAvailable : Bool?
+        let missingText : String?
+        let projectedPurchaseDate : String?
+        let rating : String?
+        let signorAndSecretaryId : String?
+        let taxReturnImages : [String]?
+        let userId : String?
+
+        enum CodingKeys: String, CodingKey {
+                case v = "__v"
+                case id = "_id"
+                case addedDate = "addedDate"
+                case allPagesSignedImage = "allPagesSignedImage"
+                case allPendingDocumentCounts = "allPendingDocumentCounts"
+                case bankStatements = "bankStatements"
+                case closingFees = "closingFees"
+                case contactId = "contactId"
+                case contractNumber = "contractNumber"
+                case contractStatus = "contractStatus"
+                case equipmentCost = "equipmentCost"
+                case equipmentDetails = "equipmentDetails"
+                case equipmentImages = "equipmentImages"
+                case everyThingCompleted = "everyThingCompleted"
+                case insuranceCertificate = "insuranceCertificate"
+                case invoice = "invoice"
+                case isAllPagesSigned = "isAllPagesSigned"
+                case isBankStatementAvailable = "isBankStatementAvailable"
+                case isClosingFees = "isClosingFees"
+                case isEquipmentImagesAvailable = "isEquipmentImagesAvailable"
+                case isEverythingCompleted = "isEverythingCompleted"
+                case isInsuranceAvailable = "isInsuranceAvailable"
+                case isInvoiceAvailable = "isInvoiceAvailable"
+                case isSignorAvailable = "isSignorAvailable"
+                case isTaxReturnsAvailable = "isTaxReturnsAvailable"
+                case missingText = "missingText"
+                case projectedPurchaseDate = "projectedPurchaseDate"
+                case rating = "rating"
+                case signorAndSecretaryId = "signorAndSecretaryId"
+                case taxReturnImages = "taxReturnImages"
+                case userId = "userId"
+        }
     
-   
-    var equipmentDetails : [String]
-    var isTaxReturnsAvailable : Bool
-    var taxReturnImages : [String]?
-    var isBankStatementAvailable : Bool
-    var bankStatements : [String]?
-    var isEquipmentImagesAvailable : Bool
-    var equipmentImages : [String]?
-    var isInsuranceAvailable : Bool
-    var insuranceCertificate : Bool?
-    var isSignorAvailable : Bool
-    var signorAndSecretaryId : Bool?
-    var isInvoiceAvailable : Bool
-    var invoice : String?
-    var isClosingFees : Bool
-    var closingFees : String?
-    var isAllPagesSigned : Bool
-    var allPagesSignedImage : String?
-    var isEverythingCompleted : Bool
-    var everyThingCompleted : String?
-    var missingText : String
-    var allPendingDocumentCounts : Double?
-    var _id : String?
-    var userId : String
-    var addedDate : String?
-    var contactId : String
-    var contractStatus : String
-    var projectedPurchaseDate : String
-    var equipmentCost : String
-    var rating : String
-    var contractNumber : String?
-    var __v : Double?
-   
-
-    init (dicValue : [String:Any]){
-        
-        userId = dicValue["userId"] as! String
-        contactId = dicValue["contactId"] as! String
-        contractStatus = dicValue["contractStatus"] as! String
-        projectedPurchaseDate = dicValue["projectPurchased"] as! String
-        equipmentCost = dicValue["equipmentCost"] as! String
-        equipmentDetails = dicValue["equipmentDetail"] as! [String]
-        rating = dicValue["rating"] as! String
-        isTaxReturnsAvailable = dicValue["isTax"] as! Bool
-        isBankStatementAvailable = dicValue["isBank"] as! Bool
-        isEquipmentImagesAvailable = dicValue["isEquipment"] as! Bool
-        isInsuranceAvailable = dicValue["isInsurance"] as! Bool
-        isSignorAvailable = dicValue["isSignor"] as! Bool
-        isInvoiceAvailable = dicValue["inVoice"] as! Bool
-        isClosingFees = dicValue["isClosing"] as! Bool
-        isAllPagesSigned  = dicValue["isAllPages"] as! Bool
-        isEverythingCompleted = dicValue["isEverything"] as! Bool
-        everyThingCompleted = dicValue["everything"] as! String
-        missingText = dicValue["missingText"] as! String
-        
-    }
+        init(from decoder: Decoder) throws {
+                let values = try decoder.container(keyedBy: CodingKeys.self)
+                v = try values.decodeIfPresent(Int.self, forKey: .v)
+                id = try values.decodeIfPresent(String.self, forKey: .id)
+                addedDate = try values.decodeIfPresent(String.self, forKey: .addedDate)
+                allPagesSignedImage = try values.decodeIfPresent(String.self, forKey: .allPagesSignedImage)
+                allPendingDocumentCounts = try values.decodeIfPresent(Int.self, forKey: .allPendingDocumentCounts)
+                bankStatements = try values.decodeIfPresent([String].self, forKey: .bankStatements)
+                closingFees = try values.decodeIfPresent(String.self, forKey: .closingFees)
+                contactId = try values.decodeIfPresent(String.self, forKey: .contactId)
+                contractNumber = try values.decodeIfPresent(String.self, forKey: .contractNumber)
+                contractStatus = try values.decodeIfPresent(String.self, forKey: .contractStatus)
+                equipmentCost = try values.decodeIfPresent(String.self, forKey: .equipmentCost)
+                equipmentDetails = try values.decodeIfPresent([String].self, forKey: .equipmentDetails)
+                equipmentImages = try values.decodeIfPresent([String].self, forKey: .equipmentImages)
+                everyThingCompleted = try values.decodeIfPresent(String.self, forKey: .everyThingCompleted)
+                insuranceCertificate = try values.decodeIfPresent(String.self, forKey: .insuranceCertificate)
+                invoice = try values.decodeIfPresent(String.self, forKey: .invoice)
+                isAllPagesSigned = try values.decodeIfPresent(Bool.self, forKey: .isAllPagesSigned)
+                isBankStatementAvailable = try values.decodeIfPresent(Bool.self, forKey: .isBankStatementAvailable)
+                isClosingFees = try values.decodeIfPresent(Bool.self, forKey: .isClosingFees)
+                isEquipmentImagesAvailable = try values.decodeIfPresent(Bool.self, forKey: .isEquipmentImagesAvailable)
+                isEverythingCompleted = try values.decodeIfPresent(Bool.self, forKey: .isEverythingCompleted)
+                isInsuranceAvailable = try values.decodeIfPresent(Bool.self, forKey: .isInsuranceAvailable)
+                isInvoiceAvailable = try values.decodeIfPresent(Bool.self, forKey: .isInvoiceAvailable)
+                isSignorAvailable = try values.decodeIfPresent(Bool.self, forKey: .isSignorAvailable)
+                isTaxReturnsAvailable = try values.decodeIfPresent(Bool.self, forKey: .isTaxReturnsAvailable)
+                missingText = try values.decodeIfPresent(String.self, forKey: .missingText)
+                projectedPurchaseDate = try values.decodeIfPresent(String.self, forKey: .projectedPurchaseDate)
+                rating = try values.decodeIfPresent(String.self, forKey: .rating)
+                signorAndSecretaryId = try values.decodeIfPresent(String.self, forKey: .signorAndSecretaryId)
+                taxReturnImages = try values.decodeIfPresent([String].self, forKey: .taxReturnImages)
+                userId = try values.decodeIfPresent(String.self, forKey: .userId)
+        }
 
 }

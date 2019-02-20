@@ -914,7 +914,7 @@ We hope you have a great and productive day!</string>
                                                                     </state>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.10209830850362778" green="0.1266767680644989" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstItem="EXy-k1-YQt" firstAttribute="height" secondItem="HZY-La-Pgd" secondAttribute="height" multiplier="0.3" id="0ao-9t-GGm"/>
                                                                 <constraint firstItem="R0t-6D-Ng1" firstAttribute="centerX" secondItem="HZY-La-Pgd" secondAttribute="centerX" id="9xg-KQ-WxX"/>
@@ -999,10 +999,10 @@ We hope you have a great and productive day!</string>
                                                                 </view>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Era-kC-OM6">
                                                                     <rect key="frame" x="194" y="80" width="135" height="32"/>
-                                                                    <state key="normal" image="call_now_light"/>
+                                                                    <state key="normal" image="call_now_Dark"/>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.05464480072259903" green="0.25295370817184448" blue="0.011642963625490665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.51743954420089722" green="0.50586992502212524" blue="0.50588232278823853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.275" id="7ay-zm-psU"/>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="centerY" secondItem="M31-cu-IH7" secondAttribute="centerY" id="BB1-LV-Xjx"/>
@@ -1099,7 +1099,7 @@ We hope you have a great and productive day!</string>
                         <outlet property="timeLabel" destination="vhf-KE-AyF" id="0yv-DJ-AxQ"/>
                         <outlet property="visitTable" destination="6U9-Ta-uoW" id="wXo-u8-9rb"/>
                         <segue destination="MpR-p6-a9I" kind="show" identifier="Visit" id="Uia-r4-wpq"/>
-                        <segue destination="xpK-7p-Gbz" kind="show" identifier="Calendar" id="iV0-ry-fU0"/>
+                        <segue destination="h1S-IS-JiT" kind="show" identifier="Calendar" id="236-Nn-oIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL5-S7-BF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1194,16 +1194,16 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="1736.8" y="2504.7976011994006"/>
         </scene>
-        <!--View Controller-->
+        <!--CalendarVC-->
         <scene sceneID="hBq-uh-Gwg">
             <objects>
-                <viewController id="h1S-IS-JiT" sceneMemberID="viewController">
+                <viewController id="h1S-IS-JiT" customClass="CalendarVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7M-rP-xsC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4r-Zf-xKT" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="27" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="22.5" width="375" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-P9-IV0">
                                         <rect key="frame" x="338.5" y="20" width="26.5" height="26.5"/>
@@ -1228,13 +1228,13 @@ We hope you have a great and productive day!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-sg-ciU">
-                                        <rect key="frame" x="107" y="41" width="11" height="11"/>
+                                        <rect key="frame" x="107" y="41" width="11" height="11.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vXr-sg-ciU" secondAttribute="height" multiplier="1:1" id="R9W-sl-6zn"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGk-xA-RlG">
-                                        <rect key="frame" x="10" y="13" width="44" height="40"/>
+                                        <rect key="frame" x="10" y="13.5" width="44" height="40"/>
                                         <state key="normal" image="back_button"/>
                                     </button>
                                 </subviews>
@@ -1257,66 +1257,40 @@ We hope you have a great and productive day!</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwZ-vA-2rC">
-                                <rect key="frame" x="0.0" y="93.5" width="375" height="573.5"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="529"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-vi-kAh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKU-5L-ihe" customClass="FSCalendar">
+                                        <rect key="frame" x="28" y="28" width="319" height="529"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Calendar" rowHeight="340" id="0HR-9l-RYf" customClass="CalendarTableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="340"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0HR-9l-RYf" id="2xb-5o-Rpa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKU-5L-ihe" customClass="FSCalendar">
-                                                            <rect key="frame" x="28" y="17" width="319" height="305.5"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                                                    <color key="value" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
-                                                                    <color key="value" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
-                                                                    <color key="value" red="0.7490298152" green="0.74900132419999998" blue="0.74902075530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
-                                                                    <color key="value" red="0.25459641220000001" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
-                                                                    <color key="value" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                                                    <color key="value" red="0.39485406880000001" green="0.55999797579999999" blue="0.27049016949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="eKU-5L-ihe" firstAttribute="centerY" secondItem="2xb-5o-Rpa" secondAttribute="centerY" id="BcO-0F-gNE"/>
-                                                        <constraint firstItem="eKU-5L-ihe" firstAttribute="width" secondItem="2xb-5o-Rpa" secondAttribute="width" multiplier="0.85" id="teU-2n-Apq"/>
-                                                        <constraint firstItem="eKU-5L-ihe" firstAttribute="height" secondItem="2xb-5o-Rpa" secondAttribute="height" multiplier="0.9" id="xoV-22-c3a"/>
-                                                        <constraint firstItem="eKU-5L-ihe" firstAttribute="centerX" secondItem="2xb-5o-Rpa" secondAttribute="centerX" id="zMW-Rx-EBg"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <outlet property="calendarView" destination="eKU-5L-ihe" id="oan-H4-vg3"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                <color key="value" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                                <color key="value" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
+                                                <color key="value" red="0.7490298152" green="0.74900132419999998" blue="0.74902075530000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                                <color key="value" red="0.25459641220000001" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                                <color key="value" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                                <color key="value" red="0.39485406880000001" green="0.55999797579999999" blue="0.27049016949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9568755030632019" green="0.95683962106704712" blue="0.95686405897140503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="GLf-vi-kAh" secondAttribute="bottom" id="O2v-1S-QVk"/>
-                                    <constraint firstAttribute="trailing" secondItem="GLf-vi-kAh" secondAttribute="trailing" id="VEY-du-Ory"/>
-                                    <constraint firstItem="GLf-vi-kAh" firstAttribute="leading" secondItem="YwZ-vA-2rC" secondAttribute="leading" id="WSY-n2-OvM"/>
-                                    <constraint firstItem="GLf-vi-kAh" firstAttribute="top" secondItem="YwZ-vA-2rC" secondAttribute="top" id="fyK-Co-PuO"/>
+                                    <constraint firstItem="eKU-5L-ihe" firstAttribute="leading" secondItem="YwZ-vA-2rC" secondAttribute="leading" constant="28" id="dIK-uC-eEg"/>
+                                    <constraint firstItem="eKU-5L-ihe" firstAttribute="top" secondItem="YwZ-vA-2rC" secondAttribute="top" constant="28" id="dMK-co-81y"/>
+                                    <constraint firstItem="eKU-5L-ihe" firstAttribute="height" secondItem="YwZ-vA-2rC" secondAttribute="height" id="dZM-tA-zQ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="eKU-5L-ihe" secondAttribute="trailing" constant="28" id="npo-zU-eDE"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1333,6 +1307,9 @@ We hope you have a great and productive day!</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mSv-Xd-9ts"/>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="eKU-5L-ihe" id="pql-WQ-5Rx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjd-ES-62Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1640,16 +1617,16 @@ We hope you have a great and productive day!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-om-1I4" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="20.5" y="123" width="285" height="46.5"/>
+                                <rect key="frame" x="20.5" y="129.5" width="285" height="33.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-X4-RgH">
-                                        <rect key="frame" x="11" y="11.5" width="219.5" height="23.5"/>
+                                        <rect key="frame" x="11" y="8.5" width="219.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwS-mu-7Qd">
-                                        <rect key="frame" x="246.5" y="4.5" width="27.5" height="37.5"/>
+                                        <rect key="frame" x="250.5" y="3.5" width="19.5" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EwS-mu-7Qd" secondAttribute="height" multiplier="8:11" id="j4j-af-ENg"/>
                                         </constraints>
@@ -1686,7 +1663,7 @@ We hope you have a great and productive day!</string>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-00-Uzk">
-                                <rect key="frame" x="0.0" y="189.5" width="375" height="428.5"/>
+                                <rect key="frame" x="0.0" y="183" width="375" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contract" rowHeight="57" id="Bw9-5m-Yp8" customClass="Contract_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -1698,7 +1675,7 @@ We hope you have a great and productive day!</string>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16517" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-1O-A5Z">
                                                     <rect key="frame" x="281.5" y="18" width="56" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
                                                     <color key="textColor" red="0.39189803600311279" green="0.595542311668396" blue="0.27832308411598206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1877,7 +1854,7 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="width" secondItem="zEj-Yx-MTR" secondAttribute="width" multiplier="0.76" id="5Ri-nc-Ysz"/>
                             <constraint firstItem="hWK-uI-H55" firstAttribute="centerY" secondItem="U0a-Xs-Urg" secondAttribute="centerY" multiplier="0.458" id="7IU-23-xpY"/>
                             <constraint firstItem="dji-DS-Mkl" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" id="8dp-aW-S5h"/>
-                            <constraint firstItem="HjB-om-1I4" firstAttribute="height" secondItem="zEj-Yx-MTR" secondAttribute="height" multiplier="0.07" id="CYV-Cc-xlh"/>
+                            <constraint firstItem="HjB-om-1I4" firstAttribute="height" secondItem="zEj-Yx-MTR" secondAttribute="height" multiplier="0.05" id="CYV-Cc-xlh"/>
                             <constraint firstItem="dji-DS-Mkl" firstAttribute="top" secondItem="pN4-AY-vkd" secondAttribute="bottom" id="D1x-EI-qwm"/>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" multiplier="0.87" id="DqR-WQ-6M5"/>
                             <constraint firstItem="U0a-Xs-Urg" firstAttribute="bottom" secondItem="wrp-00-Uzk" secondAttribute="bottom" id="GB4-ul-sSL"/>
@@ -2347,7 +2324,7 @@ We hope you have a great and productive day!</string>
         <scene sceneID="ZQd-bo-H2r">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5D5-MS-dbV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home_Logo" id="8Oj-s8-2RN"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeTAB" id="8Oj-s8-2RN"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N5W-GK-JAg">
@@ -2596,16 +2573,16 @@ I bet you’re still using Bootstrap too…</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzn-lj-sJJ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="19" y="426.5" width="337.5" height="40"/>
+                                <rect key="frame" x="19" y="430" width="337.5" height="33.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-qp-pi4">
-                                        <rect key="frame" x="12.5" y="10" width="260" height="20"/>
+                                        <rect key="frame" x="12.5" y="8.5" width="260" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfu-He-Keu">
-                                        <rect key="frame" x="296" y="4" width="23.5" height="32"/>
+                                        <rect key="frame" x="298" y="3.5" width="19.5" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wfu-He-Keu" secondAttribute="height" multiplier="8:11" id="54A-iV-QmK"/>
                                         </constraints>
@@ -2728,7 +2705,7 @@ I bet you’re still using Bootstrap too…</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-DG-cBE">
-                                <rect key="frame" x="0.0" y="466.5" width="375" height="151.5"/>
+                                <rect key="frame" x="0.0" y="463.5" width="375" height="154.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contract" rowHeight="57" id="bmL-fx-uLJ" customClass="Contract_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -2752,7 +2729,7 @@ I bet you’re still using Bootstrap too…</string>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 25500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-Vz-mrI">
                                                     <rect key="frame" x="255" y="20" width="90" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
                                                     <color key="textColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2829,22 +2806,19 @@ I bet you’re still using Bootstrap too…</string>
                                         <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="2500"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
                                         <real key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
                                         <real key="value" value="100"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
-                                        <real key="value" value="50"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="5000000"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="stepValue">
-                                        <real key="value" value="1"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                        <real key="value" value="500000"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hideLabels" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="knobHasShadow" value="YES"/>
@@ -2992,7 +2966,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="BqG-kO-n7C" firstAttribute="top" secondItem="kt3-5G-Adn" secondAttribute="bottom" id="PGo-XE-OEa"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="QUp-Kj-AFE"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.02" id="RSs-to-BSh"/>
-                            <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.06" id="Rdh-eD-DPh"/>
+                            <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="Rdh-eD-DPh"/>
                             <constraint firstItem="ji4-tv-JmN" firstAttribute="centerY" secondItem="Gix-fX-4vT" secondAttribute="centerY" id="Rl2-8e-3pR"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="trailing" secondItem="d8P-bl-QQn" secondAttribute="trailing" id="RqY-z7-Qw7"/>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.225" id="SZR-xM-dkz"/>
@@ -3345,13 +3319,14 @@ I bet you’re still using Bootstrap too…</string>
         <image name="back_button" width="44" height="19"/>
         <image name="calendar" width="14" height="14"/>
         <image name="call_now" width="116" height="32"/>
-        <image name="call_now_light" width="116" height="32"/>
+        <image name="call_now_Dark" width="116" height="32"/>
         <image name="cell_right_arrow" width="7.5" height="12"/>
         <image name="cell_right_arrow_gray" width="7.5" height="12"/>
         <image name="contact_tab" width="25" height="22"/>
         <image name="contract_tab" width="16" height="22"/>
         <image name="english LOGO" width="190" height="82.5"/>
         <image name="filtering" width="18.5" height="18"/>
+        <image name="homeTAB" width="25" height="28"/>
         <image name="logout_button" width="22" height="18.5"/>
         <image name="pending_alert" width="7.5" height="9"/>
         <image name="pending_tab" width="18" height="22"/>
