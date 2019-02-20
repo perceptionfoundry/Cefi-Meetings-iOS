@@ -2781,10 +2781,16 @@ I bet you’re still using Bootstrap too…</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-eu-03i">
                                 <rect key="frame" x="28" y="239" width="319" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="cYw-2p-mvH"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-De-x5t">
                                 <rect key="frame" x="28" y="287" width="319" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="m6e-86-iX2"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-dH-A4Q">
                                 <rect key="frame" x="31" y="348.5" width="32" height="20.5"/>
@@ -2961,7 +2967,6 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="ji4-tv-JmN" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.26" id="Krl-cX-Sdc"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="1.475" id="Lg0-te-uC6"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="Lvg-BZ-cCf"/>
-                            <constraint firstItem="uVe-De-x5t" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="MS9-mT-uA3"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="N4a-eh-JRB"/>
                             <constraint firstItem="BqG-kO-n7C" firstAttribute="top" secondItem="kt3-5G-Adn" secondAttribute="bottom" id="PGo-XE-OEa"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="QUp-Kj-AFE"/>
@@ -2985,7 +2990,6 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="top" secondItem="d8P-bl-QQn" secondAttribute="top" id="m0z-E6-rsW"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="n1g-vU-3hj"/>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="nPb-oz-3PQ"/>
-                            <constraint firstItem="rMo-eu-03i" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="o7U-Ns-z7F"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.4" id="py3-H2-D8i"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="centerY" secondItem="hXu-AG-AjK" secondAttribute="centerY" id="qNG-8N-F0T"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.65" id="wDJ-Cf-vhY"/>
