@@ -320,7 +320,9 @@ import QuartzCore
         numberFormatter.maximumFractionDigits = 0
         guard let labelText = numberFormatter.string(from: NSNumber(value: value)) else { return "" }
         
-        return labelText
+        print(labelText)
+        
+        return "$ \(labelText)"
     }
   
   ///Updates the labels text content.

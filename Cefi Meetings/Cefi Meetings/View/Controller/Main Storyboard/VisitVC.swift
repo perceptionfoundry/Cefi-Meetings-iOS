@@ -186,7 +186,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
        
         visitCategory = dummyData[indexPath.row]["Type"]!
             
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.6) {
 //
             let type = self.dummyData[indexPath.row]["Type"]
             

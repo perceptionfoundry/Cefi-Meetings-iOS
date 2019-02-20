@@ -20,6 +20,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
+    let viewModel = MainContactListViewModel()
+    
     let sample =  [["name": "Absher", "company":"logi"],
                    ["name": "Faisal", "company":"fuzz"],
                    ["name": "Shahrukh", "company":"Perception"],
@@ -29,6 +31,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                    ]
     
     
+    var userDirectory = [Contact]()
+    
     
     var contactDelegate : contactdelegate?
     var segueStatus  = false
@@ -36,15 +40,22 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     var wordSection = [String]()
-    var wordsDic = [String:[[String:String]]]()
+    var wordsDic = [String:[Contact]]()
     
     
     
     func generateWordDic(){
         
-        for word in sample{
+//        for word in sample{
+        
+        
+        
+        
+        for word in userDirectory{
+
+        
             
-            let key = (word["name"]?.first)
+            let key = (word.contactName?.first)
             
             let upper = String(key!).uppercased()
             
@@ -84,25 +95,85 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
         
-        let para = ["userId": appGlobalVariable.userID]
+        let param = ["userId": appGlobalVariable.userID]
         
-        print(para)
+        print(param)
         print(apiLink)
       
-        Alamofire.request(apiLink, method: .get, parameters: para).responseString { (resp) in
-            print(resp.result.value)
-            }.responseJSON { (response) in
-                print("json \(response.result.value)")
-        }
         
-   
+        
+        
+//        Alamofire.request(apiLink, method: .post, parameters: para).responseJSON { (response) in
+//
+//
+//
+//
+////
+//            let contactLIst = response.result.value as! [String: Any]
+////
+//
+//            let userContact = contactLIst["userContact"] as! [Any]
+//
+//
+//
+//
+//            do{
+//
+//                let decoder = JSONDecoder()
+//
+//
+//                let newJson = try JSONSerialization.data(withJSONObject: userContact, options: JSONSerialization.WritingOptions.prettyPrinted)
+//                let values = try decoder.decode([Contact].self, from: newJson)
+//
+//                print(values.count)
+////
+////
+//
+//
+//            }catch{
+//                print(error.localizedDescription)
+//
+//            }
+//
+//
+//        }
+        
+//
         
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
         
+        
+        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
+            
+            if status == true{
+                
+                self.userDirectory = tableData
+                
+                
+                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
+                
+                
+                print(self.userDirectory[0].contactName)
+                
+//                self.Contact_Table.reloadData()
+                
+                self.generateWordDic()
+                
+            }
+            
+            self.Contact_Table.reloadData()
+        }
+
+        
+        
+        
         self.generateWordDic()
+        
+        
+        
     
-        Contact_Table.reloadData()
+//        Contact_Table.reloadData()
     }
   
     
@@ -163,18 +234,18 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 //
         let workKey = wordSection[indexPath.section]
         
-        print(workKey)
+//        print(workKey)
         
 
         if let wordValue = wordsDic[workKey.uppercased()]{
 
 
-            print(wordValue[indexPath.row])
-        
+//            print(wordValue[indexPath.row])
+//
             cell.selectionStyle = .none
             
-        cell.personName.text = wordValue[indexPath.row]["name"]
-        cell.companyName.text = wordValue[indexPath.row]["company"]
+        cell.personName.text = wordValue[indexPath.row].contactName
+        cell.companyName.text = wordValue[indexPath.row].businessName
 
 
         }
@@ -197,7 +268,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
               
                 
-                self.contactDelegate?.contactName(userName: wordValue[indexPath.row]["name"]!)
+                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!)
                 self.segueStatus = false
                 self.dismiss(animated: true, completion: nil)
                 

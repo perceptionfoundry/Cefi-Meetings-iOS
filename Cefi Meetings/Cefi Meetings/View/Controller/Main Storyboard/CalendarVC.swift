@@ -8,34 +8,78 @@
 
 import UIKit
 import FSCalendar
+import VACalendar
 
-class CalendarVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CalendarVC: UIViewController,VAMonthHeaderViewDelegate, VADayViewAppearanceDelegate{
+    func didTapNextMonth() {
+        
+    }
+    
+    func didTapPreviousMonth() {
+        
+    }
+    
 
+    
+    @IBOutlet weak var monthHeaderView: VAMonthHeaderView! {
+        didSet {
+            let appereance = VAMonthHeaderViewAppearance(
+//                previousButtonImage: #imageLiteral(resourceName: "previous"),
+//                nextButtonImage: #imageLiteral(resourceName: "next")
+//                dateFormatter: "llll"
+            )
+            monthHeaderView.delegate = self
+            monthHeaderView.appearance = appereance
+        }
+    }
+    
+    @IBOutlet weak var weekDaysView: VAWeekDaysView! {
+        didSet {
+            let appereance = VAWeekDaysViewAppearance(symbolsType: .veryShort, calendar: defaultCalendar)
+            weekDaysView.appearance = appereance
+        }
+    }
+    
+    var calendarView: VACalendarView!
+
+    
+    let defaultCalendar: Calendar = {
+        var calendar = Calendar.current
+        calendar.firstWeekday = 1
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let calendar = VACalendar(calendar: defaultCalendar)
+        calendarView = VACalendarView(frame: .zero, calendar: calendar)
+        calendarView.showDaysOut = true
+        calendarView.selectionStyle = .multi
+        calendarView.monthDelegate = monthHeaderView
+        calendarView.dayViewAppearanceDelegate = self as! VADayViewAppearanceDelegate
+        calendarView.monthViewAppearanceDelegate = self as! VAMonthViewAppearanceDelegate
+        calendarView.calendarDelegate = self as! VACalendarViewDelegate
+        calendarView.scrollDirection = .vertical
+        view.addSubview(calendarView)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if calendarView.frame == .zero {
+            calendarView.frame = CGRect(
+                x: 0,
+                y: weekDaysView.frame.maxY,
+                width: view.frame.width,
+                height: view.frame.height * 0.6
+            )
+            calendarView.setup()
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Calendar", for: indexPath) as! CalendarTableViewCell
-        
-        tableView.separatorStyle = .none
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
-        return 340
-    }
+ 
  
     
     @IBAction func backAction(_ sender: Any) {

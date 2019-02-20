@@ -8,56 +8,80 @@
 
 import Foundation
 
-//
-//class Contact:Decodable{
-//
-//    var contactType : String?
-//    var contactBusiness : String?
-//    var contactName : String?
-//    var contactPhone : String?
-//    var contactEmail : String?
-//    var contactIndustry : String?
-//    var contactReferred : String?
-//    var contactLat : String?
-//    var contactLong : String?
-//}
+
+struct AllContactResp: Codable{
+    
+    var status : String?
+    var success : Bool?
+    var totalPendingDocument : Double?
+    var userContact : [Contact]?
+}
 
 
-class Contact : Decodable{
+
+
+struct Contact : Codable {
     
-    var userId : String
-    var businessName : String
-    var contactName : String
-    var phoneNumber : String
-    var email : String
-    var industryType : String
-    var contactType : String
-    var referredBy : String
-    var streetAddress : String?
-    var town : String?
-    var state : String?
-    var lat : String
-    var long : String
-    var _id : String?
-    var addedDate : String?
-    var isActive : Bool?
-    var totalContracts : Double?
-    var __v : Int?
+    let v : Int?
+    let id : String?
+    let addedDate : String?
+    let businessName : String?
+    let contactName : String?
+    let contactType : String?
+    let email : String?
+    let industryType : String?
+    let isActive : Bool?
+    let lat : String?
+    let longField : String?
+    let phoneNumber : Int?
+    let referredBy : String?
+    let state : String?
+    let streetAddress : String?
+    let totalContracts : Int?
+    let town : String?
+    let userId : String?
     
+    enum CodingKeys: String, CodingKey {
+        case v = "__v"
+        case id = "_id"
+        case addedDate = "addedDate"
+        case businessName = "businessName"
+        case contactName = "contactName"
+        case contactType = "contactType"
+        case email = "email"
+        case industryType = "industryType"
+        case isActive = "isActive"
+        case lat = "lat"
+        case longField = "long"
+        case phoneNumber = "phoneNumber"
+        case referredBy = "referredBy"
+        case state = "state"
+        case streetAddress = "streetAddress"
+        case totalContracts = "totalContracts"
+        case town = "town"
+        case userId = "userId"
+    }
     
-    init(userID: String, businessName: String, contactName: String, phone: String, email: String, industryType : String, ContactType: String, referredBy: String, Lat: String, long : String ){
-        
-        self.userId = userID
-       self.businessName = businessName
-        self.contactName = contactName
-       self.phoneNumber = phone
-        self.email = email
-       self.industryType = industryType
-        self.contactType = ContactType
-        self.referredBy = referredBy
-        self.lat = Lat
-        self.long = long
-        
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        v = try values.decodeIfPresent(Int.self, forKey: .v)
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        addedDate = try values.decodeIfPresent(String.self, forKey: .addedDate)
+        businessName = try values.decodeIfPresent(String.self, forKey: .businessName)
+        contactName = try values.decodeIfPresent(String.self, forKey: .contactName)
+        contactType = try values.decodeIfPresent(String.self, forKey: .contactType)
+        email = try values.decodeIfPresent(String.self, forKey: .email)
+        industryType = try values.decodeIfPresent(String.self, forKey: .industryType)
+        isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
+        lat = try values.decodeIfPresent(String.self, forKey: .lat)
+        longField = try values.decodeIfPresent(String.self, forKey: .longField)
+        phoneNumber = try values.decodeIfPresent(Int.self, forKey: .phoneNumber)
+        referredBy = try values.decodeIfPresent(String.self, forKey: .referredBy)
+        state = try values.decodeIfPresent(String.self, forKey: .state)
+        streetAddress = try values.decodeIfPresent(String.self, forKey: .streetAddress)
+        totalContracts = try values.decodeIfPresent(Int.self, forKey: .totalContracts)
+        town = try values.decodeIfPresent(String.self, forKey: .town)
+        userId = try values.decodeIfPresent(String.self, forKey: .userId)
     }
     
 }

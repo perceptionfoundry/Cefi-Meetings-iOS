@@ -54,6 +54,7 @@ class NewContractViewModel {
                 completion(false, errMessage)
                 
                 
+                
             }
                 
                 // NO ERROR OCCUR

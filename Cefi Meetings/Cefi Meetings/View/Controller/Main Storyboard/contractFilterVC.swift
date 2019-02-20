@@ -8,12 +8,16 @@
 
 import UIKit
 import TTSegmentedControl
+import SwiftRangeSlider
+
+
 
 class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
     
+    @IBOutlet weak var priceRange: RangeSlider!
     @IBOutlet weak var typeSegment: TTSegmentedControl!
     
     
@@ -22,11 +26,15 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         filterTable.delegate = self
         filterTable.dataSource = self
         
         typeSegment.itemTitles = ["Dealers","Prospects","Clients","Referrals"]
         statusSegment.itemTitles = ["Open","Deal","Dead","Closed"]
+        
+        typeSegment.allowChangeThumbWidth = false
+        statusSegment.allowChangeThumbWidth = false
         
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)

@@ -93,17 +93,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_BG" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-DJ-wrx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="g6R-uX-I0V">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="english LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="g6R-uX-I0V">
                                 <rect key="frame" x="93" y="104" width="189" height="85.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eox-d1-25x" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="36.5" y="246" width="302" height="48"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-a2-h2L">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-a2-h2L">
                                         <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -135,12 +135,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-No-XmZ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="36.5" y="313" width="302" height="48"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-jv-NHN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-jv-NHN">
                                         <rect key="frame" x="0.0" y="0.0" width="302" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="0.90141684322033899" colorSpace="custom" customColorSpace="displayP3"/>
@@ -171,6 +171,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVT-PC-jkg" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="112.5" y="403.5" width="150" height="46.5"/>
                                 <color key="backgroundColor" red="0.34927457571029663" green="0.56815886497497559" blue="0.22732043266296387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -196,46 +197,58 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2f-bA-Ne4">
-                                <rect key="frame" x="0.0" y="602.5" width="375" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="206.5" y="602.5" width="112.5" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.21607834100723267" green="0.26470938324928284" blue="0.042990989983081818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-e8-mnK">
-                                <rect key="frame" x="36" y="35" width="50" height="30"/>
-                                <state key="normal" title="sign up"/>
+                                <rect key="frame" x="84.5" y="602.5" width="93.5" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.216" green="0.26500000000000001" blue="0.042999999999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="Lhw-nZ-gVv" kind="show" id="9OX-hc-HqD"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-Tf-YTw">
+                                <rect key="frame" x="187" y="600.5" width="1.5" height="33"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.806" id="0hh-ek-XYV"/>
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.07" id="4iT-EU-wVN"/>
                             <constraint firstItem="g6R-uX-I0V" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="ANg-Kb-LpE"/>
+                            <constraint firstItem="TIR-e8-mnK" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.25" id="BrH-Ka-5bT"/>
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="CL7-QL-JZu"/>
-                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" id="Cfd-dw-3e2"/>
+                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.3" id="Cfd-dw-3e2"/>
+                            <constraint firstItem="TIR-e8-mnK" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" multiplier="0.7" id="DwT-SV-bLl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qqf-DJ-wrx" secondAttribute="bottom" id="Ech-lL-g9K"/>
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.28" id="GFK-cG-LvY"/>
                             <constraint firstItem="Eox-d1-25x" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="Gty-3e-crH"/>
+                            <constraint firstItem="4Cc-Tf-YTw" firstAttribute="centerY" secondItem="u2f-bA-Ne4" secondAttribute="centerY" id="GvK-vk-5OE"/>
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.4" id="HAU-3Z-mJm"/>
-                            <constraint firstItem="TIR-e8-mnK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="PuK-zw-oCL"/>
                             <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.85" id="Ruy-zA-Wyp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qqf-DJ-wrx" secondAttribute="trailing" id="Rzf-um-Er4"/>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.01" id="YFT-Zi-RBM"/>
+                            <constraint firstItem="4Cc-Tf-YTw" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.05" id="Yb3-dD-zRR"/>
                             <constraint firstItem="Eox-d1-25x" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="Ywy-l8-hb1"/>
+                            <constraint firstItem="4Cc-Tf-YTw" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="bBB-Hq-RiG"/>
                             <constraint firstItem="Eox-d1-25x" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.806" id="c7K-gE-Aub"/>
+                            <constraint firstItem="TIR-e8-mnK" firstAttribute="centerY" secondItem="u2f-bA-Ne4" secondAttribute="centerY" id="cdB-uS-g75"/>
                             <constraint firstItem="g6R-uX-I0V" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.503" id="f11-nT-4ul"/>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="gQk-tH-oh3"/>
                             <constraint firstItem="g6R-uX-I0V" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="0.44" id="kJ3-0X-zxN"/>
                             <constraint firstItem="g6R-uX-I0V" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.1275" id="kJD-iV-6FC"/>
                             <constraint firstItem="Qqf-DJ-wrx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEF-DB-WWf"/>
-                            <constraint firstItem="TIR-e8-mnK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="mri-GD-qDV"/>
                             <constraint firstItem="Eox-d1-25x" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="0.81" id="pHC-4Q-7EL"/>
+                            <constraint firstItem="4Cc-Tf-YTw" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.004" id="qyy-lt-P1F"/>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="ueU-oh-4yo"/>
-                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="xhH-1N-DJu"/>
+                            <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" multiplier="1.4" id="xhH-1N-DJu"/>
                             <constraint firstItem="Qqf-DJ-wrx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="zJx-0Y-ee4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -831,8 +844,8 @@ We hope you have a great and productive day!</string>
                                             <action selector="addButtonAction:" destination="yce-ko-b6j" eventType="touchUpInside" id="oIG-ll-5Pc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-qd-d5R">
-                                        <rect key="frame" x="161.5" y="5" width="52" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meetings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHz-qd-d5R">
+                                        <rect key="frame" x="141.5" y="5" width="92" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -939,20 +952,20 @@ We hope you have a great and productive day!</string>
                                                             <rect key="frame" x="19" y="10" width="337.5" height="148"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-FR-fMX">
-                                                                    <rect key="frame" x="36.5" y="18" width="168.5" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                                                    <rect key="frame" x="17" y="18" width="168.5" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M31-cu-IH7">
-                                                                    <rect key="frame" x="36.5" y="43" width="202.5" height="25"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                                                    <rect key="frame" x="17" y="43" width="202.5" height="25"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inD-1i-AYm">
-                                                                    <rect key="frame" x="38" y="75" width="236" height="20"/>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                                                    <rect key="frame" x="17" y="75" width="236" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -963,7 +976,7 @@ We hope you have a great and productive day!</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-Mw-my2" customClass="HCSStarRatingView">
-                                                                    <rect key="frame" x="29.5" y="105" width="101.5" height="12"/>
+                                                                    <rect key="frame" x="17" y="105" width="67.5" height="12"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="tintColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -986,7 +999,7 @@ We hope you have a great and productive day!</string>
                                                                 </view>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Era-kC-OM6">
                                                                     <rect key="frame" x="194" y="80" width="135" height="32"/>
-                                                                    <state key="normal" image="call_now"/>
+                                                                    <state key="normal" image="call_now_light"/>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.05464480072259903" green="0.25295370817184448" blue="0.011642963625490665" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -995,21 +1008,21 @@ We hope you have a great and productive day!</string>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="centerY" secondItem="M31-cu-IH7" secondAttribute="centerY" id="BB1-LV-Xjx"/>
                                                                 <constraint firstItem="nhx-Mw-my2" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="1.5" id="ERQ-94-7IF"/>
                                                                 <constraint firstItem="Era-kC-OM6" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="1.55" id="ImZ-K9-Ahv"/>
-                                                                <constraint firstItem="inD-1i-AYm" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.925" id="JxX-Gj-eii"/>
+                                                                <constraint firstItem="inD-1i-AYm" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.8" id="JxX-Gj-eii"/>
                                                                 <constraint firstItem="cpu-FR-fMX" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.5" id="Kts-aR-Lyx"/>
                                                                 <constraint firstItem="cpu-FR-fMX" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="0.375" id="LWl-bF-8EO"/>
                                                                 <constraint firstAttribute="height" constant="148" id="MAd-of-qUh"/>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="1.55" id="TGw-e9-N86"/>
                                                                 <constraint firstItem="M31-cu-IH7" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="0.75" id="U6m-77-wEf"/>
-                                                                <constraint firstItem="M31-cu-IH7" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.815" id="VUb-3N-j9X"/>
+                                                                <constraint firstItem="M31-cu-IH7" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.7" id="VUb-3N-j9X"/>
                                                                 <constraint firstItem="inD-1i-AYm" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="1.15" id="XTi-h7-N6W"/>
-                                                                <constraint firstItem="cpu-FR-fMX" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.715" id="YlU-sZ-hQv"/>
+                                                                <constraint firstItem="cpu-FR-fMX" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.6" id="YlU-sZ-hQv"/>
                                                                 <constraint firstItem="Era-kC-OM6" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="1.3" id="b4j-y1-Jfp"/>
-                                                                <constraint firstItem="nhx-Mw-my2" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.475" id="cFb-eV-FDq"/>
+                                                                <constraint firstItem="nhx-Mw-my2" firstAttribute="centerX" secondItem="4RZ-3q-ICY" secondAttribute="centerX" multiplier="0.3" id="cFb-eV-FDq"/>
                                                                 <constraint firstItem="nhx-Mw-my2" firstAttribute="height" secondItem="4RZ-3q-ICY" secondAttribute="height" multiplier="0.08" id="mAz-iD-z6n"/>
                                                                 <constraint firstItem="M31-cu-IH7" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.6" id="n7D-lS-fht"/>
                                                                 <constraint firstItem="Era-kC-OM6" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.4" id="nyg-pu-hga"/>
-                                                                <constraint firstItem="nhx-Mw-my2" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.3" id="onQ-eb-7AH"/>
+                                                                <constraint firstItem="nhx-Mw-my2" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.2" id="onQ-eb-7AH"/>
                                                                 <constraint firstItem="inD-1i-AYm" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.7" id="vSI-vY-XhK"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -1086,23 +1099,111 @@ We hope you have a great and productive day!</string>
                         <outlet property="timeLabel" destination="vhf-KE-AyF" id="0yv-DJ-AxQ"/>
                         <outlet property="visitTable" destination="6U9-Ta-uoW" id="wXo-u8-9rb"/>
                         <segue destination="MpR-p6-a9I" kind="show" identifier="Visit" id="Uia-r4-wpq"/>
-                        <segue destination="h1S-IS-JiT" kind="show" identifier="Calendar" id="41T-1G-kye"/>
+                        <segue destination="xpK-7p-Gbz" kind="show" identifier="Calendar" id="iV0-ry-fU0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL5-S7-BF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2141.5999999999999" y="1736.5817091454273"/>
         </scene>
-        <!--Data Source-->
+        <!--Vertical Calendar Controller-->
+        <scene sceneID="esY-ry-pQy">
+            <objects>
+                <viewController id="xpK-7p-Gbz" customClass="VerticalCalendarController" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKw-JL-fXV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbX-A0-C3R" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="66.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adH-4H-7Qh">
+                                        <rect key="frame" x="338.5" y="20" width="26.5" height="26.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="adH-4H-7Qh" secondAttribute="height" multiplier="1:1" id="pmz-uJ-gdw"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="+_button"/>
+                                        <connections>
+                                            <action selector="addButtonAction:" destination="yce-ko-b6j" eventType="touchUpInside" id="mnp-ct-OC5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-Ld-5Zs">
+                                        <rect key="frame" x="161.5" y="10" width="52" height="29"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 24, 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGk-mj-tg4">
+                                        <rect key="frame" x="122" y="36" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-di-ji5">
+                                        <rect key="frame" x="107" y="41" width="11" height="11.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wiU-di-ji5" secondAttribute="height" multiplier="1:1" id="XVC-FK-R3z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-ej-UA1">
+                                        <rect key="frame" x="10" y="13.5" width="44" height="40"/>
+                                        <state key="normal" image="back_button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hrQ-ej-UA1" firstAttribute="centerY" secondItem="YbX-A0-C3R" secondAttribute="centerY" id="3sL-pN-0hA"/>
+                                    <constraint firstItem="adH-4H-7Qh" firstAttribute="centerY" secondItem="YbX-A0-C3R" secondAttribute="centerY" id="5RH-WY-wfd"/>
+                                    <constraint firstItem="adH-4H-7Qh" firstAttribute="height" secondItem="YbX-A0-C3R" secondAttribute="height" multiplier="0.4" id="MgU-L7-XbH"/>
+                                    <constraint firstItem="cGk-mj-tg4" firstAttribute="centerX" secondItem="YbX-A0-C3R" secondAttribute="centerX" multiplier="1.05" id="NTo-97-aIh"/>
+                                    <constraint firstItem="hrQ-ej-UA1" firstAttribute="height" secondItem="YbX-A0-C3R" secondAttribute="height" multiplier="0.6" id="RzX-Cc-ALp"/>
+                                    <constraint firstItem="hrQ-ej-UA1" firstAttribute="leading" secondItem="YbX-A0-C3R" secondAttribute="leading" constant="10" id="Tu9-Xd-8cO"/>
+                                    <constraint firstItem="wiU-di-ji5" firstAttribute="centerY" secondItem="YbX-A0-C3R" secondAttribute="centerY" multiplier="1.4" id="XKE-gX-fTh"/>
+                                    <constraint firstItem="wiU-di-ji5" firstAttribute="centerX" secondItem="YbX-A0-C3R" secondAttribute="centerX" multiplier="0.6" id="cYl-6B-hSD"/>
+                                    <constraint firstAttribute="trailing" secondItem="adH-4H-7Qh" secondAttribute="trailing" constant="10" id="nhL-DD-O8L"/>
+                                    <constraint firstItem="cGk-mj-tg4" firstAttribute="width" secondItem="YbX-A0-C3R" secondAttribute="width" multiplier="0.4" id="o4l-yO-aaj"/>
+                                    <constraint firstItem="cGk-mj-tg4" firstAttribute="centerY" secondItem="YbX-A0-C3R" secondAttribute="centerY" multiplier="1.4" id="r5e-tL-wzE"/>
+                                    <constraint firstItem="cNZ-Ld-5Zs" firstAttribute="centerX" secondItem="YbX-A0-C3R" secondAttribute="centerX" id="xWR-E4-9kV"/>
+                                    <constraint firstItem="cNZ-Ld-5Zs" firstAttribute="top" secondItem="YbX-A0-C3R" secondAttribute="top" constant="10" id="y4n-mV-JsR"/>
+                                    <constraint firstItem="wiU-di-ji5" firstAttribute="height" secondItem="YbX-A0-C3R" secondAttribute="height" multiplier="0.1675" id="ygk-dt-8qV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heI-A7-l7H" customClass="VAWeekDaysView" customModule="VACalendar">
+                                <rect key="frame" x="0.0" y="86.5" width="375" height="67"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="heI-A7-l7H" firstAttribute="height" secondItem="BKw-JL-fXV" secondAttribute="height" multiplier="0.1" id="4Wa-GR-UVF"/>
+                            <constraint firstItem="YbX-A0-C3R" firstAttribute="top" secondItem="Haz-8N-Djz" secondAttribute="top" id="5ML-E0-HHM"/>
+                            <constraint firstItem="YbX-A0-C3R" firstAttribute="height" secondItem="BKw-JL-fXV" secondAttribute="height" multiplier="0.1" id="KQm-0P-uCb"/>
+                            <constraint firstItem="YbX-A0-C3R" firstAttribute="trailing" secondItem="Haz-8N-Djz" secondAttribute="trailing" id="M85-Oz-YrW"/>
+                            <constraint firstItem="YbX-A0-C3R" firstAttribute="leading" secondItem="Haz-8N-Djz" secondAttribute="leading" id="Oav-UM-Gd8"/>
+                            <constraint firstItem="heI-A7-l7H" firstAttribute="top" secondItem="YbX-A0-C3R" secondAttribute="bottom" id="i85-nc-4eE"/>
+                            <constraint firstItem="Haz-8N-Djz" firstAttribute="trailing" secondItem="heI-A7-l7H" secondAttribute="trailing" id="pP9-XX-TLg"/>
+                            <constraint firstItem="heI-A7-l7H" firstAttribute="leading" secondItem="Haz-8N-Djz" secondAttribute="leading" id="rY3-yC-yzY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Haz-8N-Djz"/>
+                    </view>
+                    <connections>
+                        <outlet property="weekDaysView" destination="heI-A7-l7H" id="i0Q-ZZ-gzW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7DP-Lh-X5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="2504.7976011994006"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="hBq-uh-Gwg">
             <objects>
-                <viewController id="h1S-IS-JiT" customClass="CalendarVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h1S-IS-JiT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7M-rP-xsC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4r-Zf-xKT" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22.5" width="375" height="66.5"/>
+                                <rect key="frame" x="0.0" y="27" width="375" height="66.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-P9-IV0">
                                         <rect key="frame" x="338.5" y="20" width="26.5" height="26.5"/>
@@ -1127,17 +1228,14 @@ We hope you have a great and productive day!</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-sg-ciU">
-                                        <rect key="frame" x="107" y="41" width="11" height="11.5"/>
+                                        <rect key="frame" x="107" y="41" width="11" height="11"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vXr-sg-ciU" secondAttribute="height" multiplier="1:1" id="R9W-sl-6zn"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGk-xA-RlG">
-                                        <rect key="frame" x="10" y="13.5" width="44" height="40"/>
+                                        <rect key="frame" x="10" y="13" width="44" height="40"/>
                                         <state key="normal" image="back_button"/>
-                                        <connections>
-                                            <action selector="backAction:" destination="h1S-IS-JiT" eventType="touchUpInside" id="y2D-7y-IuT"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1159,10 +1257,10 @@ We hope you have a great and productive day!</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwZ-vA-2rC">
-                                <rect key="frame" x="0.0" y="89" width="375" height="529"/>
+                                <rect key="frame" x="0.0" y="93.5" width="375" height="573.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-vi-kAh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="529"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="573.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Calendar" rowHeight="340" id="0HR-9l-RYf" customClass="CalendarTableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -1196,10 +1294,6 @@ We hope you have a great and productive day!</string>
                                                                     <color key="value" red="0.39485406880000001" green="0.55999797579999999" blue="0.27049016949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <outlet property="dataSource" destination="h1S-IS-JiT" id="N9o-HA-vbr"/>
-                                                                <outlet property="delegate" destination="h1S-IS-JiT" id="SfA-Ld-cGB"/>
-                                                            </connections>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -1215,10 +1309,6 @@ We hope you have a great and productive day!</string>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="h1S-IS-JiT" id="ybJ-Vb-Yd7"/>
-                                            <outlet property="delegate" destination="h1S-IS-JiT" id="vop-lx-pBY"/>
-                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9568755030632019" green="0.95683962106704712" blue="0.95686405897140503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1549,47 +1639,6 @@ We hope you have a great and productive day!</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-nf-cj1">
-                                <rect key="frame" x="9.5" y="82" width="356" height="27"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUA-O2-PLP" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="6ot-nZ-P2P"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="Open">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJF-45-wMl" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="183.5" y="0.0" width="172.5" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="rxj-wA-ox0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <state key="normal" title="Closed">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-om-1I4" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="20.5" y="123" width="285" height="46.5"/>
                                 <subviews>
@@ -1745,14 +1794,92 @@ We hope you have a great and productive day!</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="dji-DS-Mkl">
+                                <rect key="frame" x="9.5" y="64" width="356" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rte-Ux-GEh" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="iF1-wX-bhe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-ZW-9II" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="v0t-Gg-zgM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Open">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1p-4w-HbZ" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="bRH-W9-aZI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Closed">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDT-J5-a4A" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="1MH-Tx-dsI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Dead">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="width" secondItem="zEj-Yx-MTR" secondAttribute="width" multiplier="0.76" id="5Ri-nc-Ysz"/>
                             <constraint firstItem="hWK-uI-H55" firstAttribute="centerY" secondItem="U0a-Xs-Urg" secondAttribute="centerY" multiplier="0.458" id="7IU-23-xpY"/>
+                            <constraint firstItem="dji-DS-Mkl" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" id="8dp-aW-S5h"/>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="height" secondItem="zEj-Yx-MTR" secondAttribute="height" multiplier="0.07" id="CYV-Cc-xlh"/>
+                            <constraint firstItem="dji-DS-Mkl" firstAttribute="top" secondItem="pN4-AY-vkd" secondAttribute="bottom" id="D1x-EI-qwm"/>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" multiplier="0.87" id="DqR-WQ-6M5"/>
-                            <constraint firstItem="iN0-nf-cj1" firstAttribute="centerY" secondItem="U0a-Xs-Urg" secondAttribute="centerY" multiplier="0.3" id="F03-9H-0rc"/>
                             <constraint firstItem="U0a-Xs-Urg" firstAttribute="bottom" secondItem="wrp-00-Uzk" secondAttribute="bottom" id="GB4-ul-sSL"/>
                             <constraint firstItem="pN4-AY-vkd" firstAttribute="top" secondItem="U0a-Xs-Urg" secondAttribute="top" id="HYx-OA-gar"/>
                             <constraint firstItem="HjB-om-1I4" firstAttribute="centerY" secondItem="U0a-Xs-Urg" secondAttribute="centerY" multiplier="0.458" id="M8K-po-BfI"/>
@@ -1761,10 +1888,9 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="wrp-00-Uzk" firstAttribute="top" secondItem="HjB-om-1I4" secondAttribute="bottom" constant="20" id="TYa-58-ODy"/>
                             <constraint firstItem="wrp-00-Uzk" firstAttribute="leading" secondItem="U0a-Xs-Urg" secondAttribute="leading" id="Xo1-yR-2Ts"/>
                             <constraint firstItem="pN4-AY-vkd" firstAttribute="leading" secondItem="U0a-Xs-Urg" secondAttribute="leading" id="ZTp-3E-aML"/>
+                            <constraint firstItem="dji-DS-Mkl" firstAttribute="width" secondItem="zEj-Yx-MTR" secondAttribute="width" multiplier="0.95" id="agE-3U-euA"/>
                             <constraint firstItem="hWK-uI-H55" firstAttribute="height" secondItem="zEj-Yx-MTR" secondAttribute="height" multiplier="0.04" id="b9J-DX-69p"/>
                             <constraint firstItem="hWK-uI-H55" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" multiplier="1.825" id="kMq-R5-aiM"/>
-                            <constraint firstItem="iN0-nf-cj1" firstAttribute="centerX" secondItem="U0a-Xs-Urg" secondAttribute="centerX" id="sGh-eQ-uGc"/>
-                            <constraint firstItem="iN0-nf-cj1" firstAttribute="width" secondItem="zEj-Yx-MTR" secondAttribute="width" multiplier="0.95" id="ws4-lc-Rb3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U0a-Xs-Urg"/>
                     </view>
@@ -2442,11 +2568,11 @@ I bet you’re still using Bootstrap too…</string>
             </objects>
             <point key="canvasLocation" x="-3594" y="2970"/>
         </scene>
-        <!--Visits-->
+        <!--Meeting-->
         <scene sceneID="IwL-9c-oXx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="00Q-y1-dTZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Visits" image="visit_tab" id="nrb-vd-ejK"/>
+                    <tabBarItem key="tabBarItem" title="Meeting" image="visit_tab" id="nrb-vd-ejK"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TPT-VI-ANM">
@@ -2469,47 +2595,6 @@ I bet you’re still using Bootstrap too…</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-FN-dMe">
-                                <rect key="frame" x="9.5" y="82" width="356" height="27"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NL-g0-evc" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="T1Q-PC-GNx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                        <state key="normal" title="Open">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlJ-hE-PpW" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="183.5" y="0.0" width="172.5" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="ai8-V7-aYh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <state key="normal" title="Closed">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzn-lj-sJJ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="19" y="426.5" width="337.5" height="40"/>
                                 <subviews>
@@ -2799,6 +2884,83 @@ I bet you’re still using Bootstrap too…</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BqG-kO-n7C">
+                                <rect key="frame" x="9.5" y="64" width="356" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzD-TF-lTa" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="fHz-gY-3pL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="All">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da6-gE-PjG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="qMt-iJ-oz8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Open">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-sT-DFi" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="8QW-5t-pNL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Closed">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-E8-hrI" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="u0Z-RL-qiZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Dead">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="border_color">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -2817,6 +2979,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.75" id="EU5-Xh-70l"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.04" id="Ei1-7X-L0v"/>
                             <constraint firstItem="6jj-oS-Ged" firstAttribute="centerY" secondItem="hXu-AG-AjK" secondAttribute="centerY" id="FL7-VC-3ea"/>
+                            <constraint firstItem="BqG-kO-n7C" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.95" id="Fel-oc-P7K"/>
                             <constraint firstItem="D9h-DG-cBE" firstAttribute="top" secondItem="uzn-lj-sJJ" secondAttribute="bottom" id="GXS-FX-YTP"/>
                             <constraint firstItem="SZs-dH-A4Q" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.125" id="Hb9-cg-iQi"/>
                             <constraint firstItem="8Ev-RH-OBp" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.55" id="JCd-zQ-2ie"/>
@@ -2826,6 +2989,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="Lvg-BZ-cCf"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="MS9-mT-uA3"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="N4a-eh-JRB"/>
+                            <constraint firstItem="BqG-kO-n7C" firstAttribute="top" secondItem="kt3-5G-Adn" secondAttribute="bottom" id="PGo-XE-OEa"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="QUp-Kj-AFE"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.02" id="RSs-to-BSh"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.06" id="Rdh-eD-DPh"/>
@@ -2834,16 +2998,15 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.225" id="SZR-xM-dkz"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.15" id="Txr-sk-ozV"/>
                             <constraint firstAttribute="trailing" secondItem="D9h-DG-cBE" secondAttribute="trailing" id="Uuh-5E-RhR"/>
-                            <constraint firstItem="iCC-FN-dMe" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="VkL-gL-T3Q"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.3" id="WcM-hb-Trx"/>
                             <constraint firstItem="6ic-rO-CI2" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="XHz-dh-g1G"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="YTz-9B-C1e"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="bLb-lw-KvF"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="cb7-uh-YOj"/>
                             <constraint firstItem="ZKu-lU-Kc7" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.95" id="d3A-p0-0WJ"/>
-                            <constraint firstItem="iCC-FN-dMe" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.95" id="fvJ-gg-bn1"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="gJU-7D-gla"/>
                             <constraint firstItem="SZs-dH-A4Q" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.25" id="jOT-P9-37S"/>
+                            <constraint firstItem="BqG-kO-n7C" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="jtg-YY-eep"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.9" id="jwM-Xh-hR3"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="top" secondItem="d8P-bl-QQn" secondAttribute="top" id="m0z-E6-rsW"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="n1g-vU-3hj"/>
@@ -2851,7 +3014,6 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.001" id="o7U-Ns-z7F"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.4" id="py3-H2-D8i"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="centerY" secondItem="hXu-AG-AjK" secondAttribute="centerY" id="qNG-8N-F0T"/>
-                            <constraint firstItem="iCC-FN-dMe" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.3" id="tbZ-bi-gjL"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.65" id="wDJ-Cf-vhY"/>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="xUR-VW-Zqy"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.45" id="xc7-ze-NCs"/>
@@ -2877,6 +3039,7 @@ I bet you’re still using Bootstrap too…</string>
                     <connections>
                         <outlet property="NaviBar" destination="kt3-5G-Adn" id="8GJ-Pr-NWh"/>
                         <outlet property="filterTable" destination="D9h-DG-cBE" id="tlu-qt-xMg"/>
+                        <outlet property="priceRange" destination="hXu-AG-AjK" id="S8f-8c-ADh"/>
                         <outlet property="statusSegment" destination="6ic-rO-CI2" id="jkw-Tn-uQf"/>
                         <outlet property="typeSegment" destination="CM4-nT-6YX" id="o84-Ee-wWm"/>
                     </connections>
@@ -3173,7 +3336,6 @@ I bet you’re still using Bootstrap too…</string>
         <image name="Contract_Button" width="64" height="53.5"/>
         <image name="Home_BG" width="375" height="671"/>
         <image name="Home_Logo" width="28.5" height="32"/>
-        <image name="LOGO" width="190" height="86"/>
         <image name="Menu" width="20" height="20"/>
         <image name="Pending_Button" width="42" height="57.5"/>
         <image name="Setting_Button" width="20" height="20"/>
@@ -3183,10 +3345,12 @@ I bet you’re still using Bootstrap too…</string>
         <image name="back_button" width="44" height="19"/>
         <image name="calendar" width="14" height="14"/>
         <image name="call_now" width="116" height="32"/>
+        <image name="call_now_light" width="116" height="32"/>
         <image name="cell_right_arrow" width="7.5" height="12"/>
         <image name="cell_right_arrow_gray" width="7.5" height="12"/>
         <image name="contact_tab" width="25" height="22"/>
         <image name="contract_tab" width="16" height="22"/>
+        <image name="english LOGO" width="190" height="82.5"/>
         <image name="filtering" width="18.5" height="18"/>
         <image name="logout_button" width="22" height="18.5"/>
         <image name="pending_alert" width="7.5" height="9"/>

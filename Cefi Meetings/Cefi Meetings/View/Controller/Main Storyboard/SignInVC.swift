@@ -35,6 +35,10 @@ class SignInVC: UIViewController {
 
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/login"
         
+        
+        self.performSegue(withIdentifier: "Dashboard", sender: nil)
+
+        
     }
 
     

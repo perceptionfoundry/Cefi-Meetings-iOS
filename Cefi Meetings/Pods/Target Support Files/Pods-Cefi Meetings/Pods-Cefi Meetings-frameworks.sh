@@ -149,6 +149,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TTSegmentedControl/TTSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
@@ -157,6 +158,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TTSegmentedControl/TTSegmentedControl.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VACalendar/VACalendar.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

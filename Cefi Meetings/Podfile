@@ -23,4 +23,6 @@ pod 'FSCalendar'
 
 pod 'Alamofire'
 
+pod 'VACalendar'
+
 end
