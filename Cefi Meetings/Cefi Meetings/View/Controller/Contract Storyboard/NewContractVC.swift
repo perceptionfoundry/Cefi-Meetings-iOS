@@ -159,6 +159,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
 
         
+        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        
         let inputDetail : [String : Any] = ["v": 0,
                            "id": "",
                            "addedDate": purchaseDateTF.text!,
@@ -208,9 +210,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.navigationController?.popViewController(animated: true)
             }
         }
+    }
         
-        
-        
+        else{
+            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
+        }
         
         
         
