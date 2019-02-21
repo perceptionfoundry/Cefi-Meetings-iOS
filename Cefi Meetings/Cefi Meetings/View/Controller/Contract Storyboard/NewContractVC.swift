@@ -154,6 +154,69 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    @IBAction func saveAction(_ sender: Any) {
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
+
+        
+        let inputDetail : [String : Any] = ["v": 0,
+                           "id": "",
+                           "addedDate": purchaseDateTF.text!,
+                           "allPagesSignedImage": "",
+                           "allPendingDocumentCounts": 0,
+                           "bankStatements": [],
+                           "closingFees": "",
+                           "contactId": selectedContactID!,
+                           "contractNumber": "",
+                           "contractStatus": contractTypeTF.text!,
+                           "equipmentCost": amountTF.text!,
+                           "equipmentDetails": equipmentValue,
+                           "equipmentImages": [],
+                           "everyThingCompleted": "",
+                           "insuranceCertificate": "",
+                           "invoice": "",
+                           "isAllPagesSigned": allpageSwitch.isOn,
+                           "isBankStatementAvailable": bankSwitch.isOn,
+                           "isClosingFees": closingSwitch.isOn,
+                           "isEquipmentImagesAvailable": equipmentSwitch.isOn,
+                           "isEverythingCompleted": everythingSwitch.isOn,
+                           "isInsuranceAvailable": insuranceSwitch.isOn,
+                           "isInvoiceAvailable": invoiceSwitch.isOn,
+                           "isSignorAvailable": signorSwitch.isOn,
+                           "isTaxReturnsAvailable": taxSwitch.isOn,
+                           "missingText": missingText.text!,
+                           "projectedPurchaseDate": purchaseDateTF.text!,
+                           "rating": String(Int(ratingStar.value)),
+                           "signorAndSecretaryId": "",
+                           "taxReturnImages": [],
+                           "userId": appGlobalVariable.userID
+                        ]
+        
+        
+        print("-------------------------")
+        print(inputDetail)
+        print(apiLink)
+        print(selectedContactID)
+        print("-------------------------")
+
+        
+    
+        viewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
+            
+            if Status == true{
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         

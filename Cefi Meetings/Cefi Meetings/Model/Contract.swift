@@ -107,5 +107,42 @@ struct Contract : Codable {
                 taxReturnImages = try values.decodeIfPresent([String].self, forKey: .taxReturnImages)
                 userId = try values.decodeIfPresent(String.self, forKey: .userId)
         }
+    
+    init (v : Int?, id : String?, Date : String?, pageSigned : String?, pendingDocumentCounts : Int?, bankStatements : [String]?, closingFees : String?, contactId : String?, contractNumber : String?, contractStatus : String?, equipmentCost : String?,equipmentDetails : [String]?, equipmentImages : [String]?, everyThingCompleted : String?, insuranceCertificate : String?, invoice : String?, isAllPagesSigned : Bool?, isBankStatementAvailable : Bool?, isClosingFees : Bool?, isEquipmentImagesAvailable : Bool?, isEverythingCompleted : Bool?, isInsuranceAvailable : Bool?, isInvoiceAvailable : Bool?, isSignorAvailable : Bool?, isTaxReturnsAvailable : Bool?, missingText : String?, projectedPurchaseDate : String?, rating : String?, signorAndSecretaryId : String?, taxReturnImages : [String]?, userId : String?) {
+        
+        self.v = v
+        self.id = id
+        self.addedDate = Date
+        self.allPagesSignedImage = pageSigned
+        self.allPendingDocumentCounts = pendingDocumentCounts
+        self.bankStatements = bankStatements
+        self.closingFees = closingFees
+        self.contactId = contactId
+        self.contractNumber =   contractNumber
+        self.contractStatus = contractStatus
+        self.equipmentCost = equipmentCost
+        self.equipmentDetails = equipmentDetails
+        self.isBankStatementAvailable = isBankStatementAvailable
+        self.isClosingFees = isClosingFees
+        self.isEquipmentImagesAvailable = isEquipmentImagesAvailable
+        self.isEverythingCompleted = isEverythingCompleted
+        self.isInsuranceAvailable = isInsuranceAvailable
+        self.isInvoiceAvailable = isInvoiceAvailable
+        self.isSignorAvailable = isSignorAvailable
+        self.isTaxReturnsAvailable = isTaxReturnsAvailable
+        self.missingText = missingText
+        self.projectedPurchaseDate = projectedPurchaseDate
+        self.rating = rating
+        self.signorAndSecretaryId = signorAndSecretaryId
+        self.taxReturnImages = taxReturnImages
+        self.userId = userId
+        self.equipmentImages = equipmentImages
+        self.everyThingCompleted = everyThingCompleted
+        self.insuranceCertificate = insuranceCertificate
+        self.invoice = invoice
+        self.isAllPagesSigned = isAllPagesSigned
+        
+        
+    }
 
 }

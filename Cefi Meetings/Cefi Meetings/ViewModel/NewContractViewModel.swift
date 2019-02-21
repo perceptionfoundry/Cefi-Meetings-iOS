@@ -45,10 +45,10 @@ class NewContractViewModel {
             if check == 0 {
                 
                 
-                let errorValue =  value["errors"] as! [String : String]
+                let errorValue =  value["status"] as! String
                 
                 
-                let errMessage = errorValue.values.first!
+                let errMessage = errorValue
                 
                 
                 completion(false, errMessage)

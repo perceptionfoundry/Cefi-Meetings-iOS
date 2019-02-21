@@ -40,7 +40,7 @@
                                                     <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="doneButtonAction:" destination="Ydm-H5-TWc" eventType="touchUpInside" id="SAo-av-9YC"/>
+                                                    <action selector="saveAction:" destination="Ydm-H5-TWc" eventType="touchUpInside" id="f6H-E3-Hui"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contract" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-Ag-5lE">

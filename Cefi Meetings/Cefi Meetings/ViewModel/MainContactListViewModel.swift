@@ -22,6 +22,8 @@ class MainContactListViewModel{
             
             let mainDict = response.result.value  as! [String : Any]
             
+            if mainDict["status"] as! String != "Sorry contracts not exist" {
+            
             let contactList = mainDict["userContact"] as! [Any]
             
             
@@ -46,7 +48,7 @@ class MainContactListViewModel{
             
             }catch{print("JSON Decoding error")}
         }
-        
+    }
     }
     
 }
