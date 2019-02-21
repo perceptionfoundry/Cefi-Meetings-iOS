@@ -978,7 +978,7 @@ We hope you have a great and productive day!</string>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-Mw-my2" customClass="HCSStarRatingView">
                                                                     <rect key="frame" x="10" y="111" width="84.5" height="15"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="tintColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="tintColor" red="0.34899999999999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="emptyStarColor">
                                                                             <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1002,7 +1002,7 @@ We hope you have a great and productive day!</string>
                                                                     <state key="normal" image="call_now_Dark"/>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.51743954420089722" green="0.50586992502212524" blue="0.50588232278823853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="backgroundColor" red="0.51700000000000002" green="0.50586992502212524" blue="0.50600000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.275" id="7ay-zm-psU"/>
                                                                 <constraint firstItem="V7L-MU-dxk" firstAttribute="centerY" secondItem="M31-cu-IH7" secondAttribute="centerY" id="BB1-LV-Xjx"/>
@@ -1345,14 +1345,17 @@ We hope you have a great and productive day!</string>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="border_color">
-                                                <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" red="0.34899999999999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="xm5-Yw-LJ6"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNw-Re-5nv" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNw-Re-5nv" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="ABG-5d-xfp"/>
@@ -1369,8 +1372,11 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="LKI-CJ-3bW"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-Mh-BbO" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-Mh-BbO" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="T2l-H4-h5J"/>
@@ -1387,8 +1393,11 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="x53-VK-283"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-2d-am7" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4I-2d-am7" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="8FG-SX-w7t"/>
@@ -1405,20 +1414,23 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="GFj-wj-9BU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-vi-iHL" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="20.5" y="123" width="285" height="46.5"/>
+                                <rect key="frame" x="20.5" y="129.5" width="285" height="33.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
-                                        <rect key="frame" x="11" y="11.5" width="219.5" height="23.5"/>
+                                        <rect key="frame" x="11" y="8.5" width="219.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwM-Qa-LEc">
-                                        <rect key="frame" x="246.5" y="4.5" width="27.5" height="37.5"/>
+                                        <rect key="frame" x="250.5" y="3.5" width="19.5" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mwM-Qa-LEc" secondAttribute="height" multiplier="8:11" id="Goo-Wt-VY6"/>
                                         </constraints>
@@ -1457,7 +1469,7 @@ We hope you have a great and productive day!</string>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T67-ga-YJl">
-                                <rect key="frame" x="0.0" y="189.5" width="375" height="428.5"/>
+                                <rect key="frame" x="0.0" y="183" width="375" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contact" rowHeight="78" id="aHu-D7-YnM" customClass="Contact_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -1565,7 +1577,7 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="Qo5-gf-XSm" firstAttribute="trailing" secondItem="fvy-oi-093" secondAttribute="trailing" id="3zx-fF-YjE"/>
                             <constraint firstItem="kZO-l5-paW" firstAttribute="centerY" secondItem="fvy-oi-093" secondAttribute="centerY" multiplier="0.458" id="6fl-NO-lYe"/>
                             <constraint firstItem="Udq-vi-iHL" firstAttribute="width" secondItem="sdO-Nj-9PQ" secondAttribute="width" multiplier="0.76" id="7TY-t1-LuR"/>
-                            <constraint firstItem="Udq-vi-iHL" firstAttribute="height" secondItem="sdO-Nj-9PQ" secondAttribute="height" multiplier="0.07" id="DEX-AJ-q0p"/>
+                            <constraint firstItem="Udq-vi-iHL" firstAttribute="height" secondItem="sdO-Nj-9PQ" secondAttribute="height" multiplier="0.05" id="DEX-AJ-q0p"/>
                             <constraint firstItem="Udq-vi-iHL" firstAttribute="centerY" secondItem="fvy-oi-093" secondAttribute="centerY" multiplier="0.458" id="DlN-po-5cE"/>
                             <constraint firstItem="QGD-dP-xvh" firstAttribute="centerY" secondItem="fvy-oi-093" secondAttribute="centerY" multiplier="0.3" id="IoT-At-uy2"/>
                             <constraint firstItem="QGD-dP-xvh" firstAttribute="centerX" secondItem="fvy-oi-093" secondAttribute="centerX" id="L1O-EM-DMw"/>
@@ -1601,6 +1613,10 @@ We hope you have a great and productive day!</string>
                     <connections>
                         <outlet property="Contact_Table" destination="T67-ga-YJl" id="m0g-5V-xXA"/>
                         <outlet property="NaviBar" destination="Qo5-gf-XSm" id="TNq-GX-iHO"/>
+                        <outlet property="allButton" destination="CTw-Kq-lH6" id="6Yt-sR-Uiw"/>
+                        <outlet property="clientButton" destination="ehE-Mh-BbO" id="ZI5-Z1-Wsf"/>
+                        <outlet property="dealerButton" destination="v4I-2d-am7" id="ccG-HL-fpi"/>
+                        <outlet property="leadButton" destination="CNw-Re-5nv" id="pHB-JL-Pfo"/>
                         <segue destination="iug-9T-oHv" kind="show" identifier="Contact_Segue" id="Xcf-o5-ssI"/>
                     </connections>
                 </viewController>
@@ -1791,8 +1807,11 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="op7-B0-pJn" eventType="touchUpInside" id="a7C-dT-wx5"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-ZW-9II" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-ZW-9II" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="v0t-Gg-zgM"/>
@@ -1809,8 +1828,11 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="op7-B0-pJn" eventType="touchUpInside" id="bRU-Q6-Z8G"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1p-4w-HbZ" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1p-4w-HbZ" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="bRH-W9-aZI"/>
@@ -1827,8 +1849,11 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="op7-B0-pJn" eventType="touchUpInside" id="5Vc-Rm-yDk"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDT-J5-a4A" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDT-J5-a4A" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="1MH-Tx-dsI"/>
@@ -1845,6 +1870,9 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="op7-B0-pJn" eventType="touchUpInside" id="7W3-mp-asq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1889,7 +1917,11 @@ We hope you have a great and productive day!</string>
                     </navigationItem>
                     <connections>
                         <outlet property="NaviBar" destination="pN4-AY-vkd" id="OO5-1G-atd"/>
+                        <outlet property="allButton" destination="Rte-Ux-GEh" id="sJn-U8-CF8"/>
+                        <outlet property="closedButton" destination="k1p-4w-HbZ" id="ioD-qs-yxc"/>
                         <outlet property="contract_Table" destination="wrp-00-Uzk" id="DaA-QK-0ka"/>
+                        <outlet property="deadButton" destination="UDT-J5-a4A" id="MXt-68-jLl"/>
+                        <outlet property="openButton" destination="eOa-ZW-9II" id="shI-s6-lIR"/>
                         <segue destination="ubT-Ss-yZh" kind="show" identifier="Contract" id="HeC-KS-Br4"/>
                     </connections>
                 </viewController>
@@ -1970,11 +2002,11 @@ We hope you have a great and productive day!</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-mE-AKM">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-mE-AKM">
                                 <rect key="frame" x="9.5" y="82" width="356" height="27"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWM-Ud-ylG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="P1b-4G-RqM"/>
                                         </constraints>
@@ -1990,9 +2022,12 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tAH-nw-tub" eventType="touchUpInside" id="QXx-GQ-XBg"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-Bq-ThN" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="67" y="0.0" width="69" height="27"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHK-Bq-ThN" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="aqj-e7-eQ8"/>
                                         </constraints>
@@ -2008,9 +2043,12 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tAH-nw-tub" eventType="touchUpInside" id="mY5-d2-ZJ5"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-vv-l5t" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="0.0" width="80" height="27"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-vv-l5t" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="txV-pz-84f"/>
                                         </constraints>
@@ -2026,9 +2064,12 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tAH-nw-tub" eventType="touchUpInside" id="TIo-cy-tLf"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-ZA-iXa" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                        <rect key="frame" x="238" y="0.0" width="118" height="27"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IT-ZA-iXa" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="TDw-SQ-y2u"/>
                                         </constraints>
@@ -2044,6 +2085,9 @@ We hope you have a great and productive day!</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tAH-nw-tub" eventType="touchUpInside" id="eoG-yJ-E2j"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2067,10 +2111,10 @@ We hope you have a great and productive day!</string>
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="add_button"/>
+                                                <connections>
+                                                    <action selector="newContactAction:" destination="tAH-nw-tub" eventType="touchUpInside" id="ZBi-KP-guY"/>
+                                                </connections>
                                             </button>
-                                            <connections>
-                                                <action selector="addContact:" destination="tAH-nw-tub" id="qUx-LE-1oA"/>
-                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -2215,16 +2259,16 @@ We hope you have a great and productive day!</string>
                                 <color key="tintColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5L-oK-vka" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="28" y="343.5" width="319" height="46.5"/>
+                                <rect key="frame" x="28" y="350" width="319" height="33.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-HL-7ff">
-                                        <rect key="frame" x="12" y="11.5" width="245.5" height="23.5"/>
+                                        <rect key="frame" x="12" y="8.5" width="245.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFF-qn-d6q">
-                                        <rect key="frame" x="277.5" y="4.5" width="27" height="37.5"/>
+                                        <rect key="frame" x="281.5" y="3.5" width="19" height="26.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="eFF-qn-d6q" secondAttribute="height" multiplier="8:11" id="oOP-WW-m12"/>
                                         </constraints>
@@ -2288,7 +2332,7 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="leading" secondItem="lK4-m7-1IN" secondAttribute="leading" id="nR6-4t-YZo"/>
                             <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="1.3" id="pyl-Hw-NIo"/>
                             <constraint firstItem="2HA-nE-1Hu" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.45" id="qxF-jk-Bec"/>
-                            <constraint firstItem="I5L-oK-vka" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.07" id="tF5-BD-fJr"/>
+                            <constraint firstItem="I5L-oK-vka" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.05" id="tF5-BD-fJr"/>
                             <constraint firstItem="I5L-oK-vka" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.85" id="v5C-L9-ME3"/>
                             <constraint firstItem="2HA-nE-1Hu" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.05" id="y96-Bn-rWa"/>
                         </constraints>
@@ -2313,7 +2357,11 @@ We hope you have a great and productive day!</string>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="NaviBar" destination="kz9-ff-vzs" id="LrA-XE-Mg9"/>
+                        <outlet property="allButton" destination="VWM-Ud-ylG" id="Chm-Wz-Xvc"/>
+                        <outlet property="clientButton" destination="rdV-vv-l5t" id="KMi-b9-oVK"/>
+                        <outlet property="dealerButton" destination="0IT-ZA-iXa" id="6tL-qT-Btp"/>
                         <outlet property="filterTable" destination="2ah-bv-OKs" id="taY-MT-x5w"/>
+                        <outlet property="leadButton" destination="bHK-Bq-ThN" id="euU-CK-TV5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoj-iL-BDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2884,8 +2932,11 @@ I bet you’re still using Bootstrap too…</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tDV-qF-ImT" eventType="touchUpInside" id="ypa-Q2-QEh"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da6-gE-PjG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da6-gE-PjG" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="91.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="qMt-iJ-oz8"/>
@@ -2902,8 +2953,11 @@ I bet you’re still using Bootstrap too…</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tDV-qF-ImT" eventType="touchUpInside" id="40R-yW-Hdl"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-sT-DFi" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tf6-sT-DFi" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="183.5" y="0.0" width="81" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="8QW-5t-pNL"/>
@@ -2920,8 +2974,11 @@ I bet you’re still using Bootstrap too…</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tDV-qF-ImT" eventType="touchUpInside" id="EWE-TO-Vmq"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-E8-hrI" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-E8-hrI" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="275.5" y="0.0" width="80.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="u0Z-RL-qiZ"/>
@@ -2938,6 +2995,9 @@ I bet you’re still using Bootstrap too…</string>
                                                 <real key="value" value="12.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ListDisplayOption:" destination="tDV-qF-ImT" eventType="touchUpInside" id="c5j-uo-3gU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -3016,7 +3076,11 @@ I bet you’re still using Bootstrap too…</string>
                     </navigationItem>
                     <connections>
                         <outlet property="NaviBar" destination="kt3-5G-Adn" id="8GJ-Pr-NWh"/>
+                        <outlet property="allButton" destination="uzD-TF-lTa" id="yVT-sW-hKX"/>
+                        <outlet property="closedButton" destination="tf6-sT-DFi" id="EXM-mb-Hfr"/>
+                        <outlet property="deadButton" destination="X1H-E8-hrI" id="WiA-1Z-7uK"/>
                         <outlet property="filterTable" destination="D9h-DG-cBE" id="tlu-qt-xMg"/>
+                        <outlet property="openButton" destination="da6-gE-PjG" id="bxf-Hr-fFX"/>
                         <outlet property="priceRange" destination="hXu-AG-AjK" id="S8f-8c-ADh"/>
                         <outlet property="statusSegment" destination="6ic-rO-CI2" id="jkw-Tn-uQf"/>
                         <outlet property="typeSegment" destination="CM4-nT-6YX" id="o84-Ee-wWm"/>

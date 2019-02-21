@@ -17,6 +17,10 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     //  OUTLET VARIBALE
     @IBOutlet weak var Contact_Table: UITableView!
     @IBOutlet weak var NaviBar: UINavigationBar!
+    @IBOutlet weak var allButton: Custom_Button!
+    @IBOutlet weak var leadButton: Custom_Button!
+    @IBOutlet weak var clientButton: Custom_Button!
+    @IBOutlet weak var dealerButton: Custom_Button!
     
     
     
@@ -24,13 +28,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     let viewModel = MainContactListViewModel()
     
-    let sample =  [["name": "Absher", "company":"logi"],
-                   ["name": "Faisal", "company":"fuzz"],
-                   ["name": "Shahrukh", "company":"Perception"],
-                   ["name": "Danish", "company":"Axiom"],
-                   ["name": "Ahsan", "company":"PIAIC"],
-                   ["name": "Zubair", "company":"Panacloud"],
-                   ]
+    var listDisplay = "All"
     
     
     var userDirectory = [Contact]()
@@ -103,44 +101,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         print(apiLink)
       
         
-        
-        
-//        Alamofire.request(apiLink, method: .post, parameters: para).responseJSON { (response) in
-//
-//
-//
-//
-////
-//            let contactLIst = response.result.value as! [String: Any]
-////
-//
-//            let userContact = contactLIst["userContact"] as! [Any]
-//
-//
-//
-//
-//            do{
-//
-//                let decoder = JSONDecoder()
-//
-//
-//                let newJson = try JSONSerialization.data(withJSONObject: userContact, options: JSONSerialization.WritingOptions.prettyPrinted)
-//                let values = try decoder.decode([Contact].self, from: newJson)
-//
-//                print(values.count)
-////
-////
-//
-//
-//            }catch{
-//                print(error.localizedDescription)
-//
-//            }
-//
-//
-//        }
-        
-//
+
         
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
@@ -178,6 +139,34 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 //        Contact_Table.reloadData()
     }
   
+    @IBAction func ListDisplayOption(_ sender: UIButton) {
+        
+        if sender.tag == 0{
+            allButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            leadButton.border_color = UIColor.clear
+            clientButton.border_color = UIColor.clear
+            dealerButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 1{
+            allButton.border_color = UIColor.clear
+            leadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            clientButton.border_color = UIColor.clear
+            dealerButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 2{
+            allButton.border_color = UIColor.clear
+            leadButton.border_color = UIColor.clear
+            clientButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            dealerButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 3{
+            allButton.border_color = UIColor.clear
+            leadButton.border_color = UIColor.clear
+            clientButton.border_color = UIColor.clear
+            dealerButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+        }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

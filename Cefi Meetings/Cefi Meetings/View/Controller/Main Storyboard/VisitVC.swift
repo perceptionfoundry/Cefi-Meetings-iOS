@@ -94,12 +94,20 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if type == "Dealer"{
             
-            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
-            cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+//            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+            cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
+
+//            cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+            cell.typeLabel.textColor = UIColor.white
+            
+            cell.ratingStar.emptyStarColor = UIColor.lightGray
+            cell.ratingStar.tintColor = UIColor.white
+            
+
             cell.userNameLabel.textColor = UIColor.white
             cell.businessNameLabel.textColor = UIColor.white
             cell.timeLabel.textColor = UIColor.white
-            cell.callNowButton.setImage(UIImage(named: "call_now_light"), for: .normal)
+            cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
             
             cell.typeLabel.text = dummyData[indexPath.row]["Type"]
             cell.businessNameLabel.text = dummyData[indexPath.row]["Business"]
@@ -122,7 +130,9 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.topView.backgroundColor = UIColor.white
 
         cell.typeLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
-
+            cell.ratingStar.emptyStarColor = UIColor.lightGray
+            cell.ratingStar.tintColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+            
         cell.userNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.businessNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.timeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
@@ -198,12 +208,12 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
             self.visitTable.reloadRows(at: [indexPath], with: .none)
             if type == "Dealer"{
                 
-                cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
+                cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
                 cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
                 cell.userNameLabel.textColor = UIColor.white
                 cell.businessNameLabel.textColor = UIColor.white
                 cell.timeLabel.textColor = UIColor.white
-                cell.callNowButton.setImage(UIImage(named: "call_now_light"), for: .normal)
+                cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
                 
                 
                 

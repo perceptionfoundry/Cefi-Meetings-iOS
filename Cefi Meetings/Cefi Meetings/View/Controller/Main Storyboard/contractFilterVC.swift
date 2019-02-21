@@ -16,6 +16,10 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
 
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
+    @IBOutlet weak var allButton: Custom_Button!
+    @IBOutlet weak var openButton: Custom_Button!
+    @IBOutlet weak var closedButton: Custom_Button!
+    @IBOutlet weak var deadButton: Custom_Button!
     
     @IBOutlet weak var priceRange: RangeSlider!
     @IBOutlet weak var typeSegment: TTSegmentedControl!
@@ -44,6 +48,35 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         
     }
     
+    
+    
+    @IBAction func ListDisplayOption(_ sender: UIButton) {
+        
+        if sender.tag == 0{
+            allButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            openButton.border_color = UIColor.clear
+            closedButton.border_color = UIColor.clear
+            deadButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 1{
+            allButton.border_color = UIColor.clear
+            openButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            closedButton.border_color = UIColor.clear
+            deadButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 2{
+            allButton.border_color = UIColor.clear
+            openButton.border_color = UIColor.clear
+            closedButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            deadButton.border_color = UIColor.clear
+        }
+        else if sender.tag == 3{
+            allButton.border_color = UIColor.clear
+            openButton.border_color = UIColor.clear
+            closedButton.border_color = UIColor.clear
+            deadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
