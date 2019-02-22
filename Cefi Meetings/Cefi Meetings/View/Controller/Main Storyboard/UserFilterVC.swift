@@ -17,8 +17,16 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     @IBOutlet weak var leadButton: Custom_Button!
     @IBOutlet weak var clientButton: Custom_Button!
     @IBOutlet weak var dealerButton: Custom_Button!
+    @IBOutlet weak var statusSegment: UISegmentedControl!
     
+    @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var resultQuantityLabel: UILabel!
     
+    let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
+    
+    let viewModel = userFilterViewModel()
+    
+    var searchResult = [Contact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +45,8 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     }
     
    
-    
+    //  ******** Selection Button Action function ************************
+
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
         if sender.tag == 0{
@@ -80,12 +89,52 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Filter", for: indexPath) as! Contact_Filter_TableViewCell
         
-        cell.userName.text = "user \(indexPath.row)"
-        cell.businessName.text = "company \(indexPath.row)"
+        cell.userName.text = searchResult[indexPath.row].contactName
+        cell.businessName.text = searchResult[indexPath.row].businessName
 
         
         return cell
     }
+    
+    
+    
+    @IBAction func searchAction(_ sender: Any) {
+        
+        
+        var status = ""
+        if statusSegment.selectedSegmentIndex == 0{
+            status = "closed"
+        }
+        else if statusSegment.selectedSegmentIndex == 1{
+            status = "open"
+
+        }
+        else if statusSegment.selectedSegmentIndex == 2{
+            status = "dead"
+
+        }
+
+        
+        
+        let apiLink = appGlobalVarible.apiBaseURL+"contacts/getfiltercontacts"
+        
+        let dict = [
+            "userId": appGlobalVarible.userID,
+            "searchField": searchTF.text!,
+            "status": status
+            
+        ]
+        
+        viewModel.userFiltering(API: apiLink, TextFields: dict) { (status, result) in
+            
+            self.searchResult = result!
+        }
+        
+    }
+    
+    
+    
+    
     
     @IBAction func newContactAction(_ sender: Any) {
         
@@ -103,8 +152,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     }
     
     
-    @IBAction func showGlobalList(_ sender: Any) {
-    }
+   
     
     
     

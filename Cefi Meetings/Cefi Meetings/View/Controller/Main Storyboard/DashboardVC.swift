@@ -12,12 +12,32 @@ class DashboardVC: UIViewController {
 
     
     @IBOutlet var optionButtons: [UIButton]!
+    @IBOutlet weak var contactCount: UILabel!
+    @IBOutlet weak var visitCount: UILabel!
+    @IBOutlet weak var contractCount: UILabel!
+    @IBOutlet weak var pendingCount: UILabel!
     
+    let viewModel = DashboardViewModel()
+    
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+       let apilink = appGlobalVariable.apiBaseURL+"useroverview/useroverviewinfo"
+        let userID = appGlobalVariable.userID
         
+        let dict = ["userId": userID]
+        
+        viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
+            
+            print(result)
+            
+            self.contactCount.text = String(result!["addedContactsToday"] as! Int)
+            self.contractCount.text = String(result?["allOpenContracts"]as! Int)
+            self.visitCount.text = String(result?["todayLeftVisits"]as! Int)
+            self.pendingCount.text = String(result!["pendingDocument"] as! Int)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

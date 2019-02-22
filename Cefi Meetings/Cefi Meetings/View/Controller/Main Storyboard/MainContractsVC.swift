@@ -71,13 +71,27 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     }
     
+    
+    
+    
+    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        
+        // show tab-bar controller
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    
+    
+    
+    
+    
+    
+    
+    //  ******** Selection Button Action function ************************
     
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
@@ -109,6 +123,13 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
+    
+    
+    
+    
+    
+    // ****************** Tableview Delegate protocol functions ***************************
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userContract.count

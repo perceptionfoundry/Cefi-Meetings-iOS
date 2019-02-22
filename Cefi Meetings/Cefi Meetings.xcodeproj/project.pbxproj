@@ -22,6 +22,8 @@
 		F258F67221FB54A500269506 /* Contract_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67121FB54A500269506 /* Contract_TableViewCell.swift */; };
 		F258F68021FB6A3A00269506 /* Pending_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */; };
 		F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F258F68121FB6A5F00269506 /* MainPendingVC.swift */; };
+		F25CB1452220423E008F96ED /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25CB1442220423E008F96ED /* DashboardViewModel.swift */; };
+		F25CB14722205CAE008F96ED /* userFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25CB14622205CAE008F96ED /* userFilterViewModel.swift */; };
 		F25FF95E22152F550079D96C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25FF95D22152F550079D96C /* Contact.swift */; };
 		F25FF96222152F790079D96C /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25FF96122152F790079D96C /* Visit.swift */; };
 		F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */; };
@@ -108,6 +110,8 @@
 		F258F67E21FB62C500269506 /* AvenirLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Roman.otf"; sourceTree = "<group>"; };
 		F258F67F21FB6A3A00269506 /* Pending_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pending_TableViewCell.swift; sourceTree = "<group>"; };
 		F258F68121FB6A5F00269506 /* MainPendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPendingVC.swift; sourceTree = "<group>"; };
+		F25CB1442220423E008F96ED /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		F25CB14622205CAE008F96ED /* userFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userFilterViewModel.swift; sourceTree = "<group>"; };
 		F25FF95D22152F550079D96C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		F25FF96122152F790079D96C /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 				F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */,
 				F24C3338221D487300F63C62 /* MainContactListViewModel.swift */,
 				F2BC8AE8221EF144006BBE05 /* MainContractListViewModel.swift */,
+				F25CB1442220423E008F96ED /* DashboardViewModel.swift */,
+				F25CB14622205CAE008F96ED /* userFilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -388,14 +394,14 @@
 				F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */,
 				F2DABFC821F9EF6D009FEFCC /* DashboardVC.swift */,
 				F2DABFCA21FA011C009FEFCC /* MainContactVC.swift */,
-				F258F66F21FB547C00269506 /* MainContractsVC.swift */,
-				F258F68121FB6A5F00269506 /* MainPendingVC.swift */,
 				F288347C21FF61AD00CA09C6 /* UserFilterVC.swift */,
+				F258F66F21FB547C00269506 /* MainContractsVC.swift */,
+				F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */,
+				F258F68121FB6A5F00269506 /* MainPendingVC.swift */,
 				F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */,
 				F2B02EBC22001FF200E6C76D /* userSettingVC.swift */,
 				F2B02EBE2200201B00E6C76D /* PrivacyVC.swift */,
 				F2FBC8E8220039DD0079C47D /* VisitVC.swift */,
-				F2B58AAD2201B0A200396F9E /* contractFilterVC.swift */,
 				F2C8F5EF2213F659006ED05B /* CalendarVC.swift */,
 				F2623617221C6B2000399A87 /* VerticalCalendarController.swift */,
 			);
@@ -566,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25CB14722205CAE008F96ED /* userFilterViewModel.swift in Sources */,
 				F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */,
 				F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */,
 				F25FF96222152F790079D96C /* Visit.swift in Sources */,
@@ -579,6 +586,7 @@
 				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,
 				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */,
+				F25CB1452220423E008F96ED /* DashboardViewModel.swift in Sources */,
 				F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */,
 				F2623618221C6B2000399A87 /* VerticalCalendarController.swift in Sources */,
 				F24C3339221D487300F63C62 /* MainContactListViewModel.swift in Sources */,

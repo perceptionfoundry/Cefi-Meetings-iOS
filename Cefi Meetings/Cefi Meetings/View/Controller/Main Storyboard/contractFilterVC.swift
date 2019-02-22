@@ -14,18 +14,25 @@ import SwiftRangeSlider
 
 class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
+    
+    // ********** Outlet *********************
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
     @IBOutlet weak var allButton: Custom_Button!
     @IBOutlet weak var openButton: Custom_Button!
     @IBOutlet weak var closedButton: Custom_Button!
     @IBOutlet weak var deadButton: Custom_Button!
-    
     @IBOutlet weak var priceRange: RangeSlider!
     @IBOutlet weak var typeSegment: TTSegmentedControl!
-    
-    
     @IBOutlet weak var statusSegment: TTSegmentedControl!
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +56,14 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     }
     
     
+    
+    
+    
+    
+    
+    
+    //  ******** Selection Button Action function ************************
+
     
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
@@ -77,6 +92,12 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
             deadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
         }
     }
+    
+    
+    
+    
+    // ****************** Tableview Delegate protocol functions ***************************
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10

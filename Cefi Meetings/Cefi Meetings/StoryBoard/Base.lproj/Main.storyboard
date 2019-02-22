@@ -485,6 +485,29 @@
                                             <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="gES-fR-xas"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHt-Zh-Jbq" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="191" width="20" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFM-B9-Vch">
+                                                <rect key="frame" x="6.5" y="1.5" width="7.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="GVE-jM-6n1"/>
+                                            <constraint firstItem="YFM-B9-Vch" firstAttribute="centerX" secondItem="PHt-Zh-Jbq" secondAttribute="centerX" id="e8E-Ph-iaz"/>
+                                            <constraint firstAttribute="width" secondItem="PHt-Zh-Jbq" secondAttribute="height" multiplier="1:1" id="gYh-Y1-dpt"/>
+                                            <constraint firstItem="YFM-B9-Vch" firstAttribute="centerY" secondItem="PHt-Zh-Jbq" secondAttribute="centerY" id="tTm-4E-65B"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FD1-9B-d4u">
                                         <rect key="frame" x="158" y="149" width="114.5" height="103.5"/>
                                         <constraints>
@@ -529,6 +552,75 @@
                                             <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="SDC-Hy-WAy"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVr-pP-Oxk" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="226.5" y="47.5" width="20" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1f-Z4-YqL">
+                                                <rect key="frame" x="6.5" y="1.5" width="7.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="s1f-Z4-YqL" firstAttribute="centerX" secondItem="UVr-pP-Oxk" secondAttribute="centerX" id="FTa-Sq-P6A"/>
+                                            <constraint firstItem="s1f-Z4-YqL" firstAttribute="centerY" secondItem="UVr-pP-Oxk" secondAttribute="centerY" id="iag-0G-dqY"/>
+                                            <constraint firstAttribute="width" secondItem="UVr-pP-Oxk" secondAttribute="height" multiplier="1:1" id="ieX-Gq-HtH"/>
+                                            <constraint firstAttribute="height" constant="20" id="s4y-yo-lYt"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TU-nd-D4q" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="83.5" y="47.5" width="20" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vds-VI-bd9">
+                                                <rect key="frame" x="6" y="1.5" width="7.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="vds-VI-bd9" firstAttribute="centerX" secondItem="2TU-nd-D4q" secondAttribute="centerX" id="37L-VY-ZWM"/>
+                                            <constraint firstAttribute="height" constant="20" id="D8Q-H7-cBh"/>
+                                            <constraint firstItem="vds-VI-bd9" firstAttribute="centerY" secondItem="2TU-nd-D4q" secondAttribute="centerY" id="oBg-bH-rHm"/>
+                                            <constraint firstAttribute="width" secondItem="2TU-nd-D4q" secondAttribute="height" multiplier="1:1" id="tSd-xq-Uhf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cve-qG-IMo" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="220.5" y="191" width="20" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f08-7s-aRE">
+                                                <rect key="frame" x="6" y="1.5" width="7.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cve-qG-IMo" secondAttribute="height" multiplier="1:1" id="Hqo-JU-ZJQ"/>
+                                            <constraint firstItem="f08-7s-aRE" firstAttribute="centerX" secondItem="cve-qG-IMo" secondAttribute="centerX" id="POh-Zt-FSg"/>
+                                            <constraint firstItem="f08-7s-aRE" firstAttribute="centerY" secondItem="cve-qG-IMo" secondAttribute="centerY" id="lVI-9f-sGV"/>
+                                            <constraint firstAttribute="height" constant="20" id="mK5-Kd-qgr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -537,12 +629,17 @@
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.005" id="2R3-lc-g3e"/>
                                     <constraint firstItem="8mj-u2-LQ3" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="0.4" id="3uk-gt-egv"/>
                                     <constraint firstItem="8mj-u2-LQ3" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="4Rj-mO-SE8"/>
+                                    <constraint firstItem="2TU-nd-D4q" firstAttribute="centerY" secondItem="leq-kU-Mj3" secondAttribute="centerY" id="9dT-xB-NFw"/>
                                     <constraint firstItem="gow-jL-8E9" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.4" id="ACj-Ly-r2A"/>
+                                    <constraint firstItem="PHt-Zh-Jbq" firstAttribute="centerY" secondItem="gow-jL-8E9" secondAttribute="centerY" id="BZP-9B-meR"/>
+                                    <constraint firstItem="cve-qG-IMo" firstAttribute="centerX" secondItem="FD1-9B-d4u" secondAttribute="centerX" multiplier="1.07" id="CTX-gu-XN6"/>
                                     <constraint firstItem="glL-YJ-E9o" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.74" id="Ej4-Bv-1OP"/>
                                     <constraint firstItem="gow-jL-8E9" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="FSV-s9-blD"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="height" secondItem="IX3-Ph-dxr" secondAttribute="height" multiplier="0.9" id="FlD-O7-Q0N"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="height" secondItem="IX3-Ph-dxr" secondAttribute="height" multiplier="0.005" id="Hb1-lx-y3G"/>
                                     <constraint firstItem="FD1-9B-d4u" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" multiplier="1.4" id="KMn-oZ-iQL"/>
+                                    <constraint firstItem="UVr-pP-Oxk" firstAttribute="centerX" secondItem="8mj-u2-LQ3" secondAttribute="centerX" multiplier="1.1" id="MNa-h6-emi"/>
+                                    <constraint firstItem="UVr-pP-Oxk" firstAttribute="centerY" secondItem="8mj-u2-LQ3" secondAttribute="centerY" id="Mlr-TC-8xi"/>
                                     <constraint firstItem="leq-kU-Mj3" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="Ozl-tB-ag3"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" id="Ozr-8w-GZa"/>
                                     <constraint firstItem="d4o-gZ-g97" firstAttribute="centerX" secondItem="8mj-u2-LQ3" secondAttribute="centerX" id="Phh-z1-PS7"/>
@@ -551,15 +648,21 @@
                                     <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.5" id="XON-fu-CP0"/>
                                     <constraint firstItem="kTS-Ay-IzH" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" id="Xhj-Eh-uYo"/>
                                     <constraint firstItem="8mj-u2-LQ3" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="YdI-Re-7DQ"/>
+                                    <constraint firstItem="2TU-nd-D4q" firstAttribute="centerX" secondItem="leq-kU-Mj3" secondAttribute="centerX" multiplier="1.3" id="aSp-f9-txK"/>
                                     <constraint firstItem="leq-kU-Mj3" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="ctg-mS-OTk"/>
+                                    <constraint firstItem="PHt-Zh-Jbq" firstAttribute="centerX" secondItem="gow-jL-8E9" secondAttribute="centerX" multiplier="1.325" id="g0s-YR-J1v"/>
+                                    <constraint firstItem="UVr-pP-Oxk" firstAttribute="width" secondItem="UVr-pP-Oxk" secondAttribute="height" multiplier="1:1" id="gbh-2F-ZIf"/>
                                     <constraint firstItem="gow-jL-8E9" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="hrL-0k-DLR"/>
+                                    <constraint firstItem="cve-qG-IMo" firstAttribute="centerY" secondItem="FD1-9B-d4u" secondAttribute="centerY" id="jHR-xT-7aM"/>
                                     <constraint firstItem="FD1-9B-d4u" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.4" id="ktv-Xn-Rav"/>
                                     <constraint firstItem="glL-YJ-E9o" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="lcC-xs-D7S"/>
                                     <constraint firstItem="d4o-gZ-g97" firstAttribute="centerY" secondItem="qlW-a1-Psm" secondAttribute="centerY" id="odb-yU-mHz"/>
+                                    <constraint firstItem="cve-qG-IMo" firstAttribute="width" secondItem="cve-qG-IMo" secondAttribute="height" multiplier="1:1" id="ooI-oT-rQ1"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="centerY" secondItem="IX3-Ph-dxr" secondAttribute="centerY" id="tOp-8W-EPv"/>
                                     <constraint firstItem="nYO-AL-kXM" firstAttribute="width" secondItem="IX3-Ph-dxr" secondAttribute="width" multiplier="0.9" id="ua5-Iq-T8K"/>
                                     <constraint firstItem="uOA-Ut-o3Q" firstAttribute="centerY" secondItem="glL-YJ-E9o" secondAttribute="centerY" id="vRt-8v-wu6"/>
                                     <constraint firstItem="qlW-a1-Psm" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="0.55" id="wRa-sM-Gms"/>
+                                    <constraint firstItem="PHt-Zh-Jbq" firstAttribute="width" secondItem="PHt-Zh-Jbq" secondAttribute="height" multiplier="1:1" id="xCY-Po-sHd"/>
                                     <constraint firstItem="FD1-9B-d4u" firstAttribute="centerX" secondItem="IX3-Ph-dxr" secondAttribute="centerX" multiplier="1.5" id="zdu-ir-JB8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -615,6 +718,10 @@ We hope you have a great and productive day!</string>
                     </view>
                     <navigationItem key="navigationItem" id="Gii-Sv-I6u"/>
                     <connections>
+                        <outlet property="contactCount" destination="vds-VI-bd9" id="RUi-wd-mzb"/>
+                        <outlet property="contractCount" destination="YFM-B9-Vch" id="I3Z-WW-fEy"/>
+                        <outlet property="pendingCount" destination="f08-7s-aRE" id="6vH-5C-CBk"/>
+                        <outlet property="visitCount" destination="s1f-Z4-YqL" id="iZF-aw-USa"/>
                         <outletCollection property="optionButtons" destination="leq-kU-Mj3" collectionClass="NSMutableArray" id="57s-oG-3ka"/>
                         <outletCollection property="optionButtons" destination="8mj-u2-LQ3" collectionClass="NSMutableArray" id="7q5-bT-iCh"/>
                         <outletCollection property="optionButtons" destination="gow-jL-8E9" collectionClass="NSMutableArray" id="JyP-zn-hvG"/>
@@ -623,7 +730,7 @@ We hope you have a great and productive day!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlK-HJ-QqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1572" y="1934"/>
+            <point key="canvasLocation" x="-1572" y="1933.5832083958023"/>
         </scene>
         <!--Contact-->
         <scene sceneID="jwP-YY-qPa">
@@ -2135,40 +2242,24 @@ We hope you have a great and productive day!</string>
                                     <action selector="cancelAction:" destination="tAH-nw-tub" eventType="touchUpInside" id="3qI-IM-2os"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiv-jG-9pe">
-                                <rect key="frame" x="307.5" y="192" width="51" height="31"/>
-                                <connections>
-                                    <action selector="showGlobalList:" destination="tAH-nw-tub" eventType="valueChanged" id="fB9-Yr-YXI"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Global Contact List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43Y-1A-uST">
-                                <rect key="frame" x="22.5" y="196.5" width="180.5" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3o-nF-CMC">
-                                <rect key="frame" x="20" y="276" width="110" height="22"/>
+                                <rect key="frame" x="20" y="180.5" width="110" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBi-aR-epW">
-                                <rect key="frame" x="19" y="247" width="337.5" height="0.5"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-J6-Qk5">
-                                <rect key="frame" x="19" y="318.5" width="337.5" height="1"/>
+                                <rect key="frame" x="19" y="223" width="337.5" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Result Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ9-hl-Ehy">
-                                <rect key="frame" x="19" y="401" width="300" height="27.5"/>
+                                <rect key="frame" x="19" y="289.5" width="300" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-bv-OKs">
-                                <rect key="frame" x="0.0" y="428.5" width="375" height="189.5"/>
+                                <rect key="frame" x="0.0" y="317" width="375" height="301"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Filter" rowHeight="63" id="aPj-wb-wFg" customClass="Contact_Filter_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -2250,7 +2341,7 @@ We hope you have a great and productive day!</string>
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZzT-en-rEw">
-                                <rect key="frame" x="185.5" y="273" width="173" height="29"/>
+                                <rect key="frame" x="185.5" y="177.5" width="173" height="29"/>
                                 <segments>
                                     <segment title="Closed"/>
                                     <segment title="Open"/>
@@ -2259,7 +2350,7 @@ We hope you have a great and productive day!</string>
                                 <color key="tintColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5L-oK-vka" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="28" y="350" width="319" height="33.5"/>
+                                <rect key="frame" x="28" y="246.5" width="319" height="33.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ba" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-HL-7ff">
                                         <rect key="frame" x="12" y="8.5" width="245.5" height="16.5"/>
@@ -2273,6 +2364,9 @@ We hope you have a great and productive day!</string>
                                             <constraint firstAttribute="width" secondItem="eFF-qn-d6q" secondAttribute="height" multiplier="8:11" id="oOP-WW-m12"/>
                                         </constraints>
                                         <state key="normal" image="search"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="tAH-nw-tub" eventType="touchUpInside" id="ZJX-jC-Kpj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2297,10 +2391,8 @@ We hope you have a great and productive day!</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZBi-aR-epW" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="1w5-j2-8Xc"/>
                             <constraint firstItem="kFB-J6-Qk5" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="1ys-q1-XK0"/>
-                            <constraint firstItem="ZBi-aR-epW" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.9" id="53O-rW-Ak4"/>
-                            <constraint firstItem="A3o-nF-CMC" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.9" id="7FI-lb-jhs"/>
+                            <constraint firstItem="A3o-nF-CMC" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.6" id="7FI-lb-jhs"/>
                             <constraint firstItem="2ah-bv-OKs" firstAttribute="top" secondItem="FZ9-hl-Ehy" secondAttribute="bottom" id="7ce-aD-TdG"/>
                             <constraint firstItem="kFB-J6-Qk5" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.9" id="83x-wo-89f"/>
                             <constraint firstItem="A3o-nF-CMC" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.4" id="Gej-0e-gVy"/>
@@ -2308,8 +2400,6 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="HGb-e9-Tdf" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.45" id="KEH-60-gf1"/>
                             <constraint firstItem="HGb-e9-Tdf" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.3" id="LBR-YT-y6O"/>
                             <constraint firstItem="kFB-J6-Qk5" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.001" id="Lsx-l3-CbM"/>
-                            <constraint firstItem="43Y-1A-uST" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.6" id="MPz-ZP-Wym"/>
-                            <constraint firstItem="aiv-jG-9pe" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.77" id="MW3-pB-Lqq"/>
                             <constraint firstItem="FZ9-hl-Ehy" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.8" id="MYx-mB-lLO"/>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="top" secondItem="lK4-m7-1IN" secondAttribute="top" id="OpV-bL-mVU"/>
                             <constraint firstItem="lK4-m7-1IN" firstAttribute="trailing" secondItem="2ah-bv-OKs" secondAttribute="trailing" id="Osc-oJ-Iwl"/>
@@ -2317,20 +2407,16 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="ZzT-en-rEw" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.45" id="S25-e2-hCe"/>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="trailing" secondItem="lK4-m7-1IN" secondAttribute="trailing" id="UBU-cH-d2n"/>
                             <constraint firstItem="V3E-mE-AKM" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.95" id="Uu1-zP-EIK"/>
-                            <constraint firstItem="ZBi-aR-epW" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.775" id="V5l-PS-Ij0"/>
                             <constraint firstItem="ZzT-en-rEw" firstAttribute="centerY" secondItem="A3o-nF-CMC" secondAttribute="centerY" id="W0V-Z7-iMQ"/>
-                            <constraint firstItem="aiv-jG-9pe" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.65" id="WgP-co-dfK"/>
-                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" id="Yvc-0K-Kdu"/>
-                            <constraint firstItem="I5L-oK-vka" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="1.15" id="fHj-6M-ynx"/>
+                            <constraint firstItem="kFB-J6-Qk5" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.7" id="Yvc-0K-Kdu"/>
+                            <constraint firstItem="I5L-oK-vka" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.825" id="fHj-6M-ynx"/>
                             <constraint firstItem="V3E-mE-AKM" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.3" id="jb3-fo-Chn"/>
                             <constraint firstItem="I5L-oK-vka" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" id="kjc-ML-23E"/>
-                            <constraint firstItem="43Y-1A-uST" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.65" id="l1C-ks-BT0"/>
                             <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="0.9" id="liG-ec-zcI"/>
                             <constraint firstItem="2HA-nE-1Hu" firstAttribute="centerX" secondItem="lK4-m7-1IN" secondAttribute="centerX" multiplier="1.8" id="m1k-TL-Cj6"/>
                             <constraint firstItem="lK4-m7-1IN" firstAttribute="bottom" secondItem="2ah-bv-OKs" secondAttribute="bottom" id="maC-AB-m5P"/>
-                            <constraint firstItem="ZBi-aR-epW" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.001" id="mxP-aS-CyA"/>
                             <constraint firstItem="kz9-ff-vzs" firstAttribute="leading" secondItem="lK4-m7-1IN" secondAttribute="leading" id="nR6-4t-YZo"/>
-                            <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="1.3" id="pyl-Hw-NIo"/>
+                            <constraint firstItem="FZ9-hl-Ehy" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.95" id="pyl-Hw-NIo"/>
                             <constraint firstItem="2HA-nE-1Hu" firstAttribute="centerY" secondItem="lK4-m7-1IN" secondAttribute="centerY" multiplier="0.45" id="qxF-jk-Bec"/>
                             <constraint firstItem="I5L-oK-vka" firstAttribute="height" secondItem="kpf-bt-ddr" secondAttribute="height" multiplier="0.05" id="tF5-BD-fJr"/>
                             <constraint firstItem="I5L-oK-vka" firstAttribute="width" secondItem="kpf-bt-ddr" secondAttribute="width" multiplier="0.85" id="v5C-L9-ME3"/>
@@ -2362,6 +2448,9 @@ We hope you have a great and productive day!</string>
                         <outlet property="dealerButton" destination="0IT-ZA-iXa" id="6tL-qT-Btp"/>
                         <outlet property="filterTable" destination="2ah-bv-OKs" id="taY-MT-x5w"/>
                         <outlet property="leadButton" destination="bHK-Bq-ThN" id="euU-CK-TV5"/>
+                        <outlet property="resultQuantityLabel" destination="FZ9-hl-Ehy" id="cWP-b3-GWW"/>
+                        <outlet property="searchTF" destination="kjS-HL-7ff" id="aJK-xW-7GL"/>
+                        <outlet property="statusSegment" destination="ZzT-en-rEw" id="vvP-Ev-UMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoj-iL-BDw" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -46,7 +46,6 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func generateWordDic(){
         
-//        for word in sample{
         
         
         
@@ -83,6 +82,13 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         wordSection = wordSection.sorted()
         
     }
+    
+    
+    
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
@@ -133,12 +139,15 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         self.generateWordDic()
         
-        
-        
+ 
     
-//        Contact_Table.reloadData()
     }
   
+    
+    
+    
+    //  ******** Selection Button Action function ************************
+
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
         if sender.tag == 0{
@@ -179,7 +188,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return wordSection.count
     }
     
-   
+    
+    
+    
+    
+    // ****************** Tableview Delegate protocol functions ***************************
+
 
     // Configure number item in row of section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -222,17 +236,14 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) as! Contact_TableViewCell
         
-//
         let workKey = wordSection[indexPath.section]
         
-//        print(workKey)
         
 
         if let wordValue = wordsDic[workKey.uppercased()]{
 
 
-//            print(wordValue[indexPath.row])
-//
+
             cell.selectionStyle = .none
             
         cell.personName.text = wordValue[indexPath.row].contactName
@@ -289,7 +300,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-    // ***********  Create new contact ************
+    // ***********  Create new contact Action  ************
     
     @IBAction func newContactAction(_ sender: Any) {
         
