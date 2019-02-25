@@ -82,7 +82,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return searchResult.count
     }
     
     
@@ -128,6 +128,10 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         viewModel.userFiltering(API: apiLink, TextFields: dict) { (status, result) in
             
             self.searchResult = result!
+            
+            print(result)
+            
+            self.filterTable.reloadData()
         }
         
     }

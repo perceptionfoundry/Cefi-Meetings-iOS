@@ -99,12 +99,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         NaviBar.shadowImage = UIImage()
         
         
-        let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
-        
-        let param = ["userId": appGlobalVariable.userID]
-        
-        print(param)
-        print(apiLink)
+//        let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
+//
+//        let param = ["userId": appGlobalVariable.userID]
+//
+//        print(param)
+//        print(apiLink)
       
         
 
@@ -112,27 +112,28 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
         
+        self.fetchingContent()
         
-        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
-            
-            if status == true{
-                
-                self.userDirectory = tableData
-                
-                
-                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
-                
-                
-                print(self.userDirectory[0].contactName)
-                
-//                self.Contact_Table.reloadData()
-                
-                self.generateWordDic()
-                
-            }
-            
-            self.Contact_Table.reloadData()
-        }
+//        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
+//
+//            if status == true{
+//
+//                self.userDirectory = tableData
+//
+//
+//                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
+//
+//
+//                print(self.userDirectory[0].contactName)
+//
+////                self.Contact_Table.reloadData()
+//
+//                self.generateWordDic()
+//
+//            }
+//
+//            self.Contact_Table.reloadData()
+//        }
 
         
         
@@ -182,6 +183,42 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    
+    // FETCH DATA FUNCTION
+    
+    func fetchingContent(){
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
+        
+        let param = ["userId": appGlobalVariable.userID]
+        
+        print(param)
+        print(apiLink)
+        
+        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
+            
+            if status == true{
+                
+                self.userDirectory = tableData
+                
+                
+                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
+                
+                
+                print(self.userDirectory[0].contactName)
+                
+                //                self.Contact_Table.reloadData()
+                
+                self.generateWordDic()
+                
+            }
+            
+            self.Contact_Table.reloadData()
+        }
+        
+    }
+    
     
     // setting number of section in table
     func numberOfSections(in tableView: UITableView) -> Int {

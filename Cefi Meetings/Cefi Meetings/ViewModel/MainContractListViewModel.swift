@@ -29,7 +29,7 @@ class MainContractListViewModel{
             
             if mainDict["status"] as! String != "Sorry contracts not exist" {
                 
-                let contractList = mainDict["userContract"] as! [Any]
+                guard let contractList = mainDict["userContract"] as? [Any] else{return}
                 
                 
                 var jsonData : Data?

@@ -48,7 +48,7 @@ class NewContactViewModel{
             if check == 0 {
                 
                 
-                let errorValue =  value["errors"] as! [String : String]
+                guard let errorValue =  value["errors"] as? [String : String] else {return}
                 
                 
                 let errMessage = errorValue.values.first!

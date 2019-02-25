@@ -25,7 +25,7 @@ class userFilterViewModel{
             
                          print(fetchValue)
             
-            let list = fetchValue["searchData"] as! [Any]
+            guard let list = fetchValue["searchData"] as? [Any] else{return}
             
             var finalDict = [Contact]()
             

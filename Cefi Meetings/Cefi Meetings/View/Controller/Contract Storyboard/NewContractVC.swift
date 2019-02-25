@@ -76,7 +76,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     // ********** Implement protocol function ******************
     func typeName(name: String) {
-        self.contractTypeTF.text = name
+        
+        self.contractTypeTF.text = name.lowercased()
     }
     
     func contactName(userName: String, id : String) {
