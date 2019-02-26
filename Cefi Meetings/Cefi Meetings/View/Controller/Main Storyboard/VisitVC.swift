@@ -14,7 +14,8 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var visitTable: UITableView!
     
   
-    
+    @IBOutlet weak var NaviBarDate: UILabel!
+
     @IBOutlet weak var timeLabel: UILabel!
     var selectedVisit = [Int]()
     
@@ -42,7 +43,14 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         visitTable.delegate = self
         visitTable.dataSource = self
         
-      
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .long
+        
+        var today = formatter.string(from: currentDate)
+        
+        NaviBarDate.text = today
         
         
         visitTable.allowsMultipleSelection = true
@@ -153,28 +161,17 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
             
         }
-        
-        
-        
-       
-        
-
-        
-        
+ 
         
         if self.selectedVisit.contains(indexPath.row){
 
-//                cell.topView.frame.origin.y = 20
-//
-//                cell.bottomView.frame.origin.y = 60
+
            
 
         }
         else{
 
-//                cell.topView.frame.origin.y = 50
-//
-//                cell.bottomView.frame.origin.y = 50
+
            
             visitTable.estimatedRowHeight = 160
 
@@ -186,27 +183,58 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
+        let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
-        self.selectedVisit.append(indexPath.row)
         
-        self.selected = indexPath.row
+        let selected = self.selectedVisit.firstIndex(of: indexPath.row)
+        
+        if selected != nil{
+            
+            selectedVisit.remove(at: selected!)
+            
+            UIView.animate(withDuration: 0.3) {
+                
+                let type = self.dummyData[indexPath.row]["Type"]
+                
+                
+                self.visitTable.reloadRows(at: [indexPath], with: .none)
+                
+                if type == "Dealer"{
+                    
+                    cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
+                    cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+                    cell.userNameLabel.textColor = UIColor.white
+                    cell.businessNameLabel.textColor = UIColor.white
+                    cell.timeLabel.textColor = UIColor.white
+                    cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
+                    
+                    
+                    
+                }
+                
+            }
+        }
+        
+        
+        else{
+        
 
-        cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+                self.selectedVisit.append(indexPath.row)
+        
+                self.selected = indexPath.row
+
+                cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
        
-        visitCategory = dummyData[indexPath.row]["Type"]!
+                visitCategory = dummyData[indexPath.row]["Type"]!
             
-        UIView.animate(withDuration: 0.6) {
+                UIView.animate(withDuration: 0.6) {
 //
-            let type = self.dummyData[indexPath.row]["Type"]
-            
-            
+                            let type = self.dummyData[indexPath.row]["Type"]
             
 
-            
-            
             self.visitTable.reloadRows(at: [indexPath], with: .none)
-            if type == "Dealer"{
+           
+                    if type == "Dealer"{
                 
                 cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
                 cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
@@ -219,7 +247,7 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
                 
             }
             
-
+            }
 //
             
 //            return
@@ -237,29 +265,35 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 //        let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 //
 //
-//        selected = -1
+////        selected = -1
 //
-////        if let i = self.selectedVisit.index(of: indexPath.row) {
-////
-////            UIView.animate(withDuration: 1.0) {
+//        self.selectedVisit.firstIndex(of: indexPath.row)
+//
+//
+//        if let i = self.selectedVisit.index(of: indexPath.row) {
+//
+//            self.selectedVisit.remove(at: i)
+//
+//            UIView.animate(withDuration: 1.0) {
 //////
 ////                self.visitTable.estimatedRowHeight = 160
-////
+//
+//
 //                self.visitTable.reloadRows(at: [indexPath], with: .bottom)
 ////
 ////
 ////
-////                return
-////
-////            }
+//                return
+//
+//            }
 ////
 ////            self.selectedVisit.remove(at: i)
+//
+//            print(selectedVisit)
 ////
-////            print(selectedVisit)
 ////
 ////
-////
-////        }
+//        }
 //
 //
 //    }
@@ -267,15 +301,27 @@ let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-        if selected == indexPath.row{
-
-     return 220
-
-
+//        if selected == indexPath.row{
+//
+//     return 220
+//
+//
+//        }
+//
+//        else {
+//          return 160
+//        }
+        
+        
+        if selectedVisit.contains(indexPath.row) {
+            
+            return 220
+            
+            
         }
-
+            
         else {
-          return 160
+            return 160
         }
     }
   

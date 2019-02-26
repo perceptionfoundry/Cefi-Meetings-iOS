@@ -14,6 +14,7 @@ class CalendarVC: UIViewController{
     
     @IBOutlet weak var calendarView: FSCalendar!
     
+    @IBOutlet weak var NaviBarDate: UILabel!
     
 
     override func viewDidLoad() {
@@ -21,6 +22,19 @@ class CalendarVC: UIViewController{
         
     calendarView.pagingEnabled = false
         calendarView.scrollDirection = .vertical
+        
+        
+        
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .long
+        
+        var today = formatter.string(from: currentDate)
+        
+        NaviBarDate.text = today
+        
+        
     }
     
   
