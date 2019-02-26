@@ -1,40 +1,42 @@
 //
-//  userFilterViewModel.swift
+//  contractFilterViewModel.swift
 //  Cefi Meetings
 //
-//  Created by Syed ShahRukh Haider on 22/02/2019.
+//  Created by Syed ShahRukh Haider on 26/02/2019.
 //  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class userFilterViewModel{
+class contractFilterViewModel{
     
     
-    func userFiltering(API : String, TextFields : [String:String], completion : @escaping(_ Status:Bool?, _ Result: [Contact]?)->()){
+    
+    
+    func contractFiltering(API : String, TextFields : [String:Any], completion : @escaping(_ Status:Bool?, _ Result: [Contract]?)->()){
         
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (resp) in
             
-//            print(API)
-//            print(TextFields)
+                        print(API)
+                        print(TextFields)
             
             let fetchValue = resp.result.value as! [String:Any]
             
             
-//                         print(fetchValue)
+                                     print(fetchValue)
             
             guard let list = fetchValue["searchData"] as? [Any] else{return}
             
-            var finalDict = [Contact]()
+            var finalDict = [Contract]()
             
             if fetchValue["success"] as! Double == 1{
                 do {
                     let json = try JSONSerialization.data(withJSONObject: list, options: JSONSerialization.WritingOptions.prettyPrinted)
                     
-                    finalDict = try JSONDecoder().decode([Contact].self, from: json)
-
+                    finalDict = try JSONDecoder().decode([Contract].self, from: json)
+                    
                 }
                 catch{}
                 
@@ -44,5 +46,9 @@ class userFilterViewModel{
         }
         
     }
+    
+    
+    
+    
     
 }

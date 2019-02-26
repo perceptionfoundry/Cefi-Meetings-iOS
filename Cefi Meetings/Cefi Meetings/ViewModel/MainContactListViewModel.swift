@@ -40,7 +40,7 @@ class MainContactListViewModel{
                 
                 finalDict = try JSONDecoder().decode([Contact].self, from: jsonData!)
                 
-                print(finalDict.count)
+//                print(finalDict.count)
 
                 
                 completion(true,"",finalDict)

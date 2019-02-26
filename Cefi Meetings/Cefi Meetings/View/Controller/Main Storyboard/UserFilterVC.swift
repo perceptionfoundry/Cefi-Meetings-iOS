@@ -129,7 +129,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             
             self.searchResult = result!
             
-            print(result)
+//            print(result)
             
             self.filterTable.reloadData()
         }

@@ -9,6 +9,7 @@
 import UIKit
 import TTSegmentedControl
 import SwiftRangeSlider
+import HCSStarRatingView
 
 
 
@@ -18,19 +19,23 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     // ********** Outlet *********************
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
+    
     @IBOutlet weak var allButton: Custom_Button!
     @IBOutlet weak var openButton: Custom_Button!
     @IBOutlet weak var closedButton: Custom_Button!
     @IBOutlet weak var deadButton: Custom_Button!
     @IBOutlet weak var priceRange: RangeSlider!
     @IBOutlet weak var typeSegment: TTSegmentedControl!
-    @IBOutlet weak var statusSegment: TTSegmentedControl!
+    
+    @IBOutlet weak var ratingStar: HCSStarRatingView!
+    @IBOutlet weak var searchTF: UITextField!
     
     
+    let searchResult = [Contract]()
     
-    
-    
-    
+   var selectedContractType = "all"
+    let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
+    let viewModel = contractFilterViewModel()
     
     
     
@@ -42,10 +47,9 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         filterTable.dataSource = self
         
         typeSegment.itemTitles = ["Dealers","Prospects","Clients","Referrals"]
-        statusSegment.itemTitles = ["Open","Deal","Dead","Closed"]
+       
         
         typeSegment.allowChangeThumbWidth = false
-        statusSegment.allowChangeThumbWidth = false
         
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
@@ -58,6 +62,31 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     
+    @IBAction func searchAction(_ sender: Any) {
+        
+        
+        let apiLink = appGlobalVarible.apiBaseURL+"contracts/searchcontracts"
+
+        
+        let dataDict : [String : Any] = [
+            "userId": appGlobalVarible.userID,
+            "contractStatus": self.selectedContractType ,
+            "rating": ratingStar.value,
+            "contractStartingPrice" : priceRange!.minimumValue,
+            "contractEndingPrice" : priceRange!.maximumValue,
+            "searchString": searchTF.text!
+    
+        ]
+     
+        
+        viewModel.contractFiltering(API: apiLink, TextFields: dataDict) { (status, result) in
+            
+            print(result)
+            
+        }
+        
+        
+    }
     
     
     
@@ -72,24 +101,31 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor.clear
+            self.selectedContractType = "all"
         }
         else if sender.tag == 1{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor.clear
+            self.selectedContractType = "open"
+
         }
         else if sender.tag == 2{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             deadButton.border_color = UIColor.clear
+            self.selectedContractType = "closed"
+
         }
         else if sender.tag == 3{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            self.selectedContractType = "dead"
+
         }
     }
     

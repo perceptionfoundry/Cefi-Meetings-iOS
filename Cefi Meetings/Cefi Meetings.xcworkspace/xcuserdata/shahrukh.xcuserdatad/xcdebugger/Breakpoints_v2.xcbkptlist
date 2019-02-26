@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Main Storyboard/UserFilterVC.swift"
-            timestampString = "572803874.299419"
+            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
+            timestampString = "572854817.125777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "searchAction(_:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "contractFiltering(API:TextFields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Main Storyboard/UserFilterVC.swift"
-            timestampString = "572803874.300498"
+            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
+            timestampString = "572854817.127831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "searchAction(_:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "contractFiltering(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
+            timestampString = "572854934.678214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "contractFiltering(API:TextFields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

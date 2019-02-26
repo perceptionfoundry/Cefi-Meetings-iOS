@@ -28,14 +28,7 @@ class SignInViewModel{
 
     
     
-    func testME (){
-        
-        print("hello")
-        
-            //
-            
-            
-        }
+ 
         
 
     
@@ -55,11 +48,7 @@ class SignInViewModel{
             // fetching response result from API
             guard let value = response.result.value  as? [String : Any] else{return}
 
-            
-            print("**********************")
-            
-            print(value)
-            print("**********************")
+     
          
             // Storing Server status
             let check  = value["success"] as? Double

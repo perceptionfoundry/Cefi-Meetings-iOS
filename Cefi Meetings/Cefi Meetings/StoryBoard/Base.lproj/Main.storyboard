@@ -2710,20 +2710,23 @@ I bet you’re still using Bootstrap too…</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzn-lj-sJJ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="19" y="430" width="337.5" height="33.5"/>
+                                <rect key="frame" x="19" y="381.5" width="337.5" height="33"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-qp-pi4">
-                                        <rect key="frame" x="12.5" y="8.5" width="260" height="16.5"/>
+                                        <rect key="frame" x="12.5" y="8" width="260" height="17"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfu-He-Keu">
-                                        <rect key="frame" x="298" y="3.5" width="19.5" height="26.5"/>
+                                        <rect key="frame" x="298" y="3" width="19.5" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wfu-He-Keu" secondAttribute="height" multiplier="8:11" id="54A-iV-QmK"/>
                                         </constraints>
                                         <state key="normal" image="search"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="tDV-qF-ImT" eventType="touchUpInside" id="vEf-4S-zFt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2802,10 +2805,10 @@ I bet you’re still using Bootstrap too…</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CM4-nT-6YX" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
-                                <rect key="frame" x="19" y="317" width="337.5" height="30"/>
+                                <rect key="frame" x="19" y="321.5" width="337.5" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="F00-ps-FMz"/>
+                                    <constraint firstAttribute="height" constant="40" id="F00-ps-FMz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -2821,28 +2824,8 @@ I bet you’re still using Bootstrap too…</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-rO-CI2" customClass="TTSegmentedControl" customModule="TTSegmentedControl">
-                                <rect key="frame" x="19" y="376" width="337.5" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ERm-8C-U8D"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitle" value="Open,Deal,Dead,Closed"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
-                                        <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useGradient" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbColor">
-                                        <color key="value" red="0.25459641220000001" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-DG-cBE">
-                                <rect key="frame" x="0.0" y="463.5" width="375" height="154.5"/>
+                                <rect key="frame" x="0.0" y="414.5" width="375" height="203.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contract" rowHeight="57" id="bmL-fx-uLJ" customClass="Contract_TableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -2929,12 +2912,6 @@ I bet you’re still using Bootstrap too…</string>
                                     <constraint firstAttribute="height" constant="0.5" id="m6e-86-iX2"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-dH-A4Q">
-                                <rect key="frame" x="31" y="348.5" width="32" height="20.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXu-AG-AjK" customClass="RangeSlider" customModule="SwiftRangeSlider">
                                 <rect key="frame" x="28" y="197.5" width="319" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3106,11 +3083,11 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.825" id="E2e-Vu-QWe"/>
                             <constraint firstItem="Gix-fX-4vT" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.35" id="EOt-Mm-3Bq"/>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.75" id="EU5-Xh-70l"/>
-                            <constraint firstItem="CM4-nT-6YX" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.04" id="Ei1-7X-L0v"/>
+                            <constraint firstItem="CM4-nT-6YX" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.07" id="Ei1-7X-L0v"/>
+                            <constraint firstItem="uzn-lj-sJJ" firstAttribute="top" secondItem="CM4-nT-6YX" secondAttribute="bottom" constant="20" id="Em6-Er-Ypw"/>
                             <constraint firstItem="6jj-oS-Ged" firstAttribute="centerY" secondItem="hXu-AG-AjK" secondAttribute="centerY" id="FL7-VC-3ea"/>
                             <constraint firstItem="BqG-kO-n7C" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.95" id="Fel-oc-P7K"/>
                             <constraint firstItem="D9h-DG-cBE" firstAttribute="top" secondItem="uzn-lj-sJJ" secondAttribute="bottom" id="GXS-FX-YTP"/>
-                            <constraint firstItem="SZs-dH-A4Q" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.125" id="Hb9-cg-iQi"/>
                             <constraint firstItem="8Ev-RH-OBp" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.55" id="JCd-zQ-2ie"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.45" id="KFp-eg-dAi"/>
                             <constraint firstItem="ji4-tv-JmN" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.26" id="Krl-cX-Sdc"/>
@@ -3123,23 +3100,18 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="Rdh-eD-DPh"/>
                             <constraint firstItem="ji4-tv-JmN" firstAttribute="centerY" secondItem="Gix-fX-4vT" secondAttribute="centerY" id="Rl2-8e-3pR"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="trailing" secondItem="d8P-bl-QQn" secondAttribute="trailing" id="RqY-z7-Qw7"/>
-                            <constraint firstItem="6ic-rO-CI2" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.225" id="SZR-xM-dkz"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.15" id="Txr-sk-ozV"/>
                             <constraint firstAttribute="trailing" secondItem="D9h-DG-cBE" secondAttribute="trailing" id="Uuh-5E-RhR"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.3" id="WcM-hb-Trx"/>
-                            <constraint firstItem="6ic-rO-CI2" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="XHz-dh-g1G"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="YTz-9B-C1e"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="bLb-lw-KvF"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="cb7-uh-YOj"/>
                             <constraint firstItem="ZKu-lU-Kc7" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.95" id="d3A-p0-0WJ"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="gJU-7D-gla"/>
-                            <constraint firstItem="SZs-dH-A4Q" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.25" id="jOT-P9-37S"/>
                             <constraint firstItem="BqG-kO-n7C" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="jtg-YY-eep"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.9" id="jwM-Xh-hR3"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="top" secondItem="d8P-bl-QQn" secondAttribute="top" id="m0z-E6-rsW"/>
                             <constraint firstItem="uVe-De-x5t" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="n1g-vU-3hj"/>
-                            <constraint firstItem="6ic-rO-CI2" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="nPb-oz-3PQ"/>
-                            <constraint firstItem="uzn-lj-sJJ" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="1.4" id="py3-H2-D8i"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="centerY" secondItem="hXu-AG-AjK" secondAttribute="centerY" id="qNG-8N-F0T"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.65" id="wDJ-Cf-vhY"/>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="xUR-VW-Zqy"/>
@@ -3170,8 +3142,9 @@ I bet you’re still using Bootstrap too…</string>
                         <outlet property="deadButton" destination="X1H-E8-hrI" id="WiA-1Z-7uK"/>
                         <outlet property="filterTable" destination="D9h-DG-cBE" id="tlu-qt-xMg"/>
                         <outlet property="openButton" destination="da6-gE-PjG" id="bxf-Hr-fFX"/>
-                        <outlet property="priceRange" destination="hXu-AG-AjK" id="S8f-8c-ADh"/>
-                        <outlet property="statusSegment" destination="6ic-rO-CI2" id="jkw-Tn-uQf"/>
+                        <outlet property="priceRange" destination="hXu-AG-AjK" id="cpR-43-9mX"/>
+                        <outlet property="ratingStar" destination="Gix-fX-4vT" id="eTM-yw-pS7"/>
+                        <outlet property="searchTF" destination="QHG-qp-pi4" id="Dbl-GU-6Zl"/>
                         <outlet property="typeSegment" destination="CM4-nT-6YX" id="o84-Ee-wWm"/>
                     </connections>
                 </viewController>
