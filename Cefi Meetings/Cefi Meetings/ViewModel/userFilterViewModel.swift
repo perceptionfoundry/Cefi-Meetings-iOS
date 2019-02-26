@@ -12,7 +12,7 @@ import Alamofire
 class userFilterViewModel{
     
     
-    func userFiltering(API : String, TextFields : [String:String], completion : @escaping(_ Status:Bool?, _ Result: [Contact]?)->()){
+    func userFiltering(API : String, TextFields : [String:String], completion : @escaping(_ Status:Bool?, _ Result: [Contact]?, _ message : String?)->()){
         
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (resp) in
@@ -23,13 +23,33 @@ class userFilterViewModel{
             let fetchValue = resp.result.value as! [String:Any]
             
             
-//                         print(fetchValue)
+            print(fetchValue["success"])
+            print(fetchValue["status"])
+
             
-            guard let list = fetchValue["searchData"] as? [Any] else{return}
+            var status  = false
+            
+            if fetchValue["success"] as! Int == 1 {
+                status = true
+            }
+            else {
+                status = false
+            }
+            
+            
+            print(status)
+            
+//            guard let list = fetchValue["searchData"] as? [Any] else{return}
             
             var finalDict = [Contact]()
             
-            if fetchValue["success"] as! Double == 1{
+       
+            
+            
+            
+            if status == true {
+                guard let list = fetchValue["searchData"] as? [Any] else{return}
+
                 do {
                     let json = try JSONSerialization.data(withJSONObject: list, options: JSONSerialization.WritingOptions.prettyPrinted)
                     
@@ -39,7 +59,11 @@ class userFilterViewModel{
                 catch{}
                 
                 
-                completion(true, finalDict)
+                completion(true, finalDict, nil)
+            }
+            
+            else {
+                completion(false,nil,fetchValue["status"] as! String)
             }
         }
         

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
-            timestampString = "572854817.125777"
+            filePath = "Cefi Meetings/ViewModel/userFilterViewModel.swift"
+            timestampString = "572866319.40861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "contractFiltering(API:TextFields:completion:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "userFiltering(API:TextFields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
-            timestampString = "572854817.127831"
+            filePath = "Cefi Meetings/ViewModel/userFilterViewModel.swift"
+            timestampString = "572866319.409696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "contractFiltering(API:TextFields:completion:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "userFiltering(API:TextFields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/contractFilterViewModel.swift"
-            timestampString = "572854934.678214"
+            filePath = "Cefi Meetings/ViewModel/userFilterViewModel.swift"
+            timestampString = "572866319.409997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "contractFiltering(API:TextFields:completion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "userFiltering(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/userFilterViewModel.swift"
+            timestampString = "572866319.410292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "userFiltering(API:TextFields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

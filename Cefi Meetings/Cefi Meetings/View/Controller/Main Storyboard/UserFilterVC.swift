@@ -125,13 +125,23 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             
         ]
         
-        viewModel.userFiltering(API: apiLink, TextFields: dict) { (status, result) in
+        viewModel.userFiltering(API: apiLink, TextFields: dict) { (status, result, message) in
             
+            
+            
+            if status == true{
             self.searchResult = result!
             
 //            print(result)
             
             self.filterTable.reloadData()
+            }
+            
+            else{
+                let alert = UIAlertController(title: "Search Result", message: message!, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
     }

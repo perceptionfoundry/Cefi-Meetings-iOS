@@ -78,13 +78,28 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
         ]
      
+        if searchTF.text?.isEmpty == false{
         
-        viewModel.contractFiltering(API: apiLink, TextFields: dataDict) { (status, result) in
+        viewModel.contractFiltering(API: apiLink, TextFields: dataDict) { (status, result, message) in
             
-            print(result)
             
+            if status == true{
+            print(result?.count)
+            }
+            
+            else{
+              
+                let alert = UIAlertController(title: "Search Result", message: message!, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
-        
+        }
+        else{
+            let alert = UIAlertController(title: "Text Field Empty", message: "Please assure that you have place search key", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
     
@@ -108,7 +123,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
             openButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor.clear
-            self.selectedContractType = "open"
+            self.selectedContractType = "Open"
 
         }
         else if sender.tag == 2{
