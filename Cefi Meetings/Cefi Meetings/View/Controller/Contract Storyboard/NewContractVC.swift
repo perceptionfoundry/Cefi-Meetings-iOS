@@ -64,6 +64,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var everythingSwitch: UISwitch!
     
     
+    
+    var contactName = ""
+    
     let viewModel = NewContractViewModel()
     
     
@@ -107,6 +110,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contactTF.text = contactName
         
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0

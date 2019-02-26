@@ -287,11 +287,20 @@
                         <outlet property="typeCategory" destination="mhP-WF-M1z" id="umX-HG-SAF"/>
                         <outlet property="unemptyTableImage" destination="OyY-Do-pjx" id="qWs-eV-MBe"/>
                         <outlet property="userName" destination="Elf-K0-BZl" id="kqf-jh-70P"/>
+                        <segue destination="4aN-be-51b" kind="show" identifier="Contract_Segue" id="rGO-Ms-hG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PU-Hb-47h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="320.80000000000001" y="696.7016491754124"/>
+        </scene>
+        <!--New_Contract-->
+        <scene sceneID="H0R-EP-vsP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" referencedIdentifier="New_Contract" id="4aN-be-51b" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mq-sz-3KE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="648"/>
         </scene>
         <!--New ContactVC-->
         <scene sceneID="1fv-OR-vI9">

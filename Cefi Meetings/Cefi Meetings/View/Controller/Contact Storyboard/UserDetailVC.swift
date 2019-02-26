@@ -23,6 +23,8 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var unemptyTableImage: UIImageView!
     
     
+    var userDetail : Contact?
+    
     var justTest = true
     
     override func viewDidLoad() {
@@ -31,8 +33,26 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         contractTable.delegate = self
         contractTable.dataSource = self
 
+        print(userDetail!)
+
+        
+        
+        userName.text = userDetail!.contactName
+        businessName.text = userDetail!.businessName
+        typeCategory.text = userDetail?.contactType
+        industryCatergory.text = userDetail!.industryType
+        
+        var phone = userDetail!.phoneNumber!
+        phoneNumber.text = String(phone)
+        emailAddress.text = userDetail!.email
+        
+        
+        
+        
         contractTable.reloadData()
         contractTable.isHidden = true
+        
+        
 
     }
     
@@ -59,15 +79,31 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    
+    
+    
+    
+    
+    
     @IBAction func backAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
+    
     @IBAction func editAction(_ sender: Any) {
     }
     
+    
+    
+    
+    
     @IBAction func addContractAction(_ sender: Any) {
+        
+        
+        performSegue(withIdentifier: "Contract_Segue", sender: nil)
         
         if justTest == true{
             justTest = false
@@ -80,6 +116,12 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             unemptyTableImage.isHidden = false
 
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! NewContractVC
+        
+        dest.contactName = userDetail!.contactName!
     }
     
 }

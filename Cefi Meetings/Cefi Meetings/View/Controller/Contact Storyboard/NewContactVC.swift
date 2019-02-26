@@ -171,7 +171,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
                                     "phoneNumber" : phoneTF.text!,
                                     "email" : emailTF.text!,
                                     "industryType" : industryTF.text!,
-                                    "contactType" : contactTF.text!,
+                                    "contactType" : typeTF.text!,
                                     "referredBy" : self.referrred,
                                     "lat" : self.chosenPlace!.lat,
                                     "long" : chosenPlace!.long                                    ] as [String : Any]

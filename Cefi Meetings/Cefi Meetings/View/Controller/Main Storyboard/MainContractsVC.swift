@@ -142,6 +142,9 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.selectionStyle = .none
         
+        
+        cell.firstValue.text = userContract[indexPath.row].contractNumber
+        cell.nameValue?.text = "Contract\(indexPath.row)"
     
         return cell
     }

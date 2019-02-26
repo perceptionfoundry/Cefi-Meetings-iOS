@@ -31,7 +31,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var searchTF: UITextField!
     
     
-    let searchResult = [Contract]()
+    var searchResult = [Contract]()
     
    var selectedContractType = "all"
     let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
@@ -60,7 +60,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     }
     
     
-    
+    //*************** SEARCH ACTION FUNCTION *******************
     
     @IBAction func searchAction(_ sender: Any) {
         
@@ -84,7 +84,11 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
             
             
             if status == true{
-            print(result?.count)
+           
+                
+                self.searchResult = result!
+                
+                self.filterTable.reloadData()
             }
             
             else{
@@ -151,13 +155,16 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return searchResult.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contract", for: indexPath) as! Contract_TableViewCell
+        
+        cell.nameValue.text = "Contract \(indexPath.row)"
+        cell.firstValue.text = searchResult[indexPath.row].contractNumber
         
         return cell
     }

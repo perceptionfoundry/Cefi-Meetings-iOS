@@ -732,10 +732,10 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="-1572" y="1933.5832083958023"/>
         </scene>
-        <!--Contact-->
+        <!--Contact_Detail-->
         <scene sceneID="jwP-YY-qPa">
             <objects>
-                <viewControllerPlaceholder storyboardName="Contact" id="iug-9T-oHv" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Contact" referencedIdentifier="Contact_Detail" id="iug-9T-oHv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RI3-Xh-AXa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oU-If-Yl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1799,7 +1799,7 @@ We hope you have a great and productive day!</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16517" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-1O-A5Z">
-                                                    <rect key="frame" x="281.5" y="18" width="56" height="20.5"/>
+                                                    <rect key="frame" x="272" y="18" width="75" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
                                                     <color key="textColor" red="0.39189803600311279" green="0.595542311668396" blue="0.27832308411598206" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -1864,7 +1864,7 @@ We hope you have a great and productive day!</string>
                                                 <constraint firstItem="Hay-vK-kUx" firstAttribute="centerY" secondItem="6c4-ox-1Td" secondAttribute="centerY" id="js3-KR-771"/>
                                                 <constraint firstItem="Hay-vK-kUx" firstAttribute="width" secondItem="6c4-ox-1Td" secondAttribute="width" multiplier="0.4" id="ocf-IJ-Bob"/>
                                                 <constraint firstItem="Eg9-E4-Pu3" firstAttribute="width" secondItem="6c4-ox-1Td" secondAttribute="width" multiplier="0.125" id="qoO-kH-ICV"/>
-                                                <constraint firstItem="Ydd-1O-A5Z" firstAttribute="width" secondItem="6c4-ox-1Td" secondAttribute="width" multiplier="0.15" id="uBl-RY-rPZ"/>
+                                                <constraint firstItem="Ydd-1O-A5Z" firstAttribute="width" secondItem="6c4-ox-1Td" secondAttribute="width" multiplier="0.2" id="uBl-RY-rPZ"/>
                                                 <constraint firstItem="2xY-Vh-aOr" firstAttribute="centerY" secondItem="6c4-ox-1Td" secondAttribute="centerY" id="vwE-CZ-m2v"/>
                                                 <constraint firstItem="Hay-vK-kUx" firstAttribute="centerX" secondItem="6c4-ox-1Td" secondAttribute="centerX" multiplier="0.5" id="xT2-l8-51Q"/>
                                             </constraints>
@@ -2838,21 +2838,15 @@ I bet you’re still using Bootstrap too…</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16517" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC1-qK-lDN">
-                                                    <rect key="frame" x="19" y="18" width="56" height="20.5"/>
+                                                    <rect key="frame" x="253" y="18" width="94" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                     <color key="textColor" red="0.39189803600000001" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="David Cooperfield" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrx-Ls-8zW">
-                                                    <rect key="frame" x="94" y="18" width="150" height="20.5"/>
+                                                    <rect key="frame" x="19" y="18" width="150" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                                     <color key="textColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 25500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np8-Vz-mrI">
-                                                    <rect key="frame" x="255" y="20" width="90" height="16.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="12"/>
-                                                    <color key="textColor" red="0.21965387459999999" green="0.40234851840000002" blue="0.18424454330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-Ji-pd7">
@@ -2861,17 +2855,14 @@ I bet you’re still using Bootstrap too…</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vrx-Ls-8zW" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="0Zt-mg-d0i"/>
-                                                <constraint firstItem="Np8-Vz-mrI" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="0bA-s2-G5f"/>
-                                                <constraint firstItem="HC1-qK-lDN" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="0.25" id="7fd-cA-KFQ"/>
+                                                <constraint firstItem="HC1-qK-lDN" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="1.6" id="7fd-cA-KFQ"/>
                                                 <constraint firstItem="HC1-qK-lDN" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="C48-Vy-FK4"/>
                                                 <constraint firstItem="Vrx-Ls-8zW" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.4" id="W5T-6D-b2Q"/>
-                                                <constraint firstItem="HC1-qK-lDN" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.15" id="Wax-ZK-Btt"/>
+                                                <constraint firstItem="HC1-qK-lDN" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.25" id="Wax-ZK-Btt"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="height" secondItem="Jlx-6l-VhX" secondAttribute="height" multiplier="0.16" id="XxF-w3-xZl"/>
-                                                <constraint firstItem="Np8-Vz-mrI" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.24" id="Y6p-De-ao7"/>
-                                                <constraint firstItem="Np8-Vz-mrI" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="1.6" id="eja-oL-zyN"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="jNP-q3-nT4"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.02" id="n6H-IX-nQd"/>
-                                                <constraint firstItem="Vrx-Ls-8zW" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="0.9" id="wLp-zi-RAc"/>
+                                                <constraint firstItem="Vrx-Ls-8zW" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="0.5" id="wLp-zi-RAc"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="1.9" id="wcP-tN-uyC"/>
                                             </constraints>
                                         </tableViewCellContentView>

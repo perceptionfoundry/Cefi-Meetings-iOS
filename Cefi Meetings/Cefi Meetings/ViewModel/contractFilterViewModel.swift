@@ -34,22 +34,27 @@ class contractFilterViewModel{
                                      print(fetchValue)
             print("***********************************")
             
-            guard let list = fetchValue["searchData"] as? Any else{return}
             
             var finalDict = [Contract]()
             
             
-            print("***********************************")
-
-            print(list)
-            print("***********************************")
+    
 
             
             
             
             if fetchValue["success"] as! Double == 1{
+                
+                guard let list = fetchValue["searchData"] as? [Any] else{return}
+                
+                
+                print("***********************************")
+                
+                print(list)
+                print("***********************************")
+
                 do {
-                    let json = try JSONSerialization.data(withJSONObject: [list], options: JSONSerialization.WritingOptions.prettyPrinted)
+                    let json = try JSONSerialization.data(withJSONObject: list, options: JSONSerialization.WritingOptions.prettyPrinted)
                     
                     finalDict = try JSONDecoder().decode([Contract].self, from: json)
                     

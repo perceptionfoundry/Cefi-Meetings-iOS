@@ -23,6 +23,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var dealerButton: Custom_Button!
     
     
+    var selectedUser : Contact?
     
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
@@ -35,6 +36,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     var contactDelegate : contactdelegate?
+    
+    
+    
     var segueStatus  = false
     
     
@@ -98,13 +102,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         NaviBar.setBackgroundImage(UIImage(), for: .default)
         NaviBar.shadowImage = UIImage()
         
-        
-//        let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
-//
-//        let param = ["userId": appGlobalVariable.userID]
-//
-//        print(param)
-//        print(apiLink)
+
       
         
 
@@ -296,6 +294,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         let workKey = wordSection[indexPath.section]
 
         if segueStatus == true{
@@ -303,9 +302,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             if let wordValue = wordsDic[workKey.uppercased()]{
                 
                 
-                print(wordValue[indexPath.row])
                 
-              
+              self.selectedUser = wordValue[indexPath.row]
                 
                 self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!)
                 self.segueStatus = false
@@ -319,10 +317,32 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         else{
         // Segue to User Contail detail  Viewcontroller
         
-        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
-        
-        let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
-        self.navigationController?.pushViewController(vc, animated: true)
+           
+                
+                if let wordValue = wordsDic[workKey.uppercased()]{
+                    
+                    
+                    
+                    self.selectedUser = wordValue[indexPath.row]
+                    
+                    print(selectedUser?.contactName)
+                    
+                    performSegue(withIdentifier: "Contact_Segue", sender: nil)
+//                    let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+//
+//                    let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
+//                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+            }
+                    
+            
+            
+            
+            
+//        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
+//
+//        let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
+//        self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -354,6 +374,15 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Contact_Segue"{
+
+            let dest = segue.destination as! UserDetailVC
+
+
+        dest.userDetail = self.selectedUser
+        }
+    }
     
 }
