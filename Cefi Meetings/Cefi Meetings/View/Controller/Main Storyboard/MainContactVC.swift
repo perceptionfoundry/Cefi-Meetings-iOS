@@ -110,7 +110,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
         
-        self.fetchingContent()
+//        self.fetchingContent()
         
 //        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
 //
@@ -142,6 +142,22 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     }
   
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+        
+
+        self.fetchingContent()
+        
+    
+    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        userDirectory.removeAll()
+//        Contact_Table.reloadData()
+//
+//    }
     
     
     
@@ -186,6 +202,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // FETCH DATA FUNCTION
     
     func fetchingContent(){
+        userDirectory.removeAll()
+        wordsDic.removeAll()
         
         let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
         
