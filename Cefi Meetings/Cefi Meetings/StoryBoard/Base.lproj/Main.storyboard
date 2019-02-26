@@ -2065,11 +2065,11 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="4212" y="1768.9655172413795"/>
         </scene>
-        <!--Pending Docs-->
+        <!--Pending-->
         <scene sceneID="SRT-ER-C6z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8X3-Gq-dn8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pending Docs" image="pending_tab" id="GRM-aJ-xkj"/>
+                    <tabBarItem key="tabBarItem" title="Pending" image="pending_tab" id="GRM-aJ-xkj"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NG3-T8-JIY">
@@ -2684,11 +2684,11 @@ I bet you’re still using Bootstrap too…</string>
             </objects>
             <point key="canvasLocation" x="-3594" y="2970"/>
         </scene>
-        <!--Meeting-->
+        <!--Meetings-->
         <scene sceneID="IwL-9c-oXx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="00Q-y1-dTZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Meeting" image="visit_tab" id="nrb-vd-ejK"/>
+                    <tabBarItem key="tabBarItem" title="Meetings" image="visit_tab" id="nrb-vd-ejK"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TPT-VI-ANM">
@@ -2919,13 +2919,13 @@ I bet you’re still using Bootstrap too…</string>
                                         <color key="value" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
-                                        <real key="value" value="2500"/>
+                                        <real key="value" value="1000"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="labelFontSize">
                                         <real key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                        <real key="value" value="100"/>
+                                        <real key="value" value="1000"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
                                         <real key="value" value="5000000"/>
@@ -2947,7 +2947,7 @@ I bet you’re still using Bootstrap too…</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scN-Gf-aH7" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="23" y="202.5" width="10" height="10"/>
+                                <rect key="frame" x="17.5" y="202.5" width="10" height="10"/>
                                 <color key="backgroundColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="MBA-JT-wtJ"/>
@@ -2959,7 +2959,7 @@ I bet you’re still using Bootstrap too…</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jj-oS-Ged" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="342" y="202.5" width="10" height="10"/>
+                                <rect key="frame" x="347.5" y="202.5" width="10" height="10"/>
                                 <color key="backgroundColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="2QM-kZ-Hb8"/>
@@ -3063,10 +3063,10 @@ I bet you’re still using Bootstrap too…</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="scN-Gf-aH7" firstAttribute="leading" secondItem="hXu-AG-AjK" secondAttribute="leading" constant="-10.75" id="1HV-rQ-elt"/>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="1Il-5s-oeU"/>
                             <constraint firstItem="d8P-bl-QQn" firstAttribute="bottom" secondItem="D9h-DG-cBE" secondAttribute="bottom" id="2Qx-F4-mDM"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="1.8" id="2eJ-r6-2Rh"/>
-                            <constraint firstItem="6jj-oS-Ged" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="1.85" id="3Q8-H6-67R"/>
                             <constraint firstItem="rMo-eu-03i" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="3cs-67-5Rv"/>
                             <constraint firstItem="D9h-DG-cBE" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="4Gr-wO-mL8"/>
                             <constraint firstItem="scN-Gf-aH7" firstAttribute="width" secondItem="scN-Gf-aH7" secondAttribute="height" multiplier="1:1" id="4cU-g6-jiQ"/>
@@ -3093,12 +3093,12 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="uzn-lj-sJJ" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="Rdh-eD-DPh"/>
                             <constraint firstItem="ji4-tv-JmN" firstAttribute="centerY" secondItem="Gix-fX-4vT" secondAttribute="centerY" id="Rl2-8e-3pR"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="trailing" secondItem="d8P-bl-QQn" secondAttribute="trailing" id="RqY-z7-Qw7"/>
-                            <constraint firstItem="scN-Gf-aH7" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.15" id="Txr-sk-ozV"/>
                             <constraint firstAttribute="trailing" secondItem="D9h-DG-cBE" secondAttribute="trailing" id="Uuh-5E-RhR"/>
                             <constraint firstItem="Il6-Gu-oGh" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" multiplier="0.3" id="WcM-hb-Trx"/>
                             <constraint firstItem="CM4-nT-6YX" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.9" id="YTz-9B-C1e"/>
                             <constraint firstItem="lVv-da-adn" firstAttribute="height" secondItem="kRX-8p-A1u" secondAttribute="height" multiplier="0.05" id="bLb-lw-KvF"/>
                             <constraint firstItem="kt3-5G-Adn" firstAttribute="leading" secondItem="d8P-bl-QQn" secondAttribute="leading" id="cb7-uh-YOj"/>
+                            <constraint firstItem="6jj-oS-Ged" firstAttribute="leading" secondItem="hXu-AG-AjK" secondAttribute="trailing" constant="0.5" id="ch0-7a-uLs"/>
                             <constraint firstItem="ZKu-lU-Kc7" firstAttribute="centerY" secondItem="d8P-bl-QQn" secondAttribute="centerY" multiplier="0.95" id="d3A-p0-0WJ"/>
                             <constraint firstItem="hXu-AG-AjK" firstAttribute="width" secondItem="kRX-8p-A1u" secondAttribute="width" multiplier="0.85" id="gJU-7D-gla"/>
                             <constraint firstItem="BqG-kO-n7C" firstAttribute="centerX" secondItem="d8P-bl-QQn" secondAttribute="centerX" id="jtg-YY-eep"/>

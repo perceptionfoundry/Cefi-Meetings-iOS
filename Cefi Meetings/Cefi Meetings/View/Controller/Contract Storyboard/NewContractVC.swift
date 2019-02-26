@@ -131,6 +131,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
         
         
+        
        
         
 //        tagView.delegate = self
