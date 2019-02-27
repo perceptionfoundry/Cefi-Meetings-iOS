@@ -11,14 +11,21 @@ import Alamofire
 
 class SignInVC: UIViewController {
     
+    
+    
+    
+    
     // ****************** OUTLET *****************
     
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
     
-    //******************************
     
+    
+    
+    // ******************* VARIABLE ***************************
+
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var apiLink = ""
     
@@ -29,7 +36,8 @@ class SignInVC: UIViewController {
     
     
     
-    
+    // ******************* VIEWDIDLOAD ***************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,11 +52,13 @@ class SignInVC: UIViewController {
     
     
 
-    
+    // ******************* LOGIN BUTTON ACTION ***************************
+
     @IBAction func loginButtonAction(_ sender: Any) {
        
      
-        // ********* parameter that are required by API ************
+        // parameter that are required by API
+        
         let signInParameter = [
             "email" : userNameTF?.text ?? "" ,
             "password" : passwordTF?.text ?? ""
@@ -56,22 +66,14 @@ class SignInVC: UIViewController {
             ] as [String : Any]
         
         
-       
-        
-        
-        
-      
-        
-        
-        
-        
-        //  *************** Verifying both textfield is not left empty ***********
+
+        //   Verifying both textfield is not left empty
         if userNameTF.text?.isEmpty == false && passwordTF.text?.isEmpty == false{
             
             
             
             
-            // ****** Hitting ApiLink with required parameter **********
+            //  Hitting ApiLink with required parameter 
 
             viewModel.signINProcess(API: self.apiLink, Textfields: signInParameter) { (status, err) in
                 
@@ -106,7 +108,10 @@ class SignInVC: UIViewController {
     
     
     
-    // ******* Function that will handle Alert Viewcontroller ************
+    
+    
+    
+    // ******* ALERT VIEWCONTROLLER ************
     
     
     

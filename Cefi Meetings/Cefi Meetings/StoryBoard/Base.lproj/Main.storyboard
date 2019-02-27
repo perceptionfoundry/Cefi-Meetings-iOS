@@ -2032,6 +2032,7 @@ We hope you have a great and productive day!</string>
                         <outlet property="deadButton" destination="UDT-J5-a4A" id="MXt-68-jLl"/>
                         <outlet property="openButton" destination="eOa-ZW-9II" id="shI-s6-lIR"/>
                         <segue destination="ubT-Ss-yZh" kind="show" identifier="Contract" id="HeC-KS-Br4"/>
+                        <segue destination="TMx-z7-faA" kind="show" identifier="contract_detail_segue" id="3CK-1W-xC2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ad-5D-CDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2044,7 +2045,15 @@ We hope you have a great and productive day!</string>
                 <viewControllerPlaceholder storyboardName="Contract" id="ubT-Ss-yZh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xPW-9f-OqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6078" y="1461"/>
+            <point key="canvasLocation" x="6365" y="1769"/>
+        </scene>
+        <!--Contract_Details-->
+        <scene sceneID="jp7-Ld-Vwk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" referencedIdentifier="Contract_Details" id="TMx-z7-faA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esV-Id-hOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6366" y="2217"/>
         </scene>
         <!--Contracts-->
         <scene sceneID="mqS-lP-guA">
@@ -2760,6 +2769,9 @@ I bet you’re still using Bootstrap too…</string>
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="add_button"/>
+                                                <connections>
+                                                    <action selector="addContractAction:" destination="tDV-qF-ImT" eventType="touchUpInside" id="xtM-o2-kSW"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -3139,11 +3151,12 @@ I bet you’re still using Bootstrap too…</string>
                         <outlet property="ratingStar" destination="Gix-fX-4vT" id="eTM-yw-pS7"/>
                         <outlet property="searchTF" destination="QHG-qp-pi4" id="Dbl-GU-6Zl"/>
                         <outlet property="typeSegment" destination="CM4-nT-6YX" id="o84-Ee-wWm"/>
+                        <segue destination="TMx-z7-faA" kind="show" identifier="contract_detail_segue" id="fG6-yC-063"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68u-Ev-mbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5932" y="2201.649175412294"/>
+            <point key="canvasLocation" x="5108" y="2754"/>
         </scene>
     </scenes>
     <resources>
@@ -3175,4 +3188,7 @@ I bet you’re still using Bootstrap too…</string>
         <image name="signin_BG" width="375" height="667"/>
         <image name="visit_tab" width="19.5" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fG6-yC-063"/>
+    </inferredMetricsTieBreakers>
 </document>

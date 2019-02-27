@@ -10,22 +10,25 @@ import UIKit
 
 class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
-    @IBOutlet weak var NaviBar: UINavigationBar!
+    // ****************** OUTLET ***************************
 
+    @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var contract_Table: UITableView!
     @IBOutlet weak var allButton: Custom_Button!
     @IBOutlet weak var openButton: Custom_Button!
     @IBOutlet weak var closedButton: Custom_Button!
     @IBOutlet weak var deadButton: Custom_Button!
     
+    
+    // ****************** VARIABLE ***************************
+
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
-    
     let viewModel = MainContractListViewModel()
-    
-    
-    
     var userContract = [Contract]()
+
+    
+    
+    // ****************** VIEWDIDLOAD ***************************
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         print(apiLink)
         
         
+        // CALL VIEWMODEL FUNCTION
         viewModel.fetchContractDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
             
             if status == true{
@@ -74,7 +78,8 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
-    
+    // ****************** VIEWWILLAPPEAR ***************************
+
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -91,7 +96,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
-    //  ******** Selection Button Action function ************************
+    //  ******** SELECTION BUTTON ACTION FUNCTION ************************
     
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
@@ -128,7 +133,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
-    // ****************** Tableview Delegate protocol functions ***************************
+    // ****************** TABLEVIEW DELEGATE PROTOCAL FUNCTION ***************************
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,7 +149,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         
         cell.firstValue.text = userContract[indexPath.row].contractNumber
-        cell.nameValue?.text = "Contract\(indexPath.row)"
+        cell.nameValue?.text = userContract[indexPath.row].contactName
     
         return cell
     }
@@ -152,13 +157,37 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Details")
-        self.navigationController?.pushViewController(vc, animated: true)
-//        self.present(vc, animated: true, completion: nil)
+        let values = userContract[indexPath.row]
+        
+        performSegue(withIdentifier: "contract_detail_segue", sender: values)
+        
+//        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
+//
+//        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Details")
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
   
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "contract_detail_segue"{
+        let dest = segue.destination  as! ContractDetailsVC
+        
+        
+//        print(sender as! Contract)
+        
+        
+        dest.userContract = sender as! Contract
+        }
+    }
+    
+    // ****************** ADD CONTRACT BUTTON ACTION ***************************
+
+    
     @IBAction func addContractAction(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Contract", bundle: nil)

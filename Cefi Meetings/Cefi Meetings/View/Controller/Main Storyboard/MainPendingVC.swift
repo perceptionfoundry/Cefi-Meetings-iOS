@@ -10,10 +10,17 @@ import UIKit
 
 class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    
+    // ****************** OUTLET ***************************
+
     @IBOutlet weak var pendingQuantity: UILabel!
     @IBOutlet weak var pending_Table: UITableView!
     
     
+    
+    
+    // ****************** VIEWDIDLOAD ***************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,12 +33,22 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     }
     
     
+    
+    // ****************** VIEWWILLAPPEAR ***************************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    
+    
+    
+    
+    
+    // ****************** TABLEVIEW DELEGATE PROTOCOL FUNCTION ***************************
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
         

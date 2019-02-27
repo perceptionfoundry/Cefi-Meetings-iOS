@@ -26,14 +26,16 @@ class NewContractViewModel {
             
             
             // fetching response result from API
-            var value = response.result.value  as! [String : Any]
+            guard let value = response.result.value  as? [String : Any] else{
+
+                return}
   
-            
+            print(value)
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-            //            print(check)
+                        print(check)
             
             // ************* Action to taken as per server response ******************
             

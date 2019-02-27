@@ -16,7 +16,7 @@ import HCSStarRatingView
 class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
 
     
-    // ********** Outlet *********************
+    // ********** OUTLET *********************
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
     
@@ -31,14 +31,21 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var searchTF: UITextField!
     
     
-    var searchResult = [Contract]()
     
-   var selectedContractType = "all"
+    
+    // ****************** VARIABLE ***************************
+
+    var searchResult = [Contract]()
+    var selectedContractType = "all"
     let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
     let viewModel = contractFilterViewModel()
     
     
     
+    
+    
+    // ****************** VIEWDIDLOAD ***************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,8 +72,12 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     @IBAction func searchAction(_ sender: Any) {
         
         
+        
+        
         let apiLink = appGlobalVarible.apiBaseURL+"contracts/searchcontracts"
 
+        
+        
         
         let dataDict : [String : Any] = [
             "userId": appGlobalVarible.userID,
@@ -80,6 +91,9 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
      
         if searchTF.text?.isEmpty == false{
         
+            
+            
+            // CALL VIEWMODEL FUNCTION
         viewModel.contractFiltering(API: apiLink, TextFields: dataDict) { (status, result, message) in
             
             
@@ -110,7 +124,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     
-    //  ******** Selection Button Action function ************************
+    //  ******** SELECTION BUTTON ACTION BUTTON ************************
 
     
     @IBAction func ListDisplayOption(_ sender: UIButton) {
@@ -151,7 +165,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     
-    // ****************** Tableview Delegate protocol functions ***************************
+    // ****************** TABLEVIEW DELEGATE PROTOCOL FUNCTION ***************************
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,10 +177,45 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contract", for: indexPath) as! Contract_TableViewCell
         
-        cell.nameValue.text = "Contract \(indexPath.row)"
+        cell.selectionStyle = .none
+        
+        
+        cell.nameValue.text = searchResult[indexPath.row].contactName
         cell.firstValue.text = searchResult[indexPath.row].contractNumber
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let values = searchResult[indexPath.row]
+        
+        performSegue(withIdentifier: "contract_detail_segue", sender: values)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+        if segue.identifier == "contract_detail_segue"{
+            let dest = segue.destination  as! ContractDetailsVC
+            
+            
+            //        print(sender as! Contract)
+            
+            
+            dest.userContract = sender as! Contract
+        }
+    }
+    
+    // ****************** ADD CONTRACT BUTTON ACTION ***************************
+
+    @IBAction func addContractAction(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func cancelAction(_ sender: Any) {

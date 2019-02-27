@@ -10,19 +10,24 @@ import UIKit
 
 class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    
+    
+    //  *************** OUTLET ************************
+
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var visitTable: UITableView!
-    
-  
     @IBOutlet weak var NaviBarDate: UILabel!
-
     @IBOutlet weak var timeLabel: UILabel!
+    
+    
+    
+    //  *************** VARIABLE ************************
+
     var selectedVisit = [Int]()
-    
     var selected = -1
-    
-    
-    
+    var visitCategory = ""
+
     var dummyData = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
                      ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
                      ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
@@ -35,7 +40,10 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     ]
     
     
-    var visitCategory = ""
+    
+    
+    //  *************** VIEWDIDLOAD ************************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

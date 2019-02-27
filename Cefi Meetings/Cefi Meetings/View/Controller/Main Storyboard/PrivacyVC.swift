@@ -12,6 +12,10 @@ class PrivacyVC: UIViewController {
 
     @IBOutlet weak var NaviBar: UINavigationBar!
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +24,9 @@ class PrivacyVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
+    
+    //  *************** BACK BUTTON ACTION FUNCTION ************************
 
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

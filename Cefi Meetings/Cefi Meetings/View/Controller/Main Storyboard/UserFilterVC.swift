@@ -10,24 +10,33 @@ import UIKit
 
 class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    
+    
+    // ****************** OUTLET ***************************
+
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var filterTable: UITableView!
-    
     @IBOutlet weak var allButton: Custom_Button!
     @IBOutlet weak var leadButton: Custom_Button!
     @IBOutlet weak var clientButton: Custom_Button!
     @IBOutlet weak var dealerButton: Custom_Button!
     @IBOutlet weak var statusSegment: UISegmentedControl!
-    
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var resultQuantityLabel: UILabel!
     
+    
+    
+    // ****************** VARIABLE ***************************
+
     let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
-    
     let viewModel = userFilterViewModel()
-    
     var searchResult = [Contact]()
     
+    
+    
+    
+    // ****************** VIEWDIDLOAD ***************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,8 +53,12 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         filterTable.reloadData()
     }
     
+    
+    
+    
+    
    
-    //  ******** Selection Button Action function ************************
+    //  ******** SELECTION BUTTON ACTION FUNCTION ************************
 
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
@@ -75,12 +88,20 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         }
     }
     
+    
+    
+    // ****************** VIEWWILLAPPEAR ***************************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    
+    // ****************** TABLEVIEWCONTROLLER PROTOCOL FUNCTION ***************************
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResult.count
     }
@@ -96,11 +117,18 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
     
     
+    
+    
+    // ****************** SEARCH ACTION FUNCTION ***************************
+
     @IBAction func searchAction(_ sender: Any) {
         
-        
+        // STATUS SEGMENT
         var status = ""
         if statusSegment.selectedSegmentIndex == 0{
             status = "closed"
@@ -115,7 +143,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         }
 
         
-        
+    
         let apiLink = appGlobalVarible.apiBaseURL+"contacts/getfiltercontacts"
         
         let dict = [
@@ -125,6 +153,8 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             
         ]
         
+        
+        // CALL VIEWMODEL FUNCTION
         viewModel.userFiltering(API: apiLink, TextFields: dict) { (status, result, message) in
             
             
@@ -132,11 +162,12 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             if status == true{
             self.searchResult = result!
             
-//            print(result)
             
             self.filterTable.reloadData()
             }
             
+                
+                
             else{
                 let alert = UIAlertController(title: "Search Result", message: message!, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
@@ -148,7 +179,8 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
     
     
-    
+    // ****************** NEW CONTACT BUTTON ACTION ***************************
+
     
     @IBAction func newContactAction(_ sender: Any) {
         
@@ -168,16 +200,15 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
    
     
-    
+    // ****************** CANCEL BUTTON ACTION ***************************
+
     
     @IBAction func cancelAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
-    }
+   
 
  
 

@@ -11,16 +11,27 @@ import UIKit
 class DashboardVC: UIViewController {
 
     
+    
+    // ******************* OUTLET ***************************
+
     @IBOutlet var optionButtons: [UIButton]!
     @IBOutlet weak var contactCount: UILabel!
     @IBOutlet weak var visitCount: UILabel!
     @IBOutlet weak var contractCount: UILabel!
     @IBOutlet weak var pendingCount: UILabel!
     
-    let viewModel = DashboardViewModel()
     
+    
+    
+    // ******************* VARIABLE ***************************
+
+    let viewModel = DashboardViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
+    
+    
+    // ******************* VIEWDIDLOAD ***************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -31,7 +42,7 @@ class DashboardVC: UIViewController {
         
         viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
             
-            print(result)
+//            print(result)
             
             self.contactCount.text = String(result!["addedContactsToday"] as! Int)
             self.contractCount.text = String(result?["allOpenContracts"]as! Int)
@@ -40,12 +51,22 @@ class DashboardVC: UIViewController {
         }
     }
 
+    
+    
+    
+    // ******************* VIEWWILLAPPEAR ***************************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = false
     }
-    // ********* Switching to Respect selected option Tab index *****************
+    
+    
+    
+    
+    
+    // ********* SWITCH TO RESPECTICE TAB-BAR CONTROLLER INDEX *****************
     @IBAction func buttonAction(_ sender: UIButton) {
         
     self.tabBarController?.selectedIndex = sender.tag

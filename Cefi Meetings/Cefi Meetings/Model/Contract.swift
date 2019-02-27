@@ -1,7 +1,7 @@
 //
 //  Contract.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on February 26, 2019
+//  Created on February 27, 2019
 
 import Foundation
 
@@ -15,6 +15,7 @@ struct Contract : Codable {
         let bankStatements : [String]?
         let closingFees : String?
         let contactId : String?
+        let contactName : String?
         let contractNumber : String?
         let contractStatus : String?
         let equipmentCost : Int?
@@ -48,6 +49,7 @@ struct Contract : Codable {
                 case bankStatements = "bankStatements"
                 case closingFees = "closingFees"
                 case contactId = "contactId"
+                case contactName = "contactName"
                 case contractNumber = "contractNumber"
                 case contractStatus = "contractStatus"
                 case equipmentCost = "equipmentCost"
@@ -83,6 +85,7 @@ struct Contract : Codable {
                 bankStatements = try values.decodeIfPresent([String].self, forKey: .bankStatements)
                 closingFees = try values.decodeIfPresent(String.self, forKey: .closingFees)
                 contactId = try values.decodeIfPresent(String.self, forKey: .contactId)
+                contactName = try values.decodeIfPresent(String.self, forKey: .contactName)
                 contractNumber = try values.decodeIfPresent(String.self, forKey: .contractNumber)
                 contractStatus = try values.decodeIfPresent(String.self, forKey: .contractStatus)
                 equipmentCost = try values.decodeIfPresent(Int.self, forKey: .equipmentCost)

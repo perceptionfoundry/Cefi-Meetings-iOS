@@ -12,20 +12,24 @@ class MainSettingsVC: UIViewController {
 
     
     
-    
+    //  ******** OUTLET ************************
+
     @IBOutlet weak var NaviBar: UINavigationBar!
     
     
-    
+    //  ******** VIEWDIDLOAD ************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NaviBar.setBackgroundImage(UIImage(), for: .default)
     }
     
-    @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
+    
+    
+    //  ********VIEWWILLAPPEAR ************************
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -33,11 +37,32 @@ class MainSettingsVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    //  *************** BACK BUTTON ACTION FUNCTION ************************
+
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+  
+    
+    
+    
+    
     @IBAction func userButtonAction(_ sender: Any) {
     }
     
+    
+    
+    
     @IBAction func privacyButtonAction(_ sender: Any) {
     }
+    
+    
+    
+    // ****************** LOGOUT BUTTON ACTION ***************************
+
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         

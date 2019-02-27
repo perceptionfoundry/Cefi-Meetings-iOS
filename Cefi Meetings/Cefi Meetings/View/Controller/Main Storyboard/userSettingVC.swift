@@ -10,15 +10,19 @@ import UIKit
 
 class userSettingVC: UIViewController {
 
-    
+    //  *************** OUTLET ************************
+
     @IBOutlet weak var userName: UnderlinedTextField!
-    
     @IBOutlet weak var phone: UnderlinedTextField!
-    
     @IBOutlet weak var email: UnderlinedTextField!
-    
     @IBOutlet weak var NaviBar: UINavigationBar!
     
+    
+    
+    
+    
+    //  *************** VIEWDIDLOAD ************************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.withImage(direction: .Left, image: UIImage(named: "user_profile")!, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
@@ -31,12 +35,20 @@ class userSettingVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    //  *************** VIEWWILLAPPEAR ************************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    
+    //  *************** BACK BUTTON ACTION FUNCTION ************************
+
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

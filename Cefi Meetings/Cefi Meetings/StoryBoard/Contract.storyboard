@@ -10,67 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Date SelectorVC-->
-        <scene sceneID="gau-r3-f8O">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="XIK-A3-LO4" customClass="DateSelectorVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wSp-gR-8Tn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qez-ph-gUX">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qjt-PI-uXa">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="170"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="572944713.82535994">
-                                            <!--2019-02-27 07:18:33 +0000-->
-                                        </date>
-                                        <connections>
-                                            <action selector="pickerAction:" destination="XIK-A3-LO4" eventType="valueChanged" id="Zuk-m1-vWF"/>
-                                        </connections>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-qx-dwF">
-                                        <rect key="frame" x="309" y="0.0" width="46" height="37"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.255" green="0.43812191490000002" blue="0.1488983035" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="ConfirmAction:" destination="XIK-A3-LO4" eventType="touchUpInside" id="gD5-Ka-EiR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.81599396467208862" green="0.8271135687828064" blue="0.8470655083656311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qjt-PI-uXa" secondAttribute="bottom" id="Dv7-AJ-fJl"/>
-                                    <constraint firstAttribute="trailing" secondItem="vm0-qx-dwF" secondAttribute="trailing" constant="20" id="F7E-Ma-7bC"/>
-                                    <constraint firstItem="qjt-PI-uXa" firstAttribute="leading" secondItem="qez-ph-gUX" secondAttribute="leading" id="UF2-s8-gqz"/>
-                                    <constraint firstAttribute="trailing" secondItem="qjt-PI-uXa" secondAttribute="trailing" id="Wm7-5W-1gE"/>
-                                    <constraint firstItem="vm0-qx-dwF" firstAttribute="top" secondItem="qez-ph-gUX" secondAttribute="top" id="bwe-W7-9b1"/>
-                                    <constraint firstItem="qjt-PI-uXa" firstAttribute="top" secondItem="qez-ph-gUX" secondAttribute="top" constant="30" id="xIE-xs-vL1"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qez-ph-gUX" firstAttribute="leading" secondItem="8Sm-df-9Vt" secondAttribute="leading" id="BSF-eT-W8g"/>
-                            <constraint firstItem="8Sm-df-9Vt" firstAttribute="bottom" secondItem="qez-ph-gUX" secondAttribute="bottom" id="d8T-GF-SBA"/>
-                            <constraint firstItem="qez-ph-gUX" firstAttribute="height" secondItem="wSp-gR-8Tn" secondAttribute="height" multiplier="0.3" id="h1M-9d-cbi"/>
-                            <constraint firstItem="8Sm-df-9Vt" firstAttribute="trailing" secondItem="qez-ph-gUX" secondAttribute="trailing" id="wvn-4l-Nq7"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="8Sm-df-9Vt"/>
-                    </view>
-                    <connections>
-                        <outlet property="datePicker" destination="qjt-PI-uXa" id="DDh-AZ-v7X"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s7L-6L-sab" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2142" y="197"/>
-        </scene>
         <!--New ContractVC-->
         <scene sceneID="xNJ-U3-lbw">
             <objects>
@@ -855,7 +794,6 @@
                         <segue destination="sxh-Tg-0yR" kind="presentation" identifier="Contact" id="Jxh-TD-iXR"/>
                         <segue destination="bku-Vz-9kL" kind="show" identifier="Type" id="HXH-r8-ArV"/>
                         <segue destination="ib3-7m-l7z" kind="show" identifier="Equipment_Type" id="lcf-rg-Iry"/>
-                        <segue destination="XIK-A3-LO4" kind="presentation" identifier="DATE" id="Abf-BF-Rrh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihJ-Pg-Lbf" userLabel="First Responder" sceneMemberID="firstResponder"/>

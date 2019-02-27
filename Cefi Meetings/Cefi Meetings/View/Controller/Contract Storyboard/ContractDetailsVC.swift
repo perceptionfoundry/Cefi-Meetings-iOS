@@ -18,26 +18,13 @@ import UIKit
 import HCSStarRatingView
 
 
-//protocol typeDelegate {
-//    func typeName(name : String)
-//}
-//
-//protocol contactdelegate {
-//    func contactName(userName : String, id : String)
-//}
-//
-//protocol equipmentTypeDelegate {
-//    func equipmentType(list: [String])
-//}
 
 
-class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, dateFetching {
+
+class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     
     
-    func dateValue(Date: String) {
-        self.purchaseDateTF.text = Date
-    }
     
     
     
@@ -79,6 +66,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var everythingSwitch: UISwitch!
     
     
+    var userContract : Contract?
     
     var contactName = ""
     
@@ -131,7 +119,47 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contactTF.text = contactName
+        contractTypeTF.text = userContract!.contractStatus
+        contractNumberTF.text = userContract!.contractNumber
+        contactTF.text = userContract!.contactName
+        
+        
+        
+        
+        guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
+
+
+        ratingStar.value = CGFloat(ratingValue)
+        equipmentTF.text = userContract!.equipmentDetails?.joined(separator: ",")
+        amountTF.text = String(userContract!.equipmentCost!)
+//        purchaseDateTF.text = String.getTime(timestamp: Date(timeIntervalSince1970: (userContract!.projectedPurchaseDate! as NSString).doubleValue)))
+        purchaseDateTF.text = userContract!.projectedPurchaseDate
+        taxSwitch.isOn = userContract!.isTaxReturnsAvailable!
+        bankSwitch.isOn = userContract!.isBankStatementAvailable!
+        equipmentSwitch.isOn = userContract!.isEquipmentImagesAvailable!
+        insuranceSwitch.isOn = userContract!.isInsuranceAvailable!
+        signorSwitch.isOn = userContract!.isSignorAvailable!
+        invoiceSwitch.isOn = userContract!.isInvoiceAvailable!
+        closingSwitch.isOn = userContract!.isClosingFees!
+        allpageSwitch.isOn = userContract!.isAllPagesSigned!
+        everythingSwitch.isOn = userContract!.isEverythingCompleted!
+        missingText.text = userContract!.missingText
+        
+        
+        let p_date = (userContract!.projectedPurchaseDate! as NSString).doubleValue
+        
+        
+        
+        
+        let convertDate = NSDate(timeIntervalSince1970: p_date)
+        
+        print(convertDate.description)
+        
+        
+        
+        
+       
+        
         
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0
@@ -359,11 +387,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             dest.selectedTitle = equipmentValue
         }
             
-        else if segue.identifier == "DATE"{
-            let dest = segue.destination  as! DateSelectorVC
-            
-            dest.dateDelegate = self
-        }
+      
         
     }
     
@@ -418,6 +442,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+
+extension String{
+    static func getTime(timestamp:Date)->String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter.string(from: timestamp)
+    }
 }
 
 

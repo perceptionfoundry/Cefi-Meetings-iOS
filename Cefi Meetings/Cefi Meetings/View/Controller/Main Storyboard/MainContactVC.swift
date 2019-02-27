@@ -14,7 +14,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     
-    //  OUTLET VARIBALE
+    // ******************* OUTLET ***************************
+    
     @IBOutlet weak var Contact_Table: UITableView!
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var allButton: Custom_Button!
@@ -23,31 +24,22 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var dealerButton: Custom_Button!
     
     
+    
+    // ******************* VARIABLE ***************************
+
     var selectedUser : Contact?
-    
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
-    
     let viewModel = MainContactListViewModel()
-    
     var listDisplay = "All"
-    
-    
     var userDirectory = [Contact]()
-    
-    
     var contactDelegate : contactdelegate?
-    
-    
-    
     var segueStatus  = false
-    
-    
-    
     var wordSection = [String]()
     var wordsDic = [String:[Contact]]()
     
     
-    
+    // ******************* FUNCTION THAT WILL GENERATION "KEY" ALPHABET AGAINST "VALUE" FROM USER-DICTIONARY ***************************
+
     func generateWordDic(){
         
         
@@ -57,30 +49,30 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         for word in userDirectory{
 
         
+            // EXTRACT KEY FROM USER-DIRECTORY
             
             let key = (word.contactName?.first)
             
             let upper = String(key!).uppercased()
-            
-            
+
             wordSection.append(upper)
             
             
-            
+            // COLLECTING  DATA INTO MAIN VARIABLE
             if var wordValues = wordsDic[upper]{
-
-
-               
 
                 wordValues.append(word)
                 wordsDic[upper] = wordValues
 
 
             }
+                
             else{
                 wordsDic[upper] = [word]
             }
         }
+        
+        
         
         wordSection = [String](wordsDic.keys)
         wordSection = wordSection.sorted()
@@ -93,7 +85,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-    
+    // ******************* VIEWDIDLOAD ***************************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,38 +96,10 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         NaviBar.shadowImage = UIImage()
         
 
-      
-        
-
-        
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
         
-//        self.fetchingContent()
-        
-//        viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
-//
-//            if status == true{
-//
-//                self.userDirectory = tableData
-//
-//
-//                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
-//
-//
-//                print(self.userDirectory[0].contactName)
-//
-////                self.Contact_Table.reloadData()
-//
-//                self.generateWordDic()
-//
-//            }
-//
-//            self.Contact_Table.reloadData()
-//        }
 
-        
-        
         
         self.generateWordDic()
         
@@ -152,16 +117,15 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
     
     }
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//        userDirectory.removeAll()
-//        Contact_Table.reloadData()
-//
-//    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     
-    
-    //  ******** Selection Button Action function ************************
+    //  ******** SELECTION BUTTON OPTION FUNCTION ************************
 
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
@@ -192,26 +156,28 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.tabBarController?.tabBar.isHidden = false
-    }
+  
     
     
-    // FETCH DATA FUNCTION
-    
+    //  ******** FETCHING CONTENT FUNCTION ************************
+
     func fetchingContent(){
+        
+        
         userDirectory.removeAll()
         wordsDic.removeAll()
+        
+        
         
         let apiLink = appGlobalVariable.apiBaseURL + "contacts/getusercontacts"
         
         let param = ["userId": appGlobalVariable.userID]
         
-        print(param)
-        print(apiLink)
+      
         
+        
+        
+        // CALLING VIEWMODEL FUNCTION
         viewModel.fetchContactDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
             
             if status == true{
@@ -222,9 +188,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
                 
                 
-                print(self.userDirectory[0].contactName)
-                
-                //                self.Contact_Table.reloadData()
+//
                 
                 self.generateWordDic()
                 
@@ -236,16 +200,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    // setting number of section in table
+    // ****************** Tableview Delegate protocol functions ***************************
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return wordSection.count
     }
-    
-    
-    
-    
-    
-    // ****************** Tableview Delegate protocol functions ***************************
 
 
     // Configure number item in row of section
@@ -333,6 +292,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         
         else{
+            
+            
         // Segue to User Contail detail  Viewcontroller
         
            
@@ -346,10 +307,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     print(selectedUser?.contactName)
                     
                     performSegue(withIdentifier: "Contact_Segue", sender: nil)
-//                    let storyboard = UIStoryboard(name: "Contact", bundle: nil)
-//
-//                    let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
-//                    self.navigationController?.pushViewController(vc, animated: true)
+//                   
                     
             }
                     
@@ -357,10 +315,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             
             
-//        let storyboard = UIStoryboard(name: "Contact", bundle: nil)
-//
-//        let vc = storyboard.instantiateViewController(withIdentifier: "Contact_Detail")
-//        self.navigationController?.pushViewController(vc, animated: true)
+
         }
     }
     

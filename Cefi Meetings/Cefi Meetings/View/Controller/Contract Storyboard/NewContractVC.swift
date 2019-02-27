@@ -10,6 +10,8 @@ import UIKit
 import HCSStarRatingView
 
 
+
+// ******************* Declare Protocol required by Contract ***************************
 protocol typeDelegate {
     func typeName(name : String)
 }
@@ -23,23 +25,24 @@ protocol equipmentTypeDelegate {
 }
 
 
-class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, dateFetching {
+
+
+
+
+class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     
     
-    func dateValue(Date: String) {
-        self.purchaseDateTF.text = Date
-    }
-    
+  
  
     
 
-    
+    // ******************* OUTLET ***************************
+
     
     @IBOutlet weak var taxCollectionView: UICollectionView!
     @IBOutlet weak var bankCollectionView: UICollectionView!
     @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
-    
     @IBOutlet weak var contractTypeTF: UITextField!
     @IBOutlet weak var contractNumberTF: UITextField!
     @IBOutlet weak var contactTF: UITextField!
@@ -48,18 +51,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var ratingStar: HCSStarRatingView!
     @IBOutlet weak var equipmentTF: UITextField!
     @IBOutlet weak var missingText: UITextView!
-    
-    
-    
     @IBOutlet weak var taxView: UIView!
     @IBOutlet weak var taxViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var bankStateView: UIView!
     @IBOutlet weak var bankViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var equipmentView: UIView!
     @IBOutlet weak var equipmentViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var taxSwitch: UISwitch!
     @IBOutlet weak var bankSwitch: UISwitch!
     @IBOutlet weak var equipmentSwitch: UISwitch!
@@ -72,16 +69,24 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
+    
+    
+    
+    
+    
+    // ******************* VARIABLE ***************************
+
+    let datePicker = UIDatePicker()
     var contactName = ""
-    
+    var equipmentValue = [String]()
+    var selectedContactID : String?
     let viewModel = NewContractViewModel()
-    
-    
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
-    
-    //    @IBOutlet weak var tagView: TagListView!
-    
     var tagArray = [String]()
+    
+    var date = Date()
+    
+    
     
     
     // ********** Implement protocol function ******************
@@ -110,16 +115,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
-    var equipmentValue = [String]()
-    var selectedContactID : String?
+   
     
     
     
-    
-    
-    
-    
-    
+    // ******************* VIEWDIDLOAD ***************************
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -131,52 +133,82 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
         taxCollectionView.delegate = self
         taxCollectionView.dataSource = self
+        taxCollectionView.reloadData()
+
         
         bankCollectionView.delegate = self
         bankCollectionView.dataSource = self
+        bankCollectionView.reloadData()
+
+        
         
         equipmentCollectionVIew.delegate = self
         equipmentCollectionVIew.dataSource = self
-        
-        taxCollectionView.reloadData()
-        bankCollectionView.reloadData()
         equipmentCollectionVIew.reloadData()
 
         
         purchaseDateTF.delegate = self
-        
-        
-       
-        
-//        tagView.delegate = self
-        
         contactTF.delegate = self
-//        tagTF.delegate = self
+        
+        
+        
         
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
-
         self.contractTypeTF.addGestureRecognizer(typeButton)
         
         let equipmentButton = UITapGestureRecognizer(target: self, action: #selector(equipmentSegue))
-        
         self.equipmentTF.addGestureRecognizer(equipmentButton)
         
-       
+        
+        
+        // CALL DATE FUNCTIONALITY
+       self.showDatePicker()
 
     }
     
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    
+    
+    // ******************* SHOW DATE FUNCTION ***************************
+
+    
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
         
-        if textField == purchaseDateTF{
-            
-            textField.inputView = nil
-            
-            performSegue(withIdentifier: "DATE", sender: nil)
-        }
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        return true
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        purchaseDateTF.inputAccessoryView = toolbar
+        purchaseDateTF.inputView = datePicker
+        
     }
+    
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        date = datePicker.date
+        purchaseDateTF.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
+    
+    
+    
+    
+    // ******************* VIEWWILLAPPEAR ***************************
+
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,16 +218,25 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    
+    
+    
+    // ******************* SAVE BUTTON ACTION ***************************
+
+    
+    
     @IBAction func saveAction(_ sender: Any) {
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
+//        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
+
 
         
         if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
         
         let inputDetail : [String : Any] = ["v": 0,
                            "id": "",
-                           "addedDate": purchaseDateTF.text!,
+                           "addedDate": "",
                            "allPagesSignedImage": "",
                            "allPendingDocumentCounts": 0,
                            "bankStatements": [],
@@ -219,7 +260,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                            "isSignorAvailable": signorSwitch.isOn,
                            "isTaxReturnsAvailable": taxSwitch.isOn,
                            "missingText": missingText.text!,
-                           "projectedPurchaseDate": purchaseDateTF.text!,
+                           "projectedPurchaseDate": String(date.timeIntervalSince1970),
                            "rating": String(Int(ratingStar.value)),
                            "signorAndSecretaryId": "",
                            "taxReturnImages": [],
@@ -241,6 +282,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 
                 self.navigationController?.popViewController(animated: true)
             }
+            else {
+                self.alertMessage(Title: "Server Error", Message: Result!)
+            }
         }
     }
         
@@ -252,6 +296,10 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
     }
     
+    
+    
+    // ******************* COLLECTIONVIEW DELEGATE PROTOCOL FUNCTION ***************************
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
@@ -267,6 +315,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         return 4
         
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -294,6 +345,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
+    
+    
+    
     @objc func typeSegue(){
         performSegue(withIdentifier: "Type", sender: nil)
     }
@@ -305,17 +359,17 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == contactTF{
-//
+
             
             performSegue(withIdentifier: "Contact", sender: nil)
             
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//            let vc = storyboard.instantiateViewController(withIdentifier: "Contact")
-//            self.navigationController?.pushViewController(vc, animated: true)
+
         }
         
        
@@ -326,7 +380,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
    
    
-    
+    // ******************* PREPARE SEUGUE FUNCTION ***************************
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
@@ -351,15 +406,16 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             dest.selectedTitle = equipmentValue
         }
         
-        else if segue.identifier == "DATE"{
-            let dest = segue.destination  as! DateSelectorVC
-            
-            dest.dateDelegate = self
-        }
+        
        
     }
     
     
+    
+    
+    
+    // ******************* SWITCH BUTTON ACTION ***************************
+
     @IBAction func taxSwitchAction(_ sender: UISwitch) {
         
         if sender.isOn == true{
@@ -394,83 +450,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
   
     
-    @IBAction func doneButtonAction(_ sender: Any) {
-        
-        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
-        
-        let ContractDic : [String : Any] = [
-            
-            "userId": appGlobalVariable.userID,
-            "contactId":"5c61817b3e2919343fd52c96",
-            "contractStatus": contractTypeTF.text!,
-            "projectedPurchaseDate":purchaseDateTF.text!,
-            "equipmentCost":equipmentTF.text!,
-            "equipmentDetails":equipmentValue,
-            "rating":ratingStar.value,
-            "isTaxReturnsAvailable": taxSwitch.isOn,
-            "isBankStatementAvailable": bankSwitch.isOn,
-            "isEquipmentImagesAvailable" : equipmentSwitch.isOn,
-            "isInsuranceAvailable"  : insuranceSwitch.isOn,
-            "isSignorAvailable" : signorSwitch.isOn,
-            "isInvoiceAvailable" : invoiceSwitch.isOn,
-            "isClosingFees" : closingSwitch.isOn,
-            "isAllPagesSigned" : allpageSwitch.isOn,
-            "isEverythingCompleted" : everythingSwitch.isOn,
-            "everyThingCompleted":"",
-            "missingText": missingText.text!
-            
- 
-        ]
-        
-        
-        
-//        @IBOutlet weak var contractTypeTF: UITextField!
-//        @IBOutlet weak var contractNumberTF: UITextField!
-//        @IBOutlet weak var contactTF: UITextField!
-//        @IBOutlet weak var purchaseDateTF: UITextField!
-//        @IBOutlet weak var amountTF: UITextField!
-//        @IBOutlet weak var ratingStar: HCSStarRatingView!
-//        @IBOutlet weak var equipmentTF: UITextField!
-//        @IBOutlet weak var missingText: UITextView!
-        
-        //  *************** Verifying both textfield is not left empty ***********
-        if contractTypeTF.text?.isEmpty == false && contractNumberTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-            
-            
-            
-            
-            // ****** Hitting ApiLink with required parameter **********
-            
-            viewModel.newContractCreate(API: apiLink, Textfields: ContractDic) { (status, err) in
-                
-                
-                
-                if status == false{
-                    
-                    self.alertMessage(Title: "Sign In Error", Message: err!)
-                }
-                    
-                    
-                    
-                else{
-                    
-                    self.navigationController?.popViewController(animated: true)
-                }
-                
-                
-            }
-            
-        }
-            
-        else{
-            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
-        }
-        
-            
-     
-    
-    }
-    
+
+    // ******************* ALERT VIEWCONTROLLER ***************************
+
     
     func alertMessage(Title : String, Message : String ){
         
@@ -489,18 +471,4 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 }
 
 
-//
-//extension NewContractVC: TagListViewDelegate{
-//
-//    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-//
-//        let index = tagArray.firstIndex(of: title)
-//
-//        tagArray.remove(at: index!)
-//        sender.removeAllTags()
-//        sender.addTags(tagArray)
-//
-//
-//    }
-//
-//}
+
