@@ -32,6 +32,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     let viewModel = MainContactListViewModel()
     var listDisplay = "All"
     var userDirectory = [Contact]()
+    var allUser = [Contact]()
     var contactDelegate : contactdelegate?
     var segueStatus  = false
     var wordSection = [String]()
@@ -134,28 +135,102 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
             dealerButton.border_color = UIColor.clear
+            
+            self.userDirectory = allUser
+            
+            self.wordsDic.removeAll()
+            generateWordDic()
+            Contact_Table.reloadData()
+
+            
         }
         else if sender.tag == 1{
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             clientButton.border_color = UIColor.clear
             dealerButton.border_color = UIColor.clear
+            
+            let value = self.directoryFilter(option: "Lead")
+            
+            print(value)
+            
+            self.userDirectory = value
+            
+            self.wordsDic.removeAll()
+            generateWordDic()
+            Contact_Table.reloadData()
         }
         else if sender.tag == 2{
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             dealerButton.border_color = UIColor.clear
+            
+            let value = self.directoryFilter(option: "Client")
+            
+            print(value)
+            
+            self.userDirectory = value
+            
+            self.wordsDic.removeAll()
+            generateWordDic()
+            Contact_Table.reloadData()
+
         }
         else if sender.tag == 3{
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
             dealerButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            
+            let value = self.directoryFilter(option: "Dealer")
+            
+            print(value)
+            
+            self.userDirectory = value
+            self.wordsDic.removeAll()
+
+            generateWordDic()
+            Contact_Table.reloadData()
+
         }
     }
     
+    // ************* filter ********
     
+    func directoryFilter(option : String) -> [Contact]{
+        
+        
+        var result = [Contact]()
+        
+        
+        
+            
+            if option == "Lead"{
+                result = allUser.filter( {$0.contactType == "Lead" }).map({ return $0 })
+
+            }
+            else if option == "Client"{
+                result = allUser.filter( {$0.contactType == "Client" }).map({ return $0 })
+
+                
+            }
+            else if option == "Dealer"{
+                result = allUser.filter( {$0.contactType == "Dealer" }).map({ return $0 })
+
+                
+            }
+            else if option == "Prospect"{
+                result = allUser.filter( {$0.contactType == "Prospect" }).map({ return $0 })
+
+                
+            }
+        
+
+     
+        
+        return result
+    }
   
     
     
@@ -183,7 +258,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             if status == true{
                 
                 self.userDirectory = tableData
-                
+                self.allUser = tableData
                 
                 print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
                 

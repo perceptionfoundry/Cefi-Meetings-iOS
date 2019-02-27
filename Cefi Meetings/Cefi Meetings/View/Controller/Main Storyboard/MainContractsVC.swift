@@ -25,7 +25,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     let viewModel = MainContractListViewModel()
     var userContract = [Contract]()
-
+    var allContract = [Contract]()
     
     
     // ****************** VIEWDIDLOAD ***************************
@@ -52,7 +52,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             if status == true{
                 
                 self.userContract = tableData
-                
+                self.allContract = tableData
                 
                 print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
                 
@@ -105,29 +105,90 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor.clear
+            
+            userContract = allContract
+            contract_Table.reloadData()
         }
         else if sender.tag == 1{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor.clear
+            
+            let value = self.contractFilter(option: "open")
+            
+            print(value)
+            
+            self.userContract = value
+            
+//
+            contract_Table.reloadData()
         }
+            
         else if sender.tag == 2{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             deadButton.border_color = UIColor.clear
+            
+            let value = self.contractFilter(option: "closed")
+            
+            print(value)
+            
+            self.userContract = value
+            
+            //
+            contract_Table.reloadData()
         }
         else if sender.tag == 3{
             allButton.border_color = UIColor.clear
             openButton.border_color = UIColor.clear
             closedButton.border_color = UIColor.clear
             deadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+            
+            let value = self.contractFilter(option: "dead")
+            
+            print(value)
+            
+            self.userContract = value
+            
+            //
+            contract_Table.reloadData()
         }
     }
     
     
+    // ************* filter ********
     
+    func contractFilter(option : String) -> [Contract]{
+        
+        
+        var result = [Contract]()
+        
+        
+        
+        
+        if option == "open"{
+            result = allContract.filter( {$0.contractStatus == "open" }).map({ return $0 })
+            
+        }
+        else if option == "closed"{
+            result = allContract.filter( {$0.contractStatus == "closed" }).map({ return $0 })
+            
+            
+        }
+        else if option == "dead"{
+            result = allContract.filter( {$0.contractStatus == "dead" }).map({ return $0 })
+            
+            
+        }
+       
+        
+        
+        
+        
+        return result
+    }
     
     
     
@@ -162,10 +223,6 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         performSegue(withIdentifier: "contract_detail_segue", sender: values)
         
-//        let storyboard = UIStoryboard(name: "Contract", bundle: nil)
-//
-//        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Details")
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
   
     
