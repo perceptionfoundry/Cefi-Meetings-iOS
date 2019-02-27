@@ -154,9 +154,9 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         let storyboard = UIStoryboard(name: "Contract", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Detail")
-//        self.navigationController?.pushViewController(vc, animated: true)
-        self.present(vc, animated: true, completion: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Contract_Details")
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true, completion: nil)
     }
   
     @IBAction func addContractAction(_ sender: Any) {

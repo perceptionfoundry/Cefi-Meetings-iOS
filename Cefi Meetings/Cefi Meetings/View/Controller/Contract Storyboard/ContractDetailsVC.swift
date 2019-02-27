@@ -1,4 +1,12 @@
 //
+//  ContractDetailsVC.swift
+//  Cefi Meetings
+//
+//  Created by Syed ShahRukh Haider on 27/02/2019.
+//  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
+//
+
+//
 //  NewContractVC.swift
 //  Cefi Meetings
 //
@@ -10,20 +18,20 @@ import UIKit
 import HCSStarRatingView
 
 
-protocol typeDelegate {
-    func typeName(name : String)
-}
+//protocol typeDelegate {
+//    func typeName(name : String)
+//}
+//
+//protocol contactdelegate {
+//    func contactName(userName : String, id : String)
+//}
+//
+//protocol equipmentTypeDelegate {
+//    func equipmentType(list: [String])
+//}
 
-protocol contactdelegate {
-    func contactName(userName : String, id : String)
-}
 
-protocol equipmentTypeDelegate {
-    func equipmentType(list: [String])
-}
-
-
-class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, dateFetching {
+class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, dateFetching {
     
     
     
@@ -31,9 +39,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.purchaseDateTF.text = Date
     }
     
- 
     
-
+    
+    
     
     
     @IBOutlet weak var taxCollectionView: UICollectionView!
@@ -74,7 +82,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     var contactName = ""
     
-    let viewModel = NewContractViewModel()
+//    let viewModel = NewContractViewModel()
     
     
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
@@ -96,7 +104,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     func equipmentType(list: [String]) {
-       self.equipmentValue = list
+        self.equipmentValue = list
         
         if list.count > 1{
             
@@ -104,7 +112,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             equipmentTF.text = text
         }
         else if list.count == 1{
-        equipmentTF.text = list[0]
+            equipmentTF.text = list[0]
         }
         
     }
@@ -128,7 +136,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0
         equipmentViewHeight.constant = 0
-
+        
         taxCollectionView.delegate = self
         taxCollectionView.dataSource = self
         
@@ -141,28 +149,28 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         taxCollectionView.reloadData()
         bankCollectionView.reloadData()
         equipmentCollectionVIew.reloadData()
-
+        
         
         purchaseDateTF.delegate = self
         
         
-       
         
-//        tagView.delegate = self
+        
+        //        tagView.delegate = self
         
         contactTF.delegate = self
-//        tagTF.delegate = self
+        //        tagTF.delegate = self
         
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
-
+        
         self.contractTypeTF.addGestureRecognizer(typeButton)
         
         let equipmentButton = UITapGestureRecognizer(target: self, action: #selector(equipmentSegue))
         
         self.equipmentTF.addGestureRecognizer(equipmentButton)
         
-       
-
+        
+        
     }
     
     
@@ -186,64 +194,64 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
-    @IBAction func saveAction(_ sender: Any) {
+    @IBAction func editAction(_ sender: Any) {
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
-
+        
         
         if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-        
-        let inputDetail : [String : Any] = ["v": 0,
-                           "id": "",
-                           "addedDate": purchaseDateTF.text!,
-                           "allPagesSignedImage": "",
-                           "allPendingDocumentCounts": 0,
-                           "bankStatements": [],
-                           "closingFees": "",
-                           "contactId": selectedContactID!,
-                           "contractNumber": "",
-                           "contractStatus": contractTypeTF.text!,
-                           "equipmentCost": amountTF.text!,
-                           "equipmentDetails": equipmentValue,
-                           "equipmentImages": [],
-                           "everyThingCompleted": "",
-                           "insuranceCertificate": "",
-                           "invoice": "",
-                           "isAllPagesSigned": allpageSwitch.isOn,
-                           "isBankStatementAvailable": bankSwitch.isOn,
-                           "isClosingFees": closingSwitch.isOn,
-                           "isEquipmentImagesAvailable": equipmentSwitch.isOn,
-                           "isEverythingCompleted": everythingSwitch.isOn,
-                           "isInsuranceAvailable": insuranceSwitch.isOn,
-                           "isInvoiceAvailable": invoiceSwitch.isOn,
-                           "isSignorAvailable": signorSwitch.isOn,
-                           "isTaxReturnsAvailable": taxSwitch.isOn,
-                           "missingText": missingText.text!,
-                           "projectedPurchaseDate": purchaseDateTF.text!,
-                           "rating": String(Int(ratingStar.value)),
-                           "signorAndSecretaryId": "",
-                           "taxReturnImages": [],
-                           "userId": appGlobalVariable.userID
-                        ]
-        
-        
-        print("-------------------------")
-        print(inputDetail)
-        print(apiLink)
-        print(selectedContactID)
-        print("-------------------------")
-
-        
-    
-        viewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
             
-            if Status == true{
-                
-                self.navigationController?.popViewController(animated: true)
-            }
+            let inputDetail : [String : Any] = ["v": 0,
+                                                "id": "",
+                                                "addedDate": purchaseDateTF.text!,
+                                                "allPagesSignedImage": "",
+                                                "allPendingDocumentCounts": 0,
+                                                "bankStatements": [],
+                                                "closingFees": "",
+                                                "contactId": selectedContactID!,
+                                                "contractNumber": "",
+                                                "contractStatus": contractTypeTF.text!,
+                                                "equipmentCost": amountTF.text!,
+                                                "equipmentDetails": equipmentValue,
+                                                "equipmentImages": [],
+                                                "everyThingCompleted": "",
+                                                "insuranceCertificate": "",
+                                                "invoice": "",
+                                                "isAllPagesSigned": allpageSwitch.isOn,
+                                                "isBankStatementAvailable": bankSwitch.isOn,
+                                                "isClosingFees": closingSwitch.isOn,
+                                                "isEquipmentImagesAvailable": equipmentSwitch.isOn,
+                                                "isEverythingCompleted": everythingSwitch.isOn,
+                                                "isInsuranceAvailable": insuranceSwitch.isOn,
+                                                "isInvoiceAvailable": invoiceSwitch.isOn,
+                                                "isSignorAvailable": signorSwitch.isOn,
+                                                "isTaxReturnsAvailable": taxSwitch.isOn,
+                                                "missingText": missingText.text!,
+                                                "projectedPurchaseDate": purchaseDateTF.text!,
+                                                "rating": String(Int(ratingStar.value)),
+                                                "signorAndSecretaryId": "",
+                                                "taxReturnImages": [],
+                                                "userId": appGlobalVariable.userID
+            ]
+            
+            
+            print("-------------------------")
+            print(inputDetail)
+            print(apiLink)
+            print(selectedContactID)
+            print("-------------------------")
+            
+            
+            
+//            viewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
+//                
+//                if Status == true{
+//                    
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//            }
         }
-    }
-        
+            
         else{
             self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
         }
@@ -254,12 +262,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
+        
         
         if collectionView == self.taxCollectionView{
             return 1
         }
-        
+            
         else if collectionView == self.bankCollectionView{
             return 3
         }
@@ -276,18 +284,18 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
             
             return taxCell
-
+            
         }
-        
+            
         else if collectionView == self.bankCollectionView{
-             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
+            let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
             return bankCell
         }
         
-//
+        //
         let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
-
+        
         
         return equipmentCell
     }
@@ -300,7 +308,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     @objc func equipmentSegue(){
         performSegue(withIdentifier: "Equipment_Type", sender: nil)
-
+        
         
     }
     
@@ -308,24 +316,24 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == contactTF{
-//
+            //
             
             performSegue(withIdentifier: "Contact", sender: nil)
             
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//            let vc = storyboard.instantiateViewController(withIdentifier: "Contact")
-//            self.navigationController?.pushViewController(vc, animated: true)
+            //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //
+            //            let vc = storyboard.instantiateViewController(withIdentifier: "Contact")
+            //            self.navigationController?.pushViewController(vc, animated: true)
         }
         
-       
+        
     }
     
-  
-
     
-   
-   
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -343,31 +351,31 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             dest.contactDelegate = self
             dest.segueStatus = true
         }
-        
+            
         else if segue.identifier == "Equipment_Type"{
             let dest = segue.destination  as! EquipmentTypeVC
             
             dest.equipmentDelegate = self
             dest.selectedTitle = equipmentValue
         }
-        
+            
         else if segue.identifier == "DATE"{
             let dest = segue.destination  as! DateSelectorVC
             
             dest.dateDelegate = self
         }
-       
+        
     }
     
     
     @IBAction func taxSwitchAction(_ sender: UISwitch) {
         
         if sender.isOn == true{
-        taxViewHeight.constant = 90
+            taxViewHeight.constant = 90
         }
         else{
             taxViewHeight.constant = 0
-
+            
         }
         
     }
@@ -392,84 +400,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
     }
     
-  
     
-    @IBAction func doneButtonAction(_ sender: Any) {
-        
-        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
-        
-        let ContractDic : [String : Any] = [
-            
-            "userId": appGlobalVariable.userID,
-            "contactId":"5c61817b3e2919343fd52c96",
-            "contractStatus": contractTypeTF.text!,
-            "projectedPurchaseDate":purchaseDateTF.text!,
-            "equipmentCost":equipmentTF.text!,
-            "equipmentDetails":equipmentValue,
-            "rating":ratingStar.value,
-            "isTaxReturnsAvailable": taxSwitch.isOn,
-            "isBankStatementAvailable": bankSwitch.isOn,
-            "isEquipmentImagesAvailable" : equipmentSwitch.isOn,
-            "isInsuranceAvailable"  : insuranceSwitch.isOn,
-            "isSignorAvailable" : signorSwitch.isOn,
-            "isInvoiceAvailable" : invoiceSwitch.isOn,
-            "isClosingFees" : closingSwitch.isOn,
-            "isAllPagesSigned" : allpageSwitch.isOn,
-            "isEverythingCompleted" : everythingSwitch.isOn,
-            "everyThingCompleted":"",
-            "missingText": missingText.text!
-            
- 
-        ]
-        
-        
-        
-//        @IBOutlet weak var contractTypeTF: UITextField!
-//        @IBOutlet weak var contractNumberTF: UITextField!
-//        @IBOutlet weak var contactTF: UITextField!
-//        @IBOutlet weak var purchaseDateTF: UITextField!
-//        @IBOutlet weak var amountTF: UITextField!
-//        @IBOutlet weak var ratingStar: HCSStarRatingView!
-//        @IBOutlet weak var equipmentTF: UITextField!
-//        @IBOutlet weak var missingText: UITextView!
-        
-        //  *************** Verifying both textfield is not left empty ***********
-        if contractTypeTF.text?.isEmpty == false && contractNumberTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-            
-            
-            
-            
-            // ****** Hitting ApiLink with required parameter **********
-            
-            viewModel.newContractCreate(API: apiLink, Textfields: ContractDic) { (status, err) in
-                
-                
-                
-                if status == false{
-                    
-                    self.alertMessage(Title: "Sign In Error", Message: err!)
-                }
-                    
-                    
-                    
-                else{
-                    
-                    self.navigationController?.popViewController(animated: true)
-                }
-                
-                
-            }
-            
-        }
-            
-        else{
-            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
-        }
-        
-            
-     
     
-    }
     
     
     func alertMessage(Title : String, Message : String ){
@@ -504,3 +436,4 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 //    }
 //
 //}
+
