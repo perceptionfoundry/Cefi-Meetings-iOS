@@ -25,7 +25,6 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var viewModel = ContactContractDetailViewModel()
     var userDetail : Contact?
     var tableContent = [Contract]()
-    var alertCount = [Int]()
     var justTest = true
     
     override func viewDidLoad() {
@@ -51,29 +50,16 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         emailAddress.text = userDetail!.email
         
         
-        self.fetchContent()
-//        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getcontactcontracts"
-//
-//        let dict : [String : String] = [
-//            "userId":appGlobalVariable.userID,
-//            "contactId": userDetail!.id!
-//
-//        ]
-//        viewModel.fetchContractDetail(API: apiLink, TextFields: dict) { (status, message, result) in
-//
-//            print(status)
-//            print(result)
-//        }
-//
-//
-//        contractTable.reloadData()
-//        contractTable.isHidden = true
+
         
         
 
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        tableContent.removeAll()
+        fetchContent()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -96,7 +82,6 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             print(count)
             
             self.tableContent = result
-            self.alertCount.append(count!)
             
             if result.count != 0{
                 self.contractTable.isHidden = false
@@ -131,7 +116,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         if tableContent[indexPath.row].allPendingDocumentCounts! > 0{
             cell.alertView.isHidden = false
-            cell.pendingQuantity.text = String(alertCount[indexPath.row])
+            cell.pendingQuantity.text = String(tableContent[indexPath.row].allPendingDocumentCounts!)
         }
         
         return cell
