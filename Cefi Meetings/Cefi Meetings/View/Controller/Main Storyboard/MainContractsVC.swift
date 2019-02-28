@@ -208,9 +208,17 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.selectionStyle = .none
         
+        cell.alertView.isHidden = true
         
         cell.firstValue.text = userContract[indexPath.row].contractNumber
         cell.nameValue?.text = userContract[indexPath.row].contactName
+        
+        if userContract[indexPath.row].allPendingDocumentCounts! > 0 {
+        
+            cell.alertView.isHidden = false
+            cell.quantity.text = String(userContract[indexPath.row].allPendingDocumentCounts!)
+            
+        }
     
         return cell
     }

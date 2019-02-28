@@ -1653,6 +1653,7 @@ We hope you have a great and productive day!</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="alertvVew" destination="e0H-3M-vuy" id="ABU-3Z-pcF"/>
                                             <outlet property="companyName" destination="jBg-sz-3h5" id="0A2-zP-Qnh"/>
                                             <outlet property="pendingButton" destination="CA8-sk-uvN" id="9OW-5e-u4L"/>
                                             <outlet property="personName" destination="ZOR-Cw-Zff" id="Qdo-ji-nOs"/>
@@ -1870,6 +1871,7 @@ We hope you have a great and productive day!</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="alertView" destination="Eg9-E4-Pu3" id="XFg-bB-yUC"/>
                                             <outlet property="firstValue" destination="Ydd-1O-A5Z" id="lkd-rz-j5N"/>
                                             <outlet property="nameValue" destination="Hay-vK-kUx" id="2CM-4N-B1D"/>
                                             <outlet property="pendingButton" destination="3jQ-WP-dYN" id="BsX-vY-wry"/>
@@ -3189,6 +3191,6 @@ I bet you’re still using Bootstrap too…</string>
         <image name="visit_tab" width="19.5" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fG6-yC-063"/>
+        <segue reference="3CK-1W-xC2"/>
     </inferredMetricsTieBreakers>
 </document>

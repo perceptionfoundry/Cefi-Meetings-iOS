@@ -14,6 +14,7 @@ class Contact_TableViewCell: UITableViewCell {
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var quantity: UILabel!
     @IBOutlet weak var pendingButton: UIButton!
+    @IBOutlet weak var alertvVew: Custom_View!
     
 
 }

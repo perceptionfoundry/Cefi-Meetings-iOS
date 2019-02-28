@@ -323,6 +323,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) as! Contact_TableViewCell
         
+        
+        cell.pendingButton.isHidden = true
+        
         let workKey = wordSection[indexPath.section]
         
         
@@ -335,7 +338,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
         cell.personName.text = wordValue[indexPath.row].contactName
         cell.companyName.text = wordValue[indexPath.row].businessName
-
+        
+            
 
         }
         return cell

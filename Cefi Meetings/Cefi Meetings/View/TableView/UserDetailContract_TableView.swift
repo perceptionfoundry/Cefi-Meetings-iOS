@@ -13,5 +13,6 @@ class UserDetailContract_TableView: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var statuslabel: UILabel!
     @IBOutlet weak var pendingQuantity: UILabel!
-
+    @IBOutlet weak var alertView: Custom_View!
+    
 }

@@ -14,6 +14,7 @@ class Contract_TableViewCell: UITableViewCell {
     @IBOutlet weak var nameValue: UILabel!
     @IBOutlet weak var quantity: UILabel!
     @IBOutlet weak var pendingButton: UIButton!
+    @IBOutlet weak var alertView: Custom_View!
     
 
 }

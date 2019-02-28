@@ -133,28 +133,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-kY-sKV">
-                                                    <rect key="frame" x="9.5" y="30" width="52.5" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                                    <rect key="frame" x="10" y="26.5" width="94" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-Ng-vSM">
-                                                    <rect key="frame" x="75" y="30" width="131.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-Ng-vSM">
+                                                    <rect key="frame" x="108" y="30" width="65.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uML-ii-FqO" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                    <rect key="frame" x="220.5" y="27" width="84" height="24"/>
+                                                    <rect key="frame" x="238" y="27" width="49" height="24"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Pending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nW3-NW-JcD">
-                                                            <rect key="frame" x="21" y="3.5" width="59" height="16.5"/>
+                                                            <rect key="frame" x="12.5" y="3.5" width="34" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="9"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_pending_doc" translatesAutoresizingMaskIntoConstraints="NO" id="IA3-en-UCY">
-                                                            <rect key="frame" x="6" y="4.5" width="13" height="14.5"/>
+                                                            <rect key="frame" x="10" y="4.5" width="12.5" height="14.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="IA3-en-UCY" secondAttribute="height" multiplier="7:8" id="VK0-h1-gED"/>
                                                             </constraints>
@@ -165,8 +165,8 @@
                                                         <constraint firstItem="nW3-NW-JcD" firstAttribute="centerY" secondItem="uML-ii-FqO" secondAttribute="centerY" id="3Xf-K1-uB4"/>
                                                         <constraint firstItem="nW3-NW-JcD" firstAttribute="centerX" secondItem="uML-ii-FqO" secondAttribute="centerX" multiplier="1.2" id="K0s-Go-eKc"/>
                                                         <constraint firstItem="IA3-en-UCY" firstAttribute="centerY" secondItem="uML-ii-FqO" secondAttribute="centerY" id="LSv-JG-9ic"/>
-                                                        <constraint firstItem="IA3-en-UCY" firstAttribute="centerX" secondItem="uML-ii-FqO" secondAttribute="centerX" multiplier="0.3" id="RVc-18-9Zv"/>
                                                         <constraint firstItem="IA3-en-UCY" firstAttribute="height" secondItem="uML-ii-FqO" secondAttribute="height" multiplier="0.6" id="U3z-rs-GjK"/>
+                                                        <constraint firstItem="IA3-en-UCY" firstAttribute="leading" secondItem="uML-ii-FqO" secondAttribute="leading" constant="10" id="Whb-cn-B8g"/>
                                                         <constraint firstItem="nW3-NW-JcD" firstAttribute="height" secondItem="uML-ii-FqO" secondAttribute="height" multiplier="0.7" id="WvC-RK-IKm"/>
                                                         <constraint firstAttribute="height" constant="24" id="YmZ-uc-liS"/>
                                                         <constraint firstItem="nW3-NW-JcD" firstAttribute="width" secondItem="uML-ii-FqO" secondAttribute="width" multiplier="0.7" id="YxF-TG-S79"/>
@@ -187,19 +187,20 @@
                                             <constraints>
                                                 <constraint firstItem="AXl-I7-CDi" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="1em-Sa-J7C"/>
                                                 <constraint firstItem="uML-ii-FqO" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="2UP-lQ-Ubu"/>
+                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="leading" secondItem="XNY-nl-8BC" secondAttribute="leading" constant="10" id="7bD-rX-95M"/>
                                                 <constraint firstItem="hbb-Ng-vSM" firstAttribute="centerX" secondItem="XNY-nl-8BC" secondAttribute="centerX" multiplier="0.75" id="JRl-FG-W7v"/>
-                                                <constraint firstItem="hbb-Ng-vSM" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.35" id="Kre-N3-zKV"/>
-                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.14" id="M4G-hy-wBr"/>
+                                                <constraint firstItem="hbb-Ng-vSM" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.175" id="Kre-N3-zKV"/>
+                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.25" id="M4G-hy-wBr"/>
                                                 <constraint firstItem="AXl-I7-CDi" firstAttribute="centerX" secondItem="XNY-nl-8BC" secondAttribute="centerX" multiplier="1.85" id="Sbh-7c-LO7"/>
                                                 <constraint firstItem="YSu-kY-sKV" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="bcH-eQ-215"/>
                                                 <constraint firstItem="uML-ii-FqO" firstAttribute="centerX" secondItem="XNY-nl-8BC" secondAttribute="centerX" multiplier="1.4" id="dWB-XW-7p4"/>
-                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="centerX" secondItem="XNY-nl-8BC" secondAttribute="centerX" multiplier="0.19" id="fSl-QA-bDX"/>
                                                 <constraint firstItem="hbb-Ng-vSM" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="gNc-70-rGj"/>
-                                                <constraint firstItem="uML-ii-FqO" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.225" id="jbn-W4-sPr"/>
+                                                <constraint firstItem="uML-ii-FqO" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.13" id="jbn-W4-sPr"/>
                                                 <constraint firstItem="AXl-I7-CDi" firstAttribute="height" secondItem="XNY-nl-8BC" secondAttribute="height" multiplier="0.13" id="lvp-wm-lHz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="alertView" destination="uML-ii-FqO" id="Qxa-GE-o3w"/>
                                             <outlet property="numberLabel" destination="YSu-kY-sKV" id="SYM-aH-ODm"/>
                                             <outlet property="pendingQuantity" destination="nW3-NW-JcD" id="OyN-6z-sjT"/>
                                             <outlet property="statuslabel" destination="hbb-Ng-vSM" id="PqX-8A-PB6"/>

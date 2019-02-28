@@ -16,15 +16,16 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var industryCatergory: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
-    
     @IBOutlet weak var contractTable: UITableView!
-    
-    
     @IBOutlet weak var unemptyTableImage: UIImageView!
     
     
-    var userDetail : Contact?
+    var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
+    var viewModel = ContactContractDetailViewModel()
+    var userDetail : Contact?
+    var tableContent = [Contract]()
+    var alertCount = [Int]()
     var justTest = true
     
     override func viewDidLoad() {
@@ -33,7 +34,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         contractTable.delegate = self
         contractTable.dataSource = self
 
-        print(userDetail!)
+        
+        contractTable.isHidden = true
+
+//        print(userDetail!)
 
         
         
@@ -42,15 +46,28 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         typeCategory.text = userDetail?.contactType
         industryCatergory.text = userDetail!.industryType
         
-        var phone = userDetail!.phoneNumber!
+        let phone = userDetail!.phoneNumber!
         phoneNumber.text = String(phone)
         emailAddress.text = userDetail!.email
         
         
-        
-        
-        contractTable.reloadData()
-        contractTable.isHidden = true
+        self.fetchContent()
+//        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getcontactcontracts"
+//
+//        let dict : [String : String] = [
+//            "userId":appGlobalVariable.userID,
+//            "contactId": userDetail!.id!
+//
+//        ]
+//        viewModel.fetchContractDetail(API: apiLink, TextFields: dict) { (status, message, result) in
+//
+//            print(status)
+//            print(result)
+//        }
+//
+//
+//        contractTable.reloadData()
+//        contractTable.isHidden = true
         
         
 
@@ -64,9 +81,40 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    func fetchContent(){
+        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getcontactcontracts"
+        
+        let dict : [String : String] = [
+            "userId":appGlobalVariable.userID,
+            "contactId": userDetail!.id!
+            
+        ]
+        viewModel.fetchContractDetail(API: apiLink, TextFields: dict) { (status, message, result, count) in
+            
+          
+            print(count)
+            
+            self.tableContent = result
+            self.alertCount.append(count!)
+            
+            if result.count != 0{
+                self.contractTable.isHidden = false
+                self.unemptyTableImage.isHidden = true
+
+            }
+            
+            self.contractTable.reloadData()
+
+        }
+        
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
-        return 2
+        return tableContent.count
       
     }
     
@@ -75,6 +123,16 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contract", for: indexPath) as! UserDetailContract_TableView
         
         cell.selectionStyle = .none
+        
+        cell.alertView.isHidden = true
+
+        cell.statuslabel.text = tableContent[indexPath.row].contractStatus
+        cell.numberLabel.text = tableContent[indexPath.row].contractNumber
+        
+        if tableContent[indexPath.row].allPendingDocumentCounts! > 0{
+            cell.alertView.isHidden = false
+            cell.pendingQuantity.text = String(alertCount[indexPath.row])
+        }
         
         return cell
     }
@@ -122,6 +180,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let dest = segue.destination as! NewContractVC
         
         dest.contactName = userDetail!.contactName!
+        dest.selectedContactID = userDetail!.id!
     }
     
 }

@@ -22,6 +22,9 @@ class MainContactListViewModel{
             
             let mainDict = response.result.value  as! [String : Any]
             
+            
+            print(mainDict)
+            
             if mainDict["status"] as! String != "Sorry contracts not exist" {
             
             let contactList = mainDict["userContact"] as! [Any]
