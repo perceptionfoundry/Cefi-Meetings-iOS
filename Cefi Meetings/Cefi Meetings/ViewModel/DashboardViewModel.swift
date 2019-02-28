@@ -19,7 +19,7 @@ class DashboardViewModel{
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (resp) in
             
-            let fetchValue = resp.result.value as! [String:Any]
+            guard let fetchValue = resp.result.value as? [String:Any] else{return}
             
             
 //             print(fetchValue)

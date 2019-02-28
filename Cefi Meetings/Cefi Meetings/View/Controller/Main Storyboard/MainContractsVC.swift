@@ -38,6 +38,52 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/getusercontracts"
+
+        let param = ["userId": appGlobalVariable.userID]
+
+
+        print(param)
+        print(apiLink)
+
+
+        // CALL VIEWMODEL FUNCTION
+        viewModel.fetchContractDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
+
+            if status == true{
+
+                self.userContract = tableData
+                self.allContract = tableData
+
+                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
+
+
+                print(self.userContract[0].equipmentDetails)
+
+
+
+            }
+
+            self.contract_Table.reloadData()
+        }
+    
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // show tab-bar controller
+        self.tabBarController?.tabBar.isHidden = false
+        self.fetchValue()
+        
+    }
+    
+    func fetchValue(){
+        
+        
+        userContract.removeAll()
+        allContract.removeAll()
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contracts/getusercontracts"
         
         let param = ["userId": appGlobalVariable.userID]
         
@@ -64,8 +110,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             }
             
             self.contract_Table.reloadData()
-        }
-        
+    }
         
         // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
@@ -81,13 +126,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     // ****************** VIEWWILLAPPEAR ***************************
 
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        
-        // show tab-bar controller
-        self.tabBarController?.tabBar.isHidden = false
-    }
+   
     
     
     

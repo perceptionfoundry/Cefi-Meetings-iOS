@@ -32,7 +32,6 @@
 		F27318162217320D0033C7B4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27318152217320D0033C7B4 /* SignInViewModel.swift */; };
 		F278D7B6220C6D0C00F1FE99 /* EquipmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278D7B5220C6D0C00F1FE99 /* EquipmentTableViewCell.swift */; };
 		F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */; };
-		F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FED22048F870010CE86 /* ContractDetailVC.swift */; };
 		F27D7FF02204AD9E0010CE86 /* VisitDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */; };
 		F284AA8222267A9E005E8C4C /* ContractDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F284AA8122267A9E005E8C4C /* ContractDetailsVC.swift */; };
 		F284F20E2225037B0062F2C6 /* contractFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F284F20D2225037B0062F2C6 /* contractFilterViewModel.swift */; };
@@ -66,6 +65,7 @@
 		F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */; };
 		F2D8F141222810460051A02F /* EditContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8F140222810460051A02F /* EditContactVC.swift */; };
 		F2D8F14322281A160051A02F /* EditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8F14222281A160051A02F /* EditContactViewModel.swift */; };
+		F2D8F14522283E110051A02F /* editContractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8F14422283E110051A02F /* editContractViewModel.swift */; };
 		F2DABFC021F9E3D7009FEFCC /* Custom_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */; };
 		F2DABFC121F9E3D7009FEFCC /* ConfigureUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */; };
 		F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */; };
@@ -125,7 +125,6 @@
 		F27318152217320D0033C7B4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F278D7B5220C6D0C00F1FE99 /* EquipmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTableViewCell.swift; sourceTree = "<group>"; };
 		F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentTypeVC.swift; sourceTree = "<group>"; };
-		F27D7FED22048F870010CE86 /* ContractDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailVC.swift; sourceTree = "<group>"; };
 		F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDetailVC.swift; sourceTree = "<group>"; };
 		F284AA8122267A9E005E8C4C /* ContractDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractDetailsVC.swift; sourceTree = "<group>"; };
 		F284F20D2225037B0062F2C6 /* contractFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contractFilterViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +160,7 @@
 		F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractViewModel.swift; sourceTree = "<group>"; };
 		F2D8F140222810460051A02F /* EditContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactVC.swift; sourceTree = "<group>"; };
 		F2D8F14222281A160051A02F /* EditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModel.swift; sourceTree = "<group>"; };
+		F2D8F14422283E110051A02F /* editContractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editContractViewModel.swift; sourceTree = "<group>"; };
 		F2DABFB821F9E3D7009FEFCC /* Custom_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_Button.swift; sourceTree = "<group>"; };
 		F2DABFB921F9E3D7009FEFCC /* ConfigureUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureUserInterface.swift; sourceTree = "<group>"; };
 		F2DABFBA21F9E3D7009FEFCC /* Custom_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_View.swift; sourceTree = "<group>"; };
@@ -214,7 +214,6 @@
 			children = (
 				F22034F92201D01700F8BE39 /* NewContractVC.swift */,
 				F22034FC2201D0FD00F8BE39 /* ContractTypeVC.swift */,
-				F27D7FED22048F870010CE86 /* ContractDetailVC.swift */,
 				F278D7B7220C6D5600F1FE99 /* EquipmentTypeVC.swift */,
 				F284AA8122267A9E005E8C4C /* ContractDetailsVC.swift */,
 			);
@@ -325,6 +324,7 @@
 				F284F20D2225037B0062F2C6 /* contractFilterViewModel.swift */,
 				F2EBB99E2227B2E500991287 /* ContactContractDetailViewModel.swift */,
 				F2D8F14222281A160051A02F /* EditContactViewModel.swift */,
+				F2D8F14422283E110051A02F /* editContractViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -599,7 +599,6 @@
 				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
 				F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */,
-				F27D7FEE22048F870010CE86 /* ContractDetailVC.swift in Sources */,
 				F261A787220B37B0001597CE /* BankCollectionViewCell.swift in Sources */,
 				F25CB1452220423E008F96ED /* DashboardViewModel.swift in Sources */,
 				F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */,
@@ -630,6 +629,7 @@
 				F2EBB99F2227B2E500991287 /* ContactContractDetailViewModel.swift in Sources */,
 				F22034FA2201D01800F8BE39 /* NewContractVC.swift in Sources */,
 				F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */,
+				F2D8F14522283E110051A02F /* editContractViewModel.swift in Sources */,
 				F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
 				F2A6873B2226CBBC008DCB8E /* Contract.swift in Sources */,

@@ -448,7 +448,28 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
     }
     
-  
+    @IBAction func insuranceSwitchAction(_ sender: Any) {
+    }
+    
+    @IBAction func signorSwitchAction(_ sender: Any) {
+      
+    }
+    
+    @IBAction func invoiceSwitchAction(_ sender: Any) {
+   
+    }
+    
+    @IBAction func closeFeeSwitchAction(_ sender: Any) {
+      
+    }
+    
+    @IBAction func allPageSwitchAction(_ sender: Any) {
+       
+    }
+    
+    @IBAction func everythingSwitchAction(_ sender: Any) {
+      
+    }
     
 
     // ******************* ALERT VIEWCONTROLLER ***************************

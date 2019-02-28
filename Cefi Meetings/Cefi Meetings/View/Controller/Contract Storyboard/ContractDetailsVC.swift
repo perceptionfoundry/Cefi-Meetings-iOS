@@ -45,6 +45,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var missingText: UITextView!
     
     
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var taxView: UIView!
     @IBOutlet weak var taxViewHeight: NSLayoutConstraint!
@@ -70,7 +71,9 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     var contactName = ""
     
-//    let viewModel = NewContractViewModel()
+    
+    var editStatus = false
+    let viewModel = editContractViewModel()
     
     
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
@@ -106,6 +109,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     }
     
     
+    
+    
     var equipmentValue = [String]()
     var selectedContactID : String?
     
@@ -119,11 +124,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        saveButton.isHidden = true
+        
         contractTypeTF.text = userContract!.contractStatus
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
         
-        
+        selectedContactID = userContract!.id
         
         
         guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
@@ -197,12 +205,26 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         self.equipmentTF.addGestureRecognizer(equipmentButton)
         
+        let amountButton = UITapGestureRecognizer(target: self, action: #selector(amountEdit))
+        
+        self.amountTF.addGestureRecognizer(amountButton)
+        
+        
+        
+        let ratingButton = UITapGestureRecognizer(target: self, action: #selector(ratingEdit))
+        
+        self.ratingStar.addGestureRecognizer(ratingButton)
+        
         
         
     }
     
     
+    
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.editStatus = true
+        saveButton.isHidden = false
         
         if textField == purchaseDateTF{
             
@@ -224,20 +246,35 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func editAction(_ sender: Any) {
         
-        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
+        
+        self.saveData()
+        
+    }
+    
+    
+    
+    
+    
+    func saveData(){
         
         
+        
+        print("SAVE")
+        
+        let apiLink = appGlobalVariable.apiBaseURL + "contracts/updatecontract"
+
+
         if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-            
+
             let inputDetail : [String : Any] = ["v": 0,
-                                                "id": "",
+                                                "id": userContract!.id!,
                                                 "addedDate": purchaseDateTF.text!,
                                                 "allPagesSignedImage": "",
                                                 "allPendingDocumentCounts": 0,
                                                 "bankStatements": [],
                                                 "closingFees": "",
                                                 "contactId": selectedContactID!,
-                                                "contractNumber": "",
+                                                "contractNumber": userContract!.contractNumber!,
                                                 "contractStatus": contractTypeTF.text!,
                                                 "equipmentCost": amountTF.text!,
                                                 "equipmentDetails": equipmentValue,
@@ -261,33 +298,30 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "taxReturnImages": [],
                                                 "userId": appGlobalVariable.userID
             ]
-            
-            
+
+
             print("-------------------------")
             print(inputDetail)
             print(apiLink)
             print(selectedContactID)
             print("-------------------------")
+
+
+
+                        viewModel.editContract(API: apiLink, Textfields: inputDetail) { (Status, Result) in
             
+                            if Status == true{
             
-            
-//            viewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
-//                
-//                if Status == true{
-//                    
-//                    self.navigationController?.popViewController(animated: true)
-//                }
-//            }
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
         }
-            
+
         else{
             self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
         }
-        
-        
-        
+
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -331,17 +365,40 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     
     @objc func typeSegue(){
+        
+        self.editStatus = true
+        saveButton.isHidden = false
         performSegue(withIdentifier: "Type", sender: nil)
     }
     
     @objc func equipmentSegue(){
+        
+        self.editStatus = true
+        saveButton.isHidden = false
         performSegue(withIdentifier: "Equipment_Type", sender: nil)
         
         
     }
     
     
+    
+    @objc func amountEdit(){
+        self.editStatus = true
+        saveButton.isHidden = false
+        
+    }
+    
+    @objc func ratingEdit(){
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        self.editStatus = true
+        saveButton.isHidden = false
+
         
         if textField == contactTF{
             //
@@ -394,6 +451,9 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func taxSwitchAction(_ sender: UISwitch) {
         
+        self.editStatus = true
+        saveButton.isHidden = false
+        
         if sender.isOn == true{
             taxViewHeight.constant = 90
         }
@@ -405,6 +465,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     }
     
     @IBAction func bankSwitchAction(_ sender: UISwitch) {
+        
+        self.editStatus = true
+        saveButton.isHidden = false
+        
         if sender.isOn == true{
             bankViewHeight.constant = 90
         }
@@ -415,6 +479,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     }
     
     @IBAction func equipmentSwitchAction(_ sender: UISwitch) {
+        
+        self.editStatus = true
+        saveButton.isHidden = false
+        
         if sender.isOn == true{
             equipmentViewHeight.constant = 90
         }
@@ -423,6 +491,39 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
         }
     }
+    
+    @IBAction func insuranceSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func signorSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func invoiceSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func closeFeeSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func allPageSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    @IBAction func everythingSwitchAction(_ sender: Any) {
+        self.editStatus = true
+        saveButton.isHidden = false
+    }
+    
+    
+    
     
     
     
@@ -439,7 +540,27 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         
-        self.navigationController?.popViewController(animated: true)
+        
+        if editStatus == true{
+            let alert = UIAlertController(title: "Some Change Found!!", message: "Some changes have seen in current contract. Do you want to SAVE", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+                self.saveData()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                self.navigationController?.popViewController(animated: true)
+
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        else{
+            self.navigationController?.popViewController(animated: true)
+
+        }
+        
+        
     }
     
 }
@@ -454,19 +575,5 @@ extension String{
 }
 
 
-//
-//extension NewContractVC: TagListViewDelegate{
-//
-//    func tagRemoveButtonPressed(_ title: String, tagView: TagView, sender: TagListView) {
-//
-//        let index = tagArray.firstIndex(of: title)
-//
-//        tagArray.remove(at: index!)
-//        sender.removeAllTags()
-//        sender.addTags(tagArray)
-//
-//
-//    }
-//
-//}
+
 

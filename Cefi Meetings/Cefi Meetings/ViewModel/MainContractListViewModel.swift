@@ -22,7 +22,10 @@ class MainContractListViewModel{
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
-            let mainDict = response.result.value  as! [String : Any]
+            
+            print(response.result.value)
+            
+            guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
             print(mainDict)
