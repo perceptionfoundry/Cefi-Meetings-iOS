@@ -8,7 +8,19 @@
 
 import UIKit
 
-class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, contactChange {
+    
+    
+    
+    func editContact(value: Contact) {
+        
+        print(value)
+        
+        self.userDetail = value
+        
+        fieldUpdate()
+    }
+    
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var businessName: UILabel!
@@ -27,6 +39,8 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var tableContent = [Contract]()
     var justTest = true
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,10 +50,32 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         contractTable.isHidden = true
 
+        
+        
+        fieldUpdate()
 //        print(userDetail!)
 
         
         
+//        userName.text = userDetail!.contactName
+//        businessName.text = userDetail!.businessName
+//        typeCategory.text = userDetail?.contactType
+//        industryCatergory.text = userDetail!.industryType
+//
+//        let phone = userDetail!.phoneNumber!
+//        phoneNumber.text = String(phone)
+//        emailAddress.text = userDetail!.email
+        
+        
+
+        
+        
+
+    }
+    
+    
+    
+    func fieldUpdate(){
         userName.text = userDetail!.contactName
         businessName.text = userDetail!.businessName
         typeCategory.text = userDetail?.contactType
@@ -48,12 +84,6 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let phone = userDetail!.phoneNumber!
         phoneNumber.text = String(phone)
         emailAddress.text = userDetail!.email
-        
-        
-
-        
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -137,6 +167,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     @IBAction func editAction(_ sender: Any) {
+        performSegue(withIdentifier: "Edit_Segue", sender: nil)
     }
     
     
@@ -148,24 +179,32 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         performSegue(withIdentifier: "Contract_Segue", sender: nil)
         
-        if justTest == true{
-            justTest = false
-            contractTable.isHidden = false
-            unemptyTableImage.isHidden = true
-        }
-        else{
-            justTest = true
-            contractTable.isHidden = true
-            unemptyTableImage.isHidden = false
-
-        }
+//        if justTest == true{
+//            justTest = false
+//            contractTable.isHidden = false
+//            unemptyTableImage.isHidden = true
+//        }
+//        else{
+//            justTest = true
+//            contractTable.isHidden = true
+//            unemptyTableImage.isHidden = false
+//
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "Edit_Segue"{
+            let dest = segue.destination  as! EditContactVC
+            dest.contactDetail = userDetail!
+            dest.editDelegate = self
+        }
+        else if segue.identifier == "Contract_Segue"{
         let dest = segue.destination as! NewContractVC
         
         dest.contactName = userDetail!.contactName!
         dest.selectedContactID = userDetail!.id!
+        }
     }
     
 }
