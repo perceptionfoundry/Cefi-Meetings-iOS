@@ -37,34 +37,34 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         contract_Table.dataSource = self
         
         
-        let apiLink = appGlobalVariable.apiBaseURL + "contracts/getusercontracts"
-
-        let param = ["userId": appGlobalVariable.userID]
-
-
-        print(param)
-        print(apiLink)
-
-
-        // CALL VIEWMODEL FUNCTION
-        viewModel.fetchContractDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
-
-            if status == true{
-
-                self.userContract = tableData
-                self.allContract = tableData
-
-                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
-
-
-                print(self.userContract[0].equipmentDetails)
-
-
-
-            }
-
-            self.contract_Table.reloadData()
-        }
+//        let apiLink = appGlobalVariable.apiBaseURL + "contracts/getusercontracts"
+//
+//        let param = ["userId": appGlobalVariable.userID]
+//
+//
+//        print(param)
+//        print(apiLink)
+//
+//
+//        // CALL VIEWMODEL FUNCTION
+//        viewModel.fetchContractDetail(API: apiLink, TextFields: param) { (status, Message, tableData) in
+//
+//            if status == true{
+//
+//                self.userContract = tableData
+//                self.allContract = tableData
+//
+//                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
+//
+//
+//                print(self.userContract[0].equipmentDetails)
+//
+//
+//
+//            }
+//
+//            self.contract_Table.reloadData()
+//        }
     
     }
     

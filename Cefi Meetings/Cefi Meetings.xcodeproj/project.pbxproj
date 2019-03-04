@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
+		F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB27222D6481001D8D60 /* PurposeVC.swift */; };
+		F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */; };
 		F22034FA2201D01800F8BE39 /* NewContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22034F92201D01700F8BE39 /* NewContractVC.swift */; };
 		F22034FD2201D0FD00F8BE39 /* ContractTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22034FC2201D0FD00F8BE39 /* ContractTypeVC.swift */; };
 		F224F0FF22033EFD00DD332F /* Visit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F224F0FE22033EFD00DD332F /* Visit.storyboard */; };
@@ -89,6 +91,8 @@
 		9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cefi_Meetings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
+		F20ACB27222D6481001D8D60 /* PurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeVC.swift; sourceTree = "<group>"; };
+		F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractVC.swift; sourceTree = "<group>"; };
 		F22034F92201D01700F8BE39 /* NewContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractVC.swift; sourceTree = "<group>"; };
 		F22034FC2201D0FD00F8BE39 /* ContractTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractTypeVC.swift; sourceTree = "<group>"; };
 		F224F0FE22033EFD00DD332F /* Visit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Visit.storyboard; sourceTree = "<group>"; };
@@ -209,6 +213,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F20ACB29222D65E5001D8D60 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				F224F1012203484B00DD332F /* ReferralNewContractVC.swift */,
+				F224F1032203486E00DD332F /* ReferralContractType.swift */,
+				F224F10522034E9000DD332F /* ReferralNewContactVC.swift */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
 		F22034FB2201D0DD00F8BE39 /* Contract Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,10 +237,9 @@
 		F224F100220346B500DD332F /* Visit */ = {
 			isa = PBXGroup;
 			children = (
-				F224F1012203484B00DD332F /* ReferralNewContractVC.swift */,
-				F224F1032203486E00DD332F /* ReferralContractType.swift */,
-				F224F10522034E9000DD332F /* ReferralNewContactVC.swift */,
 				F224F10722035A7C00DD332F /* NewVisit.swift */,
+				F20ACB27222D6481001D8D60 /* PurposeVC.swift */,
+				F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */,
 				F27D7FEF2204AD9E0010CE86 /* VisitDetailVC.swift */,
 				F2ED7595220887AE00C4286F /* DealerVC.swift */,
 				F2F74B112208A70600FE5CF1 /* DealerListVC.swift */,
@@ -342,6 +355,7 @@
 		F2AC6C9721F99BFC00BE90CA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F20ACB29222D65E5001D8D60 /* misc */,
 				F2DABFCC21FA17D4009FEFCC /* Main Storyboard */,
 				F2DABFCD21FA17E3009FEFCC /* Contact Storyboard */,
 				F22034FB2201D0DD00F8BE39 /* Contract Storyboard */,
@@ -615,9 +629,11 @@
 				F2F74B142208AA4B00FE5CF1 /* AddDealerVC.swift in Sources */,
 				F2DABFC221F9E3D7009FEFCC /* Custom_View.swift in Sources */,
 				F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */,
+				F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */,
 				F288347D21FF61AD00CA09C6 /* UserFilterVC.swift in Sources */,
 				F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */,
 				F2DABFC321F9E3D7009FEFCC /* Custom_ImageView.swift in Sources */,
+				F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */,
 				F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */,
 				F258F67021FB547C00269506 /* MainContractsVC.swift in Sources */,
 				F2ED75982208921200C4286F /* DealerTableCell.swift in Sources */,

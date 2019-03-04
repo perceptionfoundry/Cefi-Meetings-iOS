@@ -161,7 +161,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             
             if status == true{
             self.searchResult = result!
-            
+                self.resultQuantityLabel.text = "\(self.searchResult.count) Result Found:"
             
             self.filterTable.reloadData()
             }
