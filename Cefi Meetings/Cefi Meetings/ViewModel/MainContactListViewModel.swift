@@ -20,7 +20,7 @@ class MainContactListViewModel{
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
-            let mainDict = response.result.value  as! [String : Any]
+            guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
             print(mainDict)

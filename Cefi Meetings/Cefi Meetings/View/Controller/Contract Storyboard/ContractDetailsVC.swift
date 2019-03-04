@@ -268,13 +268,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": userContract!.id!,
+                                                "userId": appGlobalVariable.userID,
+                                                "contractNumber": userContract!.contractNumber!,
+                                                "contactId": userContract!.contactId!,
                                                 "addedDate": purchaseDateTF.text!,
                                                 "allPagesSignedImage": "",
                                                 "allPendingDocumentCounts": 0,
                                                 "bankStatements": [],
                                                 "closingFees": "",
-                                                "contactId": selectedContactID!,
-                                                "contractNumber": userContract!.contractNumber!,
                                                 "contractStatus": contractTypeTF.text!,
                                                 "equipmentCost": amountTF.text!,
                                                 "equipmentDetails": equipmentValue,
@@ -295,8 +296,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "projectedPurchaseDate": purchaseDateTF.text!,
                                                 "rating": String(Int(ratingStar.value)),
                                                 "signorAndSecretaryId": "",
-                                                "taxReturnImages": [],
-                                                "userId": appGlobalVariable.userID
+                                                "taxReturnImages": []
             ]
 
 

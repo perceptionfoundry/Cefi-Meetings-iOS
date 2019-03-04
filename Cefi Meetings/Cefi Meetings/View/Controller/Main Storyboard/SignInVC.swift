@@ -44,12 +44,37 @@ class SignInVC: UIViewController {
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/login"
         
         
-        self.performSegue(withIdentifier: "Dashboard", sender: nil)
+//        self.performSegue(withIdentifier: "Dashboard", sender: nil)
 
+        
+        if UserDefaults.standard.bool(forKey: "Auth") == true{
+            
+            
+            appGlobalVariable.userID = UserDefaults.standard.string(forKey: "UserID")!
+            
+            print(appGlobalVariable.userID)
+            
+            self.authSegue()
+//
+            
+            
+
+        }
         
     }
 
-    
+   
+    func authSegue(){
+//        self.performSegue(withIdentifier: "Dashboard", sender: nil)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "Dashboard")
+        self.navigationController?.pushViewController(vc, animated: false)
+        
+        
+        
+    }
     
 
     // ******************* LOGIN BUTTON ACTION ***************************
@@ -91,6 +116,12 @@ class SignInVC: UIViewController {
                     self.appGlobalVariable.userID = err!
                     
                     print(self.appGlobalVariable.userID)
+                    
+                    //
+                    UserDefaults.standard.set(true, forKey: "Auth")
+                    UserDefaults.standard.set(err!, forKey: "UserID")
+                    
+                    //
                     
                     self.performSegue(withIdentifier: "Dashboard", sender: nil)
                     }

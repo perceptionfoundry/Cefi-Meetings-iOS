@@ -15,7 +15,8 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
-    var apiBaseURL = "https://www.ceficrm.com/api/"
+//    var apiBaseURL = "https://www.ceficrm.com/api/"
+   var apiBaseURL =  "https://testingnodejss.herokuapp.com/api/"
     
     var userID = ""
     var window: UIWindow?
@@ -31,7 +32,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         GMSServices.provideAPIKey(GoogleAPIKey)
         GMSPlacesClient.provideAPIKey(GoogleAPIKey)
+        checkUserLogin()
         return true
+    }
+    
+    func checkUserLogin(){
+        // check user default value
+        
+        if (UserDefaults.standard.bool(forKey: "Auth") == true){
+        
+            
+            userID = UserDefaults.standard.string(forKey: "UserID")!
+        let storybord = UIStoryboard(name: "Main", bundle: nil)
+        
+        let tabBarController = storybord.instantiateViewController(withIdentifier: "Dashboard") as! UITabBarController
+        
+        let homeNavigationController = storybord.instantiateViewController(withIdentifier: "Dashboard_Nav") as! UINavigationController
+            let meetingNavigationController = storybord.instantiateViewController(withIdentifier: "Meeting_Nav") as! UINavigationController
+            let contractNavigationController = storybord.instantiateViewController(withIdentifier: "Contract_Nav") as! UINavigationController
+        let contactNavigationController = storybord.instantiateViewController(withIdentifier: "Contact_Nav") as! UINavigationController
+        let pendingNavigationController = storybord.instantiateViewController(withIdentifier: "Pending_Nav") as! UINavigationController
+
+        
+        tabBarController.viewControllers = [homeNavigationController,meetingNavigationController,contractNavigationController,contactNavigationController,pendingNavigationController]
+        
+        self.window?.rootViewController = tabBarController
+        }
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
