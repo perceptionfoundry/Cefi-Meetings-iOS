@@ -42,14 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (UserDefaults.standard.bool(forKey: "Auth") == true){
         
             
-            userID = UserDefaults.standard.string(forKey: "UserID")!
-        let storybord = UIStoryboard(name: "Main", bundle: nil)
+        userID = UserDefaults.standard.string(forKey: "UserID")!
+        
+            
+            
+            let storybord = UIStoryboard(name: "Main", bundle: nil)
         
         let tabBarController = storybord.instantiateViewController(withIdentifier: "Dashboard") as! UITabBarController
         
         let homeNavigationController = storybord.instantiateViewController(withIdentifier: "Dashboard_Nav") as! UINavigationController
-            let meetingNavigationController = storybord.instantiateViewController(withIdentifier: "Meeting_Nav") as! UINavigationController
-            let contractNavigationController = storybord.instantiateViewController(withIdentifier: "Contract_Nav") as! UINavigationController
+        let meetingNavigationController = storybord.instantiateViewController(withIdentifier: "Meeting_Nav") as! UINavigationController
+        let contractNavigationController = storybord.instantiateViewController(withIdentifier: "Contract_Nav") as! UINavigationController
         let contactNavigationController = storybord.instantiateViewController(withIdentifier: "Contact_Nav") as! UINavigationController
         let pendingNavigationController = storybord.instantiateViewController(withIdentifier: "Pending_Nav") as! UINavigationController
 

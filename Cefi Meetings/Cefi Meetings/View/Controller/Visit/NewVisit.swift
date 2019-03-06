@@ -11,7 +11,7 @@ import GoogleMaps
 import GooglePlaces
 
 
-class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate{
+class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate, ReminderDelegate{
    
     
     struct meetup {
@@ -30,11 +30,24 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @IBOutlet weak var reminderTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
     
+    
+    
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+
         let datePicker = UIDatePicker()
         var date = Date()
+    
+    var date_stamp : TimeInterval?
+    var time_Stamp : TimeInterval?
+    
+    var reminderTotalTime : Double = 0.0
 
     
+    var viewModel = NewMeetingViewModel()
+    
     var selectedContactID = ""
+    var reminderOn = false
+    var reminderTime : Double = 0.0
     
     // ******** Map related Variable *********
     var chosenPlace : meetup?
@@ -58,6 +71,18 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         contractTF.text = Value
     }
     
+    
+    func reminderValue(minute : String , value: Double) {
+        self.reminderTF.text = minute
+        
+        if value == 0 {
+            reminderOn = false
+        }
+        else{
+            reminderTime = value
+            reminderOn = true
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -95,6 +120,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let purposeButton = UITapGestureRecognizer(target: self, action: #selector(purposeSegue))
         self.purposeTF.addGestureRecognizer(purposeButton)
         
+        let reminderButton = UITapGestureRecognizer(target: self, action: #selector(reminderSegue))
+        self.reminderTF.addGestureRecognizer(reminderButton)
         
         let contractButton = UITapGestureRecognizer(target: self, action: #selector(contractSegue))
         self.contractTF.addGestureRecognizer(contractButton)
@@ -102,6 +129,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
 //
     }
     
+    @objc func reminderSegue(){
+        performSegue(withIdentifier: "Reminder", sender: nil)
+
+    }
     
     @objc func contactSegue(){
         performSegue(withIdentifier: "Contact", sender: nil)
@@ -114,7 +145,14 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     
     @objc func contractSegue(){
-        performSegue(withIdentifier: "Contract", sender: nil)
+        
+        if contactTF.text?.isEmpty == false {
+            performSegue(withIdentifier: "Contract", sender: nil)
+
+        }
+        else{
+            alert(Title: "Choose Contact", Message: "Please Select contact start")
+        }
 
     }
         
@@ -161,7 +199,17 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         date = datePicker.date
+        
+       
+        
         dateTF.text = formatter.string(from: datePicker.date)
+        
+        let date_Stamp = formatter.date(from: dateTF.text!)?.timeIntervalSince1970
+
+        self.date_stamp = date_Stamp
+        
+        self.reminderTotalTime +=  Double(date_Stamp!)
+        
         self.view.endEditing(true)
     }
     
@@ -195,9 +243,30 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @objc func doneTimePicker(){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm:ss"
+        formatter.dateFormat = "HH:mm"
+        
         date = datePicker.date
+        
+        
+        
         timeTF.text = formatter.string(from: datePicker.date)
+        
+        
+        
+        let separateTimeElement =  timeTF.text!.split(separator: ":")
+        print(separateTimeElement)
+        
+        let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
+        let min_Stamp = (Double(separateTimeElement[1])! * 60)
+        
+        let time_stamp = hour_Stamp + min_Stamp
+        
+        self.time_Stamp = time_stamp
+
+//        print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+        
+        self.reminderTotalTime +=  time_stamp
+
         self.view.endEditing(true)
     }
     
@@ -213,18 +282,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-//        if textField == contactTF{
-//
-//
-//            performSegue(withIdentifier: "Contact", sender: nil)
-//
-////            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-////
-////            let vc = storyboard.instantiateViewController(withIdentifier: "Contact")
-////            self.navigationController?.pushViewController(vc, animated: true)
-//
-//
-//        }
+
         
         if textField == dateTF{
             self.showDatePicker()
@@ -279,6 +337,14 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             dest.selectedUserID = self.selectedContactID
             dest.selectedUserName = self.contactTF.text!
         }
+        
+        else if segue.identifier == "Reminder"{
+            
+            let dest = segue.destination  as! ReminderVC
+            dest.reminderDele = self
+            dest.previousSelect = reminderTF.text ?? ""
+        }
+        
     
         
         
@@ -287,6 +353,74 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
   
    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        
+        
+        
+        if contactTF.text?.isEmpty == false && contractTF.text?.isEmpty == false && purposeTF.text?.isEmpty == false && dateTF.text?.isEmpty == false && timeTF.text?.isEmpty == false && locationTF.text?.isEmpty == false {
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"visits/addvisitdetails"
+        
+        
+//        var timeStamp  = Date(timeIntervalSince1970: self.reminderTotalTime)
+            
+            var reminderADD : Double = 0.0
+            if reminderOn == true{
+            
+              reminderADD  = reminderTotalTime + reminderTime
+            }
+            
+            
+        let dictValue : [String : Any] = [
+            
+            "userId" : appGlobalVariable.userID,
+            "contactId" : selectedContactID,
+            "contractId" : contractTF.text!,
+            "time" : self.reminderTotalTime,
+            "reminder" : String(reminderADD),
+            "lat" : String(chosenPlace!.lat),
+            "long" : String(chosenPlace!.long),
+            "address" : chosenPlace!.name,
+            "purpose" : purposeTF.text!
+            
+        ]
+        
+        print(dictValue)
+            
+            
+            viewModel.newMeetingCreate(API: apiLink, Textfields: dictValue) { (status, err) in
+                
+                
+                if status == false{
+                    
+                    self.alert(Title: "Server Error", Message: err!)
+                }
+                    
+                    
+                    
+                else{
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }
+                
+            }
+        
+        
+        }
+        else{
+            self.alert(Title: "Field Empty", Message: "Some of textfield is left empty")
+        }
+    }
+    
+    
+    
+    func alert(Title : String , Message : String){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     
     
     @IBAction func cancelButtonAction(_ sender: Any) {

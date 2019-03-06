@@ -132,7 +132,7 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        contractDelegate?.getContract(Value: tableContent[indexPath.row].contractNumber!)
+        contractDelegate?.getContract(Value: tableContent[indexPath.row].id!)
         self.navigationController?.popViewController(animated: true)
     }
     
