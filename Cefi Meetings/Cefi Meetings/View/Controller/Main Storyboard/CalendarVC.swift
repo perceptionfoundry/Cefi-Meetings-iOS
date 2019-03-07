@@ -11,11 +11,16 @@ import FSCalendar
 
 class CalendarVC: UIViewController{
    
-    
+    // ****************** OUTLET *****************
+
     @IBOutlet weak var calendarView: FSCalendar!
     
     @IBOutlet weak var NaviBarDate: UILabel!
     
+    
+    
+    // ****************** VIEWDIDLOAD *****************
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +45,8 @@ class CalendarVC: UIViewController{
   
     
  
- 
+    // ****************** BACK ACTION FUNCTION *****************
+
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

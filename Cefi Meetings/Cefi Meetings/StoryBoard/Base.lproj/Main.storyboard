@@ -914,10 +914,10 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="921" y="43"/>
         </scene>
-        <!--VisitVC-->
+        <!--Main MeetingVC-->
         <scene sceneID="BoH-Vb-a9s">
             <objects>
-                <viewController id="yce-ko-b6j" customClass="VisitVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yce-ko-b6j" customClass="MainMeetingVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oq7-tL-XvI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

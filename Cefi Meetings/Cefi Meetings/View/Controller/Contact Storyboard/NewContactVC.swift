@@ -13,7 +13,8 @@ import GooglePlaces
 
 class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate{
     
-    
+    // ****************** PROTOCOL FUNCTIONS *****************
+
     func equipmentType(list: [String]) {
         
         self.industryValue = list
@@ -38,7 +39,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
  
-    
+    // ****************** AUTO COMPLETE PLACE STRUCT *****************
+
     
     
     struct meetup {
@@ -47,6 +49,9 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         var long : Double
     }
     
+    
+    // ****************** OUTLET *****************
+
     
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var typeTF: UITextField!
@@ -59,16 +64,17 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     @IBOutlet weak var locationTF: UITextField!
     
     
-    
+    // ****************** VARIABLE *****************
+
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var apiLink = ""
     let viewModel = NewContactViewModel()
-    
-    
     var industryValue = [String]()
     var referrred = "none"
     
-    // ******** Map related Variable *********
+    
+    
+    //  Map related Variable
     var chosenPlace : meetup?
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
@@ -76,7 +82,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
-    
+    // ****************** VIEWDIDLOAD *****************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +129,15 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
     }
     
-   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    // ****************** OUTLET CUSTOM ACTION FUNCTION *****************
+
     
     @objc func selectType(){
         performSegue(withIdentifier: "Contact_Type", sender: nil)
@@ -133,11 +148,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.tabBarController?.tabBar.isHidden = true
-    }
+    
+    
+    // ****************** TEXTFIELD BEGIN EDIT FUNCTION *****************
+
+   
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -161,10 +176,18 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
     }
     
+    
+    
+    
+    
+    
+    
+    // ****************** SAVE BUTTON FUNCTION *****************
+
     @IBAction func saveButtonAction(_ sender: Any) {
         
         
-        // ********* parameter that are required by API ************
+        //  parameter that are required by API
         let newContactParameter = ["userId" : appGlobalVariable.userID,
                                     "businessName" : businessTF.text!,
                                      "contactName" : contactTF.text!,
@@ -183,13 +206,13 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
         
-        //  *************** Verifying both textfield is not left empty ***********
+        //   Verifying both textfield is not left empty
         if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
             
             
             
             
-            // ****** Hitting ApiLink with required parameter **********
+            //  Hitting ApiLink with required parameter
             
             viewModel.newContactCreate(API: self.apiLink, Textfields: newContactParameter) { (status, err) in
                 
@@ -219,7 +242,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
-    // ******* Function that will handle Alert Viewcontroller ************
+    //  Function that will handle Alert Viewcontroller
     
     
     
@@ -234,7 +257,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
-    
+    // ****************** CONTRACT DETAIL BUTTON ACTION FUNCTION *****************
+
     
     @IBAction func contractDetailAction(_ sender: Any) {
         
@@ -246,6 +270,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
+    
+    // ****************** CANCEL BUTTON ACTION FUNCTION *****************
+
+    
     @IBAction func cancelButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
@@ -253,6 +281,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
 }
+
+
+
+// ****************** EXTENSION *****************
 
 
 extension NewContactVC: GMSAutocompleteViewControllerDelegate {

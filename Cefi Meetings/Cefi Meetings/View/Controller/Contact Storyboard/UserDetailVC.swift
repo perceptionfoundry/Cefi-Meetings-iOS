@@ -11,7 +11,8 @@ import UIKit
 class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, contactChange {
     
     
-    
+    // ****************** PROTOCOL FUNCTION *****************
+
     func editContact(value: Contact) {
         
         print(value)
@@ -21,6 +22,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         fieldUpdate()
     }
     
+    // ****************** OUTLET *****************
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var businessName: UILabel!
@@ -32,6 +34,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var unemptyTableImage: UIImageView!
     
     
+    // ****************** VARIABLE *****************
+
+    
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
     var viewModel = ContactContractDetailViewModel()
@@ -40,6 +45,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var justTest = true
     
     
+    
+    // ****************** OUTLET CUSTOM ACTION FUNCTION *****************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,18 +61,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
         fieldUpdate()
-//        print(userDetail!)
 
-        
-        
-//        userName.text = userDetail!.contactName
-//        businessName.text = userDetail!.businessName
-//        typeCategory.text = userDetail?.contactType
-//        industryCatergory.text = userDetail!.industryType
-//
-//        let phone = userDetail!.phoneNumber!
-//        phoneNumber.text = String(phone)
-//        emailAddress.text = userDetail!.email
         
         
 

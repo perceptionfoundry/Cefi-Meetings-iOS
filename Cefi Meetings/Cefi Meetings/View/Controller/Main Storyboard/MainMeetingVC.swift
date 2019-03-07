@@ -1,5 +1,5 @@
 //
-//  VisitVC.swift
+//  MainMeetingVC.swift
 //  Cefi Meetings
 //
 //  Created by Syed ShahRukh Haider on 29/01/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     
@@ -23,21 +23,26 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     //  *************** VARIABLE ************************
-
+    var appGlobalVariable = UIApplication.shared.delegate  as! AppDelegate
     var selectedVisit = [Int]()
     var selected = -1
     var visitCategory = ""
-
-    var dummyData = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
-                     ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
-                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
-                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
-                     ["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
-                     ["Type":"Follow-Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
-                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
-                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"]
-
-    ]
+    var viewModel = MainMeetingViewModel()
+    
+    
+    
+//    var MeetingContent = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
+//                     ["Type":"Follow Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
+//                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
+//                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
+//                     ["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
+//                     ["Type":"Follow Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
+//                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
+//                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"]
+//
+//    ]
+    
+    var MeetingContent = [Meeting]()
     
     
     
@@ -56,19 +61,45 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         formatter.dateStyle = .long
         
-        var today = formatter.string(from: currentDate)
+        let today = formatter.string(from: currentDate)
         
         NaviBarDate.text = today
         
         
         visitTable.allowsMultipleSelection = true
+        
+        let start_Timestamp = currentDate.timeIntervalSince1970
+        
+        // 00:00 till 23:59
+        let end_Timestamp = start_Timestamp + 86340
+        
+        
+        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(start_Timestamp))&userId=\(appGlobalVariable.userID)&enddate=\(String(end_Timestamp))"
+        
+        let paramKey : [String : Any] = ["userId": appGlobalVariable.userID,
+                                         "startdate": String(start_Timestamp),
+                                         "enddate": String(end_Timestamp)
+        ]
+        
+        viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
+            
+            print(Result?.count)
+            if status == true{
+            self.MeetingContent = Result!
+                
+                
+                
+                
+                self.visitTable.reloadData()
+
+            }
+        }
 
         let calendarTap = UITapGestureRecognizer(target: self, action: #selector(calendarView))
         
         self.dateLabel.isUserInteractionEnabled = true
         self.dateLabel.addGestureRecognizer(calendarTap)
         
-        visitTable.reloadData()
 
     }
     
@@ -87,7 +118,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyData.count
+        return MeetingContent.count
     }
  
     
@@ -106,7 +137,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //
         
         
-        var type = dummyData[indexPath.row]["Type"]
+        var type = MeetingContent[indexPath.row].contactType
         
         if type == "Dealer"{
             
@@ -125,15 +156,15 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.timeLabel.textColor = UIColor.white
             cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
             
-            cell.typeLabel.text = dummyData[indexPath.row]["Type"]
-            cell.businessNameLabel.text = dummyData[indexPath.row]["Business"]
-            cell.userNameLabel.text = dummyData[indexPath.row]["User"]
+            cell.typeLabel.text = MeetingContent[indexPath.row].contactType
+            cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
+            cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
            
-            let rating = Int(dummyData[indexPath.row]["Rating"]!)
+            let rating = Int(MeetingContent[indexPath.row].rating ?? "0")
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             
-            cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
+            cell.timeLabel.text = MeetingContent[indexPath.row].time
             
             
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
@@ -141,7 +172,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         }
   
-        else if type == "Client" || type == "Follow-Up" || type == "Prospecting" {
+        else if type == "Lead" || type == "Client" || type == "Follow Up" || type == "Prospecting" {
             
         cell.topView.backgroundColor = UIColor.white
 
@@ -153,15 +184,15 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.businessNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.timeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
             
-            cell.typeLabel.text = dummyData[indexPath.row]["Type"]
-            cell.businessNameLabel.text = dummyData[indexPath.row]["Business"]
-            cell.userNameLabel.text = dummyData[indexPath.row]["User"]
+            cell.typeLabel.text = MeetingContent[indexPath.row].purpose
+            cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
+            cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
             
-            let rating = Int(dummyData[indexPath.row]["Rating"]!)
+            let rating = Int(MeetingContent[indexPath.row].rating!)
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             
-            cell.timeLabel.text = dummyData[indexPath.row]["Timing"]
+            cell.timeLabel.text = MeetingContent[indexPath.row].time
             
             
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
@@ -202,7 +233,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             UIView.animate(withDuration: 0.3) {
                 
-                let type = self.dummyData[indexPath.row]["Type"]
+                let type = self.MeetingContent[indexPath.row].contactType
                 
                 
                 self.visitTable.reloadRows(at: [indexPath], with: .none)
@@ -233,11 +264,11 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
                 cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
        
-                visitCategory = dummyData[indexPath.row]["Type"]!
+            visitCategory = MeetingContent[indexPath.row].contactType!
             
                 UIView.animate(withDuration: 0.6) {
 //
-                            let type = self.dummyData[indexPath.row]["Type"]
+                            let type = self.MeetingContent[indexPath.row].contactType
             
 
             self.visitTable.reloadRows(at: [indexPath], with: .none)
@@ -256,9 +287,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             
             }
-//
-            
-//            return
+
 
         }
      
@@ -267,58 +296,12 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
-//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//
-//
-//        let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
-//
-//
-////        selected = -1
-//
-//        self.selectedVisit.firstIndex(of: indexPath.row)
-//
-//
-//        if let i = self.selectedVisit.index(of: indexPath.row) {
-//
-//            self.selectedVisit.remove(at: i)
-//
-//            UIView.animate(withDuration: 1.0) {
-//////
-////                self.visitTable.estimatedRowHeight = 160
-//
-//
-//                self.visitTable.reloadRows(at: [indexPath], with: .bottom)
-////
-////
-////
-//                return
-//
-//            }
-////
-////            self.selectedVisit.remove(at: i)
-//
-//            print(selectedVisit)
-////
-////
-////
-//        }
-//
-//
-//    }
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
 
-//        if selected == indexPath.row{
-//
-//     return 220
-//
-//
-//        }
-//
-//        else {
-//          return 160
-//        }
+
         
         
         if selectedVisit.contains(indexPath.row) {
@@ -361,7 +344,7 @@ class VisitVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        else if visitCategory == "Follow-Up"{
+        else if visitCategory == "Follow Up"{
             
             
             

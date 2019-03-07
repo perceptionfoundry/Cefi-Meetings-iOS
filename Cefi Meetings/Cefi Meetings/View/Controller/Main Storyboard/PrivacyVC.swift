@@ -10,23 +10,28 @@ import UIKit
 
 class PrivacyVC: UIViewController {
 
+    
+    
+    
+    // ****************** OUTLET *****************
+
     @IBOutlet weak var NaviBar: UINavigationBar!
     
     
     
-    
+    // ****************** VIEWDIDLOAD *****************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         NaviBar.setBackgroundImage(UIImage(), for: .default)
         
-        // Do any additional setup after loading the view.
     }
     
 
     
-    //  *************** BACK BUTTON ACTION FUNCTION ************************
+    //  *************** BACK BUTTON FUNCTION ************************
 
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
