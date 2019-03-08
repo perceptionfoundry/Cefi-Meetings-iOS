@@ -1187,8 +1187,8 @@ We hope you have a great and productive day!</string>
                         <outlet property="dateLabel" destination="vhf-KE-AyF" id="M0e-CV-kR6"/>
                         <outlet property="timeLabel" destination="vhf-KE-AyF" id="0yv-DJ-AxQ"/>
                         <outlet property="visitTable" destination="6U9-Ta-uoW" id="wXo-u8-9rb"/>
-                        <segue destination="MpR-p6-a9I" kind="show" identifier="Visit" id="Uia-r4-wpq"/>
                         <segue destination="h1S-IS-JiT" kind="show" identifier="Calendar" id="236-Nn-oIm"/>
+                        <segue destination="MpR-p6-a9I" kind="show" identifier="Meeting_Detail" id="t0m-XB-S7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL5-S7-BF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1408,10 +1408,10 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="2812" y="2520.9895052473767"/>
         </scene>
-        <!--Visit-->
+        <!--Visit_Detail-->
         <scene sceneID="o3A-19-pYm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Visit" id="MpR-p6-a9I" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Visit" referencedIdentifier="Visit_Detail" id="MpR-p6-a9I" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbD-c7-MAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2812" y="1618"/>

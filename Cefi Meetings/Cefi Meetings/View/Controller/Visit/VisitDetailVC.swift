@@ -22,7 +22,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var contactTF: UITextField!
+    @IBOutlet weak var contactTF: UILabel!
     @IBOutlet weak var contractTF: UITextField!
     @IBOutlet weak var dateTF: UITextField!
     @IBOutlet weak var timeTF: UITextField!
@@ -30,13 +30,18 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     @IBOutlet weak var locationTF: UITextField!
     
     @IBOutlet weak var editButton: Custom_Button!
-    @IBOutlet weak var detailButton_Y_Constraint: NSLayoutConstraint!
+    
+
+    var meetingDetail : Meeting?
     
     
+    // ******** Map related Variable *********
     var chosenPlace : meetup?
-    
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
+    var mapCameraView: GMSMapView?
+    
+
     
     
     var editOn = false
@@ -45,6 +50,61 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+     
+        
+        print(meetingDetail!)
+        
+        let dateString = meetingDetail!.addedDate!.split(separator: "T")
+        
+        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+        let timeSplit  = timeStampSplit[1].split(separator: ":")
+        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+        
+        let reminderStampSplit = meetingDetail!.reminder?.split(separator: "T")
+        
+        let formatter = DateFormatter()
+        
+        var reminderTimestamp = formatter.date(from: String(timeStampSplit[1]))
+        var meetingTimeStamp = formatter.date(from: String(dateString[1]))
+        
+        
+
+        print(dateString)
+        print(timeStampSplit)
+        print(reminderStampSplit)
+        print(reminderTimestamp)
+        print(meetingTimeStamp)
+        
+       
+        contactTF.text = meetingDetail!.contactName!
+        contractTF.text = meetingDetail!.contractId
+        dateTF.text = String(dateString[0])
+        timeTF.text = timeString
+        reminderTF.text = meetingDetail!.reminder!
+        
+        
+        let lat = (meetingDetail!.lat! as NSString).doubleValue
+        let long  = (meetingDetail!.longField! as NSString).doubleValue
+        
+        
+        var dateTimeArray = [String]()
+        
+       
+        
+        
+        self.getAddressFromLatLon(pdblLatitude: meetingDetail!.lat!, withLongitude: meetingDetail!.longField!) { (place) in
+            
+            self.locationTF.text = place!
+            self.chosenPlace?.name = place!
+            self.chosenPlace = meetup(name: place!, lat: lat, long: long)
+            
+            
+        }
+    
+        
         contractTF.isEnabled = false
         dateTF.isEnabled = false
         timeTF.isEnabled = false
@@ -52,8 +112,11 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         locationTF.isEnabled = false
         
         
-//        mapView.isHidden = true
+
+        //        mapView.isHidden = true
         locationTF.delegate = self
+    
+        
         
         
         // Initialize device Current location delegate & respective functions
@@ -62,9 +125,13 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         
+        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 12)
         
+        mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
         
-      
+        self.mapCameraView!.animate(to: camera)
+        
+        self.mapView.addSubview(self.mapCameraView!)
         
         
         
@@ -75,6 +142,61 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
+    
+    // Function Fetch Place value
+    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String,completion:@escaping(_ location:String?)->Void) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                    completion(nil)
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    
+                    print(addressString)
+                    completion(addressString)
+                }
+        })
+        
+    }
+    
     
     
     

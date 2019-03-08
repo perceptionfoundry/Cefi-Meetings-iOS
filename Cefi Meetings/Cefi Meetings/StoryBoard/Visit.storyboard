@@ -1261,8 +1261,8 @@
                                                     <action selector="editButtonAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="1Jq-Yf-2U3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTo-tN-IYE">
-                                                <rect key="frame" x="136.5" y="10" width="102" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTo-tN-IYE">
+                                                <rect key="frame" x="120" y="10" width="135.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1490,6 +1490,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="contactTF" destination="MDh-TW-z2a" id="Dcx-UP-MyY"/>
                         <outlet property="contractTF" destination="ft2-GC-NDN" id="9Xn-E9-4mb"/>
                         <outlet property="dateTF" destination="cdC-OQ-z4Y" id="e0D-kX-aBJ"/>
                         <outlet property="editButton" destination="e7p-cn-AH0" id="uZf-w5-ghe"/>
@@ -3801,6 +3802,6 @@ Please do so as soon as possible. Thanks.  </string>
         <image name="warning" width="43" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4oA-tN-79m"/>
+        <segue reference="C4r-aJ-KzX"/>
     </inferredMetricsTieBreakers>
 </document>

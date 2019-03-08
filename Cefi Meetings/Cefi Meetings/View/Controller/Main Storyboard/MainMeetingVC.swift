@@ -31,20 +31,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-//    var MeetingContent = [["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
-//                     ["Type":"Follow Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
-//                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
-//                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"],
-//                     ["Type":"Client", "User":"David","Business":"ABC corp","Rating":"4","Timing":"11:15 am"],
-//                     ["Type":"Follow Up", "User":"Peter","Business":"BB corp","Rating":"3","Timing":"06:15 pm"],
-//                     ["Type":"Dealer", "User":"Tom","Business":"XYZ corp","Rating":"2","Timing":"08:15 pm"],
-//                     ["Type":"Prospecting", "User":"Jack","Business":"PQR corp","Rating":"5","Timing":"04:15 pm"]
-//
-//    ]
+
     
     var MeetingContent = [Meeting]()
     
-    
+    var selectedContact : Meeting?
     
     
     //  *************** VIEWDIDLOAD ************************
@@ -192,7 +183,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             
-            cell.timeLabel.text = MeetingContent[indexPath.row].time
+            
+            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
+            let timeSplit  = timeStampSplit[1].split(separator: ":")
+            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+            
+            cell.timeLabel.text = timeString
             
             
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
@@ -223,6 +219,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
+
+        self.selectedContact =  MeetingContent[indexPath.row]
 
         
         let selected = self.selectedVisit.firstIndex(of: indexPath.row)
@@ -317,10 +315,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
   
     
- 
+    // ******************** SWITCH TO START MEETING FUNCTION **********************************
+
     
     @objc func startMeeting(){
      
+        print(visitCategory)
         
         if visitCategory == "Prospecting"{
             
@@ -344,7 +344,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        else if visitCategory == "Follow Up"{
+        else if visitCategory == "Follow Up" || visitCategory == "Lead"{
             
             
             
@@ -359,13 +359,30 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    
+    // ******************** VIEW MEETING DETAIL FUNCTION **********************************
+
     @objc func detailView(){
-        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
         
-        let vc = storyboardRef.instantiateViewController(withIdentifier: "Visit_Detail")
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        performSegue(withIdentifier: "Meeting_Detail", sender: nil)
+//        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
+//
+//        let vc = storyboardRef.instantiateViewController(withIdentifier: "Visit_Detail")
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let dest = segue.destination as! VisitDetailVC
+        dest.meetingDetail = self.selectedContact!
+    }
+    
+    
+    // ******************** ADD BUTTON FUNCTION **********************************
     
     @IBAction func addButtonAction(_ sender: Any) {
         
