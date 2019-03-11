@@ -23,9 +23,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2z-jH-kCh">
-                                <rect key="frame" x="26" y="587" width="294" height="30"/>
-                                <state key="normal" title="DONE"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2z-jH-kCh">
+                                <rect key="frame" x="26" y="587" width="323" height="30"/>
+                                <color key="backgroundColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="doneAction:" destination="Lhw-nZ-gVv" eventType="touchUpInside" id="BUN-Ab-hmK"/>
                                 </connections>
@@ -64,6 +67,8 @@
                         <constraints>
                             <constraint firstItem="Pm4-Fy-fHK" firstAttribute="bottom" secondItem="G2z-jH-kCh" secondAttribute="bottom" constant="50" id="5Yu-KB-bHO"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="width" secondItem="y05-0H-2lf" secondAttribute="width" multiplier="0.7" id="5e9-GQ-Nh3"/>
+                            <constraint firstItem="Pm4-Fy-fHK" firstAttribute="trailing" secondItem="G2z-jH-kCh" secondAttribute="trailing" constant="26" id="JZG-1e-DsF"/>
+                            <constraint firstItem="G2z-jH-kCh" firstAttribute="leading" secondItem="Pm4-Fy-fHK" secondAttribute="leading" constant="26" id="Vjg-nm-EqF"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="centerX" secondItem="Pm4-Fy-fHK" secondAttribute="centerX" id="aUZ-w6-Zts"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="centerY" secondItem="Pm4-Fy-fHK" secondAttribute="centerY" id="sa8-8L-OGH"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="height" secondItem="y05-0H-2lf" secondAttribute="height" multiplier="0.5" id="zdU-gp-JTT"/>

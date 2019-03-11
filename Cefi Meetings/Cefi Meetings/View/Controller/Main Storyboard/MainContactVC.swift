@@ -338,6 +338,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
         cell.personName.text = wordValue[indexPath.row].contactName
         cell.companyName.text = wordValue[indexPath.row].businessName
+        cell.quantity.text = String(wordValue[indexPath.row].pendingDocuments!)
         
             
 

@@ -16,11 +16,16 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var dealerListTable: UITableView!
     
     
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dealerListTable.delegate = self
         dealerListTable.dataSource = self
+        
         
         dealerListTable.reloadData()
     }
