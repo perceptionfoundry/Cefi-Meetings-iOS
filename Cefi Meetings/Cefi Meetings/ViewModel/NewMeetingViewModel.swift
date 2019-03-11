@@ -45,7 +45,7 @@ class NewMeetingViewModel{
             if check == 0 {
                 
                 
-                guard let errorValue =  value["errors"] as? [String : String] else {return}
+                guard let errorValue =  value["status"] as? [String : String] else {return}
                 
                 
                 let errMessage = errorValue.values.first!

@@ -59,6 +59,54 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         visitTable.allowsMultipleSelection = true
         
+//        self.getMeeting()
+        
+//        let start_Timestamp = currentDate.timeIntervalSince1970
+//
+//        // 00:00 till 23:59
+//        let end_Timestamp = start_Timestamp + 86340
+//
+//
+//        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(start_Timestamp))&userId=\(appGlobalVariable.userID)&enddate=\(String(end_Timestamp))"
+//
+//        let paramKey : [String : Any] = ["userId": appGlobalVariable.userID,
+//                                         "startdate": String(start_Timestamp),
+//                                         "enddate": String(end_Timestamp)
+//        ]
+//
+//        viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
+//
+//            print(Result?.count)
+//            if status == true{
+//            self.MeetingContent = Result!
+//
+//
+//
+//
+//                self.visitTable.reloadData()
+//
+//            }
+//        }
+
+        let calendarTap = UITapGestureRecognizer(target: self, action: #selector(calendarView))
+        
+        self.dateLabel.isUserInteractionEnabled = true
+        self.dateLabel.addGestureRecognizer(calendarTap)
+        
+
+    }
+    
+    
+    
+    
+    
+    func getMeeting(){
+        
+        
+        MeetingContent.removeAll()
+        
+        let currentDate = Date()
+
         let start_Timestamp = currentDate.timeIntervalSince1970
         
         // 00:00 till 23:59
@@ -76,24 +124,22 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             print(Result?.count)
             if status == true{
-            self.MeetingContent = Result!
+                self.MeetingContent = Result!
                 
                 
                 
                 
                 self.visitTable.reloadData()
-
+                
             }
         }
-
-        let calendarTap = UITapGestureRecognizer(target: self, action: #selector(calendarView))
         
-        self.dateLabel.isUserInteractionEnabled = true
-        self.dateLabel.addGestureRecognizer(calendarTap)
-        
-
     }
     
+    
+    
+    
+    // ********** SEGUE TO CALENDAR ***********
     
     @objc func calendarView(){
         performSegue(withIdentifier: "Calendar", sender: nil)
@@ -101,12 +147,21 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    // ********** VIEW WILL APPEAR ***********
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+       
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        self.getMeeting()
     }
     
+    
+    
+    // ********** TABLE VIEW PROTOCOL FUNCTIONS ***********
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MeetingContent.count
@@ -118,7 +173,6 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
 
-//        let cell = Bundle.main.loadNibNamed("VisitTableViewCell", owner: self, options: nil)?.first as! VisitTableViewCell
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Visit", for: indexPath) as! VisitTableViewCell
 
@@ -130,9 +184,13 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         var type = MeetingContent[indexPath.row].contactType
         
+        
+        // DECISION W.R.T "TYPE
+        
+        
+        
         if type == "Dealer"{
             
-//            cell.topView.backgroundColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
             cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
 
 //            cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
@@ -155,14 +213,25 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             
-            cell.timeLabel.text = MeetingContent[indexPath.row].time
+//            cell.timeLabel.text = MeetingContent[indexPath.row].time
+            
+            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
+            let timeSplit  = timeStampSplit[1].split(separator: ":")
+            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+            
+            cell.timeLabel.text = timeString
             
             
+            
+            // ADDING ACTION TO BUTTONS
+
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
             cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
             
         }
   
+            
+            
         else if type == "Lead" || type == "Client" || type == "Follow Up" || type == "Prospecting" {
             
         cell.topView.backgroundColor = UIColor.white
@@ -216,6 +285,10 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
@@ -235,6 +308,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
                 
                 self.visitTable.reloadRows(at: [indexPath], with: .none)
+               
+                
+                
+                
+                // DECISION W.R.T TO "TYPE"
                 
                 if type == "Dealer"{
                     
@@ -265,7 +343,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             visitCategory = MeetingContent[indexPath.row].contactType!
             
                 UIView.animate(withDuration: 0.6) {
-//
+
                             let type = self.MeetingContent[indexPath.row].contactType
             
 
@@ -289,7 +367,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
         }
      
-        print(selectedVisit)
+//        print(selectedVisit)
         
         
     }
@@ -320,37 +398,41 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @objc func startMeeting(){
      
-        print(visitCategory)
+//        print(visitCategory)
+        
+        
+        
         
         if visitCategory == "Prospecting"{
             
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
-            
-            let vc = storyboard.instantiateViewController(withIdentifier: "Prospecting")
+            let vc = storyboard.instantiateViewController(withIdentifier: "Prospecting") as! ProspectingVC
+            vc.meetingDetail = self.selectedContact!
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
         
         else if visitCategory == "Dealer"{
-            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             
-            let vc = storyboard.instantiateViewController(withIdentifier: "Dealer")
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Dealer") as! DealerVC
+            vc.meetingDetail = self.selectedContact!
             self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         else if visitCategory == "Client" {
-            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             
-            let vc = storyboard.instantiateViewController(withIdentifier: "Client")
+            let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Client") as! ClientVC
+            vc.meetingDetail = self.selectedContact!
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         else if visitCategory == "Follow Up" || visitCategory == "Lead"{
-            
-            
-            
+   
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
-            
-            let vc = storyboard.instantiateViewController(withIdentifier: "Follow_Up")
+            let vc = storyboard.instantiateViewController(withIdentifier: "Follow_Up") as! FollowUpVC
+            vc.meetingDetail = self.selectedContact!
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
@@ -365,11 +447,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @objc func detailView(){
         
         performSegue(withIdentifier: "Meeting_Detail", sender: nil)
-//        let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
-//
-//        let vc = storyboardRef.instantiateViewController(withIdentifier: "Visit_Detail")
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     
@@ -380,6 +458,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let dest = segue.destination as! VisitDetailVC
         dest.meetingDetail = self.selectedContact!
     }
+    
+    
+    
     
     
     // ******************** ADD BUTTON FUNCTION **********************************

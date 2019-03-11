@@ -8,11 +8,18 @@
 
 import UIKit
 import TTSegmentedControl
+import HCSStarRatingView
 
 class FollowUpVC: UIViewController {
 
-    
+    @IBOutlet weak var dealerContact: UILabel!
     @IBOutlet weak var BusinessName: UILabel!
+
+    
+    @IBOutlet weak var meetingTime: UILabel!
+    @IBOutlet weak var meetingDate: UILabel!
+    
+    @IBOutlet weak var ratingStar: HCSStarRatingView!
     
     @IBOutlet weak var visitorName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -25,10 +32,16 @@ class FollowUpVC: UIViewController {
     @IBOutlet weak var pendingView: Custom_View!
     @IBOutlet weak var negativeView: UIView!
     @IBOutlet weak var buttonsView: UIView!
+    @IBOutlet weak var commentTF: UITextView!
     
  
     @IBOutlet weak var buttonView_Y_constraint: NSLayoutConstraint!
     
+    
+    let viewModel = MeetingReportViewModel()
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    var meetingDetail : Meeting?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +49,26 @@ class FollowUpVC: UIViewController {
         OutcomeSegement.allowChangeThumbWidth = false
         cancelSegment.allowChangeThumbWidth = false
         
-//        self.OutcomeSegement.thumbColor = UIColor(red: 0.942, green: 0.341, blue: 0.341, alpha: 1)
+        print(meetingDetail)
+        
+        
+        let dateString = meetingDetail!.addedDate!.split(separator: "T")
+        
+        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+        let timeSplit  = timeStampSplit[1].split(separator: ":")
+        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+        
+      
+        
+        print(dateString)
+        print(timeStampSplit)
+       
+        
+        dealerContact.text = meetingDetail!.contactName!
+        BusinessName.text = meetingDetail!.businessName
+        meetingTime.text = timeString
+        meetingDate.text = String(dateString[0])
+        
 
         OutcomeSegement.didSelectItemWith = { (index, title) -> () in
             print("Selected item \(index)")
@@ -104,6 +136,62 @@ class FollowUpVC: UIViewController {
     }
     
 
+    @IBAction func submitButtonAction(_ sender: Any) {
+        
+        let outcomeIndex = OutcomeSegement.currentIndex
+       
+        
+        var outcomeValue = ""
+        var businessValue = ""
+        var equipment =  ""
+        
+        switch outcomeIndex {
+        case 0 :
+            outcomeValue = "Closed"
+        case 1:
+            outcomeValue = "Positive"
+        case 2:
+            outcomeValue = "Neutral"
+        case 3:
+            outcomeValue = "Negative"
+        default:
+            outcomeValue = ""
+        }
+        
+        
+       
+        
+        
+        
+        
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/addclientvisitreport"
+        
+        let paramDict : [String : String]   = [
+            "userId":appGlobalVariable.userID,
+            "visitId":meetingDetail!.contactId as! String,
+            "salesInLastThreeMonths": outcomeValue,
+            "visitId": meetingDetail!.id!,
+            
+            
+        ]
+        
+        viewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
+            
+            if status == true{
+                self.navigationController?.popViewController(animated: true)
+            }
+                
+            else{
+                let alert  = UIAlertController(title: "Server Error", message: err!, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+    }
   
    
     @IBAction func cancelButtonAction(_ sender: Any) {

@@ -16,16 +16,44 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dealerTable: UITableView!
     @IBOutlet weak var dealerContact: UILabel!
-    
+    @IBOutlet weak var dealerName: UILabel!
+
+    @IBOutlet weak var dealerBusiness: UILabel!
+    @IBOutlet weak var meetingTime: UILabel!
+    @IBOutlet weak var meetingDate: UILabel!
     
     @IBOutlet weak var saleStatus: TTSegmentedControl!
     
     @IBOutlet weak var newLead: TTSegmentedControl!
     
+    let viewModel = MeetingReportViewModel()
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    var meetingDetail : Meeting?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(meetingDetail)
+
+        
+        
+        let dateString = meetingDetail!.addedDate!.split(separator: "T")
+        
+        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+        let timeSplit  = timeStampSplit[1].split(separator: ":")
+        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+
+        print(dateString)
+        print(timeStampSplit)
+       
+        
+        
+        dealerName.text = meetingDetail!.contactName!
+        dealerBusiness.text = meetingDetail!.businessName
+        meetingTime.text = timeString
+        meetingDate.text = String(dateString[0])
+        
         saleStatus.allowChangeThumbWidth = false
         newLead.allowChangeThumbWidth = false
         
@@ -86,6 +114,11 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
         self.navigationController?.pushViewController(vc, animated: true)
 
+    }
+    
+    
+    
+    @IBAction func submitButtonAction(_ sender: Any) {
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {

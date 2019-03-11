@@ -1735,6 +1735,9 @@
                                                 <state key="normal" title="Submit">
                                                     <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="submitButtonAction:" destination="hlu-uQ-tez" eventType="touchUpInside" id="0M9-Xn-CuE"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E9Q-4n-1LR">
                                                 <rect key="frame" x="124" y="10" width="127" height="23.5"/>
@@ -1808,7 +1811,10 @@
                     <connections>
                         <outlet property="EquipmentSegment" destination="Oe6-sL-KQA" id="Lq2-OB-mZM"/>
                         <outlet property="businessSegment" destination="yoL-7O-XSj" id="Axe-oa-pwo"/>
+                        <outlet property="dealerBusiness" destination="Yhe-08-KI3" id="oLy-LF-ewT"/>
                         <outlet property="dealerContact" destination="8Ey-Wi-ajf" id="zfa-KS-DrG"/>
+                        <outlet property="meetingDate" destination="n84-Ov-7PF" id="cv0-ac-qbJ"/>
+                        <outlet property="meetingTime" destination="KL9-7y-5Ph" id="MUi-um-kpq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL5-5p-lDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2165,7 +2171,7 @@
                                                 <rect key="frame" x="0.0" y="-4" width="375" height="45.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8y-LY-pOj">
-                                                        <rect key="frame" x="10" y="8.5" width="39" height="27"/>
+                                                        <rect key="frame" x="10" y="8.5" width="65.5" height="27"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="Cancel">
                                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2180,6 +2186,9 @@
                                                         <state key="normal" title="Submit">
                                                             <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="submitButtonAction:" destination="TBj-ej-aL2" eventType="touchUpInside" id="In4-N1-tnt"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-Ux-bVO">
                                                         <rect key="frame" x="124" y="10.5" width="127" height="23.5"/>
@@ -2195,6 +2204,7 @@
                                                     <constraint firstItem="8dJ-Ux-bVO" firstAttribute="centerX" secondItem="s0Z-j9-Grt" secondAttribute="centerX" id="WBD-4c-1OS"/>
                                                     <constraint firstItem="k8y-LY-pOj" firstAttribute="leading" secondItem="s0Z-j9-Grt" secondAttribute="leading" constant="10" id="gsi-ah-aeo"/>
                                                     <constraint firstItem="8dJ-Ux-bVO" firstAttribute="top" secondItem="s0Z-j9-Grt" secondAttribute="top" constant="10" id="njy-GN-QWr"/>
+                                                    <constraint firstItem="k8y-LY-pOj" firstAttribute="width" secondItem="s0Z-j9-Grt" secondAttribute="width" multiplier="0.175" id="sVS-jn-9g5"/>
                                                     <constraint firstAttribute="trailing" secondItem="QwN-Go-1c5" secondAttribute="trailing" constant="10" id="uWg-gE-nSM"/>
                                                 </constraints>
                                             </view>
@@ -2279,8 +2289,12 @@
                     </view>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
+                        <outlet property="dealerBusiness" destination="Pvg-Sc-0ca" id="p2c-W3-KgZ"/>
                         <outlet property="dealerContact" destination="BDh-6a-t1D" id="H2y-DH-MCc"/>
+                        <outlet property="dealerName" destination="2f5-PG-hIV" id="Vsb-aS-FTT"/>
                         <outlet property="dealerTable" destination="xQr-rM-b2R" id="Zjq-mU-0JP"/>
+                        <outlet property="meetingDate" destination="9nw-qE-t4X" id="Gyd-vT-sKl"/>
+                        <outlet property="meetingTime" destination="Wtl-Wk-uam" id="VlQ-vo-HXM"/>
                         <outlet property="newLead" destination="Gml-Vy-9BT" id="LMQ-La-7fe"/>
                         <outlet property="saleStatus" destination="QXv-G3-CMP" id="UL0-jZ-jFA"/>
                         <segue destination="TVA-D0-yeN" kind="show" identifier="Dealer_List" id="ROE-Qi-csm"/>
@@ -2735,6 +2749,9 @@
                                                         <state key="normal" title="Submit">
                                                             <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="submitButtonAction:" destination="glo-YX-faT" eventType="touchUpInside" id="6Xa-Gy-EU3"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f0T-1k-1Es">
                                                         <rect key="frame" x="124" y="10.5" width="127" height="23.5"/>
@@ -2885,7 +2902,11 @@
                         <outlet property="EquipmentSegment" destination="YSJ-Oe-qgO" id="AY7-t4-4Hi"/>
                         <outlet property="OutcomeSegment" destination="WhA-kb-bXh" id="Aab-oF-WKM"/>
                         <outlet property="businessSegment" destination="cvE-fj-DIH" id="AdB-S0-UPA"/>
+                        <outlet property="dealerBusiness" destination="rms-qW-zbQ" id="M5Q-SE-MBW"/>
                         <outlet property="dealerContact" destination="MKy-9i-CIE" id="fKB-Ay-pfw"/>
+                        <outlet property="meetingDate" destination="CQm-zH-tIg" id="iJV-hA-h2Z"/>
+                        <outlet property="meetingTime" destination="Fem-O2-feA" id="DtN-NE-1JJ"/>
+                        <outlet property="outcomeCommentTF" destination="aYh-LR-7VV" id="tYf-Su-gIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDQ-b1-E7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2977,6 +2998,9 @@
                                                         <state key="normal" title="Submit">
                                                             <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="submitButtonAction:" destination="TLU-nx-EGh" eventType="touchUpInside" id="gFH-Pq-g1s"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wYM-hS-ehY">
                                                         <rect key="frame" x="124" y="10" width="127" height="23.5"/>
@@ -3448,9 +3472,14 @@ Please do so as soon as possible. Thanks.  </string>
                         <outlet property="buttonView_Y_constraint" destination="JK6-fC-bdl" id="Bdq-ig-emq"/>
                         <outlet property="buttonsView" destination="ltz-9I-c2T" id="Kox-z6-162"/>
                         <outlet property="cancelSegment" destination="EDw-j2-f4B" id="2jW-MQ-gIB"/>
+                        <outlet property="commentTF" destination="8km-26-ykn" id="R8t-vG-glX"/>
                         <outlet property="dateLabel" destination="aMx-tP-hUI" id="fnJ-Dr-oFG"/>
+                        <outlet property="dealerContact" destination="1pd-rP-89N" id="GJT-V9-Aen"/>
+                        <outlet property="meetingDate" destination="aMx-tP-hUI" id="z8j-Ap-G3a"/>
+                        <outlet property="meetingTime" destination="2vD-zF-ndx" id="Y8Z-MA-rbv"/>
                         <outlet property="negativeView" destination="onx-s3-P8S" id="YAn-jZ-h0h"/>
                         <outlet property="pendingView" destination="CiC-mp-BKk" id="8GT-k6-VzY"/>
+                        <outlet property="ratingStar" destination="X4L-ga-6wS" id="0JB-lW-pox"/>
                         <outlet property="timeLabel" destination="2vD-zF-ndx" id="Sbj-qS-SCc"/>
                         <outlet property="visitorName" destination="1pd-rP-89N" id="irZ-dM-UZ9"/>
                     </connections>
