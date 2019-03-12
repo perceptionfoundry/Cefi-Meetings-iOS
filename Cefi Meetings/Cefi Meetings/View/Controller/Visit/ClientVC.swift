@@ -156,7 +156,6 @@ class ClientVC: UIViewController {
         
         let paramDict : [String : String]   = [
             "userId": appGlobalVariable.userID,
-            "visitId":meetingDetail!.contactId as! String,
             "visitId": meetingDetail!.id!,
             
             

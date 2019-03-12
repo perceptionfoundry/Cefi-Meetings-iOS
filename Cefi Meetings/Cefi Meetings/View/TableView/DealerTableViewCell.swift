@@ -10,5 +10,6 @@ import UIKit
 
 class DealerTableViewCell: UITableViewCell {
 
-
+    @IBOutlet weak var dealerName: UILabel!
+    
 }

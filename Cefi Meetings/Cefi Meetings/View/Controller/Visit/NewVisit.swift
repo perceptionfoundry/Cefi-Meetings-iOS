@@ -367,16 +367,22 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             var reminderADD : Double = 0.0
             if reminderOn == true{
             
-              reminderADD  = reminderTotalTime + reminderTime
+                reminderADD  = floor(reminderTotalTime + reminderTime) * 1000
+//                reminderADD  = reminderTotalTime + reminderTime
+
             }
             
+            
+
+//            "time" : self.reminderTotalTime,
+
             
         let dictValue : [String : Any] = [
             
             "userId" : appGlobalVariable.userID,
             "contactId" : selectedContactID,
             "contractId" : contractTF.text!,
-            "time" : self.reminderTotalTime,
+            "time" : String(Int(floor(self.reminderTotalTime) * 1000)),
             "reminder" : String(reminderADD),
             "lat" : String(chosenPlace!.lat),
             "long" : String(chosenPlace!.long),

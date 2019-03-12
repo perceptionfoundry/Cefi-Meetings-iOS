@@ -113,16 +113,23 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let end_Timestamp = start_Timestamp + 86340
         
         
-        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(start_Timestamp))&userId=\(appGlobalVariable.userID)&enddate=\(String(end_Timestamp))"
+        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(Int(floor(start_Timestamp * 1000))))&userId=\(appGlobalVariable.userID)&enddate=\(String(Int(floor(end_Timestamp * 1000))))"
+        
+        
+        
+        
         
         let paramKey : [String : Any] = ["userId": appGlobalVariable.userID,
-                                         "startdate": String(start_Timestamp),
-                                         "enddate": String(end_Timestamp)
+                                         "startdate": Int(floor(start_Timestamp * 1000)),
+                                         "enddate": String(Int(floor(end_Timestamp * 1000)))
         ]
+        
+        print(paramKey)
         
         viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
             
             print(Result?.count)
+            
             if status == true{
                 self.MeetingContent = Result!
                 
@@ -232,7 +239,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
   
             
             
-        else if type == "Lead" || type == "Client" || type == "Follow Up" || type == "Prospecting" {
+        else if type == "Lead" || type == "Client" || type == "Follow Up" || type == "Prospect" {
             
         cell.topView.backgroundColor = UIColor.white
 
@@ -403,7 +410,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         
         
-        if visitCategory == "Prospecting"{
+        if visitCategory == "Prospect"{
             
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Prospecting") as! ProspectingVC

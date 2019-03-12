@@ -11,7 +11,26 @@ import TTSegmentedControl
 
 
 
-class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol DealerDelegate{
+    
+    func addDealer(DealerName:String)
+    
+    
+    func selectedDealer(DealerName : String)
+}
+
+
+
+class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,DealerDelegate {
+    func addDealer(DealerName: String) {
+    
+        
+    }
+    
+    func selectedDealer(DealerName: String) {
+        dealerContact.text = DealerName
+    }
+    
 
     
     @IBOutlet weak var dealerTable: UITableView!
@@ -81,8 +100,17 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func dealerList(){
         
         performSegue(withIdentifier: "Dealer_List", sender: nil)
+        
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination  as! DealerListVC
+        
+        dest.delegateDealer = self
+        dest.ContactDetail = meetingDetail!
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3

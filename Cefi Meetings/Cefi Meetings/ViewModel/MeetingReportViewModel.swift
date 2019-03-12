@@ -20,7 +20,9 @@ class MeetingReportViewModel{
         
         Alamofire.request(API, method: .post, parameters: Param, encoding: JSONEncoding.default, headers: nil).responseJSON { (resp) in
             
-            guard let value = resp.result.value  as? [String:String] else{return}
+            print(resp.result.value)
+            
+            guard let value = resp.result.value  as? [String:Any] else{return}
             
             print(value)
             

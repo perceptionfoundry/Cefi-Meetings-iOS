@@ -126,7 +126,7 @@ class ProspectingVC: UIViewController {
         
         var outcomeValue = ""
         var businessValue = ""
-        var equipment =  ""
+        var equipmentValue =  ""
         
         switch outcomeIndex {
         case 0:
@@ -142,25 +142,25 @@ class ProspectingVC: UIViewController {
         
         switch businessIndex {
         case 0:
-            outcomeValue = "Deceased"
+            businessValue = "Deceased"
         case 1:
-            outcomeValue = "Same"
+            businessValue = "Same"
         case 2:
-            outcomeValue = "Increased"
+            businessValue = "Increased"
         default:
-            outcomeValue = ""
+            businessValue = ""
         }
         
         
         switch equipmentIndex {
         case 0:
-            outcomeValue = "Yes"
+            equipmentValue = "Yes"
         case 1:
-            outcomeValue = "Maybe"
+            equipmentValue = "Maybe"
         case 2:
-            outcomeValue = "No"
+            equipmentValue = "No"
         default:
-            outcomeValue = ""
+            equipmentValue = ""
         }
         
         
@@ -169,12 +169,14 @@ class ProspectingVC: UIViewController {
         
         let apilink = appGlobalVariable.apiBaseURL+"visitreport/addclientvisitreport"
         
-        let paramDict : [String : String]   = [
+        let paramDict : [String : String] = [
             "userId":appGlobalVariable.userID,
-            "visitId":meetingDetail!.contactId as! String,
-            "salesInLastThreeMonths": outcomeValue,
+            "mainOutcome" : outcomeValue,
+            "salesInLastThreeMonths": businessValue,
+            "equipmentNeeds": equipmentValue,
             "visitId": meetingDetail!.id!,
-            "outcomeComments": outcomeCommentTF.text
+            "outcomeComments": outcomeCommentTF.text!,
+            "reportType": (meetingDetail?.purpose!)!
             
         
         ]

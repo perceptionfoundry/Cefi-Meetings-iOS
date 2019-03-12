@@ -8,15 +8,48 @@
 
 import UIKit
 
-class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
+
+
+
+
+class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, DealerDelegate {
+    func addDealer(DealerName: String) {
+        
+        let getValue = Dealer(dealerName: DealerName)
+        dealerList.append(getValue)
+        
+        dealerListTable.reloadData()
+    }
+    
+    
+    
+    
+    func selectedDealer(DealerName: String) {
+    
+    }
+    
+   
+    
+    
+ 
+    
 
     
     @IBOutlet weak var DealerTitle: UILabel!
     
     @IBOutlet weak var dealerListTable: UITableView!
     
-    
+    struct Dealer {
+        var dealerName : String
+       
+    }
 
+    
+    var dealerList = [Dealer]()
+    var delegateDealer : DealerDelegate!
+    var ContactDetail : Meeting?
+
+    
     
     
     
@@ -31,7 +64,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dealerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,7 +75,18 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         cell.selectionStyle = .none
         
         
+        cell.dealerName.text = dealerList[indexPath.row].dealerName
+        
+        
+        
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegateDealer.selectedDealer(DealerName: dealerList[indexPath.row].dealerName)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -53,6 +97,15 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBAction func newDetailerAction(_ sender: Any) {
         
         performSegue(withIdentifier: "newDealer", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination  as! AddDealerVC
+        
+        dest.dealerDele = self
+        dest.ContactDetail = self.ContactDetail!
     }
     
     @IBAction func backAction(_ sender: Any) {

@@ -169,7 +169,6 @@ class FollowUpVC: UIViewController {
         
         let paramDict : [String : String]   = [
             "userId":appGlobalVariable.userID,
-            "visitId":meetingDetail!.contactId as! String,
             "salesInLastThreeMonths": outcomeValue,
             "visitId": meetingDetail!.id!,
             

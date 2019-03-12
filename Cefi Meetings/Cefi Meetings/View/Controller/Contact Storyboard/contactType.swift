@@ -45,10 +45,7 @@ class contactType: UIViewController {
             dealerSelected.isHidden = false
             
         }
-        else if type == "Prospect"{
-            prospectSelected.isHidden = false
-            
-        }
+     
         
     }
     
@@ -80,10 +77,7 @@ class contactType: UIViewController {
             self.typeDelegate?.typeName(name: "Dealer")
             self.navigationController?.popViewController(animated: true)
         }
-        else if buttonTag == 3 {
-            self.typeDelegate?.typeName(name: "Prospect")
-            self.navigationController?.popViewController(animated: true)
-        }
+      
         
         
     }

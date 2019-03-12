@@ -26,7 +26,7 @@ class MainMeetingViewModel{
             
              let value = resp.result.value as!  [String:Any] 
             
-//            print(value)
+            print(value)
             
             if value["success"] as! Int == 1{
                 

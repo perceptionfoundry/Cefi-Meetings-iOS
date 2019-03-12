@@ -2381,6 +2381,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dealerName" destination="QkR-b1-SiF" id="W4t-tK-BpC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2435,8 +2438,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fji-Dz-CqB" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="243.5" width="300" height="200"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-XK-nM5">
-                                        <rect key="frame" x="30" y="85" width="240" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSx-XK-nM5">
+                                        <rect key="frame" x="30" y="75" width="240" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2469,19 +2472,19 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Dealer Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uky-DY-2ts">
-                                        <rect key="frame" x="65" y="27.5" width="170" height="25"/>
+                                        <rect key="frame" x="65" y="17.5" width="170" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.39485406875610352" green="0.55999797582626343" blue="0.27049016952514648" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="VNG-5x-Jxd" firstAttribute="centerY" secondItem="fji-Dz-CqB" secondAttribute="centerY" multiplier="1.6" id="0JP-cZ-t7f"/>
                                     <constraint firstItem="VNG-5x-Jxd" firstAttribute="width" secondItem="fji-Dz-CqB" secondAttribute="width" multiplier="0.5" id="300-W8-Trj"/>
                                     <constraint firstItem="Uky-DY-2ts" firstAttribute="centerX" secondItem="fji-Dz-CqB" secondAttribute="centerX" id="4GP-Zb-7zB"/>
-                                    <constraint firstItem="oSx-XK-nM5" firstAttribute="centerY" secondItem="fji-Dz-CqB" secondAttribute="centerY" id="R0E-P8-WYa"/>
-                                    <constraint firstItem="Uky-DY-2ts" firstAttribute="centerY" secondItem="fji-Dz-CqB" secondAttribute="centerY" multiplier="0.4" id="T2S-XU-49E"/>
+                                    <constraint firstItem="oSx-XK-nM5" firstAttribute="centerY" secondItem="fji-Dz-CqB" secondAttribute="centerY" multiplier="0.9" id="R0E-P8-WYa"/>
+                                    <constraint firstItem="Uky-DY-2ts" firstAttribute="centerY" secondItem="fji-Dz-CqB" secondAttribute="centerY" multiplier="0.3" id="T2S-XU-49E"/>
                                     <constraint firstItem="oSx-XK-nM5" firstAttribute="centerX" secondItem="fji-Dz-CqB" secondAttribute="centerX" id="bGa-dj-RE4"/>
                                     <constraint firstAttribute="height" constant="200" id="c72-Fj-qQ8"/>
                                     <constraint firstItem="oSx-XK-nM5" firstAttribute="width" secondItem="fji-Dz-CqB" secondAttribute="width" multiplier="0.8" id="gsP-GD-Rri"/>
