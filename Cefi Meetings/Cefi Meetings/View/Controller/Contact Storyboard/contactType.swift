@@ -28,7 +28,6 @@ class contactType: UIViewController {
         leadSelected.isHidden = true
         clientSelected.isHidden = true
         dealerSelected.isHidden = true
-        prospectSelected.isHidden = true
         
         guard let type = previousSelected else{return}
         

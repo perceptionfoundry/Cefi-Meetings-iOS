@@ -10,4 +10,5 @@ import UIKit
 
 class EquipmentCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var docImage: UIImageView!
 }

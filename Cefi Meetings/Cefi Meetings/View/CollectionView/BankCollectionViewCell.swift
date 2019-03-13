@@ -10,4 +10,5 @@ import UIKit
 
 class BankCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var docImage: UIImageView!
 }

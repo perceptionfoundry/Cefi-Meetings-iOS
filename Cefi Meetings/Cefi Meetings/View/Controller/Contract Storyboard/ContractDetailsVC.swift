@@ -21,7 +21,7 @@ import HCSStarRatingView
 
 
 
-class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     
@@ -66,6 +66,23 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var allpageSwitch: UISwitch!
     @IBOutlet weak var everythingSwitch: UISwitch!
     
+    
+    @IBOutlet var addPictureButton: [UIButton]!
+
+    
+    
+    
+    var taxImage = [UIImage]()
+    
+    var bankImage = [UIImage]()
+    var equipmentImage = [UIImage]()
+    var insuranceImage = [UIImage]()
+    var signorImage = [UIImage]()
+    var invoiceImage = [UIImage]()
+    var closingImage = [UIImage]()
+    var pageSignedImage = [UIImage]()
+    var everythingImage = [UIImage]()
+    var selectedImagebuttonINdex = 0
     
     var userContract : Contract?
     
@@ -251,8 +268,91 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
     }
     
+    // ************* Add Picture ***********
+    
+    @IBAction func addPictureAction(_ sender: UIButton) {
+        
+        
+        self.selectedImagebuttonINdex = sender.tag
+        let imagepicker = UIImagePickerController()
+        imagepicker.delegate = self
+        
+        
+        let modeCollection = UIAlertController(title: "", message:"Choose Source to add your Image", preferredStyle: .actionSheet)
+        let photoAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+            imagepicker.sourceType = .photoLibrary
+            self.present(imagepicker, animated: true, completion: nil)
+            
+        }
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            imagepicker.sourceType = .camera
+            
+            self.present(imagepicker, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        
+        modeCollection.addAction(photoAction)
+        modeCollection.addAction(cameraAction)
+        
+        modeCollection.addAction(cancelAction)
+        
+        
+        self.present(modeCollection, animated: true, completion: nil)
+        
+        
+        
+    }
     
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        self.saveImage(Image: selectedImage)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func saveImage( Image : UIImage){
+        
+        switch self.selectedImagebuttonINdex {
+        case 0:
+            taxImage.append(Image)
+            
+            print(taxImage)
+            print(taxImage.count)
+            
+            self.taxCollectionView.reloadData()
+            
+        case 1:
+            bankImage.append(Image)
+            bankCollectionView.reloadData()
+        case 2:
+            equipmentImage.append(Image)
+            equipmentCollectionVIew.reloadData()
+        case 3:
+            insuranceImage.append(Image)
+        case 4:
+            signorImage.append(Image)
+        case 5:
+            invoiceImage.append(Image)
+        case 6:
+            closingImage.append(Image)
+        case 7:
+            pageSignedImage.append(Image)
+        case 8:
+            everythingImage.append(Image)
+        default:
+            return
+        }
+        
+    }
+    
+    
+    
+    // ******************* SAVE BUTTON ACTION ***************************
+    
+   
     
     
     func saveData(){
@@ -327,15 +427,16 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         if collectionView == self.taxCollectionView{
-            return 1
+            return taxImage.count
         }
             
         else if collectionView == self.bankCollectionView{
-            return 3
+            return bankImage.count
         }
         
-        return 4
-        
+        else{
+        return equipmentImage.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -344,6 +445,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
+            print(indexPath.row)
+            
+            print("*******************")
+            print(taxImage[indexPath.row])
+            print("*******************")
+            
+            
+            taxCell.docImage.image = taxImage[indexPath.row]
+            
             
             return taxCell
             
@@ -352,14 +462,23 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         else if collectionView == self.bankCollectionView{
             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
+            bankCell.docImage.image = bankImage[indexPath.row]
+            
+            
             return bankCell
         }
-        
-        //
-        let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
-        
-        
-        return equipmentCell
+            
+            //
+            
+        else {
+            
+            let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
+            
+            equipmentCell.docImage.image = equipmentImage[indexPath.row]
+            
+            
+            return equipmentCell
+        }
     }
     
     

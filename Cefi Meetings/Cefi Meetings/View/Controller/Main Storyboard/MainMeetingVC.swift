@@ -255,7 +255,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
             
-            let rating = Int(MeetingContent[indexPath.row].rating!)
+            let rating = Int(MeetingContent[indexPath.row].rating ?? "0")
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             

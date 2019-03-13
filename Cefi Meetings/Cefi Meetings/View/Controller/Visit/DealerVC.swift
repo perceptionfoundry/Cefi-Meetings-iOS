@@ -90,8 +90,28 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         dealerContact.addGestureRecognizer(contactTap)
         
         
-        let leadTap = UITapGestureRecognizer(target: self, action: #selector(leadAction))
-        newLead.addGestureRecognizer(leadTap)
+        
+        newLead.didSelectItemWith = { (index, title) -> () in
+            print("Selected item \(index)")
+            
+            if self.newLead.currentIndex == 0{
+              
+                self.bottomView.isHidden = false
+                
+            }
+            else{
+                
+                self.bottomView.isHidden = true
+                
+                
+            }
+        }
+        
+        
+        
+        
+//        let leadTap = UITapGestureRecognizer(target: self, action: #selector(leadAction))
+//        newLead.addGestureRecognizer(leadTap)
         
         
         dealerTable.reloadData()
@@ -113,21 +133,21 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
     }
     
     
-    @objc func leadAction(){
-        let index = newLead.currentIndex
-        
-        if index == 1{
-            
-            bottomView.isHidden = false
-
-        }
-        else{
-            
-            bottomView.isHidden = true
-
-         
-        }
-    }
+//    @objc func leadAction(){
+//        let index = newLead.currentIndex
+//
+//        if index == 1{
+//
+//            bottomView.isHidden = false
+//
+//        }
+//        else{
+//
+//            bottomView.isHidden = true
+//
+//
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

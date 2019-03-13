@@ -10,4 +10,5 @@ import UIKit
 
 class TaxCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var docImage: UIImageView!
 }
