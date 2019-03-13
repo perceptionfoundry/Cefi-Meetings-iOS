@@ -57,14 +57,15 @@ class FollowUpVC: UIViewController {
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-        let timeSplit  = timeStampSplit[1].split(separator: ":")
-        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+//        let timeSplit  = timeStampSplit[1].split(separator: ":")
+//        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
         
+        let timeString = "00:00"
       
         
         print(dateString)
-        print(timeStampSplit)
+//        print(timeStampSplit)
        
         
         dealerContact.text = meetingDetail!.contactName!

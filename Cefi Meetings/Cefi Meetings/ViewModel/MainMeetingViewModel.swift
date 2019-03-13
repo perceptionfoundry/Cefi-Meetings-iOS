@@ -24,7 +24,7 @@ class MainMeetingViewModel{
         
         Alamofire.request(API, method: .get).responseJSON { (resp) in
             
-             let value = resp.result.value as!  [String:Any] 
+            guard let value = resp.result.value as?  [String:Any] else {return}
             
             print(value)
             

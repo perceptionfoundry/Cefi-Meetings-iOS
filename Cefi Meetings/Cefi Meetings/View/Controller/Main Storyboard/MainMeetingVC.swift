@@ -260,11 +260,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.ratingStar.value = CGFloat(value!)
             
             
-            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
-            let timeSplit  = timeStampSplit[1].split(separator: ":")
-            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
+//            let timeSplit  = timeStampSplit[1].split(separator: ":")
+//            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
             
-            cell.timeLabel.text = timeString
+            cell.timeLabel.text = "00:00"
             
             
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)

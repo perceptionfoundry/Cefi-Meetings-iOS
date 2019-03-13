@@ -42,7 +42,7 @@ class DashboardVC: UIViewController {
         
         viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
             
-//            print(result)
+            print(result)
             
             self.contactCount.text = String(result!["addedContactsToday"] as! Int)
             self.contractCount.text = String(result?["allOpenContracts"]as! Int)

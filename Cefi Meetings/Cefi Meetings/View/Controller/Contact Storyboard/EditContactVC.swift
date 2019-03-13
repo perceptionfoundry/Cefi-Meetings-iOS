@@ -212,8 +212,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                                    "referredBy" : self.referrred,
                                    "lat" : self.chosenPlace!.lat,
                                    "long" : chosenPlace!.long,
-                                   "contactId":contactDetail.id!,
-                                   ] as [String : Any]
+                                   "contactId" : contactDetail.id] as [String : Any]
         
         
         
