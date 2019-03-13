@@ -12,7 +12,7 @@ import Alamofire
 
 class MeetingReportViewModel{
     
-    func addReport(API: String, Param: [String:String], Completion: @escaping (_ status : Bool, _ error : String?)->()){
+    func addReport(API: String, Param: [String:Any], Completion: @escaping (_ status : Bool, _ error : String?)->()){
         
         print(API)
         print(Param)

@@ -39,6 +39,9 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
     
     @IBOutlet weak var dealerListTable: UITableView!
     
+    
+    
+    
     struct Dealer {
         var dealerName : String
        
@@ -48,7 +51,8 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
     var dealerList = [Dealer]()
     var delegateDealer : DealerDelegate!
     var ContactDetail : Meeting?
-
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    let viewModel = GetDealerPersonViewModel()
     
     
     
@@ -59,9 +63,20 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         dealerListTable.delegate = self
         dealerListTable.dataSource = self
         
+        self.getContents()
+        
         
         dealerListTable.reloadData()
     }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getContents()
+    }
+    
+    // *************** TABLE VIEW PROTOCOL FUNCTION **********************
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dealerList.count
@@ -94,6 +109,30 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         return 50
     }
 
+    
+    
+    // **************** GET TABLE CONTENT *****************
+    
+    func getContents(){
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"dealerperson/getdealerperson"
+        
+        let paramDict : [String: String] = [
+        "userId": appGlobalVariable.userID,
+        "dealerId": (ContactDetail?.contactId)!
+        
+        ]
+        
+    print(apiLink)
+        print(paramDict)
+        
+        viewModel.fetchDealerPersont(API: apiLink, TextFields: paramDict) { (status, error, result) in
+            
+        }
+    }
+    
+    
+    
     @IBAction func newDetailerAction(_ sender: Any) {
         
         performSegue(withIdentifier: "newDealer", sender: nil)

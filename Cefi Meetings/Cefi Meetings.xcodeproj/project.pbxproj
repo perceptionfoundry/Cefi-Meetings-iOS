@@ -10,6 +10,7 @@
 		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
 		F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB27222D6481001D8D60 /* PurposeVC.swift */; };
 		F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */; };
+		F21C46C22238E2DF003B26DD /* GetDealerPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */; };
 		F21ECBC42230025400987B47 /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ECBC32230025400987B47 /* ReminderVC.swift */; };
 		F21ECBC62230035000987B47 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ECBC52230035000987B47 /* ReminderTableViewCell.swift */; };
 		F21ECBC822301E9200987B47 /* NewMeetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ECBC722301E9200987B47 /* NewMeetingViewModel.swift */; };
@@ -100,6 +101,7 @@
 		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
 		F20ACB27222D6481001D8D60 /* PurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeVC.swift; sourceTree = "<group>"; };
 		F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractVC.swift; sourceTree = "<group>"; };
+		F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDealerPersonViewModel.swift; sourceTree = "<group>"; };
 		F21ECBC32230025400987B47 /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		F21ECBC52230035000987B47 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		F21ECBC722301E9200987B47 /* NewMeetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMeetingViewModel.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				F280118A2231757B00E42A05 /* MainMeetingViewModel.swift */,
 				F2D8F5B6223618E400385C6A /* AddDealerPersonViewModel.swift */,
 				F2D70E042236A4D6005E38A7 /* MeetingReportViewModel.swift */,
+				F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				F2D8F14522283E110051A02F /* editContractViewModel.swift in Sources */,
 				F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
+				F21C46C22238E2DF003B26DD /* GetDealerPersonViewModel.swift in Sources */,
 				F2A6873B2226CBBC008DCB8E /* Contract.swift in Sources */,
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
 				F224F10822035A7C00DD332F /* NewVisit.swift in Sources */,

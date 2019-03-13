@@ -9,13 +9,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Visit/DealerVC.swift"
-            timestampString = "574152661.204302"
+            filePath = "Cefi Meetings/ViewModel/GetDealerPersonViewModel.swift"
+            timestampString = "574155038.961279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "leadAction()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "fetchDealerPersont(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/GetDealerPersonViewModel.swift"
+            timestampString = "574155038.962153"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchDealerPersont(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/View/Controller/Visit/DealerListVC.swift"
+            timestampString = "574155038.962481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/View/Controller/Visit/DealerListVC.swift"
+            timestampString = "574155038.962747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/View/Controller/Visit/DealerListVC.swift"
+            timestampString = "574155038.962808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "getContents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cefi_Meetings.DealerListVC.getContents() -&gt; ()"
+                  moduleName = "Cefi Meetings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/View/Controller/Visit/DealerListVC.swift"
+                  timestampString = "574155039.225925"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "2439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Swift.Array&lt;Cefi_Meetings.Contact&gt;) -&gt; () in Cefi_Meetings.DealerListVC.getContents() -&gt; ()"
+                  moduleName = "Cefi Meetings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/View/Controller/Visit/DealerListVC.swift"
+                  timestampString = "574155039.227787"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/View/Controller/Visit/DealerListVC.swift"
+            timestampString = "574155038.962864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "getContents()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

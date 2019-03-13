@@ -172,6 +172,66 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
     
     
     @IBAction func submitButtonAction(_ sender: Any) {
+        
+        
+        
+        let saleIndex = saleStatus.currentIndex
+        
+        
+        var saleValue = ""
+        
+       
+        
+        
+        
+        
+        
+        
+        switch  saleIndex{
+        case 0:
+            saleValue = "Deceased"
+        case 1:
+            saleValue = "Same"
+        case 2:
+            saleValue = "Increased"
+        default:
+            saleValue = ""
+        }
+        
+        
+       
+        
+        
+        
+        
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/addclientvisitreport"
+        
+        let paramDict : [String : String]   = [
+            "userId":appGlobalVariable.userID,
+            "visitId": meetingDetail!.id!,
+            "salesInLastThreeMonths": saleValue,
+            "dealerPersonName" : dealerName.text!,
+            "reportType": (meetingDetail?.purpose!)!
+            
+            
+        ]
+        
+        viewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
+            
+            if status == true{
+                self.navigationController?.popViewController(animated: true)
+            }
+                
+            else{
+                let alert  = UIAlertController(title: "Server Error", message: err!, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {

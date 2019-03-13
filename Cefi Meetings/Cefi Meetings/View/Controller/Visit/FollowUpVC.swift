@@ -169,14 +169,35 @@ class FollowUpVC: UIViewController {
         
         
         let apilink = appGlobalVariable.apiBaseURL+"visitreport/addclientvisitreport"
+         var paramDict = [String : Any]()
         
-        let paramDict : [String : String]   = [
-            "userId":appGlobalVariable.userID,
-            "salesInLastThreeMonths": outcomeValue,
-            "visitId": meetingDetail!.id!,
+        
+        if OutcomeSegement.currentIndex == 3{
             
-            
-        ]
+             paramDict = [
+                "userId":appGlobalVariable.userID,
+                "mainOutcome" : outcomeValue,
+                "visitId": meetingDetail!.id!,
+                "reportType": (meetingDetail?.purpose!)!,
+                "didNotAgreetoTerms": true,
+                "contractError": true,
+                "other": true,
+                "otherComments": commentTF.text!,
+  
+                ]
+        }
+        
+        else{
+            paramDict = [
+                "userId":appGlobalVariable.userID,
+                "mainOutcome" : outcomeValue,
+                "visitId": meetingDetail!.id!,
+                "reportType": (meetingDetail?.purpose!)!
+                
+            ]
+        }
+        
+        
         
         viewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
             
