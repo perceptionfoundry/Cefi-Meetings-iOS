@@ -190,7 +190,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         
         var type = MeetingContent[indexPath.row].contactType
-        
+        var purpose = MeetingContent[indexPath.row].purpose
         
         // DECISION W.R.T "TYPE
         
@@ -239,7 +239,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
   
             
             
-        else if type == "Lead" || type == "Client" || type == "Follow Up" || type == "Prospect" {
+        else if purpose == "Prospecting" || purpose == "Follow Up"  {
             
         cell.topView.backgroundColor = UIColor.white
 

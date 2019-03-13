@@ -14,6 +14,9 @@ import GooglePlaces
 class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate, ReminderDelegate{
    
     
+    
+    //  ****************  MAP STRUCTURE ****************
+    
     struct meetup {
         var name : String
         var lat : Double
@@ -21,6 +24,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
   
     
+    
+    //  ****************  OUTLET ****************
+
     @IBOutlet weak var purposeTF: UITextField!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var contactTF: UITextField!
@@ -30,36 +36,38 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @IBOutlet weak var reminderTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
     
-    
+    //  **************** VARIABLE  ****************
+
     
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
-
-        let datePicker = UIDatePicker()
-        var date = Date()
-    
+    let datePicker = UIDatePicker()
+    var date = Date()
     var date_stamp : TimeInterval?
     var time_Stamp : TimeInterval?
-    
     var reminderTotalTime : Double = 0.0
-
-    
     var viewModel = NewMeetingViewModel()
-    
     var selectedContactID = ""
     var reminderOn = false
     var reminderTime : Double = 0.0
+    var contractAvailable = false
     
-    // ******** Map related Variable *********
+    // ******** VARIABLE RELATED TO MAP *********
     var chosenPlace : meetup?
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
     var mapCameraView: GMSMapView?
     
     
-    
-    func contactName(userName: String, id : String) {
+    //  **************** PROTOCOL FUNCTION  ****************
+
+    func contactName(userName: String, id : String, ContractNumber : Bool?) {
         contactTF.text = userName
         self.selectedContactID = id
+        
+        if ContractNumber ==  false{
+            contractTF.text = "DEALER"
+            contractTF.isUserInteractionEnabled = false
+        }
     }
     
     func purposeValue(value: String) {
@@ -85,6 +93,11 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
     
     
+    
+    
+    //  **************** VIEWDIDLOAD  ****************
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,11 +108,11 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         dateTF.delegate = self
         timeTF.delegate = self
-//        contactTF.delegate = self
-      locationTF.delegate = self
+        locationTF.delegate = self
         
         
         // Initialize device Current location delegate & respective functions
+       
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
@@ -129,6 +142,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
 //
     }
     
+    
+    
+    //  ****************   CUSTOM SEGUE FUNCTION ****************
+
     @objc func reminderSegue(){
         performSegue(withIdentifier: "Reminder", sender: nil)
 
@@ -141,9 +158,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @objc func purposeSegue(){
         performSegue(withIdentifier: "Purpose", sender: nil)
     }
-    
-    
-    
+
     @objc func contractSegue(){
         
         if contactTF.text?.isEmpty == false {
@@ -155,28 +170,27 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         }
 
     }
-        
-        
+    
+    
+    
+    
+    
+    //  **************** VIEWWILLAPPEAR  ****************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    
-    
-    
- 
-    
-    
-    
-   
+
     
     
     // ******************* SHOW DATE FUNCTION ***************************
     
     
     func showDatePicker(){
+       
         //Formate Date
         datePicker.datePickerMode = .date
         
@@ -216,6 +230,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
+    
+    
+    
     
     
     
@@ -278,7 +295,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     
     
-    
+    //  ****************  TEXTFIELD BEGIN EDITING ****************
+
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -307,6 +325,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
     
     
+    
+    
     // ******************* PREPARE SEUGUE FUNCTION ***************************
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -318,7 +338,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             let dest = segue.destination as! MainContactVC
             
             dest.contactDelegate = self
-            dest.segueStatus = true
+            dest.visitSegue = true
         }
         
         else if segue.identifier == "Purpose"{

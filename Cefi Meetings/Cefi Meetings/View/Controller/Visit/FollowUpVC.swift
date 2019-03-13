@@ -32,6 +32,9 @@ class FollowUpVC: UIViewController {
     @IBOutlet weak var pendingView: Custom_View!
     @IBOutlet weak var negativeView: UIView!
     @IBOutlet weak var buttonsView: UIView!
+    @IBOutlet weak var updateContractLabel: UILabel!
+    @IBOutlet weak var setFollowUpLabel: UILabel!
+    
     @IBOutlet weak var commentTF: UITextView!
     
  

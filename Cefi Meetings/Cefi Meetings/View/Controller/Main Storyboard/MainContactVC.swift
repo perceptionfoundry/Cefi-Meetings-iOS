@@ -35,6 +35,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var allUser = [Contact]()
     var contactDelegate : contactdelegate?
     var segueStatus  = false
+    var visitSegue = false
     var wordSection = [String]()
     var wordsDic = [String:[Contact]]()
     
@@ -362,13 +363,53 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
               self.selectedUser = wordValue[indexPath.row]
                 
-                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!)
+                if wordValue[indexPath.row].contactType != "Dealer" {
+                
+                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true)
                 self.segueStatus = false
                 self.dismiss(animated: true, completion: nil)
+            }
+                
+                else{
+                    let alert = UIAlertController(title: "Alert!", message: "This user cannot me selected as He / She is a Dealer", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
                 
             }
             
            
+        }
+            
+        else if visitSegue == true{
+            
+            if let wordValue = wordsDic[workKey.uppercased()]{
+                
+                
+                
+                self.selectedUser = wordValue[indexPath.row]
+                
+               
+                var contractNUM = false
+                
+                if wordValue[indexPath.row].contactType != "Dealer"{
+                    contractNUM = true
+                }
+                
+                    
+                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : contractNUM)
+                    self.segueStatus = false
+                    self.dismiss(animated: true, completion: nil)
+                
+                    
+                
+                
+            }
+            
+            
         }
         
         else{

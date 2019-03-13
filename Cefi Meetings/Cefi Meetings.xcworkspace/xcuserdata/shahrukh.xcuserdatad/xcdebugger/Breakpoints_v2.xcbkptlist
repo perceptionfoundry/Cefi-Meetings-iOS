@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/MainMeetingViewModel.swift"
-            timestampString = "574105595.748834"
+            filePath = "Cefi Meetings/View/Controller/Visit/DealerVC.swift"
+            timestampString = "574152661.204302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getTodayVisitDetail(API:Param:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/MainMeetingViewModel.swift"
-            timestampString = "574105595.749127"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "getTodayVisitDetail(API:Param:completion:)"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "leadAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

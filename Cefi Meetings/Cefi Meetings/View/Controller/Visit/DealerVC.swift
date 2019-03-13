@@ -36,7 +36,11 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
     @IBOutlet weak var dealerTable: UITableView!
     @IBOutlet weak var dealerContact: UILabel!
     @IBOutlet weak var dealerName: UILabel!
-
+    
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var contractButton: UIButton!
+    @IBOutlet weak var contactButton: UIButton!
+    
     @IBOutlet weak var dealerBusiness: UILabel!
     @IBOutlet weak var meetingTime: UILabel!
     @IBOutlet weak var meetingDate: UILabel!
@@ -85,6 +89,11 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         let contactTap = UITapGestureRecognizer(target: self, action: #selector(dealerList))
         dealerContact.addGestureRecognizer(contactTap)
         
+        
+        let leadTap = UITapGestureRecognizer(target: self, action: #selector(leadAction))
+        newLead.addGestureRecognizer(leadTap)
+        
+        
         dealerTable.reloadData()
        
     }
@@ -103,6 +112,22 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         
     }
     
+    
+    @objc func leadAction(){
+        let index = newLead.currentIndex
+        
+        if index == 1{
+            
+            bottomView.isHidden = false
+
+        }
+        else{
+            
+            bottomView.isHidden = true
+
+         
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

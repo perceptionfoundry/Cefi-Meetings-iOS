@@ -89,7 +89,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         self.contractTypeTF.text = name.lowercased()
     }
     
-    func contactName(userName: String, id : String) {
+    func contactName(userName: String, id : String, ContractNumber : Bool?) {
         contactTF.text = userName
         self.selectedContactID = id
     }

@@ -17,7 +17,7 @@ protocol typeDelegate {
 }
 
 protocol contactdelegate {
-    func contactName(userName : String, id : String)
+    func contactName(userName : String, id : String, ContractNumber : Bool?)
 }
 
 protocol equipmentTypeDelegate {
@@ -95,7 +95,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.contractTypeTF.text = name.lowercased()
     }
     
-    func contactName(userName: String, id : String) {
+    func contactName(userName: String, id : String, ContractNumber : Bool?) {
         contactTF.text = userName
         self.selectedContactID = id
     }
