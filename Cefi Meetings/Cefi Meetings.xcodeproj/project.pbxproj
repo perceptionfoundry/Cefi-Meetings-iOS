@@ -50,6 +50,7 @@
 		F288347D21FF61AD00CA09C6 /* UserFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288347C21FF61AD00CA09C6 /* UserFilterVC.swift */; };
 		F2A687392226CB9F008DCB8E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2A687382226CB9F008DCB8E /* Contract.storyboard */; };
 		F2A6873B2226CBBC008DCB8E /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A6873A2226CBBC008DCB8E /* Contract.swift */; };
+		F2A6A21E223AA3E400EE55F7 /* ImageUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A6A21D223AA3E400EE55F7 /* ImageUploadViewModel.swift */; };
 		F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */; };
 		F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */; };
 		F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8621F97F7D00BE90CA /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		F288347C21FF61AD00CA09C6 /* UserFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilterVC.swift; sourceTree = "<group>"; };
 		F2A687382226CB9F008DCB8E /* Contract.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
 		F2A6873A2226CBBC008DCB8E /* Contract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		F2A6A21D223AA3E400EE55F7 /* ImageUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewModel.swift; sourceTree = "<group>"; };
 		F2AC6C7F21F97F7D00BE90CA /* Cefi Meetings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cefi Meetings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				F2D8F5B6223618E400385C6A /* AddDealerPersonViewModel.swift */,
 				F2D70E042236A4D6005E38A7 /* MeetingReportViewModel.swift */,
 				F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */,
+				F2A6A21D223AA3E400EE55F7 /* ImageUploadViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				F2B58AAE2201B0A200396F9E /* contractFilterVC.swift in Sources */,
 				F2EBB99F2227B2E500991287 /* ContactContractDetailViewModel.swift in Sources */,
 				F22034FA2201D01800F8BE39 /* NewContractVC.swift in Sources */,
+				F2A6A21E223AA3E400EE55F7 /* ImageUploadViewModel.swift in Sources */,
 				F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */,
 				F21ECBC822301E9200987B47 /* NewMeetingViewModel.swift in Sources */,
 				F2D8F14522283E110051A02F /* editContractViewModel.swift in Sources */,

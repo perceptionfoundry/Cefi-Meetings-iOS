@@ -816,6 +816,7 @@
                         <outlet property="signorSwitch" destination="Gnr-Fu-YjS" id="nyp-Xk-Qn1"/>
                         <outlet property="taxCollectionView" destination="118-Rv-MLK" id="QT8-MM-yoV"/>
                         <outlet property="taxSwitch" destination="7Eo-Oa-xae" id="x2h-Gq-GyG"/>
+                        <outlet property="taxView" destination="118-Rv-MLK" id="YzI-WE-Fvm"/>
                         <outlet property="taxViewHeight" destination="4EG-SP-DfG" id="BCc-uU-bEw"/>
                         <outletCollection property="addPictureButton" destination="BKS-q7-fc6" collectionClass="NSMutableArray" id="OpK-WP-Lfs"/>
                         <outletCollection property="addPictureButton" destination="Qe8-BM-xVr" collectionClass="NSMutableArray" id="tHJ-GN-lUd"/>
@@ -2714,6 +2715,7 @@
                         <outlet property="missingText" destination="Mnt-7g-lMr" id="0IL-k0-zkd"/>
                         <outlet property="purchaseDateTF" destination="JnY-oz-cqs" id="DIV-zK-61u"/>
                         <outlet property="ratingStar" destination="XuP-Lu-WZP" id="Dx3-5P-0F6"/>
+                        <outlet property="saveButton" destination="Up2-oa-t11" id="aus-wO-a0a"/>
                         <outlet property="signorSwitch" destination="T16-7i-kTv" id="ZT3-RZ-fjF"/>
                         <outlet property="taxCollectionView" destination="0vO-8P-PtI" id="SnP-Go-o13"/>
                         <outlet property="taxSwitch" destination="jPp-lC-kzt" id="Zq0-6H-JYo"/>

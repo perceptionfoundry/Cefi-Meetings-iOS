@@ -239,7 +239,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
   
             
             
-        else if purpose == "Prospecting" || purpose == "Follow Up"  {
+        else{
+            if purpose == "Prospecting" || purpose == "Follow Up"  {
             
         cell.topView.backgroundColor = UIColor.white
 
@@ -270,7 +271,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
             cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
 
-            
+            }
         }
  
         

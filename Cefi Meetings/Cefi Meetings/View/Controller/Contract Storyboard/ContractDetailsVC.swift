@@ -142,7 +142,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         super.viewDidLoad()
         
         
-//        saveButton.isHidden = true
+        saveButton.isHidden = true
         
         contractTypeTF.text = userContract!.contractStatus
         contractNumberTF.text = userContract!.contractNumber

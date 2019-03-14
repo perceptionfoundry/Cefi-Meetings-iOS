@@ -8,6 +8,7 @@
 
 import UIKit
 import HCSStarRatingView
+import Alamofire
 
 
 
@@ -81,24 +82,50 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var contactName = ""
     var equipmentValue = [String]()
     var selectedContactID : String?
-    let viewModel = NewContractViewModel()
+    let newContractviewModel = NewContractViewModel()
+    let uploadImageViewModel = ImageUploadViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var tagArray = [String]()
     var date = Date()
     
     
     var taxImage = [UIImage]()
-
     var bankImage = [UIImage]()
     var equipmentImage = [UIImage]()
-    var insuranceImage = [UIImage]()
-    var signorImage = [UIImage]()
-    var invoiceImage = [UIImage]()
-    var closingImage = [UIImage]()
-    var pageSignedImage = [UIImage]()
-    var everythingImage = [UIImage]()
+    var insuranceImage : UIImage?
+    var signorImage : UIImage?
+    var invoiceImage : UIImage?
+    var closingImage : UIImage?
+    var pageSignedImage : UIImage?
+    var everythingImage : UIImage?
+    
+    
+    var taxImageURl = [String]()
+    var bankImageURl = [String]()
+    var equipmentImageURl = [String]()
+    var insuranceImageURl :String?
+    var signorImageURl : String?
+    var invoiceImageURl : String?
+    var closingImageURl : String?
+    var pageSignedImageURl : String?
+    var everythingImageURl : String?
+    
+    
+    
+    
     
     var selectedImagebuttonINdex = 0
+   
+    var totalImageAdded = 0
+    var uploadCount = 0
+    
+    
+    var insuranceImageCount = 0
+    var signorImageCount = 0
+    var invoiceImageCount = 0
+    var closingImageCount = 0
+    var pageSignedImageCount = 0
+    var everythingImageCount = 0
 
     
     
@@ -232,6 +259,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    
+    
+    
+    
+    
+    
     // ************* Add Picture ***********
 
     @IBAction func addPictureAction(_ sender: UIButton) {
@@ -282,30 +315,57 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         switch self.selectedImagebuttonINdex {
         case 0:
             taxImage.append(Image)
-            
-            print(taxImage)
-            print(taxImage.count)
+
+            taxSwitch.isOn = true
+
             
             self.taxCollectionView.reloadData()
+            taxViewHeight.constant = 90
+
             
         case 1:
             bankImage.append(Image)
             bankCollectionView.reloadData()
+            bankSwitch.isOn = true
+            bankViewHeight.constant = 90
+            
+            
         case 2:
             equipmentImage.append(Image)
             equipmentCollectionVIew.reloadData()
+            equipmentSwitch.isOn = true
+            equipmentViewHeight.constant = 90
+            
+            
         case 3:
-            insuranceImage.append(Image)
+            insuranceImage = Image
+            insuranceImageCount = 1
+            insuranceSwitch.isOn = true
+            
         case 4:
-            signorImage.append(Image)
+            signorImage = Image
+            signorImageCount = 1
+            signorSwitch.isOn = true
+            
         case 5:
-            invoiceImage.append(Image)
+            invoiceImage = Image
+            invoiceSwitch.isOn = true
+            invoiceImageCount = 1
+           
         case 6:
-            closingImage.append(Image)
+            closingImage = Image
+            closingSwitch.isOn = true
+            closingImageCount = 1
+           
         case 7:
-            pageSignedImage.append(Image)
+            pageSignedImage = Image
+            allpageSwitch.isOn = true
+            pageSignedImageCount = 1
+           
         case 8:
-            everythingImage.append(Image)
+            everythingImage = Image
+            everythingSwitch.isOn = true
+            everythingImageCount = 1
         default:
             return
         }
@@ -313,72 +373,441 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    
+    
+    
+    
     // ******************* SAVE BUTTON ACTION ***************************
 
     
     @IBAction func saveAction(_ sender: Any) {
         
-        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
-//        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
-
-
         
-        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-        
-        let inputDetail : [String : Any] = ["v": 0,
-                           "id": "",
-                           "addedDate": "",
-                           "allPagesSignedImage": "",
-                           "allPendingDocumentCounts": 0,
-                           "bankStatements": [],
-                           "closingFees": "",
-                           "contactId": selectedContactID!,
-                           "contractNumber": "",
-                           "contractStatus": contractTypeTF.text!,
-                           "equipmentCost": amountTF.text!,
-                           "equipmentDetails": equipmentValue,
-                           "equipmentImages": [],
-                           "everyThingCompleted": "",
-                           "insuranceCertificate": "",
-                           "invoice": "",
-                           "isAllPagesSigned": allpageSwitch.isOn,
-                           "isBankStatementAvailable": bankSwitch.isOn,
-                           "isClosingFees": closingSwitch.isOn,
-                           "isEquipmentImagesAvailable": equipmentSwitch.isOn,
-                           "isEverythingCompleted": everythingSwitch.isOn,
-                           "isInsuranceAvailable": insuranceSwitch.isOn,
-                           "isInvoiceAvailable": invoiceSwitch.isOn,
-                           "isSignorAvailable": signorSwitch.isOn,
-                           "isTaxReturnsAvailable": taxSwitch.isOn,
-                           "missingText": missingText.text!,
-                           "projectedPurchaseDate": String(date.timeIntervalSince1970),
-                           "rating": String(Int(ratingStar.value)),
-                           "signorAndSecretaryId": "",
-                           "taxReturnImages": [],
-                           "userId": appGlobalVariable.userID
-                        ]
+        self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
         
         
-        print("-------------------------")
-        print(inputDetail)
-        print(apiLink)
-        print(selectedContactID)
-        print("-------------------------")
-
+        print(self.totalImageAdded)
         
-    
-        viewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
+        
+        // INSURANCE IMAGE UPLOAD
+        
+        
+       if let sendImage = insuranceImage {
             
-            if Status == true{
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
                 
-                self.navigationController?.popViewController(animated: true)
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.insuranceImageURl = imageURL!
+
+                
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+                }
+                else{
+                    print("waiting")
+                }
             }
-            else {
-                self.alertMessage(Title: "Server Error", Message: Result!)
+            
+        }
+        
+        
+        
+        
+        
+        
+        // SIGNOR IMAGE UPLOAD
+        if let sendImage = signorImage {
+            
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.signorImageURl = imageURL!
+
+                
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
             }
+            
+        }
+        
+        
+        // INVOICE IMAGE UPLOAD
+        if let sendImage = invoiceImage {
+            
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.invoiceImageURl = imageURL!
+
+                
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        
+        
+        
+        // CLOSING IMAGE UPLOAD
+        if let sendImage = closingImage {
+            
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.closingImageURl = imageURL!
+
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        
+        
+        // PAGE SIGNED IMAGE UPLOAD
+        if let sendImage = pageSignedImage {
+            
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.pageSignedImageURl = imageURL!
+
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        
+        
+        // EVERYTING IMAGE UPLOAD
+        if let sendImage = everythingImage {
+            
+            let image = sendImage
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.everythingImageURl = imageURL!
+                
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        
+        
+        
+        
+        
+        // TAX IMAGE UPLOAD
+
+        if taxImage.isEmpty == false {
+        
+        for indexNumber in 0...(taxImage.count - 1){
+        
+        let image = taxImage[indexNumber]
+            let imgData = image.jpegData(compressionQuality: 0.5)
+        let param = ["image":image]
+
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+               
+                
+                self.uploadCount += successCount!
+                print("*****************")
+
+                print(imageURL)
+                self.taxImageURl.append(imageURL!)
+
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        }
+        
+        
+        
+        
+        
+        // BANK UPLOAD
+
+        if bankImage.isEmpty == false {
+
+        
+        for indexNumber in 0...(bankImage.count - 1){
+            
+            let image = bankImage[indexNumber]
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                self.bankImageURl.append(imageURL!)
+
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        }
+        
+        
+        
+        
+        
+        // EQUIPMENT UPLOAD
+        
+        
+        if equipmentImage.isEmpty == false {
+
+        for indexNumber in 0...(equipmentImage.count - 1){
+            
+            let image = equipmentImage[indexNumber]
+            let imgData = image.jpegData(compressionQuality: 0.5)
+            let param = ["image":image]
+            
+            
+            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                
+                
+                self.uploadCount += successCount!
+                print("*****************")
+                
+                print(imageURL)
+                
+                self.equipmentImageURl.append(imageURL!)
+                
+                print("*****************")
+                if self.uploadCount == self.totalImageAdded{
+                    print("DONE")
+                    self.createDatabaseRecord()
+
+                }
+                else{
+                    print("waiting")
+                }
+            }
+            
+        }
+        
         }
     }
+    
+  
+    
+    
+//
+//    func requestWith(endUrl: String, imageData: Data?, parameters: [String : Any], onCompletion: ((String?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+//
+//        let url = "https://testingnodejss.herokuapp.com/api/upload/imgdocs" /* your API url */
+//
+//        let headers: HTTPHeaders = [
+//            /* "Authorization": "your_access_token",  in case you need authorization header */
+//            "Content-type": "application/json"
+//        ]
+//
+//        Alamofire.upload(multipartFormData: { (multipartFormData) in
+//            for (key, value) in parameters {
+//                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+//            }
+//
+//            if let data = imageData{
+//                multipartFormData.append(data, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
+//            }
+//
+//        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
+//            switch result{
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    print("Succesfully uploaded")
+//                    print("response = \(response.result.value)")
+//                    if let err = response.error{
+//                        onError?(err)
+//                        return
+//                    }
+//                    onCompletion?(nil)
+//                }
+//            case .failure(let error):
+//                print("Error in upload: \(error.localizedDescription)")
+//                onError?(error)
+//            }
+//        }
+//    }
+    
+
+    
+    func createDatabaseRecord(){
         
+        let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
+        //        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
+        
+        
+        
+        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+            
+            let inputDetail : [String : Any] = ["v": 0,
+                                                "id": "",
+                                                "addedDate": "",
+                                                "allPagesSignedImage": pageSignedImageURl ?? "",
+                                                "allPendingDocumentCounts": 0,
+                                                "bankStatements": bankImageURl ,
+                                                "closingFees": closingImageURl ?? "",
+                                                "contactId": selectedContactID!,
+                                                "contractNumber": "",
+                                                "contractStatus": contractTypeTF.text!,
+                                                "equipmentCost": amountTF.text!,
+                                                "equipmentDetails": equipmentValue,
+                                                "equipmentImages": equipmentImageURl ,
+                                                "everyThingCompleted": everythingImageURl ?? "",
+                                                "insuranceCertificate": insuranceImageURl ?? "",
+                                                "invoice": invoiceImageURl ?? "",
+                                                "isAllPagesSigned": allpageSwitch.isOn,
+                                                "isBankStatementAvailable": bankSwitch.isOn,
+                                                "isClosingFees": closingSwitch.isOn,
+                                                "isEquipmentImagesAvailable": equipmentSwitch.isOn,
+                                                "isEverythingCompleted": everythingSwitch.isOn,
+                                                "isInsuranceAvailable": insuranceSwitch.isOn,
+                                                "isInvoiceAvailable": invoiceSwitch.isOn,
+                                                "isSignorAvailable": signorSwitch.isOn,
+                                                "isTaxReturnsAvailable": taxSwitch.isOn,
+                                                "missingText": missingText.text!,
+                                                "projectedPurchaseDate": String(date.timeIntervalSince1970),
+                                                "rating": String(Int(ratingStar.value)),
+                                                "signorAndSecretaryId": signorImageURl ?? "",
+                                                "taxReturnImages": taxImageURl,
+                                                "userId": appGlobalVariable.userID
+            ]
+            
+            
+            print("-------------------------")
+            print(inputDetail)
+            print(apiLink)
+            print(selectedContactID)
+            print("-------------------------")
+            
+            
+            
+            newContractviewModel.newContractCreate(API: apiLink, Textfields: inputDetail) { (Status, Result) in
+                
+                if Status == true{
+                    
+                    self.navigationController?.popViewController(animated: true)
+                }
+                else {
+                    self.alertMessage(Title: "Server Error", Message: Result!)
+                }
+            }
+        }
+            
         else{
             self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
         }
@@ -386,6 +815,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
     }
+    
+    
+    
+    
+    
     
     
     
