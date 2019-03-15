@@ -30,7 +30,7 @@ protocol equipmentTypeDelegate {
 
 
 
-class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTypeDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextViewDelegate {
     
     
     
@@ -134,7 +134,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     // ********** Implement protocol function ******************
     func typeName(name: String) {
         
-        self.contractTypeTF.text = name.lowercased()
+        self.contractTypeTF.text = name
     }
     
     func contactName(userName: String, id : String, ContractNumber : Bool?) {
@@ -192,8 +192,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         purchaseDateTF.delegate = self
         contactTF.delegate = self
         
-        
-        
+        missingText.delegate = self
+        amountTF.delegate = self
         
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
         self.contractTypeTF.addGestureRecognizer(typeButton)
@@ -209,6 +209,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        missingText.textColor = UIColor(red: 0.392, green: 0.596, blue: 0.278, alpha: 1)
+        missingText.text = ""
+    }
     
     
     // ******************* SHOW DATE FUNCTION ***************************
@@ -238,6 +243,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         formatter.dateFormat = "dd/MM/yyyy"
         date = datePicker.date
         purchaseDateTF.text = formatter.string(from: datePicker.date)
+        
         self.view.endEditing(true)
     }
     
@@ -388,6 +394,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         print(self.totalImageAdded)
         
+        if self.totalImageAdded == 0 {
+            self.createDatabaseRecord()
+        }
+        
+        
+        else {
         
         // INSURANCE IMAGE UPLOAD
         
@@ -698,7 +710,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             }
             
         }
-        
+            }
         }
     }
     
@@ -917,8 +929,14 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
         }
         
+        if textField == amountTF{
+            amountTF.text = "$ "
+        }
+        
        
     }
+    
+  
     
   
 

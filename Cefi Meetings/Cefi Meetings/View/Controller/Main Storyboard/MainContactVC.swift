@@ -10,13 +10,14 @@ import UIKit
 import Alamofire
 
 
-class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     
     
     // ******************* OUTLET ***************************
     
     @IBOutlet weak var Contact_Table: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var NaviBar: UINavigationBar!
     @IBOutlet weak var allButton: Custom_Button!
     @IBOutlet weak var leadButton: Custom_Button!
@@ -38,6 +39,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var visitSegue = false
     var wordSection = [String]()
     var wordsDic = [String:[Contact]]()
+    
+    
+    var lastData = [Contact]()
     
     
     // ******************* FUNCTION THAT WILL GENERATION "KEY" ALPHABET AGAINST "VALUE" FROM USER-DICTIONARY ***************************
@@ -101,7 +105,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         Contact_Table.delegate = self
         Contact_Table.dataSource = self
         
-
+        searchTF.delegate = self
         
         self.generateWordDic()
         
@@ -127,11 +131,40 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    
+    // *********** TEXTFIELD DELEGATE FUNCTION ******
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if searchTF.text?.isEmpty == false {
+        self.userDirectory = lastData
+        }
+        searchTF.text = ""
+        
+        self.wordsDic.removeAll()
+        generateWordDic()
+        Contact_Table.reloadData()
+        
+        return true
+    }
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
     //  ******** SELECTION BUTTON OPTION FUNCTION ************************
 
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
         if sender.tag == 0{
+            
+            
+            allButton.setTitleColor(UIColor.black, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+
+
             allButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
@@ -146,6 +179,13 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
         }
         else if sender.tag == 1{
+            
+            
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.black, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             clientButton.border_color = UIColor.clear
@@ -162,6 +202,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             Contact_Table.reloadData()
         }
         else if sender.tag == 2{
+            
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.black, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
@@ -179,6 +225,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
         }
         else if sender.tag == 3{
+            
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.black, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
@@ -447,6 +499,54 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    
+    
+    
+    // ***********  Search Operatio  ************
+
+    
+    @IBAction func searchButtonAction(_ sender: Any) {
+       
+    searchTF.endEditing(true)
+        
+        if searchTF.text?.isEmpty == true{
+            
+            
+            self.alertMessage(Title: "Text Field Empty", Message: "Please type search keyword")
+        }
+        
+        else{
+            
+            self.lastData = self.userDirectory
+            let currentTableData = self.userDirectory
+            print(currentTableData)
+            print(searchTF.text!)
+
+            
+            let result = currentTableData.filter( {($0.contactName?.contains(searchTF.text!))!}).map({ return $0 })
+
+            print(result)
+            
+            self.userDirectory = result
+            
+            self.wordsDic.removeAll()
+            generateWordDic()
+            Contact_Table.reloadData()
+        }
+    }
+    
+    
+    // ***********  Alert Viewcontroller  ************
+
+    func alertMessage(Title : String, Message : String ){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        let dismissButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        
+        alertVC.addAction(dismissButton)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     

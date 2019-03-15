@@ -384,10 +384,12 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
 //        var timeStamp  = Date(timeIntervalSince1970: self.reminderTotalTime)
             
+            var secondsFromGMT: Double { return Double(TimeZone.current.secondsFromGMT()) }
+            
             var reminderADD : Double = 0.0
             if reminderOn == true{
             
-                reminderADD  = floor(reminderTotalTime + reminderTime) * 1000
+                reminderADD  = floor(reminderTotalTime + reminderTime) * 1000 + secondsFromGMT
 //                reminderADD  = reminderTotalTime + reminderTime
 
             }
@@ -402,7 +404,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             "userId" : appGlobalVariable.userID,
             "contactId" : selectedContactID,
             "contractId" : contractTF.text!,
-            "time" : String(Int(floor(self.reminderTotalTime) * 1000)),
+            "time" : String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
             "reminder" : String(reminderADD),
             "lat" : String(chosenPlace!.lat),
             "long" : String(chosenPlace!.long),

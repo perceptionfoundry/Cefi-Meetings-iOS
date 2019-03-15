@@ -182,6 +182,10 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         
         cell.nameValue.text = searchResult[indexPath.row].contactName
         cell.firstValue.text = searchResult[indexPath.row].contractNumber
+        if searchResult[indexPath.row].allPendingDocumentCounts! == 0{
+            cell.pendingButton.isHidden = true
+        }
+        cell.quantity.text = String(searchResult[indexPath.row].allPendingDocumentCounts!)
         
         return cell
     }

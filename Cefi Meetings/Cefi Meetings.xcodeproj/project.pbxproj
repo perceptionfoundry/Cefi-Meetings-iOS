@@ -10,6 +10,8 @@
 		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
 		F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB27222D6481001D8D60 /* PurposeVC.swift */; };
 		F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */; };
+		F212E4A6223BD58F00D618A8 /* PendingDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */; };
+		F212E4A8223BDE9900D618A8 /* Pending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212E4A7223BDE9900D618A8 /* Pending.swift */; };
 		F21C46C22238E2DF003B26DD /* GetDealerPersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */; };
 		F21ECBC42230025400987B47 /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ECBC32230025400987B47 /* ReminderVC.swift */; };
 		F21ECBC62230035000987B47 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21ECBC52230035000987B47 /* ReminderTableViewCell.swift */; };
@@ -102,6 +104,8 @@
 		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
 		F20ACB27222D6481001D8D60 /* PurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeVC.swift; sourceTree = "<group>"; };
 		F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractVC.swift; sourceTree = "<group>"; };
+		F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocumentViewModel.swift; sourceTree = "<group>"; };
+		F212E4A7223BDE9900D618A8 /* Pending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pending.swift; sourceTree = "<group>"; };
 		F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDealerPersonViewModel.swift; sourceTree = "<group>"; };
 		F21ECBC32230025400987B47 /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		F21ECBC52230035000987B47 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				F2D70E042236A4D6005E38A7 /* MeetingReportViewModel.swift */,
 				F21C46C12238E2DF003B26DD /* GetDealerPersonViewModel.swift */,
 				F2A6A21D223AA3E400EE55F7 /* ImageUploadViewModel.swift */,
+				F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			children = (
 				F2D8F5BA2236292D00385C6A /* Contact.swift */,
 				F2A6873A2226CBBC008DCB8E /* Contract.swift */,
+				F212E4A7223BDE9900D618A8 /* Pending.swift */,
 				F280118E22318A0300E42A05 /* Meeting.swift */,
 				F2D8F5B822361BA400385C6A /* Dealer.swift */,
 			);
@@ -679,12 +685,14 @@
 				F2A6A21E223AA3E400EE55F7 /* ImageUploadViewModel.swift in Sources */,
 				F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */,
 				F21ECBC822301E9200987B47 /* NewMeetingViewModel.swift in Sources */,
+				F212E4A8223BDE9900D618A8 /* Pending.swift in Sources */,
 				F2D8F14522283E110051A02F /* editContractViewModel.swift in Sources */,
 				F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
 				F21C46C22238E2DF003B26DD /* GetDealerPersonViewModel.swift in Sources */,
 				F2A6873B2226CBBC008DCB8E /* Contract.swift in Sources */,
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
+				F212E4A6223BD58F00D618A8 /* PendingDocumentViewModel.swift in Sources */,
 				F224F10822035A7C00DD332F /* NewVisit.swift in Sources */,
 				F21ECBC42230025400987B47 /* ReminderVC.swift in Sources */,
 				F284AA8222267A9E005E8C4C /* ContractDetailsVC.swift in Sources */,

@@ -63,24 +63,46 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     @IBAction func ListDisplayOption(_ sender: UIButton) {
         
         if sender.tag == 0{
+            
+            allButton.setTitleColor(UIColor.black, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+            
             allButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
             dealerButton.border_color = UIColor.clear
         }
         else if sender.tag == 1{
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.black, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             clientButton.border_color = UIColor.clear
             dealerButton.border_color = UIColor.clear
         }
         else if sender.tag == 2{
+            
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.black, for: .normal)
+            dealerButton.setTitleColor(UIColor.lightGray, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
             dealerButton.border_color = UIColor.clear
         }
         else if sender.tag == 3{
+            allButton.setTitleColor(UIColor.lightGray, for: .normal)
+            leadButton.setTitleColor(UIColor.lightGray, for: .normal)
+            clientButton.setTitleColor(UIColor.lightGray, for: .normal)
+            dealerButton.setTitleColor(UIColor.black, for: .normal)
+            
             allButton.border_color = UIColor.clear
             leadButton.border_color = UIColor.clear
             clientButton.border_color = UIColor.clear
@@ -109,10 +131,28 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Filter", for: indexPath) as! Contact_Filter_TableViewCell
+        cell.alertView.isHidden = true
         
         cell.userName.text = searchResult[indexPath.row].contactName
         cell.businessName.text = searchResult[indexPath.row].businessName
 
+        
+        print(searchResult[indexPath.row])
+        
+        if (searchResult[indexPath.row].pendingDocuments) != nil{
+            
+            cell.alertView.isHidden = false
+            print(searchResult[indexPath.row].pendingDocuments)
+            cell.quantity.text = String(searchResult[indexPath.row].pendingDocuments!)
+            
+        }
+        else{
+            cell.alertView.isHidden = true
+        }
+     
+
+
+        
         
         return cell
     }
@@ -127,8 +167,12 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     // ****************** SEARCH ACTION FUNCTION ***************************
 
     @IBAction func searchAction(_ sender: Any) {
-        
-        // STATUS SEGMENT
+        if searchTF.text?.isEmpty == true {
+            self.alertMessage(Title: "Text Field Empty", Message: "Please type search keyword")
+
+        }
+        else
+       { // STATUS SEGMENT
         var status = ""
         if statusSegment.selectedSegmentIndex == 0{
             status = "closed"
@@ -161,6 +205,9 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             
             if status == true{
             self.searchResult = result!
+                
+                print(self.searchResult.first)
+                
                 self.resultQuantityLabel.text = "\(self.searchResult.count) Result Found:"
             
             self.filterTable.reloadData()
@@ -173,7 +220,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-        }
+        }}
         
     }
     
@@ -208,6 +255,16 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     }
     
     
+    // ************* Alert ViewController ******************
+    
+    func alertMessage(Title : String, Message : String ){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        let dismissButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        
+        alertVC.addAction(dismissButton)
+        self.present(alertVC, animated: true, completion: nil)
+    }
    
 
  

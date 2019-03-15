@@ -1521,7 +1521,7 @@ We hope you have a great and productive day!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-vi-iHL" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="20.5" y="129.5" width="285" height="33.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Keyword" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
                                         <rect key="frame" x="11" y="8.5" width="219.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1533,6 +1533,9 @@ We hope you have a great and productive day!</string>
                                             <constraint firstAttribute="width" secondItem="mwM-Qa-LEc" secondAttribute="height" multiplier="8:11" id="Goo-Wt-VY6"/>
                                         </constraints>
                                         <state key="normal" image="search"/>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="aMx-Dy-qy2" eventType="touchUpInside" id="q3h-GV-7cn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1716,6 +1719,7 @@ We hope you have a great and productive day!</string>
                         <outlet property="clientButton" destination="ehE-Mh-BbO" id="ZI5-Z1-Wsf"/>
                         <outlet property="dealerButton" destination="v4I-2d-am7" id="ccG-HL-fpi"/>
                         <outlet property="leadButton" destination="CNw-Re-5nv" id="pHB-JL-Pfo"/>
+                        <outlet property="searchTF" destination="M9j-aa-6S7" id="Kdf-jw-hiu"/>
                         <segue destination="iug-9T-oHv" kind="show" identifier="Contact_Segue" id="Xcf-o5-ssI"/>
                     </connections>
                 </viewController>
@@ -1734,7 +1738,7 @@ We hope you have a great and productive day!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HjB-om-1I4" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="20.5" y="129.5" width="285" height="33.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-X4-RgH">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Key" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-X4-RgH">
                                         <rect key="frame" x="11" y="8.5" width="219.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
@@ -1746,6 +1750,9 @@ We hope you have a great and productive day!</string>
                                             <constraint firstAttribute="width" secondItem="EwS-mu-7Qd" secondAttribute="height" multiplier="8:11" id="j4j-af-ENg"/>
                                         </constraints>
                                         <state key="normal" image="search"/>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="op7-B0-pJn" eventType="touchUpInside" id="PEI-RM-LHq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2022,6 +2029,7 @@ We hope you have a great and productive day!</string>
                         <outlet property="contract_Table" destination="wrp-00-Uzk" id="DaA-QK-0ka"/>
                         <outlet property="deadButton" destination="UDT-J5-a4A" id="MXt-68-jLl"/>
                         <outlet property="openButton" destination="eOa-ZW-9II" id="shI-s6-lIR"/>
+                        <outlet property="searchTF" destination="mjC-X4-RgH" id="gWi-XK-TJ8"/>
                         <segue destination="ubT-Ss-yZh" kind="show" identifier="Contract" id="HeC-KS-Br4"/>
                         <segue destination="TMx-z7-faA" kind="show" identifier="contract_detail_segue" id="3CK-1W-xC2"/>
                     </connections>
@@ -2084,11 +2092,11 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="4612" y="185.75712143928038"/>
         </scene>
-        <!--Contact-->
+        <!--Contacts-->
         <scene sceneID="0Gq-cK-xWd">
             <objects>
                 <navigationController storyboardIdentifier="Contact_Nav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="D6c-Yt-nCK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contact" image="contact_tab" id="eb5-qM-VRi"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="contact_tab" id="eb5-qM-VRi"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FO6-7z-qR1">
@@ -2336,7 +2344,10 @@ We hope you have a great and productive day!</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="alertView" destination="JhP-1j-DTh" id="ydy-ED-cSD"/>
                                             <outlet property="businessName" destination="mml-bO-Kgs" id="JZB-cR-Tk3"/>
+                                            <outlet property="pendingButton" destination="dvm-tP-uAN" id="jFk-FZ-df0"/>
+                                            <outlet property="quantity" destination="1iX-Yp-xmd" id="Aix-To-zzH"/>
                                             <outlet property="userName" destination="nzd-4j-MJa" id="dlh-64-kez"/>
                                         </connections>
                                     </tableViewCell>
@@ -2354,7 +2365,7 @@ We hope you have a great and productive day!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5L-oK-vka" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="28" y="246.5" width="319" height="33.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-HL-7ff">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Keyword" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kjS-HL-7ff">
                                         <rect key="frame" x="12" y="8.5" width="245.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2714,7 +2725,7 @@ I bet you’re still using Bootstrap too…</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzn-lj-sJJ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="19" y="381.5" width="337.5" height="33"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-qp-pi4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Keyword" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QHG-qp-pi4">
                                         <rect key="frame" x="12.5" y="8" width="260" height="17"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
@@ -3180,6 +3191,6 @@ I bet you’re still using Bootstrap too…</string>
         <image name="visit_tab" width="19.5" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3CK-1W-xC2"/>
+        <segue reference="fG6-yC-063"/>
     </inferredMetricsTieBreakers>
 </document>

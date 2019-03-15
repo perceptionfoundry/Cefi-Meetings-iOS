@@ -59,34 +59,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         visitTable.allowsMultipleSelection = true
         
-//        self.getMeeting()
-        
-//        let start_Timestamp = currentDate.timeIntervalSince1970
-//
-//        // 00:00 till 23:59
-//        let end_Timestamp = start_Timestamp + 86340
-//
-//
-//        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(start_Timestamp))&userId=\(appGlobalVariable.userID)&enddate=\(String(end_Timestamp))"
-//
-//        let paramKey : [String : Any] = ["userId": appGlobalVariable.userID,
-//                                         "startdate": String(start_Timestamp),
-//                                         "enddate": String(end_Timestamp)
-//        ]
-//
-//        viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
-//
-//            print(Result?.count)
-//            if status == true{
-//            self.MeetingContent = Result!
-//
-//
-//
-//
-//                self.visitTable.reloadData()
-//
-//            }
-//        }
+
 
         let calendarTap = UITapGestureRecognizer(target: self, action: #selector(calendarView))
         
@@ -97,6 +70,32 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    func getStartAndEndDate()->(startDate:Double,endDate:Double){
+        let currentTime = Date()
+        let currentDateFormatter: DateFormatter = DateFormatter()
+        currentDateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startDateOfTodayFormatter: DateFormatter = DateFormatter()
+        startDateOfTodayFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startDate = startDateOfTodayFormatter.date(from: "2019-Mar-15")
+        
+        var secondsFromGMT: Double { return Double(TimeZone.current.secondsFromGMT()) }
+        
+        let endtimestamp:Double = (startDate?.timeIntervalSince1970)! + 86499
+        
+        let endTime = Date(timeIntervalSince1970: endtimestamp)
+        
+        let startTimeStampForServer = (startDate?.timeIntervalSince1970)! + secondsFromGMT
+        
+        let endTimestampForServer = endTime.timeIntervalSince1970 + secondsFromGMT
+        
+        return(startTimeStampForServer,endTimestampForServer)
+    }
+    
+    
+    
+    
     
     
     
@@ -105,12 +104,13 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         MeetingContent.removeAll()
         
-        let currentDate = Date()
+        let timeValue = getStartAndEndDate()
+//        let currentDate = Date()
+//
+        let start_Timestamp = timeValue.startDate
 
-        let start_Timestamp = currentDate.timeIntervalSince1970
-        
         // 00:00 till 23:59
-        let end_Timestamp = start_Timestamp + 86340
+        let end_Timestamp = timeValue.endDate
         
         
         let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(Int(floor(start_Timestamp * 1000))))&userId=\(appGlobalVariable.userID)&enddate=\(String(Int(floor(end_Timestamp * 1000))))"
@@ -462,9 +462,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "Meeting_Detail"{
         
         let dest = segue.destination as! VisitDetailVC
         dest.meetingDetail = self.selectedContact!
+        }
     }
     
     

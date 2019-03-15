@@ -18,6 +18,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     
     
     
+    // ******************** VARIABLE *************************
+    var appGlobalVariable = UIApplication.shared.delegate  as! AppDelegate
+    var pendingContent = [Pending]()
+    var viewModel = PendingDocumentViewModel()
     
     // ****************** VIEWDIDLOAD ***************************
 
@@ -29,7 +33,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         
         pending_Table.reloadData()
         
-
+    self.getPending()
     }
     
     
@@ -44,20 +48,63 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     
     
     
+    func getPending(){
+        
+        
+        pendingContent.removeAll()
+        
+       
+        
+        
+        let apiLink  = appGlobalVariable.apiBaseURL+"contracts/getpendingdocs?userId=\(appGlobalVariable.userID)"
+        
+        
+        
+        
+        
+        let paramKey : [String : String] = ["userId": appGlobalVariable.userID,
+                                         
+        ]
+        
+        print(paramKey)
+        
+        viewModel.fetchPendingDocument(API: apiLink, TextFields: paramKey) { (status, err, Result) in
+            
+            
+            
+            print(Result.count)
+            
+            if status == true{
+                self.pendingContent = Result
+                
+                self.pendingQuantity.text = "\(self.pendingContent.count) pending documents"
+                
+                
+                self.pending_Table.reloadData()
+                
+            }
+        }
+        
+    }
+    
     
     
     
     // ****************** TABLEVIEW DELEGATE PROTOCOL FUNCTION ***************************
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-        
+        return pendingContent.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Pending", for: indexPath) as! Pending_TableViewCell
+        
+        cell.closedLabel.text = "Closed \((pendingContent[indexPath.row].contractStatusUpdated)!) days ago"
+        cell.contractLabel.text = pendingContent[indexPath.row].contractNumber
+        cell.nameLabel.text = pendingContent[indexPath.row].contactName
+        cell.pendingCount.text = String(pendingContent[indexPath.row].allPendingDocumentCounts!)
         
         return cell
     }

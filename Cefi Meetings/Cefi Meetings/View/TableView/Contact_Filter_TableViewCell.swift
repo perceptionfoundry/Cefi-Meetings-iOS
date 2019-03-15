@@ -13,5 +13,9 @@ class Contact_Filter_TableViewCell: UITableViewCell {
   
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var businessName: UILabel!
+    @IBOutlet weak var pendingButton: UIButton!
+    @IBOutlet weak var alertView: Custom_View!
+    @IBOutlet weak var quantity: UILabel!
+
     
 }

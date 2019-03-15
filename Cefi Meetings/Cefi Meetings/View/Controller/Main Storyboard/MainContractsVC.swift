@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     // ****************** OUTLET ***************************
 
@@ -19,6 +19,9 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var closedButton: Custom_Button!
     @IBOutlet weak var deadButton: Custom_Button!
     
+    @IBOutlet weak var searchTF: UITextField!
+
+    
     
     // ****************** VARIABLE ***************************
 
@@ -26,6 +29,9 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     let viewModel = MainContractListViewModel()
     var userContract = [Contract]()
     var allContract = [Contract]()
+    
+    var lastData = [Contract]()
+
     
     
     // ****************** VIEWDIDLOAD ***************************
@@ -36,7 +42,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         contract_Table.delegate = self
         contract_Table.dataSource = self
         
-        
+        searchTF.delegate = self
 
     
     }
@@ -48,6 +54,24 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.tabBarController?.tabBar.isHidden = false
         self.fetchValue()
         
+    }
+    
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        if searchTF.text?.isEmpty == false {
+            self.userContract = lastData
+        }
+        searchTF.text = ""
+        
+        
+        contract_Table.reloadData()
+        
+        return true
+    }
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
     }
     
     func fetchValue(){
@@ -264,6 +288,51 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         dest.userContract = sender as! Contract
         }
     }
+    
+    
+    
+    @IBAction func searchButtonAction(_ sender: Any) {
+        
+        searchTF.endEditing(true)
+        
+        if searchTF.text?.isEmpty == true{
+            
+            
+            self.alertMessage(Title: "Text Field Empty", Message: "Please type search keyword")
+        }
+            
+        else{
+            
+            self.lastData = self.allContract
+            let currentTableData = self.userContract
+            print(currentTableData)
+            print(searchTF.text!)
+            
+            let searchKeyword = searchTF.text!.lowercased()
+            
+            let result = currentTableData.filter( {($0.contactName?.lowercased().contains(searchKeyword))!}).map({ return $0 })
+            
+            print(result)
+            
+            self.userContract = result
+            
+         
+            contract_Table.reloadData()
+        }
+    }
+    
+    
+    // ***********  Alert Viewcontroller  ************
+    
+    func alertMessage(Title : String, Message : String ){
+        
+        let alertVC = UIAlertController(title: Title, message: Message, preferredStyle: .alert)
+        let dismissButton = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        
+        alertVC.addAction(dismissButton)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     
     // ****************** ADD CONTRACT BUTTON ACTION ***************************
 
