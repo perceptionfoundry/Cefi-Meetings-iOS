@@ -1,7 +1,7 @@
 //
 //  Contract.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on February 27, 2019
+//  Created on March 18, 2019
 
 import Foundation
 
@@ -18,6 +18,7 @@ struct Contract : Codable {
         let contactName : String?
         let contractNumber : String?
         let contractStatus : String?
+        let contractStatusUpdated : String?
         let equipmentCost : Int?
         let equipmentDetails : [String]?
         let equipmentImages : [String]?
@@ -34,7 +35,7 @@ struct Contract : Codable {
         let isSignorAvailable : Bool?
         let isTaxReturnsAvailable : Bool?
         let missingText : String?
-        let projectedPurchaseDate : String?
+        let projectedPurchaseDate : Int?
         let rating : String?
         let signorAndSecretaryId : String?
         let taxReturnImages : [String]?
@@ -52,6 +53,7 @@ struct Contract : Codable {
                 case contactName = "contactName"
                 case contractNumber = "contractNumber"
                 case contractStatus = "contractStatus"
+                case contractStatusUpdated = "contractStatusUpdated"
                 case equipmentCost = "equipmentCost"
                 case equipmentDetails = "equipmentDetails"
                 case equipmentImages = "equipmentImages"
@@ -88,6 +90,7 @@ struct Contract : Codable {
                 contactName = try values.decodeIfPresent(String.self, forKey: .contactName)
                 contractNumber = try values.decodeIfPresent(String.self, forKey: .contractNumber)
                 contractStatus = try values.decodeIfPresent(String.self, forKey: .contractStatus)
+                contractStatusUpdated = try values.decodeIfPresent(String.self, forKey: .contractStatusUpdated)
                 equipmentCost = try values.decodeIfPresent(Int.self, forKey: .equipmentCost)
                 equipmentDetails = try values.decodeIfPresent([String].self, forKey: .equipmentDetails)
                 equipmentImages = try values.decodeIfPresent([String].self, forKey: .equipmentImages)
@@ -104,7 +107,7 @@ struct Contract : Codable {
                 isSignorAvailable = try values.decodeIfPresent(Bool.self, forKey: .isSignorAvailable)
                 isTaxReturnsAvailable = try values.decodeIfPresent(Bool.self, forKey: .isTaxReturnsAvailable)
                 missingText = try values.decodeIfPresent(String.self, forKey: .missingText)
-                projectedPurchaseDate = try values.decodeIfPresent(String.self, forKey: .projectedPurchaseDate)
+                projectedPurchaseDate = try values.decodeIfPresent(Int.self, forKey: .projectedPurchaseDate)
                 rating = try values.decodeIfPresent(String.self, forKey: .rating)
                 signorAndSecretaryId = try values.decodeIfPresent(String.self, forKey: .signorAndSecretaryId)
                 taxReturnImages = try values.decodeIfPresent([String].self, forKey: .taxReturnImages)

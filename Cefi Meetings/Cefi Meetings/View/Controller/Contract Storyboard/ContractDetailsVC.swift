@@ -168,11 +168,27 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
 
 
+        
         ratingStar.value = CGFloat(truncating: ratingValue)
         equipmentTF.text = userContract!.equipmentDetails?.joined(separator: ",")
         amountTF.text = String(userContract!.equipmentCost!)
-//        purchaseDateTF.text = String.getTime(timestamp: Date(timeIntervalSince1970: (userContract!.projectedPurchaseDate! as NSString).doubleValue)))
-        purchaseDateTF.text = userContract!.projectedPurchaseDate
+        
+//
+        
+        let dateIniOSFormat:Double = Double(userContract!.projectedPurchaseDate!) / 1000.0
+        let dateInString = "\(dateIniOSFormat).000"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        print(dateInString)
+        
+        
+        
+//        let dateFloat = Date(timeIntervalSince1970: (dateInString as NSString).doubleValue)
+        let dateFloat = Date(timeIntervalSince1970: dateIniOSFormat)
+        print(dateFloat)
+        let dateValue = formatter.string(from: dateFloat)
+        print(dateValue)
+        purchaseDateTF.text = dateValue
         taxSwitch.isOn = userContract!.isTaxReturnsAvailable!
         bankSwitch.isOn = userContract!.isBankStatementAvailable!
         equipmentSwitch.isOn = userContract!.isEquipmentImagesAvailable!
@@ -185,10 +201,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         missingText.text = userContract!.missingText
         
         
-        let p_date = (userContract!.projectedPurchaseDate! as NSString).doubleValue
+//        let p_date = (userContract!.projectedPurchaseDate! as NSString).doubleValue
         
 
-        let convertDate = NSDate(timeIntervalSince1970: p_date)
+//        let convertDate = NSDate(timeIntervalSince1970: p_date)
         
 //        print(convertDate.description)
         
@@ -223,7 +239,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         amountTF.delegate = self
         contactTF.delegate = self
-        
+        purchaseDateTF.delegate = self
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
         
         self.contractTypeTF.addGestureRecognizer(typeButton)
@@ -290,19 +306,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     // ***************** TEXTFIELD BEGIN EDITING  **********************
 
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        self.editStatus = true
-        saveButton.isHidden = false
-        
-        if textField == purchaseDateTF{
-            
-            textField.inputView = nil
-            
-            performSegue(withIdentifier: "DATE", sender: nil)
-        }
-        
-        return true
-    }
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        self.editStatus = true
+//        saveButton.isHidden = false
+//
+//
+//
+//        return true
+//    }
     
     
     
@@ -788,7 +799,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
 
             let inputDetail : [String : Any] = ["v": 0,
-                                                "id": "",
+                                                "id": userContract!.id!,
                                                 "addedDate": "",
                                                 "allPagesSignedImage": pageSignedImageURl ?? "",
                                                 "allPendingDocumentCounts": 0,
@@ -813,7 +824,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "isSignorAvailable": signorSwitch.isOn,
                                                 "isTaxReturnsAvailable": taxSwitch.isOn,
                                                 "missingText": missingText.text!,
-                                                "projectedPurchaseDate": String(date.timeIntervalSince1970),
+                                                "projectedPurchaseDate": String((floor(date.timeIntervalSince1970) * 1000)),
                                                 "rating": String(Int(ratingStar.value)),
                                                 "signorAndSecretaryId": signorImageURl ?? "",
                                                 "taxReturnImages": taxImageURl,
@@ -821,11 +832,11 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             ]
 
 
-//            print("-------------------------")
-//            print(inputDetail)
+            print("-------------------------")
+            print(inputDetail)
 //            print(apiLink)
 //            print(selectedContactID)
-//            print("-------------------------")
+            print("-------------------------")
 
 
 

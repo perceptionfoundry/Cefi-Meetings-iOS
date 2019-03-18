@@ -34,7 +34,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var viewModel = MainMeetingViewModel()
     var MeetingContent = [Meeting]()
     var selectedContact : Meeting?
-    
+    var dateString = ""
     
     
     
@@ -56,7 +56,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         formatter.dateStyle = .long
         
-        let today = formatter.string(from: currentDate)
+         let today = formatter.string(from: currentDate)
         
         NaviBarDate.text = today
         
@@ -82,7 +82,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let startDateOfTodayFormatter: DateFormatter = DateFormatter()
         startDateOfTodayFormatter.dateFormat = "yyyy-MM-dd"
         
-        let startDate = startDateOfTodayFormatter.date(from: "2019-Mar-15")
+        
+       self.dateString = startDateOfTodayFormatter.string(from: currentTime)
+        
+        let startDate = startDateOfTodayFormatter.date(from: self.dateString)
+
         
         var secondsFromGMT: Double { return Double(TimeZone.current.secondsFromGMT()) }
         
@@ -119,7 +123,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let end_Timestamp = timeValue.endDate
         
         
-        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(String(Int(floor(start_Timestamp * 1000))))&userId=\(appGlobalVariable.userID)&enddate=\(String(Int(floor(end_Timestamp * 1000))))"
+        let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(self.dateString)&userId=\(appGlobalVariable.userID)&enddate=\(String(Int(floor(end_Timestamp * 1000))))"
         
         
         
@@ -238,11 +242,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
 //            cell.timeLabel.text = MeetingContent[indexPath.row].time
             
-            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
-            let timeSplit  = timeStampSplit[1].split(separator: ":")
-            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//            let timeStampSplit = MeetingContent[indexPath.row].timeInString!.split(separator: "T")
+//            let timeSplit  = timeStampSplit[1].split(separator: ":")
+//            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
             
-            cell.timeLabel.text = timeString
+            
+            cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
             
             
             

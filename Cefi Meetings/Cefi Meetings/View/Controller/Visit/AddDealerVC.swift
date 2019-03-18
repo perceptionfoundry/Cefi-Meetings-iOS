@@ -19,7 +19,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     let viewModel = AddDealerPersonViewModel()
     
-    var dealerDele : DealerDelegate!
+//    var dealerDele : DealerDelegate!
     var ContactDetail : Meeting?
     
     override func viewDidLoad() {
@@ -79,7 +79,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
             if status == true{
                 
                 
-                self.dealerDele?.addDealer(DealerName: self.dealerTF.text!)
+//                self.dealerDele?.addDealer(DealerName: self.dealerTF.text!)
                 
                 self.dismiss(animated: true, completion: nil)
             }

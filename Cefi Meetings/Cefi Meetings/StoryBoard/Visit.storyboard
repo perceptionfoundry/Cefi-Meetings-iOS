@@ -1370,16 +1370,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSz-vv-q2J">
-                                                <rect key="frame" x="89" y="96.5" width="47" height="47"/>
+                                                <rect key="frame" x="126.5" y="96.5" width="47" height="47"/>
                                                 <state key="normal" image="phone_Detail"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-oA-LEX">
-                                                <rect key="frame" x="164" y="96.5" width="47" height="47"/>
+                                                <rect key="frame" x="201.5" y="96.5" width="47" height="47"/>
                                                 <state key="normal" image="email_detail"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhQ-Cz-HY5">
-                                                <rect key="frame" x="239" y="96.5" width="47" height="47"/>
-                                                <state key="normal" image="folder_detail"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1443,9 +1439,8 @@
                                             <constraint firstItem="xo0-J6-4XZ" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="1.165" id="hiX-1K-sbI"/>
                                             <constraint firstItem="4dg-nY-Ksa" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="0.98" id="hwa-xQ-Bbc"/>
                                             <constraint firstItem="rAS-XN-RBY" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.525" id="iWg-pW-BTv"/>
-                                            <constraint firstItem="rWH-oA-LEX" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="ipg-tZ-E3y"/>
+                                            <constraint firstItem="rWH-oA-LEX" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="1.2" id="ipg-tZ-E3y"/>
                                             <constraint firstItem="4dg-nY-Ksa" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.018" id="jMg-A3-LQh"/>
-                                            <constraint firstItem="jhQ-Cz-HY5" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="1.4" id="jni-3f-Ml8"/>
                                             <constraint firstItem="dSh-tM-ST1" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.25" id="kfn-Ur-ZZQ"/>
                                             <constraint firstItem="Z9h-PK-XbN" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.001" id="mpR-XV-wyc"/>
                                             <constraint firstItem="5cN-zg-OxX" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.025" id="mtG-nQ-uwh"/>
@@ -1457,12 +1452,11 @@
                                             <constraint firstItem="Dra-D3-zZ1" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.4" id="rDu-Y8-RnN"/>
                                             <constraint firstItem="9cb-ll-zCf" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="1.075" id="sez-zN-fLr"/>
                                             <constraint firstItem="9cb-ll-zCf" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.9" id="tLr-Qs-w44"/>
-                                            <constraint firstItem="fSz-vv-q2J" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.6" id="tY8-u7-5U4"/>
+                                            <constraint firstItem="fSz-vv-q2J" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.8" id="tY8-u7-5U4"/>
                                             <constraint firstItem="aOv-uu-OQH" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.225" id="trx-aE-32S"/>
                                             <constraint firstItem="rWH-oA-LEX" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="0.3" id="uHI-rQ-KGz"/>
                                             <constraint firstItem="Dra-D3-zZ1" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="1.475" id="uTF-8r-Qiy"/>
                                             <constraint firstItem="M8D-Z1-yQe" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="0.9" id="udv-Ym-JEq"/>
-                                            <constraint firstItem="jhQ-Cz-HY5" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="0.3" id="wVW-Ii-EqU"/>
                                             <constraint firstItem="Qw4-Z1-FVD" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.227" id="wfF-nj-ZR1"/>
                                             <constraint firstItem="M8D-Z1-yQe" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.001" id="wrU-ri-H1k"/>
                                             <constraint firstItem="e7p-cn-AH0" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.2" id="yhi-Y4-0UK"/>
@@ -3887,7 +3881,6 @@ Please do so as soon as possible. Thanks.  </string>
         <image name="edit_button" width="46" height="19"/>
         <image name="email_detail" width="47" height="47"/>
         <image name="email_newContact" width="12" height="10"/>
-        <image name="folder_detail" width="47" height="47"/>
         <image name="followup" width="19" height="21"/>
         <image name="industry_newContact" width="11.5" height="12"/>
         <image name="location" width="8.5" height="12"/>

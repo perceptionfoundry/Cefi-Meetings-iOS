@@ -12,16 +12,15 @@ import TTSegmentedControl
 
 
 protocol DealerDelegate{
-    
-    func addDealer(DealerName:String)
-    
-    
+
+
+
     func selectedDealer(DealerName : String)
 }
 
 
 
-class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,DealerDelegate {
+class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, DealerDelegate{
     func addDealer(DealerName: String) {
     
         
@@ -59,13 +58,13 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
 
 //        print(meetingDetail)
 
-        
+        dealerTable.isHidden = true
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-        let timeSplit  = timeStampSplit[1].split(separator: ":")
-        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+//        let timeSplit  = timeStampSplit[1].split(separator: ":")
+//        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
 
 //        print(dateString)
 //        print(timeStampSplit)
@@ -74,7 +73,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         
         dealerName.text = meetingDetail!.contactName!
         dealerBusiness.text = meetingDetail!.businessName
-        meetingTime.text = timeString
+//        meetingTime.text = timeString
+        meetingTime.text = meetingDetail!.timeInString
         meetingDate.text = String(dateString[0])
         
         saleStatus.allowChangeThumbWidth = false
@@ -153,7 +153,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         
         let dest = segue.destination  as! DealerListVC
         
-        dest.delegateDealer = self
+//        dest.delegateDealer = self
         dest.ContactDetail = meetingDetail!
     }
     

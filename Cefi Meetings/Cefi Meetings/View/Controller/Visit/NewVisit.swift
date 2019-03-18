@@ -211,7 +211,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @objc func donedatePicker(){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-MM-dd"
         date = datePicker.date
         
        
@@ -260,7 +260,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     @objc func doneTimePicker(){
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "hh:mm a"
         
         date = datePicker.date
         
@@ -273,8 +273,11 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let separateTimeElement =  timeTF.text!.split(separator: ":")
 //        print(separateTimeElement)
         
+        let timeWithoutPM = separateTimeElement[1].split(separator: " ")
+        print(timeWithoutPM)
+        
         let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
-        let min_Stamp = (Double(separateTimeElement[1])! * 60)
+        let min_Stamp = (Double(timeWithoutPM[0])! * 60)
         
         let time_stamp = hour_Stamp + min_Stamp
         
@@ -401,19 +404,32 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             
         let dictValue : [String : Any] = [
             
-            "userId" : appGlobalVariable.userID,
-            "contactId" : selectedContactID,
-            "contractId" : contractTF.text!,
-            "time" : String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
-            "reminder" : String(reminderADD),
-            "lat" : String(chosenPlace!.lat),
-            "long" : String(chosenPlace!.long),
-            "address" : chosenPlace!.name,
-            "purpose" : purposeTF.text!
+           
+            "long": String(chosenPlace!.long),
+            "userId": appGlobalVariable.userID,
+            "contactId": selectedContactID,
+            "contractId": contractTF.text!,
+            "time": String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
+            "reminder": String(reminderADD),
+            "lat": String(chosenPlace!.lat),
+            "address": chosenPlace!.name,
+            "purpose": purposeTF.text!,
+            "dateInString": dateTF.text!,
+            "timeInString": timeTF.text!,
+            
+
+            
+//            "contactId" : ,
+//            "contractId" : ,
+//            "time" : ,
+//            "reminder" : ,
+//            "lat" : ,
+//            "address" : ,
+//            "purpose" :
             
         ]
         
-//        print(dictValue)
+        print(dictValue)
             
             
             viewModel.newMeetingCreate(API: apiLink, Textfields: dictValue) { (status, err) in

@@ -12,40 +12,20 @@ import UIKit
 
 
 
-class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, DealerDelegate {
-    func addDealer(DealerName: String) {
-        
-        let getValue = Dealer(dealerName: DealerName)
-        dealerList.append(getValue)
-        
-        dealerListTable.reloadData()
-    }
-    
-    
-    
-    
-    func selectedDealer(DealerName: String) {
-    
-    }
-    
+class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
    
     
-    
- 
-    
 
-    
     @IBOutlet weak var DealerTitle: UILabel!
     
     @IBOutlet weak var dealerListTable: UITableView!
     
     
     
-    
-    struct Dealer {
-        var dealerName : String
-       
-    }
+//    struct Dealer {
+//        var dealerName : String
+//
+//    }
 
     
     var dealerList = [Dealer]()
@@ -90,8 +70,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         cell.selectionStyle = .none
         
         
-        cell.dealerName.text = dealerList[indexPath.row].dealerName
-        
+        cell.dealerName.text = dealerList[indexPath.row].personName
         
         
         return cell
@@ -100,7 +79,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        delegateDealer.selectedDealer(DealerName: dealerList[indexPath.row].dealerName)
+        delegateDealer.selectedDealer(DealerName:dealerList[indexPath.row].personName!)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -123,10 +102,21 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         
         ]
         
-//    print(apiLink)
-//        print(paramDict)
+    print(apiLink)
+        print(paramDict)
         
         viewModel.fetchDealerPersont(API: apiLink, TextFields: paramDict) { (status, error, result) in
+            
+            
+            
+            print(result)
+            
+            self.dealerList = result
+            self.dealerListTable.reloadData()
+            
+            
+ 
+            
             
         }
     }
@@ -143,7 +133,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         
         let dest = segue.destination  as! AddDealerVC
         
-        dest.dealerDele = self
+//        dest.dealerDele = self
         dest.ContactDetail = self.ContactDetail!
     }
     

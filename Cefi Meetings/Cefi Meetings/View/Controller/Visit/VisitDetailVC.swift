@@ -59,16 +59,16 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-        let timeSplit  = timeStampSplit[1].split(separator: ":")
-        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
-        
-        let reminderStampSplit = meetingDetail!.reminder?.split(separator: "T")
-        
-        let formatter = DateFormatter()
-        
-        var reminderTimestamp = formatter.date(from: String(timeStampSplit[1]))
-        var meetingTimeStamp = formatter.date(from: String(dateString[1]))
+//        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
+//        let timeSplit  = timeStampSplit[1].split(separator: ":")
+//        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//        
+//        let reminderStampSplit = meetingDetail!.reminder?.split(separator: "T")
+//        
+//        let formatter = DateFormatter()
+//        
+//        var reminderTimestamp = formatter.date(from: String(timeStampSplit[1]))
+//        var meetingTimeStamp = formatter.date(from: String(dateString[1]))
         
         
 
@@ -82,7 +82,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         contactTF.text = meetingDetail!.contactName!
         contractTF.text = meetingDetail!.contractId
         dateTF.text = String(dateString[0])
-        timeTF.text = timeString
+//        timeTF.text = timeString
+        timeTF.text = meetingDetail!.timeInString
         reminderTF.text = meetingDetail!.reminder!
         
         

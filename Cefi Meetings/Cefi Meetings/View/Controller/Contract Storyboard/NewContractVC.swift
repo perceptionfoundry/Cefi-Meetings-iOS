@@ -748,6 +748,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     func createDatabaseRecord(){
         
 
+        print(selectedContactID)
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
         //        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
@@ -782,7 +783,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "isSignorAvailable": signorSwitch.isOn,
                                                 "isTaxReturnsAvailable": taxSwitch.isOn,
                                                 "missingText": missingText.text!,
-                                                "projectedPurchaseDate": String(date.timeIntervalSince1970),
+                                                "projectedPurchaseDate": String((floor(date.timeIntervalSince1970) * 1000)),
                                                 "rating": String(Int(ratingStar.value)),
                                                 "signorAndSecretaryId": signorImageURl ?? "",
                                                 "taxReturnImages": taxImageURl,
@@ -790,11 +791,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             ]
             
             
-//            print("-------------------------")
-//            print(inputDetail)
+            print("-------------------------")
+            print(inputDetail)
 //            print(apiLink)
 //            print(selectedContactID)
-//            print("-------------------------")
+            print("-------------------------")
             
             
             
@@ -927,7 +928,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
         
         if textField == amountTF{
-            amountTF.text = "$ "
+//            amountTF.text = "$ "
         }
         
        

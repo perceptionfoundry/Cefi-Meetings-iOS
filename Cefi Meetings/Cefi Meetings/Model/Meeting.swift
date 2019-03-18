@@ -1,7 +1,7 @@
 //
 //  Meeting.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 7, 2019
+//  Created on March 18, 2019
 
 import Foundation
 
@@ -16,6 +16,9 @@ struct Meeting : Codable {
         let contactName : String?
         let contactType : String?
         let contractId : String?
+        let contractNumber : String?
+        let dateInString : String?
+        let email : String?
         let lat : String?
         let longField : String?
         let phoneNumber : Int?
@@ -23,6 +26,7 @@ struct Meeting : Codable {
         let rating : String?
         let reminder : String?
         let time : String?
+        let timeInString : String?
         let userId : String?
         let visitStatus : String?
 
@@ -36,6 +40,9 @@ struct Meeting : Codable {
                 case contactName = "contactName"
                 case contactType = "contactType"
                 case contractId = "contractId"
+                case contractNumber = "contractNumber"
+                case dateInString = "dateInString"
+                case email = "email"
                 case lat = "lat"
                 case longField = "long"
                 case phoneNumber = "phoneNumber"
@@ -43,6 +50,7 @@ struct Meeting : Codable {
                 case rating = "rating"
                 case reminder = "reminder"
                 case time = "time"
+                case timeInString = "timeInString"
                 case userId = "userId"
                 case visitStatus = "visitStatus"
         }
@@ -58,6 +66,9 @@ struct Meeting : Codable {
                 contactName = try values.decodeIfPresent(String.self, forKey: .contactName)
                 contactType = try values.decodeIfPresent(String.self, forKey: .contactType)
                 contractId = try values.decodeIfPresent(String.self, forKey: .contractId)
+                contractNumber = try values.decodeIfPresent(String.self, forKey: .contractNumber)
+                dateInString = try values.decodeIfPresent(String.self, forKey: .dateInString)
+                email = try values.decodeIfPresent(String.self, forKey: .email)
                 lat = try values.decodeIfPresent(String.self, forKey: .lat)
                 longField = try values.decodeIfPresent(String.self, forKey: .longField)
                 phoneNumber = try values.decodeIfPresent(Int.self, forKey: .phoneNumber)
@@ -65,6 +76,7 @@ struct Meeting : Codable {
                 rating = try values.decodeIfPresent(String.self, forKey: .rating)
                 reminder = try values.decodeIfPresent(String.self, forKey: .reminder)
                 time = try values.decodeIfPresent(String.self, forKey: .time)
+                timeInString = try values.decodeIfPresent(String.self, forKey: .timeInString)
                 userId = try values.decodeIfPresent(String.self, forKey: .userId)
                 visitStatus = try values.decodeIfPresent(String.self, forKey: .visitStatus)
         }
