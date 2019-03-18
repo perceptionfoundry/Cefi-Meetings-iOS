@@ -54,12 +54,17 @@ class userSettingVC: UIViewController {
         
         let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
         
-        let paramDict = ["userId" : "5c88f6d05a0c540017213210"]
+        let paramDict = ["userId" : appGlobalVariable.userID]
         
         viewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
             
             
 //            print(result)
+            
+            self.userName.text =  result.name!
+            self.phone.text = String(result.phoneNumber!)
+            self.email.text = result.email!
+            
         }
 
 

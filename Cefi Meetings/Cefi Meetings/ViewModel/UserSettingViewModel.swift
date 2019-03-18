@@ -19,23 +19,23 @@ class UserSettingViewModel{
     
     
     
-    func fetchUserProfile(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : [Contact])->()){
+    func fetchUserProfile(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : Profile)->()){
         
         Alamofire.request(API, method: .get, parameters: TextFields).responseJSON { (response) in
             
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-//            print(mainDict)
+//            print(mainDict["userData"])
             
             if mainDict["success"] as! Int == 1 {
                 
-                let contactList = mainDict["userContact"] as! [Any]
+                let contactList = mainDict["userData"] as? Any
                 
                 
                 var jsonData : Data?
                 
-                var finalDict = [Contact]()
+                var finalDict : Profile?
                 
                 do{
                     jsonData = try JSONSerialization.data(withJSONObject: contactList, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -44,12 +44,12 @@ class UserSettingViewModel{
                 
                 do{
                     
-                    finalDict = try JSONDecoder().decode([Contact].self, from: jsonData!)
+                    finalDict = try JSONDecoder().decode(Profile.self, from: jsonData!)
                     
                     //                print(finalDict.count)
                     
                     
-                    completion(true,"",finalDict)
+                    completion(true,"",finalDict!)
                     
                     
                 }catch{print("JSON Decoding error")}

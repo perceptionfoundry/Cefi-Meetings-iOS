@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
+		F203766D223F683000C006F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F203766C223F683000C006F2 /* Profile.swift */; };
 		F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB27222D6481001D8D60 /* PurposeVC.swift */; };
 		F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */; };
 		F212E4A6223BD58F00D618A8 /* PendingDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */; };
@@ -103,6 +104,7 @@
 		9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cefi_Meetings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
+		F203766C223F683000C006F2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F20ACB27222D6481001D8D60 /* PurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeVC.swift; sourceTree = "<group>"; };
 		F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractVC.swift; sourceTree = "<group>"; };
 		F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocumentViewModel.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		F2AC6C9621F99BF100BE90CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F203766C223F683000C006F2 /* Profile.swift */,
 				F2D8F5BA2236292D00385C6A /* Contact.swift */,
 				F2A6873A2226CBBC008DCB8E /* Contract.swift */,
 				F212E4A7223BDE9900D618A8 /* Pending.swift */,
@@ -694,6 +697,7 @@
 				F278D7B8220C6D5600F1FE99 /* EquipmentTypeVC.swift in Sources */,
 				F224F1022203484B00DD332F /* ReferralNewContractVC.swift in Sources */,
 				F21C46C22238E2DF003B26DD /* GetDealerPersonViewModel.swift in Sources */,
+				F203766D223F683000C006F2 /* Profile.swift in Sources */,
 				F2A6873B2226CBBC008DCB8E /* Contract.swift in Sources */,
 				F224F10622034E9000DD332F /* ReferralNewContactVC.swift in Sources */,
 				F212E4A6223BD58F00D618A8 /* PendingDocumentViewModel.swift in Sources */,
