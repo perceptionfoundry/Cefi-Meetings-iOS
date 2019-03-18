@@ -52,7 +52,7 @@ class FollowUpVC: UIViewController {
         OutcomeSegement.allowChangeThumbWidth = false
         cancelSegment.allowChangeThumbWidth = false
         
-        print(meetingDetail)
+//        print(meetingDetail)
         
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
@@ -75,7 +75,7 @@ class FollowUpVC: UIViewController {
         
 
         OutcomeSegement.didSelectItemWith = { (index, title) -> () in
-            print("Selected item \(index)")
+//            print("Selected item \(index)")
             
             if self.OutcomeSegement.currentIndex == 3{
                 self.OutcomeSegement.thumbColor = UIColor(red: 0.942, green: 0.341, blue: 0.341, alpha: 1)
@@ -99,7 +99,7 @@ class FollowUpVC: UIViewController {
         }
      
         cancelSegment.didSelectItemWith = { (index, title) -> () in
-            print("Selected item \(index)")
+//            print("Selected item \(index)")
             
             if self.cancelSegment.currentIndex == 1{
                 self.buttonsView.isHidden = true
@@ -146,8 +146,8 @@ class FollowUpVC: UIViewController {
        
         
         var outcomeValue = ""
-        var businessValue = ""
-        var equipment =  ""
+//        var businessValue = ""
+//        var equipment =  ""
         
         switch outcomeIndex {
         case 0 :

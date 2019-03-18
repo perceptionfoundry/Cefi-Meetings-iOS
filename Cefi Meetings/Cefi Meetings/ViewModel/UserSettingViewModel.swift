@@ -1,11 +1,10 @@
 //
-//  PendingDocumentViewModel.swift
+//  UserSettingViewModel.swift
 //  Cefi Meetings
 //
-//  Created by Syed ShahRukh Haider on 15/03/2019.
+//  Created by Syed ShahRukh Haider on 18/03/2019.
 //  Copyright © 2019 Syed ShahRukh Haider. All rights reserved.
 //
-
 
 
 
@@ -15,15 +14,12 @@ import Alamofire
 
 
 
-class PendingDocumentViewModel{
+class UserSettingViewModel{
     
     
     
     
-    func fetchPendingDocument(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : [Pending])->()){
-        
-        
-//        print(API)
+    func fetchUserProfile(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : [Contact])->()){
         
         Alamofire.request(API, method: .get, parameters: TextFields).responseJSON { (response) in
             
@@ -34,12 +30,12 @@ class PendingDocumentViewModel{
             
             if mainDict["success"] as! Int == 1 {
                 
-                let contactList = mainDict["contractData"] as! [Any]
+                let contactList = mainDict["userContact"] as! [Any]
                 
                 
                 var jsonData : Data?
                 
-                var finalDict = [Pending]()
+                var finalDict = [Contact]()
                 
                 do{
                     jsonData = try JSONSerialization.data(withJSONObject: contactList, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -48,7 +44,7 @@ class PendingDocumentViewModel{
                 
                 do{
                     
-                    finalDict = try JSONDecoder().decode([Pending].self, from: jsonData!)
+                    finalDict = try JSONDecoder().decode([Contact].self, from: jsonData!)
                     
                     //                print(finalDict.count)
                     

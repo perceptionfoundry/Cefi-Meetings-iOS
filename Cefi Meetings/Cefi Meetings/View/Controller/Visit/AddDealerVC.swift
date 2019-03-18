@@ -72,7 +72,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
         
 
         
-        print(paramDict)
+//        print(paramDict)
         
         viewModel.addPerson(API: apiLink, Param: paramDict) { (status, err) in
             

@@ -14,6 +14,10 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     
+    
+    
+    
+    
     // ******************* OUTLET ***************************
     
     @IBOutlet weak var Contact_Table: UITableView!
@@ -23,6 +27,13 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var leadButton: Custom_Button!
     @IBOutlet weak var clientButton: Custom_Button!
     @IBOutlet weak var dealerButton: Custom_Button!
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -44,52 +55,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var lastData = [Contact]()
     
     
-    // ******************* FUNCTION THAT WILL GENERATION "KEY" ALPHABET AGAINST "VALUE" FROM USER-DICTIONARY ***************************
-
-    func generateWordDic(){
-        
-        
-        
-        
-        
-        for word in userDirectory{
-
-        
-            // EXTRACT KEY FROM USER-DIRECTORY
-            
-            let key = (word.contactName?.first)
-            
-            let upper = String(key!).uppercased()
-
-            wordSection.append(upper)
-            
-            
-            // COLLECTING  DATA INTO MAIN VARIABLE
-            if var wordValues = wordsDic[upper]{
-
-                wordValues.append(word)
-                wordsDic[upper] = wordValues
-
-
-            }
-                
-            else{
-                wordsDic[upper] = [word]
-            }
-        }
-        
-        
-        
-        wordSection = [String](wordsDic.keys)
-        wordSection = wordSection.sorted()
-        
-    }
     
     
-    
-    
-    
-    
+
     
     // ******************* VIEWDIDLOAD ***************************
 
@@ -113,6 +81,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     }
   
+    // ******************  VIEW DID APPEAR ***********************
+
     
     override func viewDidAppear(_ animated: Bool) {
 
@@ -123,12 +93,70 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
     
     }
+    
+    
+    
+    
+    // ******************  VIEW WILL APPEAR ***********************
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    // ******************* FUNCTION THAT WILL GENERATION "KEY" "ALPHABET" AGAINST "VALUE" FROM USER-DICTIONARY ***************************
+    
+    func generateWordDic(){
+        
+        
+        
+        
+        
+        for word in userDirectory{
+            
+            
+            // EXTRACT KEY FROM USER-DIRECTORY
+            
+            let key = (word.contactName?.first)
+            
+            let upper = String(key!).uppercased()
+            
+            wordSection.append(upper)
+            
+            
+            // COLLECTING  DATA INTO MAIN VARIABLE
+            if var wordValues = wordsDic[upper]{
+                
+                wordValues.append(word)
+                wordsDic[upper] = wordValues
+                
+                
+            }
+                
+            else{
+                wordsDic[upper] = [word]
+            }
+        }
+        
+        
+        
+        wordSection = [String](wordsDic.keys)
+        wordSection = wordSection.sorted()
+        
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -193,7 +221,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Lead")
             
-            print(value)
+//            print(value)
             
             self.userDirectory = value
             
@@ -215,7 +243,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Client")
             
-            print(value)
+//            print(value)
             
             self.userDirectory = value
             
@@ -238,7 +266,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Dealer")
             
-            print(value)
+//            print(value)
             
             self.userDirectory = value
             self.wordsDic.removeAll()
@@ -249,7 +277,14 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    // ************* filter ********
+    
+    
+    
+    
+    
+    
+    
+    // ************* FILTERING AS PER CONTACT TYPE ********
     
     func directoryFilter(option : String) -> [Contact]{
         
@@ -287,6 +322,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
   
     
     
+    
+    
+    
+    
+    
     //  ******** FETCHING CONTENT FUNCTION ************************
 
     func fetchingContent(){
@@ -313,7 +353,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 self.userDirectory = tableData
                 self.allUser = tableData
                 
-                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
+//                print("DISPLAY TABLE QUANTITY \(self.userDirectory.count)")
                 
                 
 //
@@ -326,6 +366,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         
     }
+    
+    
+    
+    
+    
+    
     
     
     // ****************** Tableview Delegate protocol functions ***************************
@@ -400,7 +446,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
 
     
-    // ************** See Particular user detail ****************
+    
+    
+    
+    
+    //  See Particular user detail
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -477,7 +527,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     
                     self.selectedUser = wordValue[indexPath.row]
                     
-                    print(selectedUser?.contactName)
+//                    print(selectedUser?.contactName)
                     
                     performSegue(withIdentifier: "Contact_Segue", sender: nil)
 //                   
@@ -502,9 +552,13 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+   
     
     
-    // ***********  Search Operatio  ************
+    
+    
+    
+    // ***********  SEARCH OPERATION  ************
 
     
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -521,13 +575,13 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             self.lastData = self.userDirectory
             let currentTableData = self.userDirectory
-            print(currentTableData)
-            print(searchTF.text!)
+//            print(currentTableData)
+//            print(searchTF.text!)
 
             
             let result = currentTableData.filter( {($0.contactName?.contains(searchTF.text!))!}).map({ return $0 })
 
-            print(result)
+//            print(result)
             
             self.userDirectory = result
             
@@ -538,7 +592,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    // ***********  Alert Viewcontroller  ************
+    
+    
+    
+    
+    // ***********  ALERT VIEWCONTROLLER  ************
 
     func alertMessage(Title : String, Message : String ){
         
@@ -551,7 +609,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
-    // ***********  Create new contact Action  ************
+    
+    
+    
+    
+    // ***********  CREATE NEW CONTACT FUNCTION  ************
     
     @IBAction func newContactAction(_ sender: Any) {
         

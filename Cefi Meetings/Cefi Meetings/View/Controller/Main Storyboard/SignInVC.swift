@@ -24,12 +24,21 @@ class SignInVC: UIViewController {
     
     
     
+    
+    
+    
+    
+    
     // ******************* VARIABLE ***************************
 
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var apiLink = ""
     
     var viewModel = SignInViewModel()
+    
+    
+    
+    
     
     
     
@@ -52,7 +61,7 @@ class SignInVC: UIViewController {
             
             appGlobalVariable.userID = UserDefaults.standard.string(forKey: "UserID")!
             
-            print(appGlobalVariable.userID)
+//            print(appGlobalVariable.userID)
             
             self.authSegue()
 //
@@ -75,6 +84,12 @@ class SignInVC: UIViewController {
         
         
     }
+    
+    
+    
+    
+    
+    
     
 
     // ******************* LOGIN BUTTON ACTION ***************************
@@ -115,7 +130,7 @@ class SignInVC: UIViewController {
                     
                     self.appGlobalVariable.userID = err!
                     
-                    print(self.appGlobalVariable.userID)
+//                    print(self.appGlobalVariable.userID)
                     
                     //
                     UserDefaults.standard.set(true, forKey: "Auth")

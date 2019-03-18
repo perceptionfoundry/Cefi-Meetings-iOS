@@ -37,7 +37,7 @@ class UnderlinedTextField: UITextField {
                 imageView.contentMode=UIView.ContentMode.scaleAspectFit
                 imageView.image = icon?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
                 self.addSubview(imageView)
-                print(imageView.frame)
+//                print(imageView.frame)
             }
             else{
                 let imageView = UIImageView(frame: CGRect(x: 60, y: 0, width: 16, height: 16))

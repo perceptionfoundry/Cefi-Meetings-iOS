@@ -14,15 +14,15 @@ class AddDealerPersonViewModel{
     
     func addPerson(API: String, Param: [String:String], Completion: @escaping (_ status : Bool, _ error : String?)->()){
         
-        print(API)
-        print(Param)
+//        print(API)
+//        print(Param)
         
         
         Alamofire.request(API, method: .post, parameters: Param, encoding: JSONEncoding.default, headers: nil).responseJSON { (resp) in
             
             guard let value = resp.result.value  as? [String:Any] else{return}
             
-            print(value)
+//            print(value)
             
             if value["success"] as! Int == 1{
                 

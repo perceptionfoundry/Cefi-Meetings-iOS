@@ -20,7 +20,7 @@ class ContactContractDetailViewModel{
             let mainDict = response.result.value  as! [String : Any]
             
             
-                        print(mainDict)
+//                        print(mainDict)
             
             if mainDict["success"] as! Int == 1 {
                 
@@ -40,10 +40,10 @@ class ContactContractDetailViewModel{
                     
                     finalDict = try JSONDecoder().decode([Contract].self, from: jsonData!)
                     
-                    print(finalDict.count)
+//                    print(finalDict.count)
                     
                     
-                    completion(true,"",finalDict, mainDict["totalContactsPendingDocument"] as! Int)
+                    completion(true,"",finalDict, mainDict["totalContactsPendingDocument"] as? Int)
                     
                     
                 }catch{print("JSON Decoding error")}

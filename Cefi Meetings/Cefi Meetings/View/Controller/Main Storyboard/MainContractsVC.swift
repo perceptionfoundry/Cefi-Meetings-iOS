@@ -23,6 +23,9 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     
     
+    
+    
+    
     // ****************** VARIABLE ***************************
 
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
@@ -32,6 +35,10 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     var lastData = [Contract]()
 
+    
+    
+    
+    
     
     
     // ****************** VIEWDIDLOAD ***************************
@@ -48,6 +55,15 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
+    
+    
+    
+    
+    
+    // ******************  VIEW WILL APPEAR ***************************
+
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // show tab-bar controller
@@ -57,6 +73,13 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
+    
+    
+    
+    
+    
+    // ****************** TEXTFIELD SHOULD BEGIN EDIT ***************************
+
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
@@ -70,10 +93,25 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         return true
     }
+    
+    
+    
+    
+    
+    // ******************  TEXTFIELD SHOULD CLEAR ***************************
+
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
     }
     
+    
+    
+    
+    
+    
+    
+    // ****************** VIEW MODEL FUNCTION ***************************
+
     func fetchValue(){
         
         
@@ -85,8 +123,8 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let param = ["userId": appGlobalVariable.userID]
         
         
-        print(param)
-        print(apiLink)
+//        print(param)
+//        print(apiLink)
         
         
         // CALL VIEWMODEL FUNCTION
@@ -97,10 +135,10 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.userContract = tableData
                 self.allContract = tableData
                 
-                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
+//                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
                 
                 
-                print(self.userContract[0].equipmentDetails)
+//                print(self.userContract[0].equipmentDetails)
                 
                 
                 
@@ -119,16 +157,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
-    
-    // ****************** VIEWWILLAPPEAR ***************************
 
-
-   
-    
-    
-    
-    
-    
     
     
     
@@ -153,7 +182,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             let value = self.contractFilter(option: "open")
             
-            print(value)
+//            print(value)
             
             self.userContract = value
             
@@ -169,7 +198,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             let value = self.contractFilter(option: "closed")
             
-            print(value)
+//            print(value)
             
             self.userContract = value
             
@@ -184,7 +213,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             let value = self.contractFilter(option: "dead")
             
-            print(value)
+//            print(value)
             
             self.userContract = value
             
@@ -194,7 +223,14 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
-    // ************* filter ********
+    
+    
+    
+    
+    
+    
+    
+    // ************* FILTERING W.R.T CONTRACT STATUS ********
     
     func contractFilter(option : String) -> [Contract]{
         
@@ -230,6 +266,10 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     
+    
+    
+    
+    
     // ****************** TABLEVIEW DELEGATE PROTOCAL FUNCTION ***************************
 
     
@@ -250,7 +290,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.nameValue?.text = userContract[indexPath.row].contactName
         
         
-        print(userContract[indexPath.row].allPendingDocumentCounts)
+//        print(userContract[indexPath.row].allPendingDocumentCounts)
         
         if userContract[indexPath.row].allPendingDocumentCounts! > 0 {
         
@@ -285,10 +325,15 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 //        print(sender as! Contract)
         
         
-        dest.userContract = sender as! Contract
+            dest.userContract = sender as? Contract
         }
     }
     
+    
+    
+    
+    // ****************** SEARCH OPERATION ***************************
+
     
     
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -305,14 +350,14 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             self.lastData = self.allContract
             let currentTableData = self.userContract
-            print(currentTableData)
-            print(searchTF.text!)
+//            print(currentTableData)
+//            print(searchTF.text!)
             
             let searchKeyword = searchTF.text!.lowercased()
             
             let result = currentTableData.filter( {($0.contactName?.lowercased().contains(searchKeyword))!}).map({ return $0 })
             
-            print(result)
+//            print(result)
             
             self.userContract = result
             
@@ -322,7 +367,10 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
-    // ***********  Alert Viewcontroller  ************
+    
+    
+    
+    // ***********  ALERT VIEWCONTROLLER  ************
     
     func alertMessage(Title : String, Message : String ){
         
@@ -332,6 +380,10 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         alertVC.addAction(dismissButton)
         self.present(alertVC, animated: true, completion: nil)
     }
+    
+    
+    
+    
     
     
     // ****************** ADD CONTRACT BUTTON ACTION ***************************

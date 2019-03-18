@@ -22,20 +22,24 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    
+    
+    
+    
     //  *************** VARIABLE ************************
     var appGlobalVariable = UIApplication.shared.delegate  as! AppDelegate
     var selectedVisit = [Int]()
     var selected = -1
     var visitCategory = ""
     var viewModel = MainMeetingViewModel()
-    
-    
-    
-
-    
     var MeetingContent = [Meeting]()
-    
     var selectedContact : Meeting?
+    
+    
+    
+    
+    
+    
     
     
     //  *************** VIEWDIDLOAD ************************
@@ -97,6 +101,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    // ****************** VIEWMODEL FUNCTION  ***************************
+
     
     
     func getMeeting(){
@@ -124,11 +130,11 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                                          "enddate": String(Int(floor(end_Timestamp * 1000)))
         ]
         
-        print(paramKey)
+//        print(paramKey)
         
         viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
             
-            print(Result?.count)
+//            print(Result?.count)
             
             if status == true{
                 self.MeetingContent = Result!
@@ -146,11 +152,19 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    
+    
+    
+    
     // ********** SEGUE TO CALENDAR ***********
     
     @objc func calendarView(){
         performSegue(withIdentifier: "Calendar", sender: nil)
     }
+    
+    
+    
+    
     
     
     
@@ -166,6 +180,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    
+
     
     // ********** TABLE VIEW PROTOCOL FUNCTIONS ***********
 
@@ -189,8 +205,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 //
         
         
-        var type = MeetingContent[indexPath.row].contactType
-        var purpose = MeetingContent[indexPath.row].purpose
+        let type = MeetingContent[indexPath.row].contactType
+        let purpose = MeetingContent[indexPath.row].purpose
         
         // DECISION W.R.T "TYPE
         
@@ -399,6 +415,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             return 160
         }
     }
+    
+    
+    
+    
+    
+    
   
     
     // ******************** SWITCH TO START MEETING FUNCTION **********************************
@@ -450,6 +472,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    
+    
+    
     // ******************** VIEW MEETING DETAIL FUNCTION **********************************
 
     @objc func detailView(){
@@ -468,6 +493,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         dest.meetingDetail = self.selectedContact!
         }
     }
+    
+    
+    
     
     
     

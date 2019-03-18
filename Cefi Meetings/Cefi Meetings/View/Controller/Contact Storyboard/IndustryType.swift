@@ -14,11 +14,18 @@ class IndustryType: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
-    var titles =  ["Agricultural", "Mining", "Construction", "Manufacturing", "Transporation & Public Utilities","Wholesale Trade", "Retail Trade", "Finance, Insurance, Real Estate", "Services", "Public" ]
+    // ****************** VARIABLE  **********************
+
     
+    var titles =  ["Agricultural", "Mining", "Construction", "Manufacturing", "Transporation & Public Utilities","Wholesale Trade", "Retail Trade", "Finance, Insurance, Real Estate", "Services", "Public" ]
     var selectedTitle = [String]()
     var equipmentDelegate : equipmentTypeDelegate!
     
+    
+    
+    
+    // ******************  VIEW DID LOAD **********************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +38,10 @@ class IndustryType: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+    
+    
+    // ****************** TABLEVIEW PROTOCOL  **********************
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
@@ -77,7 +88,7 @@ class IndustryType: UIViewController, UITableViewDelegate, UITableViewDataSource
         if selectedTitle.contains(titles[indexPath.row]) == false{
             self.selectedTitle.append(titles[indexPath.row])
         }
-        print(self.selectedTitle)
+//        print(self.selectedTitle)
         
     }
     
@@ -88,7 +99,7 @@ class IndustryType: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         if let index = self.selectedTitle.firstIndex(of:titles[indexPath.row]){
             
-            print(index)
+//            print(index)
             
             self.selectedTitle.remove(at: index)
             
@@ -99,6 +110,12 @@ class IndustryType: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+    
+    
+    
+    
+    // ****************** BACK BUTTON ACTION  **********************
+
     @IBAction func backAction(_ sender: Any) {
         
         equipmentDelegate.equipmentType(list: selectedTitle)

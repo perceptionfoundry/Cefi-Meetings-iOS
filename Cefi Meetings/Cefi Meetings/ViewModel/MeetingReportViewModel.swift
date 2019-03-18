@@ -14,17 +14,17 @@ class MeetingReportViewModel{
     
     func addReport(API: String, Param: [String:Any], Completion: @escaping (_ status : Bool, _ error : String?)->()){
         
-        print(API)
-        print(Param)
+//        print(API)
+//        print(Param)
         
         
         Alamofire.request(API, method: .post, parameters: Param, encoding: JSONEncoding.default, headers: nil).responseJSON { (resp) in
             
-            print(resp.result.value)
+//            print(resp.result.value)
             
             guard let value = resp.result.value  as? [String:Any] else{return}
             
-            print(value)
+//            print(value)
             
             if value["success"] as! Int == 1{
                 

@@ -145,7 +145,7 @@ extension VerticalCalendarController: VADayViewAppearanceDelegate {
 extension VerticalCalendarController: VACalendarViewDelegate {
     
     func selectedDate(_ date: Date) {
-        print(date)
+//        print(date)
     }
     
 }

@@ -13,6 +13,11 @@ import GooglePlaces
 
 class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate{
     
+    
+    
+    
+    
+    
     // ****************** PROTOCOL FUNCTIONS *****************
 
     func equipmentType(list: [String]) {
@@ -50,6 +55,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
+    
+    
+    
+    
     // ****************** OUTLET *****************
 
     
@@ -62,6 +71,9 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     @IBOutlet weak var industryTF: UITextField!
     @IBOutlet weak var referredTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
+    
+    
+    
     
     
     // ****************** VARIABLE *****************
@@ -79,6 +91,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
     var mapCameraView: GMSMapView?
+    
+    
+    
+    
     
     
     
@@ -130,11 +146,24 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
+    
+    
+    
+    
+    
+    // ****************** VIEW WILL APPEAR ***************************
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
+    
+    
+    
     
     // ****************** OUTLET CUSTOM ACTION FUNCTION *****************
 
@@ -148,6 +177,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         
     }
+    
+    
+    
+    
+    
     
     
     // ****************** TEXTFIELD BEGIN EDIT FUNCTION *****************
@@ -257,6 +291,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
+    
+    
+    
+    
+    
     // ****************** CONTRACT DETAIL BUTTON ACTION FUNCTION *****************
 
     
@@ -268,6 +307,9 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         //        self.navigationController?.pushViewController(vc, animated: true)
         self.present(vc, animated: true, completion: nil)
     }
+    
+    
+    
     
     
     
@@ -289,7 +331,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
 
 extension NewContactVC: GMSAutocompleteViewControllerDelegate {
     
-    // GOOGLE AUTOCOMPLETE DELEGATE FUNCTIONS
+    // ************** GOOGLE AUTOCOMPLETE DELEGATE FUNCTIONS ************************
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
         let lat = place.coordinate.latitude

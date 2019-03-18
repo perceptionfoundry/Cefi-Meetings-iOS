@@ -23,7 +23,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
-    
+    // ******************  PROTOCOL FUNCTION **********************
+
     
     func equipmentType(list: [String]) {
         
@@ -49,7 +50,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
-    
+    // ****************** MAP STRUCTURE   **********************
+
     
     
     struct meetup {
@@ -58,7 +60,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         var long : Double
     }
     
-    
+    // ****************** OUTLET  **********************
+
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var typeTF: UITextField!
     @IBOutlet weak var businessTF: UITextField!
@@ -70,6 +73,10 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     @IBOutlet weak var locationTF: UITextField!
     
     
+    
+    
+    
+    // ******************  VARIABLE **********************
     
     var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var apiLink = ""
@@ -87,7 +94,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     var mapCameraView: GMSMapView?
     
     
-    
+    // ****************** VIEW DID LOAD  **********************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,6 +167,10 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
+    
+    
+    // ******************  CUSTOM SEGUE **********************
+
     @objc func selectType(){
         performSegue(withIdentifier: "Contact_Type", sender: nil)
     }
@@ -168,6 +180,14 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         
     }
+    
+    
+    
+    
+    
+    
+    // ****************** VIEW WILL APPEAR  **********************
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -195,6 +215,12 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         }
         
     }
+    
+    
+    
+    
+    // ****************** SAVE BUTTON ACTION  **********************
+
     
     @IBAction func saveButtonAction(_ sender: Any) {
         
@@ -242,13 +268,13 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                     
                 else{
                     
-                    print("**************")
-
-                    
-                    print(result)
-                    
-                    
-                    print("**************")
+//                    print("**************")
+//
+//
+//                    print(result)
+//
+//
+//                    print("**************")
                     
                     self.editDelegate!.editContact(value: result!)
                     self.navigationController?.popViewController(animated: true)
@@ -267,7 +293,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
-    // Function Fetch Place value
+    // ************ FETCHING PLACE VALUE *********************
     
     func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String,completion:@escaping(_ location:String?)->Void) {
         var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -286,7 +312,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
             {(placemarks, error) in
                 if (error != nil)
                 {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
+//                    print("reverse geodcode fail: \(error!.localizedDescription)")
                     completion(nil)
                 }
                 let pm = placemarks! as [CLPlacemark]
@@ -312,7 +338,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                     }
                     
                     
-                    print(addressString)
+//                    print(addressString)
                     completion(addressString)
                 }
         })
@@ -321,7 +347,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
-    // ******* Function that will handle Alert Viewcontroller ************
+    // ******* ALERT VIEWCONTROLLER ************
     
     
     
@@ -336,7 +362,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     
-    
+    // ****************** CONTRACT DETAIL BUTTON ACTION  **********************
+
     
     @IBAction func contractDetailAction(_ sender: Any) {
         
@@ -347,6 +374,10 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         self.present(vc, animated: true, completion: nil)
     }
     
+    
+    
+    // ******************  CANCEL BUTTON ACTION **********************
+
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         
@@ -359,7 +390,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
 
 extension EditContactVC: GMSAutocompleteViewControllerDelegate {
     
-    // GOOGLE AUTOCOMPLETE DELEGATE FUNCTIONS
+    //  ************* GOOGLE AUTOCOMPLETE DELEGATE FUNCTIONS *********************
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         
         let lat = place.coordinate.latitude

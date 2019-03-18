@@ -57,7 +57,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(meetingDetail)
+//        print(meetingDetail)
 
         
         
@@ -67,8 +67,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         let timeSplit  = timeStampSplit[1].split(separator: ":")
         let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
 
-        print(dateString)
-        print(timeStampSplit)
+//        print(dateString)
+//        print(timeStampSplit)
        
         
         
@@ -92,7 +92,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource,Dea
         
         
         newLead.didSelectItemWith = { (index, title) -> () in
-            print("Selected item \(index)")
+//            print("Selected item \(index)")
             
             if self.newLead.currentIndex == 0{
               

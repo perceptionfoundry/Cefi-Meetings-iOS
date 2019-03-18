@@ -33,12 +33,18 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     
+    
+    
+    
     // ****************** VARIABLE ***************************
 
     var searchResult = [Contract]()
     var selectedContractType = "all"
     let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
     let viewModel = contractFilterViewModel()
+    
+    
+    
     
     
     
@@ -65,6 +71,10 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
         filterTable.reloadData()
         
     }
+    
+    
+    
+    
     
     
     //*************** SEARCH ACTION FUNCTION *******************
@@ -124,6 +134,9 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
     
     
+    
+    
+    
     //  ******** SELECTION BUTTON ACTION BUTTON ************************
 
     
@@ -161,6 +174,9 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
 
         }
     }
+    
+    
+    
     
     
     
@@ -208,9 +224,15 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
             //        print(sender as! Contract)
             
             
-            dest.userContract = sender as! Contract
+            dest.userContract = sender as? Contract
         }
     }
+    
+    
+    
+    
+    
+    
     
     // ****************** ADD CONTRACT BUTTON ACTION ***************************
 

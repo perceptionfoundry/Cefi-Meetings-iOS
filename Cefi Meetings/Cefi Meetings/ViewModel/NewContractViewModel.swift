@@ -30,12 +30,12 @@ class NewContractViewModel {
 
                 return}
   
-            print(value)
+//            print(value)
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-                        print(check)
+//                        print(check)
             
             // ************* Action to taken as per server response ******************
             

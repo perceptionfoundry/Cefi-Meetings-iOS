@@ -19,8 +19,8 @@ class NewMeetingViewModel{
     func newMeetingCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
         
         
-                print(API)
-                print(Textfields)
+//                print(API)
+//                print(Textfields)
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -31,13 +31,13 @@ class NewMeetingViewModel{
             // fetching response result from API
             var value = response.result.value  as! [String : Any]
             
-            print(value)
+//            print(value)
             
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-            print(check)
+//            print(check)
             
             // ************* Action to taken as per server response ******************
             

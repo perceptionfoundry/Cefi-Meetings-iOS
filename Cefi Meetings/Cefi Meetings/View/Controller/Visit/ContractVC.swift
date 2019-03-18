@@ -87,7 +87,7 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         viewModel.fetchContractDetail(API: apiLink, TextFields: dict) { (status, message, result, count) in
             
             
-            print(count)
+//            print(count)
             
             self.tableContent = result
             

@@ -55,7 +55,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
      
         
-        print(meetingDetail!)
+//        print(meetingDetail!)
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
@@ -72,12 +72,12 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         
 
-        print(dateString)
-        print(timeStampSplit)
-        print(reminderStampSplit)
-        print(reminderTimestamp)
-        print(meetingTimeStamp)
-        
+//        print(dateString)
+//        print(timeStampSplit)
+//        print(reminderStampSplit)
+//        print(reminderTimestamp)
+//        print(meetingTimeStamp)
+//
        
         contactTF.text = meetingDetail!.contactName!
         contractTF.text = meetingDetail!.contractId
@@ -190,7 +190,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                     }
                     
                     
-                    print(addressString)
+//                    print(addressString)
                     completion(addressString)
                 }
         })

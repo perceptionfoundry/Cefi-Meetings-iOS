@@ -23,8 +23,8 @@ class userFilterViewModel{
             let fetchValue = resp.result.value as! [String:Any]
             
             
-            print(fetchValue["success"])
-            print(fetchValue["status"])
+//            print(fetchValue["success"])
+//            print(fetchValue["status"])
 
             
             var status  = false
@@ -37,7 +37,7 @@ class userFilterViewModel{
             }
             
             
-            print(status)
+//            print(status)
             
 //            guard let list = fetchValue["searchData"] as? [Any] else{return}
             
@@ -66,7 +66,7 @@ class userFilterViewModel{
             }
             
             else {
-                completion(false,nil,fetchValue["status"] as! String)
+                completion(false,nil,fetchValue["status"] as? String)
             }
         }
         

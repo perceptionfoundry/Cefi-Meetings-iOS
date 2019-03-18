@@ -271,7 +271,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         
         let separateTimeElement =  timeTF.text!.split(separator: ":")
-        print(separateTimeElement)
+//        print(separateTimeElement)
         
         let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
         let min_Stamp = (Double(separateTimeElement[1])! * 60)
@@ -413,7 +413,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             
         ]
         
-        print(dictValue)
+//        print(dictValue)
             
             
             viewModel.newMeetingCreate(API: apiLink, Textfields: dictValue) { (status, err) in

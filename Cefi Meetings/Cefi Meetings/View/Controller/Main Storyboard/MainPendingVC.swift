@@ -18,10 +18,18 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     
     
     
+    
+    
+    
+    
     // ******************** VARIABLE *************************
     var appGlobalVariable = UIApplication.shared.delegate  as! AppDelegate
     var pendingContent = [Pending]()
     var viewModel = PendingDocumentViewModel()
+    
+    
+    
+    
     
     // ****************** VIEWDIDLOAD ***************************
 
@@ -38,6 +46,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     
     
     
+    
+    
+    
+    
     // ****************** VIEWWILLAPPEAR ***************************
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +60,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     
     
     
+    
+    
+    // ****************** VIEWMODEL FUNCTION ***************************
+
     func getPending(){
         
         
@@ -58,21 +74,17 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         
         let apiLink  = appGlobalVariable.apiBaseURL+"contracts/getpendingdocs?userId=\(appGlobalVariable.userID)"
         
-        
-        
-        
-        
         let paramKey : [String : String] = ["userId": appGlobalVariable.userID,
                                          
         ]
         
-        print(paramKey)
+//        print(paramKey)
         
         viewModel.fetchPendingDocument(API: apiLink, TextFields: paramKey) { (status, err, Result) in
             
             
             
-            print(Result.count)
+//            print(Result.count)
             
             if status == true{
                 self.pendingContent = Result
@@ -86,6 +98,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         }
         
     }
+    
+    
+    
+    
     
     
     

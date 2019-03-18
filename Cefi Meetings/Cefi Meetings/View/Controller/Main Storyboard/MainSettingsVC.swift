@@ -17,6 +17,9 @@ class MainSettingsVC: UIViewController {
     @IBOutlet weak var NaviBar: UINavigationBar!
     
     
+    
+    
+    
     //  ******** VIEWDIDLOAD ************************
 
     override func viewDidLoad() {
@@ -28,7 +31,10 @@ class MainSettingsVC: UIViewController {
     
     
     
-    //  ********VIEWWILLAPPEAR ************************
+    
+    
+    
+    //  ******** VIEWWILLAPPEAR ************************
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +42,9 @@ class MainSettingsVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
+    
     
     
     //  *************** BACK BUTTON ACTION FUNCTION ************************
@@ -48,13 +57,15 @@ class MainSettingsVC: UIViewController {
   
     
     
-    
+    // ****************** USER BUTTON ACTION ***************************
+
     
     @IBAction func userButtonAction(_ sender: Any) {
     }
     
     
-    
+    // ****************** PRIVACY BUTTON ACTION ***************************
+
     
     @IBAction func privacyButtonAction(_ sender: Any) {
     }

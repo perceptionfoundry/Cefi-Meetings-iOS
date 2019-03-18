@@ -10,6 +10,11 @@ import UIKit
 
 class userSettingVC: UIViewController {
 
+    
+    
+    
+    
+    
     //  *************** OUTLET ************************
 
     @IBOutlet weak var userName: UnderlinedTextField!
@@ -20,6 +25,20 @@ class userSettingVC: UIViewController {
     
     
     
+    
+    
+    
+    //************ Variable ******************
+    
+    var viewModel = UserSettingViewModel()
+    var appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    
+    
+    
+    
+
     
     //  *************** VIEWDIDLOAD ************************
 
@@ -32,8 +51,23 @@ class userSettingVC: UIViewController {
         //
         
         NaviBar.setBackgroundImage(UIImage(), for: .default)
-        // Do any additional setup after loading the view.
+        
+        let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
+        
+        let paramDict = ["userId" : "5c88f6d05a0c540017213210"]
+        
+        viewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
+            
+            
+//            print(result)
+        }
+
+
+
     }
+    
+
+    
     
     
     
@@ -46,6 +80,8 @@ class userSettingVC: UIViewController {
     }
     
     
+    
+
     
     //  *************** BACK BUTTON ACTION FUNCTION ************************
 

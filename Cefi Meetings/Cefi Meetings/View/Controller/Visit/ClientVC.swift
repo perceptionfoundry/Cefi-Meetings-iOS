@@ -32,7 +32,7 @@ class ClientVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(meetingDetail)
+//        print(meetingDetail)
         
         
         
@@ -46,8 +46,8 @@ class ClientVC: UIViewController {
         
         
         
-        print(dateString)
-        print(timeStampSplit)
+//        print(dateString)
+//        print(timeStampSplit)
      
         
         dealerContact.text = meetingDetail!.contactName!

@@ -12,7 +12,7 @@ import Alamofire
 
 
 
-// ******************* Declare Protocol required by Contract ***************************
+// ******************* DECLARE PROTOCOL required by Contract ***************************
 protocol typeDelegate {
     func typeName(name : String)
 }
@@ -67,7 +67,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var closingSwitch: UISwitch!
     @IBOutlet weak var allpageSwitch: UISwitch!
     @IBOutlet weak var everythingSwitch: UISwitch!
-    
     @IBOutlet var addPictureButton: [UIButton]!
     
     
@@ -87,8 +86,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var tagArray = [String]()
     var date = Date()
-    
-    
     var taxImage = [UIImage]()
     var bankImage = [UIImage]()
     var equipmentImage = [UIImage]()
@@ -98,8 +95,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var closingImage : UIImage?
     var pageSignedImage : UIImage?
     var everythingImage : UIImage?
-    
-    
     var taxImageURl = [String]()
     var bankImageURl = [String]()
     var equipmentImageURl = [String]()
@@ -109,17 +104,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var closingImageURl : String?
     var pageSignedImageURl : String?
     var everythingImageURl : String?
-    
-    
-    
-    
-    
     var selectedImagebuttonINdex = 0
-   
     var totalImageAdded = 0
     var uploadCount = 0
-    
-    
     var insuranceImageCount = 0
     var signorImageCount = 0
     var invoiceImageCount = 0
@@ -131,7 +118,10 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
-    // ********** Implement protocol function ******************
+    
+    
+    
+    // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
         self.contractTypeTF.text = name
@@ -210,10 +200,21 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
+    
+    
+    
+    // ****************** TEXTFIELD BEGIN EDITTING  **********************
+
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         missingText.textColor = UIColor(red: 0.392, green: 0.596, blue: 0.278, alpha: 1)
         missingText.text = ""
     }
+    
+    
+    
+    
+    
     
     
     // ******************* SHOW DATE FUNCTION ***************************
@@ -271,7 +272,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
-    // ************* Add Picture ***********
+    // ************* ADD IMAGE BUTTON ACTION *********************
 
     @IBAction func addPictureAction(_ sender: UIButton) {
         
@@ -307,6 +308,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    
+    // ****************** IMAGE PICKER FUNCTION  **********************
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
@@ -316,6 +320,15 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
     }
     
+    
+    
+    
+    
+    
+    
+    
+    // ******************  FUNCTION THAT HANDLE RELATE SELECTED IMAGE & IT'S STORING VARIABLE **********************
+
     func saveImage( Image : UIImage){
         
         switch self.selectedImagebuttonINdex {
@@ -392,16 +405,22 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
         
         
-        print(self.totalImageAdded)
+//        print(self.totalImageAdded)
         
+        
+                                    // ------------- NO IMAGE ------------------
         if self.totalImageAdded == 0 {
             self.createDatabaseRecord()
         }
         
+            
+            
+            
+            
         
         else {
         
-        // INSURANCE IMAGE UPLOAD
+                                // --------------- INSURANCE IMAGE UPLOAD ---------------------
         
         
        if let sendImage = insuranceImage {
@@ -415,13 +434,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 
                 
                 self.uploadCount += successCount!
-                print("*****************")
-                
-                print(imageURL)
+//                print("*****************")
+//
+//                print(imageURL)
                 self.insuranceImageURl = imageURL!
 
                 
-                print("*****************")
+//                print("*****************")
                 if self.uploadCount == self.totalImageAdded{
                     print("DONE")
                     self.createDatabaseRecord()
@@ -438,7 +457,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        // SIGNOR IMAGE UPLOAD
+                                            // ------------ SIGNOR IMAGE UPLOAD ---------------
         if let sendImage = signorImage {
             
             let image = sendImage
@@ -452,7 +471,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.signorImageURl = imageURL!
 
                 
@@ -470,7 +489,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
         
         
-        // INVOICE IMAGE UPLOAD
+                                                //------------ INVOICE IMAGE UPLOAD ---------------------
         if let sendImage = invoiceImage {
             
             let image = sendImage
@@ -484,7 +503,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.invoiceImageURl = imageURL!
 
                 
@@ -503,7 +522,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        // CLOSING IMAGE UPLOAD
+                                                //------------- CLOSING IMAGE UPLOAD -----------------------
         if let sendImage = closingImage {
             
             let image = sendImage
@@ -517,7 +536,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.closingImageURl = imageURL!
 
                 print("*****************")
@@ -534,7 +553,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
         
         
-        // PAGE SIGNED IMAGE UPLOAD
+                                                    //------------ PAGE SIGNED IMAGE UPLOAD ------------
         if let sendImage = pageSignedImage {
             
             let image = sendImage
@@ -548,7 +567,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.pageSignedImageURl = imageURL!
 
                 print("*****************")
@@ -564,8 +583,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
         }
         
+            
+            
+    
         
-        // EVERYTING IMAGE UPLOAD
+                                                //------------- EVERYTING IMAGE UPLOAD -------------------
         if let sendImage = everythingImage {
             
             let image = sendImage
@@ -579,7 +601,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.everythingImageURl = imageURL!
                 
                 print("*****************")
@@ -599,7 +621,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        // TAX IMAGE UPLOAD
+                                                //--------------- TAX IMAGE UPLOAD ----------------------
 
         if taxImage.isEmpty == false {
         
@@ -616,7 +638,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
 
-                print(imageURL)
+//                print(imageURL)
                 self.taxImageURl.append(imageURL!)
 
                 print("*****************")
@@ -637,7 +659,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        // BANK UPLOAD
+                                            //--------------- BANK UPLOAD ---------------------
 
         if bankImage.isEmpty == false {
 
@@ -655,7 +677,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 self.bankImageURl.append(imageURL!)
 
                 print("*****************")
@@ -676,7 +698,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        // EQUIPMENT UPLOAD
+                                                        //------------ EQUIPMENT UPLOAD -------------
         
         
         if equipmentImage.isEmpty == false {
@@ -694,7 +716,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 self.uploadCount += successCount!
                 print("*****************")
                 
-                print(imageURL)
+//                print(imageURL)
                 
                 self.equipmentImageURl.append(imageURL!)
                 
@@ -715,49 +737,17 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
   
-    
-    
-//
-//    func requestWith(endUrl: String, imageData: Data?, parameters: [String : Any], onCompletion: ((String?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
-//
-//        let url = "https://testingnodejss.herokuapp.com/api/upload/imgdocs" /* your API url */
-//
-//        let headers: HTTPHeaders = [
-//            /* "Authorization": "your_access_token",  in case you need authorization header */
-//            "Content-type": "application/json"
-//        ]
-//
-//        Alamofire.upload(multipartFormData: { (multipartFormData) in
-//            for (key, value) in parameters {
-//                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
-//            }
-//
-//            if let data = imageData{
-//                multipartFormData.append(data, withName: "image", fileName: "image.jpg", mimeType: "image/jpg")
-//            }
-//
-//        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
-//            switch result{
-//            case .success(let upload, _, _):
-//                upload.responseJSON { response in
-//                    print("Succesfully uploaded")
-//                    print("response = \(response.result.value)")
-//                    if let err = response.error{
-//                        onError?(err)
-//                        return
-//                    }
-//                    onCompletion?(nil)
-//                }
-//            case .failure(let error):
-//                print("Error in upload: \(error.localizedDescription)")
-//                onError?(error)
-//            }
-//        }
-//    }
-    
 
     
+    
+    
+    
+    
+    // ******************  VIEWMODEL FUNCTION **********************
+
     func createDatabaseRecord(){
+        
+
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
         //        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
@@ -800,11 +790,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             ]
             
             
-            print("-------------------------")
-            print(inputDetail)
-            print(apiLink)
-            print(selectedContactID)
-            print("-------------------------")
+//            print("-------------------------")
+//            print(inputDetail)
+//            print(apiLink)
+//            print(selectedContactID)
+//            print("-------------------------")
             
             
             
@@ -864,11 +854,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
-            print(indexPath.row)
-           
-            print("*******************")
-            print(taxImage[indexPath.row])
-            print("*******************")
+//            print(indexPath.row)
+//           
+//            print("*******************")
+//            print(taxImage[indexPath.row])
+//            print("*******************")
 
             
             taxCell.docImage.image = taxImage[indexPath.row]
@@ -905,6 +895,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     
+    
+    
+    
+    
+    // ******************  CUSTOM SEGUE **********************
+
     @objc func typeSegue(){
         performSegue(withIdentifier: "Type", sender: nil)
     }
@@ -916,7 +912,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
-    
+    // ****************** TEXT FIELD BEGIN EDIT  **********************
+
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -978,6 +975,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     // ******************* SWITCH BUTTON ACTION ***************************
+    
+    
 
     @IBAction func taxSwitchAction(_ sender: UISwitch) {
         
@@ -991,6 +990,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
     }
     
+    
+    
+    
     @IBAction func bankSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             bankViewHeight.constant = 90
@@ -1001,6 +1003,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
     }
     
+    
+    
+    
+    
+    
     @IBAction func equipmentSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             equipmentViewHeight.constant = 90
@@ -1010,6 +1017,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
         }
     }
+    
+    
+    
     
     @IBAction func insuranceSwitchAction(_ sender: Any) {
     }
@@ -1034,6 +1044,10 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
       
     }
     
+    
+    
+    
+    
 
     // ******************* ALERT VIEWCONTROLLER ***************************
 
@@ -1046,6 +1060,14 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         alertVC.addAction(dismissButton)
         self.present(alertVC, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
+    // ******************  CANCEL BUTTON ACTION **********************
+
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         

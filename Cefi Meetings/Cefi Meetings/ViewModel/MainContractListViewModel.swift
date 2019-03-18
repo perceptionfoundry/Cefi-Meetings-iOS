@@ -23,12 +23,12 @@ class MainContractListViewModel{
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
             
-            print(response.result.value)
+//            print(response.result.value)
             
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-            print(mainDict)
+//            print(mainDict)
             
             if mainDict["status"] as! String != "Sorry contracts not exist" {
                 

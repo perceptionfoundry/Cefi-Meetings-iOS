@@ -11,11 +11,18 @@ import FSCalendar
 
 class CalendarVC: UIViewController{
    
+    
+    
+    
+    
     // ****************** OUTLET *****************
 
     @IBOutlet weak var calendarView: FSCalendar!
     
     @IBOutlet weak var NaviBarDate: UILabel!
+    
+    
+    
     
     
     
@@ -35,7 +42,7 @@ class CalendarVC: UIViewController{
         
         formatter.dateStyle = .long
         
-        var today = formatter.string(from: currentDate)
+        let today = formatter.string(from: currentDate)
         
         NaviBarDate.text = today
         

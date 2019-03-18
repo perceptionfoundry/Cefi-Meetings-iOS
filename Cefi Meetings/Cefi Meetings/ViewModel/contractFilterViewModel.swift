@@ -30,9 +30,9 @@ class contractFilterViewModel{
             
             let fetchValue = resp.result.value as! [String:Any]
             
-       print("\n ************ SERVER RESPONSE ********************")
-                                     print(fetchValue)
-            print("***********************************")
+//       print("\n ************ SERVER RESPONSE ********************")
+//                                     print(fetchValue)
+//            print("***********************************")
             
             
             var finalDict = [Contract]()
@@ -48,10 +48,10 @@ class contractFilterViewModel{
                 guard let list = fetchValue["searchData"] as? [Any] else{return}
                 
                 
-                print("***********************************")
-                
-                print(list)
-                print("***********************************")
+//                print("***********************************")
+//
+//                print(list)
+//                print("***********************************")
 
                 do {
                     let json = try JSONSerialization.data(withJSONObject: list, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -64,12 +64,12 @@ class contractFilterViewModel{
                 catch{}
                 
                 
-                print(finalDict.count)
+//                print(finalDict.count)
                 
                 completion(true, finalDict, nil)
             }
             else if fetchValue["success"] as! Double == 0{
-                completion(false,nil,fetchValue["status"] as! String)
+                completion(false,nil,fetchValue["status"] as? String)
             }
         }
         

@@ -26,11 +26,23 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
     
     
+    
+    
+    
+    
+    
     // ****************** VARIABLE ***************************
 
     let appGlobalVarible = UIApplication.shared.delegate as! AppDelegate
     let viewModel = userFilterViewModel()
     var searchResult = [Contact]()
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -52,6 +64,10 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         
         filterTable.reloadData()
     }
+    
+    
+    
+    
     
     
     
@@ -112,6 +128,11 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
     
     
+    
+    
+    
+    
+    
     // ****************** VIEWWILLAPPEAR ***************************
 
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +140,11 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
+    
+    
+    
     
     
     
@@ -137,12 +163,12 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         cell.businessName.text = searchResult[indexPath.row].businessName
 
         
-        print(searchResult[indexPath.row])
+//        print(searchResult[indexPath.row])
         
         if (searchResult[indexPath.row].pendingDocuments) != nil{
             
             cell.alertView.isHidden = false
-            print(searchResult[indexPath.row].pendingDocuments)
+//            print(searchResult[indexPath.row].pendingDocuments)
             cell.quantity.text = String(searchResult[indexPath.row].pendingDocuments!)
             
         }
@@ -160,6 +186,9 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
+    
+    
+    
     
     
     
@@ -206,7 +235,7 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
             if status == true{
             self.searchResult = result!
                 
-                print(self.searchResult.first)
+//                print(self.searchResult.first)
                 
                 self.resultQuantityLabel.text = "\(self.searchResult.count) Result Found:"
             
@@ -223,6 +252,10 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
         }}
         
     }
+    
+    
+    
+    
     
     
     
@@ -247,6 +280,9 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     
    
     
+    
+    
+    
     // ****************** CANCEL BUTTON ACTION ***************************
 
     
@@ -255,7 +291,13 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     }
     
     
-    // ************* Alert ViewController ******************
+    
+    
+    
+    
+    
+    
+    // ************* ALERT VIEWCONTROLLER ******************
     
     func alertMessage(Title : String, Message : String ){
         

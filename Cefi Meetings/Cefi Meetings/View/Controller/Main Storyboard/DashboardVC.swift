@@ -23,10 +23,23 @@ class DashboardVC: UIViewController {
     
     
     
+    
+    
+    
+    
+    
+    
     // ******************* VARIABLE ***************************
 
     let viewModel = DashboardViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -42,7 +55,7 @@ class DashboardVC: UIViewController {
         
         viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
             
-            print(result)
+//            print(result)
             
             self.contactCount.text = String(result!["addedContactsToday"] as! Int)
             self.contractCount.text = String(result?["allOpenContracts"]as! Int)
@@ -54,6 +67,10 @@ class DashboardVC: UIViewController {
     
     
     
+    
+    
+    
+    
     // ******************* VIEWWILLAPPEAR ***************************
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +78,10 @@ class DashboardVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    
+    
+    
     
     
     

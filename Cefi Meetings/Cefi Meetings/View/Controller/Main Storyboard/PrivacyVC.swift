@@ -13,9 +13,13 @@ class PrivacyVC: UIViewController {
     
     
     
+    
     // ****************** OUTLET *****************
 
     @IBOutlet weak var NaviBar: UINavigationBar!
+    
+    
+    
     
     
     

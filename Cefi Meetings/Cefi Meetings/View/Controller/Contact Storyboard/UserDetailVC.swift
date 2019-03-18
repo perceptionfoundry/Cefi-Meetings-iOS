@@ -11,16 +11,24 @@ import UIKit
 class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, contactChange {
     
     
+    
+    
+    
     // ****************** PROTOCOL FUNCTION *****************
 
     func editContact(value: Contact) {
         
-        print(value)
+//        print(value)
         
         self.userDetail = value
         
         fieldUpdate()
     }
+    
+    
+    
+    
+    
     
     // ****************** OUTLET *****************
 
@@ -32,6 +40,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var contractTable: UITableView!
     @IBOutlet weak var unemptyTableImage: UIImageView!
+    
+    
+    
+    
     
     
     // ****************** VARIABLE *****************
@@ -46,7 +58,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
-    // ****************** OUTLET CUSTOM ACTION FUNCTION *****************
+    
+    
+    
+    // ****************** VIEW DID LOAD *****************
 
     
     override func viewDidLoad() {
@@ -72,6 +87,30 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
+ // *************** VIEW DID APPEAR  *********************
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableContent.removeAll()
+        fetchContent()
+    }
+    
+    
+    
+
+    // ********************** VIEW WILL APPEAR  ************************
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    
+    
+    
+    
+    // ******************  TEXT FIELD UPDATE FUNCTION **********************
     func fieldUpdate(){
         userName.text = userDetail!.contactName
         businessName.text = userDetail!.businessName
@@ -83,18 +122,14 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         emailAddress.text = userDetail!.email
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        tableContent.removeAll()
-        fetchContent()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        self.tabBarController?.tabBar.isHidden = true
-    }
     
     
+    
+    
+    
+    
+    // ****************** VIEWMODEL FUNCTION  **********************
+
     func fetchContent(){
         let apiLink = appGlobalVariable.apiBaseURL+"contracts/getcontactcontracts"
         
@@ -106,7 +141,7 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         viewModel.fetchContractDetail(API: apiLink, TextFields: dict) { (status, message, result, count) in
             
           
-            print(count)
+//            print(count)
             
             self.tableContent = result
             
@@ -123,6 +158,11 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+    
+    
+    
+    // ****************** TABLEVIEW PROTOCOL  **********************
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
@@ -153,7 +193,8 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
-    
+    // ****************** BACK BUTTON ACTION  **********************
+
     
     @IBAction func backAction(_ sender: Any) {
         
@@ -163,6 +204,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
+    
+    // ****************** EDIT BUTTON ACTION  **********************
+
+    
     @IBAction func editAction(_ sender: Any) {
         performSegue(withIdentifier: "Edit_Segue", sender: nil)
     }
@@ -171,23 +216,21 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
+    // ****************** ADD BUTTON ACTION  **********************
+
+    
+    
     @IBAction func addContractAction(_ sender: Any) {
         
         
         performSegue(withIdentifier: "Contract_Segue", sender: nil)
         
-//        if justTest == true{
-//            justTest = false
-//            contractTable.isHidden = false
-//            unemptyTableImage.isHidden = true
-//        }
-//        else{
-//            justTest = true
-//            contractTable.isHidden = true
-//            unemptyTableImage.isHidden = false
-//
-//        }
+
     }
+    
+    
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

@@ -88,7 +88,7 @@ class ReferralNewContractVC: UIViewController, typeDelegate, contactdelegate, UI
                 tagTF.text = ""
                 tagTF.clearsOnBeginEditing = true
                 
-                print(tagArray)
+//                print(tagArray)
                 
             }
         }
@@ -133,7 +133,7 @@ class ReferralNewContractVC: UIViewController, typeDelegate, contactdelegate, UI
             tagTF.text = ""
             tagTF.clearsOnBeginEditing = true
             
-            print(tagArray)
+//            print(tagArray)
             
         }
     }

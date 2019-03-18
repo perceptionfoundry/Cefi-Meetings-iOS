@@ -10,14 +10,28 @@ import UIKit
 
 class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    
+    // ************  OUTLET *****************
+
     @IBOutlet weak var equipmentTable: UITableView!
     
     
     
+    
+    
+    
+    // ************  VARIABLE *****************
+
     var titles =  ["Agricultural", "Construction", "Golf & Turf", "Healthcare", "Manufacturing", "Printing", "Technology", "Transporation", "Energy, Environmental Control","Furniture, Fixture & Equipment", "Material Handling", "Office Machine", "Telecommunication"]
     
     var selectedTitle = [String]()
     var equipmentDelegate : equipmentTypeDelegate!
+    
+    
+    
+    // ************ VIEW DID LOAD  *****************
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +45,18 @@ class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     }
     
+    
+    
+    // ************ TABLE VIEW PROTOCOL FUNCTION  *****************
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Equipment_Type", for: indexPath) as! EquipmentTableViewCell
@@ -61,10 +84,19 @@ class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 60
     }
+    
+    
+    
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -77,9 +109,13 @@ class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         if selectedTitle.contains(titles[indexPath.row]) == false{
         self.selectedTitle.append(titles[indexPath.row])
     }
-        print(self.selectedTitle)
+//        print(self.selectedTitle)
 
     }
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
 
@@ -88,7 +124,7 @@ class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
         if let index = self.selectedTitle.firstIndex(of:titles[indexPath.row]){
 
-            print(index)
+//            print(index)
 
             self.selectedTitle.remove(at: index)
 
@@ -99,6 +135,10 @@ class EquipmentTypeVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     }
     
+    
+    
+    // ************  BACK BUTTON ACTION *****************
+
     @IBAction func backAction(_ sender: Any) {
         
         equipmentDelegate.equipmentType(list: selectedTitle)

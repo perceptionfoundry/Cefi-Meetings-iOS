@@ -33,7 +33,7 @@ class ProspectingVC: UIViewController {
         super.viewDidLoad()
         
         
-        print(meetingDetail)
+//        print(meetingDetail)
         
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
@@ -43,11 +43,11 @@ class ProspectingVC: UIViewController {
         let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
         
 
-        
-        print(dateString)
-        print(timeStampSplit)
-//
-        
+//        
+//        print(dateString)
+//        print(timeStampSplit)
+////
+//        
         
         
         dealerContact.text = meetingDetail!.contactName!

@@ -123,8 +123,8 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate, 
         
         ]
         
-    print(apiLink)
-        print(paramDict)
+//    print(apiLink)
+//        print(paramDict)
         
         viewModel.fetchDealerPersont(API: apiLink, TextFields: paramDict) { (status, error, result) in
             

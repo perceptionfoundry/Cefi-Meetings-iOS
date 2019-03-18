@@ -28,9 +28,9 @@ class SIGNUP: UIViewController {
 
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/register"
         
-        print("****************")
-        print(self.apiLink)
-        print("*****************")
+//        print("****************")
+//        print(self.apiLink)
+//        print("*****************")
         
         
         
@@ -39,33 +39,16 @@ class SIGNUP: UIViewController {
 
     @IBAction func doneAction(_ sender: Any) {
         
-        var dic = ["name":self.nameTF.text ?? "", "email" : self.emailTF.text ?? "", "phoneNumber":1, "password":self.passwordTf.text ?? ""] as! [String : Any]
+        let dic : [String : Any] = ["name":self.nameTF.text ?? "", "email" : self.emailTF.text ?? "", "phoneNumber":1, "password":self.passwordTf.text ?? ""] 
      
         
         
 //        print(self.signUpDict)
         Alamofire.request(apiLink, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { (reponse) in
-            print("response = \(reponse.result.value)")
+//            print("response = \(reponse.result.value)")
         }
         
-//        Alamofire.request(apiLink,headers: self.signUpDict).responseJSON { (response) in
-//            print(response)
-//
-//        }
-//        Alamofire.request(apiLink, method: .post, parameters:[:], encoding: JSONEncoding.default, headers: self.signUpDict).responseJSON { (resp) in
-////            print(resp)
-//
-//
-//            do {
-//            let json = try JSONSerialization.jsonObject(with: resp.data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String : Any]
-//
-//            print(json)
-//
-//            }
-//            catch{
-//                print("error")
-//            }
-//        }
+
         
         self.dismiss(animated: true, completion: nil)
     }

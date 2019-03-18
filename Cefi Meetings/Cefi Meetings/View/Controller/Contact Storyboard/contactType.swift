@@ -11,17 +11,23 @@ import UIKit
 class contactType: UIViewController {
 
    
-    
+    // ****************** OUTLET **********************
+
     @IBOutlet weak var leadSelected: UILabel!
     @IBOutlet weak var clientSelected: UILabel!
     @IBOutlet weak var dealerSelected: UILabel!
     @IBOutlet weak var prospectSelected: UILabel!
     
-    
-    
+    // ****************** VARIABLE  **********************
+
     var previousSelected : String?
     var typeDelegate : typeDelegate?
     
+
+
+
+    // ****************** VIEW DID LOAD  **********************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,17 +55,29 @@ class contactType: UIViewController {
     }
     
     
+    
+    
+    // ******************  BACK BUTTON ACTION **********************
+
+    
     @IBAction func backButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
+    
+    
+    
+    // ****************** SELECTION BUTTON ACTION   **********************
+
     @IBAction func typeOptionButtonAction(_ sender: UIButton) {
         
         let buttonTag = sender.tag
         
         
-        print(buttonTag)
+//        print(buttonTag)
         
         if buttonTag == 0 {
             

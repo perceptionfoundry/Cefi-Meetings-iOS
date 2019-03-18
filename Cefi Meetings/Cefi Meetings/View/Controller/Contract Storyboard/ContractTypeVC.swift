@@ -11,15 +11,32 @@ import UIKit
 class ContractTypeVC: UIViewController {
 
     
+    
+    // ************  OUTLET  *****************
+
+    
     @IBOutlet weak var DealSelected: UILabel!
     @IBOutlet weak var OpenSelected: UILabel!
     @IBOutlet weak var ClosedSelected: UILabel!
     
     
     
+    
+    
+    
+    // ************  VARIABLE  *****************
+
     var previousSelected : String?
     var typeDelegate : typeDelegate?
     
+    
+    
+    
+    
+    
+    
+    // ************  VIEW DID LOAD *****************
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,12 +63,24 @@ class ContractTypeVC: UIViewController {
 
     }
     
+    
+    
+    
+    
+    
+    // ************  BACK BUTTON ACTION *****************
 
     @IBAction func backButtonAction(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    
+    
+    
+    
+    // ************* TYPE OPTION BUTTON ACTION  *****************
     @IBAction func typeOptionButtonAction(_ sender: UIButton) {
         
     let buttonTag = sender.tag
