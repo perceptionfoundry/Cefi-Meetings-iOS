@@ -9,10 +9,18 @@
 import UIKit
 
 
+protocol addPersonDelegate {
+    func personlistReload()
+}
 
 
-
-class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,addPersonDelegate{
+    
+    func personlistReload() {
+        getContents()
+        dealerListTable.reloadData()
+    }
+    
    
     
 
@@ -22,10 +30,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     
     
-//    struct Dealer {
-//        var dealerName : String
-//
-//    }
+
 
     
     var dealerList = [Dealer]()
@@ -43,7 +48,6 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         dealerListTable.delegate = self
         dealerListTable.dataSource = self
         
-        self.getContents()
         
         
         dealerListTable.reloadData()
@@ -54,7 +58,12 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         super.viewWillAppear(animated)
         
         getContents()
+        dealerListTable.reloadData()
     }
+//
+   
+    
+
     
     // *************** TABLE VIEW PROTOCOL FUNCTION **********************
     
@@ -64,8 +73,10 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Dealer_List", for: indexPath) as! DealerTableViewCell
         
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Dealer_List", for: indexPath) as! DealerTableViewCell
+        cell.dealerName.isUserInteractionEnabled = false
         tableView.separatorStyle = .none
         cell.selectionStyle = .none
         
@@ -79,7 +90,9 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        delegateDealer.selectedDealer(DealerName:dealerList[indexPath.row].personName!)
+        print(dealerList[indexPath.row].personName!)
+        
+        delegateDealer.selectedDealer(DealerName: dealerList[indexPath.row].personName!)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -89,10 +102,48 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
     }
 
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+      
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let editButton = UITableViewRowAction(style: .default, title: "Edit") { (rowAction, indexPath) in
+            print("Edit")
+//            cell.dealerName.isUserInteractionEnabled = true
+//            self.dealerList.remove(at: indexPath.row)
+//            self.dealerListTable.reloadData()
+//            cell.dealerName.placeholder = "Editted Value"
+            
+
+            
+        }
+        editButton.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+        
+        
+        let cancelButton = UITableViewRowAction(style: .default, title: "Delete") { (rowAction, indexPath) in
+            
+            print("Delete")
+            self.dealerList.remove(at: indexPath.row)
+            self.dealerListTable.reloadData()
+            
+        }
+        cancelButton.backgroundColor = UIColor.red
+        
+        return[editButton, cancelButton]
+    }
     
     // **************** GET TABLE CONTENT *****************
     
     func getContents(){
+        
+        dealerList.removeAll()
         
         let apiLink = appGlobalVariable.apiBaseURL+"dealerperson/getdealerperson"
         
@@ -115,8 +166,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
             self.dealerListTable.reloadData()
             
             
- 
-            
+             
             
         }
     }
@@ -133,7 +183,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate{
         
         let dest = segue.destination  as! AddDealerVC
         
-//        dest.dealerDele = self
+        dest.dealerDele = self
         dest.ContactDetail = self.ContactDetail!
     }
     

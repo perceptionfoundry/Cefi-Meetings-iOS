@@ -13,8 +13,6 @@ import TTSegmentedControl
 
 protocol DealerDelegate{
 
-
-
     func selectedDealer(DealerName : String)
 }
 
@@ -173,7 +171,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         
         let dest = segue.destination  as! DealerListVC
         
-//        dest.delegateDealer = self
+        dest.delegateDealer = self
         dest.ContactDetail = meetingDetail!
     }
     

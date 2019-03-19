@@ -19,7 +19,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     let viewModel = AddDealerPersonViewModel()
     
-//    var dealerDele : DealerDelegate!
+    var dealerDele : addPersonDelegate!
     var ContactDetail : Meeting?
     
     override func viewDidLoad() {
@@ -31,13 +31,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
     @IBAction func addButtonAction(_ sender: Any) {
         
         
-//        if dealerTF.text?.isEmpty == false && businessTF.text?.isEmpty == false{
-//
-//
-//              dealerDele?.addDealer(DealerName: dealerTF.text!, BusinessName: businessTF.text!, Rating: ratingStar.value, ContractNumber: "")
-//            self.dismiss(animated: true, completion: nil)
-//
-//        }
+
         
       
         
@@ -79,7 +73,7 @@ class AddDealerVC: UIViewController, UITextFieldDelegate {
             if status == true{
                 
                 
-//                self.dealerDele?.addDealer(DealerName: self.dealerTF.text!)
+                self.dealerDele?.personlistReload()
                 
                 self.dismiss(animated: true, completion: nil)
             }

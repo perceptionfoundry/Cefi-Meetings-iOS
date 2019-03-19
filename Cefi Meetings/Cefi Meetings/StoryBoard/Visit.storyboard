@@ -2368,31 +2368,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer Name" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QkR-b1-SiF">
-                                                    <rect key="frame" x="28" y="13.5" width="262.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUr-x9-1zZ">
                                                     <rect key="frame" x="19" y="35.5" width="337.5" height="0.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdv-TR-npo">
+                                                    <rect key="frame" x="19" y="0.0" width="300" height="33.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="zUr-x9-1zZ" firstAttribute="width" secondItem="lEe-pI-CIl" secondAttribute="width" multiplier="0.9" id="38m-hq-Auz"/>
-                                                <constraint firstItem="QkR-b1-SiF" firstAttribute="centerX" secondItem="lEe-pI-CIl" secondAttribute="centerX" multiplier="0.85" id="6Ln-kC-oda"/>
                                                 <constraint firstItem="zUr-x9-1zZ" firstAttribute="height" secondItem="lEe-pI-CIl" secondAttribute="height" multiplier="0.01" id="6bR-kY-elT"/>
                                                 <constraint firstItem="zUr-x9-1zZ" firstAttribute="centerY" secondItem="lEe-pI-CIl" secondAttribute="centerY" multiplier="1.5" id="KtG-8Y-n3I"/>
-                                                <constraint firstItem="QkR-b1-SiF" firstAttribute="centerY" secondItem="lEe-pI-CIl" secondAttribute="centerY" id="hM5-gu-sYy"/>
+                                                <constraint firstItem="Hdv-TR-npo" firstAttribute="centerY" secondItem="lEe-pI-CIl" secondAttribute="centerY" multiplier="0.7" id="VUU-Mu-EW8"/>
+                                                <constraint firstItem="Hdv-TR-npo" firstAttribute="leading" secondItem="zUr-x9-1zZ" secondAttribute="leading" id="bms-Id-5Aw"/>
+                                                <constraint firstItem="Hdv-TR-npo" firstAttribute="height" secondItem="lEe-pI-CIl" secondAttribute="height" multiplier="0.7" id="dE6-TO-cPF"/>
                                                 <constraint firstItem="zUr-x9-1zZ" firstAttribute="centerX" secondItem="lEe-pI-CIl" secondAttribute="centerX" id="hjr-Fs-ZOj"/>
-                                                <constraint firstItem="QkR-b1-SiF" firstAttribute="width" secondItem="lEe-pI-CIl" secondAttribute="width" multiplier="0.7" id="kiR-DO-ZO2"/>
+                                                <constraint firstItem="Hdv-TR-npo" firstAttribute="width" secondItem="lEe-pI-CIl" secondAttribute="width" multiplier="0.8" id="pX1-ho-HXs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="dealerName" destination="QkR-b1-SiF" id="W4t-tK-BpC"/>
+                                            <outlet property="dealerName" destination="Hdv-TR-npo" id="jRC-oM-DxW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
