@@ -24,7 +24,7 @@ class MeetingReportViewModel{
             
             guard let value = resp.result.value  as? [String:Any] else{return}
             
-//            print(value)
+            print(value)
             
             if value["success"] as! Int == 1{
                 

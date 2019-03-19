@@ -240,11 +240,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
             
-//            cell.timeLabel.text = MeetingContent[indexPath.row].time
-            
-//            let timeStampSplit = MeetingContent[indexPath.row].timeInString!.split(separator: "T")
-//            let timeSplit  = timeStampSplit[1].split(separator: ":")
-//            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+
             
             
             cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
@@ -282,12 +278,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.ratingStar.value = CGFloat(value!)
             
             
-//            let timeStampSplit = MeetingContent[indexPath.row].time!.split(separator: "T")
-//            let timeSplit  = timeStampSplit[1].split(separator: ":")
-//            let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
+//
             
-            cell.timeLabel.text = "00:00"
-            
+                cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
             
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
             cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
@@ -369,7 +362,14 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
                 cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
        
-            visitCategory = MeetingContent[indexPath.row].contactType!
+            if MeetingContent[indexPath.row].contactType != "Dealer"{
+            
+            visitCategory = MeetingContent[indexPath.row].purpose!
+            }
+            else{
+                visitCategory = MeetingContent[indexPath.row].contactType!
+
+            }
             
                 UIView.animate(withDuration: 0.6) {
 
@@ -438,7 +438,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         
         
-        if visitCategory == "Prospect"{
+        if visitCategory == "Prospecting"{
             
             let storyboard = UIStoryboard(name: "Visit", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Prospecting") as! ProspectingVC

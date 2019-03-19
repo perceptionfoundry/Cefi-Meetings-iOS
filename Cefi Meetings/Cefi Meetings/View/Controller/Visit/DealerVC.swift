@@ -48,29 +48,27 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     
     @IBOutlet weak var newLead: TTSegmentedControl!
     
-    let viewModel = MeetingReportViewModel()
+    
+    
+    let updateReportViewModel = MeetingReportViewModel()
+    let getReportViewModel = GetVisitReportViewModel()
+
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
 
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
 //        print(meetingDetail)
-
+        newLead.selectItemAt(index: 1, animated: true)
         dealerTable.isHidden = true
+        bottomView.isHidden = true
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
-        
-//        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-//        let timeSplit  = timeStampSplit[1].split(separator: ":")
-//        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
-
-//        print(dateString)
-//        print(timeStampSplit)
-       
-        
-        
         dealerName.text = meetingDetail!.contactName!
         dealerBusiness.text = meetingDetail!.businessName
 //        meetingTime.text = timeString
@@ -106,16 +104,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
                 
             }
         }
-        
-        
-        
-        
-//        let leadTap = UITapGestureRecognizer(target: self, action: #selector(leadAction))
-//        newLead.addGestureRecognizer(leadTap)
-        
-        
         dealerTable.reloadData()
-       
+       getInitialReport()
     }
     
     
@@ -126,6 +116,50 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     }
     
     
+    func getInitialReport(){
+        
+        var reportValue : MeetingReport?
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/getclientvisitreport?visitId=\((meetingDetail!.id)!)&userId=\(appGlobalVariable.userID)"
+        
+        let paramDict = [
+            "userId" : appGlobalVariable.userID,
+            "visitId": meetingDetail!.id!
+        ]
+        
+        print(apilink)
+        print(paramDict)
+        
+        
+        getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
+            
+            reportValue = result
+            var saleIndex = 0
+            if status == true{
+                
+                let saleValue = reportValue?.salesInLastThreeMonths!
+                
+                
+                switch  saleValue{
+                case "Deceased":
+                    saleIndex = 0
+                case "Same":
+                    saleIndex = 1
+                case "Increased":
+                    saleIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+                self.saleStatus.selectItemAt(index: saleIndex, animated: true)
+                
+            }
+        }
+        
+    
+        
+    }
+    
     @objc func dealerList(){
         
         performSegue(withIdentifier: "Dealer_List", sender: nil)
@@ -133,21 +167,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     }
     
     
-//    @objc func leadAction(){
-//        let index = newLead.currentIndex
-//
-//        if index == 1{
-//
-//            bottomView.isHidden = false
-//
-//        }
-//        else{
-//
-//            bottomView.isHidden = true
-//
-//
-//        }
-//    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -237,7 +257,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
             
         ]
         
-        viewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
+        updateReportViewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
             
             if status == true{
                 self.navigationController?.popViewController(animated: true)

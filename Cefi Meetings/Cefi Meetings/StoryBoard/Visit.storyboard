@@ -1803,12 +1803,12 @@
                         <viewLayoutGuide key="safeArea" id="EJ6-7B-45U"/>
                     </view>
                     <connections>
-                        <outlet property="EquipmentSegment" destination="Oe6-sL-KQA" id="Lq2-OB-mZM"/>
-                        <outlet property="businessSegment" destination="yoL-7O-XSj" id="Axe-oa-pwo"/>
                         <outlet property="dealerBusiness" destination="Yhe-08-KI3" id="oLy-LF-ewT"/>
                         <outlet property="dealerContact" destination="8Ey-Wi-ajf" id="zfa-KS-DrG"/>
                         <outlet property="meetingDate" destination="n84-Ov-7PF" id="cv0-ac-qbJ"/>
                         <outlet property="meetingTime" destination="KL9-7y-5Ph" id="MUi-um-kpq"/>
+                        <outlet property="newLeadSegment" destination="Oe6-sL-KQA" id="3DT-EN-I0l"/>
+                        <outlet property="threeMonthSaleSegment" destination="yoL-7O-XSj" id="MTY-lq-lN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eL5-5p-lDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1988,7 +1988,7 @@
                                                 <rect key="frame" x="0.0" y="452.5" width="375" height="297.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2b-be-zTp" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                        <rect key="frame" x="19" y="20" width="150" height="89.5"/>
+                                                        <rect key="frame" x="206.5" y="20" width="150" height="89.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start New Contract" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qhc-aE-XtA">
                                                                 <rect key="frame" x="23.5" y="54" width="102.5" height="16.5"/>
@@ -2042,7 +2042,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmd-1r-lsn" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                        <rect key="frame" x="206.5" y="20" width="150" height="89.5"/>
+                                                        <rect key="frame" x="19" y="20" width="150" height="89.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PNm-Xj-YCu">
                                                                 <rect key="frame" x="28" y="54" width="94" height="16.5"/>
@@ -2214,10 +2214,10 @@
                                                     <constraint firstItem="I2b-be-zTp" firstAttribute="top" secondItem="BCg-zA-Sd2" secondAttribute="top" constant="20" id="WVK-dz-BTn"/>
                                                     <constraint firstItem="lmd-1r-lsn" firstAttribute="top" secondItem="BCg-zA-Sd2" secondAttribute="top" constant="20" id="Yfr-MP-FGq"/>
                                                     <constraint firstItem="I2b-be-zTp" firstAttribute="height" secondItem="BCg-zA-Sd2" secondAttribute="height" multiplier="0.3" id="bE4-Vb-BNH"/>
-                                                    <constraint firstItem="I2b-be-zTp" firstAttribute="centerX" secondItem="BCg-zA-Sd2" secondAttribute="centerX" multiplier="0.5" id="e31-ZN-8sZ"/>
+                                                    <constraint firstItem="I2b-be-zTp" firstAttribute="centerX" secondItem="BCg-zA-Sd2" secondAttribute="centerX" multiplier="1.5" id="e31-ZN-8sZ"/>
                                                     <constraint firstItem="I2b-be-zTp" firstAttribute="width" secondItem="BCg-zA-Sd2" secondAttribute="width" multiplier="0.4" id="gP2-T0-V6V"/>
                                                     <constraint firstItem="xQr-rM-b2R" firstAttribute="leading" secondItem="BCg-zA-Sd2" secondAttribute="leading" id="gzy-O0-gdw"/>
-                                                    <constraint firstItem="lmd-1r-lsn" firstAttribute="centerX" secondItem="BCg-zA-Sd2" secondAttribute="centerX" multiplier="1.5" id="kWy-Fl-mVk"/>
+                                                    <constraint firstItem="lmd-1r-lsn" firstAttribute="centerX" secondItem="BCg-zA-Sd2" secondAttribute="centerX" multiplier="0.5" id="kWy-Fl-mVk"/>
                                                     <constraint firstAttribute="trailing" secondItem="xQr-rM-b2R" secondAttribute="trailing" id="nDb-UO-cJS"/>
                                                     <constraint firstItem="xQr-rM-b2R" firstAttribute="top" secondItem="I2b-be-zTp" secondAttribute="bottom" constant="20" id="p8J-Mn-pLa"/>
                                                     <constraint firstItem="lmd-1r-lsn" firstAttribute="height" secondItem="BCg-zA-Sd2" secondAttribute="height" multiplier="0.3" id="r19-YH-vnd"/>

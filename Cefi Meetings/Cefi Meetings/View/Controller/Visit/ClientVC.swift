@@ -20,11 +20,12 @@ class ClientVC: UIViewController {
     @IBOutlet weak var meetingTime: UILabel!
     @IBOutlet weak var meetingDate: UILabel!
     
-    @IBOutlet weak var businessSegment: TTSegmentedControl!
+    @IBOutlet weak var threeMonthSaleSegment: TTSegmentedControl!
     
-    @IBOutlet weak var EquipmentSegment: TTSegmentedControl!
+    @IBOutlet weak var newLeadSegment: TTSegmentedControl!
     
     let viewModel = MeetingReportViewModel()
+    let getReportViewModel = GetVisitReportViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
 
@@ -32,38 +33,29 @@ class ClientVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(meetingDetail)
         
         
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-        let timeSplit  = timeStampSplit[1].split(separator: ":")
-        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
-        
-     
-        
-        
-        
-//        print(dateString)
-//        print(timeStampSplit)
+
      
         
         dealerContact.text = meetingDetail!.contactName!
         dealerBusiness.text = meetingDetail!.businessName
-        meetingTime.text = timeString
+        meetingTime.text = meetingDetail!.timeInString!
         meetingDate.text = String(dateString[0])
 
         
-        businessSegment.itemTitles = ["Deceased","Same","Increased"]
-        EquipmentSegment.itemTitles = ["Yes", "Maybe", "No"]
+        threeMonthSaleSegment.itemTitles = ["Deceased","Same","Increased"]
+        newLeadSegment.itemTitles = ["Yes", "Maybe", "No"]
         
         
-        businessSegment.allowChangeThumbWidth = false
-        EquipmentSegment.allowChangeThumbWidth = false
+        threeMonthSaleSegment.allowChangeThumbWidth = false
+        newLeadSegment.allowChangeThumbWidth = false
         
-        
+        getInitialReport()
+
         
     }
     
@@ -113,10 +105,56 @@ class ClientVC: UIViewController {
     }
     
     
+    
+    func getInitialReport(){
+        
+        var reportValue : MeetingReport?
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/getclientvisitreport?visitId=\((meetingDetail!.id)!)&userId=\(appGlobalVariable.userID)"
+        
+        let paramDict = [
+            "userId" : appGlobalVariable.userID,
+            "visitId": meetingDetail!.id!
+        ]
+        
+        print(apilink)
+        print(paramDict)
+        
+        
+        getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
+            
+            reportValue = result
+            var saleIndex = 0
+            if status == true{
+                
+                let saleValue = reportValue?.salesInLastThreeMonths!
+                
+                
+                switch  saleValue{
+                case "Deceased":
+                    saleIndex = 0
+                case "Same":
+                    saleIndex = 1
+                case "Increased":
+                    saleIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+                self.threeMonthSaleSegment.selectItemAt(index: saleIndex, animated: true)
+                
+            }
+        }
+        
+        
+        
+    }
+    
+    
     @IBAction func submitButtonAction(_ sender: Any) {
         
-        let businessIndex = businessSegment.currentIndex
-        let equipmentIndex =  EquipmentSegment.currentIndex
+        let businessIndex = threeMonthSaleSegment.currentIndex
+        let equipmentIndex =  newLeadSegment.currentIndex
         
         var outcomeValue = ""
         var businessValue = ""

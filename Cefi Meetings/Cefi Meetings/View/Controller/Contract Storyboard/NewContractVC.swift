@@ -40,7 +40,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
     // ******************* OUTLET ***************************
 
+    @IBOutlet weak var activityView: Custom_View!
     
+    @IBOutlet weak var mainVIew: UIView!
     @IBOutlet weak var taxCollectionView: UICollectionView!
     @IBOutlet weak var bankCollectionView: UICollectionView!
     @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
@@ -157,6 +159,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        activityView.isHidden = true
         contactTF.text = contactName
         
         taxViewHeight.constant = 0
@@ -402,11 +406,16 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBAction func saveAction(_ sender: Any) {
         
         
+        
+          if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        
+        
         self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
         
         
 //        print(self.totalImageAdded)
-        
+        mainVIew.isUserInteractionEnabled = false
+        activityView.isHidden = false
         
                                     // ------------- NO IMAGE ------------------
         if self.totalImageAdded == 0 {
@@ -734,6 +743,16 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
             }
         }
+        
+        }
+        
+                else{
+                    self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
+                }
+
+        
+        
+        
     }
     
   
@@ -755,8 +774,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         
         
-        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
-            
+//        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": "",
                                                 "addedDate": "",
@@ -793,8 +812,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
             print("-------------------------")
             print(inputDetail)
-//            print(apiLink)
-//            print(selectedContactID)
+            print(apiLink)
+            print(selectedContactID)
             print("-------------------------")
             
             
@@ -803,17 +822,19 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 
                 if Status == true{
                     
-                    self.navigationController?.popViewController(animated: true)
+ self.navigationController?.popViewController(animated: true)
+                    self.activityView.isHidden = true
+
                 }
                 else {
                     self.alertMessage(Title: "Server Error", Message: Result!)
                 }
             }
-        }
-            
-        else{
-            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
-        }
+//        }
+//
+//        else{
+//            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
+//        }
         
         
         

@@ -38,7 +38,7 @@ class ImageUploadViewModel{
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                     print("Succesfully uploaded")
-//                    print("response = \(response.result.value)")
+                    print("response = \(response.result.value)")
                    
                     let result = response.result.value as! [String:Any]
                     

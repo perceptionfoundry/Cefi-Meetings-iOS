@@ -419,13 +419,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             
 
             
-//            "contactId" : ,
-//            "contractId" : ,
-//            "time" : ,
-//            "reminder" : ,
-//            "lat" : ,
-//            "address" : ,
-//            "purpose" :
+
             
         ]
         

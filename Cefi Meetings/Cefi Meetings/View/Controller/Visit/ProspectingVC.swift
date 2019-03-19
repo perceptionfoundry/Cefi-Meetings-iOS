@@ -25,7 +25,11 @@ class ProspectingVC: UIViewController {
     @IBOutlet weak var EquipmentSegment: TTSegmentedControl!
     
     @IBOutlet weak var outcomeCommentTF: UITextView!
+    
+    
+    
     let viewModel = MeetingReportViewModel()
+    let getReportViewModel = GetVisitReportViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
     
@@ -38,21 +42,10 @@ class ProspectingVC: UIViewController {
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-        let timeSplit  = timeStampSplit[1].split(separator: ":")
-        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
-        
-
-//        
-//        print(dateString)
-//        print(timeStampSplit)
-////
-//        
-        
         
         dealerContact.text = meetingDetail!.contactName!
         dealerBusiness.text = meetingDetail!.businessName
-        meetingTime.text = timeString
+        meetingTime.text = meetingDetail!.timeInString!
         meetingDate.text = String(dateString[0])
         
         
@@ -65,7 +58,7 @@ class ProspectingVC: UIViewController {
         businessSegment.allowChangeThumbWidth = false
         EquipmentSegment.allowChangeThumbWidth = false
         
-        
+        getInitialReport()
         
         
     }
@@ -112,6 +105,51 @@ class ProspectingVC: UIViewController {
         
         let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
         self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+    func getInitialReport(){
+        
+        var reportValue : MeetingReport?
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/getclientvisitreport?visitId=\((meetingDetail!.id)!)&userId=\(appGlobalVariable.userID)"
+        
+        let paramDict = [
+            "userId" : appGlobalVariable.userID,
+            "visitId": meetingDetail!.id!
+        ]
+        
+        print(apilink)
+        print(paramDict)
+        
+        
+        getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
+            
+            reportValue = result
+            var saleIndex = 0
+            if status == true{
+                
+                let saleValue = reportValue?.salesInLastThreeMonths!
+                
+                
+                switch  saleValue{
+                case "Deceased":
+                    saleIndex = 0
+                case "Same":
+                    saleIndex = 1
+                case "Increased":
+                    saleIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+//                self.saleStatus.selectItemAt(index: saleIndex, animated: true)
+                
+            }
+        }
+        
+        
         
     }
     

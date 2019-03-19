@@ -662,6 +662,40 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="NDJ-GV-WTG">
                                                 <rect key="frame" x="31.5" y="416" width="12" height="13.5"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL7-rQ-Azw" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                                <rect key="frame" x="87.5" y="460" width="200" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Contract" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-Au-0e6">
+                                                        <rect key="frame" x="41" y="60" width="118.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xOk-Ho-F4c">
+                                                        <rect key="frame" x="90" y="90" width="20" height="20"/>
+                                                        <color key="color" red="0.39200000000000002" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="xOk-Ho-F4c" firstAttribute="centerY" secondItem="eL7-rQ-Azw" secondAttribute="centerY" id="Bot-6d-HKJ"/>
+                                                    <constraint firstItem="Rag-Au-0e6" firstAttribute="centerX" secondItem="eL7-rQ-Azw" secondAttribute="centerX" id="EIP-IR-vUp"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Iyk-nq-brX"/>
+                                                    <constraint firstItem="Rag-Au-0e6" firstAttribute="centerY" secondItem="eL7-rQ-Azw" secondAttribute="centerY" multiplier="0.7" id="USI-df-ogf"/>
+                                                    <constraint firstItem="xOk-Ho-F4c" firstAttribute="centerX" secondItem="eL7-rQ-Azw" secondAttribute="centerX" id="iEd-Nm-tcX"/>
+                                                    <constraint firstAttribute="width" secondItem="eL7-rQ-Azw" secondAttribute="height" multiplier="1:1" id="mcI-gP-78r"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="1" height="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.51700000000000002" green="0.50586992500000005" blue="0.50600000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -716,6 +750,7 @@
                                             <constraint firstItem="fZR-0B-00G" firstAttribute="width" secondItem="CW8-FX-Tsc" secondAttribute="width" multiplier="0.35" id="S7W-Cu-f65"/>
                                             <constraint firstItem="NDJ-GV-WTG" firstAttribute="top" secondItem="7bt-8G-xhM" secondAttribute="bottom" constant="20" id="SEY-M1-0SP"/>
                                             <constraint firstItem="NDJ-GV-WTG" firstAttribute="width" secondItem="TvD-sQ-qOG" secondAttribute="width" id="TGJ-5e-bYI"/>
+                                            <constraint firstItem="eL7-rQ-Azw" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" id="TGz-vF-2cb"/>
                                             <constraint firstItem="TvD-sQ-qOG" firstAttribute="height" secondItem="Sf4-2F-ka0" secondAttribute="height" multiplier="1.2" id="Tkc-aL-efo"/>
                                             <constraint firstItem="mZi-5d-ShS" firstAttribute="width" secondItem="CW8-FX-Tsc" secondAttribute="width" multiplier="0.4" id="UxO-Om-C2V"/>
                                             <constraint firstItem="JUp-Tc-Qyd" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" id="Uy0-UW-cuc"/>
@@ -741,6 +776,7 @@
                                             <constraint firstItem="Exx-ZH-K3O" firstAttribute="centerY" secondItem="77M-jn-V4l" secondAttribute="centerY" id="eda-TL-0YP"/>
                                             <constraint firstItem="rOw-4K-bVi" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" id="gXn-ic-Ulu"/>
                                             <constraint firstItem="FPH-r1-3Pl" firstAttribute="centerY" secondItem="yKa-gg-65s" secondAttribute="centerY" multiplier="0.6" id="gak-2M-n8i"/>
+                                            <constraint firstItem="eL7-rQ-Azw" firstAttribute="centerY" secondItem="yKa-gg-65s" secondAttribute="centerY" multiplier="0.7" id="gcL-3I-rzN"/>
                                             <constraint firstItem="ueE-YC-ZPj" firstAttribute="centerY" secondItem="JUp-Tc-Qyd" secondAttribute="centerY" id="gog-qM-fKO"/>
                                             <constraint firstItem="tXp-Gz-61i" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" multiplier="0.6" id="isI-ha-kWi"/>
                                             <constraint firstItem="TvD-sQ-qOG" firstAttribute="width" secondItem="Sf4-2F-ka0" secondAttribute="width" multiplier="1.2" id="jKt-96-bgX"/>
@@ -793,6 +829,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="activityView" destination="eL7-rQ-Azw" id="CDc-oc-wro"/>
                         <outlet property="allpageSwitch" destination="ZFL-2k-FR9" id="siW-kG-dt9"/>
                         <outlet property="amountTF" destination="fZR-0B-00G" id="gUz-QP-fcN"/>
                         <outlet property="bankCollectionView" destination="idj-hh-uxD" id="4D5-fs-j0E"/>
@@ -811,6 +848,7 @@
                         <outlet property="everythingSwitch" destination="58Y-AU-dhP" id="zdq-up-uNu"/>
                         <outlet property="insuranceSwitch" destination="FN9-wC-lRx" id="b6d-bR-1xU"/>
                         <outlet property="invoiceSwitch" destination="86x-gZ-RRU" id="AXj-kP-DCG"/>
+                        <outlet property="mainVIew" destination="CW8-FX-Tsc" id="Vko-xz-nnd"/>
                         <outlet property="missingText" destination="IKk-gC-X5T" id="cZL-hh-d7Y"/>
                         <outlet property="purchaseDateTF" destination="z54-IT-8Ab" id="S7z-Cr-s5r"/>
                         <outlet property="ratingStar" destination="G0i-yR-kiz" id="CaY-CN-A82"/>
@@ -1921,7 +1959,7 @@
         <image name="sample" width="271" height="351"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JfB-kE-XDm"/>
-        <segue reference="xPZ-9X-meS"/>
+        <segue reference="lcf-rg-Iry"/>
+        <segue reference="HXH-r8-ArV"/>
     </inferredMetricsTieBreakers>
 </document>

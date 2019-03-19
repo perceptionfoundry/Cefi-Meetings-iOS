@@ -112,6 +112,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     // ******************  TEXT FIELD UPDATE FUNCTION **********************
     func fieldUpdate(){
+        
+        print(userDetail)
+        
         userName.text = userDetail!.contactName
         businessName.text = userDetail!.businessName
         typeCategory.text = userDetail?.contactType

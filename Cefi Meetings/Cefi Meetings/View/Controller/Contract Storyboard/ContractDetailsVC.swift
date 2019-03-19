@@ -64,26 +64,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     // ***************** VARIABLE **********************
 
-//    var taxImage = [UIImage]()
-//    var bankImage = [UIImage]()
-//    var equipmentImage = [UIImage]()
-//    var insuranceImage = [UIImage]()
-//    var signorImage = [UIImage]()
-//    var invoiceImage = [UIImage]()
-//    var closingImage = [UIImage]()
-//    var pageSignedImage = [UIImage]()
-//    var everythingImage = [UIImage]()
-//    var selectedImagebuttonINdex = 0
-//    var contactName = ""
-//    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
-//    var equipmentValue = [String]()
-//    var selectedContactID : String?
-//    var tagArray = [String]()
+
     
     
     
     let datePicker = UIDatePicker()
-    var contactName = ""
+    var contactName = "JI"
     var equipmentValue = [String]()
     var selectedContactID : String?
     let newContractviewModel = NewContractViewModel()
@@ -155,6 +141,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contactTF.isUserInteractionEnabled = false
+        contractNumberTF.isUserInteractionEnabled = false
+        ratingStar.isUserInteractionEnabled = false
+        
+        print(userContract!)
+//        print(selectedContactID!)
         
         saveButton.isHidden = true
         
@@ -199,14 +191,27 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         allpageSwitch.isOn = userContract!.isAllPagesSigned!
         everythingSwitch.isOn = userContract!.isEverythingCompleted!
         missingText.text = userContract!.missingText
+        equipmentValue = (userContract!.equipmentDetails!)
+        
+        taxImageURl = (userContract?.taxReturnImages!)!
+        bankImageURl = (userContract?.bankStatements!)!
+         equipmentImageURl = (userContract?.equipmentImages!)!
+         insuranceImageURl = userContract?.insuranceCertificate!
+         signorImageURl = userContract?.signorAndSecretaryId!
+         invoiceImageURl = userContract?.invoice!
+         closingImageURl = userContract?.closingFees!
+        pageSignedImageURl = userContract?.allPagesSignedImage!
+         everythingImageURl = userContract?.everyThingCompleted!
         
         
-//        let p_date = (userContract!.projectedPurchaseDate! as NSString).doubleValue
-        
-
-//        let convertDate = NSDate(timeIntervalSince1970: p_date)
-        
-//        print(convertDate.description)
+        if equipmentValue.count > 1{
+            
+            let text = "\(equipmentValue[0]), \(equipmentValue.count - 1) more"
+            equipmentTF.text = text
+        }
+        else if equipmentValue.count == 1{
+            equipmentTF.text = equipmentValue[0]
+        }
         
         
         
@@ -306,14 +311,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     // ***************** TEXTFIELD BEGIN EDITING  **********************
 
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        self.editStatus = true
-//        saveButton.isHidden = false
-//
-//
-//
-//        return true
-//    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.editStatus = true
+        saveButton.isHidden = false
+
+
+
+        return true
+    }
     
     
     
@@ -796,7 +801,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/updatecontract"
 
 
-        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        if contractTypeTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
 
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": userContract!.id!,
@@ -805,8 +810,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "allPendingDocumentCounts": 0,
                                                 "bankStatements": bankImageURl ,
                                                 "closingFees": closingImageURl ?? "",
-                                                "contactId": selectedContactID!,
-                                                "contractNumber": "",
+                                                "contactId": userContract!.contactId,
+                                                "contractNumber": userContract!.contractNumber!,
                                                 "contractStatus": contractTypeTF.text!,
                                                 "equipmentCost": amountTF.text!,
                                                 "equipmentDetails": equipmentValue,
@@ -833,9 +838,11 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
 
             print("-------------------------")
+            
+            print(selectedContactID)
             print(inputDetail)
 //            print(apiLink)
-//            print(selectedContactID)
+//
             print("-------------------------")
 
 

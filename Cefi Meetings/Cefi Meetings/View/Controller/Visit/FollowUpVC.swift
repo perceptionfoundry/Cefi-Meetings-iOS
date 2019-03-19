@@ -42,6 +42,7 @@ class FollowUpVC: UIViewController {
     
     
     let viewModel = MeetingReportViewModel()
+    let getReportViewModel = GetVisitReportViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
 
@@ -126,7 +127,8 @@ class FollowUpVC: UIViewController {
         
 
         
-       
+        getInitialReport()
+
         
         
 
@@ -138,6 +140,54 @@ class FollowUpVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
+    
+    func getInitialReport(){
+        
+        var reportValue : MeetingReport?
+        
+        let apilink = appGlobalVariable.apiBaseURL+"visitreport/getclientvisitreport?visitId=\((meetingDetail!.id)!)&userId=\(appGlobalVariable.userID)"
+        
+        let paramDict = [
+            "userId" : appGlobalVariable.userID,
+            "visitId": meetingDetail!.id!
+        ]
+        
+        print(apilink)
+        print(paramDict)
+        
+        
+        getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
+            
+            reportValue = result
+            var saleIndex = 0
+            if status == true{
+                
+                let saleValue = reportValue?.salesInLastThreeMonths!
+                
+                
+                switch  saleValue{
+                case "Deceased":
+                    saleIndex = 0
+                case "Same":
+                    saleIndex = 1
+                case "Increased":
+                    saleIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+//                self.saleStatus.selectItemAt(index: saleIndex, animated: true)
+                
+            }
+        }
+        
+        
+        
+    }
+    
+    
     
 
     @IBAction func submitButtonAction(_ sender: Any) {
