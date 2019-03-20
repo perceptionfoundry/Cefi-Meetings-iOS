@@ -36,8 +36,12 @@ class FollowUpVC: UIViewController {
     @IBOutlet weak var setFollowUpLabel: UILabel!
     
     @IBOutlet weak var commentTF: UITextView!
+    @IBOutlet weak var otherComment: UITextView!
     
- 
+    @IBOutlet weak var agreeSwitch: UISwitch!
+    @IBOutlet weak var contractErrorSwitch: UISwitch!
+    @IBOutlet weak var otherSwitch: UISwitch!
+    
     @IBOutlet weak var buttonView_Y_constraint: NSLayoutConstraint!
     
     
@@ -161,24 +165,77 @@ class FollowUpVC: UIViewController {
         getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
             
             reportValue = result
-            var saleIndex = 0
+            var outcomeIndex = 0
+            
+            
             if status == true{
                 
-                let saleValue = reportValue?.salesInLastThreeMonths!
+                
+                //OUTCOME
+                let outValue = reportValue?.mainOutcome!
                 
                 
-                switch  saleValue{
-                case "Deceased":
-                    saleIndex = 0
-                case "Same":
-                    saleIndex = 1
-                case "Increased":
-                    saleIndex = 2
-                default:
-                    saleIndex = -1
+                                switch  outValue{
+                                case "Closed":
+                                    outcomeIndex = 0
+                                case "Positive":
+                                    outcomeIndex = 1
+                                case "Neutral":
+                                    outcomeIndex = 2
+                                case "Negative":
+                                    outcomeIndex = 3
+                                    self.pendingView.isHidden = true
+                                    self.buttonView_Y_constraint.constant = 0
+                                    self.negativeView.isHidden = false
+                                default:
+                                    outcomeIndex = -1
+                                }
+                
+                                self.OutcomeSegement.selectItemAt(index: outcomeIndex)
+                
+                // OUTCOME COMMENT
+                self.commentTF.text = result!.outcomeComments!
+                //DID NOT AGREE
+
+                let didAgreeStatus = result!.didNotAgreetoTerms!
+                
+                if didAgreeStatus{
+                    self.agreeSwitch.setOn(true, animated: false)
+                }
+                else{
+                    self.agreeSwitch.setOn(false, animated: false)
+
                 }
                 
-//                self.saleStatus.selectItemAt(index: saleIndex, animated: true)
+                //CONTRACT ERROR
+                let contractErrorstatus = result!.contractError!
+                
+                if contractErrorstatus{
+                    self.contractErrorSwitch.setOn(true, animated: false)
+
+                }
+                else{
+                    self.contractErrorSwitch.setOn(false, animated: false)
+
+                }
+                
+                // OTHER
+                let otherStatus = result!.other!
+                
+                if otherStatus{
+                    self.otherSwitch.setOn(true, animated: false)
+
+                }
+                else{
+                    self.otherSwitch.setOn(false, animated: false)
+
+                }
+                
+                //OTHER COMMENT
+                
+                self.otherComment.text = result!.otherComments!
+                
+//
                 
             }
         }
@@ -228,12 +285,13 @@ class FollowUpVC: UIViewController {
              paramDict = [
                 "userId":appGlobalVariable.userID,
                 "mainOutcome" : outcomeValue,
+                "outcomeComments": commentTF.text!,
                 "visitId": meetingDetail!.id!,
                 "reportType": (meetingDetail?.purpose!)!,
                 "didNotAgreetoTerms": true,
                 "contractError": true,
                 "other": true,
-                "otherComments": commentTF.text!,
+                "otherComments": otherComment.text!,
   
                 ]
         }
@@ -242,6 +300,7 @@ class FollowUpVC: UIViewController {
             paramDict = [
                 "userId":appGlobalVariable.userID,
                 "mainOutcome" : outcomeValue,
+                "commentOnSales": commentTF.text!,
                 "visitId": meetingDetail!.id!,
                 "reportType": (meetingDetail?.purpose!)!
                 

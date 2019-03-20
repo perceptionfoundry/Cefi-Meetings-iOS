@@ -663,7 +663,7 @@
                                                 <rect key="frame" x="31.5" y="416" width="12" height="13.5"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL7-rQ-Azw" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                <rect key="frame" x="87.5" y="460" width="200" height="200"/>
+                                                <rect key="frame" x="87.5" y="300" width="200" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Contract" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-Au-0e6">
                                                         <rect key="frame" x="41" y="60" width="118.5" height="20"/>
@@ -776,7 +776,7 @@
                                             <constraint firstItem="Exx-ZH-K3O" firstAttribute="centerY" secondItem="77M-jn-V4l" secondAttribute="centerY" id="eda-TL-0YP"/>
                                             <constraint firstItem="rOw-4K-bVi" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" id="gXn-ic-Ulu"/>
                                             <constraint firstItem="FPH-r1-3Pl" firstAttribute="centerY" secondItem="yKa-gg-65s" secondAttribute="centerY" multiplier="0.6" id="gak-2M-n8i"/>
-                                            <constraint firstItem="eL7-rQ-Azw" firstAttribute="centerY" secondItem="yKa-gg-65s" secondAttribute="centerY" multiplier="0.7" id="gcL-3I-rzN"/>
+                                            <constraint firstItem="eL7-rQ-Azw" firstAttribute="centerY" secondItem="yKa-gg-65s" secondAttribute="centerY" multiplier="0.5" id="gcL-3I-rzN"/>
                                             <constraint firstItem="ueE-YC-ZPj" firstAttribute="centerY" secondItem="JUp-Tc-Qyd" secondAttribute="centerY" id="gog-qM-fKO"/>
                                             <constraint firstItem="tXp-Gz-61i" firstAttribute="centerX" secondItem="yKa-gg-65s" secondAttribute="centerX" multiplier="0.6" id="isI-ha-kWi"/>
                                             <constraint firstItem="TvD-sQ-qOG" firstAttribute="width" secondItem="Sf4-2F-ka0" secondAttribute="width" multiplier="1.2" id="jKt-96-bgX"/>
@@ -1772,6 +1772,40 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="vBj-8K-igF">
                                                 <rect key="frame" x="31.5" y="416" width="12" height="13.5"/>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fff-N7-z8a" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                                <rect key="frame" x="87.5" y="300" width="200" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Contract" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O21-ja-BXm">
+                                                        <rect key="frame" x="41" y="60" width="118.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1VW-jm-iCE">
+                                                        <rect key="frame" x="90" y="90" width="20" height="20"/>
+                                                        <color key="color" red="0.39200000000000002" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="1VW-jm-iCE" firstAttribute="centerY" secondItem="fff-N7-z8a" secondAttribute="centerY" id="3rw-Gx-Bag"/>
+                                                    <constraint firstItem="O21-ja-BXm" firstAttribute="centerY" secondItem="fff-N7-z8a" secondAttribute="centerY" multiplier="0.7" id="5UM-6v-hhN"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Ukf-1j-PTk"/>
+                                                    <constraint firstAttribute="width" secondItem="fff-N7-z8a" secondAttribute="height" multiplier="1:1" id="XVe-6j-eWD"/>
+                                                    <constraint firstItem="O21-ja-BXm" firstAttribute="centerX" secondItem="fff-N7-z8a" secondAttribute="centerX" id="fQi-yx-lp4"/>
+                                                    <constraint firstItem="1VW-jm-iCE" firstAttribute="centerX" secondItem="fff-N7-z8a" secondAttribute="centerX" id="rUw-su-3P8"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="1" height="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.51700000000000002" green="0.50586992500000005" blue="0.50600000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1785,6 +1819,7 @@
                                             <constraint firstItem="QkI-1c-692" firstAttribute="leading" secondItem="BuT-pH-uHl" secondAttribute="leading" id="7gb-Xf-XEW"/>
                                             <constraint firstItem="vBj-8K-igF" firstAttribute="top" secondItem="16v-7B-Kq1" secondAttribute="bottom" constant="20" id="8Z3-HH-CvQ"/>
                                             <constraint firstItem="rtM-Vg-ld6" firstAttribute="height" secondItem="vBj-8K-igF" secondAttribute="height" id="8fb-Pw-KZb"/>
+                                            <constraint firstItem="fff-N7-z8a" firstAttribute="centerY" secondItem="M1g-fj-Aer" secondAttribute="centerY" multiplier="0.5" id="8n5-lg-pAm"/>
                                             <constraint firstItem="wZa-Nh-aWm" firstAttribute="width" secondItem="Hes-mW-F0w" secondAttribute="width" multiplier="0.0275" id="9XJ-Fz-SbR"/>
                                             <constraint firstItem="f01-Fh-tXQ" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="0.2" id="AXG-XZ-nRv"/>
                                             <constraint firstItem="SmH-Kx-agb" firstAttribute="top" secondItem="BAQ-hu-nTZ" secondAttribute="bottom" constant="60" id="Ayw-2o-eDh"/>
@@ -1803,6 +1838,7 @@
                                             <constraint firstItem="8YZ-qW-sX9" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.001" id="INU-en-pM3"/>
                                             <constraint firstItem="XuP-Lu-WZP" firstAttribute="width" secondItem="Hes-mW-F0w" secondAttribute="width" multiplier="0.4" id="Iz8-mh-NHo"/>
                                             <constraint firstItem="CME-xd-Pak" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" id="J5u-tY-OVO"/>
+                                            <constraint firstItem="fff-N7-z8a" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" id="JUS-C6-g9i"/>
                                             <constraint firstItem="YvX-Q4-cn5" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.007" id="KS6-Se-ZNG"/>
                                             <constraint firstItem="gEM-ve-Zy8" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="1.4" id="Mud-q2-ecA"/>
                                             <constraint firstItem="U2p-kr-Udm" firstAttribute="centerY" secondItem="gEw-LU-Vnn" secondAttribute="centerY" id="Ngg-pX-uWu"/>
@@ -1903,6 +1939,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="activityView" destination="fff-N7-z8a" id="89F-Dw-gyP"/>
                         <outlet property="allpageSwitch" destination="lY3-wi-eeq" id="YmZ-K0-ACO"/>
                         <outlet property="amountTF" destination="gEM-ve-Zy8" id="PJb-QJ-sf0"/>
                         <outlet property="bankCollectionView" destination="2fS-gZ-xzN" id="cby-Wh-he4"/>
@@ -1921,6 +1958,7 @@
                         <outlet property="everythingSwitch" destination="lkk-NH-3Jb" id="0DL-jy-MAd"/>
                         <outlet property="insuranceSwitch" destination="FSi-Td-Lux" id="Otm-Kf-TEm"/>
                         <outlet property="invoiceSwitch" destination="AeS-KU-hH1" id="wvQ-96-cZX"/>
+                        <outlet property="mainVIew" destination="Hes-mW-F0w" id="U9T-3c-z2K"/>
                         <outlet property="missingText" destination="Mnt-7g-lMr" id="0IL-k0-zkd"/>
                         <outlet property="purchaseDateTF" destination="JnY-oz-cqs" id="DIV-zK-61u"/>
                         <outlet property="ratingStar" destination="XuP-Lu-WZP" id="Dx3-5P-0F6"/>

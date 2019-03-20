@@ -31,6 +31,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     
     // ***************** OUTLET **********************
+    
+    
+    @IBOutlet weak var activityView: Custom_View!
+    @IBOutlet weak var mainVIew: UIView!
     @IBOutlet weak var taxCollectionView: UICollectionView!
     @IBOutlet weak var bankCollectionView: UICollectionView!
     @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
@@ -140,7 +144,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        activityView.isHidden = true
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
         ratingStar.isUserInteractionEnabled = false
@@ -337,7 +341,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func editAction(_ sender: Any) {
         
-        
+        mainVIew.isUserInteractionEnabled = false
+        activityView.isHidden = false
         
         self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
         
@@ -801,7 +806,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/updatecontract"
 
 
-        if contractTypeTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        if contractTypeTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
 
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": userContract!.id!,
@@ -810,7 +815,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "allPendingDocumentCounts": 0,
                                                 "bankStatements": bankImageURl ,
                                                 "closingFees": closingImageURl ?? "",
-                                                "contactId": userContract!.contactId,
+                                                "contactId": userContract!.contactId!,
                                                 "contractNumber": userContract!.contractNumber!,
                                                 "contractStatus": contractTypeTF.text!,
                                                 "equipmentCost": amountTF.text!,

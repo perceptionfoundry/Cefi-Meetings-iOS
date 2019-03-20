@@ -127,9 +127,36 @@ class ProspectingVC: UIViewController {
         getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
             
             reportValue = result
+            
+            var outcomeIndex = 0
             var saleIndex = 0
+            var equipmentIndex = 0
+            
+            
             if status == true{
                 
+                // Outcome
+                let outComeValue = reportValue?.mainOutcome!
+                
+                
+                switch  outComeValue{
+                case "Positive":
+                    outcomeIndex = 0
+                case "Neutral":
+                    outcomeIndex = 1
+                case "Decrease":
+                    outcomeIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+                self.OutcomeSegment.selectItemAt(index: outcomeIndex)
+
+                // Outcome Comment
+                
+                self.outcomeCommentTF.text = result?.outcomeComments!
+                
+               // three month sale
                 let saleValue = reportValue?.salesInLastThreeMonths!
                 
                 
@@ -144,7 +171,26 @@ class ProspectingVC: UIViewController {
                     saleIndex = -1
                 }
                 
-//                self.saleStatus.selectItemAt(index: saleIndex, animated: true)
+                    self.businessSegment.selectItemAt(index: saleIndex)
+                
+                
+                // Equipment
+                let equipmentValue = reportValue?.equipmentNeeds!
+                
+                
+                switch  equipmentValue{
+                case "Yes":
+                    equipmentIndex = 0
+                case "Maybe":
+                    equipmentIndex = 1
+                case "No":
+                    equipmentIndex = 2
+                default:
+                    saleIndex = -1
+                }
+                
+                self.EquipmentSegment.selectItemAt(index: outcomeIndex)
+
                 
             }
         }

@@ -3481,15 +3481,19 @@ Please do so as soon as possible. Thanks.  </string>
                     <connections>
                         <outlet property="BusinessName" destination="Dzb-8j-qwm" id="Whv-4z-0TN"/>
                         <outlet property="OutcomeSegement" destination="kDh-Aj-AQO" id="Nki-TH-c21"/>
+                        <outlet property="agreeSwitch" destination="8Fe-DU-qOq" id="24a-96-nwx"/>
                         <outlet property="buttonView_Y_constraint" destination="JK6-fC-bdl" id="Bdq-ig-emq"/>
                         <outlet property="buttonsView" destination="ltz-9I-c2T" id="Kox-z6-162"/>
                         <outlet property="cancelSegment" destination="EDw-j2-f4B" id="2jW-MQ-gIB"/>
                         <outlet property="commentTF" destination="8km-26-ykn" id="R8t-vG-glX"/>
+                        <outlet property="contractErrorSwitch" destination="G68-Bl-HmB" id="BF5-Ur-ecP"/>
                         <outlet property="dateLabel" destination="aMx-tP-hUI" id="fnJ-Dr-oFG"/>
                         <outlet property="dealerContact" destination="1pd-rP-89N" id="GJT-V9-Aen"/>
                         <outlet property="meetingDate" destination="aMx-tP-hUI" id="z8j-Ap-G3a"/>
                         <outlet property="meetingTime" destination="2vD-zF-ndx" id="Y8Z-MA-rbv"/>
                         <outlet property="negativeView" destination="onx-s3-P8S" id="YAn-jZ-h0h"/>
+                        <outlet property="otherComment" destination="dw9-Jm-YNt" id="Gvb-5a-hB4"/>
+                        <outlet property="otherSwitch" destination="T6q-Rl-gKL" id="q1f-aE-otH"/>
                         <outlet property="pendingView" destination="CiC-mp-BKk" id="8GT-k6-VzY"/>
                         <outlet property="ratingStar" destination="X4L-ga-6wS" id="0JB-lW-pox"/>
                         <outlet property="setFollowUpLabel" destination="ffO-fk-voH" id="4NX-iO-ADU"/>

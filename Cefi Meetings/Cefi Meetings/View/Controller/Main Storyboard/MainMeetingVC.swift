@@ -313,6 +313,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        
+        
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
         self.selectedContact =  MeetingContent[indexPath.row]
@@ -353,7 +356,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         }
         
         
-        else{
+        else {
         
 
                 self.selectedVisit.append(indexPath.row)
@@ -366,6 +369,10 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             visitCategory = MeetingContent[indexPath.row].purpose!
             }
+                
+                
+                
+                
             else{
                 visitCategory = MeetingContent[indexPath.row].contactType!
 
@@ -408,9 +415,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
 
         
-        
         if selectedVisit.contains(indexPath.row) {
-            
+        
             return 220
             
             
