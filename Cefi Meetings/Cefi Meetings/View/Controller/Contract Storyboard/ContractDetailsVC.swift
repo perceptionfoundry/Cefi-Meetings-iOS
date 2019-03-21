@@ -119,7 +119,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         self.contractTypeTF.text = name.lowercased()
     }
     
-    func contactName(userName: String, id : String, ContractNumber : Bool?) {
+   func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
         contactTF.text = userName
         self.selectedContactID = id
     }
@@ -145,6 +145,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         activityView.isHidden = true
+        
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
         ratingStar.isUserInteractionEnabled = false

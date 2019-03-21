@@ -15,7 +15,7 @@ import TagListView
 
 
 class ReferralNewContractVC: UIViewController, typeDelegate, contactdelegate, UITextFieldDelegate {
-    func contactName(userName: String, id: String, ContractNumber : Bool?) {
+   func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String)  {
         
     }
     

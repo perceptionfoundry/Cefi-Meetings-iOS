@@ -18,7 +18,7 @@ protocol typeDelegate {
 }
 
 protocol contactdelegate {
-    func contactName(userName : String, id : String, ContractNumber : Bool?)
+    func contactName(userName : String, id : String, ContractNumber : Bool?, businessName: String)
 }
 
 protocol equipmentTypeDelegate {
@@ -41,7 +41,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     // ******************* OUTLET ***************************
 
     @IBOutlet weak var activityView: Custom_View!
-    
     @IBOutlet weak var mainVIew: UIView!
     @IBOutlet weak var taxCollectionView: UICollectionView!
     @IBOutlet weak var bankCollectionView: UICollectionView!
@@ -78,7 +77,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
     
     // ******************* VARIABLE ***************************
-
+    var LeadDelegate : NewLeadDelegate!
     let datePicker = UIDatePicker()
     var contactName = ""
     var equipmentValue = [String]()
@@ -117,7 +116,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var everythingImageCount = 0
 
     
-    
+    var businessTitle:String?
     
     
     
@@ -129,8 +128,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         self.contractTypeTF.text = name
     }
     
-    func contactName(userName: String, id : String, ContractNumber : Bool?) {
+    func contactName(userName: String, id : String, ContractNumber : Bool?, businessName: String) {
         contactTF.text = userName
+        businessTitle = businessName
         self.selectedContactID = id
     }
     
@@ -770,11 +770,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         print(selectedContactID)
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/addcontract"
-        //        let apiLink = "http://192.168.1.61:5000/api/contracts/addcontract"
-        
-        
-        
-//        if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+  
         
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": "",
@@ -823,6 +819,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 if Status == true{
                     
  self.navigationController?.popViewController(animated: true)
+                    self.LeadDelegate.leadDetail(contactName: self.contactTF.text!, businessName: self.businessTitle!, ContractNumber: Result!, Rating: self.ratingStar.value)
                     self.activityView.isHidden = true
 
                 }
@@ -830,11 +827,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                     self.alertMessage(Title: "Server Error", Message: Result!)
                 }
             }
-//        }
-//
-//        else{
-//            self.alertMessage(Title: "TextField Empty", Message: "Some of textfield is left empty")
-//        }
+
         
         
         
@@ -876,11 +869,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
-//            print(indexPath.row)
-//           
-//            print("*******************")
-//            print(taxImage[indexPath.row])
-//            print("*******************")
 
             
             taxCell.docImage.image = taxImage[indexPath.row]

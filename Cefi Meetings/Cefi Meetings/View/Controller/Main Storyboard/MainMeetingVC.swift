@@ -8,7 +8,23 @@
 
 import UIKit
 
-class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol calenderDelegate {
+    func selectDate (selectedDateValue: String, NaviDate: String)
+}
+
+class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSource, calenderDelegate {
+    
+    
+    func selectDate(selectedDateValue: String, NaviDate: String) {
+        self.MeetingContent.removeAll()
+        print(selectedDateValue)
+
+        
+        self.dateString = selectedDateValue
+        NaviBarDate.text = NaviDate
+//        getMeeting()
+    }
+    
 
     
     
@@ -36,7 +52,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var selectedContact : Meeting?
     var dateString = ""
     
-    
+    var selectedDate = Date()
     
     
     
@@ -46,7 +62,18 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+              super.viewDidLoad()
+        
+        
+        
+        print(selectedDate)
+        
+        let startDateOfTodayFormatter: DateFormatter = DateFormatter()
+        startDateOfTodayFormatter.dateFormat = "yyyy-MM-dd"
+        self.dateString = startDateOfTodayFormatter.string(from: selectedDate)
+        
+        
+  
         
         visitTable.delegate = self
         visitTable.dataSource = self
@@ -55,8 +82,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let formatter = DateFormatter()
         
         formatter.dateStyle = .long
-        
-         let today = formatter.string(from: currentDate)
+        let today = formatter.string(from: currentDate)
         
         NaviBarDate.text = today
         
@@ -74,8 +100,13 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    
+    
+    
+    
+    
     func getStartAndEndDate()->(startDate:Double,endDate:Double){
-        let currentTime = Date()
+        let currentTime = self.selectedDate
         let currentDateFormatter: DateFormatter = DateFormatter()
         currentDateFormatter.dateFormat = "yyyy-MM-dd"
         
@@ -83,7 +114,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         startDateOfTodayFormatter.dateFormat = "yyyy-MM-dd"
         
         
-       self.dateString = startDateOfTodayFormatter.string(from: currentTime)
+//       self.dateString = startDateOfTodayFormatter.string(from: currentTime)
         
         let startDate = startDateOfTodayFormatter.date(from: self.dateString)
 
@@ -125,9 +156,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let apiLink  = appGlobalVariable.apiBaseURL+"visits/gettodayVisits?startdate=\(self.dateString)&userId=\(appGlobalVariable.userID)&enddate=\(String(Int(floor(end_Timestamp * 1000))))"
         
-        
-        
-        
+        print(apiLink)
         
         let paramKey : [String : Any] = ["userId": appGlobalVariable.userID,
                                          "startdate": Int(floor(start_Timestamp * 1000)),
@@ -138,22 +167,22 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
             
-            print(Result?.first!)
+        
             
             if status == true{
                 self.MeetingContent = Result!
-                
-                
-                
-                
+             
                 self.visitTable.reloadData()
                 
+            }
+            else{
+                self.visitTable.reloadData()
             }
         }
         
     }
     
-    
+
     
     
     
@@ -179,7 +208,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
        
         
         self.tabBarController?.tabBar.isHidden = false
-        
+        MeetingContent.removeAll()
         self.getMeeting()
     }
     
@@ -502,6 +531,14 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let dest = segue.destination as! VisitDetailVC
         dest.meetingDetail = self.selectedContact!
+        }
+        
+        else if segue.identifier == "Calendar"{
+            
+            let dest = segue.destination as! CalendarVC
+            
+            dest.calendarDele = self
+            
         }
     }
     

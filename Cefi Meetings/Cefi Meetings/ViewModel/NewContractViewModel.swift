@@ -31,11 +31,12 @@ class NewContractViewModel {
                 return}
   
             print(value)
+            
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-                        print(check)
+//                        print(check)
             
             // ************* Action to taken as per server response ******************
             
@@ -57,7 +58,34 @@ class NewContractViewModel {
                 
                 // NO ERROR OCCUR
             else{
-                completion(true, nil)
+                
+                
+                guard let contractList = value["contractData"] as? Any else{return}
+                
+                
+                var jsonData : Data?
+                
+                var finalDict : Contract?
+                
+                do{
+                    jsonData = try JSONSerialization.data(withJSONObject: contractList, options: JSONSerialization.WritingOptions.prettyPrinted)
+                }catch{print("JSON Writing Error")}
+                
+                
+                do{
+                    
+                    finalDict = try JSONDecoder().decode(Contract.self, from: jsonData!)
+                    
+                                        print(finalDict?.contractNumber)
+                    
+                    
+//                    completion(true,"",finalDict!)
+                    completion(true, finalDict!.contractNumber!)
+                    
+                }catch{print("JSON Decoding error")}
+                
+                
+//
             }
             
         }

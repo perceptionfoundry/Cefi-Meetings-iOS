@@ -345,7 +345,7 @@ class FollowUpVC: UIViewController {
             let value =  result
                 print(value)
 
-//                performSegue(withIdentifier: "Contract_Segue", sender: value)
+                self.performSegue(withIdentifier: "Contract_Segue", sender: value)
 
                 
             }
@@ -357,11 +357,30 @@ class FollowUpVC: UIViewController {
         
         let dest = segue.destination  as! ContractDetailsVC
         
-        dest.userContract = sender as? Contract
+        dest.userContract = sender as! Contract
     }
     
     
     @IBAction func followUpAction(_ sender: Any) {
+        
+        
+        let storyboard = UIStoryboard(name: "Visit", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Visit") as! NewVisit
+                self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true, completion: nil)
+        
+        print(meetingDetail)
+        
+////        vc.purposeTF.text = meetingDetail!.purpose!
+//        vc.contactTF.text = meetingDetail!.contactName!
+//        vc.contractTF.text = meetingDetail!.contractId!
+        vc.selectedContactName = meetingDetail!.contactName!
+        vc.selectedContactID = meetingDetail!.contactId!
+        vc.selectedPurpose = meetingDetail!.purpose!
+        vc.contractId = meetingDetail!.contractId!
+        vc.selectedContractID = meetingDetail!.contractNumber!
+        
     }
     
     

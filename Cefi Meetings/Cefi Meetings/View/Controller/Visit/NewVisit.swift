@@ -12,6 +12,8 @@ import GooglePlaces
 
 
 class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate, ReminderDelegate{
+    
+    
    
     
     
@@ -46,7 +48,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     var time_Stamp : TimeInterval?
     var reminderTotalTime : Double = 0.0
     var viewModel = NewMeetingViewModel()
+    var selectedContactName = ""
     var selectedContactID = ""
+    var selectedPurpose = ""
+    var selectedContractID = ""
     var reminderOn = false
     var reminderTime : Double = 0.0
     var contractAvailable = false
@@ -59,9 +64,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     var mapCameraView: GMSMapView?
     
     
+    
     //  **************** PROTOCOL FUNCTION  ****************
 
-    func contactName(userName: String, id : String, ContractNumber : Bool?) {
+    func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String)  {
         contactTF.text = userName
         self.selectedContactID = id
         
@@ -103,6 +109,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        contactTF.text = selectedContactName
+        contractTF.text = selectedContractID
+        purposeTF.text = selectedPurpose
         
         
         

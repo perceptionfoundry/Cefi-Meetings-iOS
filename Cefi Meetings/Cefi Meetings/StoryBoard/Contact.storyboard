@@ -665,6 +665,7 @@
                         <outlet property="typeTF" destination="dA6-dR-MGp" id="c2h-EK-oPs"/>
                         <segue destination="aYV-C2-dsO" kind="show" identifier="Contact_Type" id="EQQ-xc-4Rj"/>
                         <segue destination="Mek-SC-ddN" kind="show" identifier="Industry_Type" id="0bb-Nf-zS9"/>
+                        <segue destination="qiJ-RK-z8w" kind="presentation" identifier="Contact" id="tr9-HO-UKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcw-ka-d3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1275,6 +1276,14 @@
             </objects>
             <point key="canvasLocation" x="4366" y="-177"/>
         </scene>
+        <!--Contact-->
+        <scene sceneID="5Qd-M5-dYs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Contact" id="qiJ-RK-z8w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haY-q6-VAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="146"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_contract" width="132" height="30"/>
@@ -1295,7 +1304,7 @@
         <image name="type_newContact" width="15" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IeO-Vm-2U6"/>
-        <segue reference="uMu-Hh-0Kj"/>
+        <segue reference="0bb-Nf-zS9"/>
+        <segue reference="EQQ-xc-4Rj"/>
     </inferredMetricsTieBreakers>
 </document>

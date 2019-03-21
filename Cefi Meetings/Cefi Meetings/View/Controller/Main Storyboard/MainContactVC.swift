@@ -455,6 +455,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
+        print(segueStatus)
+        
         let workKey = wordSection[indexPath.section]
 
         if segueStatus == true{
@@ -467,7 +469,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
                 if wordValue[indexPath.row].contactType != "Dealer" {
                 
-                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true)
+                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true, businessName: wordValue[indexPath.row].businessName!)
                 self.segueStatus = false
                 self.dismiss(animated: true, completion: nil)
             }
@@ -502,7 +504,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 }
                 
                     
-                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id :wordValue[indexPath.row].id!, ContractNumber : contractNUM)
+                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id :wordValue[indexPath.row].id!, ContractNumber : contractNUM, businessName: wordValue[indexPath.row].businessName!)
                     self.segueStatus = false
                     self.dismiss(animated: true, completion: nil)
                 

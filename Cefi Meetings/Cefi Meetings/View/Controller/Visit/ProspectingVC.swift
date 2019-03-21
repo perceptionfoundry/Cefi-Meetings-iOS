@@ -94,9 +94,18 @@ class ProspectingVC: UIViewController {
     @IBAction func setupFollowUpAction(_ sender: Any) {
         let storyboardRef =  UIStoryboard(name: "Visit", bundle: nil)
         
-        let vc = storyboardRef.instantiateViewController(withIdentifier: "New_Visit")
+        let vc = storyboardRef.instantiateViewController(withIdentifier: "New_Visit") as! NewVisit
         
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        print(meetingDetail)
+        
+        vc.selectedContactName = meetingDetail!.contactName!
+        vc.selectedContactID = meetingDetail!.contactId!
+        vc.selectedPurpose = "Prospecting"
+        vc.contractId = meetingDetail!.contractId!
+        vc.selectedContractID = meetingDetail!.contractNumber ?? ""
         
     }
     

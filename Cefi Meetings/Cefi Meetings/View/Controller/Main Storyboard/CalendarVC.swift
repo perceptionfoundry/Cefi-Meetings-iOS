@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class CalendarVC: UIViewController{
+class CalendarVC: UIViewController, FSCalendarDelegate{
    
     
     
@@ -23,7 +23,7 @@ class CalendarVC: UIViewController{
     
     
     
-    
+    var calendarDele : calenderDelegate!
     
     
     // ****************** VIEWDIDLOAD *****************
@@ -35,7 +35,7 @@ class CalendarVC: UIViewController{
     calendarView.pagingEnabled = false
         calendarView.scrollDirection = .vertical
         
-        
+        calendarView.delegate = self
         
         let currentDate = Date()
         let formatter = DateFormatter()
@@ -50,7 +50,28 @@ class CalendarVC: UIViewController{
     }
     
   
-    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: TimeZone.current.identifier)
+        formatter.dateFormat = "yyyy-MM-dd"
+       let selected = formatter.string(from: date)
+        
+        
+        let currentDate = date
+        let naviDateformatter = DateFormatter()
+        formatter.locale = Locale(identifier: TimeZone.current.identifier)
+        naviDateformatter.dateStyle = .long
+        let today = naviDateformatter.string(from: currentDate)
+        
+         print(today)
+        
+        self.navigationController?.popViewController(animated: true)
+        
+        calendarDele.selectDate(selectedDateValue: selected, NaviDate: today)
+        
+        
+    }
  
     // ****************** BACK ACTION FUNCTION *****************
 

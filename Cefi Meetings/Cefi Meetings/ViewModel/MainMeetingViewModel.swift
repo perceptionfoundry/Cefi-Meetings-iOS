@@ -57,6 +57,10 @@ class MainMeetingViewModel{
                 
                 
             }
+            else{
+                completion(false,"",nil)
+
+            }
         }
     }
     

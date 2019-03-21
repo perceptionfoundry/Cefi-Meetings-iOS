@@ -135,10 +135,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.userContract = tableData
                 self.allContract = tableData
                 
-//                print("DISPLAY TABLE QUANTITY \(self.userContract.count)")
-                
-                
-//                print(self.userContract[0].equipmentDetails)
+//     
                 
                 
                 

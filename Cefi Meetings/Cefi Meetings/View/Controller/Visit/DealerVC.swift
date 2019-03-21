@@ -9,16 +9,36 @@
 import UIKit
 import TTSegmentedControl
 
-
+//************** Protocol Define ***************
 
 protocol DealerDelegate{
 
     func selectedDealer(DealerName : String)
 }
 
+protocol NewLeadDelegate {
+    func leadDetail(contactName:String?, businessName:String?, ContractNumber:String, Rating: CGFloat?)
+}
 
 
-class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, DealerDelegate{
+
+
+
+
+
+class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, DealerDelegate, NewLeadDelegate{
+    
+    
+    
+    
+    func leadDetail(contactName: String?, businessName: String?, ContractNumber: String, Rating: CGFloat?) {
+        
+        
+        self.NewContact.append(newAddition(newContactName: contactName!, newBusinessName: businessName!, newContractNumber: ContractNumber, newRating: Rating!))
+        
+        dealerTable.reloadData()
+    }
+    
     func addDealer(DealerName: String) {
     
         
@@ -51,14 +71,26 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     let updateReportViewModel = MeetingReportViewModel()
     let getReportViewModel = GetVisitReportViewModel()
 
+    
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
 
+    struct newAddition{
+       var newContactName: String?
+       var newBusinessName: String?
+       var newContractNumber: String
+       var newRating: CGFloat?
+    }
+    
+    
+    var NewContact = [newAddition]()
     
     
     
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
 
 //        print(meetingDetail)
@@ -112,6 +144,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    
     
     
     func getInitialReport(){
@@ -176,13 +210,17 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-        
+        return NewContact.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Dealer", for: indexPath) as! DealerTableCell
+        
+        cell.DealerName.text = NewContact[indexPath.row].newContactName!
+        cell.businessName.text = NewContact[indexPath.row].newBusinessName!
+        cell.contractNumber.text = NewContact[indexPath.row].newContractNumber
+        cell.ratingStar.value = NewContact[indexPath.row].newRating!
         
         return cell
     }
@@ -194,20 +232,26 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     @IBAction func addContactAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Contact", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contact")
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contact") as! NewContactVC
         self.navigationController?.pushViewController(vc, animated: true)
+        
+        vc.referrredName = (meetingDetail?.contactName)!
+        vc.referredID = meetingDetail?.contactId
 
     }
     
     @IBAction func startNewContractAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Contract", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
+        let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract") as! NewContractVC
         self.navigationController?.pushViewController(vc, animated: true)
+        dealerTable.isHidden = false
+        
+        vc.LeadDelegate = self
 
     }
     
-    
+
     
     @IBAction func submitButtonAction(_ sender: Any) {
         

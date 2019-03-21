@@ -11,7 +11,16 @@ import GoogleMaps
 import GooglePlaces
 
 
-class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate{
+class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate, contactdelegate{
+    
+    
+    func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
+        referredTF.text = userName
+        referredID = id
+        
+        
+    }
+    
     
     
     
@@ -82,7 +91,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     var apiLink = ""
     let viewModel = NewContactViewModel()
     var industryValue = [String]()
-    var referrred = "none"
+    var referrredName = ""
+    var referredID : String?
     
     
     
@@ -131,8 +141,12 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         self.mapView.addSubview(self.mapCameraView!)
         
+        if referrredName != ""{
+            referredTF.isUserInteractionEnabled = false
+            
+        }
         
-        
+        referredTF.text = referrredName
         
         let typeTFTap = UITapGestureRecognizer(target: self, action: #selector(selectType))
         
@@ -205,6 +219,12 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         }
         
         else if textField == referredTF{
+           
+                
+                
+                performSegue(withIdentifier: "Contact", sender: nil)
+                
+                
             
         }
         
@@ -229,7 +249,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
                                     "email" : emailTF.text!,
                                     "industryType" : industryTF.text!,
                                     "contactType" : typeTF.text!,
-                                    "referredBy" : self.referrred,
+                                    "referredBy" : self.referrredName,
                                     "lat" : self.chosenPlace!.lat,
                                     "long" : chosenPlace!.long                                    ] as [String : Any]
         
@@ -379,6 +399,15 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
             
             dest.equipmentDelegate = self
             dest.selectedTitle = industryValue
+        }
+            
+        else if segue.identifier == "Contact"{
+            
+            let dest = segue.destination as! MainContactVC
+            
+            dest.contactDelegate = self
+            dest.segueStatus = true
+            
         }
     }
     

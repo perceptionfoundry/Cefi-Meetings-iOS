@@ -63,7 +63,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
 //
        
         contactTF.text = meetingDetail!.contactName!
-        contractTF.text = meetingDetail!.contractId
+        contractTF.text = meetingDetail!.contractNumber
         dateTF.text = String(dateString[0])
 //        timeTF.text = timeString
         timeTF.text = meetingDetail!.timeInString
