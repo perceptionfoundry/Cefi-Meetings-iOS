@@ -3279,6 +3279,7 @@ Please do so as soon as possible. Thanks.  </string>
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="76"/>
                                                                 <connections>
                                                                     <action selector="contractDetailAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="ocg-Br-dDO"/>
+                                                                    <action selector="followUpAction:" destination="TLU-nx-EGh" eventType="touchUpInside" id="aPc-xu-vhx"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -3330,6 +3331,7 @@ Please do so as soon as possible. Thanks.  </string>
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="76"/>
                                                                 <connections>
                                                                     <action selector="contractDetailAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="knM-kt-Ffz"/>
+                                                                    <action selector="contractUpdateAction:" destination="TLU-nx-EGh" eventType="touchUpInside" id="UYf-Rw-h5N"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -3500,11 +3502,20 @@ Please do so as soon as possible. Thanks.  </string>
                         <outlet property="timeLabel" destination="2vD-zF-ndx" id="Sbj-qS-SCc"/>
                         <outlet property="updateContractLabel" destination="Rnq-Zx-PNq" id="25T-1t-zrv"/>
                         <outlet property="visitorName" destination="1pd-rP-89N" id="irZ-dM-UZ9"/>
+                        <segue destination="cjR-75-RNG" kind="show" identifier="Contract_Segue" id="7zz-5n-BCV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCN-Ot-SEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592.79999999999995" y="5804.7976011994006"/>
+        </scene>
+        <!--Contract_Details-->
+        <scene sceneID="lWi-TW-XCW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" referencedIdentifier="Contract_Details" id="cjR-75-RNG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28L-sT-3u8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="6423"/>
         </scene>
         <!--PurposeVC-->
         <scene sceneID="hfR-fx-YOG">

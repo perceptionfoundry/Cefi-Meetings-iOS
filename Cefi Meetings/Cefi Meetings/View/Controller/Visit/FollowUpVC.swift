@@ -45,7 +45,8 @@ class FollowUpVC: UIViewController {
     @IBOutlet weak var buttonView_Y_constraint: NSLayoutConstraint!
     
     
-    let viewModel = MeetingReportViewModel()
+    let reportViewModel = MeetingReportViewModel()
+    let getContractViewModel = GetSpecificContractViewModel()
     let getReportViewModel = GetVisitReportViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
@@ -309,7 +310,7 @@ class FollowUpVC: UIViewController {
         
         
         
-        viewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
+        reportViewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
             
             if status == true{
                 self.navigationController?.popViewController(animated: true)
@@ -326,7 +327,47 @@ class FollowUpVC: UIViewController {
         
     }
   
-   
+    @IBAction func contractUpdateAction(_ sender: Any) {
+        
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getspecificcontract"
+        
+        let paramDict : [String : String    ] = [
+            "userId": appGlobalVariable.userID,
+            "contractId":(meetingDetail?.contractId)!
+            
+        ]
+        
+        getContractViewModel.fetchSpecificContractDetail(API: apiLink, TextFields: paramDict) { (Status, err, result) in
+            
+            
+            if Status == true{
+            let value =  result
+                print(value)
+
+//                performSegue(withIdentifier: "Contract_Segue", sender: value)
+
+                
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination  as! ContractDetailsVC
+        
+        dest.userContract = sender as? Contract
+    }
+    
+    
+    @IBAction func followUpAction(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

@@ -149,7 +149,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         contractNumberTF.isUserInteractionEnabled = false
         ratingStar.isUserInteractionEnabled = false
         
-        print(userContract!)
+//        print(userContract!)
 //        print(selectedContactID!)
         
         saveButton.isHidden = true
@@ -157,7 +157,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         contractTypeTF.text = userContract!.contractStatus
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
-        
+
         selectedContactID = userContract!.id
         
         
@@ -179,7 +179,6 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         
-//        let dateFloat = Date(timeIntervalSince1970: (dateInString as NSString).doubleValue)
         let dateFloat = Date(timeIntervalSince1970: dateIniOSFormat)
         print(dateFloat)
         let dateValue = formatter.string(from: dateFloat)

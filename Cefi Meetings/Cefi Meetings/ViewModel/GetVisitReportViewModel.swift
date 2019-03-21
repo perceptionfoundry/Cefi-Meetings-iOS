@@ -26,7 +26,7 @@ class GetVisitReportViewModel{
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-                        print(mainDict)
+                        print(mainDict["success"])
             
             if mainDict["success"] as! Int == 1 {
                 

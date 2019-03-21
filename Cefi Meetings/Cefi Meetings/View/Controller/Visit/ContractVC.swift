@@ -9,7 +9,7 @@
 import UIKit
 
 protocol contactContractDelegate{
-    func getContract(Value: String)
+    func getContract(contractNumber :String, Value: String)
 }
 
 
@@ -132,7 +132,10 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        contractDelegate?.getContract(Value: tableContent[indexPath.row].id!)
+        
+        
+        contractDelegate?.getContract(contractNumber : tableContent[indexPath.row].contractNumber!, Value: tableContent[indexPath.row].id!)
+        
         self.navigationController?.popViewController(animated: true)
     }
     

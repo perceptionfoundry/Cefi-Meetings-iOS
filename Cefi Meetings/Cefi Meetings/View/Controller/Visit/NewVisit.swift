@@ -53,6 +53,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     // ******** VARIABLE RELATED TO MAP *********
     var chosenPlace : meetup?
+    var contractId : String?
     let currentLocationMarker = GMSMarker()
     let locationManager = CLLocationManager()
     var mapCameraView: GMSMapView?
@@ -75,8 +76,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
     
     
-    func getContract(Value: String) {
-        contractTF.text = Value
+    func getContract(contractNumber :String, Value: String) {
+        contractId = Value
+        contractTF.text  = contractNumber
     }
     
     
@@ -408,7 +410,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             "long": String(chosenPlace!.long),
             "userId": appGlobalVariable.userID,
             "contactId": selectedContactID,
-            "contractId": contractTF.text!,
+            "contractId": contractId ?? "DEALER",
             "time": String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
             "reminder": String(reminderADD),
             "lat": String(chosenPlace!.lat),

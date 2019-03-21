@@ -502,7 +502,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 }
                 
                     
-                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : contractNUM)
+                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id :wordValue[indexPath.row].id!, ContractNumber : contractNUM)
                     self.segueStatus = false
                     self.dismiss(animated: true, completion: nil)
                 

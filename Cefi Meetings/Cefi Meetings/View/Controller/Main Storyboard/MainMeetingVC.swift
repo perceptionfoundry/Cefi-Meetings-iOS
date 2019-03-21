@@ -138,7 +138,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         viewModel.getTodayVisitDetail(API: apiLink, Param: paramKey) { (status, err, Result) in
             
-//            print(Result?.count)
+            print(Result?.first!)
             
             if status == true{
                 self.MeetingContent = Result!
