@@ -155,7 +155,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         saveButton.isHidden = true
         
-        contractTypeTF.text = userContract!.contractStatus
+        contractTypeTF.text = userContract!.contractStatus 
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
 

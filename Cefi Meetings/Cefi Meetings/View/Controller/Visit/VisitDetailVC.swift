@@ -30,10 +30,17 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     @IBOutlet weak var locationTF: UITextField!
     
     @IBOutlet weak var editButton: Custom_Button!
-    
+
+    var date = Date()
+    let datePicker = UIDatePicker()
+    var date_stamp : TimeInterval?
+    var time_Stamp : TimeInterval?
+    var reminderTotalTime : Double = 0.0
 
     var meetingDetail : Meeting?
-    
+    let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
+    let getContractViewModel = GetSpecificContractViewModel()
+
     
     // ******** Map related Variable *********
     var chosenPlace : meetup?
@@ -99,7 +106,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
 
         //        mapView.isHidden = true
         locationTF.delegate = self
-    
+        dateTF.delegate = self
+        timeTF.delegate = self
         
         
         
@@ -185,15 +193,33 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        let autoCompleteController = GMSAutocompleteViewController()
-        autoCompleteController.delegate = self
+//        let autoCompleteController = GMSAutocompleteViewController()
+//        autoCompleteController.delegate = self
+//
+//        let filter = GMSAutocompleteFilter()
+//        autoCompleteController.autocompleteFilter = filter
+//
+//        self.locationManager.startUpdatingLocation()
+//        self.present(autoCompleteController, animated: true, completion: nil)
         
-        let filter = GMSAutocompleteFilter()
-        autoCompleteController.autocompleteFilter = filter
         
-        self.locationManager.startUpdatingLocation()
-        self.present(autoCompleteController, animated: true, completion: nil)
-        
+        if textField == dateTF{
+            self.showDatePicker()
+        }
+            
+        else if textField == timeTF{
+            self.showTimePicker()
+        }
+        else if textField == locationTF{
+            let autoCompleteController = GMSAutocompleteViewController()
+            autoCompleteController.delegate = self
+            
+            let filter = GMSAutocompleteFilter()
+            autoCompleteController.autocompleteFilter = filter
+            
+            self.locationManager.startUpdatingLocation()
+            self.present(autoCompleteController, animated: true, completion: nil)
+        }
         
     }
     
@@ -213,6 +239,10 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     @IBAction func editButtonAction(_ sender: Any) {
        
+        
+ 
+        
+        
         if editOn == false{
             editOn = true
             editButton.backgroundColor = UIColor(red: 0.667, green: 0.667, blue: 0.667, alpha: 1)
@@ -220,7 +250,6 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
             editButton.shadowOpacity = 10
             editButton.shadowRadius = 2
             editButton.shadowColor = UIColor.darkGray
-            contractTF.isEnabled = true
             dateTF.isEnabled = true
             timeTF.isEnabled = true
             reminderTF.isEnabled = true
@@ -239,11 +268,126 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
             reminderTF.isEnabled = false
             locationTF.isEnabled = false
         }
-        
+//
        
         
         
     }
+    
+    
+    // ******************* SHOW DATE FUNCTION ***************************
+    
+    
+    func showDatePicker(){
+        
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        dateTF.inputAccessoryView = toolbar
+        dateTF.inputView = datePicker
+        
+    }
+    
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        date = datePicker.date
+        
+        
+        
+        dateTF.text = formatter.string(from: datePicker.date)
+        
+        let date_Stamp = formatter.date(from: dateTF.text!)?.timeIntervalSince1970
+        
+        self.date_stamp = date_Stamp
+        
+        self.reminderTotalTime +=  Double(date_Stamp!)
+        
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+    
+    
+    
+    
+    
+    
+    // ******************* SHOW TIME FUNCTION ***************************
+    
+    
+    func showTimePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .time
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTimePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTimePicker));
+        
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        timeTF.inputAccessoryView = toolbar
+        timeTF.inputView = datePicker
+        
+    }
+    
+    @objc func doneTimePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        
+        date = datePicker.date
+        
+        
+        
+        timeTF.text = formatter.string(from: datePicker.date)
+        
+        
+        
+        let separateTimeElement =  timeTF.text!.split(separator: ":")
+        //        print(separateTimeElement)
+        
+        let timeWithoutPM = separateTimeElement[1].split(separator: " ")
+        print(timeWithoutPM)
+        
+        let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
+        let min_Stamp = (Double(timeWithoutPM[0])! * 60)
+        
+        let time_stamp = hour_Stamp + min_Stamp
+        
+        self.time_Stamp = time_stamp
+        
+        //        print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+        
+        self.reminderTotalTime +=  time_stamp
+        
+        self.view.endEditing(true)
+    }
+    
+    
+    
+    @objc func cancelTimePicker(){
+        self.view.endEditing(true)
+    }
+    
+    
+    
+    
 }
 
 

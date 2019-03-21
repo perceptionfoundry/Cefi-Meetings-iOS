@@ -37,7 +37,7 @@ class ProspectingVC: UIViewController {
         super.viewDidLoad()
         
         
-//        print(meetingDetail)
+        print(meetingDetail)
         
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")

@@ -1309,7 +1309,7 @@
                                                 <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ft2-GC-NDN">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ft2-GC-NDN">
                                                 <rect key="frame" x="201.5" y="190" width="150" height="20"/>
                                                 <color key="textColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -1493,6 +1493,7 @@
                         <outlet property="reminderTF" destination="XGh-Wf-oFC" id="b2E-mh-5gC"/>
                         <outlet property="timeTF" destination="Dra-D3-zZ1" id="goX-vo-bcF"/>
                         <segue destination="2wK-bS-vrV" kind="presentation" id="C4r-aJ-KzX"/>
+                        <segue destination="6fM-75-Gpv" kind="show" identifier="Contract_Segue" id="o3B-xt-eGj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbZ-Pr-jhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2577,8 +2578,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipment needs (next 6 months) ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-qP-am4">
-                                                <rect key="frame" x="38" y="484.5" width="299.5" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipment needs (next 6 months)?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-qP-am4">
+                                                <rect key="frame" x="40.5" y="484.5" width="294" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2784,8 +2785,8 @@
                                                     <constraint firstItem="U0F-zY-20E" firstAttribute="leading" secondItem="boy-CO-qk0" secondAttribute="leading" constant="10" id="zlz-jH-5Yp"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How's business (last 3 months) ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUK-pk-tCc">
-                                                <rect key="frame" x="51.5" y="390.5" width="272" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How's business (last 3 months)?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUK-pk-tCc">
+                                                <rect key="frame" x="54" y="390.5" width="267" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3264,19 +3265,19 @@ Please do so as soon as possible. Thanks.  </string>
                                                 <rect key="frame" x="0.0" y="815.5" width="375" height="108"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-nx-kuj" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                        <rect key="frame" x="206.5" y="16" width="150" height="76"/>
+                                                        <rect key="frame" x="208" y="16" width="131.5" height="76"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Up Follow Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ffO-fk-voH">
-                                                                <rect key="frame" x="0.0" y="48.5" width="150" height="16.5"/>
+                                                                <rect key="frame" x="0.0" y="48.5" width="131.5" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="followup" translatesAutoresizingMaskIntoConstraints="NO" id="7X2-Nn-9wE">
-                                                                <rect key="frame" x="65.5" y="17" width="18.5" height="19"/>
+                                                                <rect key="frame" x="57.5" y="17" width="16.5" height="19"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR4-6s-DnD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="76"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="76"/>
                                                                 <connections>
                                                                     <action selector="contractDetailAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="ocg-Br-dDO"/>
                                                                     <action selector="followUpAction:" destination="TLU-nx-EGh" eventType="touchUpInside" id="aPc-xu-vhx"/>
@@ -3316,19 +3317,19 @@ Please do so as soon as possible. Thanks.  </string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrT-cf-htg" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                        <rect key="frame" x="19" y="16" width="150" height="76"/>
+                                                        <rect key="frame" x="35.5" y="16" width="131.5" height="76"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Contract" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rnq-Zx-PNq">
-                                                                <rect key="frame" x="0.0" y="48.5" width="150" height="16.5"/>
+                                                                <rect key="frame" x="0.0" y="48.5" width="131.5" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contract_green" translatesAutoresizingMaskIntoConstraints="NO" id="vRu-xU-d2M">
-                                                                <rect key="frame" x="61.5" y="18" width="26.5" height="17"/>
+                                                                <rect key="frame" x="54.5" y="18" width="22.5" height="17"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-lH-Ddi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="76"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="76"/>
                                                                 <connections>
                                                                     <action selector="contractDetailAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="knM-kt-Ffz"/>
                                                                     <action selector="contractUpdateAction:" destination="TLU-nx-EGh" eventType="touchUpInside" id="UYf-Rw-h5N"/>
@@ -3370,21 +3371,19 @@ Please do so as soon as possible. Thanks.  </string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="IrT-cf-htg" firstAttribute="width" secondItem="ltz-9I-c2T" secondAttribute="width" multiplier="0.4" id="4RZ-ny-hwY"/>
+                                                    <constraint firstItem="IrT-cf-htg" firstAttribute="width" secondItem="ltz-9I-c2T" secondAttribute="width" multiplier="0.35" id="4RZ-ny-hwY"/>
                                                     <constraint firstItem="fKb-nx-kuj" firstAttribute="height" secondItem="ltz-9I-c2T" secondAttribute="height" multiplier="0.7" id="6U8-W0-Ji9"/>
                                                     <constraint firstItem="IrT-cf-htg" firstAttribute="height" secondItem="ltz-9I-c2T" secondAttribute="height" multiplier="0.7" id="9Pn-Zu-4zT"/>
                                                     <constraint firstItem="IrT-cf-htg" firstAttribute="centerY" secondItem="ltz-9I-c2T" secondAttribute="centerY" id="L29-Xs-B0r"/>
                                                     <constraint firstItem="fKb-nx-kuj" firstAttribute="centerY" secondItem="ltz-9I-c2T" secondAttribute="centerY" id="Lhb-Re-KoV"/>
-                                                    <constraint firstItem="IrT-cf-htg" firstAttribute="centerX" secondItem="ltz-9I-c2T" secondAttribute="centerX" multiplier="0.5" id="NG6-XZ-Xzr"/>
-                                                    <constraint firstItem="fKb-nx-kuj" firstAttribute="centerX" secondItem="ltz-9I-c2T" secondAttribute="centerX" multiplier="1.5" id="yMi-0z-pOO"/>
-                                                    <constraint firstItem="fKb-nx-kuj" firstAttribute="width" secondItem="ltz-9I-c2T" secondAttribute="width" multiplier="0.4" id="z2H-eB-Fam"/>
+                                                    <constraint firstItem="fKb-nx-kuj" firstAttribute="width" secondItem="ltz-9I-c2T" secondAttribute="width" multiplier="0.35" id="z2H-eB-Fam"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZX-h7-AXp">
                                                 <rect key="frame" x="19" y="140.5" width="337.5" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4L-ga-6wS" customClass="HCSStarRatingView">
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4L-ga-6wS" customClass="HCSStarRatingView">
                                                 <rect key="frame" x="20" y="117.5" width="150" height="19"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3419,6 +3418,7 @@ Please do so as soon as possible. Thanks.  </string>
                                             <constraint firstItem="8mq-w6-hSp" firstAttribute="centerX" secondItem="Qpm-97-Vug" secondAttribute="centerX" id="4xm-0I-0Gz"/>
                                             <constraint firstItem="1pd-rP-89N" firstAttribute="centerY" secondItem="Qpm-97-Vug" secondAttribute="centerY" multiplier="0.225" id="6Ve-PF-p6K"/>
                                             <constraint firstItem="CiC-mp-BKk" firstAttribute="centerX" secondItem="Qpm-97-Vug" secondAttribute="centerX" id="6ms-cI-PWg"/>
+                                            <constraint firstItem="fKb-nx-kuj" firstAttribute="trailing" secondItem="OVi-au-QLm" secondAttribute="trailing" id="86k-Jk-owX"/>
                                             <constraint firstItem="X4L-ga-6wS" firstAttribute="height" secondItem="Qpm-97-Vug" secondAttribute="height" multiplier="0.02" id="Ai7-VV-pK0"/>
                                             <constraint firstItem="CiC-mp-BKk" firstAttribute="centerY" secondItem="Qpm-97-Vug" secondAttribute="centerY" multiplier="1.05" id="CxC-vu-XJN"/>
                                             <constraint firstItem="FEH-jz-7gZ" firstAttribute="centerX" secondItem="Qpm-97-Vug" secondAttribute="centerX" id="DSO-rF-MdY"/>
@@ -3432,6 +3432,7 @@ Please do so as soon as possible. Thanks.  </string>
                                             <constraint firstItem="onx-s3-P8S" firstAttribute="height" secondItem="Qpm-97-Vug" secondAttribute="height" multiplier="0.4" constant="30" id="OPp-mD-2VG"/>
                                             <constraint firstItem="8mq-w6-hSp" firstAttribute="width" secondItem="Qpm-97-Vug" secondAttribute="width" id="OsY-qq-WE4"/>
                                             <constraint firstItem="X4L-ga-6wS" firstAttribute="width" secondItem="Qpm-97-Vug" secondAttribute="width" multiplier="0.4" id="Pif-fT-lUD"/>
+                                            <constraint firstItem="IrT-cf-htg" firstAttribute="leading" secondItem="OVi-au-QLm" secondAttribute="leading" id="Piq-A9-4vC"/>
                                             <constraint firstItem="pZX-h7-AXp" firstAttribute="centerY" secondItem="Qpm-97-Vug" secondAttribute="centerY" multiplier="0.3" id="Pyf-dn-6fv"/>
                                             <constraint firstItem="s4s-x0-erd" firstAttribute="centerY" secondItem="Qpm-97-Vug" secondAttribute="centerY" multiplier="0.35" id="Qi1-Uv-xz9"/>
                                             <constraint firstItem="CiC-mp-BKk" firstAttribute="width" secondItem="Qpm-97-Vug" secondAttribute="width" multiplier="0.9" id="Ryc-1Q-u0K"/>
@@ -3875,6 +3876,14 @@ Please do so as soon as possible. Thanks.  </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9En-Av-DcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-239.19999999999999" y="282.90854572713647"/>
+        </scene>
+        <!--Contract_Details-->
+        <scene sceneID="N0A-Fh-alN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" referencedIdentifier="Contract_Details" id="6fM-75-Gpv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrN-bM-HOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="1463"/>
         </scene>
     </scenes>
     <resources>

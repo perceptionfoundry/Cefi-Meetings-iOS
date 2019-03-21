@@ -58,7 +58,7 @@ class FollowUpVC: UIViewController {
         OutcomeSegement.allowChangeThumbWidth = false
         cancelSegment.allowChangeThumbWidth = false
         
-//        print(meetingDetail)
+        print(meetingDetail)
         
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
@@ -67,7 +67,7 @@ class FollowUpVC: UIViewController {
 //        let timeSplit  = timeStampSplit[1].split(separator: ":")
 //        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
         
-        let timeString = "00:00"
+//        let timeString = "00:00"
       
         
         print(dateString)
@@ -76,7 +76,7 @@ class FollowUpVC: UIViewController {
         
         dealerContact.text = meetingDetail!.contactName!
         BusinessName.text = meetingDetail!.businessName
-        meetingTime.text = timeString
+        meetingTime.text = meetingDetail!.timeInString
         meetingDate.text = String(dateString[0])
         
 

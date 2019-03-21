@@ -743,7 +743,7 @@ We hope you have a great and productive day!</string>
                                 <rect key="frame" x="0.0" y="84.5" width="375" height="533.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="hnv-04-QMG">
-                                        <rect key="frame" x="47" y="27.5" width="281.5" height="25"/>
+                                        <rect key="frame" x="52" y="27.5" width="271" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8O-wi-nJl">
                                                 <rect key="frame" x="0.0" y="0.0" width="76" height="25"/>
@@ -751,8 +751,8 @@ We hope you have a great and productive day!</string>
                                                 <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 pending documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-FR-ghJ">
-                                                <rect key="frame" x="87" y="0.0" width="194.5" height="25"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 pending documents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkJ-FR-ghJ">
+                                                <rect key="frame" x="87" y="0.0" width="184" height="25"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                                 <color key="textColor" red="0.94208574300000003" green="0.3412106037" blue="0.34108710289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -777,10 +777,10 @@ We hope you have a great and productive day!</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEK-pd-fO4" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                            <rect key="frame" x="303.5" y="24.5" width="31" height="31"/>
+                                                            <rect key="frame" x="294" y="24.5" width="50" height="31"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCF-ca-rMJ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" red="0.99545341730000003" green="0.96076232189999999" blue="0.96078330280000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -792,12 +792,12 @@ We hope you have a great and productive day!</string>
                                                                 <constraint firstItem="NCF-ca-rMJ" firstAttribute="centerY" secondItem="UEK-pd-fO4" secondAttribute="centerY" id="Wpg-7v-Gnb"/>
                                                                 <constraint firstItem="NCF-ca-rMJ" firstAttribute="width" secondItem="UEK-pd-fO4" secondAttribute="width" id="bLA-ka-Xag"/>
                                                                 <constraint firstItem="NCF-ca-rMJ" firstAttribute="height" secondItem="UEK-pd-fO4" secondAttribute="height" id="reu-9O-EbV"/>
-                                                                <constraint firstAttribute="width" secondItem="UEK-pd-fO4" secondAttribute="height" multiplier="1:1" id="rjD-6N-QlA"/>
                                                                 <constraint firstItem="NCF-ca-rMJ" firstAttribute="centerX" secondItem="UEK-pd-fO4" secondAttribute="centerX" id="vX4-rc-JPq"/>
+                                                                <constraint firstAttribute="width" constant="50" id="z90-KR-yup"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
-                                                                    <real key="value" value="15.5"/>
+                                                                    <real key="value" value="14"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
