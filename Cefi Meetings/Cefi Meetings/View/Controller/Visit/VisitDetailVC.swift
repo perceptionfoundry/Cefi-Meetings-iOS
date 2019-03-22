@@ -9,9 +9,10 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import MessageUI
 
 
-class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate{
+class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate{
     
     
     struct meetup {
@@ -236,6 +237,50 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    @IBAction func callButtonAction(_ sender: Any) {
+        
+        //*********************** CALLING FUNCTION *********************
+       
+            
+            
+        let number = String(meetingDetail!.phoneNumber!)
+        print(number)
+            if let url = URL(string: "tel://\(number)"),
+                UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler:nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            } else {
+                // add error message here
+            }
+        
+        
+    }
+    
+    @IBAction func messageButtonAction(_ sender: UIButton) {
+        
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = ""
+            controller.recipients = [String(meetingDetail!.phoneNumber!)]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     
     @IBAction func editButtonAction(_ sender: Any) {
        

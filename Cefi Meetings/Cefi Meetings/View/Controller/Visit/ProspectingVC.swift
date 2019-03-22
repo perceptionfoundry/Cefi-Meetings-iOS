@@ -17,9 +17,13 @@ class ProspectingVC: UIViewController {
     @IBOutlet weak var dealerContact: UILabel!
     @IBOutlet weak var dealerBusiness: UILabel!
     
+    @IBOutlet weak var contractButtonView:UIView!
+    @IBOutlet weak var followupButtonView:UIView!
+
+    
     @IBOutlet weak var meetingTime: UILabel!
     @IBOutlet weak var meetingDate: UILabel!
-    
+
     @IBOutlet weak var OutcomeSegment: TTSegmentedControl!
     @IBOutlet weak var businessSegment: TTSegmentedControl!
     @IBOutlet weak var EquipmentSegment: TTSegmentedControl!
@@ -33,12 +37,19 @@ class ProspectingVC: UIViewController {
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
     
+   
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        print(meetingDetail)
+//        print(meetingDetail)
         
+        self.contractButtonView.isHidden = true
+        self.followupButtonView.isHidden = true
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
@@ -57,6 +68,25 @@ class ProspectingVC: UIViewController {
         OutcomeSegment.allowChangeThumbWidth = false
         businessSegment.allowChangeThumbWidth = false
         EquipmentSegment.allowChangeThumbWidth = false
+        
+        EquipmentSegment.selectItemAt(index: 2)
+        
+        EquipmentSegment.didSelectItemWith = { (index, title) -> () in
+                        print("Selected item \(index)")
+            
+            if self.EquipmentSegment.currentIndex == 2{
+                self.contractButtonView.isHidden = true
+                self.followupButtonView.isHidden = true
+
+            }
+                
+            else{
+                self.contractButtonView.isHidden = false
+                self.followupButtonView.isHidden = false
+
+            }
+            
+        }
         
         getInitialReport()
         

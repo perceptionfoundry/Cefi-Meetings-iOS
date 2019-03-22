@@ -21,6 +21,7 @@ class FollowUpVC: UIViewController {
     
     @IBOutlet weak var ratingStar: HCSStarRatingView!
     
+    @IBOutlet weak var contractNumber: UILabel!
     @IBOutlet weak var visitorName: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -52,6 +53,10 @@ class FollowUpVC: UIViewController {
     var meetingDetail : Meeting?
 
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,22 +68,17 @@ class FollowUpVC: UIViewController {
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
-//        let timeStampSplit = meetingDetail!.time!.split(separator: "T")
-//        let timeSplit  = timeStampSplit[1].split(separator: ":")
-//        let timeString = "\(timeSplit[0]):\(timeSplit[1]) "
-        
-//        let timeString = "00:00"
+//
       
         
         print(dateString)
-//        print(timeStampSplit)
        
         
         dealerContact.text = meetingDetail!.contactName!
         BusinessName.text = meetingDetail!.businessName
         meetingTime.text = meetingDetail!.timeInString
         meetingDate.text = String(dateString[0])
-        
+        contractNumber.text = meetingDetail!.contractNumber
 
         OutcomeSegement.didSelectItemWith = { (index, title) -> () in
 //            print("Selected item \(index)")

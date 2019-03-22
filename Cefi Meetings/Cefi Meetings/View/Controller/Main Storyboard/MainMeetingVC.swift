@@ -53,8 +53,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var dateString = ""
     
     var selectedDate = Date()
-    
-    
+    var selectedTagNumber = 0
     
     
     
@@ -264,7 +263,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.typeLabel.text = MeetingContent[indexPath.row].contactType
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
-           
+            
+            
+            cell.callNowButton.tag = indexPath.row
+            cell.callNowButton.addTarget(self, action: #selector(dialNumber), for: .touchUpInside)
+
+            
             let rating = Int(MeetingContent[indexPath.row].rating ?? "0")
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
@@ -274,7 +278,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
             
-            
+            cell.bottomStartButton.tag = indexPath.row
+            cell.bottomDetailButton.tag = indexPath.row
             
             // ADDING ACTION TO BUTTONS
 
@@ -291,8 +296,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.topView.backgroundColor = UIColor.white
 
         cell.typeLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
-            cell.ratingStar.emptyStarColor = UIColor.lightGray
-            cell.ratingStar.tintColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+        cell.ratingStar.emptyStarColor = UIColor.lightGray
+        cell.ratingStar.tintColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
             
         cell.userNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.businessNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
@@ -302,6 +307,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
             
+        cell.callNowButton.tag = indexPath.row
+        cell.callNowButton.addTarget(self, action: #selector(dialNumber), for: .touchUpInside)
+            
             let rating = Int(MeetingContent[indexPath.row].rating ?? "0")
             let value = Double(exactly: rating!)
             cell.ratingStar.value = CGFloat(value!)
@@ -309,8 +317,12 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
 //
             
-                cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
+            cell.timeLabel.text = MeetingContent[indexPath.row].timeInString
             
+                
+            cell.bottomStartButton.tag = indexPath.row
+            cell.bottomDetailButton.tag = indexPath.row
+
             cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
             cell.bottomDetailButton.addTarget(self, action: #selector(detailView), for: .touchUpInside)
 
@@ -347,7 +359,9 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         let cell =  visitTable.cellForRow(at: indexPath) as! VisitTableViewCell
 
-        self.selectedContact =  MeetingContent[indexPath.row]
+        
+        // Store current selected user
+//        self.selectedContact =  MeetingContent[indexPath.row]
 
         
         let selected = self.selectedVisit.firstIndex(of: indexPath.row)
@@ -392,20 +406,20 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
                 self.selected = indexPath.row
 
-                cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
+//                cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
        
-            if MeetingContent[indexPath.row].contactType != "Dealer"{
-            
-            visitCategory = MeetingContent[indexPath.row].purpose!
-            }
-                
-                
-                
-                
-            else{
-                visitCategory = MeetingContent[indexPath.row].contactType!
-
-            }
+//            if MeetingContent[indexPath.row].contactType != "Dealer"{
+//
+//            visitCategory = MeetingContent[indexPath.row].purpose!
+//            }
+//
+//
+//
+//
+//            else{
+//                visitCategory = MeetingContent[indexPath.row].contactType!
+//
+//            }
             
                 UIView.animate(withDuration: 0.6) {
 
@@ -437,7 +451,6 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
     }
     
-
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
@@ -457,8 +470,23 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    //*********************** CALLING FUNCTION *********************
+    @objc func dialNumber(button: UIButton) {
+        
     
-    
+        let number = String(MeetingContent[button.tag].phoneNumber!)
+        
+        if let url = URL(string: "tel://\(number)"),
+            UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler:nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } else {
+            // add error message here
+        }
+    }
     
     
   
@@ -466,12 +494,33 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     // ******************** SWITCH TO START MEETING FUNCTION **********************************
 
     
-    @objc func startMeeting(){
+    @objc func startMeeting(button : UIButton){
      
-//        print(visitCategory)
         
         
         
+        
+        if MeetingContent[button.tag].contactType != "Dealer"{
+            
+            visitCategory = MeetingContent[button.tag].purpose!
+        }
+            
+            
+            
+            
+        else{
+            visitCategory = MeetingContent[button.tag].contactType!
+            
+        }
+        
+        
+        print(visitCategory)
+        
+        
+        self.selectedContact =  MeetingContent[button.tag]
+
+        print(button.tag)
+        print(selectedContact)
         
         if visitCategory == "Prospecting"{
             
@@ -517,7 +566,13 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     // ******************** VIEW MEETING DETAIL FUNCTION **********************************
 
-    @objc func detailView(){
+    @objc func detailView(button : UIButton){
+     
+        
+        print(button.tag)
+        
+        self.selectedContact =  MeetingContent[button.tag]
+
         
         performSegue(withIdentifier: "Meeting_Detail", sender: nil)
 
