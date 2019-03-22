@@ -196,12 +196,12 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
     // ****************** SEARCH ACTION FUNCTION ***************************
 
     @IBAction func searchAction(_ sender: Any) {
-        if searchTF.text?.isEmpty == true {
-            self.alertMessage(Title: "Text Field Empty", Message: "Please type search keyword")
-
-        }
-        else
-       { // STATUS SEGMENT
+//        if searchTF.text?.isEmpty == true {
+//            self.alertMessage(Title: "Text Field Empty", Message: "Please type search keyword")
+//
+//        }
+//        else
+//       { // STATUS SEGMENT
         var status = ""
         if statusSegment.selectedSegmentIndex == 0{
             status = "closed"
@@ -249,7 +249,11 @@ class UserFilterVC: UIViewController, UITableViewDataSource,UITableViewDelegate 
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-        }}
+        }
+        
+        
+        
+//        }
         
     }
     

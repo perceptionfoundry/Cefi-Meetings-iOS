@@ -49,6 +49,9 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     }
     
 
+   
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var dealerTable: UITableView!
     @IBOutlet weak var dealerContact: UILabel!
@@ -85,7 +88,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     
     var NewContact = [newAddition]()
     
-    
+    var submitTitle = ""
     
     
     override func viewDidLoad() {
@@ -94,6 +97,15 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         super.viewDidLoad()
 
 //        print(meetingDetail)
+        
+        if meetingDetail?.visitStatus == "Completed"{
+            scrollView.isUserInteractionEnabled = false
+            submitButton.setTitle("EDIT", for: .normal)
+            self.submitTitle = "EDIT"
+        }
+        
+        
+        
         newLead.selectItemAt(index: 1, animated: true)
         dealerTable.isHidden = true
         bottomView.isHidden = true
@@ -166,6 +178,10 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         getReportViewModel.fetchVisitReport(API: apilink, TextFields: paramDict) { (status, Err, result) in
             
             reportValue = result
+            
+            print(reportValue)
+            
+            
             var saleIndex = 0
             if status == true{
                 
@@ -229,6 +245,12 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         return 150
     }
     
+    
+    
+    
+    
+    
+    
     @IBAction func addContactAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Contact", bundle: nil)
         
@@ -237,8 +259,15 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         
         vc.referrredName = (meetingDetail?.contactName)!
         vc.referredID = meetingDetail?.contactId
+        
 
     }
+    
+    
+    
+    
+    
+    
     
     @IBAction func startNewContractAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Contract", bundle: nil)
@@ -248,6 +277,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         dealerTable.isHidden = false
         
         vc.LeadDelegate = self
+        vc.leadFlag = true
 
     }
     
@@ -255,7 +285,14 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
     
     @IBAction func submitButtonAction(_ sender: Any) {
         
+        if submitTitle == "EDIT"{
         
+            scrollView.isUserInteractionEnabled = true
+            submitButton.setTitle("Submit", for: .normal)
+            submitTitle = ""
+    }
+        
+        else{
         
         let saleIndex = saleStatus.currentIndex
         
@@ -294,7 +331,8 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
             "visitId": meetingDetail!.id!,
             "salesInLastThreeMonths": saleValue,
             "dealerPersonName" : dealerName.text!,
-            "reportType": (meetingDetail?.purpose!)!
+            "reportType": (meetingDetail?.purpose!)!,
+            "reportStatus" : "Completed"
             
             
         ]
@@ -313,7 +351,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
+        }
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {

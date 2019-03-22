@@ -14,6 +14,9 @@ import TTSegmentedControl
 class ProspectingVC: UIViewController {
     
     
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var dealerContact: UILabel!
     @IBOutlet weak var dealerBusiness: UILabel!
     
@@ -39,13 +42,18 @@ class ProspectingVC: UIViewController {
     
    
     
-    
+    var submitTitle = ""
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if meetingDetail?.visitStatus == "Completed"{
+            scrollView.isUserInteractionEnabled = false
+            submitButton.setTitle("EDIT", for: .normal)
+            self.submitTitle = "EDIT"
+        }
 //        print(meetingDetail)
         
         self.contractButtonView.isHidden = true
@@ -243,6 +251,16 @@ class ProspectingVC: UIViewController {
     @IBAction func submitButtonAction(_ sender: Any) {
         
         
+        
+        if submitTitle == "EDIT"{
+            
+            scrollView.isUserInteractionEnabled = true
+            submitButton.setTitle("Submit", for: .normal)
+            submitTitle = ""
+        }
+            
+        else{
+        
         let outcomeIndex = OutcomeSegment.currentIndex
         let businessIndex = businessSegment.currentIndex
         let equipmentIndex =  EquipmentSegment.currentIndex
@@ -299,7 +317,9 @@ class ProspectingVC: UIViewController {
             "equipmentNeeds": equipmentValue,
             "visitId": meetingDetail!.id!,
             "outcomeComments": outcomeCommentTF.text!,
-            "reportType": (meetingDetail?.purpose!)!
+            "reportType": (meetingDetail?.purpose!)!,
+            "reportStatus" : "Completed"
+
             
         
         ]
@@ -317,6 +337,7 @@ class ProspectingVC: UIViewController {
                 
                 self.present(alert, animated: true, completion: nil)
             }
+        }
         }
     }
     

@@ -205,6 +205,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        
+        self.navigationController?.navigationBar.isHidden = true
         
         self.tabBarController?.tabBar.isHidden = false
         MeetingContent.removeAll()
@@ -234,6 +235,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
+        cell.completedLabel.isHidden = true
 //
         
         
@@ -264,6 +266,13 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
             
+            
+            if MeetingContent[indexPath.row].visitStatus == "Completed"{
+                cell.completedLabel.textColor = UIColor.white
+                cell.completedLabel.isHidden = false
+                cell.callNowButton.isHidden = true
+
+            }
             
             cell.callNowButton.tag = indexPath.row
             cell.callNowButton.addTarget(self, action: #selector(dialNumber), for: .touchUpInside)
@@ -307,6 +316,14 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName
             
+                if MeetingContent[indexPath.row].visitStatus == "Completed"{
+                    cell.completedLabel.textColor =  UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
+                    cell.completedLabel.isHidden = false
+                    cell.callNowButton.isHidden = true
+                    
+                }
+                
+                
         cell.callNowButton.tag = indexPath.row
         cell.callNowButton.addTarget(self, action: #selector(dialNumber), for: .touchUpInside)
             
@@ -406,19 +423,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
                 self.selected = indexPath.row
 
-//                cell.bottomStartButton.addTarget(self, action: #selector(startMeeting), for: .touchUpInside)
-       
-//            if MeetingContent[indexPath.row].contactType != "Dealer"{
-//
-//            visitCategory = MeetingContent[indexPath.row].purpose!
-//            }
-//
-//
-//
-//
-//            else{
-//                visitCategory = MeetingContent[indexPath.row].contactType!
-//
+//        
 //            }
             
                 UIView.animate(withDuration: 0.6) {

@@ -23,14 +23,14 @@ class PendingDocumentViewModel{
     func fetchPendingDocument(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : [Pending])->()){
         
         
-//        print(API)
+        print(API)
         
         Alamofire.request(API, method: .get, parameters: TextFields).responseJSON { (response) in
             
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-//            print(mainDict)
+            print(mainDict)
             
             if mainDict["success"] as! Int == 1 {
                 

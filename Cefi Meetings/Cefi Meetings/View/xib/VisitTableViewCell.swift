@@ -22,6 +22,7 @@ class VisitTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var callNowButton: UIButton!
     
+    @IBOutlet weak var completedLabel: UILabel!
     @IBOutlet weak var bottomDetailButton: UIButton!
     @IBOutlet weak var bottomStartButton: UIButton!
     

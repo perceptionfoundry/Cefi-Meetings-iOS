@@ -26,7 +26,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     var appGlobalVariable = UIApplication.shared.delegate  as! AppDelegate
     var pendingContent = [Pending]()
     var viewModel = PendingDocumentViewModel()
-    
+    var getContractViewModel = GetSpecificContractViewModel()
     
     
     
@@ -123,6 +123,45 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         cell.pendingCount.text = String(pendingContent[indexPath.row].allPendingDocumentCounts!)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        contractDetail(Index: indexPath.row)
+    }
+    
+    
+    
+    func contractDetail(Index : Int){
+        
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getspecificcontract"
+        
+        let paramDict : [String : String    ] = [
+            "userId": appGlobalVariable.userID,
+            "contractId":(pendingContent[Index].id)!
+            
+        ]
+        
+        getContractViewModel.fetchSpecificContractDetail(API: apiLink, TextFields: paramDict) { (Status, err, result) in
+            
+            
+            if Status == true{
+                let value =  result
+                print(value)
+                
+                self.performSegue(withIdentifier: "Contract_Segue", sender: value)
+                
+                
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination  as! ContractDetailsVC
+        
+        dest.userContract = sender as! Contract
     }
   
 

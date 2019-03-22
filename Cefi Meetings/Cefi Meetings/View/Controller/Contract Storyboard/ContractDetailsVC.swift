@@ -155,12 +155,21 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         saveButton.isHidden = true
         
-        contractTypeTF.text = userContract!.contractStatus 
+        contractTypeTF.text = userContract!.contractStatus ?? ""
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
-
+        
         selectedContactID = userContract!.id
         
+        taxSwitch.setOn(userContract!.isTaxReturnsAvailable!, animated: true)
+        bankSwitch.setOn(userContract!.isBankStatementAvailable!, animated: true)
+        equipmentSwitch.setOn(userContract!.isEquipmentImagesAvailable!, animated: true)
+       insuranceSwitch.setOn(userContract!.isInsuranceAvailable!, animated: true)
+         signorSwitch.setOn(userContract!.isSignorAvailable!, animated: true)
+      invoiceSwitch.setOn(userContract!.isInvoiceAvailable!, animated: true)
+       closingSwitch.setOn(userContract!.isClosingFees!, animated: true)
+    allpageSwitch.setOn(userContract!.isAllPagesSigned!, animated: true)
+         everythingSwitch.setOn(userContract!.isEverythingCompleted!, animated: true)
         
         guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
 

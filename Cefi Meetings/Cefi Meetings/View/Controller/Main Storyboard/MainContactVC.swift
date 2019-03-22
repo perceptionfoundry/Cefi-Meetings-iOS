@@ -403,7 +403,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
         
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor.lightGray
         
         let label = UILabel()
         label.textColor = UIColor.white
@@ -437,6 +437,10 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
         cell.personName.text = wordValue[indexPath.row].contactName
         cell.companyName.text = wordValue[indexPath.row].businessName
+            
+            if wordValue[indexPath.row].pendingDocuments! == 0{
+                cell.alertvVew.isHidden = true
+            }
         cell.quantity.text = String(wordValue[indexPath.row].pendingDocuments!)
         
             

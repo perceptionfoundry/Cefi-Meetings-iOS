@@ -99,7 +99,7 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
     
         ]
      
-        if searchTF.text?.isEmpty == false{
+//        if searchTF.text?.isEmpty == false{
         
             
             
@@ -122,12 +122,15 @@ class contractFilterVC: UIViewController,UITableViewDelegate, UITableViewDataSou
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        }
-        else{
-            let alert = UIAlertController(title: "Text Field Empty", message: "Please assure that you have place search key", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+//        }
+            
+            
+            
+//        else{
+//            let alert = UIAlertController(title: "Text Field Empty", message: "Please assure that you have place search key", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//        }
         
     }
     

@@ -117,15 +117,14 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
     
     var businessTitle:String?
-    
-    
+    var leadFlag = false
     
     
     
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
-        self.contractTypeTF.text = name
+        self.contractTypeTF.text = name.lowercased()
     }
     
     func contactName(userName: String, id : String, ContractNumber : Bool?, businessName: String) {
@@ -781,7 +780,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "closingFees": closingImageURl ?? "",
                                                 "contactId": selectedContactID!,
                                                 "contractNumber": "",
-                                                "contractStatus": contractTypeTF.text!,
+                                                "contractStatus": contractTypeTF.text!.lowercased(),
                                                 "equipmentCost": amountTF.text!,
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,
@@ -819,7 +818,10 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 if Status == true{
                     
  self.navigationController?.popViewController(animated: true)
+                    if self.leadFlag == true{
                     self.LeadDelegate.leadDetail(contactName: self.contactTF.text!, businessName: self.businessTitle!, ContractNumber: Result!, Rating: self.ratingStar.value)
+                    self.leadFlag = false
+                    }
                     self.activityView.isHidden = true
 
                 }

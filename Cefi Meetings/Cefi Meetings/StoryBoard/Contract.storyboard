@@ -1217,7 +1217,7 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose from Contacts" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0We-RM-qiR">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose from Contacts" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0We-RM-qiR">
                                                 <rect key="frame" x="187.5" y="238" width="150" height="20"/>
                                                 <color key="textColor" red="0.39189803600000001" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -1236,30 +1236,30 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-T3-kiE">
-                                                <rect key="frame" x="346.5" y="112" width="10" height="16"/>
+                                                <rect key="frame" x="346.5" y="113.5" width="10" height="13"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wZa-Nh-aWm">
-                                                <rect key="frame" x="346.5" y="240" width="10" height="16"/>
+                                                <rect key="frame" x="346.5" y="241.5" width="10" height="13"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iY-Lq-IRL">
                                                 <rect key="frame" x="19" y="150.5" width="337.5" height="1.5"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.75007172496271179" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-hu-nTZ">
                                                 <rect key="frame" x="19" y="212" width="337.5" height="2"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmH-Kx-agb">
                                                 <rect key="frame" x="19" y="274" width="337.5" height="1.5"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YZ-qW-sX9">
                                                 <rect key="frame" x="19" y="511" width="337.5" height="1.5"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CME-xd-Pak">
                                                 <rect key="frame" x="19" y="449.5" width="337.5" height="1.5"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m9r-y6-zAu">
                                                 <rect key="frame" x="187.5" y="110" width="150" height="20"/>
@@ -1324,7 +1324,7 @@
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0vO-8P-PtI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="90"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mrl-kS-vkC">
                                                                     <size key="itemSize" width="78" height="75"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1339,8 +1339,14 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="oCq-f3-4o2">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="oCq-f3-4o2" customClass="Custom_ImageView" customModule="Cefi_Meetings" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                                                            <real key="value" value="10"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </view>
@@ -1357,7 +1363,7 @@
                                                                 </cells>
                                                             </collectionView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.39485406880000001" green="0.55999797579999999" blue="0.27049016949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="0vO-8P-PtI" firstAttribute="top" secondItem="2BB-eI-25B" secondAttribute="top" id="7aY-mu-6cl"/>
                                                             <constraint firstItem="0vO-8P-PtI" firstAttribute="leading" secondItem="2BB-eI-25B" secondAttribute="leading" id="KS5-cU-aVc"/>
@@ -1371,7 +1377,7 @@
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2fS-gZ-xzN">
                                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="90"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yWH-Ws-o07">
                                                                     <size key="itemSize" width="78" height="75"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1386,8 +1392,14 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="H1I-Eg-7nq">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="H1I-Eg-7nq" customClass="Custom_ImageView" customModule="Cefi_Meetings" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                                                            <real key="value" value="10"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </view>
@@ -1404,7 +1416,7 @@
                                                                 </cells>
                                                             </collectionView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.55291366580000001" green="0.2056628466" blue="0.31371778249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="2fS-gZ-xzN" secondAttribute="trailing" id="LlL-ol-XS8"/>
                                                             <constraint firstItem="2fS-gZ-xzN" firstAttribute="leading" secondItem="MDF-aG-vJH" secondAttribute="leading" id="PXe-lZ-TeS"/>
@@ -1418,7 +1430,7 @@
                                                         <subviews>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ESY-xS-ixu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="90"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TyC-rc-IiR">
                                                                     <size key="itemSize" width="78" height="75"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1433,8 +1445,14 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-a0-bzQ">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="KpQ-a0-bzQ" customClass="Custom_ImageView" customModule="Cefi_Meetings" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="75"/>
+                                                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                                                                            <real key="value" value="10"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </view>
@@ -1451,7 +1469,7 @@
                                                                 </cells>
                                                             </collectionView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="ESY-xS-ixu" secondAttribute="bottom" id="JgL-Bi-ifi"/>
                                                             <constraint firstAttribute="height" constant="90" id="Leg-us-PId"/>
@@ -1560,10 +1578,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZE-JP-5eQ" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                                <rect key="frame" x="16" y="300" width="283.5" height="80"/>
+                                                                <rect key="frame" x="5" y="300" width="291.5" height="80"/>
                                                                 <subviews>
                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mnt-7g-lMr">
-                                                                        <rect key="frame" x="7" y="6" width="269" height="68"/>
+                                                                        <rect key="frame" x="7.5" y="6" width="276.5" height="68"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1642,9 +1660,8 @@
                                                             <constraint firstItem="0HC-nJ-E8V" firstAttribute="centerY" secondItem="AeS-KU-hH1" secondAttribute="centerY" id="0tV-SV-SFh"/>
                                                             <constraint firstItem="FSi-Td-Lux" firstAttribute="centerY" secondItem="qd7-Ac-Ued" secondAttribute="centerY" id="4ol-Rx-cpk"/>
                                                             <constraint firstItem="T16-7i-kTv" firstAttribute="centerY" secondItem="0ui-tj-RFb" secondAttribute="centerY" id="6Vc-2A-1YF"/>
-                                                            <constraint firstItem="QZE-JP-5eQ" firstAttribute="centerX" secondItem="Xxc-ht-CP6" secondAttribute="centerX" id="7uM-g6-JAk"/>
                                                             <constraint firstItem="MKP-qc-M7Y" firstAttribute="leading" secondItem="WaB-43-W4b" secondAttribute="leading" id="9Pi-fT-1JL"/>
-                                                            <constraint firstItem="QZE-JP-5eQ" firstAttribute="width" secondItem="Xxc-ht-CP6" secondAttribute="width" multiplier="0.9" id="AyF-7B-GNR"/>
+                                                            <constraint firstItem="QZE-JP-5eQ" firstAttribute="width" secondItem="Xxc-ht-CP6" secondAttribute="width" multiplier="0.925" id="AyF-7B-GNR"/>
                                                             <constraint firstItem="J35-3A-1kk" firstAttribute="centerX" secondItem="0HC-nJ-E8V" secondAttribute="centerX" id="I0K-uc-ffd"/>
                                                             <constraint firstItem="QZE-JP-5eQ" firstAttribute="height" secondItem="Xxc-ht-CP6" secondAttribute="height" multiplier="0.05" id="I1Y-oA-eD0"/>
                                                             <constraint firstItem="8sY-gC-vRq" firstAttribute="centerY" secondItem="lY3-wi-eeq" secondAttribute="centerY" id="IdY-eg-t9L"/>
@@ -1677,6 +1694,7 @@
                                                             <constraint firstItem="mU3-Xg-0GB" firstAttribute="centerY" secondItem="Xxc-ht-CP6" secondAttribute="centerY" multiplier="0.28" id="pbm-J7-sgX"/>
                                                             <constraint firstItem="aKH-t5-vEi" firstAttribute="centerX" secondItem="Xxc-ht-CP6" secondAttribute="centerX" multiplier="1.3" id="qof-mX-e4y"/>
                                                             <constraint firstItem="lkk-NH-3Jb" firstAttribute="centerX" secondItem="Xxc-ht-CP6" secondAttribute="centerX" multiplier="1.3" id="u6y-63-AOq"/>
+                                                            <constraint firstItem="QZE-JP-5eQ" firstAttribute="leading" secondItem="TpO-be-ym3" secondAttribute="leading" id="y7k-zq-70p"/>
                                                         </constraints>
                                                     </view>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jPp-lC-kzt">
@@ -1764,7 +1782,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="muf-b1-hmk">
-                                                <rect key="frame" x="342" y="414.5" width="10" height="16"/>
+                                                <rect key="frame" x="342" y="416.5" width="10" height="12.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="8OK-vo-CEx"/>
                                                 </constraints>
@@ -1813,7 +1831,7 @@
                                             <constraint firstItem="Up2-oa-t11" firstAttribute="centerY" secondItem="rvA-kK-bm4" secondAttribute="centerY" id="0qm-JR-zDn"/>
                                             <constraint firstItem="JnY-oz-cqs" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="1.4" id="0un-3o-Qvw"/>
                                             <constraint firstItem="BuT-pH-uHl" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="0.6" id="2az-MV-QPR"/>
-                                            <constraint firstItem="wZa-Nh-aWm" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.01" id="5X4-TQ-T9M"/>
+                                            <constraint firstItem="wZa-Nh-aWm" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.008" id="5X4-TQ-T9M"/>
                                             <constraint firstItem="cZh-Gj-Dbs" firstAttribute="leading" secondItem="QkI-1c-692" secondAttribute="leading" id="6Hx-gv-KFB"/>
                                             <constraint firstAttribute="height" constant="1600" id="6fL-fB-hyf"/>
                                             <constraint firstItem="QkI-1c-692" firstAttribute="leading" secondItem="BuT-pH-uHl" secondAttribute="leading" id="7gb-Xf-XEW"/>
@@ -1902,7 +1920,7 @@
                                             <constraint firstItem="JnY-oz-cqs" firstAttribute="width" secondItem="Hes-mW-F0w" secondAttribute="width" multiplier="0.4" id="rlU-NW-BEb"/>
                                             <constraint firstItem="muf-b1-hmk" firstAttribute="centerY" secondItem="U2p-kr-Udm" secondAttribute="centerY" id="sL5-dn-Zp1"/>
                                             <constraint firstItem="rtM-Vg-ld6" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="0.2" id="sO5-Y6-N9X"/>
-                                            <constraint firstItem="sPy-T3-kiE" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.01" id="sbw-Yi-cEn"/>
+                                            <constraint firstItem="sPy-T3-kiE" firstAttribute="height" secondItem="Hes-mW-F0w" secondAttribute="height" multiplier="0.008" id="sbw-Yi-cEn"/>
                                             <constraint firstItem="BAQ-hu-nTZ" firstAttribute="width" secondItem="Hes-mW-F0w" secondAttribute="width" multiplier="0.9" id="scM-rW-TkC"/>
                                             <constraint firstItem="f01-Fh-tXQ" firstAttribute="centerY" secondItem="M1g-fj-Aer" secondAttribute="centerY" multiplier="0.685" id="stj-iH-4RM"/>
                                             <constraint firstItem="gcl-Bq-PpR" firstAttribute="centerX" secondItem="M1g-fj-Aer" secondAttribute="centerX" multiplier="1.4" id="swe-fN-YDM"/>
@@ -1997,7 +2015,7 @@
         <image name="sample" width="271" height="351"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lcf-rg-Iry"/>
-        <segue reference="HXH-r8-ArV"/>
+        <segue reference="JfB-kE-XDm"/>
+        <segue reference="xPZ-9X-meS"/>
     </inferredMetricsTieBreakers>
 </document>

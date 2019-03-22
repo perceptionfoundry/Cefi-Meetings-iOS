@@ -12,6 +12,11 @@ import HCSStarRatingView
 
 class FollowUpVC: UIViewController {
 
+    
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     @IBOutlet weak var dealerContact: UILabel!
     @IBOutlet weak var BusinessName: UILabel!
 
@@ -54,11 +59,20 @@ class FollowUpVC: UIViewController {
 
     
     
-    
+    var submitTitle = ""
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if meetingDetail?.visitStatus == "Completed"{
+            scrollView.isUserInteractionEnabled = false
+            submitButton.setTitle("EDIT", for: .normal)
+            self.submitTitle = "EDIT"
+        }
+        
         
         OutcomeSegement.allowChangeThumbWidth = false
         cancelSegment.allowChangeThumbWidth = false
@@ -168,13 +182,15 @@ class FollowUpVC: UIViewController {
             reportValue = result
             var outcomeIndex = 0
             
-            
+            print(reportValue)
             if status == true{
                 
                 
                 //OUTCOME
                 let outValue = reportValue?.mainOutcome!
                 
+                
+         
                 
                                 switch  outValue{
                                 case "Closed":
@@ -192,7 +208,7 @@ class FollowUpVC: UIViewController {
                                     outcomeIndex = -1
                                 }
                 
-                                self.OutcomeSegement.selectItemAt(index: outcomeIndex)
+                                self.OutcomeSegement.selectItemAt(index: outcomeIndex, animated: true)
                 
                 // OUTCOME COMMENT
                 self.commentTF.text = result!.outcomeComments!
@@ -201,10 +217,10 @@ class FollowUpVC: UIViewController {
                 let didAgreeStatus = result!.didNotAgreetoTerms!
                 
                 if didAgreeStatus{
-                    self.agreeSwitch.setOn(true, animated: false)
+                    self.agreeSwitch.setOn(true, animated: true)
                 }
                 else{
-                    self.agreeSwitch.setOn(false, animated: false)
+                    self.agreeSwitch.setOn(false, animated: true)
 
                 }
                 
@@ -212,11 +228,11 @@ class FollowUpVC: UIViewController {
                 let contractErrorstatus = result!.contractError!
                 
                 if contractErrorstatus{
-                    self.contractErrorSwitch.setOn(true, animated: false)
+                    self.contractErrorSwitch.setOn(true, animated: true)
 
                 }
                 else{
-                    self.contractErrorSwitch.setOn(false, animated: false)
+                    self.contractErrorSwitch.setOn(false, animated: true)
 
                 }
                 
@@ -224,11 +240,11 @@ class FollowUpVC: UIViewController {
                 let otherStatus = result!.other!
                 
                 if otherStatus{
-                    self.otherSwitch.setOn(true, animated: false)
+                    self.otherSwitch.setOn(true, animated: true)
 
                 }
                 else{
-                    self.otherSwitch.setOn(false, animated: false)
+                    self.otherSwitch.setOn(false, animated: true)
 
                 }
                 
@@ -249,6 +265,17 @@ class FollowUpVC: UIViewController {
     
 
     @IBAction func submitButtonAction(_ sender: Any) {
+        
+       
+        if submitTitle == "EDIT"{
+            
+            scrollView.isUserInteractionEnabled = true
+            submitButton.setTitle("Submit", for: .normal)
+            submitTitle = ""
+        }
+            
+        else{
+        
         
         let outcomeIndex = OutcomeSegement.currentIndex
        
@@ -303,7 +330,9 @@ class FollowUpVC: UIViewController {
                 "mainOutcome" : outcomeValue,
                 "commentOnSales": commentTF.text!,
                 "visitId": meetingDetail!.id!,
-                "reportType": (meetingDetail?.purpose!)!
+                "reportType": (meetingDetail?.purpose!)!,
+                "reportStatus" : "Completed"
+
                 
             ]
         }
@@ -326,6 +355,7 @@ class FollowUpVC: UIViewController {
         }
         
     }
+}
   
     @IBAction func contractUpdateAction(_ sender: Any) {
         
@@ -370,11 +400,9 @@ class FollowUpVC: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
 //        self.present(vc, animated: true, completion: nil)
         
-        print(meetingDetail)
+//        print(meetingDetail)
         
-////        vc.purposeTF.text = meetingDetail!.purpose!
-//        vc.contactTF.text = meetingDetail!.contactName!
-//        vc.contractTF.text = meetingDetail!.contractId!
+
         vc.selectedContactName = meetingDetail!.contactName!
         vc.selectedContactID = meetingDetail!.contactId!
         vc.selectedPurpose = meetingDetail!.purpose!
