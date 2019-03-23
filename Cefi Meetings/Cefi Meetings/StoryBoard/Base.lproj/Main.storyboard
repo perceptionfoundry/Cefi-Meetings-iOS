@@ -121,16 +121,16 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                         <size key="value" width="1" height="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.74808549614915254" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
                                         <real key="value" value="5"/>
@@ -157,7 +157,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                         <real key="value" value="5"/>
@@ -166,7 +166,7 @@
                                         <size key="value" width="1" height="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.74851584572542373" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
                                         <real key="value" value="5"/>
@@ -174,9 +174,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVT-PC-jkg" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="403.5" width="150" height="46.5"/>
-                                <color key="backgroundColor" red="0.34927457571029663" green="0.56815886497497559" blue="0.22732043266296387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <rect key="frame" x="114.5" y="403" width="146" height="48"/>
+                                <color key="backgroundColor" red="0.38655376434326172" green="0.60690802335739136" blue="0.25914928317070007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -226,7 +226,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.806" id="0hh-ek-XYV"/>
-                            <constraint firstItem="BVT-PC-jkg" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.07" id="4iT-EU-wVN"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="4iT-EU-wVN"/>
                             <constraint firstItem="g6R-uX-I0V" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="ANg-Kb-LpE"/>
                             <constraint firstItem="TIR-e8-mnK" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.25" id="BrH-Ka-5bT"/>
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="centerX" secondItem="Qqf-DJ-wrx" secondAttribute="centerX" id="CL7-QL-JZu"/>
@@ -236,7 +236,7 @@
                             <constraint firstItem="BVT-PC-jkg" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.28" id="GFK-cG-LvY"/>
                             <constraint firstItem="Eox-d1-25x" firstAttribute="height" secondItem="Qqf-DJ-wrx" secondAttribute="height" multiplier="0.072" id="Gty-3e-crH"/>
                             <constraint firstItem="4Cc-Tf-YTw" firstAttribute="centerY" secondItem="u2f-bA-Ne4" secondAttribute="centerY" id="GvK-vk-5OE"/>
-                            <constraint firstItem="BVT-PC-jkg" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.4" id="HAU-3Z-mJm"/>
+                            <constraint firstItem="BVT-PC-jkg" firstAttribute="width" secondItem="Qqf-DJ-wrx" secondAttribute="width" multiplier="0.39" id="HAU-3Z-mJm"/>
                             <constraint firstItem="u2f-bA-Ne4" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.85" id="Ruy-zA-Wyp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qqf-DJ-wrx" secondAttribute="trailing" id="Rzf-um-Er4"/>
                             <constraint firstItem="1Hj-No-XmZ" firstAttribute="centerY" secondItem="Qqf-DJ-wrx" secondAttribute="centerY" multiplier="1.01" id="YFT-Zi-RBM"/>
@@ -1532,7 +1532,7 @@ We hope you have a great and productive day!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Udq-vi-iHL" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                 <rect key="frame" x="20.5" y="129.5" width="285" height="33.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Keyword" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="justified" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-aa-6S7">
                                         <rect key="frame" x="11" y="8.5" width="219.5" height="16.5"/>
                                         <color key="textColor" red="0.42209970949999998" green="0.57956373689999996" blue="0.30187162760000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1636,8 +1636,8 @@ We hope you have a great and productive day!</string>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBg-sz-3h5">
-                                                    <rect key="frame" x="37.5" y="44.5" width="262.5" height="0.0"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBg-sz-3h5">
+                                                    <rect key="frame" x="37.5" y="39.5" width="262.5" height="10"/>
                                                     <fontDescription key="fontDescription" name="AvenirLTStd-Medium" family="Avenir LT Std" pointSize="10"/>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -1671,7 +1671,7 @@ We hope you have a great and productive day!</string>
                                 <items>
                                     <navigationItem title="Contacts" id="Sb7-oV-61O">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="ZBe-JX-pSA">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GeS-Vi-gMF">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GeS-Vi-gMF">
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="add_button"/>
@@ -2266,7 +2266,7 @@ We hope you have a great and productive day!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3o-nF-CMC">
                                 <rect key="frame" x="20" y="180.5" width="110" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.77782636880874634" green="0.77842289209365845" blue="0.77791875600814819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-J6-Qk5">
@@ -2276,7 +2276,7 @@ We hope you have a great and productive day!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Result Found:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZ9-hl-Ehy">
                                 <rect key="frame" x="19" y="289.5" width="300" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="0.49803921569999998" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.77782636880874634" green="0.77842289209365845" blue="0.77791875600814819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-bv-OKs">
@@ -2303,23 +2303,23 @@ We hope you have a great and productive day!</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhP-1j-DTh" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
-                                                    <rect key="frame" x="295.5" y="19.5" width="46.5" height="24"/>
+                                                    <rect key="frame" x="290.5" y="19.5" width="56.5" height="24"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pending_alert" translatesAutoresizingMaskIntoConstraints="NO" id="TRu-Z2-ydy">
-                                                            <rect key="frame" x="11" y="7" width="8" height="10"/>
+                                                            <rect key="frame" x="13" y="7" width="8" height="10"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="10" id="EWU-uO-yIa"/>
                                                                 <constraint firstAttribute="width" constant="8" id="mwW-UR-aKN"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iX-Yp-xmd">
-                                                            <rect key="frame" x="17.5" y="4.5" width="23.5" height="15"/>
+                                                            <rect key="frame" x="21" y="4.5" width="28.5" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" red="0.93726736310000003" green="0.93723225590000003" blue="0.93725615740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-tP-uAN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="46.5" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="56.5" height="24"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2328,7 +2328,7 @@ We hope you have a great and productive day!</string>
                                                         <constraint firstAttribute="height" constant="24" id="59n-Jb-tAN"/>
                                                         <constraint firstAttribute="trailing" secondItem="dvm-tP-uAN" secondAttribute="trailing" id="95o-rM-TSu"/>
                                                         <constraint firstItem="dvm-tP-uAN" firstAttribute="leading" secondItem="JhP-1j-DTh" secondAttribute="leading" id="9im-5r-HIP"/>
-                                                        <constraint firstItem="TRu-Z2-ydy" firstAttribute="centerX" secondItem="JhP-1j-DTh" secondAttribute="centerX" multiplier="0.65" id="GYW-iB-Z4M"/>
+                                                        <constraint firstItem="TRu-Z2-ydy" firstAttribute="centerX" secondItem="JhP-1j-DTh" secondAttribute="centerX" multiplier="0.6" id="GYW-iB-Z4M"/>
                                                         <constraint firstItem="1iX-Yp-xmd" firstAttribute="width" secondItem="JhP-1j-DTh" secondAttribute="width" multiplier="0.5" id="Vzm-Kc-Kpl"/>
                                                         <constraint firstItem="TRu-Z2-ydy" firstAttribute="centerY" secondItem="JhP-1j-DTh" secondAttribute="centerY" id="Zck-pf-ya9"/>
                                                         <constraint firstAttribute="bottom" secondItem="dvm-tP-uAN" secondAttribute="bottom" id="cBm-d1-cVK"/>
@@ -2344,7 +2344,7 @@ We hope you have a great and productive day!</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mml-bO-Kgs" firstAttribute="centerX" secondItem="d00-7t-1fK" secondAttribute="centerX" multiplier="0.725" id="364-2y-MfD"/>
-                                                <constraint firstItem="JhP-1j-DTh" firstAttribute="width" secondItem="d00-7t-1fK" secondAttribute="width" multiplier="0.125" id="65S-4N-tEE"/>
+                                                <constraint firstItem="JhP-1j-DTh" firstAttribute="width" secondItem="d00-7t-1fK" secondAttribute="width" multiplier="0.15" id="65S-4N-tEE"/>
                                                 <constraint firstItem="mml-bO-Kgs" firstAttribute="centerY" secondItem="d00-7t-1fK" secondAttribute="centerY" multiplier="1.3" id="6Vq-dZ-hpM"/>
                                                 <constraint firstItem="nzd-4j-MJa" firstAttribute="centerX" secondItem="d00-7t-1fK" secondAttribute="centerX" multiplier="0.92" id="8AM-Re-pgy"/>
                                                 <constraint firstItem="mml-bO-Kgs" firstAttribute="width" secondItem="d00-7t-1fK" secondAttribute="width" multiplier="0.6" id="J2l-9n-SMJ"/>

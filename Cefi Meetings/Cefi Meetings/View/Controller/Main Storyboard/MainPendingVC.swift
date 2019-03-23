@@ -116,7 +116,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Pending", for: indexPath) as! Pending_TableViewCell
-        
+        cell.selectionStyle = .none
         cell.closedLabel.text = "Closed \((pendingContent[indexPath.row].contractStatusUpdated)!) days ago"
         cell.contractLabel.text = pendingContent[indexPath.row].contractNumber
         cell.nameLabel.text = pendingContent[indexPath.row].contactName

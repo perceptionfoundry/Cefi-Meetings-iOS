@@ -1500,6 +1500,7 @@
                         <outlet property="reminderTF" destination="XGh-Wf-oFC" id="b2E-mh-5gC"/>
                         <outlet property="timeTF" destination="Dra-D3-zZ1" id="goX-vo-bcF"/>
                         <segue destination="2wK-bS-vrV" kind="presentation" id="C4r-aJ-KzX"/>
+                        <segue destination="Jlq-be-6yS" kind="show" identifier="Reminder" id="TrD-ki-HX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbZ-Pr-jhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3908,7 +3909,7 @@ Please do so as soon as possible. Thanks.  </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9En-Av-DcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239.19999999999999" y="282.90854572713647"/>
+            <point key="canvasLocation" x="-948" y="1227"/>
         </scene>
     </scenes>
     <resources>
@@ -3945,6 +3946,7 @@ Please do so as soon as possible. Thanks.  </string>
         <image name="warning" width="43" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="TrD-ki-HX1"/>
         <segue reference="C4r-aJ-KzX"/>
     </inferredMetricsTieBreakers>
 </document>

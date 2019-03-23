@@ -69,7 +69,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         else if selectedCell == 1{
             // min * (mill * sec)
-            let timeStamp : Double = 15 * 60
+            let timeStamp : Double = 15 * 60 
             
 //            print(timeStamp)
 //            print(reminderdescrip[1])

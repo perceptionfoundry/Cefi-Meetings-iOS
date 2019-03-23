@@ -12,7 +12,23 @@ import GooglePlaces
 import MessageUI
 
 
-class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate{
+class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate,ReminderDelegate{
+   
+    
+    
+    func reminderValue(minute: String, value: Double) {
+        
+        self.reminderTF.text = minute
+        
+        if value == 0 {
+            reminderOn = false
+        }
+        else{
+            reminderTime = value
+            reminderOn = true
+        }
+    }
+    
     
     
     struct meetup {
@@ -37,7 +53,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     var date_stamp : TimeInterval?
     var time_Stamp : TimeInterval?
     var reminderTotalTime : Double = 0.0
-
+    var reminderOn = false
+    var reminderTime : Double = 0.0
     var meetingDetail : Meeting?
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     let getContractViewModel = GetSpecificContractViewModel()
@@ -50,6 +67,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     let locationManager = CLLocationManager()
     var mapCameraView: GMSMapView?
     
+    var secondsFromGMT: Double { return Double(TimeZone.current.secondsFromGMT()) }
 
     
     
@@ -60,11 +78,23 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         super.viewDidLoad()
         
         
-        
+        let reminderButton = UITapGestureRecognizer(target: self, action: #selector(reminderSegue))
+        self.reminderTF.addGestureRecognizer(reminderButton)
         
      
         
         print(meetingDetail!)
+        
+        
+        // Convert existing server timestamp formot into iOS timestamp format (REVERSE)
+
+
+        
+        let iOSTimeStamp = (((meetingDetail!.time! as NSString).doubleValue) - secondsFromGMT) / 1000
+        
+        self.reminderTotalTime  = iOSTimeStamp
+        
+        print(iOSTimeStamp)
         
         let dateString = meetingDetail!.addedDate!.split(separator: "T")
         
@@ -347,21 +377,34 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
             
             let apiLink = appGlobalVariable.apiBaseURL+"visits/updatevisit"
             
-            let paramDict = [
+            
+            
+            var reminderADD : Double = 0.0
+            if reminderOn == true{
+                
+                reminderADD  = floor(reminderTotalTime + reminderTime) * 1000 + secondsFromGMT
+            
+            }
+            
+            
+            let paramDict : [String : Any] = [
+                "visitId" : meetingDetail!.id!,
                 "long": String(chosenPlace!.long),
                 "userId": appGlobalVariable.userID,
-                "contactId": meetingDetail?.contactId!,
-                "contractId": meetingDetail?.contractId ?? "DEALER",
-                "time": meetingDetail?.timeInString!,
-//                "reminder": meetingDetail?.reminder!,
+                "contactId": meetingDetail!.contactId!,
+                "contractId": meetingDetail!.contractId ?? "DEALER",
+                "time":  String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
+                "reminder": reminderADD,
                 "lat": String(chosenPlace!.lat),
                 "address": chosenPlace!.name,
-                "purpose": meetingDetail?.purpose!,
+                "purpose": meetingDetail!.purpose!,
                 "dateInString": dateTF.text!,
                 "timeInString": timeTF.text!,
             
             ]
             
+            print(paramDict)
+
             editVisitViewModel.editVisit(API: apiLink, Textfields: paramDict) { (status, error) in
                 
                 print(status)
@@ -428,6 +471,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     
     func showTimePicker(){
+        
+        
         //Formate Date
         datePicker.datePickerMode = .time
         
@@ -446,6 +491,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     }
     
     @objc func doneTimePicker(){
+        
+        self.reminderTotalTime = 0
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
@@ -471,9 +518,14 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         self.time_Stamp = time_stamp
         
-        //        print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+                print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+        
+        print(self.reminderTotalTime)
+
         
         self.reminderTotalTime +=  time_stamp
+        
+        print(self.reminderTotalTime)
         
         self.view.endEditing(true)
     }
@@ -485,6 +537,31 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     }
     
     
+    //
+    @objc func reminderSegue(){
+        performSegue(withIdentifier: "Reminder", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        
+     
+            
+        if segue.identifier == "Reminder"{
+            
+            let dest = segue.destination  as! ReminderVC
+            dest.reminderDele = self
+            dest.previousSelect = reminderTF.text ?? ""
+        }
+        
+        
+        
+        
+        
+        
+    }
     
     
 }
@@ -503,12 +580,9 @@ extension VisitDetailVC: GMSAutocompleteViewControllerDelegate {
         
         chosenPlace = meetup(name: place.formattedAddress!, lat: lat, long: long )
         
-        //        self.dismiss(animated: true, completion: nil)
         
         self.dismiss(animated: true) {
-            
-//            self.mapView.isHidden = false
-//            self.detailButton_Y_Constraint.constant = 0
+
             
         }
         

@@ -241,17 +241,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     @IBAction func saveButtonAction(_ sender: Any) {
         
         
-        //  parameter that are required by API
-        let newContactParameter = ["userId" : appGlobalVariable.userID,
-                                    "businessName" : businessTF.text!,
-                                     "contactName" : contactTF.text!,
-                                    "phoneNumber" : phoneTF.text!,
-                                    "email" : emailTF.text!,
-                                    "industryType" : industryTF.text!,
-                                    "contactType" : typeTF.text!,
-                                    "referredBy" : self.referrredName,
-                                    "lat" : self.chosenPlace!.lat,
-                                    "long" : chosenPlace!.long                                    ] as [String : Any]
+     
         
         
         
@@ -263,7 +253,17 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         //   Verifying both textfield is not left empty
         if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
             
-            
+            //  parameter that are required by API
+            let newContactParameter = ["userId" : appGlobalVariable.userID,
+                                       "businessName" : businessTF.text!,
+                                       "contactName" : contactTF.text!,
+                                       "phoneNumber" : phoneTF.text!,
+                                       "email" : emailTF.text!,
+                                       "industryType" : industryTF.text!,
+                                       "contactType" : typeTF.text!,
+                                       "referredBy" : self.referrredName,
+                                       "lat" : self.chosenPlace!.lat,
+                                       "long" : chosenPlace!.long                                    ] as [String : Any]
             
             
             //  Hitting ApiLink with required parameter

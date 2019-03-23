@@ -96,6 +96,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         }
         else{
             reminderTime = value
+            
+            
+            
             reminderOn = true
         }
     }
@@ -271,6 +274,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     @objc func doneTimePicker(){
         
+        self.reminderTotalTime = 0
+        
+        
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"
         
@@ -280,24 +286,31 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         timeTF.text = formatter.string(from: datePicker.date)
         
+        self.reminderTotalTime = date.timeIntervalSince1970
         
-        
-        let separateTimeElement =  timeTF.text!.split(separator: ":")
-//        print(separateTimeElement)
-        
-        let timeWithoutPM = separateTimeElement[1].split(separator: " ")
-        print(timeWithoutPM)
-        
-        let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
-        let min_Stamp = (Double(timeWithoutPM[0])! * 60)
-        
-        let time_stamp = hour_Stamp + min_Stamp
-        
-        self.time_Stamp = time_stamp
-
+//        print(test)
+//
+////        let separateTimeElement =  timeTF.text!.split(separator: ":")
+////        print(separateTimeElement)
+////
+////        let timeWithoutPM = separateTimeElement[1].split(separator: " ")
+////        print(timeWithoutPM)
+////
+////        let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
+////        let min_Stamp = (Double(timeWithoutPM[0])! * 60)
+////
+////        let time_stamp = hour_Stamp + min_Stamp
+//
+//        self.time_Stamp = time_stamp
+//
 //        print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
         
-        self.reminderTotalTime +=  time_stamp
+        
+        print(self.reminderTotalTime)
+
+      
+
+        print(self.reminderTotalTime)
 
         self.view.endEditing(true)
     }
