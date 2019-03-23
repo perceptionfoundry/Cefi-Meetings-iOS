@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, contactChange {
     
@@ -41,7 +43,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var contractTable: UITableView!
     @IBOutlet weak var unemptyTableImage: UIImageView!
     
+    @IBOutlet weak var referredLabe: UILabel!
     
+    @IBOutlet weak var locationLabel: UILabel!
     
     
     
@@ -56,8 +60,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var tableContent = [Contract]()
     var justTest = true
     
+    var placeName: String?
     
-    
+    var getContractViewModel = GetSpecificContractViewModel()
     
     
     
@@ -119,7 +124,13 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         businessName.text = userDetail!.businessName
         typeCategory.text = userDetail?.contactType
         industryCatergory.text = userDetail!.industryType
+        referredLabe.text = userDetail!.referredBy
         
+        getAddressFromLatLon(pdblLatitude: userDetail!.lat!, withLongitude: userDetail!.longField!) { (place) in
+            self.locationLabel.text = place!
+
+
+        }
         let phone = userDetail!.phoneNumber!
         phoneNumber.text = String(phone)
         emailAddress.text = userDetail!.email
@@ -173,6 +184,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
       
     }
     
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Contract", for: indexPath) as! UserDetailContract_TableView
@@ -193,6 +208,42 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        contractDetail(Index: indexPath.row)
+    }
+    
+    
+    
+    func contractDetail(Index : Int){
+        
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"contracts/getspecificcontract"
+        
+        let paramDict : [String : String    ] = [
+            "userId": appGlobalVariable.userID,
+            "contractId":(tableContent[Index].id)!
+            
+        ]
+        
+        getContractViewModel.fetchSpecificContractDetail(API: apiLink, TextFields: paramDict) { (Status, err, result) in
+            
+            
+            if Status == true{
+                let value =  result
+                print(value)
+                
+                self.performSegue(withIdentifier: "Contract_Detail", sender: value)
+                
+                
+            }
+        }
+    }
+    
+    
+  
     
     
     
@@ -231,7 +282,58 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
     }
     
+    // Function Fetch Place value
     
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String,completion:@escaping(_ location:String?)->Void) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                    completion(nil)
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    
+                    //                    print(addressString)
+                    completion(addressString)
+                }
+        })
+        
+    }
+
     
     
     
@@ -248,6 +350,13 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         dest.contactName = userDetail!.contactName!
         dest.selectedContactID = userDetail!.id!
         }
+        else if segue.identifier == "Contract_Detail"{
+            let dest = segue.destination  as! ContractDetailsVC
+            
+            dest.userContract = sender as! Contract
+        }
+        
+//
     }
     
 }

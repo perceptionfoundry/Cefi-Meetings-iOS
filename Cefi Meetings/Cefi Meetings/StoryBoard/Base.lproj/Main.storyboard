@@ -1671,7 +1671,7 @@ We hope you have a great and productive day!</string>
                                 <items>
                                     <navigationItem title="Contacts" id="Sb7-oV-61O">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="ZBe-JX-pSA">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GeS-Vi-gMF">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GeS-Vi-gMF">
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="add_button"/>
