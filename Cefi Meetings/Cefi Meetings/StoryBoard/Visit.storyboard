@@ -1949,7 +1949,11 @@
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="q68-0b-nSy">
-                                                <rect key="frame" x="341" y="170.5" width="12" height="15"/>
+                                                <rect key="frame" x="343.5" y="173" width="6.5" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="q68-0b-nSy" secondAttribute="height" multiplier="8:12" id="nrO-Xo-tDa"/>
+                                                    <constraint firstAttribute="height" constant="10" id="u19-dz-Sss"/>
+                                                </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-zA-Sd2">
                                                 <rect key="frame" x="0.0" y="452.5" width="375" height="297.5"/>
@@ -2222,7 +2226,6 @@
                                             <constraint firstItem="R01-Hv-eAd" firstAttribute="centerX" secondItem="8gm-bn-OJe" secondAttribute="centerX" id="eaJ-eE-2OC"/>
                                             <constraint firstItem="9nw-qE-t4X" firstAttribute="centerX" secondItem="Wtl-Wk-uam" secondAttribute="centerX" id="gEv-xE-20q"/>
                                             <constraint firstItem="BDh-6a-t1D" firstAttribute="width" secondItem="8gm-bn-OJe" secondAttribute="width" multiplier="0.35" id="gqX-lr-3rg"/>
-                                            <constraint firstItem="q68-0b-nSy" firstAttribute="width" secondItem="8gm-bn-OJe" secondAttribute="width" multiplier="0.0325" id="hTJ-Qa-WxN"/>
                                             <constraint firstItem="Gml-Vy-9BT" firstAttribute="centerY" secondItem="8gm-bn-OJe" secondAttribute="centerY" multiplier="1.1" id="hV7-10-YJZ"/>
                                             <constraint firstItem="p1Y-mV-7cQ" firstAttribute="centerX" secondItem="8gm-bn-OJe" secondAttribute="centerX" id="i21-6W-Rtl"/>
                                             <constraint firstItem="6hx-yc-9sm" firstAttribute="height" secondItem="8gm-bn-OJe" secondAttribute="height" multiplier="0.001" id="iSp-0e-8tL"/>
@@ -2232,7 +2235,6 @@
                                             <constraint firstItem="Wtl-Wk-uam" firstAttribute="centerY" secondItem="Pvg-Sc-0ca" secondAttribute="centerY" multiplier="1.05" id="sSx-Y8-lLX"/>
                                             <constraint firstItem="Pvg-Sc-0ca" firstAttribute="centerY" secondItem="8gm-bn-OJe" secondAttribute="centerY" multiplier="0.26" id="u1v-0t-Cgs"/>
                                             <constraint firstItem="LWZ-w0-fNS" firstAttribute="centerX" secondItem="8gm-bn-OJe" secondAttribute="centerX" id="u5Q-hx-DUh"/>
-                                            <constraint firstItem="q68-0b-nSy" firstAttribute="height" secondItem="8gm-bn-OJe" secondAttribute="height" multiplier="0.02" id="v0i-Qg-42N"/>
                                             <constraint firstItem="duO-H2-Ciq" firstAttribute="centerX" secondItem="8gm-bn-OJe" secondAttribute="centerX" multiplier="0.4" id="wxA-06-5ed"/>
                                             <constraint firstItem="9nw-qE-t4X" firstAttribute="centerY" secondItem="8gm-bn-OJe" secondAttribute="centerY" multiplier="0.335" id="xeb-UH-c9R"/>
                                             <constraint firstItem="QXv-G3-CMP" firstAttribute="centerX" secondItem="8gm-bn-OJe" secondAttribute="centerX" id="zsQ-R9-RPL"/>

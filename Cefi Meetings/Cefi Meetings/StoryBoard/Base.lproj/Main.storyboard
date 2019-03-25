@@ -808,43 +808,43 @@ We hope you have a great and productive day!</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="David Cooperfield" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X78-iX-6Pq">
-                                                            <rect key="frame" x="28" y="27.5" width="225" height="25"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                                            <color key="textColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract # 123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQz-hA-ELy">
-                                                            <rect key="frame" x="28" y="51" width="112.5" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                            <rect key="frame" x="28" y="30" width="225" height="19.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                                             <color key="textColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow_gray" translatesAutoresizingMaskIntoConstraints="NO" id="RU9-ah-9RG">
                                                             <rect key="frame" x="352.5" y="33.5" width="7.5" height="12.5"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="g3453" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XJ-EN-w0F">
+                                                            <rect key="frame" x="206.5" y="31.5" width="75" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                            <color key="textColor" red="0.52582973239999997" green="0.72475916149999997" blue="0.45562386510000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="DQz-hA-ELy" firstAttribute="width" secondItem="GDt-7z-fNP" secondAttribute="width" multiplier="0.3" id="2De-SQ-2iq"/>
                                                         <constraint firstItem="X78-iX-6Pq" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="0.75" id="3Rv-3k-8LF"/>
                                                         <constraint firstItem="0Sk-4c-CVW" firstAttribute="width" secondItem="GDt-7z-fNP" secondAttribute="width" multiplier="0.3" id="6Mx-rX-1GS"/>
                                                         <constraint firstItem="RU9-ah-9RG" firstAttribute="height" secondItem="GDt-7z-fNP" secondAttribute="height" multiplier="0.16" id="7wS-dm-ZrW"/>
-                                                        <constraint firstItem="DQz-hA-ELy" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="0.45" id="H9x-3H-Amg"/>
+                                                        <constraint firstItem="4XJ-EN-w0F" firstAttribute="centerY" secondItem="X78-iX-6Pq" secondAttribute="centerY" id="IGS-ig-YQ7"/>
                                                         <constraint firstItem="RU9-ah-9RG" firstAttribute="width" secondItem="GDt-7z-fNP" secondAttribute="width" multiplier="0.02" id="Jt1-Ue-w5Q"/>
                                                         <constraint firstItem="0Sk-4c-CVW" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="0.45" id="KCv-IC-wEF"/>
                                                         <constraint firstItem="UEK-pd-fO4" firstAttribute="centerY" secondItem="GDt-7z-fNP" secondAttribute="centerY" id="OHe-VU-4gJ"/>
+                                                        <constraint firstItem="4XJ-EN-w0F" firstAttribute="width" secondItem="GDt-7z-fNP" secondAttribute="width" multiplier="0.2" id="Oum-Mj-gGw"/>
                                                         <constraint firstItem="X78-iX-6Pq" firstAttribute="centerY" secondItem="GDt-7z-fNP" secondAttribute="centerY" id="S3C-zh-hSy"/>
                                                         <constraint firstItem="RU9-ah-9RG" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="1.9" id="bS7-FZ-dq8"/>
                                                         <constraint firstItem="UEK-pd-fO4" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="1.7" id="ejm-cH-9xt"/>
                                                         <constraint firstItem="0Sk-4c-CVW" firstAttribute="centerY" secondItem="GDt-7z-fNP" secondAttribute="centerY" multiplier="0.4" id="fjv-1T-pnf"/>
                                                         <constraint firstItem="RU9-ah-9RG" firstAttribute="centerY" secondItem="GDt-7z-fNP" secondAttribute="centerY" id="hT5-wO-dSq"/>
                                                         <constraint firstItem="X78-iX-6Pq" firstAttribute="width" secondItem="GDt-7z-fNP" secondAttribute="width" multiplier="0.6" id="kPU-05-6dp"/>
-                                                        <constraint firstItem="DQz-hA-ELy" firstAttribute="centerY" secondItem="GDt-7z-fNP" secondAttribute="centerY" multiplier="1.5" id="nKk-WK-1z1"/>
+                                                        <constraint firstItem="4XJ-EN-w0F" firstAttribute="centerX" secondItem="GDt-7z-fNP" secondAttribute="centerX" multiplier="1.3" id="oRA-pU-2Ul"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <outlet property="closedLabel" destination="0Sk-4c-CVW" id="G6l-T9-4V4"/>
-                                                    <outlet property="contractLabel" destination="DQz-hA-ELy" id="5Zw-KJ-fpk"/>
+                                                    <outlet property="contractNumber" destination="4XJ-EN-w0F" id="DEf-wx-ep6"/>
                                                     <outlet property="nameLabel" destination="X78-iX-6Pq" id="UfW-kz-DnU"/>
                                                     <outlet property="pendingCount" destination="NCF-ca-rMJ" id="a5G-lV-Ime"/>
                                                 </connections>
@@ -1637,7 +1637,7 @@ We hope you have a great and productive day!</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBg-sz-3h5">
-                                                    <rect key="frame" x="37.5" y="39.5" width="262.5" height="10"/>
+                                                    <rect key="frame" x="37.5" y="38.5" width="262.5" height="12"/>
                                                     <fontDescription key="fontDescription" name="AvenirLTStd-Medium" family="Avenir LT Std" pointSize="10"/>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>

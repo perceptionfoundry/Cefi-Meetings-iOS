@@ -12,7 +12,7 @@ class Pending_TableViewCell: UITableViewCell {
 
     @IBOutlet weak var closedLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var contractLabel: UILabel!
     @IBOutlet weak var pendingCount: UILabel!
+    @IBOutlet weak var contractNumber: UILabel!
     
 }
