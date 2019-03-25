@@ -21,18 +21,12 @@ class contractFilterViewModel{
             
             
             
-//            print("************ INPUT value to API ********************")
-//
-//                        print(API)
-//                        print(TextFields)
-//            print(" **************************************************")
+
 
             
-            let fetchValue = resp.result.value as! [String:Any]
+            guard let fetchValue = resp.result.value as? [String:Any] else {return}
             
-//       print("\n ************ SERVER RESPONSE ********************")
-//                                     print(fetchValue)
-//            print("***********************************")
+
             
             
             var finalDict = [Contract]()
@@ -48,10 +42,7 @@ class contractFilterViewModel{
                 guard let list = fetchValue["searchData"] as? [Any] else{return}
                 
                 
-//                print("***********************************")
 //
-//                print(list)
-//                print("***********************************")
 
                 do {
                     let json = try JSONSerialization.data(withJSONObject: list, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -64,7 +55,6 @@ class contractFilterViewModel{
                 catch{}
                 
                 
-//                print(finalDict.count)
                 
                 completion(true, finalDict, nil)
             }

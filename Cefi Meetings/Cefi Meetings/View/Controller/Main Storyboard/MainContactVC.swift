@@ -28,6 +28,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var clientButton: Custom_Button!
     @IBOutlet weak var dealerButton: Custom_Button!
     
+    @IBOutlet weak var backButton: UIButton!
     
     
     
@@ -64,6 +65,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isHidden = true
+
+        if segueStatus == true{
+            backButton.isHidden = false
+        }
         
        // Making navigation bar transparent
         NaviBar.setBackgroundImage(UIImage(), for: .default)
@@ -221,7 +227,6 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Lead")
             
-//            print(value)
             
             self.userDirectory = value
             
@@ -243,7 +248,6 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Client")
             
-//            print(value)
             
             self.userDirectory = value
             
@@ -266,7 +270,6 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             let value = self.directoryFilter(option: "Dealer")
             
-//            print(value)
             
             self.userDirectory = value
             self.wordsDic.removeAll()
@@ -475,6 +478,8 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
                 self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true, businessName: wordValue[indexPath.row].businessName!)
                 self.segueStatus = false
+                    backButton.isHidden = true
+
                 self.dismiss(animated: true, completion: nil)
             }
                 
@@ -510,6 +515,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     
                     self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id :wordValue[indexPath.row].id!, ContractNumber : contractNUM, businessName: wordValue[indexPath.row].businessName!)
                     self.segueStatus = false
+                
                     self.dismiss(animated: true, completion: nil)
                 
                     
@@ -559,6 +565,12 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     
    
+    @IBAction func BackButtonAction(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+
+        
+    }
     
     
     
@@ -581,13 +593,11 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             self.lastData = self.userDirectory
             let currentTableData = self.userDirectory
-//            print(currentTableData)
-//            print(searchTF.text!)
-
+//
             
             let result = currentTableData.filter( {($0.contactName?.contains(searchTF.text!))!}).map({ return $0 })
 
-//            print(result)
+//
             
             self.userDirectory = result
             

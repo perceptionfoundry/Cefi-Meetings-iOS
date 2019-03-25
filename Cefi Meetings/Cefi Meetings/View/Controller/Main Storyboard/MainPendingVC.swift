@@ -41,7 +41,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         
         pending_Table.reloadData()
         
-    self.getPending()
+//    self.getPending()
     }
     
     
@@ -54,7 +54,8 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        self.getPending()
+
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -117,7 +118,23 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Pending", for: indexPath) as! Pending_TableViewCell
         cell.selectionStyle = .none
-        cell.closedLabel.text = "Closed \((pendingContent[indexPath.row].contractStatusUpdated)!) days ago"
+        
+        
+        let currentDate = Date()
+        let pendingTimestamp = (pendingContent[indexPath.row].contractStatusUpdated)! / 1000
+        
+        print(currentDate)
+        print("\(pendingTimestamp / 1000 )")
+        
+        let iOSTIME = Date(timeIntervalSince1970: TimeInterval(pendingTimestamp))
+        print(iOSTIME)
+        
+        
+        var showDate = self.getTimeComponentString(olderDate: iOSTIME, newerDate: currentDate)
+        
+        print(showDate)
+        
+        cell.closedLabel.text = "Closed \(showDate ?? "few seconds" ) ago"
         cell.nameLabel.text = pendingContent[indexPath.row].contactName
         cell.pendingCount.text = String(pendingContent[indexPath.row].allPendingDocumentCounts!)
         cell.contractNumber.text = pendingContent[indexPath.row].contractNumber
@@ -163,6 +180,55 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         
         dest.userContract = sender as! Contract
     }
-  
+    
+    
+    
+    
+    
+    func getTimeComponentString(olderDate older: Date,newerDate newer: Date) -> (String?)  {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        
+        let componentsLeftTime = Calendar.current.dateComponents([.minute , .hour , .day,.month, .weekOfMonth,.year], from: older, to: newer)
+        
+        let year = componentsLeftTime.year ?? 0
+        if  year > 0 {
+            formatter.allowedUnits = [.year]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        
+        let month = componentsLeftTime.month ?? 0
+        if  month > 0 {
+            formatter.allowedUnits = [.month]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let weekOfMonth = componentsLeftTime.weekOfMonth ?? 0
+        if  weekOfMonth > 0 {
+            formatter.allowedUnits = [.weekOfMonth]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let day = componentsLeftTime.day ?? 0
+        if  day > 0 {
+            formatter.allowedUnits = [.day]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let hour = componentsLeftTime.hour ?? 0
+        if  hour > 0 {
+            formatter.allowedUnits = [.hour]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let minute = componentsLeftTime.minute ?? 0
+        if  minute > 0 {
+            formatter.allowedUnits = [.minute]
+            return formatter.string(from: older, to: newer) ?? ""
+        }
+        
+        return nil
+    }
 
 }

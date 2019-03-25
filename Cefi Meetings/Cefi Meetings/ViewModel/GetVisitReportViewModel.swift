@@ -26,7 +26,6 @@ class GetVisitReportViewModel{
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-                        print(mainDict["success"])
             
             if mainDict["success"] as! Int == 1 {
                 
@@ -46,7 +45,6 @@ class GetVisitReportViewModel{
                     
                     finalDict = try JSONDecoder().decode(MeetingReport.self, from: jsonData!)
                     
-                    //                print(finalDict.count)
                     
                     
                     completion(true,"",finalDict!)

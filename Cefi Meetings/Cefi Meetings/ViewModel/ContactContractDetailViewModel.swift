@@ -15,16 +15,14 @@ class ContactContractDetailViewModel{
     
     func fetchContractDetail(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : [Contract], _ pendingCount :Int?)->()){
         
-        print(API)
-        print(TextFields)
+     
         
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
-            let mainDict = response.result.value  as! [String : Any]
+            guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-                        print(mainDict)
             
             if mainDict["success"] as! Int == 1 {
                 
@@ -44,7 +42,6 @@ class ContactContractDetailViewModel{
                     
                     finalDict = try JSONDecoder().decode([Contract].self, from: jsonData!)
                     
-//                    print(finalDict.count)
                     
                     
                     completion(true,"",finalDict, mainDict["totalContactsPendingDocument"] as? Int)

@@ -28,9 +28,7 @@ class SIGNUP: UIViewController {
 
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/register"
         
-//        print("****************")
-//        print(self.apiLink)
-//        print("*****************")
+
         
         
         
@@ -43,9 +41,7 @@ class SIGNUP: UIViewController {
      
         
         
-//        print(self.signUpDict)
         Alamofire.request(apiLink, method: .post, parameters: dic, encoding: JSONEncoding.default, headers: nil).responseJSON { (reponse) in
-//            print("response = \(reponse.result.value)")
         }
         
 

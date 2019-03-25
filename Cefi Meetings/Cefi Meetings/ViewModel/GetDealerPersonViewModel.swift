@@ -25,7 +25,6 @@ class GetDealerPersonViewModel{
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-            print(mainDict)
             
             if mainDict["success"] as! Int == 1 {
                 
@@ -45,7 +44,6 @@ class GetDealerPersonViewModel{
                     
                     finalDict = try JSONDecoder().decode([Dealer].self, from: jsonData!)
                     
-                                    print(finalDict.count)
                     
                     
                     completion(true,"",finalDict)

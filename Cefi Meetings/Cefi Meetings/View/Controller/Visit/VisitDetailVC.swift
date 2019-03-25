@@ -100,41 +100,10 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         
         
-        let reminderString = meetingDetail!.reminder!
+        let reminderString = meetingDetail!.reminderinString!
         
         
-        let dateFormatter = DateFormatter()
-        let tempLocale = dateFormatter.locale
-        dateFormatter.locale = Locale(identifier: TimeZone.current.identifier)
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let date = dateFormatter.date(from: reminderString)!
-        dateFormatter.dateFormat = "hh:MM a" ; //"dd-MM-yyyy HH:mm:ss"
-        dateFormatter.locale = tempLocale // reset the locale --> but no need here
-        let newString = dateFormatter.string(from: date)
-        print("EXACT_DATE : \(newString)")
-        
-        
-        
-        let time1 = meetingDetail?.timeInString!
-        let time2 = newString
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mma"
-        
-        let date1 = formatter.date(from: time1!)!
-        let date2 = formatter.date(from: time2)!
-        
-        let elapsedTime = date2.timeIntervalSince(date1)
-        
-        // convert from seconds to hours, rounding down to the nearest hour
-        let hours = floor(elapsedTime / 60 / 60)
-        
-        // we have to subtract the number of seconds in hours from minutes to get
-        // the remaining minutes, rounding down to the nearest minute (in case you
-        // want to get seconds down the road)
-        let minutes = floor((elapsedTime - (hours * 60 * 60)) / 60)
-        
-        print("\(Int(hours)) hr and \(Int(minutes)) min")
+
         
  
        
@@ -143,8 +112,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         dateTF.text = String(dateString[0])
 //        timeTF.text = timeString
         timeTF.text = meetingDetail!.timeInString
-//        reminderTF.text = meetingDetail!.reminder!
-        reminderTF.text = "\(Int(minutes)) Minutes"
+        reminderTF.text = meetingDetail!.reminderinString!
+//        reminderTF.text = "\(Int(minutes)) Minutes"
         
         
         let lat = (meetingDetail!.lat! as NSString).doubleValue
@@ -400,6 +369,8 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                 "purpose": meetingDetail!.purpose!,
                 "dateInString": dateTF.text!,
                 "timeInString": timeTF.text!,
+                "reminderinString" : reminderTF.text!
+                
             
             ]
             

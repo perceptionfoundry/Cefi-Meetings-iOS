@@ -95,8 +95,8 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
  // *************** VIEW DID APPEAR  *********************
     
     override func viewDidAppear(_ animated: Bool) {
-        tableContent.removeAll()
-        fetchContent()
+//        tableContent.removeAll()
+//        fetchContent()
     }
     
     
@@ -106,8 +106,10 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        contractTable.isUserInteractionEnabled = true
         self.tabBarController?.tabBar.isHidden = true
+        tableContent.removeAll()
+        fetchContent()
     }
     
     
@@ -212,6 +214,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        contractTable.isUserInteractionEnabled = false
+
         contractDetail(Index: indexPath.row)
     }
     

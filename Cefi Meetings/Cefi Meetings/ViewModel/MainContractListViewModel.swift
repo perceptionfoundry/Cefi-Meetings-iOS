@@ -23,12 +23,10 @@ class MainContractListViewModel{
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
             
-            print(response.result.value)
             
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-            print(mainDict)
             
             if mainDict["status"] as! String != "Sorry contracts not exist" {
                 
@@ -48,7 +46,6 @@ class MainContractListViewModel{
                     
                     finalDict = try JSONDecoder().decode([Contract].self, from: jsonData!)
                     
-                    print(finalDict.count)
                     
                     
                     completion(true,"",finalDict)

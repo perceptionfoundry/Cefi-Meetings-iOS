@@ -26,7 +26,6 @@ class UserSettingViewModel{
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-//            print(mainDict["userData"])
             
             if mainDict["success"] as! Int == 1 {
                 
@@ -46,7 +45,6 @@ class UserSettingViewModel{
                     
                     finalDict = try JSONDecoder().decode(Profile.self, from: jsonData!)
                     
-                    //                print(finalDict.count)
                     
                     
                     completion(true,"",finalDict!)

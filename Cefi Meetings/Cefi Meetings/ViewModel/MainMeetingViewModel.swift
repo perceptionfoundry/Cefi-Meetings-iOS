@@ -16,8 +16,7 @@ class MainMeetingViewModel{
         
         
         
-//        print(API)
-//        print(Param)
+
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -26,7 +25,6 @@ class MainMeetingViewModel{
             
             guard let value = resp.result.value as?  [String:Any] else {return}
             
-//            print(value)
             
             if value["success"] as! Int == 1{
                 
@@ -46,7 +44,6 @@ class MainMeetingViewModel{
                     
                     finalDict = try JSONDecoder().decode([Meeting].self, from: jsonData!)
                     
-                    //                print(finalDict.count)
                     
                     
                     completion(true,"",finalDict)

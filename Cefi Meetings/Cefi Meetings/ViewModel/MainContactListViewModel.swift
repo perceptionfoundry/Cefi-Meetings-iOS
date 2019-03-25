@@ -23,7 +23,6 @@ class MainContactListViewModel{
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-//            print(mainDict)
             
             if mainDict["status"] as! String != "Sorry contracts not exist" {
             
@@ -43,7 +42,6 @@ class MainContactListViewModel{
                 
                 finalDict = try JSONDecoder().decode([Contact].self, from: jsonData!)
                 
-//                print(finalDict.count)
 
                 
                 completion(true,"",finalDict)

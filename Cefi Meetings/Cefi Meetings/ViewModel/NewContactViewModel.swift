@@ -18,9 +18,7 @@ class NewContactViewModel{
 
     func newContactCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
 
-//        
-//        print(API)
-//        print(Textfields)
+     
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -29,7 +27,7 @@ class NewContactViewModel{
             
             
             // fetching response result from API
-            var value = response.result.value  as! [String : Any]
+            guard let value = response.result.value  as? [String : Any] else{return}
 
            
             
@@ -37,7 +35,6 @@ class NewContactViewModel{
             let check  = value["success"] as? Double
             
             
-//            print(check)
             
             // ************* Action to taken as per server response ******************
             

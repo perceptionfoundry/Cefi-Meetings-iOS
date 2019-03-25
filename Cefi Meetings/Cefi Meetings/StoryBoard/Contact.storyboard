@@ -132,8 +132,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-kY-sKV">
-                                                    <rect key="frame" x="10" y="26.5" width="94" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-kY-sKV">
+                                                    <rect key="frame" x="20" y="26.5" width="94" height="25"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@
                                             <constraints>
                                                 <constraint firstItem="AXl-I7-CDi" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="1em-Sa-J7C"/>
                                                 <constraint firstItem="uML-ii-FqO" firstAttribute="centerY" secondItem="XNY-nl-8BC" secondAttribute="centerY" id="2UP-lQ-Ubu"/>
-                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="leading" secondItem="XNY-nl-8BC" secondAttribute="leading" constant="10" id="7bD-rX-95M"/>
+                                                <constraint firstItem="YSu-kY-sKV" firstAttribute="leading" secondItem="XNY-nl-8BC" secondAttribute="leading" constant="20" id="7bD-rX-95M"/>
                                                 <constraint firstItem="hbb-Ng-vSM" firstAttribute="centerX" secondItem="XNY-nl-8BC" secondAttribute="centerX" multiplier="0.75" id="JRl-FG-W7v"/>
                                                 <constraint firstItem="hbb-Ng-vSM" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.175" id="Kre-N3-zKV"/>
                                                 <constraint firstItem="YSu-kY-sKV" firstAttribute="width" secondItem="XNY-nl-8BC" secondAttribute="width" multiplier="0.25" id="M4G-hy-wBr"/>
@@ -977,7 +977,7 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Contact" id="qiJ-RK-z8w" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haY-q6-VAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="146"/>
+            <point key="canvasLocation" x="2014" y="4"/>
         </scene>
         <!--Edit ContactVC-->
         <scene sceneID="p9P-f7-hV6">
@@ -1346,6 +1346,7 @@
                         <outlet property="typeTF" destination="V0Z-Fc-xZw" id="ioR-jW-HyL"/>
                         <segue destination="aYV-C2-dsO" kind="show" identifier="Contact_Type" id="Qz7-Co-iwf"/>
                         <segue destination="Mek-SC-ddN" kind="show" identifier="Industry_Type" id="bVS-eb-cxY"/>
+                        <segue destination="qiJ-RK-z8w" kind="presentation" identifier="Contact" id="e5d-Vx-hyH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgF-zM-WjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1380,7 +1381,8 @@
         <image name="type_newContact" width="15" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0bb-Nf-zS9"/>
-        <segue reference="EQQ-xc-4Rj"/>
+        <segue reference="e5d-Vx-hyH"/>
+        <segue reference="bVS-eb-cxY"/>
+        <segue reference="Qz7-Co-iwf"/>
     </inferredMetricsTieBreakers>
 </document>

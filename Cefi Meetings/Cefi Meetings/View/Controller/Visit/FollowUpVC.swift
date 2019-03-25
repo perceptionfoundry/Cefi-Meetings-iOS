@@ -211,7 +211,7 @@ class FollowUpVC: UIViewController {
                                 self.OutcomeSegement.selectItemAt(index: outcomeIndex, animated: true)
                 
                 // OUTCOME COMMENT
-                self.commentTF.text = result!.outcomeComments!
+                self.commentTF.text = result!.outcomeComments ?? ""
                 //DID NOT AGREE
 
                 let didAgreeStatus = result!.didNotAgreetoTerms!
@@ -320,6 +320,8 @@ class FollowUpVC: UIViewController {
                 "contractError": true,
                 "other": true,
                 "otherComments": otherComment.text!,
+                "reportStatus" : "Completed"
+
   
                 ]
         }
@@ -331,7 +333,11 @@ class FollowUpVC: UIViewController {
                 "commentOnSales": commentTF.text!,
                 "visitId": meetingDetail!.id!,
                 "reportType": (meetingDetail?.purpose!)!,
-                "reportStatus" : "Completed"
+                "reportStatus" : "Completed",
+                "didNotAgreetoTerms": false,
+                "contractError": false,
+                "other": false,
+                "otherComments": ""
 
                 
             ]

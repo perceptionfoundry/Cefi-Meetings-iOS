@@ -17,10 +17,15 @@ protocol contactChange {
 }
 
 
-class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate{
+class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate,contactdelegate{
     
     
-    
+    func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
+        referredTF.text = userName
+        referredID = id
+        
+        
+    }
     
     
     // ******************  PROTOCOL FUNCTION **********************
@@ -86,7 +91,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     var industryValue = [String]()
     var referrred = "none"
     var editDelegate : contactChange?
-    
+    var referrredName = ""
+    var referredID : String?
     // ******** Map related Variable *********
     var chosenPlace : meetup?
     let currentLocationMarker = GMSMarker()
@@ -106,6 +112,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         phoneTF.text = String(contactDetail.phoneNumber!)
         emailTF.text = contactDetail.email
         industryTF.text = contactDetail.industryType
+        referredTF.text = contactDetail.referredBy ?? "none"
         
         let lat = (contactDetail.lat! as NSString).doubleValue
         let long  = (contactDetail.longField! as NSString).doubleValue
@@ -211,6 +218,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         }
             
         else if textField == referredTF{
+            performSegue(withIdentifier: "Contact", sender: nil)
+
             
         }
         
@@ -235,9 +244,9 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                                    "email" : emailTF.text!,
                                    "industryType" : industryTF.text!,
                                    "contactType" : typeTF.text!,
-                                   "referredBy" : self.referrred,
                                    "lat" : self.chosenPlace!.lat,
                                    "long" : chosenPlace!.long,
+                                   "referredBy" : referredTF.text ?? "none",
                                    "contactId" : contactDetail.id] as [String : Any]
         
         
@@ -245,7 +254,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         
         
-        
+        print(newContactParameter)
         
         //  *************** Verifying both textfield is not left empty ***********
         if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
@@ -257,7 +266,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
             
             viewModel.editContact(API: self.apiLink, Textfields: newContactParameter) { (status, err, result) in
                 
-                
+            
                 
                 if status == false{
                     
@@ -438,6 +447,15 @@ extension EditContactVC: GMSAutocompleteViewControllerDelegate {
             
             dest.equipmentDelegate = self
             dest.selectedTitle = industryValue
+        }
+        
+        else if segue.identifier == "Contact"{
+            
+            let dest = segue.destination as! MainContactVC
+            
+            dest.contactDelegate = self
+            dest.segueStatus = true
+            
         }
     }
     

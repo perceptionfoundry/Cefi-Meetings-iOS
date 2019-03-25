@@ -17,14 +17,11 @@ class userFilterViewModel{
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (resp) in
             
-//            print(API)
-//            print(TextFields)
             
-            let fetchValue = resp.result.value as! [String:Any]
+            guard let fetchValue = resp.result.value as? [String:Any] else {return}
             
             
-//            print(fetchValue["success"])
-//            print(fetchValue["status"])
+
 
             
             var status  = false
@@ -37,16 +34,12 @@ class userFilterViewModel{
             }
             
             
-//            print(status)
             
 //            guard let list = fetchValue["searchData"] as? [Any] else{return}
             
             var finalDict = [Contact]()
             
-//            print("***********************************")
-//
-////            print(list)
-//            print("***********************************")
+
             
             
             

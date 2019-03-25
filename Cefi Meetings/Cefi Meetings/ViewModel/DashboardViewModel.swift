@@ -22,7 +22,6 @@ class DashboardViewModel{
             guard let fetchValue = resp.result.value as? [String:Any] else{return}
             
             
-//             print(fetchValue)
             
             if fetchValue["success"] as! Double == 1{
                 

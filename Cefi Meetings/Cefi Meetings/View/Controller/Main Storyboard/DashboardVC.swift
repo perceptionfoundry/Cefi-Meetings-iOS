@@ -48,20 +48,7 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-//       let apilink = appGlobalVariable.apiBaseURL+"useroverview/useroverviewinfo"
-//        let userID = appGlobalVariable.userID
-//
-//        let dict = ["userId": userID]
-//
-//        viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
-//
-////            print(result)
-//
-//            self.contactCount.text = String(result!["addedContactsToday"] as! Int)
-//            self.contractCount.text = String(result?["allOpenContracts"]as! Int)
-//            self.visitCount.text = String(result?["todayLeftVisits"]as! Int)
-//            self.pendingCount.text = String(result!["pendingDocument"] as! Int)
-//        }
+
     }
 
     

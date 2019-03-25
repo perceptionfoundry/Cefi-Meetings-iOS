@@ -21,9 +21,7 @@ class EditContactViewModel{
     
     func editContact (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?, _ result: Contact?)->Void){
         
-//
-//                print(API)
-//                print(Textfields)
+
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -33,17 +31,15 @@ class EditContactViewModel{
             
             // fetching response result from API
             
-//            print(response.result.value)
+
             
-            var value = response.result.value  as! [String : Any]
+            guard let value = response.result.value  as? [String : Any] else{return}
             
-//            print(value)
             
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-            //            print(check)
             
             // ************* Action to taken as per server response ******************
             
@@ -81,7 +77,6 @@ class EditContactViewModel{
                     
                     finalDict = try JSONDecoder().decode(Contact.self, from: jsonData!)
                     
-//                    print(finalDict)
                     
                     completion(true, nil, finalDict )
 

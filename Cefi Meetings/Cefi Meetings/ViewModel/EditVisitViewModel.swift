@@ -16,8 +16,7 @@ class EditVisitViewModel {
     func editVisit (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
         
         
-        //                print(API)
-        //                print(Textfields)
+    
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -26,20 +25,17 @@ class EditVisitViewModel {
             
             
             
-            print(response.result.value)
             
             // fetching response result from API
             guard let value = response.result.value  as? [String : Any] else{
                 
                 return}
             
-            //            print(value)
             
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-            //            print(check)
             
             // ************* Action to taken as per server response ******************
             

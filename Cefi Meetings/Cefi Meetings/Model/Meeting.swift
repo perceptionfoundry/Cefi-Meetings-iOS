@@ -1,7 +1,7 @@
 //
 //  Meeting.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 18, 2019
+//  Created on March 25, 2019
 
 import Foundation
 
@@ -25,6 +25,7 @@ struct Meeting : Codable {
         let purpose : String?
         let rating : String?
         let reminder : String?
+        let reminderinString : String?
         let time : String?
         let timeInString : String?
         let userId : String?
@@ -49,6 +50,7 @@ struct Meeting : Codable {
                 case purpose = "purpose"
                 case rating = "rating"
                 case reminder = "reminder"
+                case reminderinString = "reminderinString"
                 case time = "time"
                 case timeInString = "timeInString"
                 case userId = "userId"
@@ -75,6 +77,7 @@ struct Meeting : Codable {
                 purpose = try values.decodeIfPresent(String.self, forKey: .purpose)
                 rating = try values.decodeIfPresent(String.self, forKey: .rating)
                 reminder = try values.decodeIfPresent(String.self, forKey: .reminder)
+                reminderinString = try values.decodeIfPresent(String.self, forKey: .reminderinString)
                 time = try values.decodeIfPresent(String.self, forKey: .time)
                 timeInString = try values.decodeIfPresent(String.self, forKey: .timeInString)
                 userId = try values.decodeIfPresent(String.self, forKey: .userId)

@@ -441,6 +441,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             "purpose": purposeTF.text!,
             "dateInString": dateTF.text!,
             "timeInString": timeTF.text!,
+            "reminderinString" : reminderTF.text!
             
 
             

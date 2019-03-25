@@ -148,7 +148,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
-        ratingStar.isUserInteractionEnabled = false
+//        ratingStar.isUserInteractionEnabled = false
         
 //        print(userContract!)
 //        print(selectedContactID!)

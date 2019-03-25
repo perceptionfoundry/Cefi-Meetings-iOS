@@ -23,18 +23,15 @@ class GetSpecificContractViewModel{
     func fetchSpecificContractDetail(API: String, TextFields: [String : String] ,completion : @escaping(_ Status:Bool,_ Message:String?, _ Result : Contract)->()){
         
         
-//        print(API)
-//        print(TextFields)
+
         
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (response) in
             
             
-//            print(response.result.value)
             
             guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
-            print(mainDict["userContract"])
             
             if mainDict["success"] as! Int == 1 {
                 

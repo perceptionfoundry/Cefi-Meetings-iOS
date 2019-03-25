@@ -16,8 +16,7 @@ class NewContractViewModel {
     func newContractCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
         
         
-        print(API)
-        print(Textfields)
+      
         
         
         // ****** Hitting ApiLink with required parameter **********
@@ -30,13 +29,11 @@ class NewContractViewModel {
 
                 return}
   
-            print(value)
             
             // Storing Server status
             let check  = value["success"] as? Double
             
             
-//                        print(check)
             
             // ************* Action to taken as per server response ******************
             
@@ -76,10 +73,8 @@ class NewContractViewModel {
                     
                     finalDict = try JSONDecoder().decode(Contract.self, from: jsonData!)
                     
-                                        print(finalDict?.contractNumber)
                     
                     
-//                    completion(true,"",finalDict!)
                     completion(true, finalDict!.contractNumber!)
                     
                 }catch{print("JSON Decoding error")}
