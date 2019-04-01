@@ -38,6 +38,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     var ContactDetail : Meeting?
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     let viewModel = GetDealerPersonViewModel()
+    let deleteViewModel = DeleteDealerPersonViewModel()
     
     
     
@@ -104,6 +105,9 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
+//        if editingStyle == .delete{
+//            deleteContents(personID: dealerList[indexPath.row].id!, IndexNumber : indexPath.row)
+//        }
       
     }
     
@@ -113,29 +117,28 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
+
         let editButton = UITableViewRowAction(style: .default, title: "Edit") { (rowAction, indexPath) in
             print("Edit")
-//            cell.dealerName.isUserInteractionEnabled = true
-//            self.dealerList.remove(at: indexPath.row)
-//            self.dealerListTable.reloadData()
-//            cell.dealerName.placeholder = "Editted Value"
             
+            
+            let selectedID = self.dealerList[indexPath.row].id!
 
-            
+            self.performSegue(withIdentifier: "Edit_Segue", sender: selectedID)
+
+
+
         }
         editButton.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
-        
-        
+
+
         let cancelButton = UITableViewRowAction(style: .default, title: "Delete") { (rowAction, indexPath) in
-            
-            print("Delete")
-            self.dealerList.remove(at: indexPath.row)
-            self.dealerListTable.reloadData()
-            
+
+            self.deleteContents(personID: self.dealerList[indexPath.row].id!, IndexNumber : indexPath.row)
+
         }
         cancelButton.backgroundColor = UIColor.red
-        
+
         return[editButton, cancelButton]
     }
     
@@ -172,6 +175,42 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     }
     
     
+    func deleteContents(personID : String, IndexNumber : Int){
+        
+        dealerList.removeAll()
+        
+        let apiLink = appGlobalVariable.apiBaseURL+"dealerperson/deletedealerperson"
+        
+        let paramDict : [String: String] = [
+            "userId": appGlobalVariable.userID,
+            "personId": personID
+            
+        ]
+        
+        print(apiLink)
+        print(paramDict)
+        
+        deleteViewModel.deletePerson(API: apiLink, Param: paramDict) { (status, result) in
+            
+            
+            
+            if status == true{
+                print("Delete")
+//                self.dealerList.remove(at: IndexNumber)
+                self.getContents()
+                self.dealerListTable.reloadData()
+            }
+            
+            
+            
+            
+        }
+    }
+
+    
+    
+    
+    
     
     @IBAction func newDetailerAction(_ sender: Any) {
         
@@ -181,12 +220,22 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "Edit_Segue"{
+            let dest = segue.destination  as! EditPersonVC
+            
+            dest.dealerDele = self
+            dest.personID = sender as! String
+
+        }
+        
+        
+        else{
         let dest = segue.destination  as! AddDealerVC
         
         dest.dealerDele = self
         dest.ContactDetail = self.ContactDetail!
     }
-    
+    }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

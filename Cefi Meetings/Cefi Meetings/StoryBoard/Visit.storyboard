@@ -2389,12 +2389,6 @@
                                     <action selector="backAction:" destination="TVA-D0-yeN" eventType="touchUpInside" id="Y6V-a9-B9Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-WX-6yR">
-                                <rect key="frame" x="296" y="81.5" width="46" height="22"/>
-                                <state key="normal" image="edit_button">
-                                    <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-7E-TaB">
                                 <rect key="frame" x="75.5" y="586" width="224" height="30"/>
                                 <state key="normal" image="add_dealer"/>
@@ -2455,13 +2449,11 @@
                             <constraint firstItem="UnL-4P-0bn" firstAttribute="top" secondItem="Nv9-yq-hJ6" secondAttribute="bottom" constant="20" id="1tX-FV-6FF"/>
                             <constraint firstItem="c0A-7E-TaB" firstAttribute="centerX" secondItem="q0y-GM-6Zg" secondAttribute="centerX" id="2MW-J5-4ro"/>
                             <constraint firstItem="cYC-a6-F1z" firstAttribute="width" secondItem="kbn-ef-yvX" secondAttribute="width" multiplier="0.7" id="504-1v-wVi"/>
-                            <constraint firstItem="a1O-WX-6yR" firstAttribute="centerY" secondItem="Nv9-yq-hJ6" secondAttribute="centerY" id="ARE-LT-au1"/>
                             <constraint firstItem="Nv9-yq-hJ6" firstAttribute="centerX" secondItem="q0y-GM-6Zg" secondAttribute="centerX" id="F9w-1K-RkD"/>
                             <constraint firstItem="Qww-ij-v7l" firstAttribute="top" secondItem="UnL-4P-0bn" secondAttribute="bottom" constant="10" id="FVz-1H-Ox2"/>
                             <constraint firstItem="UnL-4P-0bn" firstAttribute="centerX" secondItem="q0y-GM-6Zg" secondAttribute="centerX" id="Fdf-mI-Sr7"/>
                             <constraint firstItem="q0y-GM-6Zg" firstAttribute="trailing" secondItem="Qww-ij-v7l" secondAttribute="trailing" id="OeR-KD-gbD"/>
                             <constraint firstItem="Nv9-yq-hJ6" firstAttribute="top" secondItem="cYC-a6-F1z" secondAttribute="bottom" constant="10" id="Qim-Dv-LJA"/>
-                            <constraint firstItem="a1O-WX-6yR" firstAttribute="centerX" secondItem="q0y-GM-6Zg" secondAttribute="centerX" multiplier="1.7" id="Y8j-Ri-fPH"/>
                             <constraint firstItem="v5T-lz-pdJ" firstAttribute="centerY" secondItem="Nv9-yq-hJ6" secondAttribute="centerY" id="abQ-kr-51T"/>
                             <constraint firstItem="c0A-7E-TaB" firstAttribute="top" secondItem="Qww-ij-v7l" secondAttribute="bottom" constant="20" id="dck-iB-Wfc"/>
                             <constraint firstItem="cYC-a6-F1z" firstAttribute="centerX" secondItem="q0y-GM-6Zg" secondAttribute="centerX" id="ikc-op-dPA"/>
@@ -2476,6 +2468,7 @@
                         <outlet property="DealerTitle" destination="cYC-a6-F1z" id="aJJ-8P-ZAK"/>
                         <outlet property="dealerListTable" destination="Qww-ij-v7l" id="Bv7-VV-zdI"/>
                         <segue destination="yZJ-w5-Gzv" kind="presentation" identifier="newDealer" id="a0R-9i-tit"/>
+                        <segue destination="MkW-BO-kY4" kind="presentation" identifier="Edit_Segue" id="EJd-Rf-uFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRB-Sr-ciB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3947,6 +3940,101 @@ Please do so as soon as possible. Thanks.  </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9En-Av-DcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-948" y="1227"/>
+        </scene>
+        <!--Edit PersonVC-->
+        <scene sceneID="vuP-mQ-uL0">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="MkW-BO-kY4" customClass="EditPersonVC" customModule="Cefi_Meetings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pHc-nF-NM9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yl-k1-QxD" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="243.5" width="300" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dealer Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckh-bk-YBa">
+                                        <rect key="frame" x="30" y="75" width="240" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAa-TM-Kep" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="145" width="150" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="sVi-AD-rj5"/>
+                                        </constraints>
+                                        <state key="normal" title="ADD">
+                                            <color key="titleColor" red="0.34899999999999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="1" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addButtonAction:" destination="MkW-BO-kY4" eventType="touchUpInside" id="abP-ah-QOS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Dealer Contact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBM-xt-rea">
+                                        <rect key="frame" x="66" y="17.5" width="168" height="25"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oAa-TM-Kep" firstAttribute="width" secondItem="4Yl-k1-QxD" secondAttribute="width" multiplier="0.5" id="4ZK-dh-feq"/>
+                                    <constraint firstItem="oAa-TM-Kep" firstAttribute="centerX" secondItem="4Yl-k1-QxD" secondAttribute="centerX" id="N15-fD-0H0"/>
+                                    <constraint firstItem="oAa-TM-Kep" firstAttribute="centerY" secondItem="4Yl-k1-QxD" secondAttribute="centerY" multiplier="1.6" id="Rzu-Gh-zEx"/>
+                                    <constraint firstItem="ckh-bk-YBa" firstAttribute="centerX" secondItem="4Yl-k1-QxD" secondAttribute="centerX" id="aIp-S0-Bcm"/>
+                                    <constraint firstItem="mBM-xt-rea" firstAttribute="centerX" secondItem="4Yl-k1-QxD" secondAttribute="centerX" id="cd4-6g-Pgd"/>
+                                    <constraint firstItem="mBM-xt-rea" firstAttribute="centerY" secondItem="4Yl-k1-QxD" secondAttribute="centerY" multiplier="0.3" id="h9S-AS-bIo"/>
+                                    <constraint firstItem="ckh-bk-YBa" firstAttribute="width" secondItem="4Yl-k1-QxD" secondAttribute="width" multiplier="0.8" id="qFn-DG-SXi"/>
+                                    <constraint firstItem="ckh-bk-YBa" firstAttribute="centerY" secondItem="4Yl-k1-QxD" secondAttribute="centerY" multiplier="0.9" id="rbU-wx-4Sb"/>
+                                    <constraint firstAttribute="height" constant="200" id="tgj-8r-9cG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="C_Radius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.71471133470000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Yl-k1-QxD" firstAttribute="centerX" secondItem="krP-Ne-W3A" secondAttribute="centerX" id="DYf-ui-vyN"/>
+                            <constraint firstItem="4Yl-k1-QxD" firstAttribute="width" secondItem="pHc-nF-NM9" secondAttribute="width" multiplier="0.8" id="IOh-DA-LLc"/>
+                            <constraint firstItem="4Yl-k1-QxD" firstAttribute="centerY" secondItem="krP-Ne-W3A" secondAttribute="centerY" id="Jwq-fR-k5A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="krP-Ne-W3A"/>
+                    </view>
+                    <connections>
+                        <outlet property="dealerTF" destination="ckh-bk-YBa" id="qja-ch-5cF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5f-Mv-Igw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2500" y="3799"/>
         </scene>
     </scenes>
     <resources>
