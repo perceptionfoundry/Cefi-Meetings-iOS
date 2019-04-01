@@ -119,7 +119,7 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         cell.alertView.isHidden = true
         
-        cell.statuslabel.text = tableContent[indexPath.row].contractStatus
+        cell.statuslabel.text = tableContent[indexPath.row].contractStatus?.capitalizingFirstLetter()
         cell.numberLabel.text = tableContent[indexPath.row].contractNumber
         
         if tableContent[indexPath.row].allPendingDocumentCounts! > 0{
@@ -179,3 +179,7 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+
+
+

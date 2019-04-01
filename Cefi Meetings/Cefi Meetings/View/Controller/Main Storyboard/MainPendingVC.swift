@@ -54,8 +54,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.getPending()
+        
+        pending_Table.isUserInteractionEnabled = true
 
+        self.getPending()
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -143,6 +145,10 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        
+        self.pending_Table.isUserInteractionEnabled = false
+
         contractDetail(Index: indexPath.row)
     }
     
@@ -165,7 +171,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
             if Status == true{
                 let value =  result
                 print(value)
-                
+
                 self.performSegue(withIdentifier: "Contract_Segue", sender: value)
                 
                 

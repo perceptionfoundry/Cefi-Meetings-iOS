@@ -205,6 +205,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        
+        
         self.navigationController?.navigationBar.isHidden = true
         
         self.tabBarController?.tabBar.isHidden = false
@@ -248,19 +249,20 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         if type == "Dealer"{
             
-            cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
+//            cell.topView.backgroundColor = UIColor(red: 0.517, green: 0.506, blue: 0.506, alpha: 1)
+            cell.topView.backgroundColor = UIColor(red: 0.129, green: 0.277, blue: 0.031, alpha: 1)
 
 //            cell.typeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
-            cell.typeLabel.textColor = UIColor.white
+            cell.typeLabel.textColor = UIColor(red: 0.440, green: 0.695, blue: 0.212, alpha: 1.0)
             
             cell.ratingStar.emptyStarColor = UIColor.lightGray
-            cell.ratingStar.tintColor = UIColor.white
+            cell.ratingStar.tintColor = UIColor(red: 0.440, green: 0.695, blue: 0.212, alpha: 1.0)
             
 
             cell.userNameLabel.textColor = UIColor.white
             cell.businessNameLabel.textColor = UIColor.white
             cell.timeLabel.textColor = UIColor.white
-            cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
+            cell.callNowButton.setImage(UIImage(named: "call_now_light"), for: .normal)
             
             cell.typeLabel.text = MeetingContent[indexPath.row].contactType
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
@@ -311,7 +313,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         cell.userNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.businessNameLabel.textColor = UIColor(red: 0.055, green: 0.253, blue: 0.012, alpha: 1.0)
         cell.timeLabel.textColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1.0)
-            
+                cell.callNowButton.setImage(UIImage(named: "call_now_Dark"), for: .normal)
+
             cell.typeLabel.text = MeetingContent[indexPath.row].purpose
             cell.businessNameLabel.text = MeetingContent[indexPath.row].businessName
             cell.userNameLabel.text = MeetingContent[indexPath.row].contactName

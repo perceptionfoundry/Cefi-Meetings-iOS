@@ -21,14 +21,17 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     struct meetup {
         var name : String
-        var lat : Double
-        var long : Double
+        var lat : Double = 0.0
+        var long : Double = 0.0
     }
   
     
     
     //  ****************  OUTLET ****************
-
+    @IBOutlet weak var contractView: UIView!
+    
+    @IBOutlet weak var contractViewBottomLIne: UIView!
+    @IBOutlet weak var contractViewHeight: NSLayoutConstraint!
     @IBOutlet weak var purposeTF: UITextField!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var contactTF: UITextField!
@@ -74,6 +77,18 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         if ContractNumber ==  false{
             contractTF.text = "DEALER"
             contractTF.isUserInteractionEnabled = false
+            contractViewHeight.constant = 0
+            contractView.isHidden = true
+            contractViewBottomLIne.isHidden = true
+        }
+        else{
+            contractTF.text = ""
+
+            contractTF.isUserInteractionEnabled = true
+            contractViewHeight.constant = 60
+            contractView.isHidden = false
+            contractViewBottomLIne.isHidden = false
+
         }
     }
     
@@ -216,8 +231,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+
         dateTF.inputAccessoryView = toolbar
         dateTF.inputView = datePicker
         
@@ -265,8 +280,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTimePicker));
         
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-        
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+
         timeTF.inputAccessoryView = toolbar
         timeTF.inputView = datePicker
         
@@ -288,22 +303,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         self.reminderTotalTime = date.timeIntervalSince1970
         
-//        print(test)
-//
-////        let separateTimeElement =  timeTF.text!.split(separator: ":")
-////        print(separateTimeElement)
-////
-////        let timeWithoutPM = separateTimeElement[1].split(separator: " ")
-////        print(timeWithoutPM)
-////
-////        let hour_Stamp = (Double(separateTimeElement[0])! * 60 * 60)
-////        let min_Stamp = (Double(timeWithoutPM[0])! * 60)
-////
-////        let time_stamp = hour_Stamp + min_Stamp
-//
-//        self.time_Stamp = time_stamp
-//
-//        print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+
         
         
         print(self.reminderTotalTime)
@@ -367,6 +367,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             
             dest.contactDelegate = self
             dest.visitSegue = true
+            
+//            dest.segueStatus = true
         }
         
         else if segue.identifier == "Purpose"{
@@ -405,7 +407,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         
         
-        if contactTF.text?.isEmpty == false && contractTF.text?.isEmpty == false && purposeTF.text?.isEmpty == false && dateTF.text?.isEmpty == false && timeTF.text?.isEmpty == false && locationTF.text?.isEmpty == false {
+        if contactTF.text?.isEmpty == false && contractTF.text?.isEmpty == false && purposeTF.text?.isEmpty == false && dateTF.text?.isEmpty == false && timeTF.text?.isEmpty == false  {
         
         let apiLink = appGlobalVariable.apiBaseURL+"visits/addvisitdetails"
         
@@ -430,18 +432,18 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let dictValue : [String : Any] = [
             
            
-            "long": String(chosenPlace!.long),
+            "long": String(chosenPlace?.long ?? 0) ,
             "userId": appGlobalVariable.userID,
             "contactId": selectedContactID,
             "contractId": contractId ?? "DEALER",
             "time": String(Int((floor(self.reminderTotalTime) * 1000) + secondsFromGMT) ),
-            "reminder": String(reminderADD),
-            "lat": String(chosenPlace!.lat),
-            "address": chosenPlace!.name,
+            "reminder": String(reminderADD) ,
+            "lat": String(chosenPlace?.lat ?? 0),
+            "address": chosenPlace?.name ?? "",
             "purpose": purposeTF.text!,
             "dateInString": dateTF.text!,
             "timeInString": timeTF.text!,
-            "reminderinString" : reminderTF.text!
+            "reminderinString" : reminderTF.text ?? "0 Min"
             
 
             
@@ -521,8 +523,16 @@ extension NewVisit: GMSAutocompleteViewControllerDelegate {
             
             self.mapCameraView!.animate(to: camera)
             
-            self.mapView.addSubview(self.mapCameraView!)
             
+            
+            let marker = GMSMarker(position: CLLocationCoordinate2DMake(self.chosenPlace!.lat, self.chosenPlace!.long))
+        
+            marker.title = "Meeting"
+            marker.map = self.mapCameraView
+            
+            
+            self.mapView.addSubview(self.mapCameraView!)
+
             self.mapView.isHidden = false
             
         }

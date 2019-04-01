@@ -61,8 +61,8 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     
     struct meetup {
         var name : String
-        var lat : Double
-        var long : Double
+        var lat : Double = 0
+        var long : Double = 0
     }
     
     // ****************** OUTLET  **********************
@@ -155,6 +155,15 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
         
         self.mapCameraView!.animate(to: camera)
+//
+        let marker = GMSMarker(position: CLLocationCoordinate2DMake(lat, long))
+
+        marker.title = contactDetail.contactName
+        marker.map = self.mapCameraView
+        
+        
+      
+        
         
         self.mapView.addSubview(self.mapCameraView!)
         

@@ -37,7 +37,9 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         var long : Double
     }
     
+    @IBOutlet weak var contractView: UIView!
     
+    @IBOutlet weak var contractVIewHeight: NSLayoutConstraint!
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var contactTF: UILabel!
     @IBOutlet weak var contractTF: UITextField!
@@ -102,9 +104,18 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         let reminderString = meetingDetail!.reminderinString!
         
-        
+        print(meetingDetail!.contractNumber)
 
-        
+        if meetingDetail!.contractNumber == nil{
+            contractView.isHidden = true
+
+            contractVIewHeight.constant = 0
+        }
+        else{
+            contractView.isHidden = false
+            contractVIewHeight.constant = 60
+            
+        }
  
        
         contactTF.text = meetingDetail!.contactName!
@@ -161,6 +172,15 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         mapCameraView = GMSMapView.map(withFrame: self.mapView.bounds, camera: camera)
         
         self.mapCameraView!.animate(to: camera)
+        
+        
+        let marker = GMSMarker(position: CLLocationCoordinate2DMake(lat, long))
+        
+        marker.title = "Meeting"
+        marker.map = self.mapCameraView
+        
+        
+        self.mapView.addSubview(self.mapCameraView!)
         
         self.mapView.addSubview(self.mapCameraView!)
         

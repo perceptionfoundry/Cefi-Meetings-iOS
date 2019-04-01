@@ -97,7 +97,22 @@ class FollowUpVC: UIViewController {
         OutcomeSegement.didSelectItemWith = { (index, title) -> () in
 //            print("Selected item \(index)")
             
-            if self.OutcomeSegement.currentIndex == 3{
+            
+            if self.OutcomeSegement.currentIndex == 2{
+//                self.OutcomeSegement.thumbColor = UIColor(red: 0.942, green: 0.341, blue: 0.341, alpha: 1)
+//                self.OutcomeSegement.thumbColor = UIColor.blue
+//
+//                self.negativeView.isHidden = false
+//                self.pendingView.isHidden = true
+//                self.buttonView_Y_constraint.constant = 0
+                
+            self.pendingView.isHidden = true
+            self.buttonView_Y_constraint.constant = -400
+                
+                
+            }
+            
+           else if self.OutcomeSegement.currentIndex == 3{
                 self.OutcomeSegement.thumbColor = UIColor(red: 0.942, green: 0.341, blue: 0.341, alpha: 1)
                 self.OutcomeSegement.thumbColor = UIColor.blue
 

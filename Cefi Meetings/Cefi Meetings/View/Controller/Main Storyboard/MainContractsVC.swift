@@ -283,8 +283,8 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.alertView.isHidden = true
         
-        cell.firstValue.text = userContract[indexPath.row].contractNumber
-        cell.nameValue?.text = userContract[indexPath.row].contactName
+        cell.firstValue.text = userContract[indexPath.row].contractNumber?.capitalizingFirstLetter()
+        cell.nameValue?.text = userContract[indexPath.row].contactName?.capitalizingFirstLetter()
         
         
 //        print(userContract[indexPath.row].allPendingDocumentCounts)
@@ -392,5 +392,17 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         let vc = storyboard.instantiateViewController(withIdentifier: "New_Contract")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }

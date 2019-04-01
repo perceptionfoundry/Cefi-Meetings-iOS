@@ -113,6 +113,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var everythingImageCount = 0
     
     
+    var buttonStatus = "Edit"
+    
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
@@ -148,14 +150,11 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
-//        ratingStar.isUserInteractionEnabled = false
+
         
-//        print(userContract!)
-//        print(selectedContactID!)
+        saveButton.setTitle("Edit", for: .normal)
         
-        saveButton.isHidden = true
-        
-        contractTypeTF.text = userContract!.contractStatus ?? ""
+        contractTypeTF.text = userContract!.contractStatus?.capitalizingFirstLetter() ?? ""
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
         
@@ -349,7 +348,45 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
     
     @IBAction func editAction(_ sender: Any) {
+
+        if buttonStatus == "Edit"{
+            
+            
+     
+      
+         taxCollectionView.isUserInteractionEnabled = true
+         bankCollectionView.isUserInteractionEnabled = true
+        equipmentCollectionVIew.isUserInteractionEnabled = true
+        contractTypeTF.isUserInteractionEnabled = true
+        contractNumberTF.isUserInteractionEnabled = true
+        contactTF.isUserInteractionEnabled = true
+        purchaseDateTF.isUserInteractionEnabled = true
+        amountTF.isUserInteractionEnabled = true
+            ratingStar.isUserInteractionEnabled = true
+           equipmentTF.isUserInteractionEnabled = true
+             missingText.isUserInteractionEnabled = true
+            saveButton.isUserInteractionEnabled = true
+           taxView.isUserInteractionEnabled = true
+            
+             bankStateView.isUserInteractionEnabled = true
+          
+             equipmentView.isUserInteractionEnabled = true
+          
+            taxSwitch.isUserInteractionEnabled = true
+           bankSwitch.isUserInteractionEnabled = true
+           equipmentSwitch.isUserInteractionEnabled = true
+            insuranceSwitch.isUserInteractionEnabled = true
+             signorSwitch.isUserInteractionEnabled = true
+             invoiceSwitch.isUserInteractionEnabled = true
+             closingSwitch.isUserInteractionEnabled = true
+             allpageSwitch.isUserInteractionEnabled = true
+            everythingSwitch.isUserInteractionEnabled = true
+            
+            saveButton.setTitle("Save", for: .normal)
+            
+        }
         
+        else {
         mainVIew.isUserInteractionEnabled = false
         activityView.isHidden = false
         
@@ -691,6 +728,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         self.saveData()
         
     }
+}
     
     // ************* UPLOAD BUTTON ACTION ***********
     
@@ -826,7 +864,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "closingFees": closingImageURl ?? "",
                                                 "contactId": userContract!.contactId!,
                                                 "contractNumber": userContract!.contractNumber!,
-                                                "contractStatus": contractTypeTF.text!,
+                                                "contractStatus": contractTypeTF.text!.lowercased(),
                                                 "equipmentCost": amountTF.text!,
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,
@@ -1121,7 +1159,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         if editStatus == true{
-            let alert = UIAlertController(title: "Some Change Found!!", message: "Some changes have seen in current contract. Do you want to SAVE", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Changes not saved", message: "Any Change must be Saved or it will be lost", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
                 self.saveData()
             }))

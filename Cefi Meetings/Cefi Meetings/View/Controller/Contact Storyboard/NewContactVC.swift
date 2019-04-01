@@ -374,6 +374,16 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
             
             self.mapCameraView!.animate(to: camera)
             
+            let marker = GMSMarker(position: CLLocationCoordinate2DMake(self.chosenPlace!.lat, self.chosenPlace!.long))
+            
+            marker.title = self.contactTF.text!
+            marker.map = self.mapCameraView
+            
+            
+            self.mapView.addSubview(self.mapCameraView!)
+            
+            
+            
             self.mapView.addSubview(self.mapCameraView!)
             
             self.mapView.isHidden = false

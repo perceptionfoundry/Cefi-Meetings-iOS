@@ -19,7 +19,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var reminderDele : ReminderDelegate!
     var previousSelect = ""
-    var reminderdescrip  = ["0 Min","15 Min", "30 Min", "45 Min", "1 hour",]
+    var reminderdescrip  = ["15 min before ", "30 min before ", "45 min before ", "60 min before ",]
     
     
     override func viewDidLoad() {
@@ -108,4 +108,11 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
 }

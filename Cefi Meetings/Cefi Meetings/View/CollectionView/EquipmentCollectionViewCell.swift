@@ -10,5 +10,6 @@ import UIKit
 
 class EquipmentCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var docImage: UIImageView!
 }

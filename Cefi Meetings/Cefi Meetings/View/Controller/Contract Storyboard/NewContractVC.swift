@@ -119,7 +119,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var businessTitle:String?
     var leadFlag = false
     
-    
+    var selectedCollection  = ""
     
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
@@ -230,11 +230,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-        
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donedatePicker));
+
+        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
         
         purchaseDateTF.inputAccessoryView = toolbar
         purchaseDateTF.inputView = datePicker
@@ -868,6 +868,10 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
+        
+        // ************ TAX *****************
+
+        
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
@@ -875,37 +879,126 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
             taxCell.docImage.image = taxImage[indexPath.row]
             
+            taxCell.cancelButton.tag = indexPath.row
+            
+            self.selectedCollection = "Tax"
+            
+            taxCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
             
             return taxCell
 
         }
-        
+            
+            
+            // ************ BANK *****************
         else if collectionView == self.bankCollectionView{
              let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
             bankCell.docImage.image = bankImage[indexPath.row]
-
+            
+            bankCell.cancelButton.tag = indexPath.row + 100
+            self.selectedCollection = "Bank"
+            
+            bankCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
             
             return bankCell
         }
         
 //
-        
+            // ************ EQUIPMENT *****************
+
         else {
 
         let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
 
         equipmentCell.docImage.image = equipmentImage[indexPath.row]
-
         
+            equipmentCell.cancelButton.tag = indexPath.row + 200
+            self.selectedCollection = "Equipment"
+            
+            equipmentCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
         return equipmentCell
         }
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//
+//
+//        // ************ TAX *****************
+//
+//
+//        if collectionView == self.taxCollectionView{
+//
+//       let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
+//
+//            taxCell.cancelButton.tag = indexPath.row
+//
+//            self.selectedCollection = "Tax"
+//
+//            taxCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+//
+//
+//        }
+//
+//
+//            // ************ BANK *****************
+//        else if collectionView == self.bankCollectionView{
+//            let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
+//
+//
+//
+//
+//
+//        }
+//
+//            //
+//            // ************ EQUIPMENT *****************
+//
+//        else {
+//
+//            let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
+//
+//
+//
+//
+//        }
+//
+//
+//
+//    }
+    
+
     
     
     
     
+    @objc func removePicture(button : UIButton){
+        let indexNumber = button.tag
+        
+        print(indexNumber)
+     
+        
+        if indexNumber < 100{
+            
+            self.taxImage.remove(at: indexNumber)
+            taxCollectionView.reloadData()
+            
+        }
+        
+        else if (indexNumber >= 100) && (indexNumber < 200){
+           
+            self.bankImage.remove(at: indexNumber - 100)
+            bankCollectionView.reloadData()
+            
+        }
+        else if (indexNumber >= 200){
+            
+            self.equipmentImage.remove(at: indexNumber - 200)
+            equipmentCollectionVIew.reloadData()
+            
+        }
+    }
     
     
     

@@ -20,6 +20,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var contractCount: UILabel!
     @IBOutlet weak var pendingCount: UILabel!
     
+    @IBOutlet weak var welcomeNote: UILabel!
     
     
     
@@ -32,6 +33,8 @@ class DashboardVC: UIViewController {
     // ******************* VARIABLE ***************************
 
     let viewModel = DashboardViewModel()
+    var profileViewModel = UserSettingViewModel()
+
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     
     
@@ -48,7 +51,22 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-
+        self.welcomeNote.text = ""
+        
+        let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
+        
+        let paramDict = ["userId" : appGlobalVariable.userID]
+        
+        profileViewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
+            
+            
+            //            print(result)
+            
+         let name  = result.name!
+            
+            self.welcomeNote.text = "Welcome\n\(name)\nWe hope you have a great and productive day!"
+            
+        }
     }
 
     
