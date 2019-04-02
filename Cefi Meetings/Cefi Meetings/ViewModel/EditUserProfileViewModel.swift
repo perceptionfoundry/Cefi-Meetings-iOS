@@ -37,7 +37,7 @@ class EditUserProfileViewModel{
             
             if mainDict["success"] as! Int == 1 {
                 
-                let contactList = mainDict["userData"] as? Any
+                let contactList = mainDict["user"] as? Any
                 
                 
                 var jsonData : Data?

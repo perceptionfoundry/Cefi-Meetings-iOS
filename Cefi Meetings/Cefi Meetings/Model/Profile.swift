@@ -1,7 +1,7 @@
 //
 //  Profile.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 18, 2019
+//  Created on April 2, 2019
 
 import Foundation
 
@@ -12,6 +12,7 @@ struct Profile : Codable {
         let addedBy : String?
         let addedDate : String?
         let email : String?
+        let forgetPaswordCode : String?
         let isActive : Bool?
         let name : String?
         let phoneNumber : Int?
@@ -25,6 +26,7 @@ struct Profile : Codable {
                 case addedBy = "addedBy"
                 case addedDate = "addedDate"
                 case email = "email"
+                case forgetPaswordCode = "forgetPaswordCode"
                 case isActive = "isActive"
                 case name = "name"
                 case phoneNumber = "phoneNumber"
@@ -40,6 +42,7 @@ struct Profile : Codable {
                 addedBy = try values.decodeIfPresent(String.self, forKey: .addedBy)
                 addedDate = try values.decodeIfPresent(String.self, forKey: .addedDate)
                 email = try values.decodeIfPresent(String.self, forKey: .email)
+                forgetPaswordCode = try values.decodeIfPresent(String.self, forKey: .forgetPaswordCode)
                 isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
                 name = try values.decodeIfPresent(String.self, forKey: .name)
                 phoneNumber = try values.decodeIfPresent(Int.self, forKey: .phoneNumber)
