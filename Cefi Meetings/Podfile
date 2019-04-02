@@ -27,4 +27,7 @@ pod 'VACalendar'
 
 pod 'IQKeyboardManagerSwift'
 
+pod 'SDWebImage'
+
+
 end

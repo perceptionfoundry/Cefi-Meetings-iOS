@@ -39,6 +39,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
 
     // ******************* OUTLET ***************************
+    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var missingTextView: Custom_View!
     
     @IBOutlet weak var activityView: Custom_View!
@@ -159,6 +160,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        // Making navigation bar transparent
+        naviBar.setBackgroundImage(UIImage(), for: .default)
+        naviBar.shadowImage = UIImage()
         
         activityView.isHidden = true
         contactTF.text = contactName

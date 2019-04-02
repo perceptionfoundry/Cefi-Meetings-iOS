@@ -25,6 +25,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signin_BG" translatesAutoresizingMaskIntoConstraints="NO" id="uvi-yr-i6l">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvG-xW-rYJ">
+                                <rect key="frame" x="15.5" y="57.5" width="44" height="22"/>
+                                <state key="normal" image="back_button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="sak-JO-Z5c"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="english LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="CW1-GR-QXB">
                                 <rect key="frame" x="92.5" y="96" width="190" height="82.5"/>
                             </imageView>
@@ -108,6 +115,8 @@
                             <constraint firstItem="CW1-GR-QXB" firstAttribute="centerX" secondItem="uvi-yr-i6l" secondAttribute="centerX" id="Y7T-fo-LYh"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="centerX" secondItem="Pm4-Fy-fHK" secondAttribute="centerX" id="aUZ-w6-Zts"/>
                             <constraint firstItem="uvi-yr-i6l" firstAttribute="height" secondItem="y05-0H-2lf" secondAttribute="height" id="f9y-Cx-TsM"/>
+                            <constraint firstItem="QvG-xW-rYJ" firstAttribute="centerY" secondItem="uvi-yr-i6l" secondAttribute="centerY" multiplier="0.2" id="pdd-5T-J0U"/>
+                            <constraint firstItem="QvG-xW-rYJ" firstAttribute="centerX" secondItem="uvi-yr-i6l" secondAttribute="centerX" multiplier="0.2" id="yVl-Ug-2Bi"/>
                             <constraint firstItem="Hq3-gB-ZdI" firstAttribute="height" secondItem="y05-0H-2lf" secondAttribute="height" multiplier="0.5" id="zdU-gp-JTT"/>
                             <constraint firstItem="CW1-GR-QXB" firstAttribute="centerY" secondItem="uvi-yr-i6l" secondAttribute="centerY" multiplier="0.4" id="zpl-rP-C5j"/>
                         </constraints>
@@ -3317,12 +3326,20 @@ I bet you’re still using Bootstrap too…</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWn-BT-ilg">
+                                <rect key="frame" x="34.5" y="55.5" width="44" height="22"/>
+                                <state key="normal" image="back_button"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="B0M-zi-Peh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ihv-pY-Rcp" firstAttribute="leading" secondItem="EB7-VZ-q5V" secondAttribute="leading" id="0e4-gN-7Mb"/>
                             <constraint firstItem="BjU-gw-VWx" firstAttribute="centerY" secondItem="ihv-pY-Rcp" secondAttribute="centerY" multiplier="1.28" id="3g0-kM-bNq"/>
                             <constraint firstItem="eK5-OC-G8K" firstAttribute="width" secondItem="ihv-pY-Rcp" secondAttribute="width" multiplier="0.503" id="6qV-j8-fed"/>
+                            <constraint firstItem="KWn-BT-ilg" firstAttribute="centerY" secondItem="ihv-pY-Rcp" secondAttribute="centerY" multiplier="0.2" id="9iF-AK-CFR"/>
                             <constraint firstItem="eK5-OC-G8K" firstAttribute="centerX" secondItem="ihv-pY-Rcp" secondAttribute="centerX" id="EDm-tC-i8S"/>
                             <constraint firstItem="1bJ-bv-s6H" firstAttribute="centerY" secondItem="ihv-pY-Rcp" secondAttribute="centerY" multiplier="0.8" id="N9g-v7-j1K"/>
                             <constraint firstItem="s7j-VN-pnF" firstAttribute="centerY" secondItem="ihv-pY-Rcp" secondAttribute="centerY" id="SHy-mC-sBT"/>
@@ -3333,6 +3350,7 @@ I bet you’re still using Bootstrap too…</string>
                             <constraint firstItem="eK5-OC-G8K" firstAttribute="centerY" secondItem="ihv-pY-Rcp" secondAttribute="centerY" multiplier="0.44" id="g3M-Mn-ryR"/>
                             <constraint firstItem="EB7-VZ-q5V" firstAttribute="bottom" secondItem="ihv-pY-Rcp" secondAttribute="bottom" id="iPn-3F-ytX"/>
                             <constraint firstItem="EB7-VZ-q5V" firstAttribute="trailing" secondItem="ihv-pY-Rcp" secondAttribute="trailing" id="jZ1-ET-ghN"/>
+                            <constraint firstItem="KWn-BT-ilg" firstAttribute="centerX" secondItem="ihv-pY-Rcp" secondAttribute="centerX" multiplier="0.3" id="nIi-Aa-Zv3"/>
                             <constraint firstItem="1bJ-bv-s6H" firstAttribute="centerX" secondItem="ihv-pY-Rcp" secondAttribute="centerX" id="nqp-7G-wB6"/>
                             <constraint firstItem="BjU-gw-VWx" firstAttribute="height" secondItem="ihv-pY-Rcp" secondAttribute="height" multiplier="0.072" id="rIB-xy-IbV"/>
                             <constraint firstItem="BjU-gw-VWx" firstAttribute="centerX" secondItem="ihv-pY-Rcp" secondAttribute="centerX" id="t5L-w8-0qj"/>
@@ -3540,5 +3558,6 @@ I bet you’re still using Bootstrap too…</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3CK-1W-xC2"/>
+        <segue reference="B0M-zi-Peh"/>
     </inferredMetricsTieBreakers>
 </document>

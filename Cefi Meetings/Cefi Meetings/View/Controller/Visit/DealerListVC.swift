@@ -40,7 +40,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     let viewModel = GetDealerPersonViewModel()
     let deleteViewModel = DeleteDealerPersonViewModel()
     
-    
+    var selectedPerson = ""
     
     
     override func viewDidLoad() {
@@ -123,7 +123,10 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
             
             
             let selectedID = self.dealerList[indexPath.row].id!
+            self.selectedPerson = self.dealerList[indexPath.row].personName!
 
+            print(self.selectedPerson)
+            
             self.performSegue(withIdentifier: "Edit_Segue", sender: selectedID)
 
 
@@ -225,6 +228,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
             
             dest.dealerDele = self
             dest.personID = sender as! String
+            dest.personName = self.selectedPerson
 
         }
         

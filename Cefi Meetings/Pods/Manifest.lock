@@ -13,6 +13,9 @@ PODS:
     - GoogleMaps/Base (= 2.7.0)
   - HCSStarRatingView (1.5)
   - IQKeyboardManagerSwift (6.2.0)
+  - SDWebImage (4.4.3):
+    - SDWebImage/Core (= 4.4.3)
+  - SDWebImage/Core (4.4.3)
   - SwiftRangeSlider (2.0.0)
   - TagListView (1.3.2)
   - TTSegmentedControl (0.4.7)
@@ -26,6 +29,7 @@ DEPENDENCIES:
   - GooglePlaces
   - HCSStarRatingView
   - IQKeyboardManagerSwift
+  - SDWebImage
   - SwiftRangeSlider
   - TagListView
   - TTSegmentedControl
@@ -40,6 +44,7 @@ SPEC REPOS:
     - GooglePlaces
     - HCSStarRatingView
     - IQKeyboardManagerSwift
+    - SDWebImage
     - SwiftRangeSlider
     - TagListView
     - TTSegmentedControl
@@ -53,11 +58,12 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SwiftRangeSlider: f86e3b637c961120158fa1a89277c8343845cbe4
   TagListView: 0c7e9c26b9aff858224ee6b155f5fcacd9e27c83
   TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
   VACalendar: 3e5a001cbf437ebed2bcfc747f3187e555d65175
 
-PODFILE CHECKSUM: 98d1ec72ac1608abbcfb745fbb3eb744cbdfd1ce
+PODFILE CHECKSUM: d054a80963650648fd7756271f74a4415cbee896
 
 COCOAPODS: 1.5.2

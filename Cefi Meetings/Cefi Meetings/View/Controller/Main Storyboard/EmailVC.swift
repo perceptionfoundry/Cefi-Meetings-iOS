@@ -90,10 +90,11 @@ class EmailVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "Verify_Segue"{
         let dest = segue.destination  as! NewPasswordVC
         
         dest.emailAddress = emailTF.text!
+        }
     }
     
 // ******* ALERT VIEWCONTROLLER ************

@@ -16,6 +16,7 @@
 
 import UIKit
 import HCSStarRatingView
+import SDWebImage
 
 
 
@@ -31,6 +32,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     
     // ***************** OUTLET **********************
+    @IBOutlet weak var naviBar: UINavigationBar!
     
     @IBOutlet weak var missingTextView: Custom_View!
     
@@ -88,6 +90,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var taxImage = [UIImage]()
     var bankImage = [UIImage]()
     var equipmentImage = [UIImage]()
+    
     var insuranceImage : UIImage?
     var signorImage : UIImage?
     var invoiceImage : UIImage?
@@ -119,7 +122,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
-        self.contractTypeTF.text = name.lowercased()
+        self.contractTypeTF.text = name
     }
     
    func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
@@ -148,6 +151,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         activityView.isHidden = true
+        
+        
+        // Making navigation bar transparent
+        naviBar.setBackgroundImage(UIImage(), for: .default)
+        naviBar.shadowImage = UIImage()
+        
+        
         
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
@@ -209,6 +219,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         taxImageURl = (userContract?.taxReturnImages!)!
         bankImageURl = (userContract?.bankStatements!)!
          equipmentImageURl = (userContract?.equipmentImages!)!
+        
+        
          insuranceImageURl = userContract?.insuranceCertificate!
          signorImageURl = userContract?.signorAndSecretaryId!
          invoiceImageURl = userContract?.invoice!
@@ -363,14 +375,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
         if buttonStatus == "Edit"{
             
-            
+            buttonStatus = "Save"
      
       
          taxCollectionView.isUserInteractionEnabled = true
          bankCollectionView.isUserInteractionEnabled = true
         equipmentCollectionVIew.isUserInteractionEnabled = true
         contractTypeTF.isUserInteractionEnabled = true
-        contractNumberTF.isUserInteractionEnabled = true
+//        contractNumberTF.isUserInteractionEnabled = true
         contactTF.isUserInteractionEnabled = true
         purchaseDateTF.isUserInteractionEnabled = true
         amountTF.isUserInteractionEnabled = true
@@ -926,21 +938,56 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
     }
     
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         
         if collectionView == self.taxCollectionView{
-            return taxImage.count
+            
+            if taxImage.count == 0{
+                return taxImageURl.count
+
+            }
+            else{
+                return taxImage.count
+
+            }
         }
             
         else if collectionView == self.bankCollectionView{
-            return bankImage.count
-        }
+            if bankImage.count == 0{
+                
+                return bankImageURl.count
+                
+            }
+                
+                
+            else{
+                return bankImage.count
+                
+            }        }
         
-        else{
-        return equipmentImage.count
+            
+            
+        else if collectionView == self.equipmentCollectionVIew{
+            if equipmentImage.count == 0{
+                return equipmentImageURl.count
+                
+            }
+            else{
+                return equipmentImage.count
+                
+            }
+            
         }
+        return 0
     }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -948,14 +995,21 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
-//            print(indexPath.row)
-//            
-//            print("*******************")
-//            print(taxImage[indexPath.row])
-//            print("*******************")
+//
+            
+            if taxImage.count == 0{
+                
+                let imageURL = URL(string: taxImageURl[indexPath.row])
+                
+                taxCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                
+            }
+            else{
+                taxCell.docImage.image = taxImage[indexPath.row]
+
+            }
             
             
-            taxCell.docImage.image = taxImage[indexPath.row]
             
             
             return taxCell

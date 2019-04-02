@@ -25,10 +25,11 @@ class EditPersonVC: UIViewController, UITextFieldDelegate {
     var dealerDele : addPersonDelegate!
     var ContactDetail : Meeting?
     var personID = ""
+    var personName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dealerTF.text = personName
         dealerTF.delegate = self
     }
     

@@ -30,6 +30,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     //  ****************  OUTLET ****************
     @IBOutlet weak var contractView: UIView!
     
+    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var contractViewBottomLIne: UIView!
     @IBOutlet weak var contractViewHeight: NSLayoutConstraint!
     @IBOutlet weak var purposeTF: UITextField!
@@ -127,7 +128,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // Making navigation bar transparent
+        naviBar.setBackgroundImage(UIImage(), for: .default)
+        naviBar.shadowImage = UIImage()
         contactTF.text = selectedContactName
         contractTF.text = selectedContractID
         purposeTF.text = selectedPurpose
