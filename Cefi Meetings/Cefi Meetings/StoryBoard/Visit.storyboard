@@ -3791,13 +3791,13 @@ Please do so as soon as possible. Thanks.  </string>
                                             <constraints>
                                                 <constraint firstItem="T9G-OM-gYO" firstAttribute="centerY" secondItem="Qkb-yE-EsR" secondAttribute="centerY" id="69S-kM-VC8"/>
                                                 <constraint firstItem="LvI-BG-yYR" firstAttribute="width" secondItem="Qkb-yE-EsR" secondAttribute="width" multiplier="0.175" id="LJN-bP-vTe"/>
+                                                <constraint firstItem="LvI-BG-yYR" firstAttribute="centerY" secondItem="T9G-OM-gYO" secondAttribute="centerY" id="Teu-6D-dse"/>
                                                 <constraint firstItem="wuL-0V-Qrs" firstAttribute="centerX" secondItem="Qkb-yE-EsR" secondAttribute="centerX" multiplier="1.7" id="WmJ-VP-ub0"/>
                                                 <constraint firstItem="wuL-0V-Qrs" firstAttribute="width" secondItem="Qkb-yE-EsR" secondAttribute="width" multiplier="0.13" id="kTx-Gz-BQ3"/>
                                                 <constraint firstItem="T9G-OM-gYO" firstAttribute="width" secondItem="Qkb-yE-EsR" secondAttribute="width" multiplier="0.25" id="lBB-EY-Y60"/>
+                                                <constraint firstItem="wuL-0V-Qrs" firstAttribute="centerY" secondItem="LvI-BG-yYR" secondAttribute="centerY" id="ngd-U0-1hq"/>
                                                 <constraint firstItem="T9G-OM-gYO" firstAttribute="leading" secondItem="Qkb-yE-EsR" secondAttribute="leading" constant="10" id="vlk-ow-ggX"/>
-                                                <constraint firstItem="wuL-0V-Qrs" firstAttribute="centerY" secondItem="Qkb-yE-EsR" secondAttribute="centerY" id="wKp-j3-xX9"/>
                                                 <constraint firstItem="LvI-BG-yYR" firstAttribute="centerX" secondItem="Qkb-yE-EsR" secondAttribute="centerX" multiplier="0.75" id="wSj-qg-ljt"/>
-                                                <constraint firstItem="LvI-BG-yYR" firstAttribute="centerY" secondItem="Qkb-yE-EsR" secondAttribute="centerY" id="yTP-GV-mjd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
