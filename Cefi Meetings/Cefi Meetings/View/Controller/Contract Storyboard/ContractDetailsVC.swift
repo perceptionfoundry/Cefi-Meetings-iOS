@@ -32,6 +32,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     // ***************** OUTLET **********************
     
+    @IBOutlet weak var missingTextView: Custom_View!
     
     @IBOutlet weak var activityView: Custom_View!
     @IBOutlet weak var mainVIew: UIView!
@@ -214,6 +215,17 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
          closingImageURl = userContract?.closingFees!
         pageSignedImageURl = userContract?.allPagesSignedImage!
          everythingImageURl = userContract?.everyThingCompleted!
+        
+        
+        
+        if everythingSwitch.isOn {
+            missingTextView.isHidden = true
+        }
+        else{
+            missingTextView.isHidden = false
+        }
+        
+        
         
         
         if equipmentValue.count > 1{
@@ -1131,9 +1143,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         saveButton.isHidden = false
     }
     
-    @IBAction func everythingSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
+    @IBAction func everythingSwitchAction(_ sender: UISwitch) {
+//        self.editStatus = true
+//        saveButton.isHidden = false
+        if sender.isOn {
+            missingTextView.isHidden = true
+        }
+        else{
+            missingTextView.isHidden = false
+        }
     }
     
     

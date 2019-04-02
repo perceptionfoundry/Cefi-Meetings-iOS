@@ -39,7 +39,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     
 
     // ******************* OUTLET ***************************
-
+    @IBOutlet weak var missingTextView: Custom_View!
+    
     @IBOutlet weak var activityView: Custom_View!
     @IBOutlet weak var mainVIew: UIView!
     @IBOutlet weak var taxCollectionView: UICollectionView!
@@ -1145,7 +1146,14 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
        
     }
     
-    @IBAction func everythingSwitchAction(_ sender: Any) {
+    @IBAction func everythingSwitchAction(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            missingTextView.isHidden = true
+        }
+        else{
+            missingTextView.isHidden = false
+        }
       
     }
     

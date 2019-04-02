@@ -65,6 +65,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isHidden = true
 
         if segueStatus == true || visitSegue == true{
             backButton.isHidden = false

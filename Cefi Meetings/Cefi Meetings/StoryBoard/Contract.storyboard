@@ -878,6 +878,7 @@
                         <outlet property="invoiceSwitch" destination="86x-gZ-RRU" id="AXj-kP-DCG"/>
                         <outlet property="mainVIew" destination="CW8-FX-Tsc" id="Vko-xz-nnd"/>
                         <outlet property="missingText" destination="IKk-gC-X5T" id="cZL-hh-d7Y"/>
+                        <outlet property="missingTextView" destination="sCs-wR-f4g" id="sja-hx-PYy"/>
                         <outlet property="purchaseDateTF" destination="z54-IT-8Ab" id="S7z-Cr-s5r"/>
                         <outlet property="ratingStar" destination="G0i-yR-kiz" id="CaY-CN-A82"/>
                         <outlet property="signorSwitch" destination="Gnr-Fu-YjS" id="nyp-Xk-Qn1"/>
@@ -2036,6 +2037,7 @@
                         <outlet property="invoiceSwitch" destination="AeS-KU-hH1" id="wvQ-96-cZX"/>
                         <outlet property="mainVIew" destination="Hes-mW-F0w" id="U9T-3c-z2K"/>
                         <outlet property="missingText" destination="Mnt-7g-lMr" id="0IL-k0-zkd"/>
+                        <outlet property="missingTextView" destination="QZE-JP-5eQ" id="MIi-qS-trc"/>
                         <outlet property="purchaseDateTF" destination="JnY-oz-cqs" id="DIV-zK-61u"/>
                         <outlet property="ratingStar" destination="XuP-Lu-WZP" id="Dx3-5P-0F6"/>
                         <outlet property="saveButton" destination="Up2-oa-t11" id="aus-wO-a0a"/>

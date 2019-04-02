@@ -71,6 +71,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     // ****************** OUTLET *****************
 
     
+    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var typeTF: UITextField!
     @IBOutlet weak var businessTF: UITextField!
@@ -113,6 +114,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Making navigation bar transparent
+        naviBar.setBackgroundImage(UIImage(), for: .default)
+        naviBar.shadowImage = UIImage()
         
         
         self.apiLink = "\(appGlobalVariable.apiBaseURL)contacts/addcontact"
