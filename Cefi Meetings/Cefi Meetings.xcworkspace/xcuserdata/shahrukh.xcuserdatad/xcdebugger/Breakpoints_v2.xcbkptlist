@@ -9,14 +9,94 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/ContractDetailsVC.swift"
-            timestampString = "575882462.851759"
+            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
+            timestampString = "575917268.386845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "editUserProfile(API:TextFields:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cefi_Meetings.EditUserProfileViewModel.editUserProfile(API: Swift.String, TextFields: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Cefi_Meetings.Profile) -&gt; ()) -&gt; ()"
+                  moduleName = "Cefi Meetings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/ViewModel/EditUserProfileViewModel.swift"
+                  timestampString = "575917268.589433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "497">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Cefi_Meetings.EditUserProfileViewModel.editUserProfile(API: Swift.String, TextFields: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Cefi_Meetings.Profile) -&gt; ()) -&gt; ()"
+                  moduleName = "Cefi Meetings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/ViewModel/EditUserProfileViewModel.swift"
+                  timestampString = "575917268.5915641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "181">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
+            timestampString = "575917268.389092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "editUserProfile(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
+            timestampString = "575917268.390017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "editUserProfile(API:TextFields:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
+            timestampString = "575917268.390785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "editUserProfile(API:TextFields:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

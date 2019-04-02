@@ -19,7 +19,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var reminderDele : ReminderDelegate!
     var previousSelect = ""
-    var reminderdescrip  = ["15 min before ", "30 min before ", "45 min before ", "60 min before ",]
+    var reminderdescrip  = ["15 mins before ", "30 mins before ", "45 mins before ", "60 mins before ",]
     
     
     override func viewDidLoad() {

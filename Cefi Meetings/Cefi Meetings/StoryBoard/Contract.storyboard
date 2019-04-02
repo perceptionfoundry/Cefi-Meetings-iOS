@@ -2886,19 +2886,40 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="FfS-yk-wrB">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F8S-yD-DhK">
-                                                <rect key="frame" x="329" y="6" width="30" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                                <state key="normal" title="Save">
-                                                    <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="editAction:" destination="jng-Wh-EiS" eventType="touchDragInside" id="fzo-aV-weI"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem style="plain" id="FfS-yk-wrB">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F8S-yD-DhK">
+                                                    <rect key="frame" x="329" y="6" width="30" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                                    <state key="normal" title="Save">
+                                                        <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="editAction:" destination="jng-Wh-EiS" eventType="touchDragInside" id="fzo-aV-weI"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" id="xAL-de-bSQ">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kM2-NO-Q7m" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                                    <rect key="frame" x="236" y="4" width="85" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.39200000000000002" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="11"/>
+                                                    <state key="normal" title="Edit Mode">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="editModeAction:" destination="jng-Wh-EiS" eventType="touchUpInside" id="8SG-SY-sva"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -2929,6 +2950,7 @@
                         <outlet property="contactTF" destination="E0v-yV-yc6" id="rIC-pt-hJV"/>
                         <outlet property="contractNumberTF" destination="2kJ-VA-jk7" id="MBU-cQ-y3x"/>
                         <outlet property="contractTypeTF" destination="QiE-1u-4aO" id="Pf9-9Q-lM1"/>
+                        <outlet property="editModeButton" destination="kM2-NO-Q7m" id="tdq-WK-gJI"/>
                         <outlet property="equipmentCollectionVIew" destination="zSM-ff-aAi" id="XNS-Si-cPA"/>
                         <outlet property="equipmentSwitch" destination="7ft-7A-Qyd" id="jpu-RA-lM6"/>
                         <outlet property="equipmentTF" destination="CHB-84-ddp" id="lUj-6T-0mI"/>

@@ -33,6 +33,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     // ***************** OUTLET **********************
     @IBOutlet weak var naviBar: UINavigationBar!
+    @IBOutlet weak var editModeButton: Custom_Button!
     
     @IBOutlet weak var missingTextView: Custom_View!
     
@@ -151,7 +152,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     override func viewDidLoad() {
         super.viewDidLoad()
         activityView.isHidden = true
-        
+        saveButton.isHidden = true
+
         
         // Making navigation bar transparent
         naviBar.setBackgroundImage(UIImage(), for: .default)
@@ -163,7 +165,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         contractNumberTF.isUserInteractionEnabled = false
 
         
-        saveButton.setTitle("Edit", for: .normal)
+//        saveButton.setTitle("Edit", for: .normal)
         
         contractTypeTF.text = userContract!.contractStatus?.capitalizingFirstLetter() ?? ""
         contractNumberTF.text = userContract!.contractNumber
@@ -324,6 +326,50 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     
     
+    
+    @IBAction func editModeAction(_ sender: Any) {
+        
+        editModeButton.isHidden = true
+        saveButton.isHidden = false
+        
+        taxCollectionView.isUserInteractionEnabled = true
+                 bankCollectionView.isUserInteractionEnabled = true
+                equipmentCollectionVIew.isUserInteractionEnabled = true
+                contractTypeTF.isUserInteractionEnabled = true
+        //        contractNumberTF.isUserInteractionEnabled = true
+                contactTF.isUserInteractionEnabled = true
+                purchaseDateTF.isUserInteractionEnabled = true
+                amountTF.isUserInteractionEnabled = true
+                    ratingStar.isUserInteractionEnabled = true
+                   equipmentTF.isUserInteractionEnabled = true
+                     missingText.isUserInteractionEnabled = true
+                    saveButton.isUserInteractionEnabled = true
+                   taxView.isUserInteractionEnabled = true
+        
+                     bankStateView.isUserInteractionEnabled = true
+        
+                     equipmentView.isUserInteractionEnabled = true
+        
+                    taxSwitch.isUserInteractionEnabled = true
+                   bankSwitch.isUserInteractionEnabled = true
+                   equipmentSwitch.isUserInteractionEnabled = true
+                    insuranceSwitch.isUserInteractionEnabled = true
+                     signorSwitch.isUserInteractionEnabled = true
+                     invoiceSwitch.isUserInteractionEnabled = true
+                     closingSwitch.isUserInteractionEnabled = true
+                     allpageSwitch.isUserInteractionEnabled = true
+                    everythingSwitch.isUserInteractionEnabled = true
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     // ******************* SHOW DATE FUNCTION ***************************
     
     
@@ -391,44 +437,46 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func editAction(_ sender: Any) {
 
-        if buttonStatus == "Edit"{
-            
-            buttonStatus = "Save"
-     
-      
-         taxCollectionView.isUserInteractionEnabled = true
-         bankCollectionView.isUserInteractionEnabled = true
-        equipmentCollectionVIew.isUserInteractionEnabled = true
-        contractTypeTF.isUserInteractionEnabled = true
-//        contractNumberTF.isUserInteractionEnabled = true
-        contactTF.isUserInteractionEnabled = true
-        purchaseDateTF.isUserInteractionEnabled = true
-        amountTF.isUserInteractionEnabled = true
-            ratingStar.isUserInteractionEnabled = true
-           equipmentTF.isUserInteractionEnabled = true
-             missingText.isUserInteractionEnabled = true
-            saveButton.isUserInteractionEnabled = true
-           taxView.isUserInteractionEnabled = true
-            
-             bankStateView.isUserInteractionEnabled = true
-          
-             equipmentView.isUserInteractionEnabled = true
-          
-            taxSwitch.isUserInteractionEnabled = true
-           bankSwitch.isUserInteractionEnabled = true
-           equipmentSwitch.isUserInteractionEnabled = true
-            insuranceSwitch.isUserInteractionEnabled = true
-             signorSwitch.isUserInteractionEnabled = true
-             invoiceSwitch.isUserInteractionEnabled = true
-             closingSwitch.isUserInteractionEnabled = true
-             allpageSwitch.isUserInteractionEnabled = true
-            everythingSwitch.isUserInteractionEnabled = true
-            
-            saveButton.setTitle("Save", for: .normal)
-            
-        }
+//        if buttonStatus == "Edit"{
+//
+//            buttonStatus = "Save"
+//
+//
+//         taxCollectionView.isUserInteractionEnabled = true
+//         bankCollectionView.isUserInteractionEnabled = true
+//        equipmentCollectionVIew.isUserInteractionEnabled = true
+//        contractTypeTF.isUserInteractionEnabled = true
+////        contractNumberTF.isUserInteractionEnabled = true
+//        contactTF.isUserInteractionEnabled = true
+//        purchaseDateTF.isUserInteractionEnabled = true
+//        amountTF.isUserInteractionEnabled = true
+//            ratingStar.isUserInteractionEnabled = true
+//           equipmentTF.isUserInteractionEnabled = true
+//             missingText.isUserInteractionEnabled = true
+//            saveButton.isUserInteractionEnabled = true
+//           taxView.isUserInteractionEnabled = true
+//
+//             bankStateView.isUserInteractionEnabled = true
+//
+//             equipmentView.isUserInteractionEnabled = true
+//
+//            taxSwitch.isUserInteractionEnabled = true
+//           bankSwitch.isUserInteractionEnabled = true
+//           equipmentSwitch.isUserInteractionEnabled = true
+//            insuranceSwitch.isUserInteractionEnabled = true
+//             signorSwitch.isUserInteractionEnabled = true
+//             invoiceSwitch.isUserInteractionEnabled = true
+//             closingSwitch.isUserInteractionEnabled = true
+//             allpageSwitch.isUserInteractionEnabled = true
+//            everythingSwitch.isUserInteractionEnabled = true
+//
+//            saveButton.setTitle("Save", for: .normal)
+//
+//        }
         
-        else {
+//        else {
+        
+        
         mainVIew.isUserInteractionEnabled = false
         activityView.isHidden = false
         
@@ -769,7 +817,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         self.saveData()
         
-    }
+    
 }
     
     // ************* UPLOAD BUTTON ACTION ***********

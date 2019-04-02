@@ -484,7 +484,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             }
                 
                 else{
-                    let alert = UIAlertController(title: "Alert!", message: "This user cannot me selected as He / She is a Dealer", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Alert!", message: "This user cannot be selected as He / She is a Dealer", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                     

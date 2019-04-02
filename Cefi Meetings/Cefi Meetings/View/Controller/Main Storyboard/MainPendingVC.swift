@@ -92,7 +92,15 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
             if status == true{
                 self.pendingContent = Result
                 
-                self.pendingQuantity.text = "\(self.pendingContent.count) pending documents"
+                var totalReminder = 0
+                
+                for loop in self.pendingContent{
+                    
+                    totalReminder += loop.allPendingDocumentCounts!
+                    self.pendingQuantity.text = "\(totalReminder) pending documents"
+
+                }
+                
                 
                 
                 self.pending_Table.reloadData()

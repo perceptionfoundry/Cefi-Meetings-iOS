@@ -289,7 +289,7 @@ class MainContractsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
 //        print(userContract[indexPath.row].allPendingDocumentCounts)
         
-        if userContract[indexPath.row].allPendingDocumentCounts! > 0 {
+        if userContract[indexPath.row].allPendingDocumentCounts! > 0 && userContract[indexPath.row].contractStatus == "closed"{
         
             cell.alertView.isHidden = false
             cell.quantity.text = String(userContract[indexPath.row].allPendingDocumentCounts!)
