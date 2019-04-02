@@ -221,12 +221,30 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
          equipmentImageURl = (userContract?.equipmentImages!)!
         
         
+//        print(userContract?.taxReturnImages!)
+//        print(userContract?.bankStatements!)
+//        print(userContract?.equipmentImages!)
+
+        
          insuranceImageURl = userContract?.insuranceCertificate!
          signorImageURl = userContract?.signorAndSecretaryId!
          invoiceImageURl = userContract?.invoice!
          closingImageURl = userContract?.closingFees!
         pageSignedImageURl = userContract?.allPagesSignedImage!
          everythingImageURl = userContract?.everyThingCompleted!
+        
+        
+        
+        if taxImageURl.count > 0 {
+            taxViewHeight.constant = 90
+        }
+        
+        if bankImageURl.count > 0 {
+            bankViewHeight.constant = 90
+        }
+        if equipmentImageURl.count > 0 {
+            equipmentViewHeight.constant = 90
+        }
         
         
         
@@ -949,6 +967,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             if taxImage.count == 0{
                 return taxImageURl.count
+                
 
             }
             else{
@@ -1019,9 +1038,20 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         else if collectionView == self.bankCollectionView{
             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
-            bankCell.docImage.image = bankImage[indexPath.row]
+
+            if bankImage.count == 0{
+                
+                let imageURL = URL(string: bankImageURl[indexPath.row])
+                
+                bankCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                
+            }
+            else{
+                bankCell.docImage.image = bankImage[indexPath.row]
+                
+            }
             
-            
+  
             return bankCell
         }
             
@@ -1031,7 +1061,19 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
             
-            equipmentCell.docImage.image = equipmentImage[indexPath.row]
+            
+            
+            if equipmentImage.count == 0{
+                
+                let imageURL = URL(string: equipmentImageURl[indexPath.row])
+                
+                equipmentCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                
+            }
+            else{
+                equipmentCell.docImage.image = equipmentImage[indexPath.row]
+                
+            }
             
             
             return equipmentCell
