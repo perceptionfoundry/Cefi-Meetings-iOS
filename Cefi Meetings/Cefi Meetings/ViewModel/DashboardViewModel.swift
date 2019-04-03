@@ -17,7 +17,17 @@ class DashboardViewModel{
     func populateCounts(API : String, TextFields : [String:String], completion : @escaping(_ Status:Bool?, _ Result: [String:Any]?)->()){
         
         
+        
+    
+        
         Alamofire.request(API, method: .post, parameters: TextFields).responseJSON { (resp) in
+            
+            
+            
+            
+            print(TextFields)
+            print(API)
+            print(resp.result.value)
             
             guard let fetchValue = resp.result.value as? [String:Any] else{return}
             

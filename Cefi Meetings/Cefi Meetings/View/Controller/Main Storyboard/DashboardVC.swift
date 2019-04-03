@@ -51,33 +51,33 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        self.welcomeNote.text = ""
-        
-        let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
-        
-        let currentDate = Date()
-        let formatter = DateFormatter()
-        
-        formatter.dateFormat = "yyyy-MM-dd"
-        let todayDate = formatter.string(from: currentDate)
-        
-        
-        print(todayDate)
-        
-        let paramDict = ["userId" : appGlobalVariable.userID,
-                         "today" : todayDate
-        ]
-        
-        profileViewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
-            
-            
-            //            print(result)
-            
-         let name  = result.name!
-            
-            self.welcomeNote.text = "Welcome\n\(name)\nWe hope you have a great and productive day!"
-            
-        }
+//        self.welcomeNote.text = ""
+//
+//        let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
+//
+//        let currentDate = Date()
+//        let formatter = DateFormatter()
+//
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        let todayDate = formatter.string(from: currentDate)
+//
+//
+//        print(todayDate)
+//
+//        let paramDict = ["userId" : appGlobalVariable.userID,
+//                         "todayDate" : todayDate
+//        ]
+//
+//        profileViewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
+//
+//
+//            //            print(result)
+//
+//         let name  = result.name!
+//
+//            self.welcomeNote.text = "Welcome\n\(name)\nWe hope you have a great and productive day!"
+//
+//        }
     }
 
     
@@ -94,12 +94,43 @@ class DashboardVC: UIViewController {
         
         self.tabBarController?.tabBar.isHidden = false
         
-        let apilink = appGlobalVariable.apiBaseURL+"useroverview/useroverviewinfo"
+        
+        self.welcomeNote.text = ""
+        
+        let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
+        
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.string(from: currentDate)
+        
+        
+        print(todayDate)
+        
+        let paramDict = ["userId" : appGlobalVariable.userID]
+        
+        profileViewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
+            
+            
+            //            print(result)
+            
+            let name  = result.name!
+            
+            self.welcomeNote.text = "Welcome\n\(name)\nWe hope you have a great and productive day!"
+            
+        }
+        
+        
+        //*************
+        
+        let userapilink = appGlobalVariable.apiBaseURL+"useroverview/useroverviewinfo"
         let userID = appGlobalVariable.userID
         
-        let dict = ["userId": userID]
+        let dict = ["userId": userID,
+        "todayDate" : todayDate]
         
-        viewModel.populateCounts(API: apilink, TextFields: dict) { (status, result) in
+        viewModel.populateCounts(API: userapilink, TextFields: dict) { (status, result) in
             
             //            print(result)
             
