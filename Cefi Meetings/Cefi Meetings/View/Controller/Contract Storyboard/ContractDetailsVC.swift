@@ -118,7 +118,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var everythingImageCount = 0
     
     
-    var buttonStatus = "Edit"
+    
+    var selectedCollection  = ""
+    var taxArraySource = [String]()
+    var BankArraySource = [String]()
+    var EquipmentArraySource = [String]()
+
     
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
@@ -153,6 +158,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         super.viewDidLoad()
         activityView.isHidden = true
         saveButton.isHidden = true
+
+        
+        taxViewHeight.constant = 0
+        bankViewHeight.constant = 0
+        equipmentViewHeight.constant = 0
+        
+        
 
         
         // Making navigation bar transparent
@@ -236,10 +248,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
          everythingImageURl = userContract?.everyThingCompleted!
         
         
-        
         if taxImageURl.count > 0 {
             taxViewHeight.constant = 90
+
         }
+  
+     
         
         if bankImageURl.count > 0 {
             bankViewHeight.constant = 90
@@ -275,9 +289,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
        
         
         
-        taxViewHeight.constant = 0
-        bankViewHeight.constant = 0
-        equipmentViewHeight.constant = 0
+      
         
         taxCollectionView.delegate = self
         taxCollectionView.dataSource = self
@@ -331,6 +343,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         editModeButton.isHidden = true
         saveButton.isHidden = false
+        
+        editStatus = true
         
         taxCollectionView.isUserInteractionEnabled = true
                  bankCollectionView.isUserInteractionEnabled = true
@@ -870,7 +884,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         switch self.selectedImagebuttonINdex {
         case 0:
             taxImage.append(Image)
-            
+            taxArraySource.append("LOCAL")
+
             taxSwitch.isOn = true
             
             
@@ -880,6 +895,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
         case 1:
             bankImage.append(Image)
+            BankArraySource.append("LOCAL")
+
             bankCollectionView.reloadData()
             bankSwitch.isOn = true
             bankViewHeight.constant = 90
@@ -887,6 +904,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
         case 2:
             equipmentImage.append(Image)
+            EquipmentArraySource.append("LOCAL")
+
             equipmentCollectionVIew.reloadData()
             equipmentSwitch.isOn = true
             equipmentViewHeight.constant = 90
@@ -1013,41 +1032,29 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if collectionView == self.taxCollectionView{
             
-            if taxImage.count == 0{
-                return taxImageURl.count
-                
-
-            }
-            else{
-                return taxImage.count
-
-            }
+//
+            return taxImage.count + taxImageURl.count
         }
+           
+            
+            
+            
+            
             
         else if collectionView == self.bankCollectionView{
-            if bankImage.count == 0{
-                
-                return bankImageURl.count
-                
-            }
-                
-                
-            else{
-                return bankImage.count
-                
-            }        }
+//
+            
+            return bankImage.count + bankImageURl.count
+
+        }
         
             
             
         else if collectionView == self.equipmentCollectionVIew{
-            if equipmentImage.count == 0{
-                return equipmentImageURl.count
-                
-            }
-            else{
-                return equipmentImage.count
-                
-            }
+//
+            
+            return equipmentImage.count + equipmentImageURl.count
+
             
         }
         return 0
@@ -1064,21 +1071,36 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
 //
             
-            if taxImage.count == 0{
+            if indexPath.row < taxImageURl.count{
                 
                 let imageURL = URL(string: taxImageURl[indexPath.row])
                 
                 taxCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
-                
-            }
-            else{
-                taxCell.docImage.image = taxImage[indexPath.row]
+                taxArraySource.append("URL")
 
+                
+                taxCell.cancelButton.tag = indexPath.row
+                self.selectedCollection = "Tax"
+                
+                if editStatus == true{
+                taxCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
             }
-            
-            
-            
-            
+                
+                
+                
+            else{
+                taxCell.docImage.image = taxImage[indexPath.row - taxImageURl.count]
+
+                
+                taxCell.cancelButton.tag = indexPath.row
+                self.selectedCollection = "Tax"
+                
+                if editStatus == true{
+                taxCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+
             return taxCell
             
         }
@@ -1087,18 +1109,34 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
 
-            if bankImage.count == 0{
+            if indexPath.row < bankImageURl.count{
                 
                 let imageURL = URL(string: bankImageURl[indexPath.row])
                 
                 bankCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
-                
-            }
-            else{
-                bankCell.docImage.image = bankImage[indexPath.row]
-                
-            }
+                BankArraySource.append("URL")
             
+                
+                bankCell.cancelButton.tag = indexPath.row + 100
+                self.selectedCollection = "Bank"
+                
+                if editStatus == true{
+                bankCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+            }
+            }
+                
+                
+            else{
+                bankCell.docImage.image = bankImage[indexPath.row - self.bankImageURl.count]
+                
+                
+                bankCell.cancelButton.tag = indexPath.row + 100
+                self.selectedCollection = "Bank"
+                
+                if editStatus == true{
+                bankCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+            }
+            }
   
             return bankCell
         }
@@ -1111,16 +1149,31 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            if equipmentImage.count == 0{
+            if indexPath.row < equipmentImageURl.count{
                 
                 let imageURL = URL(string: equipmentImageURl[indexPath.row])
                 
                 equipmentCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                EquipmentArraySource.append("URL")
+
                 
+                equipmentCell.cancelButton.tag = indexPath.row + 200
+                self.selectedCollection = "Equipment"
+                
+                
+                if editStatus == true{
+                equipmentCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
             }
             else{
-                equipmentCell.docImage.image = equipmentImage[indexPath.row]
+                equipmentCell.docImage.image = equipmentImage[indexPath.row - self.equipmentImageURl.count]
                 
+                equipmentCell.cancelButton.tag = indexPath.row + 200
+                self.selectedCollection = "Equipment"
+                
+                if editStatus == true{
+                equipmentCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
             }
             
             
@@ -1338,6 +1391,94 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             self.navigationController?.popViewController(animated: true)
 
         }
+        
+        
+    }
+    
+    
+    
+    @objc func removePicture(button : UIButton){
+        let indexNumber = button.tag
+        
+        print(indexNumber)
+        
+        
+        
+        let alertVC = UIAlertController(title: "CONFIRMATION", message: "Are you sure you wish to delete this image?", preferredStyle: .actionSheet)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        let Confirm = UIAlertAction(title: "Confirm", style: .default) { (action) in
+            
+            
+            
+           
+            
+            
+            
+            // ******* TAX *************
+
+            
+            if indexNumber < 100{
+                
+                if indexNumber < self.taxImageURl.count{
+                    self.taxImageURl.remove(at: indexNumber)
+                    self.taxCollectionView.reloadData()
+                }
+                else{
+                    self.taxImage.remove(at: indexNumber - self.taxImageURl.count)
+                    self.taxCollectionView.reloadData()
+                }
+                
+            
+                
+            }
+                
+                
+                // ******* BANK *************
+            else if (indexNumber >= 100) && (indexNumber < 200){
+                
+                
+                if indexNumber - 100 < self.bankImageURl.count{
+                    self.bankImageURl.remove(at: indexNumber - 100)
+                    self.bankCollectionView.reloadData()
+                }
+                else{
+                    self.bankImage.remove(at: indexNumber - 100  - self.bankImageURl.count)
+                    self.bankCollectionView.reloadData()
+                    
+                }
+    
+                
+            }
+                
+                
+                // ******* EQUIPMENT *************
+
+                
+            else if (indexNumber >= 200){
+                
+                if indexNumber - 200 < self.equipmentImageURl.count{
+                    self.equipmentImageURl.remove(at: indexNumber - 200)
+                    self.equipmentCollectionVIew.reloadData()
+                }
+                else{
+                    self.equipmentImage.remove(at: indexNumber - 200 - self.equipmentImageURl.count)
+                    self.equipmentCollectionVIew.reloadData()
+                    
+                }
+                
+                
+                
+                
+            }
+            
+        }
+        
+        alertVC.addAction(dismiss)
+        alertVC.addAction(Confirm)
+        
+        self.present(alertVC, animated: true, completion: nil)
+        
+        
         
         
     }

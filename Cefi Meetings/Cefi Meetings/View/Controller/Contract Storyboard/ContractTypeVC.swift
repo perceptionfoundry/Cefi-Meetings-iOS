@@ -18,7 +18,8 @@ class ContractTypeVC: UIViewController {
     @IBOutlet weak var DealSelected: UILabel!
     @IBOutlet weak var OpenSelected: UILabel!
     @IBOutlet weak var ClosedSelected: UILabel!
-    
+    @IBOutlet weak var DeadSelected: UILabel!
+
     
     
     
@@ -43,6 +44,7 @@ class ContractTypeVC: UIViewController {
         DealSelected.isHidden = true
         OpenSelected.isHidden = true
         ClosedSelected.isHidden = true
+        DeadSelected.isHidden = true
 
         guard let type = previousSelected else{return}
         
@@ -59,7 +61,10 @@ class ContractTypeVC: UIViewController {
             ClosedSelected.isHidden = false
 
         }
-       
+        else if type == "Dead"{
+            DeadSelected.isHidden = false
+            
+        }
 
     }
     
@@ -98,6 +103,10 @@ class ContractTypeVC: UIViewController {
         }
         else if buttonTag == 2 {
             self.typeDelegate?.typeName(name: "Closed")
+            self.navigationController?.popViewController(animated: true)
+        }
+        else if buttonTag == 3 {
+            self.typeDelegate?.typeName(name: "Dead")
             self.navigationController?.popViewController(animated: true)
         }
        

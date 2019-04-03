@@ -21,6 +21,7 @@ class userSettingVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phone: UnderlinedTextField!
     @IBOutlet weak var email: UnderlinedTextField!
     @IBOutlet weak var NaviBar: UINavigationBar!
+    @IBOutlet weak var editButton: Custom_Button!
     
     
     
@@ -48,7 +49,8 @@ class userSettingVC: UIViewController, UITextFieldDelegate {
         
         userName.delegate = self
         phone.delegate = self
-        
+        userName.isUserInteractionEnabled = false
+        phone.isUserInteractionEnabled = false
         
         userName.withImage(direction: .Left, image: UIImage(named: "user_profile")!, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
         phone.withImage(direction: .Left, image: UIImage(named: "phone_profile")!, colorSeparator: UIColor.clear, colorBorder: UIColor.clear)
@@ -77,9 +79,7 @@ class userSettingVC: UIViewController, UITextFieldDelegate {
 
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.editCheck = true
-    }
+   
     
     
     
@@ -93,25 +93,21 @@ class userSettingVC: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-
-    
-    //  *************** BACK BUTTON ACTION FUNCTION ************************
-
-    @IBAction func backButton(_ sender: Any) {
+    @IBAction func editButtonAction(_ sender: Any) {
         
-        if editCheck == false{
-        self.navigationController?.popViewController(animated: true)
-        }
-        else{
+        print(editCheck)
+        
+       if editCheck == true {
             
-            var alertVC = UIAlertController(title: "Alert", message: "Some changes have been found", preferredStyle: .actionSheet)
-            var doneButton = UIAlertAction(title: "DONE", style: .default) { (action) in
+        let alertVC = UIAlertController(title: "Alert", message: "Do you want to make changes?", preferredStyle: .actionSheet)
+            let doneButton = UIAlertAction(title: "Confirm", style: .default) { (action) in
                 self.editData()
             }
-            var cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                
+                self.editCheck = false
                 self.navigationController?.popViewController(animated: true)
-
+                
             }
             
             alertVC.addAction(doneButton)
@@ -121,6 +117,25 @@ class userSettingVC: UIViewController, UITextFieldDelegate {
             
             
         }
+        
+       else{
+        editCheck = true
+        editButton.setTitle("Save", for: .normal)
+        userName.isUserInteractionEnabled = true
+        phone.isUserInteractionEnabled = true
+        }
+    }
+    
+
+    
+    //  *************** BACK BUTTON ACTION FUNCTION ************************
+
+    @IBAction func backButton(_ sender: Any) {
+        
+    
+        self.navigationController?.popViewController(animated: true)
+   
+    
     }
 
     func editData(){

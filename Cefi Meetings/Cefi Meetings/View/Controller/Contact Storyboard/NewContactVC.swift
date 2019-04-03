@@ -116,6 +116,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         super.viewDidLoad()
         
         
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.black,
+             NSAttributedString.Key.font: UIFont(name: "Avenir Black", size: 21)!]
+        
         // Making navigation bar transparent
         naviBar.setBackgroundImage(UIImage(), for: .default)
         naviBar.shadowImage = UIImage()

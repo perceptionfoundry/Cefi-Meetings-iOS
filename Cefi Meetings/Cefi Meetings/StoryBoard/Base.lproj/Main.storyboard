@@ -564,8 +564,8 @@
                                             <action selector="buttonAction:" destination="rn7-mt-C2n" eventType="touchUpInside" id="0Tg-JN-x5j"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-gZ-g97">
-                                        <rect key="frame" x="197.5" y="96" width="35.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meetings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4o-gZ-g97">
+                                        <rect key="frame" x="183" y="96" width="64" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1087,7 +1087,7 @@ We hope you have a great and productive day!</string>
                                                                     <real key="value" value="4"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                                     <size key="value" width="1" height="1"/>
@@ -1097,7 +1097,7 @@ We hope you have a great and productive day!</string>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-3q-ICY" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
+                                                        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-3q-ICY" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                                             <rect key="frame" x="20" y="10" width="335" height="148"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-FR-fMX">
@@ -1194,6 +1194,9 @@ We hope you have a great and productive day!</string>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                                     <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
@@ -2648,7 +2651,7 @@ We hope you have a great and productive day!</string>
                                 <color key="tintColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" red="0.055137760937213898" green="0.26084959506988525" blue="0.01163534726947546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="indentation">
                                         <real key="value" value="30"/>
@@ -2664,6 +2667,25 @@ We hope you have a great and productive day!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQZ-Wk-ee9" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                <rect key="frame" x="75" y="490.5" width="225" height="40"/>
+                                <color key="backgroundColor" red="0.39200000000000002" green="0.59554231170000005" blue="0.27832308410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SMF-sV-o26"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="uja-jk-jeH" eventType="touchUpInside" id="QBV-uj-EoW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2672,7 +2694,10 @@ We hope you have a great and productive day!</string>
                             <constraint firstItem="ogm-jL-bZj" firstAttribute="centerX" secondItem="L23-2V-5fZ" secondAttribute="centerX" id="5TO-2P-02j"/>
                             <constraint firstItem="tca-5i-ZbE" firstAttribute="centerX" secondItem="L23-2V-5fZ" secondAttribute="centerX" multiplier="0.335" id="8KP-eC-epC"/>
                             <constraint firstItem="qGO-P8-R5G" firstAttribute="top" secondItem="L23-2V-5fZ" secondAttribute="top" constant="20" id="AFg-Bv-R1Q"/>
+                            <constraint firstItem="rQZ-Wk-ee9" firstAttribute="centerY" secondItem="L23-2V-5fZ" secondAttribute="centerY" multiplier="1.6" id="CHD-fG-Qpi"/>
+                            <constraint firstItem="rQZ-Wk-ee9" firstAttribute="centerX" secondItem="L23-2V-5fZ" secondAttribute="centerX" id="CqD-ZT-b7p"/>
                             <constraint firstItem="RB2-4k-sNW" firstAttribute="height" secondItem="W6T-xq-eZA" secondAttribute="height" multiplier="0.06" id="D8h-wx-67q"/>
+                            <constraint firstItem="rQZ-Wk-ee9" firstAttribute="width" secondItem="W6T-xq-eZA" secondAttribute="width" multiplier="0.6" id="JZJ-dl-rRh"/>
                             <constraint firstItem="V5u-uU-9mM" firstAttribute="height" secondItem="W6T-xq-eZA" secondAttribute="height" multiplier="0.06" id="Jm1-Q5-gjW"/>
                             <constraint firstItem="RB2-4k-sNW" firstAttribute="width" secondItem="W6T-xq-eZA" secondAttribute="width" multiplier="0.8" id="LNO-JM-y8e"/>
                             <constraint firstItem="qGO-P8-R5G" firstAttribute="trailing" secondItem="L23-2V-5fZ" secondAttribute="trailing" id="NaK-HR-CxX"/>
@@ -2693,6 +2718,7 @@ We hope you have a great and productive day!</string>
                     </view>
                     <connections>
                         <outlet property="NaviBar" destination="qGO-P8-R5G" id="5Gi-gX-BPM"/>
+                        <outlet property="editButton" destination="rQZ-Wk-ee9" id="Aj8-OA-NJD"/>
                         <outlet property="email" destination="ogm-jL-bZj" id="7Kl-IJ-m3y"/>
                         <outlet property="phone" destination="RB2-4k-sNW" id="czt-OX-8Ba"/>
                         <outlet property="userName" destination="V5u-uU-9mM" id="Ibp-GW-jsu"/>
@@ -3542,7 +3568,7 @@ I bet you’re still using Bootstrap too…</string>
         <image name="back_button" width="44" height="19"/>
         <image name="calendar" width="14" height="14"/>
         <image name="call_now_light" width="116" height="32"/>
-        <image name="cell_right_arrow" width="7.5" height="12"/>
+        <image name="cell_right_arrow" width="120" height="131"/>
         <image name="cell_right_arrow_gray" width="7.5" height="12"/>
         <image name="contact_tab" width="25" height="22"/>
         <image name="contract_tab" width="16" height="22"/>

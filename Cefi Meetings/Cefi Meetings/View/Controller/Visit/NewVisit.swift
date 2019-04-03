@@ -144,6 +144,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         locationTF.delegate = self
         
         
+        // testing purpose
+        chosenPlace = meetup(name: "", lat: 0, long: 0)
+
+        
         // Initialize device Current location delegate & respective functions
        
         locationManager.delegate = self
@@ -491,6 +495,13 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     }
     
     
+    @IBAction func locationClearButton(_ sender: Any) {
+        locationTF.text = ""
+        mapView.isHidden = true
+        chosenPlace = meetup(name: "", lat: 0, long: 0)
+        
+        print(chosenPlace)
+    }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         

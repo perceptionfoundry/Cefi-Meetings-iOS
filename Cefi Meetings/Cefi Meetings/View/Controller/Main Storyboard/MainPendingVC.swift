@@ -56,7 +56,7 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         super.viewWillAppear(true)
         
         pending_Table.isUserInteractionEnabled = true
-
+        pending_Table.tableFooterView = UIView()
         self.getPending()
         self.tabBarController?.tabBar.isHidden = false
     }

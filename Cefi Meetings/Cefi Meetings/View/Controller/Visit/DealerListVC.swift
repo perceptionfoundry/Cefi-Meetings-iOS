@@ -23,7 +23,8 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     
    
     
-
+    @IBOutlet weak var dealerBusinessName: UILabel!
+    
     @IBOutlet weak var DealerTitle: UILabel!
     
     @IBOutlet weak var dealerListTable: UITableView!
@@ -57,7 +58,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        dealerBusinessName.text = ContactDetail?.businessName!
         getContents()
         dealerListTable.reloadData()
     }
@@ -132,7 +133,7 @@ class DealerListVC: UIViewController,UITableViewDataSource,UITableViewDelegate,a
 
 
         }
-        editButton.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+        editButton.backgroundColor = UIColor.lightGray
 
 
         let cancelButton = UITableViewRowAction(style: .default, title: "Delete") { (rowAction, indexPath) in

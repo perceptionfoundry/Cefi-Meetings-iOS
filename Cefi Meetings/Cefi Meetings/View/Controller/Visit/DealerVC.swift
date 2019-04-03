@@ -98,12 +98,12 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
 
 //        print(meetingDetail)
         
-        if meetingDetail?.visitStatus == "Completed"{
-            scrollView.isUserInteractionEnabled = false
-            submitButton.setTitle("EDIT", for: .normal)
+      
+        if self.meetingDetail?.visitStatus == "Completed"{
+            self.scrollView.isUserInteractionEnabled = false
+            self.submitButton.setTitle("Edit", for: .normal)
             self.submitTitle = "EDIT"
         }
-        
         
         
         newLead.selectItemAt(index: 1, animated: true)
@@ -120,7 +120,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         saleStatus.allowChangeThumbWidth = false
         newLead.allowChangeThumbWidth = false
         
-        saleStatus.itemTitles = ["Increased","Same","Deceased"]
+        saleStatus.itemTitles = ["Increased","Same","Decreased"]
         newLead.itemTitles = ["Yes", "No"]
         dealerTable.delegate = self
         dealerTable.dataSource = self
@@ -189,7 +189,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
                 
                 
                 switch  saleValue{
-                case "Deceased":
+                case "Decreased":
                     saleIndex = 0
                 case "Same":
                     saleIndex = 1
@@ -201,6 +201,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
                 
                 self.saleStatus.selectItemAt(index: saleIndex, animated: true)
                 
+               
             }
         }
         

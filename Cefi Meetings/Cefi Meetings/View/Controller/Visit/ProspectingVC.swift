@@ -51,7 +51,7 @@ class ProspectingVC: UIViewController {
         
         if meetingDetail?.visitStatus == "Completed"{
             scrollView.isUserInteractionEnabled = false
-            submitButton.setTitle("EDIT", for: .normal)
+            submitButton.setTitle("Edit", for: .normal)
             self.submitTitle = "EDIT"
         }
 //        print(meetingDetail)
@@ -70,7 +70,7 @@ class ProspectingVC: UIViewController {
         
         
         OutcomeSegment.itemTitles = ["Positive","Neutral","Negative"]
-        businessSegment.itemTitles = ["Deceased","Same","Increased"]
+        businessSegment.itemTitles = ["Decreased","Same","Increased"]
         EquipmentSegment.itemTitles = ["Yes", "Maybe", "No"]
         
         OutcomeSegment.allowChangeThumbWidth = false
@@ -208,7 +208,7 @@ class ProspectingVC: UIViewController {
                 
                 
                 switch  saleValue{
-                case "Deceased":
+                case "Decreased":
                     saleIndex = 0
                 case "Same":
                     saleIndex = 1

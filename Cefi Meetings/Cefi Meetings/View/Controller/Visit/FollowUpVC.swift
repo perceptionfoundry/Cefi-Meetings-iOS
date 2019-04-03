@@ -69,7 +69,7 @@ class FollowUpVC: UIViewController {
         
         if meetingDetail?.visitStatus == "Completed"{
             scrollView.isUserInteractionEnabled = false
-            submitButton.setTitle("EDIT", for: .normal)
+            submitButton.setTitle("Edit", for: .normal)
             self.submitTitle = "EDIT"
         }
         
@@ -95,18 +95,14 @@ class FollowUpVC: UIViewController {
         contractNumber.text = meetingDetail!.contractNumber
 
         OutcomeSegement.didSelectItemWith = { (index, title) -> () in
-//            print("Selected item \(index)")
             
             
             if self.OutcomeSegement.currentIndex == 2{
-//                self.OutcomeSegement.thumbColor = UIColor(red: 0.942, green: 0.341, blue: 0.341, alpha: 1)
-//                self.OutcomeSegement.thumbColor = UIColor.blue
 //
-//                self.negativeView.isHidden = false
-//                self.pendingView.isHidden = true
-//                self.buttonView_Y_constraint.constant = 0
                 
             self.pendingView.isHidden = true
+                self.negativeView.isHidden = true
+
             self.buttonView_Y_constraint.constant = -400
                 
                 
@@ -204,26 +200,38 @@ class FollowUpVC: UIViewController {
                 //OUTCOME
                 let outValue = reportValue?.mainOutcome!
                 
-                
+                print(outValue!)
          
                 
-                                switch  outValue{
+                                switch  outValue!{
                                 case "Closed":
-                                    outcomeIndex = 0
+                                    self.OutcomeSegement.selectItemAt(index: 0, animated: true)
+
+//                                    outcomeIndex = 0
                                 case "Positive":
-                                    outcomeIndex = 1
+                                    self.OutcomeSegement.selectItemAt(index: 1, animated: true)
+
+//                                    outcomeIndex = 1
                                 case "Neutral":
-                                    outcomeIndex = 2
+                                    self.OutcomeSegement.selectItemAt(index: 2, animated: true)
+
+//                                    outcomeIndex = 2
+                                    self.pendingView.isHidden = true
+                                    self.negativeView.isHidden = true
+                                    self.buttonView_Y_constraint.constant = -400
+                                    
                                 case "Negative":
-                                    outcomeIndex = 3
+                                    self.OutcomeSegement.selectItemAt(index: 3, animated: true)
+
+//                                    outcomeIndex = 3
                                     self.pendingView.isHidden = true
                                     self.buttonView_Y_constraint.constant = 0
                                     self.negativeView.isHidden = false
                                 default:
                                     outcomeIndex = -1
                                 }
-                
-                                self.OutcomeSegement.selectItemAt(index: outcomeIndex, animated: true)
+                print(outcomeIndex)
+//                                self.OutcomeSegement.selectItemAt(index: outcomeIndex, animated: true)
                 
                 // OUTCOME COMMENT
                 self.commentTF.text = result!.outcomeComments ?? ""
@@ -331,9 +339,9 @@ class FollowUpVC: UIViewController {
                 "outcomeComments": commentTF.text!,
                 "visitId": meetingDetail!.id!,
                 "reportType": (meetingDetail?.purpose!)!,
-                "didNotAgreetoTerms": true,
-                "contractError": true,
-                "other": true,
+                "didNotAgreetoTerms": String(agreeSwitch.isOn),
+                "contractError": String(contractErrorSwitch.isOn),
+                "other": String(otherSwitch.isOn),
                 "otherComments": otherComment.text!,
                 "reportStatus" : "Completed"
 
@@ -349,9 +357,9 @@ class FollowUpVC: UIViewController {
                 "visitId": meetingDetail!.id!,
                 "reportType": (meetingDetail?.purpose!)!,
                 "reportStatus" : "Completed",
-                "didNotAgreetoTerms": false,
-                "contractError": false,
-                "other": false,
+                "didNotAgreetoTerms": "false",
+                "contractError": "false",
+                "other": "false",
                 "otherComments": ""
 
                 

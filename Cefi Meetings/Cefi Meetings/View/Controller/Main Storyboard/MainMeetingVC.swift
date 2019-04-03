@@ -65,7 +65,6 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         
         
-        print(selectedDate)
         
         let startDateOfTodayFormatter: DateFormatter = DateFormatter()
         startDateOfTodayFormatter.dateFormat = "yyyy-MM-dd"

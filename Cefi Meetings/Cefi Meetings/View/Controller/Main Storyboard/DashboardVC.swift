@@ -55,7 +55,18 @@ class DashboardVC: UIViewController {
         
         let apilink = appGlobalVariable.apiBaseURL+"auth/user?\(appGlobalVariable.userID)"
         
-        let paramDict = ["userId" : appGlobalVariable.userID]
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.string(from: currentDate)
+        
+        
+        print(todayDate)
+        
+        let paramDict = ["userId" : appGlobalVariable.userID,
+                         "today" : todayDate
+        ]
         
         profileViewModel.fetchUserProfile(API: apilink, TextFields: paramDict) { (status, err, result) in
             

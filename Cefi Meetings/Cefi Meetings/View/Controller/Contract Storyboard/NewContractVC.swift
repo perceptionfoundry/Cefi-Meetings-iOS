@@ -126,11 +126,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
-        self.contractTypeTF.text = name.lowercased()
+        self.contractTypeTF.text = name
     }
     
     func contactName(userName: String, id : String, ContractNumber : Bool?, businessName: String) {
-        contactTF.text = userName
+        contactTF.text = userName.capitalizingFirstLetter()
         businessTitle = businessName
         self.selectedContactID = id
     }
@@ -160,7 +160,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.black,
+             NSAttributedString.Key.font: UIFont(name: "Avenir Black", size: 21)!]
         
         // Making navigation bar transparent
         naviBar.setBackgroundImage(UIImage(), for: .default)
@@ -928,52 +930,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//
-//
-//        // ************ TAX *****************
-//
-//
-//        if collectionView == self.taxCollectionView{
-//
-//       let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
-//
-//            taxCell.cancelButton.tag = indexPath.row
-//
-//            self.selectedCollection = "Tax"
-//
-//            taxCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
-//
-//
-//        }
-//
-//
-//            // ************ BANK *****************
-//        else if collectionView == self.bankCollectionView{
-//            let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
-//
-//
-//
-//
-//
-//        }
-//
-//            //
-//            // ************ EQUIPMENT *****************
-//
-//        else {
-//
-//            let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
-//
-//
-//
-//
-//        }
-//
-//
-//
-//    }
+
     
 
     
@@ -986,25 +943,41 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         print(indexNumber)
      
         
-        if indexNumber < 100{
+        
+        let alertVC = UIAlertController(title: "CONFIRMATION", message: "Are you sure you wish to delete this image?", preferredStyle: .actionSheet)
+        let dismiss = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let Confirm = UIAlertAction(title: "Yes", style: .default) { (action) in
             
-            self.taxImage.remove(at: indexNumber)
-            taxCollectionView.reloadData()
+            if indexNumber < 100{
+                
+                self.taxImage.remove(at: indexNumber)
+                self.taxCollectionView.reloadData()
+                
+            }
+                
+            else if (indexNumber >= 100) && (indexNumber < 200){
+                
+                self.bankImage.remove(at: indexNumber - 100)
+                self.bankCollectionView.reloadData()
+                
+            }
+            else if (indexNumber >= 200){
+                
+                self.equipmentImage.remove(at: indexNumber - 200)
+                self.equipmentCollectionVIew.reloadData()
+                
+            }
             
         }
         
-        else if (indexNumber >= 100) && (indexNumber < 200){
-           
-            self.bankImage.remove(at: indexNumber - 100)
-            bankCollectionView.reloadData()
-            
-        }
-        else if (indexNumber >= 200){
-            
-            self.equipmentImage.remove(at: indexNumber - 200)
-            equipmentCollectionVIew.reloadData()
-            
-        }
+        alertVC.addAction(dismiss)
+        alertVC.addAction(Confirm)
+        
+        self.present(alertVC, animated: true, completion: nil)
+       
+        
+        
+        
     }
     
     
