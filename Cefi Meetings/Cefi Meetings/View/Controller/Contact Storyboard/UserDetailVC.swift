@@ -42,6 +42,9 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var contractTable: UITableView!
     @IBOutlet weak var unemptyTableImage: UIImageView!
+    @IBOutlet weak var addContractButton: UIButton!
+    
+    @IBOutlet weak var contractLabel: UILabel!
     
     @IBOutlet weak var referredLabe: UILabel!
     
@@ -120,11 +123,25 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     // ******************  TEXT FIELD UPDATE FUNCTION **********************
     func fieldUpdate(){
         
-        print(userDetail)
+//        print(userDetail)
         
         userName.text = userDetail!.contactName
         businessName.text = userDetail!.businessName
         typeCategory.text = userDetail?.contactType
+        
+        if typeCategory.text == "Dealer"{
+            addContractButton.isHidden = true
+            unemptyTableImage.isHidden = true
+            contractLabel.isHidden = true
+        }
+        
+        else{
+            addContractButton.isHidden = false
+            unemptyTableImage.isHidden = false
+            contractLabel.isHidden = false
+
+        }
+        
         industryCatergory.text = userDetail!.industryType
         referredLabe.text = userDetail!.referredBy
         

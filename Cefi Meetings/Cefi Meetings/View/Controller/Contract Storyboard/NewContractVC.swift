@@ -72,6 +72,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBOutlet weak var everythingSwitch: UISwitch!
     @IBOutlet var addPictureButton: [UIButton]!
     
+    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
     
     
@@ -159,6 +160,12 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+
+        
+        
+        mainViewHeight.constant = 1200
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.black,
@@ -352,6 +359,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
             self.taxCollectionView.reloadData()
             taxViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
 
             
         case 1:
@@ -359,6 +368,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             bankCollectionView.reloadData()
             bankSwitch.isOn = true
             bankViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
             
             
         case 2:
@@ -366,6 +377,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             equipmentCollectionVIew.reloadData()
             equipmentSwitch.isOn = true
             equipmentViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
             
             
         case 3:
@@ -1067,9 +1080,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
         if sender.isOn == true{
         taxViewHeight.constant = 90
+        mainViewHeight.constant += 100
         }
         else{
             taxViewHeight.constant = 0
+            mainViewHeight.constant -= 100
 
         }
         
@@ -1081,10 +1096,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBAction func bankSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             bankViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         else{
             bankViewHeight.constant = 0
-            
+            mainViewHeight.constant -= 100
+
         }
     }
     
@@ -1096,9 +1114,13 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBAction func equipmentSwitchAction(_ sender: UISwitch) {
         if sender.isOn == true{
             equipmentViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         else{
             equipmentViewHeight.constant = 0
+            mainViewHeight.constant += 100
+
             
         }
     }

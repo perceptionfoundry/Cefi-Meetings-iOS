@@ -332,7 +332,9 @@
                         <viewLayoutGuide key="safeArea" id="4AC-Kb-IMr"/>
                     </view>
                     <connections>
+                        <outlet property="addContractButton" destination="Q3R-Jx-EBl" id="hHE-jU-dok"/>
                         <outlet property="businessName" destination="huG-t4-ZzU" id="g03-T4-CtI"/>
+                        <outlet property="contractLabel" destination="M2h-XG-5hP" id="bdv-wd-cBY"/>
                         <outlet property="contractTable" destination="Yde-eV-2dK" id="kGE-mg-H0V"/>
                         <outlet property="emailAddress" destination="YhF-8a-bTN" id="gFf-o3-N4I"/>
                         <outlet property="industryCatergory" destination="L1V-t7-9cq" id="b9v-By-YcA"/>
@@ -735,7 +737,7 @@
                         <outlet property="typeTF" destination="dA6-dR-MGp" id="c2h-EK-oPs"/>
                         <segue destination="aYV-C2-dsO" kind="show" identifier="Contact_Type" id="EQQ-xc-4Rj"/>
                         <segue destination="Mek-SC-ddN" kind="show" identifier="Industry_Type" id="0bb-Nf-zS9"/>
-                        <segue destination="qiJ-RK-z8w" kind="presentation" identifier="Contact" id="tr9-HO-UKy"/>
+                        <segue destination="qiJ-RK-z8w" kind="show" identifier="Contact" id="tr9-HO-UKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcw-ka-d3S" userLabel="First Responder" sceneMemberID="firstResponder"/>

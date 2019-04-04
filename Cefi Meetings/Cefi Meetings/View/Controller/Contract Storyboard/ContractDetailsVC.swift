@@ -68,6 +68,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var everythingSwitch: UISwitch!
     @IBOutlet var addPictureButton: [UIButton]!
 
+    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
     
     // ***************** VARIABLE **********************
@@ -164,7 +165,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         bankViewHeight.constant = 0
         equipmentViewHeight.constant = 0
         
-        
+        mainViewHeight.constant = 1200
 
         
         // Making navigation bar transparent
@@ -250,6 +251,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if taxImageURl.count > 0 {
             taxViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
 
         }
   
@@ -257,9 +260,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if bankImageURl.count > 0 {
             bankViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         if equipmentImageURl.count > 0 {
             equipmentViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         
         
@@ -451,44 +458,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func editAction(_ sender: Any) {
 
-//        if buttonStatus == "Edit"{
-//
-//            buttonStatus = "Save"
-//
-//
-//         taxCollectionView.isUserInteractionEnabled = true
-//         bankCollectionView.isUserInteractionEnabled = true
-//        equipmentCollectionVIew.isUserInteractionEnabled = true
-//        contractTypeTF.isUserInteractionEnabled = true
-////        contractNumberTF.isUserInteractionEnabled = true
-//        contactTF.isUserInteractionEnabled = true
-//        purchaseDateTF.isUserInteractionEnabled = true
-//        amountTF.isUserInteractionEnabled = true
-//            ratingStar.isUserInteractionEnabled = true
-//           equipmentTF.isUserInteractionEnabled = true
-//             missingText.isUserInteractionEnabled = true
-//            saveButton.isUserInteractionEnabled = true
-//           taxView.isUserInteractionEnabled = true
-//
-//             bankStateView.isUserInteractionEnabled = true
-//
-//             equipmentView.isUserInteractionEnabled = true
-//
-//            taxSwitch.isUserInteractionEnabled = true
-//           bankSwitch.isUserInteractionEnabled = true
-//           equipmentSwitch.isUserInteractionEnabled = true
-//            insuranceSwitch.isUserInteractionEnabled = true
-//             signorSwitch.isUserInteractionEnabled = true
-//             invoiceSwitch.isUserInteractionEnabled = true
-//             closingSwitch.isUserInteractionEnabled = true
-//             allpageSwitch.isUserInteractionEnabled = true
-//            everythingSwitch.isUserInteractionEnabled = true
-//
-//            saveButton.setTitle("Save", for: .normal)
-//
-//        }
-        
-//        else {
+
         
         
         mainVIew.isUserInteractionEnabled = false
@@ -891,6 +861,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             self.taxCollectionView.reloadData()
             taxViewHeight.constant = 90
+//            mainViewHeight.constant += 100
+
             
             
         case 1:
@@ -900,6 +872,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             bankCollectionView.reloadData()
             bankSwitch.isOn = true
             bankViewHeight.constant = 90
+//            mainViewHeight.constant += 100
+
             
             
         case 2:
@@ -909,6 +883,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             equipmentCollectionVIew.reloadData()
             equipmentSwitch.isOn = true
             equipmentViewHeight.constant = 90
+//            mainViewHeight.constant += 100
+
             
             
         case 3:
@@ -1279,9 +1255,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if sender.isOn == true{
             taxViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         else{
             taxViewHeight.constant = 0
+            mainViewHeight.constant -= 100
+
             
         }
         
@@ -1294,9 +1274,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if sender.isOn == true{
             bankViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         else{
             bankViewHeight.constant = 0
+            mainViewHeight.constant -= 100
+
             
         }
     }
@@ -1308,9 +1292,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         if sender.isOn == true{
             equipmentViewHeight.constant = 90
+            mainViewHeight.constant += 100
+
         }
         else{
             equipmentViewHeight.constant = 0
+            mainViewHeight.constant -= 100
+
             
         }
     }

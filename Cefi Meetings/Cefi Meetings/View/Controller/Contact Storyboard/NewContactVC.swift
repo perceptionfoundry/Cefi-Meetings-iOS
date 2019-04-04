@@ -95,7 +95,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     var referrredName = ""
     var referredID : String?
     
-    
+    var SegueField = ""
     
     //  Map related Variable
     var chosenPlace : meetup?
@@ -167,6 +167,10 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
         industryTF.addGestureRecognizer(industryTFTap)
         
+        let referredTFTap = UITapGestureRecognizer(target: self, action: #selector(reffered))
+        
+        referredTF.addGestureRecognizer(referredTFTap)
+        
         
     }
     
@@ -194,6 +198,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
 
     
     @objc func selectType(){
+        SegueField = "Contact"
         performSegue(withIdentifier: "Contact_Type", sender: nil)
     }
   
@@ -203,7 +208,11 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         
     }
     
+    @objc func reffered(){
     
+        self.SegueField = "Reffered"
+    self.performSegue(withIdentifier: "Contact", sender: nil)
+    }
     
     
     
@@ -229,15 +238,15 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         self.present(autoCompleteController, animated: true, completion: nil)
         }
         
-        else if textField == referredTF{
-           
-                
-                
-                performSegue(withIdentifier: "Contact", sender: nil)
-                
-                
-            
-        }
+//        else if textField == referredTF{
+//
+//
+//                SegueField = "Reffered"
+//                performSegue(withIdentifier: "Contact", sender: nil)
+//
+//
+//
+//        }
         
     }
     
@@ -428,6 +437,7 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
             
             dest.contactDelegate = self
             dest.segueStatus = true
+            dest .segueType = self.SegueField
             
         }
     }

@@ -47,6 +47,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     var userDirectory = [Contact]()
     var allUser = [Contact]()
     var contactDelegate : contactdelegate?
+    var segueType = ""
     var segueStatus  = false
     var visitSegue = false
     var wordSection = [String]()
@@ -463,6 +464,7 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         
         print(segueStatus)
+        print(segueType)
         
         let workKey = wordSection[indexPath.section]
 
@@ -474,21 +476,37 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                 
               self.selectedUser = wordValue[indexPath.row]
                 
-                if wordValue[indexPath.row].contactType != "Dealer" {
+                if wordValue[indexPath.row].contactType == "Dealer"  && segueType != "Reffered"{
                 
-                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true, businessName: wordValue[indexPath.row].businessName!)
-                self.segueStatus = false
-                    backButton.isHidden = true
-
-                self.dismiss(animated: true, completion: nil)
-            }
-                
-                else{
+//                self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true, businessName: wordValue[indexPath.row].businessName!)
+//                self.segueStatus = false
+//                    backButton.isHidden = true
+//
+////                self.dismiss(animated: true, completion: nil)
+//                    self.navigationController?.popViewController(animated: true)
+                    
                     let alert = UIAlertController(title: "Alert!", message: "This user cannot be selected as He / She is a Dealer", preferredStyle: .alert)
                     
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                     
                     self.present(alert, animated: true, completion: nil)
+
+            }
+                
+                else{
+//                    let alert = UIAlertController(title: "Alert!", message: "This user cannot be selected as He / She is a Dealer", preferredStyle: .alert)
+//
+//                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//
+//                    self.present(alert, animated: true, completion: nil)
+                    
+                    
+                    self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id : wordValue[indexPath.row].id!, ContractNumber : true, businessName: wordValue[indexPath.row].businessName!)
+                                    self.segueStatus = false
+                                        backButton.isHidden = true
+                    
+                    //                self.dismiss(animated: true, completion: nil)
+                                        self.navigationController?.popViewController(animated: true)
                     
                 }
                 

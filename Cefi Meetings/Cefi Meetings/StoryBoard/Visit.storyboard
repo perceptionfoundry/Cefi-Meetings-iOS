@@ -1917,7 +1917,7 @@
                                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-6a-t1D">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDh-6a-t1D">
                                                 <rect key="frame" x="211" y="168" width="122" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2508,7 +2508,7 @@
                                         <rect key="frame" x="30" y="75" width="240" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNG-5x-Jxd" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="75" y="145" width="150" height="30"/>
@@ -3974,7 +3974,7 @@ Please do so as soon as possible. Thanks.  </string>
                                         <rect key="frame" x="30" y="75" width="240" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAa-TM-Kep" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
                                         <rect key="frame" x="75" y="145" width="150" height="30"/>
@@ -4089,7 +4089,7 @@ Please do so as soon as possible. Thanks.  </string>
         <image name="warning" width="43" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O1v-1B-SZ3"/>
-        <segue reference="4oA-tN-79m"/>
+        <segue reference="TrD-ki-HX1"/>
+        <segue reference="C4r-aJ-KzX"/>
     </inferredMetricsTieBreakers>
 </document>
