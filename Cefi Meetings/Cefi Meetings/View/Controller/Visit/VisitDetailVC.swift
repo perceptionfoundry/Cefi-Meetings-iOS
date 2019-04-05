@@ -408,6 +408,11 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
     }
     
     
+    
+    
+    
+    
+    
     // ******************* SHOW DATE FUNCTION ***************************
     
     
@@ -509,7 +514,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         self.time_Stamp = time_stamp
         
-                print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
+//                print("hour: \(hour_Stamp), minute: \(min_Stamp), total: \(time_Stamp)")
         
         print(self.reminderTotalTime)
 
@@ -533,6 +538,73 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         performSegue(withIdentifier: "Reminder", sender: nil)
         
     }
+    
+    
+    
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        
+        
+        
+        let alertVC = UIAlertController(title: "Confirmation", message: "You are about to cancel this particular meeting. Are you Sure?", preferredStyle: .actionSheet)
+        
+        let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let Confirm = UIAlertAction(title: "Confirm", style: .default) { (action) in
+            
+            let apiLink = self.appGlobalVariable.apiBaseURL+"visits/updatevisit"
+            
+            
+            
+            var reminderADD : Double = 0.0
+            if self.reminderOn == true{
+                
+                reminderADD  = floor(self.reminderTotalTime + self.reminderTime) * 1000 + self.secondsFromGMT
+                
+            }
+            
+            
+            let paramDict : [String : Any] = [
+                "visitId" : self.meetingDetail!.id!,
+                "long": String(self.chosenPlace!.long),
+                "userId": self.appGlobalVariable.userID,
+                "contactId": self.meetingDetail!.contactId!,
+                "contractId": self.meetingDetail!.contractId ?? "DEALER",
+                "time":  String(Int((floor(self.reminderTotalTime) * 1000) + self.secondsFromGMT) ),
+                "reminder": reminderADD,
+                "lat": String(self.chosenPlace!.lat),
+                "address": self.chosenPlace!.name,
+                "purpose": self.meetingDetail!.purpose!,
+                "dateInString": self.dateTF.text!,
+                "timeInString": self.timeTF.text!,
+                "reminderinString" : self.reminderTF.text!,
+                "visitStatus" : "cancel"
+                
+                
+            ]
+            
+            print(paramDict)
+            
+            self.editVisitViewModel.editVisit(API: apiLink, Textfields: paramDict) { (status, error) in
+                
+                print(status)
+                
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        
+        alertVC.addAction(Cancel)
+        alertVC.addAction(Confirm)
+        
+        self.present(alertVC, animated: true, completion: nil)
+       
+            
+        
+        
+        //
+        
+        
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

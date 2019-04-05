@@ -192,7 +192,14 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
+    // ********** EMAIL VALIDATION *****************
     
+    
+    func isValidEmail(emailID:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: emailID)
+    }
     
     // ****************** OUTLET CUSTOM ACTION FUNCTION *****************
 
@@ -273,6 +280,12 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
         //   Verifying both textfield is not left empty
         if businessTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && phoneTF.text?.isEmpty == false && emailTF.text?.isEmpty == false && industryTF.text?.isEmpty == false && contactTF.text?.isEmpty == false && locationTF.text?.isEmpty == false{
             
+            
+            if isValidEmail(emailID: emailTF.text!) && emailTF.text!.count < 26{
+                
+         
+            
+            
             //  parameter that are required by API
             let newContactParameter = ["userId" : appGlobalVariable.userID,
                                        "businessName" : businessTF.text!,
@@ -307,6 +320,14 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
                 
             }
             
+        }
+            
+            else{
+                let alert = UIAlertController(title: "Alert", message: "You have entered INVALID email address", preferredStyle: .alert)
+                let dismiss = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+                alert.addAction(dismiss)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
             
         else{

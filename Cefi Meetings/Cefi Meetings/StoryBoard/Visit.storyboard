@@ -357,7 +357,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTA-CQ-R4R">
-                                <rect key="frame" x="239.5" y="62.5" width="121" height="30"/>
+                                <rect key="frame" x="292" y="66.5" width="16" height="22"/>
                                 <state key="normal" image="done_Button"/>
                                 <connections>
                                     <action selector="saveButtonAction:" destination="2ka-IH-mKe" eventType="touchUpInside" id="xNO-2j-DkM"/>
@@ -687,7 +687,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-nI-tGB">
-                                <rect key="frame" x="36" y="87" width="44" height="22"/>
+                                <rect key="frame" x="50" y="87" width="16" height="22"/>
                                 <state key="normal" image="back_button">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1378,7 +1378,7 @@
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSh-tM-ST1" customClass="GMSMapView">
-                                                <rect key="frame" x="37.5" y="520" width="300" height="200"/>
+                                                <rect key="frame" x="37.5" y="520" width="300" height="180"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-TW-z2a">
@@ -1437,6 +1437,22 @@
                                                     <constraint firstItem="5cN-zg-OxX" firstAttribute="centerY" secondItem="bGn-zN-sNe" secondAttribute="centerY" id="yBY-yJ-zFf"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6P-eW-Lzn" customClass="Custom_Button" customModule="Cefi_Meetings" customModuleProvider="target">
+                                                <rect key="frame" x="56.5" y="710" width="262.5" height="48"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelButtonAction:" destination="DRH-lB-5mC" eventType="touchUpInside" id="Zkb-Q3-qjw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1449,6 +1465,7 @@
                                             <constraint firstItem="b01-U8-8UC" firstAttribute="leading" secondItem="FV2-eK-L2S" secondAttribute="leading" id="4tk-cZ-fia"/>
                                             <constraint firstItem="aOv-uu-OQH" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.0175" id="4wn-RJ-cmA"/>
                                             <constraint firstItem="b01-U8-8UC" firstAttribute="centerY" secondItem="d6t-gN-AYK" secondAttribute="centerY" id="5QO-yj-Yxj"/>
+                                            <constraint firstItem="X6P-eW-Lzn" firstAttribute="top" secondItem="dSh-tM-ST1" secondAttribute="bottom" constant="10" id="5mP-yW-Pi6"/>
                                             <constraint firstItem="0kF-hZ-Rnh" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="6Tv-mQ-5YK"/>
                                             <constraint firstItem="FTo-tN-IYE" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="82q-AX-x6e"/>
                                             <constraint firstItem="dSh-tM-ST1" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.8" id="8gK-Vc-Rrk"/>
@@ -1473,6 +1490,7 @@
                                             <constraint firstAttribute="trailing" secondItem="e7p-cn-AH0" secondAttribute="trailing" constant="10" id="N2w-HR-x1h"/>
                                             <constraint firstItem="9cb-ll-zCf" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="O9I-AF-Iov"/>
                                             <constraint firstAttribute="height" constant="800" id="OvL-GO-59R"/>
+                                            <constraint firstItem="X6P-eW-Lzn" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.06" id="RKU-6i-6sc"/>
                                             <constraint firstItem="M8D-Z1-yQe" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="RgJ-qy-cwA"/>
                                             <constraint firstItem="xo0-J6-4XZ" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.7" id="SCY-0r-MLr"/>
                                             <constraint firstItem="dSh-tM-ST1" firstAttribute="top" secondItem="4SY-Ay-dh4" secondAttribute="bottom" constant="29.5" id="Sgv-sZ-BTl"/>
@@ -1497,10 +1515,11 @@
                                             <constraint firstItem="e7p-cn-AH0" firstAttribute="centerY" secondItem="FTo-tN-IYE" secondAttribute="centerY" id="hZT-56-y9i"/>
                                             <constraint firstItem="MDh-TW-z2a" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="hcm-sW-pGe"/>
                                             <constraint firstItem="xo0-J6-4XZ" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="1.165" id="hiX-1K-sbI"/>
+                                            <constraint firstItem="X6P-eW-Lzn" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" id="hra-Mb-95d"/>
                                             <constraint firstItem="rWH-oA-LEX" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="1.2" id="ipg-tZ-E3y"/>
                                             <constraint firstItem="Qw4-Z1-FVD" firstAttribute="leading" secondItem="4dg-nY-Ksa" secondAttribute="leading" id="j0d-LG-Meo"/>
                                             <constraint firstItem="4dg-nY-Ksa" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.018" id="jMg-A3-LQh"/>
-                                            <constraint firstItem="dSh-tM-ST1" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.25" id="kfn-Ur-ZZQ"/>
+                                            <constraint firstItem="dSh-tM-ST1" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.225" id="kfn-Ur-ZZQ"/>
                                             <constraint firstItem="Z9h-PK-XbN" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.001" id="mpR-XV-wyc"/>
                                             <constraint firstItem="0kF-hZ-Rnh" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.001" id="nXP-fa-t1q"/>
                                             <constraint firstItem="XGh-Wf-oFC" firstAttribute="centerY" secondItem="rAS-XN-RBY" secondAttribute="centerY" id="opD-p6-H81"/>
@@ -1510,6 +1529,7 @@
                                             <constraint firstItem="fSz-vv-q2J" firstAttribute="centerX" secondItem="v5G-Lc-v8M" secondAttribute="centerX" multiplier="0.8" id="tY8-u7-5U4"/>
                                             <constraint firstItem="rWH-oA-LEX" firstAttribute="centerY" secondItem="v5G-Lc-v8M" secondAttribute="centerY" multiplier="0.3" id="uHI-rQ-KGz"/>
                                             <constraint firstItem="M8D-Z1-yQe" firstAttribute="height" secondItem="v5G-Lc-v8M" secondAttribute="height" multiplier="0.001" id="wrU-ri-H1k"/>
+                                            <constraint firstItem="X6P-eW-Lzn" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.7" id="xEn-pu-OLi"/>
                                             <constraint firstItem="4SY-Ay-dh4" firstAttribute="top" secondItem="xo0-J6-4XZ" secondAttribute="bottom" constant="13.5" id="xEw-et-WjN"/>
                                             <constraint firstItem="d6t-gN-AYK" firstAttribute="top" secondItem="0kF-hZ-Rnh" secondAttribute="bottom" constant="37" id="xuN-4P-Rvt"/>
                                             <constraint firstItem="e7p-cn-AH0" firstAttribute="width" secondItem="v5G-Lc-v8M" secondAttribute="width" multiplier="0.2" id="yhi-Y4-0UK"/>
@@ -2398,7 +2418,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5T-lz-pdJ">
-                                <rect key="frame" x="34.5" y="81.5" width="44" height="22"/>
+                                <rect key="frame" x="48.5" y="81.5" width="16" height="22"/>
                                 <state key="normal" image="back_button">
                                     <color key="titleColor" red="0.34927457569999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -2407,14 +2427,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-7E-TaB">
-                                <rect key="frame" x="75.5" y="586" width="224" height="30"/>
+                                <rect key="frame" x="179.5" y="590" width="16" height="22"/>
                                 <state key="normal" image="add_dealer"/>
                                 <connections>
                                     <action selector="newDetailerAction:" destination="TVA-D0-yeN" eventType="touchUpInside" id="fy9-Y6-FM5"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-ij-v7l">
-                                <rect key="frame" x="0.0" y="169.5" width="375" height="396.5"/>
+                                <rect key="frame" x="0.0" y="169.5" width="375" height="400.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Dealer_List" rowHeight="48" id="wT8-m1-RUu" customClass="DealerTableViewCell" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -3609,7 +3629,7 @@ Please do so as soon as possible. Thanks.  </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7N-9C-PJo">
-                                <rect key="frame" x="10" y="33.5" width="44" height="22"/>
+                                <rect key="frame" x="10" y="33.5" width="16" height="22"/>
                                 <state key="normal" image="back_button">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -3731,21 +3751,21 @@ Please do so as soon as possible. Thanks.  </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiC-JW-ECC">
-                                <rect key="frame" x="10" y="33.5" width="44" height="22"/>
+                                <rect key="frame" x="10" y="33.5" width="16" height="22"/>
                                 <state key="normal" image="back_button"/>
                                 <connections>
                                     <action selector="backAction:" destination="XvY-St-yRt" eventType="touchUpInside" id="sea-Bg-BxH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g3-lz-Mcy">
-                                <rect key="frame" x="215.5" y="105" width="132" height="30"/>
+                                <rect key="frame" x="273.5" y="109" width="16" height="22"/>
                                 <state key="normal" image="add_contract"/>
                                 <connections>
                                     <action selector="addContractAction:" destination="XvY-St-yRt" eventType="touchUpInside" id="qJO-8U-KQC"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6bj-cp-6ni">
-                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Contract" rowHeight="78" id="yed-BL-Q8I" customClass="UserDetailContract_TableView" customModule="Cefi_Meetings" customModuleProvider="target">
@@ -3914,7 +3934,7 @@ Please do so as soon as possible. Thanks.  </string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ln2-Fy-Bw3">
-                                                    <rect key="frame" x="37.5" y="47" width="300" height="0.5"/>
+                                                    <rect key="frame" x="37.5" y="45" width="300" height="0.5"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
@@ -3925,9 +3945,9 @@ Please do so as soon as possible. Thanks.  </string>
                                                 <constraint firstItem="ln2-Fy-Bw3" firstAttribute="height" secondItem="54R-oT-cH3" secondAttribute="height" multiplier="0.007" id="QIU-Gy-fSP"/>
                                                 <constraint firstItem="sMm-rZ-kBm" firstAttribute="leading" secondItem="54R-oT-cH3" secondAttribute="leadingMargin" constant="35" id="QKd-gk-oCZ"/>
                                                 <constraint firstItem="DRu-jJ-ZXh" firstAttribute="centerY" secondItem="sMm-rZ-kBm" secondAttribute="centerY" id="Zzl-cu-eGs"/>
+                                                <constraint firstAttribute="bottom" secondItem="ln2-Fy-Bw3" secondAttribute="bottom" constant="10" id="ejs-Cx-BCl"/>
                                                 <constraint firstItem="ln2-Fy-Bw3" firstAttribute="width" secondItem="54R-oT-cH3" secondAttribute="width" multiplier="0.8" id="feB-ze-1Ia"/>
                                                 <constraint firstItem="sMm-rZ-kBm" firstAttribute="width" secondItem="54R-oT-cH3" secondAttribute="width" multiplier="0.5" id="k4a-5M-Sfd"/>
-                                                <constraint firstItem="ln2-Fy-Bw3" firstAttribute="centerY" secondItem="54R-oT-cH3" secondAttribute="centerY" multiplier="1.7" id="xvq-uj-UJB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
