@@ -60,6 +60,9 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     var reminderTime : Double = 0.0
     var contractAvailable = false
     
+    var segueStatus = false
+    var dateValue : meetingDate!
+    
     // ******** VARIABLE RELATED TO MAP *********
     var chosenPlace : meetup?
     var contractId : String?
@@ -367,6 +370,8 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
+       
+        
         
         if segue.identifier == "Contact"{
             
@@ -416,6 +421,12 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
         if contactTF.text?.isEmpty == false && contractTF.text?.isEmpty == false && purposeTF.text?.isEmpty == false && dateTF.text?.isEmpty == false && timeTF.text?.isEmpty == false  {
         
+            
+            if segueStatus == true{
+                dateValue.setDate(Date: "Meeting \(dateTF.text!)")
+            }
+            
+            
         let apiLink = appGlobalVariable.apiBaseURL+"visits/addvisitdetails"
         
         

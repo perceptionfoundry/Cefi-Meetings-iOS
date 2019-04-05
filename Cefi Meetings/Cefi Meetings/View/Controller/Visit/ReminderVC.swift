@@ -58,8 +58,11 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedCell = indexPath.row
+       
+        
+        
         if selectedCell == 0{
-            let timeStamp : Double = 0 * 60
+            let timeStamp : Double = 15 * 60
             
 //            print(timeStamp)
 //            print(reminderdescrip[0])
@@ -69,7 +72,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         else if selectedCell == 1{
             // min * (mill * sec)
-            let timeStamp : Double = 15 * 60 
+            let timeStamp : Double = 30 * 60
             
 //            print(timeStamp)
 //            print(reminderdescrip[1])
@@ -79,7 +82,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         }
         else if selectedCell == 2{
-            let timeStamp : Double = 30 * 60
+            let timeStamp : Double = 45 * 60
 //            print(time)
 
             reminderDele.reminderValue(minute : reminderdescrip[2] , value: timeStamp)
@@ -87,7 +90,7 @@ class ReminderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         else if selectedCell == 3{
             
-            let timeStamp : Double = 45 * 60
+            let timeStamp : Double = 60 * 60
 //            print(time)
 
             reminderDele.reminderValue(minute : reminderdescrip[3]  , value: timeStamp)

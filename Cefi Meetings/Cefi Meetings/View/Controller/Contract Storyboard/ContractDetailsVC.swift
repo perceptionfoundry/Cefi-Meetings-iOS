@@ -126,6 +126,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var EquipmentArraySource = [String]()
 
     
+    
+    var segueStatus = false
+    var contractValue : contractUpdate!
+    
     // ********** PROTOCOL FUNCTION ******************
     func typeName(name: String) {
         
@@ -458,6 +462,11 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBAction func editAction(_ sender: Any) {
 
+        
+        
+        if segueStatus == true{
+            contractValue.updating()
+        }
 
         
         

@@ -10,7 +10,35 @@ import UIKit
 import TTSegmentedControl
 import HCSStarRatingView
 
-class FollowUpVC: UIViewController {
+
+protocol contractUpdate{
+    func updating()
+}
+
+
+protocol meetingDate{
+    func setDate(Date:String)
+}
+
+
+class FollowUpVC: UIViewController, contractUpdate, meetingDate {
+   
+    
+    func updating() {
+        updateContractLabel.textColor = UIColor.white
+        contractImage.image = (UIImage(named: "contract_white"))
+        updateContractLabel.text = "Contract # \(meetingDetail!.contractNumber!)"
+        updateContractVIew.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+    }
+    
+    func setDate(Date: String) {
+        
+        setFollowUpLabel.textColor = UIColor.white
+        setFollowUpLabel.text! = Date
+        followUpImage.image = (UIImage(named: "followUP_white"))
+        followUpView.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+    }
+    
 
     
     @IBOutlet weak var submitButton: UIButton!
@@ -47,6 +75,15 @@ class FollowUpVC: UIViewController {
     @IBOutlet weak var agreeSwitch: UISwitch!
     @IBOutlet weak var contractErrorSwitch: UISwitch!
     @IBOutlet weak var otherSwitch: UISwitch!
+    
+    @IBOutlet weak var followUpView: Custom_View!
+    @IBOutlet weak var updateContractVIew: Custom_View!
+    
+    @IBOutlet weak var contractButton: UIButton!
+    @IBOutlet weak var followUpButton: UIButton!
+    
+    @IBOutlet weak var contractImage: UIImageView!
+    @IBOutlet weak var followUpImage: UIImageView!
     
     @IBOutlet weak var buttonView_Y_constraint: NSLayoutConstraint!
     
@@ -416,7 +453,10 @@ class FollowUpVC: UIViewController {
         
         let dest = segue.destination  as! ContractDetailsVC
         
+        
         dest.userContract = sender as! Contract
+        dest.segueStatus = true
+        dest.contractValue = self
     }
     
     
@@ -426,6 +466,9 @@ class FollowUpVC: UIViewController {
         let storyboard = UIStoryboard(name: "Visit", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "New_Visit") as! NewVisit
+        
+        vc.segueStatus = true
+        vc.dateValue = self
                 self.navigationController?.pushViewController(vc, animated: true)
 //        self.present(vc, animated: true, completion: nil)
         
