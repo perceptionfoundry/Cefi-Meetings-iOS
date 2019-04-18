@@ -206,7 +206,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         ratingStar.value = CGFloat(truncating: ratingValue)
         equipmentTF.text = userContract!.equipmentDetails?.joined(separator: ",")
-        amountTF.text = String(userContract!.equipmentCost!)
+        
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        let formattedNumber = numberFormatter.string(from: NSNumber(value:userContract!.equipmentCost!))
+        
+        
+        amountTF.text = String(formattedNumber!)
         
 //
         
@@ -940,9 +947,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     func saveData(){
         
+//        let numberFormatter = NumberFormatter()
+//        numberFormatter.numberStyle = .none
+//        let formattedNumber = numberFormatter.string(from: NSNumber(value:Int(amountTF.text!)!))
+//
+//        print(formattedNumber)
         
+        let amount = amountTF.text?.removeFormatAmount()
         
-//        print("SAVE")
+        print(amount)
         
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/updatecontract"
 
@@ -959,7 +972,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "contactId": userContract!.contactId!,
                                                 "contractNumber": userContract!.contractNumber!,
                                                 "contractStatus": contractTypeTF.text!.lowercased(),
-                                                "equipmentCost": amountTF.text!,
+                                                "equipmentCost": amount!,
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,
                                                 "everyThingCompleted": everythingImageURl ?? "",
@@ -1489,6 +1502,18 @@ extension String{
         formatter.dateFormat = "MM/dd/yyyy"
         return formatter.string(from: timestamp)
     }
+    
+    
+   
+        public func removeFormatAmount() -> Double {
+            let formatter = NumberFormatter()
+            formatter.locale = Locale.current
+            formatter.numberStyle = .currency
+            formatter.currencySymbol = Locale.current.currencySymbol
+            formatter.decimalSeparator = Locale.current.groupingSeparator
+            return formatter.number(from: self)?.doubleValue ?? 0.00
+        }
+ 
 }
 
 

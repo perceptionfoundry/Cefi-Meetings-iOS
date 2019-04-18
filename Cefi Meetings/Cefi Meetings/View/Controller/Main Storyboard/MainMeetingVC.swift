@@ -141,7 +141,6 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     func getMeeting(){
         
         
-        MeetingContent.removeAll()
         
         let timeValue = getStartAndEndDate()
 //        let currentDate = Date()
@@ -168,6 +167,8 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
             
             if status == true{
+                self.MeetingContent.removeAll()
+
                 self.MeetingContent = Result!
              
                 self.visitTable.reloadData()
@@ -208,7 +209,7 @@ class MainMeetingVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.navigationController?.navigationBar.isHidden = true
         
         self.tabBarController?.tabBar.isHidden = false
-        MeetingContent.removeAll()
+
         self.getMeeting()
     }
     

@@ -9,125 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
-            timestampString = "575923227.099104"
+            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/ContractDetailsVC.swift"
+            timestampString = "577299904.763773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "editUserProfile(API:TextFields:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cefi_Meetings.EditUserProfileViewModel.editUserProfile(API: Swift.String, TextFields: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Cefi_Meetings.Profile) -&gt; ()) -&gt; ()"
-                  moduleName = "Cefi Meetings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/ViewModel/EditUserProfileViewModel.swift"
-                  timestampString = "576173136.23445"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "504">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Cefi_Meetings.EditUserProfileViewModel.editUserProfile(API: Swift.String, TextFields: Swift.Dictionary&lt;Swift.String, Swift.String&gt;, completion: (Swift.Bool, Swift.Optional&lt;Swift.String&gt;, Cefi_Meetings.Profile) -&gt; ()) -&gt; ()"
-                  moduleName = "Cefi Meetings"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shahrukh/Documents/GitHub/Cefi-Meetings-iOS/Cefi%20Meetings/Cefi%20Meetings/ViewModel/EditUserProfileViewModel.swift"
-                  timestampString = "576173136.23628"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
-            timestampString = "575923227.09917"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "editUserProfile(API:TextFields:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
-            timestampString = "575923227.099216"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "editUserProfile(API:TextFields:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/EditUserProfileViewModel.swift"
-            timestampString = "575923227.099257"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "editUserProfile(API:TextFields:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Main Storyboard/userSettingVC.swift"
-            timestampString = "575989863.859126"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "editButtonAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/ContractTypeVC.swift"
-            timestampString = "576003157.348784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "typeOptionButtonAction(_:)"
+            startingLineNumber = "959"
+            endingLineNumber = "959"
+            landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cefi Meetings/View/Controller/Contract Storyboard/ContractDetailsVC.swift"
-            timestampString = "576173135.960096"
+            timestampString = "577299904.764161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1401"
-            endingLineNumber = "1401"
-            landmarkName = "removePicture(button:)"
+            startingLineNumber = "957"
+            endingLineNumber = "957"
+            landmarkName = "saveData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/ContractDetailsVC.swift"
-            timestampString = "576173135.9601769"
+            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/NewContractVC.swift"
+            timestampString = "577299904.764235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1435"
-            endingLineNumber = "1435"
-            landmarkName = "removePicture(button:)"
+            startingLineNumber = "815"
+            endingLineNumber = "815"
+            landmarkName = "createDatabaseRecord()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,45 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Main Storyboard/MainContactVC.swift"
-            timestampString = "576090579.053737"
+            filePath = "Cefi Meetings/View/Controller/Contract Storyboard/NewContractVC.swift"
+            timestampString = "577299904.765115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Visit/NewVisit.swift"
-            timestampString = "576173135.9602489"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "473"
-            endingLineNumber = "473"
-            landmarkName = "saveButtonAction(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/View/Controller/Visit/NewVisit.swift"
-            timestampString = "576173135.9603029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
-            landmarkName = "saveButtonAction(_:)"
+            startingLineNumber = "813"
+            endingLineNumber = "813"
+            landmarkName = "createDatabaseRecord()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

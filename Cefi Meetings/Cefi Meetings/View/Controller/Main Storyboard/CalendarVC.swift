@@ -46,6 +46,9 @@ class CalendarVC: UIViewController, FSCalendarDelegate{
         
         NaviBarDate.text = today
         
+    calendarView.appearance.headerTitleFont = UIFont(name: "Avenir", size: 16)
+        calendarView.appearance.weekdayFont = UIFont(name: "Avenir", size: 12)
+        calendarView.appearance.titleFont = UIFont(name: "Avenir", size: 14)
         
     }
     

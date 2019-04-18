@@ -1101,19 +1101,19 @@ We hope you have a great and productive day!</string>
                                                             <rect key="frame" x="20" y="10" width="335" height="148"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-FR-fMX">
-                                                                    <rect key="frame" x="10" y="19.5" width="167.5" height="20"/>
+                                                                    <rect key="frame" x="20" y="19.5" width="167.5" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" red="0.43988251686096191" green="0.69467568397521973" blue="0.21152102947235107" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M31-cu-IH7">
-                                                                    <rect key="frame" x="10" y="41.5" width="201" height="25"/>
+                                                                    <rect key="frame" x="20" y="41.5" width="201" height="25"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inD-1i-AYm">
-                                                                    <rect key="frame" x="10" y="68.5" width="234.5" height="20"/>
+                                                                    <rect key="frame" x="20" y="68.5" width="234.5" height="20"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1125,7 +1125,7 @@ We hope you have a great and productive day!</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhx-Mw-my2" customClass="HCSStarRatingView">
-                                                                    <rect key="frame" x="10" y="111" width="84" height="15"/>
+                                                                    <rect key="frame" x="20" y="111" width="84" height="15"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <color key="tintColor" red="0.34899999999999998" green="0.56815886500000001" blue="0.22732043269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1168,7 +1168,7 @@ We hope you have a great and productive day!</string>
                                                                 <constraint firstItem="cpu-FR-fMX" firstAttribute="width" secondItem="4RZ-3q-ICY" secondAttribute="width" multiplier="0.5" id="Kts-aR-Lyx"/>
                                                                 <constraint firstItem="cpu-FR-fMX" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="0.4" id="LWl-bF-8EO"/>
                                                                 <constraint firstAttribute="height" constant="148" id="MAd-of-qUh"/>
-                                                                <constraint firstItem="cpu-FR-fMX" firstAttribute="leading" secondItem="4RZ-3q-ICY" secondAttribute="leading" constant="10" id="Ztc-Z1-Eo4"/>
+                                                                <constraint firstItem="cpu-FR-fMX" firstAttribute="leading" secondItem="4RZ-3q-ICY" secondAttribute="leading" constant="20" id="Ztc-Z1-Eo4"/>
                                                                 <constraint firstItem="nhx-Mw-my2" firstAttribute="leading" secondItem="inD-1i-AYm" secondAttribute="leading" id="a2k-qy-NGK"/>
                                                                 <constraint firstItem="inD-1i-AYm" firstAttribute="top" secondItem="V7L-MU-dxk" secondAttribute="bottom" id="abu-WZ-eNW"/>
                                                                 <constraint firstItem="Era-kC-OM6" firstAttribute="centerY" secondItem="4RZ-3q-ICY" secondAttribute="centerY" multiplier="1.3" id="b4j-y1-Jfp"/>
@@ -1375,8 +1375,8 @@ We hope you have a great and productive day!</string>
                                             <action selector="addButtonAction:" destination="yce-ko-b6j" eventType="touchUpInside" id="A5b-9g-nFD"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-wy-yGl">
-                                        <rect key="frame" x="161.5" y="10" width="52" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-wy-yGl">
+                                        <rect key="frame" x="146.5" y="10" width="82.5" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1872,6 +1872,13 @@ We hope you have a great and productive day!</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2xY-Vh-aOr">
+                                                    <rect key="frame" x="335.5" y="6" width="41.5" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2xY-Vh-aOr" secondAttribute="height" multiplier="31:34" id="Yf6-3W-IrV"/>
+                                                        <constraint firstAttribute="height" constant="45" id="Yqz-0P-tNa"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16517" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydd-1O-A5Z">
                                                     <rect key="frame" x="272" y="18" width="75" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
@@ -1884,9 +1891,6 @@ We hope you have a great and productive day!</string>
                                                     <color key="textColor" red="0.059599362313747406" green="0.27664107084274292" blue="0.011619006283581257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2xY-Vh-aOr">
-                                                    <rect key="frame" x="352.5" y="23.5" width="7.5" height="9.5"/>
-                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eg9-E4-Pu3" customClass="Custom_View" customModule="Cefi_Meetings" customModuleProvider="target">
                                                     <rect key="frame" x="220.5" y="16.5" width="46.5" height="24"/>
                                                     <subviews>
@@ -1931,8 +1935,6 @@ We hope you have a great and productive day!</string>
                                                 <constraint firstItem="Ydd-1O-A5Z" firstAttribute="centerX" secondItem="6c4-ox-1Td" secondAttribute="centerX" multiplier="1.65" id="7RP-hE-P8V"/>
                                                 <constraint firstItem="Eg9-E4-Pu3" firstAttribute="centerX" secondItem="6c4-ox-1Td" secondAttribute="centerX" multiplier="1.3" id="C0E-XZ-FHI"/>
                                                 <constraint firstItem="2xY-Vh-aOr" firstAttribute="centerX" secondItem="6c4-ox-1Td" secondAttribute="centerX" multiplier="1.9" id="C5J-4g-D4S"/>
-                                                <constraint firstItem="2xY-Vh-aOr" firstAttribute="height" secondItem="6c4-ox-1Td" secondAttribute="height" multiplier="0.16" id="OzG-UV-VJv"/>
-                                                <constraint firstItem="2xY-Vh-aOr" firstAttribute="width" secondItem="6c4-ox-1Td" secondAttribute="width" multiplier="0.02" id="Tio-KD-P9B"/>
                                                 <constraint firstItem="Eg9-E4-Pu3" firstAttribute="centerY" secondItem="6c4-ox-1Td" secondAttribute="centerY" id="YMH-sv-oSS"/>
                                                 <constraint firstItem="Ydd-1O-A5Z" firstAttribute="centerY" secondItem="6c4-ox-1Td" secondAttribute="centerY" id="hiH-dV-hXU"/>
                                                 <constraint firstItem="Hay-vK-kUx" firstAttribute="centerY" secondItem="6c4-ox-1Td" secondAttribute="centerY" id="js3-KR-771"/>
@@ -2963,8 +2965,12 @@ I bet you’re still using Bootstrap too…</string>
                                                     <color key="textColor" red="0.059599362310000001" green="0.2766410708" blue="0.01161900628" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-Ji-pd7">
-                                                    <rect key="frame" x="352.5" y="23.5" width="7.5" height="9.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2QU-Ji-pd7">
+                                                    <rect key="frame" x="335.5" y="6" width="41.5" height="45"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2QU-Ji-pd7" secondAttribute="height" multiplier="31:34" id="YqN-QT-QSq"/>
+                                                        <constraint firstAttribute="height" constant="45" id="m1L-f8-Pq7"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -2973,9 +2979,7 @@ I bet you’re still using Bootstrap too…</string>
                                                 <constraint firstItem="HC1-qK-lDN" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="C48-Vy-FK4"/>
                                                 <constraint firstItem="Vrx-Ls-8zW" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.4" id="W5T-6D-b2Q"/>
                                                 <constraint firstItem="HC1-qK-lDN" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.25" id="Wax-ZK-Btt"/>
-                                                <constraint firstItem="2QU-Ji-pd7" firstAttribute="height" secondItem="Jlx-6l-VhX" secondAttribute="height" multiplier="0.16" id="XxF-w3-xZl"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="centerY" secondItem="Jlx-6l-VhX" secondAttribute="centerY" id="jNP-q3-nT4"/>
-                                                <constraint firstItem="2QU-Ji-pd7" firstAttribute="width" secondItem="Jlx-6l-VhX" secondAttribute="width" multiplier="0.02" id="n6H-IX-nQd"/>
                                                 <constraint firstItem="Vrx-Ls-8zW" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="0.5" id="wLp-zi-RAc"/>
                                                 <constraint firstItem="2QU-Ji-pd7" firstAttribute="centerX" secondItem="Jlx-6l-VhX" secondAttribute="centerX" multiplier="1.9" id="wcP-tN-uyC"/>
                                             </constraints>
@@ -3565,10 +3569,11 @@ I bet you’re still using Bootstrap too…</string>
         <image name="Visit_Button" width="54.5" height="63"/>
         <image name="X_button" width="14" height="14"/>
         <image name="add_button" width="83" height="30"/>
+        <image name="arrow" width="93" height="102"/>
         <image name="back_button" width="44" height="19"/>
         <image name="calendar" width="14" height="14"/>
         <image name="call_now_light" width="116" height="32"/>
-        <image name="cell_right_arrow" width="120" height="131"/>
+        <image name="cell_right_arrow" width="7.5" height="12"/>
         <image name="cell_right_arrow_gray" width="7.5" height="12"/>
         <image name="contact_tab" width="25" height="22"/>
         <image name="contract_tab" width="16" height="22"/>

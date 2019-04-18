@@ -26,6 +26,27 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contract" translatesAutoresizingMaskIntoConstraints="NO" id="IFp-Ag-5lE">
                                                 <rect key="frame" x="34.5" y="50.5" width="13.5" height="11"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Zbj-aF-udT">
+                                                <rect key="frame" x="326.5" y="336" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Zbj-aF-udT" secondAttribute="height" multiplier="31:34" id="GDj-sI-Ff9"/>
+                                                    <constraint firstAttribute="height" constant="45" id="iye-Bm-S5m"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ks6-QT-1ZP">
+                                                <rect key="frame" x="331" y="33.5" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ks6-QT-1ZP" secondAttribute="height" multiplier="31:34" id="6dd-dW-Ngw"/>
+                                                    <constraint firstAttribute="height" constant="45" id="bka-dx-szo"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="HKh-BJ-SvJ">
+                                                <rect key="frame" x="331" y="161.5" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="906-FF-87T"/>
+                                                    <constraint firstAttribute="width" secondItem="HKh-BJ-SvJ" secondAttribute="height" multiplier="31:34" id="ffP-kl-QHa"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S80-gM-mBF">
                                                 <rect key="frame" x="69" y="46.5" width="87.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
@@ -104,20 +125,6 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ks6-QT-1ZP">
-                                                <rect key="frame" x="347.5" y="51" width="8" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ks6-QT-1ZP" secondAttribute="height" multiplier="10:12" id="6dd-dW-Ngw"/>
-                                                    <constraint firstAttribute="height" constant="10" id="bka-dx-szo"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="HKh-BJ-SvJ">
-                                                <rect key="frame" x="347.5" y="179" width="8" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="10" id="906-FF-87T"/>
-                                                    <constraint firstAttribute="width" secondItem="HKh-BJ-SvJ" secondAttribute="height" multiplier="10:12" id="ffP-kl-QHa"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohE-iH-L04">
                                                 <rect key="frame" x="19" y="86.5" width="337.5" height="1.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -656,13 +663,6 @@
                                                     <constraint firstItem="VGN-QS-iLx" firstAttribute="centerY" secondItem="SOM-mw-9S6" secondAttribute="centerY" id="y37-Qo-VgL"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Zbj-aF-udT">
-                                                <rect key="frame" x="342.5" y="353.5" width="8.5" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Zbj-aF-udT" secondAttribute="height" multiplier="10:12" id="GDj-sI-Ff9"/>
-                                                    <constraint firstAttribute="height" constant="10" id="iye-Bm-S5m"/>
-                                                </constraints>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="NDJ-GV-WTG">
                                                 <rect key="frame" x="31.5" y="352" width="12" height="13.5"/>
                                             </imageView>
@@ -1211,8 +1211,29 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contract" translatesAutoresizingMaskIntoConstraints="NO" id="faF-DA-eQ4">
                                                 <rect key="frame" x="34.5" y="50.5" width="13.5" height="11"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS8-gr-RxZ">
-                                                <rect key="frame" x="69" y="46.5" width="87.5" height="19.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-ul-fOc">
+                                                <rect key="frame" x="326.5" y="336" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="9GK-Xo-5kq"/>
+                                                    <constraint firstAttribute="width" secondItem="NDv-ul-fOc" secondAttribute="height" multiplier="31:34" id="uHY-op-ISF"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="00y-dy-fLL">
+                                                <rect key="frame" x="331" y="161.5" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="00y-dy-fLL" secondAttribute="height" multiplier="31:34" id="JGm-GB-mhI"/>
+                                                    <constraint firstAttribute="height" constant="45" id="oZF-Jq-Yc3"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-sY-d3k">
+                                                <rect key="frame" x="331" y="33.5" width="41" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="lhy-nt-Lab"/>
+                                                    <constraint firstAttribute="width" secondItem="nsW-sY-d3k" secondAttribute="height" multiplier="31:34" id="qpC-cj-zt0"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS8-gr-RxZ">
+                                                <rect key="frame" x="64.5" y="46.5" width="96" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1230,13 +1251,13 @@
                                                 <rect key="frame" x="32" y="472" width="11" height="16"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contract #" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxi-h0-Loq">
-                                                <rect key="frame" x="69" y="106.5" width="66" height="20"/>
+                                                <rect key="frame" x="64.5" y="106.5" width="66" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXB-Rk-qpi">
-                                                <rect key="frame" x="69" y="174" width="37" height="20"/>
+                                                <rect key="frame" x="64.5" y="174" width="37" height="20"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.054644800719999997" green="0.25295370820000002" blue="0.011642963629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1289,20 +1310,6 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="nsW-sY-d3k">
-                                                <rect key="frame" x="347.5" y="51" width="8" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="10" id="lhy-nt-Lab"/>
-                                                    <constraint firstAttribute="width" secondItem="nsW-sY-d3k" secondAttribute="height" multiplier="10:12" id="qpC-cj-zt0"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="00y-dy-fLL">
-                                                <rect key="frame" x="347.5" y="179" width="8" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="00y-dy-fLL" secondAttribute="height" multiplier="10:12" id="JGm-GB-mhI"/>
-                                                    <constraint firstAttribute="height" constant="10" id="oZF-Jq-Yc3"/>
-                                                </constraints>
-                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7t-58-zJt">
                                                 <rect key="frame" x="19" y="86.5" width="337.5" height="1.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1841,13 +1848,6 @@
                                                     <constraint firstItem="8om-Mf-OBt" firstAttribute="leading" secondItem="uFp-xW-qOj" secondAttribute="leading" id="xzZ-p0-B4N"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-ul-fOc">
-                                                <rect key="frame" x="342.5" y="353.5" width="8.5" height="10"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="10" id="9GK-Xo-5kq"/>
-                                                    <constraint firstAttribute="width" secondItem="NDv-ul-fOc" secondAttribute="height" multiplier="10:12" id="uHY-op-ISF"/>
-                                                </constraints>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="date_purchase" translatesAutoresizingMaskIntoConstraints="NO" id="UVw-c4-qAP">
                                                 <rect key="frame" x="31.5" y="352" width="12" height="13.5"/>
                                             </imageView>
@@ -2121,8 +2121,8 @@
     <resources>
         <image name="$_button" width="6.5" height="11"/>
         <image name="Contract" width="17" height="13"/>
+        <image name="arrow" width="93" height="102"/>
         <image name="back_button" width="44" height="19"/>
-        <image name="cell_right_arrow" width="7.5" height="12"/>
         <image name="client" width="12" height="13.5"/>
         <image name="date_purchase" width="11" height="12"/>
         <image name="image_Cancel" width="23" height="23"/>

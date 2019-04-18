@@ -210,6 +210,9 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         let equipmentButton = UITapGestureRecognizer(target: self, action: #selector(equipmentSegue))
         self.equipmentTF.addGestureRecognizer(equipmentButton)
         
+        let contactButton = UITapGestureRecognizer(target: self, action: #selector(contactSegue))
+        self.contactTF.addGestureRecognizer(contactButton)
+        
         
         
         // CALL DATE FUNCTIONALITY
@@ -230,6 +233,23 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         missingText.text = ""
     }
     
+   
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if textField == amountTF{
+            
+            let amount = Int(amountTF.text!)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .currency
+            let formattedNumber = numberFormatter.string(from: NSNumber(value:amount!))
+            
+            
+            amountTF.text = String(formattedNumber!)
+            
+        }
+        
+        return true
+    }
     
     
     
@@ -787,6 +807,11 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
 
     func createDatabaseRecord(){
         
+        
+        
+        let amount = amountTF.text?.removeFormatAmount()
+        
+        print(amount)
 
         print(selectedContactID)
         
@@ -803,7 +828,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "contactId": selectedContactID!,
                                                 "contractNumber": "",
                                                 "contractStatus": contractTypeTF.text!.lowercased(),
-                                                "equipmentCost": amountTF.text!,
+                                                "equipmentCost": String(amount!),
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,
                                                 "everyThingCompleted": everythingImageURl ?? "",
@@ -1010,19 +1035,25 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     }
     
     
+    @objc func contactSegue(){
+        performSegue(withIdentifier: "Contact", sender: nil)
+
+        
+    }
+    
     // ****************** TEXT FIELD BEGIN EDIT  **********************
 
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        if textField == contactTF{
-
-            
-            performSegue(withIdentifier: "Contact", sender: nil)
-            
-
-        }
+//        if textField == contactTF{
+//
+//
+//            performSegue(withIdentifier: "Contact", sender: nil)
+//
+//
+//        }
         
         if textField == amountTF{
 //            amountTF.text = "$ "

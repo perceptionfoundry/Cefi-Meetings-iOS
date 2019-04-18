@@ -70,7 +70,6 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
     func getPending(){
         
         
-        pendingContent.removeAll()
         
        
         
@@ -90,6 +89,8 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
 //            print(Result.count)
             
             if status == true{
+                self.pendingContent.removeAll()
+
                 self.pendingContent = Result
                 
                 var totalReminder = 0

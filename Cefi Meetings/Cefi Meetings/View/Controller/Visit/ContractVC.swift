@@ -122,7 +122,7 @@ class ContractVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.statuslabel.text = tableContent[indexPath.row].contractStatus?.capitalizingFirstLetter()
         cell.numberLabel.text = tableContent[indexPath.row].contractNumber
         
-        if tableContent[indexPath.row].allPendingDocumentCounts! > 0{
+        if tableContent[indexPath.row].allPendingDocumentCounts! > 0 && tableContent[indexPath.row].contractStatus == "closed" {
             cell.alertView.isHidden = false
             cell.pendingQuantity.text = String(tableContent[indexPath.row].allPendingDocumentCounts!)
         }

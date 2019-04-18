@@ -534,7 +534,9 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     self.contactDelegate?.contactName(userName: wordValue[indexPath.row].contactName!, id :wordValue[indexPath.row].id!, ContractNumber : contractNUM, businessName: wordValue[indexPath.row].businessName!)
                     self.segueStatus = false
                 
-                    self.dismiss(animated: true, completion: nil)
+//                    self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
+
                 
                     
                 
@@ -585,9 +587,10 @@ class MainContactVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
    
     @IBAction func BackButtonAction(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
 
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     
