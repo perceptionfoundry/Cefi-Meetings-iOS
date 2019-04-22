@@ -11,7 +11,9 @@ import GoogleMaps
 import GooglePlaces
 
 
-class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate, ReminderDelegate{
+class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,contactdelegate,PurposeDelegate,contactContractDelegate, ReminderDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+  
+    
     
     
    
@@ -54,7 +56,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     var viewModel = NewMeetingViewModel()
     var selectedContactName = ""
     var selectedContactID = ""
-    var selectedPurpose = ""
+//    var selectedPurpose = ""
     var selectedContractID = ""
     var reminderOn = false
     var reminderTime : Double = 0.0
@@ -62,6 +64,16 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     var segueStatus = false
     var dateValue : meetingDate!
+    
+    
+    var pickerView = UIPickerView()
+    var purposePicker = ["Prospecting", "Follow Up"]
+    var reminderPicker = ["15 mins before ", "30 mins before ", "45 mins before ", "60 mins before "]
+    
+    var selectedPurpose : String?
+    var selectedReminder : String?
+    
+    var selectedTextField = ""
     
     // ******** VARIABLE RELATED TO MAP *********
     var chosenPlace : meetup?
@@ -131,6 +143,14 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        purposeTF.delegate = self
+        reminderTF.delegate = self
+
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        
         // Making navigation bar transparent
         naviBar.setBackgroundImage(UIImage(), for: .default)
         naviBar.shadowImage = UIImage()
@@ -170,11 +190,11 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         let contactButton = UITapGestureRecognizer(target: self, action: #selector(contactSegue))
         self.contactTF.addGestureRecognizer(contactButton)
         
-        let purposeButton = UITapGestureRecognizer(target: self, action: #selector(purposeSegue))
-        self.purposeTF.addGestureRecognizer(purposeButton)
-        
-        let reminderButton = UITapGestureRecognizer(target: self, action: #selector(reminderSegue))
-        self.reminderTF.addGestureRecognizer(reminderButton)
+//        let purposeButton = UITapGestureRecognizer(target: self, action: #selector(purposeSegue))
+//        self.purposeTF.addGestureRecognizer(purposeButton)
+//
+//        let reminderButton = UITapGestureRecognizer(target: self, action: #selector(reminderSegue))
+//        self.reminderTF.addGestureRecognizer(reminderButton)
         
         let contractButton = UITapGestureRecognizer(target: self, action: #selector(contractSegue))
         self.contractTF.addGestureRecognizer(contractButton)
@@ -348,6 +368,22 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             self.showTimePicker()
         }
             
+        else if textField == purposeTF{
+            
+            self.selectedTextField = "purpose"
+            self.purposeTF.inputView = self.pickerView
+            self.pickerView.reloadAllComponents()
+            
+        }
+            
+        else if textField == reminderTF{
+            self.selectedTextField = "reminder"
+
+            self.reminderTF.inputView = self.pickerView
+            self.pickerView.reloadAllComponents()
+            
+        }
+            
         
         else if textField == locationTF{
         let autoCompleteController = GMSAutocompleteViewController()
@@ -362,6 +398,22 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
 
     }
     
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+         if textField == purposeTF{
+            
+            self.purposeTF.inputView = nil
+            self.pickerView.reloadAllComponents()
+            
+        }
+            
+        else if textField == reminderTF{
+            
+            self.reminderTF.inputView = nil
+            self.pickerView.reloadAllComponents()
+            
+        }
+    }
     
     
     
@@ -414,6 +466,171 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
     }
   
+    
+    // PICKER DELEGATE FUNCTIONS
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if self.selectedTextField == "purpose"{
+            return purposePicker.count
+            
+        }
+        else {
+            return reminderPicker.count
+            
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if self.selectedTextField == "purpose"{
+            return purposePicker[row]
+            
+            
+        }
+        else {
+            return reminderPicker[row]
+            
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        
+        if self.selectedTextField == "purpose"{
+            self.selectedPurpose = purposePicker[row]
+            purposeTF.text = self.selectedPurpose
+            
+        }
+        else {
+//            self.selectedReminder = reminderPicker[row]
+//            reminderTF.text = self.selectedReminder
+            
+            
+            let selectedCell = row
+            
+            
+            
+            if selectedCell == 0{
+                let timeStamp : Double = 15 * 60
+                
+                //            print(timeStamp)
+                //            print(reminderdescrip[0])
+                
+                self.selectedReminder = reminderPicker[row]
+                reminderTF.text = self.selectedReminder
+                
+                if timeStamp == 0 {
+                    reminderOn = false
+                }
+                else{
+                    reminderTime = timeStamp
+                    
+                    
+                    
+                    reminderOn = true
+                }
+              
+            }
+            else if selectedCell == 1{
+                // min * (mill * sec)
+                let timeStamp : Double = 30 * 60
+                
+                //            print(timeStamp)
+                //            print(reminderdescrip[1])
+                
+                self.selectedReminder = reminderPicker[row]
+                reminderTF.text = self.selectedReminder
+                
+                if timeStamp == 0 {
+                    reminderOn = false
+                }
+                else{
+                    reminderTime = timeStamp
+                    
+                    
+                    
+                    reminderOn = true
+                }
+                
+                
+            }
+            else if selectedCell == 2{
+                let timeStamp : Double = 45 * 60
+                //            print(time)
+                
+                self.selectedReminder = reminderPicker[row]
+                reminderTF.text = self.selectedReminder
+                
+                if timeStamp == 0 {
+                    reminderOn = false
+                }
+                else{
+                    reminderTime = timeStamp
+                    
+                    
+                    
+                    reminderOn = true
+                }
+                
+            }
+            else if selectedCell == 3{
+                
+                let timeStamp : Double = 60 * 60
+                //            print(time)
+                
+                self.selectedReminder = reminderPicker[row]
+                reminderTF.text = self.selectedReminder
+                
+                
+                if timeStamp == 0 {
+                    reminderOn = false
+                }
+                else{
+                    reminderTime = timeStamp
+                    
+                    
+                    
+                    reminderOn = true
+                }
+            }
+            else if selectedCell == 4{
+                
+                let timeStamp : Double = 60 * 60
+                //            print(time)
+                
+                self.selectedReminder = reminderPicker[row]
+                reminderTF.text = self.selectedReminder
+                
+                
+                if timeStamp == 0 {
+                    reminderOn = false
+                }
+                else{
+                    reminderTime = timeStamp
+                    
+                    
+                    
+                    reminderOn = true
+                }
+                
+            }
+            
+            
+            
+        }
+        
+    }
+
+    
+    
+    // ********** SAVE BUTTON ACTION *******
    
     @IBAction func saveButtonAction(_ sender: Any) {
         

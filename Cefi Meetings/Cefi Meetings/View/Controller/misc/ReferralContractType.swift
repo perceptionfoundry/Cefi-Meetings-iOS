@@ -63,21 +63,21 @@ class ReferralContractType: UIViewController {
         
         if buttonTag == 0 {
             
-            self.typeDelegate?.typeName(name: "Deal")
+//            self.typeDelegate?.typeName(name: "Deal")
             self.navigationController?.popViewController(animated: true)
             
             
         }
         else if buttonTag == 1 {
-            self.typeDelegate?.typeName(name: "Open")
+//            self.typeDelegate?.typeName(name: "Open")
             self.navigationController?.popViewController(animated: true)
         }
         else if buttonTag == 2 {
-            self.typeDelegate?.typeName(name: "Closed")
+//            self.typeDelegate?.typeName(name: "Closed")
             self.navigationController?.popViewController(animated: true)
         }
         else if buttonTag == 3 {
-            self.typeDelegate?.typeName(name: "Dead")
+//            self.typeDelegate?.typeName(name: "Dead")
             self.navigationController?.popViewController(animated: true)
         }
         

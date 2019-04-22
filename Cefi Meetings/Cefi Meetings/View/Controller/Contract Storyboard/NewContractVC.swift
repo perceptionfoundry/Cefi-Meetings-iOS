@@ -14,7 +14,7 @@ import Alamofire
 
 // ******************* DECLARE PROTOCOL required by Contract ***************************
 protocol typeDelegate {
-    func typeName(name : String)
+    func typeName(labelName: String, serverName : String)
 }
 
 protocol contactdelegate {
@@ -117,7 +117,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var closingImageCount = 0
     var pageSignedImageCount = 0
     var everythingImageCount = 0
-
+    var ContactStatus = ""
     
     var businessTitle:String?
     var leadFlag = false
@@ -125,9 +125,14 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     var selectedCollection  = ""
     
     // ********** PROTOCOL FUNCTION ******************
-    func typeName(name: String) {
+    func typeName(labelName: String, serverName : String) {
         
-        self.contractTypeTF.text = name
+        self.ContactStatus = serverName
+        self.contractTypeTF.text = labelName
+        
+        
+        print(labelName)
+        print(serverName)
     }
     
     func contactName(userName: String, id : String, ContractNumber : Bool?, businessName: String) {
@@ -241,6 +246,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             let amount = Int(amountTF.text!)
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .currency
+            numberFormatter.currencySymbol = "$" 
             let formattedNumber = numberFormatter.string(from: NSNumber(value:amount!))
             
             
@@ -827,7 +833,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "closingFees": closingImageURl ?? "",
                                                 "contactId": selectedContactID!,
                                                 "contractNumber": "",
-                                                "contractStatus": contractTypeTF.text!.lowercased(),
+                                                "contractStatus": self.ContactStatus.lowercased(),
                                                 "equipmentCost": String(amount!),
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,

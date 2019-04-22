@@ -31,11 +31,13 @@ class ReferralNewContractVC: UIViewController, typeDelegate, contactdelegate, UI
     @IBOutlet weak var tagTF: UITextField!
     
     var tagArray = [String]()
-    
+    var ContractStatus = ""
     
     // ********** Implement protocol function ******************
-    func typeName(name: String) {
-        self.contractTypeTF.text = name
+    func typeName(labelName: String, serverName : String) {
+        
+        self.ContractStatus = serverName
+        self.contractTypeTF.text = labelName
     }
     
     func contactName(userName: String) {

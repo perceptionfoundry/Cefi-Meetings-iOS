@@ -18,6 +18,11 @@ protocol contactChange {
 
 
 class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate,contactdelegate{
+    func typeName(labelName: String, serverName: String) {
+        typeTF.text = serverName
+
+    }
+    
     
     
     func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {

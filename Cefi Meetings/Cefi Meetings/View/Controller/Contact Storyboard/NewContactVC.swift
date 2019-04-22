@@ -12,6 +12,11 @@ import GooglePlaces
 
 
 class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate, contactdelegate{
+    func typeName(labelName: String, serverName: String) {
+        typeTF.text = serverName
+
+    }
+    
     
     
     func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
@@ -45,9 +50,9 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     
     
     
-    func typeName(name: String) {
-        typeTF.text = name
-    }
+//    func typeName(name: String) {
+//        typeTF.text = name
+//    }
     
     
     
@@ -83,6 +88,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     @IBOutlet weak var locationTF: UITextField!
     
     
+    @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
     
     
     
@@ -115,7 +121,7 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        mainViewHeight.constant = 600
         
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.black,
@@ -427,6 +433,8 @@ extension NewContactVC: GMSAutocompleteViewControllerDelegate {
             
             self.mapView.addSubview(self.mapCameraView!)
             
+            self.mainViewHeight.constant = 800
+
             self.mapView.isHidden = false
             
         }

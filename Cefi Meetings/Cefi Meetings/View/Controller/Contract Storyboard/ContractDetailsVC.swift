@@ -118,7 +118,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var pageSignedImageCount = 0
     var everythingImageCount = 0
     
-    
+    var ContactStatus = ""
+
     
     var selectedCollection  = ""
     var taxArraySource = [String]()
@@ -131,9 +132,14 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var contractValue : contractUpdate!
     
     // ********** PROTOCOL FUNCTION ******************
-    func typeName(name: String) {
+    func typeName(labelName: String, serverName : String) {
         
-        self.contractTypeTF.text = name
+        self.ContactStatus = serverName
+        self.contractTypeTF.text = labelName
+        
+        
+        print(labelName)
+        print(serverName)
     }
     
    func contactName(userName: String, id: String, ContractNumber: Bool?, businessName: String) {
@@ -184,7 +190,29 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
 //        saveButton.setTitle("Edit", for: .normal)
         
-        contractTypeTF.text = userContract!.contractStatus?.capitalizingFirstLetter() ?? ""
+//        contractTypeTF.text = userContract!.contractStatus?.capitalizingFirstLetter() ?? ""
+        
+        self.ContactStatus = userContract?.contractStatus ?? ""
+        
+        if self.ContactStatus == "deal"{
+            contractTypeTF.text = "Opportunity"
+
+        }
+        
+        else if self.ContactStatus == "open"{
+            contractTypeTF.text = "Approved"
+        }
+        else if self.ContactStatus == "closed"{
+            contractTypeTF.text = "Booked"
+        }
+        else if self.ContactStatus == "dead"{
+            contractTypeTF.text = "Expired"
+        }
+        
+        
+        
+        
+        
         contractNumberTF.text = userContract!.contractNumber
         contactTF.text = userContract!.contactName
         
@@ -210,6 +238,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
+        numberFormatter.currencySymbol = "$"
+
         let formattedNumber = numberFormatter.string(from: NSNumber(value:userContract!.equipmentCost!))
         
         
@@ -391,6 +421,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                      closingSwitch.isUserInteractionEnabled = true
                      allpageSwitch.isUserInteractionEnabled = true
                     everythingSwitch.isUserInteractionEnabled = true
+        
+        
+        
+        taxCollectionView.reloadData()
+        bankCollectionView.reloadData()
+        equipmentCollectionVIew.reloadData()
+    
         
         
     }
@@ -971,7 +1008,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "closingFees": closingImageURl ?? "",
                                                 "contactId": userContract!.contactId!,
                                                 "contractNumber": userContract!.contractNumber!,
-                                                "contractStatus": contractTypeTF.text!.lowercased(),
+                                                "contractStatus": self.ContactStatus.lowercased(),
                                                 "equipmentCost": amount!,
                                                 "equipmentDetails": equipmentValue,
                                                 "equipmentImages": equipmentImageURl ,
@@ -1146,7 +1183,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
             
             
-            
+            // for Server
             if indexPath.row < equipmentImageURl.count{
                 
                 let imageURL = URL(string: equipmentImageURl[indexPath.row])
@@ -1163,6 +1200,8 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                 equipmentCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
                 }
             }
+                
+                // local
             else{
                 equipmentCell.docImage.image = equipmentImage[indexPath.row - self.equipmentImageURl.count]
                 

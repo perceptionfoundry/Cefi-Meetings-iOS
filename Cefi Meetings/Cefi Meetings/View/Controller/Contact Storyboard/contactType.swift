@@ -81,17 +81,22 @@ class contactType: UIViewController {
         
         if buttonTag == 0 {
             
-            self.typeDelegate?.typeName(name: "Lead")
+//            self.typeDelegate?.typeName(name: "Lead")
+            self.typeDelegate?.typeName(labelName: "", serverName: "Lead")
             self.navigationController?.popViewController(animated: true)
             
             
         }
         else if buttonTag == 1 {
-            self.typeDelegate?.typeName(name: "Client")
+//            self.typeDelegate?.typeName(name: "Client")
+            self.typeDelegate?.typeName(labelName: "", serverName: "Client")
+
             self.navigationController?.popViewController(animated: true)
         }
         else if buttonTag == 2 {
-            self.typeDelegate?.typeName(name: "Dealer")
+//            self.typeDelegate?.typeName(name: "Dealer")
+            self.typeDelegate?.typeName(labelName: "", serverName: "Dealer")
+
             self.navigationController?.popViewController(animated: true)
         }
       

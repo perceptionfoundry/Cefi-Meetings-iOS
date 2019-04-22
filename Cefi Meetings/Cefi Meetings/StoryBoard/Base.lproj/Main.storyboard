@@ -576,8 +576,8 @@
                                         <color key="textColor" red="0.12484120577573776" green="0.26858985424041748" blue="0.062648452818393707" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contracts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOA-Ut-o3Q">
-                                        <rect key="frame" x="41" y="240" width="62" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOA-Ut-o3Q">
+                                        <rect key="frame" x="32.5" y="240" width="78.5" height="19.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                         <color key="textColor" red="0.12484120579999999" green="0.26858985419999998" blue="0.062648452820000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1959,7 +1959,7 @@ We hope you have a great and productive day!</string>
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="Contracts" id="3u4-bO-Y4G">
+                                    <navigationItem title="Transactions" id="3u4-bO-Y4G">
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="zwL-6p-Uag">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="d7N-44-2XE">
                                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -2133,11 +2133,11 @@ We hope you have a great and productive day!</string>
             </objects>
             <point key="canvasLocation" x="6366" y="2217"/>
         </scene>
-        <!--Contracts-->
+        <!--Transactions-->
         <scene sceneID="mqS-lP-guA">
             <objects>
                 <navigationController storyboardIdentifier="Contract_Nav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ISr-8F-Ycl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contracts" image="contract_tab" id="fqe-cs-f27"/>
+                    <tabBarItem key="tabBarItem" title="Transactions" image="contract_tab" id="fqe-cs-f27"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="avh-5Q-fwQ">
