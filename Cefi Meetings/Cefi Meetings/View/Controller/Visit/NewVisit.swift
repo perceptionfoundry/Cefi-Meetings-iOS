@@ -68,10 +68,10 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
     
     var pickerView = UIPickerView()
     var purposePicker = ["Prospecting", "Follow Up"]
-    var reminderPicker = ["15 mins before ", "30 mins before ", "45 mins before ", "60 mins before "]
+    var reminderPicker = ["15 mins before", "30 mins before", "45 mins before", "60 mins before"]
     
-    var selectedPurpose : String?
-    var selectedReminder : String?
+    var selectedPurpose = "Prospecting"
+    var selectedReminder = "15 mins before"
     
     var selectedTextField = ""
     
@@ -156,7 +156,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         naviBar.shadowImage = UIImage()
         contactTF.text = selectedContactName
         contractTF.text = selectedContractID
-        purposeTF.text = selectedPurpose
+//        purposeTF.text = selectedPurpose
         
         
         
@@ -370,17 +370,23 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             
         else if textField == purposeTF{
             
+            self.pickerView.selectRow(0, inComponent: 0, animated: true)
+
+
             self.selectedTextField = "purpose"
             self.purposeTF.inputView = self.pickerView
             self.pickerView.reloadAllComponents()
+            self.purposeTF.text = "Prospecting"
             
         }
             
         else if textField == reminderTF{
             self.selectedTextField = "reminder"
 
+            self.pickerView.selectRow(0, inComponent: 0, animated: true)
             self.reminderTF.inputView = self.pickerView
             self.pickerView.reloadAllComponents()
+            self.reminderTF.text = "15 mins before"
             
         }
             
@@ -499,6 +505,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         
@@ -507,10 +514,12 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             self.selectedPurpose = purposePicker[row]
             purposeTF.text = self.selectedPurpose
             
+         
+
+            
         }
         else {
-//            self.selectedReminder = reminderPicker[row]
-//            reminderTF.text = self.selectedReminder
+          
             
             
             let selectedCell = row

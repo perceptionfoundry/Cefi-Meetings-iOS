@@ -98,7 +98,7 @@ class VisitDetailVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         
         print(iOSTimeStamp)
         
-        let dateString = meetingDetail!.addedDate!.split(separator: "T")
+        let dateString = meetingDetail!.dateInString!.split(separator: "T")
         
         
         
