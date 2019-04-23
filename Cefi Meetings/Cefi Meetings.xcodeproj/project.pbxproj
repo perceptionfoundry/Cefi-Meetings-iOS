@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7921120197EAE5B8BBC6F82 /* Pods_Cefi_Meetings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */; };
+		F2003404226EEB4200C16999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2003403226EEB4200C16999 /* Assets.xcassets */; };
 		F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB27222D6481001D8D60 /* PurposeVC.swift */; };
 		F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */; };
 		F212E4A6223BD58F00D618A8 /* PendingDocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */; };
@@ -67,7 +68,6 @@
 		F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */; };
 		F2AC6C8521F97F7D00BE90CA /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */; };
 		F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8621F97F7D00BE90CA /* Main.storyboard */; };
-		F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8921F97F7E00BE90CA /* Assets.xcassets */; };
 		F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AC6C8B21F97F7E00BE90CA /* LaunchScreen.storyboard */; };
 		F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */; };
 		F2B02EBD22001FF200E6C76D /* userSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B02EBC22001FF200E6C76D /* userSettingVC.swift */; };
@@ -116,6 +116,7 @@
 		9187FC2C94017E60EC85529B /* Pods_Cefi_Meetings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cefi_Meetings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D141CE366C62FEAFEDADC367 /* Pods-Cefi Meetings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.debug.xcconfig"; sourceTree = "<group>"; };
 		DF9352654B261A361D3946B3 /* Pods-Cefi Meetings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cefi Meetings.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cefi Meetings/Pods-Cefi Meetings.release.xcconfig"; sourceTree = "<group>"; };
+		F2003403226EEB4200C16999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F20ACB27222D6481001D8D60 /* PurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeVC.swift; sourceTree = "<group>"; };
 		F20ACB2A222D6E4B001D8D60 /* ContractVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractVC.swift; sourceTree = "<group>"; };
 		F212E4A5223BD58F00D618A8 /* PendingDocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingDocumentViewModel.swift; sourceTree = "<group>"; };
@@ -188,7 +189,6 @@
 		F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AC6C8421F97F7D00BE90CA /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		F2AC6C8721F97F7D00BE90CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F2AC6C8921F97F7E00BE90CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2AC6C8C21F97F7E00BE90CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2AC6C8E21F97F7E00BE90CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2B02EBA2200164B00E6C76D /* MainSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingsVC.swift; sourceTree = "<group>"; };
@@ -338,6 +338,7 @@
 				F2AC6C8021F97F7D00BE90CA /* Products */,
 				9544559DFE0CDDF7C7032B76 /* Pods */,
 				1877EF4FB7AE5C1C7E23EB0F /* Frameworks */,
+				F2003403226EEB4200C16999 /* Assets.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -360,7 +361,6 @@
 				F2AC6C9521F99BD500BE90CA /* ViewModel */,
 				F2AC6C9421F99BC300BE90CA /* View */,
 				F2AC6C8221F97F7D00BE90CA /* AppDelegate.swift */,
-				F2AC6C8921F97F7E00BE90CA /* Assets.xcassets */,
 				F2AC6C8B21F97F7E00BE90CA /* LaunchScreen.storyboard */,
 				F2AC6C8E21F97F7E00BE90CA /* Info.plist */,
 			);
@@ -588,8 +588,8 @@
 				F2B02EC422002C6B00E6C76D /* VisitTableViewCell.xib in Resources */,
 				F224F0FF22033EFD00DD332F /* Visit.storyboard in Resources */,
 				F2AC6C8D21F97F7E00BE90CA /* LaunchScreen.storyboard in Resources */,
+				F2003404226EEB4200C16999 /* Assets.xcassets in Resources */,
 				F288347221FED4E700CA09C6 /* Contact.storyboard in Resources */,
-				F2AC6C8A21F97F7E00BE90CA /* Assets.xcassets in Resources */,
 				F2AC6C8821F97F7D00BE90CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

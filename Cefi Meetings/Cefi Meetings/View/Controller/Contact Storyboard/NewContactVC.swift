@@ -121,6 +121,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        emailTF.delegate = self
         mainViewHeight.constant = 600
         
         self.navigationController?.navigationBar.titleTextAttributes =
@@ -264,6 +266,23 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     }
     
     
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        if emailTF.text?.count == 25{
+            
+            
+            emailTF.endEditing(true)
+            let alert = UIAlertController(title: "Alert", message: "You have entered INVALID email address", preferredStyle: .alert)
+            let dismiss = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+            alert.addAction(dismiss)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        return true
+    }
     
     
     

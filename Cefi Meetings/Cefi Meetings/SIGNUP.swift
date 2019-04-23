@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SIGNUP: UIViewController {
+class SIGNUP: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -29,12 +29,16 @@ class SIGNUP: UIViewController {
         self.apiLink = "\(appGlobalVariable.apiBaseURL)auth/register"
         
 
+        emailTF.delegate = self
         
         
         
     }
     
     
+    
+    
+    // ********** EMAIL VALIDATION *****************
     
     
     func isValidEmail(emailID:String) -> Bool {
@@ -42,6 +46,29 @@ class SIGNUP: UIViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: emailID)
     }
+    
+    
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        if emailTF.text?.count == 25{
+            
+            
+            emailTF.endEditing(true)
+            let alert = UIAlertController(title: "Alert", message: "You have entered INVALID email address", preferredStyle: .alert)
+            let dismiss = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+            alert.addAction(dismiss)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+        return true
+    }
+    
+    
+  
     
 
     @IBAction func doneAction(_ sender: Any) {

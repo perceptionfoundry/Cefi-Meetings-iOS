@@ -24,7 +24,11 @@ class EmailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
+    
+    
+   
     
     @IBAction func submitButtonAction(_ sender: Any) {
         
@@ -36,6 +40,9 @@ class EmailVC: UIViewController {
         
         //   Verifying both textfield is not left empty
         if emailTF.text?.isEmpty == false {
+            
+           
+            
             
             let apilink = appGlobalVariable.apiBaseURL+"forgetpassword"
             
@@ -79,6 +86,8 @@ class EmailVC: UIViewController {
                 
                 
             }
+            
+     
             
         }
             
