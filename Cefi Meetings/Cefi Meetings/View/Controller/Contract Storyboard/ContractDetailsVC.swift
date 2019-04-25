@@ -39,9 +39,20 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     
     @IBOutlet weak var activityView: Custom_View!
     @IBOutlet weak var mainVIew: UIView!
+    
+    
+    
     @IBOutlet weak var taxCollectionView: UICollectionView!
     @IBOutlet weak var bankCollectionView: UICollectionView!
     @IBOutlet weak var equipmentCollectionVIew: UICollectionView!
+    @IBOutlet weak var insuranceCollectionVIew: UICollectionView!
+    @IBOutlet weak var signorCollectionVIew: UICollectionView!
+    @IBOutlet weak var invoiceCollectionVIew: UICollectionView!
+    @IBOutlet weak var closingCollectionVIew: UICollectionView!
+    @IBOutlet weak var allPageCollectionVIew: UICollectionView!
+    @IBOutlet weak var everyCollectionVIew: UICollectionView!
+    
+    
     @IBOutlet weak var contractTypeTF: UITextField!
     @IBOutlet weak var contractNumberTF: UITextField!
     @IBOutlet weak var contactTF: UITextField!
@@ -51,21 +62,35 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var equipmentTF: UITextField!
     @IBOutlet weak var missingText: UITextView!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var taxView: UIView!
-    @IBOutlet weak var taxViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var bankStateView: UIView!
-    @IBOutlet weak var bankViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var taxView: UIView!
     @IBOutlet weak var equipmentView: UIView!
+    @IBOutlet weak var insuranceStateView: UIView!
+    @IBOutlet weak var signorStateView: UIView!
+    @IBOutlet weak var invoiceStateView: UIView!
+    @IBOutlet weak var closingStateView: UIView!
+    @IBOutlet weak var allPageStateView: UIView!
+    @IBOutlet weak var everythingStateView: UIView!
+    
+    
+   
+    @IBOutlet weak var taxViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var bankViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var insuranceViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var signorViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var invoiceViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var closingViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var allPageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var everythingViewHeight: NSLayoutConstraint!
     @IBOutlet weak var equipmentViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var taxSwitch: UISwitch!
-    @IBOutlet weak var bankSwitch: UISwitch!
-    @IBOutlet weak var equipmentSwitch: UISwitch!
-    @IBOutlet weak var insuranceSwitch: UISwitch!
-    @IBOutlet weak var signorSwitch: UISwitch!
-    @IBOutlet weak var invoiceSwitch: UISwitch!
-    @IBOutlet weak var closingSwitch: UISwitch!
-    @IBOutlet weak var allpageSwitch: UISwitch!
-    @IBOutlet weak var everythingSwitch: UISwitch!
+
+    
+    
+    
+   
+    
+    
     @IBOutlet var addPictureButton: [UIButton]!
 
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
@@ -89,25 +114,32 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var tagArray = [String]()
     var editStatus = false
     var date = Date()
+    
+    
     var taxImage = [UIImage]()
     var bankImage = [UIImage]()
     var equipmentImage = [UIImage]()
+    var insuranceImage = [UIImage]()
+    var signorImage = [UIImage]()
+    var invoiceImage = [UIImage]()
+    var closingImage = [UIImage]()
+    var pageSignedImage = [UIImage]()
+    var everythingImage = [UIImage]()
     
-    var insuranceImage : UIImage?
-    var signorImage : UIImage?
-    var invoiceImage : UIImage?
-    var closingImage : UIImage?
-    var pageSignedImage : UIImage?
-    var everythingImage : UIImage?
+    
+    
     var taxImageURl = [String]()
     var bankImageURl = [String]()
     var equipmentImageURl = [String]()
-    var insuranceImageURl :String?
-    var signorImageURl : String?
-    var invoiceImageURl : String?
-    var closingImageURl : String?
-    var pageSignedImageURl : String?
-    var everythingImageURl : String?
+    var insuranceImageURl  = [String]()
+    var signorImageURl  = [String]()
+    var invoiceImageURl  = [String]()
+    var closingImageURl  = [String]()
+    var pageSignedImageURl  = [String]()
+    var everythingImageURl  = [String]()
+    
+    
+    
     var selectedImagebuttonINdex = 0
     var totalImageAdded = 0
     var uploadCount = 0
@@ -125,6 +157,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     var taxArraySource = [String]()
     var BankArraySource = [String]()
     var EquipmentArraySource = [String]()
+    var InsuranceArraySource = [String]()
+    var SignorArraySource = [String]()
+    var InvoiceArraySource = [String]()
+    var ClosingArraySource = [String]()
+    var AllPagingArraySource = [String]()
+    var EvertThingArraySource = [String]()
 
     
     
@@ -167,15 +205,25 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         activityView.isHidden = true
         saveButton.isHidden = true
 
+        mainViewHeight.constant = 1200
+
+        
+        
         
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0
         equipmentViewHeight.constant = 0
+        insuranceViewHeight.constant = 0
+        signorViewHeight.constant = 0
+        invoiceViewHeight.constant = 0
+        closingViewHeight.constant = 0
+        allPageViewHeight.constant = 0
+        everythingViewHeight.constant = 0
         
-        mainViewHeight.constant = 1200
 
         
         // Making navigation bar transparent
@@ -218,15 +266,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         selectedContactID = userContract!.id
         
-        taxSwitch.setOn(userContract!.isTaxReturnsAvailable!, animated: true)
-        bankSwitch.setOn(userContract!.isBankStatementAvailable!, animated: true)
-        equipmentSwitch.setOn(userContract!.isEquipmentImagesAvailable!, animated: true)
-       insuranceSwitch.setOn(userContract!.isInsuranceAvailable!, animated: true)
-         signorSwitch.setOn(userContract!.isSignorAvailable!, animated: true)
-      invoiceSwitch.setOn(userContract!.isInvoiceAvailable!, animated: true)
-       closingSwitch.setOn(userContract!.isClosingFees!, animated: true)
-    allpageSwitch.setOn(userContract!.isAllPagesSigned!, animated: true)
-         everythingSwitch.setOn(userContract!.isEverythingCompleted!, animated: true)
+//        taxSwitch.setOn(userContract!.isTaxReturnsAvailable!, animated: true)
+//        bankSwitch.setOn(userContract!.isBankStatementAvailable!, animated: true)
+//        equipmentSwitch.setOn(userContract!.isEquipmentImagesAvailable!, animated: true)
+//       insuranceSwitch.setOn(userContract!.isInsuranceAvailable!, animated: true)
+//         signorSwitch.setOn(userContract!.isSignorAvailable!, animated: true)
+//      invoiceSwitch.setOn(userContract!.isInvoiceAvailable!, animated: true)
+//       closingSwitch.setOn(userContract!.isClosingFees!, animated: true)
+//    allpageSwitch.setOn(userContract!.isAllPagesSigned!, animated: true)
+//         everythingSwitch.setOn(userContract!.isEverythingCompleted!, animated: true)
         
         guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
 
@@ -260,15 +308,9 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         let dateValue = formatter.string(from: dateFloat)
         print(dateValue)
         purchaseDateTF.text = dateValue
-        taxSwitch.isOn = userContract!.isTaxReturnsAvailable!
-        bankSwitch.isOn = userContract!.isBankStatementAvailable!
-        equipmentSwitch.isOn = userContract!.isEquipmentImagesAvailable!
-        insuranceSwitch.isOn = userContract!.isInsuranceAvailable!
-        signorSwitch.isOn = userContract!.isSignorAvailable!
-        invoiceSwitch.isOn = userContract!.isInvoiceAvailable!
-        closingSwitch.isOn = userContract!.isClosingFees!
-        allpageSwitch.isOn = userContract!.isAllPagesSigned!
-        everythingSwitch.isOn = userContract!.isEverythingCompleted!
+        
+   
+        
         missingText.text = userContract!.missingText
         equipmentValue = (userContract!.equipmentDetails!)
         
@@ -282,12 +324,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 //        print(userContract?.equipmentImages!)
 
         
-         insuranceImageURl = userContract?.insuranceCertificate!
-         signorImageURl = userContract?.signorAndSecretaryId!
-         invoiceImageURl = userContract?.invoice!
-         closingImageURl = userContract?.closingFees!
-        pageSignedImageURl = userContract?.allPagesSignedImage!
-         everythingImageURl = userContract?.everyThingCompleted!
+//         insuranceImageURl = (userContract?.insuranceCertificate!)!
+//         signorImageURl = (userContract?.signorAndSecretaryId!)!
+//         invoiceImageURl =( userContract?.invoice!)!
+//         closingImageURl = (userContract?.closingFees!)!
+//        pageSignedImageURl = (userContract?.allPagesSignedImage!)!
+//         everythingImageURl = (userContract?.everyThingCompleted!)!
         
         
         if taxImageURl.count > 0 {
@@ -312,12 +354,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         
-        if everythingSwitch.isOn {
-            missingTextView.isHidden = true
-        }
-        else{
-            missingTextView.isHidden = false
-        }
+       
         
         
         
@@ -333,24 +370,56 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         
+        taxCollectionView.delegate = self
+        taxCollectionView.dataSource = self
+        taxCollectionView.reloadData()
         
+        
+        bankCollectionView.delegate = self
+        bankCollectionView.dataSource = self
+        bankCollectionView.reloadData()
+        
+        
+        
+        equipmentCollectionVIew.delegate = self
+        equipmentCollectionVIew.dataSource = self
+        equipmentCollectionVIew.reloadData()
+        
+        
+        insuranceCollectionVIew.delegate = self
+        insuranceCollectionVIew.dataSource = self
+        insuranceCollectionVIew.reloadData()
+        
+        
+        signorCollectionVIew.delegate = self
+        signorCollectionVIew.dataSource = self
+        signorCollectionVIew.reloadData()
+        
+        
+        
+        invoiceCollectionVIew.delegate = self
+        invoiceCollectionVIew.dataSource = self
+        invoiceCollectionVIew.reloadData()
+        
+        
+        closingCollectionVIew.delegate = self
+        closingCollectionVIew.dataSource = self
+        closingCollectionVIew.reloadData()
+        
+        allPageCollectionVIew.delegate = self
+        allPageCollectionVIew.dataSource = self
+        allPageCollectionVIew.reloadData()
+        
+        
+        everyCollectionVIew.delegate = self
+        everyCollectionVIew.dataSource = self
+        everyCollectionVIew.reloadData()
        
         
         
       
         
-        taxCollectionView.delegate = self
-        taxCollectionView.dataSource = self
-        
-        bankCollectionView.delegate = self
-        bankCollectionView.dataSource = self
-        
-        equipmentCollectionVIew.delegate = self
-        equipmentCollectionVIew.dataSource = self
-        
-        taxCollectionView.reloadData()
-        bankCollectionView.reloadData()
-        equipmentCollectionVIew.reloadData()
+       
         
         
         purchaseDateTF.delegate = self
@@ -412,15 +481,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
                      equipmentView.isUserInteractionEnabled = true
         
-                    taxSwitch.isUserInteractionEnabled = true
-                   bankSwitch.isUserInteractionEnabled = true
-                   equipmentSwitch.isUserInteractionEnabled = true
-                    insuranceSwitch.isUserInteractionEnabled = true
-                     signorSwitch.isUserInteractionEnabled = true
-                     invoiceSwitch.isUserInteractionEnabled = true
-                     closingSwitch.isUserInteractionEnabled = true
-                     allpageSwitch.isUserInteractionEnabled = true
-                    everythingSwitch.isUserInteractionEnabled = true
+        
         
         
         
@@ -537,212 +598,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             // --------------- INSURANCE IMAGE UPLOAD ---------------------
             
-            
-            if let sendImage = insuranceImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
+            if insuranceImage.isEmpty == false {
                 
                 
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                for indexNumber in 0...(insuranceImage.count - 1){
                     
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.insuranceImageURl = imageURL!
-                    
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            
-            
-            
-            
-            // ------------ SIGNOR IMAGE UPLOAD ---------------
-            if let sendImage = signorImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
-                
-                
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-                    
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.signorImageURl = imageURL!
-                    
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            //------------ INVOICE IMAGE UPLOAD ---------------------
-            if let sendImage = invoiceImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
-                
-                
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-                    
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.invoiceImageURl = imageURL!
-                    
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            
-            //------------- CLOSING IMAGE UPLOAD -----------------------
-            if let sendImage = closingImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
-                
-                
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-                    
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.closingImageURl = imageURL!
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            //------------ PAGE SIGNED IMAGE UPLOAD ------------
-            if let sendImage = pageSignedImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
-                
-                
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-                    
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.pageSignedImageURl = imageURL!
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            
-            
-            
-            //------------- EVERYTING IMAGE UPLOAD -------------------
-            if let sendImage = everythingImage {
-                
-                let image = sendImage
-                let imgData = image.jpegData(compressionQuality: 0.5)
-                let param = ["image":image]
-                
-                
-                uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-                    
-                    
-                    self.uploadCount += successCount!
-                    print("*****************")
-                    
-//                    print(imageURL)
-                    self.everythingImageURl = imageURL!
-                    
-                    print("*****************")
-                    if self.uploadCount == self.totalImageAdded{
-                        print("DONE")
-                        self.saveData()
-
-                    }
-                    else{
-                        print("waiting")
-                    }
-                }
-                
-            }
-            
-            
-            
-            
-            
-            //--------------- TAX IMAGE UPLOAD ----------------------
-            
-            if taxImage.isEmpty == false {
-                
-                for indexNumber in 0...(taxImage.count - 1){
-                    
-                    let image = taxImage[indexNumber]
+                    let image = insuranceImage[indexNumber]
                     let imgData = image.jpegData(compressionQuality: 0.5)
                     let param = ["image":image]
                     
@@ -753,8 +614,79 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                         self.uploadCount += successCount!
                         print("*****************")
                         
-//                        print(imageURL)
-                        self.taxImageURl.append(imageURL!)
+                        //                print(imageURL)
+                        self.insuranceImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+                            
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            //       if let sendImage = insuranceImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            ////                print("*****************")
+            ////
+            ////                print(imageURL)
+            //                self.insuranceImageURl = imageURL!
+            //
+            //
+            ////                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            
+            
+            
+            
+            // ------------ SIGNOR IMAGE UPLOAD ---------------
+            
+            if signorImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(signorImage.count - 1){
+                    
+                    let image = signorImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.signorImageURl.append(imageURL!)
                         
                         print("*****************")
                         if self.uploadCount == self.totalImageAdded{
@@ -769,6 +701,392 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                     
                 }
             }
+            
+            
+            
+            
+            //        if let sendImage = signorImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.signorImageURl = imageURL!
+            //
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            //------------ INVOICE IMAGE UPLOAD ---------------------
+            
+            
+            if invoiceImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(invoiceImage.count - 1){
+                    
+                    let image = invoiceImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.invoiceImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            //        if let sendImage = invoiceImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.invoiceImageURl = imageURL!
+            //
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            
+            //------------- CLOSING IMAGE UPLOAD -----------------------
+            
+            
+            if closingImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(closingImage.count - 1){
+                    
+                    let image = closingImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.closingImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            //        if let sendImage = closingImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.closingImageURl = imageURL!
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            //------------ PAGE SIGNED IMAGE UPLOAD ------------
+            
+            if pageSignedImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(pageSignedImage.count - 1){
+                    
+                    let image = pageSignedImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.pageSignedImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            
+            //        if let sendImage = pageSignedImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.pageSignedImageURl = imageURL!
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            
+            
+            
+            //------------- EVERYTING IMAGE UPLOAD -------------------
+            
+            
+            if everythingImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(everythingImage.count - 1){
+                    
+                    let image = everythingImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.everythingImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            
+            //        if let sendImage = everythingImage {
+            //
+            //            let image = sendImage
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //            let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.everythingImageURl = imageURL!
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                    print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            
+            
+            
+            
+            
+            //--------------- TAX IMAGE UPLOAD ----------------------
+            
+            
+            if taxImage.isEmpty == false {
+                
+                
+                for indexNumber in 0...(taxImage.count - 1){
+                    
+                    let image = taxImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.taxImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.saveData()
+
+                            
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
+                }
+            }
+            
+            
+            
+            //        if taxImage.isEmpty == false {
+            //
+            //        for indexNumber in 0...(taxImage.count - 1){
+            //
+            //        let image = taxImage[indexNumber]
+            //            let imgData = image.jpegData(compressionQuality: 0.5)
+            //        let param = ["image":image]
+            //
+            //
+            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            //
+            //
+            //                self.uploadCount += successCount!
+            //                print("*****************")
+            //
+            ////                print(imageURL)
+            //                self.taxImageURl.append(imageURL!)
+            //
+            //                print("*****************")
+            //                if self.uploadCount == self.totalImageAdded{
+            //                print("DONE")
+            //                    self.createDatabaseRecord()
+            //
+            //                }
+            //                else{
+            //                    print("waiting")
+            //                }
+            //            }
+            //
+            //        }
+            //        }
             
             
             
@@ -792,7 +1110,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                         self.uploadCount += successCount!
                         print("*****************")
                         
-//                        print(imageURL)
+                        //                print(imageURL)
                         self.bankImageURl.append(imageURL!)
                         
                         print("*****************")
@@ -831,7 +1149,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                         self.uploadCount += successCount!
                         print("*****************")
                         
-//                        print(imageURL)
+                        //                print(imageURL)
                         
                         self.equipmentImageURl.append(imageURL!)
                         
@@ -906,69 +1224,82 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         switch self.selectedImagebuttonINdex {
         case 0:
-            taxImage.append(Image)
             taxArraySource.append("LOCAL")
 
-            taxSwitch.isOn = true
-            
-            
+            taxImage.append(Image)
             self.taxCollectionView.reloadData()
             taxViewHeight.constant = 90
-//            mainViewHeight.constant += 100
+            mainViewHeight.constant += 100
 
             
             
         case 1:
-            bankImage.append(Image)
             BankArraySource.append("LOCAL")
 
+            bankImage.append(Image)
             bankCollectionView.reloadData()
-            bankSwitch.isOn = true
             bankViewHeight.constant = 90
-//            mainViewHeight.constant += 100
+            mainViewHeight.constant += 100
 
             
             
         case 2:
-            equipmentImage.append(Image)
             EquipmentArraySource.append("LOCAL")
 
+            equipmentImage.append(Image)
             equipmentCollectionVIew.reloadData()
-            equipmentSwitch.isOn = true
             equipmentViewHeight.constant = 90
-//            mainViewHeight.constant += 100
+            mainViewHeight.constant += 100
 
             
             
         case 3:
-            insuranceImage = Image
-            insuranceImageCount = 1
-            insuranceSwitch.isOn = true
+            InsuranceArraySource.append("LOCAL")
+            
+            insuranceImage.append(Image)
+            insuranceCollectionVIew.reloadData()
+            insuranceViewHeight.constant = 90
+            mainViewHeight.constant += 100
             
         case 4:
-            signorImage = Image
-            signorImageCount = 1
-            signorSwitch.isOn = true
+            SignorArraySource.append("LOCAL")
+
+            signorImage.append(Image)
+            signorCollectionVIew.reloadData()
+            signorViewHeight.constant = 90
+            mainViewHeight.constant += 100
             
         case 5:
-            invoiceImage = Image
-            invoiceSwitch.isOn = true
-            invoiceImageCount = 1
+            InvoiceArraySource.append("LOCAL")
+
+            invoiceImage.append(Image)
+            invoiceCollectionVIew.reloadData()
+            invoiceViewHeight.constant = 90
+            mainViewHeight.constant += 100
             
         case 6:
-            closingImage = Image
-            closingSwitch.isOn = true
-            closingImageCount = 1
+            ClosingArraySource.append("LOCAL")
+
+            closingImage.append(Image)
+            closingCollectionVIew.reloadData()
+            closingViewHeight.constant = 90
+            mainViewHeight.constant += 100
             
         case 7:
-            pageSignedImage = Image
-            allpageSwitch.isOn = true
-            pageSignedImageCount = 1
+            AllPagingArraySource.append("LOCAL")
+
+            pageSignedImage.append(Image)
+            allPageCollectionVIew.reloadData()
+            allPageViewHeight.constant = 90
+            mainViewHeight.constant += 100
             
         case 8:
-            everythingImage = Image
-            everythingSwitch.isOn = true
-            everythingImageCount = 1
+            EvertThingArraySource.append("LOCAL")
+
+            everythingImage.append(Image)
+            everyCollectionVIew.reloadData()
+            everythingViewHeight.constant = 90
+            mainViewHeight.constant += 100
         default:
             return
         }
@@ -1015,15 +1346,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                                                 "everyThingCompleted": everythingImageURl ?? "",
                                                 "insuranceCertificate": insuranceImageURl ?? "",
                                                 "invoice": invoiceImageURl ?? "",
-                                                "isAllPagesSigned": String(allpageSwitch.isOn),
-                                                "isBankStatementAvailable": String(bankSwitch.isOn),
-                                                "isClosingFees": String(closingSwitch.isOn),
-                                                "isEquipmentImagesAvailable": String(equipmentSwitch.isOn),
-                                                "isEverythingCompleted": String(everythingSwitch.isOn),
-                                                "isInsuranceAvailable": String(insuranceSwitch.isOn),
-                                                "isInvoiceAvailable": String(invoiceSwitch.isOn),
-                                                "isSignorAvailable": String(signorSwitch.isOn),
-                                                "isTaxReturnsAvailable": String(taxSwitch.isOn),
+                                                "isAllPagesSigned": String(userContract!.isAllPagesSigned!),
+                                                "isBankStatementAvailable": String(userContract!.isBankStatementAvailable!),
+                                                "isClosingFees": String(userContract!.isClosingFees!),
+                                                "isEquipmentImagesAvailable": String(userContract!.isEquipmentImagesAvailable!),
+                                                "isEverythingCompleted": String(userContract!.isEverythingCompleted!),
+                                                "isInsuranceAvailable": String(userContract!.isInsuranceAvailable!),
+                                                "isInvoiceAvailable": String(userContract!.isInvoiceAvailable!),
+                                                "isSignorAvailable": String(userContract!.isSignorAvailable!),
+                                                "isTaxReturnsAvailable": String(userContract!.isTaxReturnsAvailable!),
                                                 "missingText": missingText.text!,
                                                 "projectedPurchaseDate": String((floor(date.timeIntervalSince1970) * 1000)),
                                                 "rating": String(Int(ratingStar.value)),
@@ -1092,8 +1423,42 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
             
         }
+        
+        else if collectionView == self.insuranceCollectionVIew{
+            return insuranceImage.count + insuranceImageURl.count
+        }
+            
+        else if collectionView == self.signorCollectionVIew{
+            return signorImage.count + signorImageURl.count
+        }
+            
+            
+        else if collectionView == self.invoiceCollectionVIew{
+            return invoiceImage.count + invoiceImageURl.count
+        }
+            
+            
+        else if collectionView == self.closingCollectionVIew{
+            return closingImage.count + closingImageURl.count
+        }
+            
+        else if collectionView == self.allPageCollectionVIew{
+            return pageSignedImage.count + pageSignedImageURl.count
+        }
+            
+            
+        else if collectionView == self.everyCollectionVIew {
+            return everythingImage.count + everythingImageURl.count
+        }
+        
+        
         return 0
     }
+    
+    
+    
+    
+    
     
     
     
@@ -1101,6 +1466,9 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
+        
+        // *********** 1. TAX *******************
+
         if collectionView == self.taxCollectionView{
             
             let taxCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tax", for: indexPath) as! TaxCollectionViewCell
@@ -1140,6 +1508,12 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
         }
             
+            
+            
+            
+            // *********** 2. BANK *******************
+
+            
         else if collectionView == self.bankCollectionView{
             let bankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Bank", for: indexPath) as! BankCollectionViewCell
             
@@ -1176,9 +1550,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             return bankCell
         }
             
-            //
+            // *********** 3.  EQUIPMENT *******************
+
             
-        else {
+        else if collectionView == self.equipmentCollectionVIew{
             
             let equipmentCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Equipment", for: indexPath) as! EquipmentCollectionViewCell
             
@@ -1216,7 +1591,265 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             return equipmentCell
         }
+        
+            
+            
+            
+            
+        // *********** 4. INSURANCE *******************
+        else if collectionView == self.invoiceCollectionVIew{
+            
+            let insuranceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Insurance", for: indexPath) as! InsuranceCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < insuranceImageURl.count{
+                
+                let imageURL = URL(string: insuranceImageURl[indexPath.row])
+                
+                insuranceCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                InsuranceArraySource.append("URL")
+                
+                
+                insuranceCell.cancelButton.tag = indexPath.row + 300
+                self.selectedCollection = "Insurance"
+                
+                
+                if editStatus == true{
+                    insuranceCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                insuranceCell.docImage.image = insuranceImage[indexPath.row - self.insuranceImageURl.count]
+                
+                insuranceCell.cancelButton.tag = indexPath.row + 300
+                self.selectedCollection = "Insurance"
+                
+                if editStatus == true{
+                    insuranceCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return insuranceCell
+        }
+        
+        
+            // *********** 5. SIGNOR *******************
+        else if collectionView == self.signorCollectionVIew{
+            
+            let signorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Signor", for: indexPath) as! SignorCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < signorImageURl.count{
+                
+                let imageURL = URL(string: signorImageURl[indexPath.row])
+                
+                signorCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                EquipmentArraySource.append("URL")
+                
+                
+                signorCell.cancelButton.tag = indexPath.row + 400
+                self.selectedCollection = "Signor"
+                
+                
+                if editStatus == true{
+                    signorCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                signorCell.docImage.image = signorImage[indexPath.row - self.signorImageURl.count]
+                
+                signorCell.cancelButton.tag = indexPath.row + 400
+                self.selectedCollection = "Signor"
+                
+                if editStatus == true{
+                    signorCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return signorCell
+        }
+        
+        
+        
+            // *********** 6. INVOICE *******************
+        else if collectionView == self.invoiceCollectionVIew{
+            
+            let invoiceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Invoice", for: indexPath) as! InvoiceCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < invoiceImageURl.count{
+                
+                let imageURL = URL(string: invoiceImageURl[indexPath.row])
+                
+                invoiceCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                InvoiceArraySource.append("URL")
+                
+                
+                invoiceCell.cancelButton.tag = indexPath.row + 500
+                self.selectedCollection = "Invoice"
+                
+                
+                if editStatus == true{
+                    invoiceCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                invoiceCell.docImage.image = invoiceImage[indexPath.row - self.invoiceImageURl.count]
+                
+                invoiceCell.cancelButton.tag = indexPath.row + 500
+                self.selectedCollection = "Invoice"
+                
+                if editStatus == true{
+                    invoiceCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return invoiceCell
+        }
+        
+        
+            // *********** 7. CLOSING *******************
+        else if collectionView == self.closingCollectionVIew{
+            
+            let closingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Closing", for: indexPath) as! ClosingCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < closingImageURl.count{
+                
+                let imageURL = URL(string: closingImageURl[indexPath.row])
+                
+                closingCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                ClosingArraySource.append("URL")
+                
+                
+                closingCell.cancelButton.tag = indexPath.row + 600
+                self.selectedCollection = "Closing"
+                
+                
+                if editStatus == true{
+                    closingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                closingCell.docImage.image = closingImage[indexPath.row - self.closingImageURl.count]
+                
+                closingCell.cancelButton.tag = indexPath.row + 600
+                self.selectedCollection = "Closing"
+                
+                if editStatus == true{
+                    closingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return closingCell
+        }
+        
+        
+            // *********** 8. ALL PAGING *******************
+        else if collectionView == self.allPageCollectionVIew{
+            
+            let allPagingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllPaging", for: indexPath) as! AllPageCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < pageSignedImageURl.count{
+                
+                let imageURL = URL(string: pageSignedImageURl[indexPath.row])
+                
+                allPagingCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                AllPagingArraySource.append("URL")
+                
+                
+                allPagingCell.cancelButton.tag = indexPath.row + 700
+                self.selectedCollection = "AllPaging"
+                
+                
+                if editStatus == true{
+                    allPagingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                allPagingCell.docImage.image = pageSignedImage[indexPath.row - self.pageSignedImageURl.count]
+                
+                allPagingCell.cancelButton.tag = indexPath.row + 700
+                self.selectedCollection = "AllPaging"
+                
+                if editStatus == true{
+                    allPagingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return allPagingCell
+        }
+        
+        
+            // *********** 9. EveryThing *******************
+        else {
+            
+            let everyThingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EveryThing", for: indexPath) as! EverythingCollectionViewCell
+            
+            
+            // for Server
+            if indexPath.row < everythingImageURl.count{
+                
+                let imageURL = URL(string: everythingImageURl[indexPath.row])
+                
+                everyThingCell.docImage.sd_setImage(with: imageURL!, placeholderImage: nil, options: .progressiveDownload, completed: nil)
+                AllPagingArraySource.append("URL")
+                
+                
+                everyThingCell.cancelButton.tag = indexPath.row + 800
+                self.selectedCollection = "EveryThing"
+                
+                
+                if editStatus == true{
+                    everyThingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+                
+                // local
+            else{
+                everyThingCell.docImage.image = everythingImage[indexPath.row - self.everythingImageURl.count]
+                
+                everyThingCell.cancelButton.tag = indexPath.row + 800
+                self.selectedCollection = "EveryThing"
+                
+                if editStatus == true{
+                    everyThingCell.cancelButton.addTarget(self, action: #selector(removePicture), for: .touchUpInside)
+                }
+            }
+            
+            
+            return everyThingCell
+        }
+        
+        
+        
     }
+    
+    
+    
+    
+    
     
     
     
@@ -1502,23 +2135,151 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                 
                 // ******* EQUIPMENT *************
 
+            
+            else if (indexNumber >= 200) && (indexNumber < 300){
                 
-            else if (indexNumber >= 200){
                 
                 if indexNumber - 200 < self.equipmentImageURl.count{
                     self.equipmentImageURl.remove(at: indexNumber - 200)
                     self.equipmentCollectionVIew.reloadData()
                 }
                 else{
-                    self.equipmentImage.remove(at: indexNumber - 200 - self.equipmentImageURl.count)
+                    self.equipmentImage.remove(at: indexNumber - 200  - self.equipmentImageURl.count)
                     self.equipmentCollectionVIew.reloadData()
                     
                 }
                 
                 
+            }
+            
+            
+            
+                // ******* INSURANCE *************
+                
+                
+            else if (indexNumber >= 300) && (indexNumber < 400){
+                
+                
+                if indexNumber - 300 < self.insuranceImageURl.count{
+                    self.insuranceImageURl.remove(at: indexNumber - 300)
+                    self.insuranceCollectionVIew.reloadData()
+                }
+                else{
+                    self.insuranceImage.remove(at: indexNumber - 300  - self.insuranceImageURl.count)
+                    self.insuranceCollectionVIew.reloadData()
+                    
+                }
                 
                 
             }
+            
+            
+            
+                // ******* SIGNOR *************
+                
+                
+            else if (indexNumber >= 400) && (indexNumber < 500){
+                
+                
+                if indexNumber - 400 < self.signorImageURl.count{
+                    self.signorImageURl.remove(at: indexNumber - 400)
+                    self.signorCollectionVIew.reloadData()
+                }
+                else{
+                    self.signorImage.remove(at: indexNumber - 400  - self.signorImageURl.count)
+                    self.signorCollectionVIew.reloadData()
+                    
+                }
+                
+                
+            }
+                
+      
+            
+                // ******* INVOICE *************
+                
+                
+            else if (indexNumber >= 500) && (indexNumber < 600){
+                
+                
+                if indexNumber - 500 < self.invoiceImageURl.count{
+                    self.invoiceImageURl.remove(at: indexNumber - 500)
+                    self.invoiceCollectionVIew.reloadData()
+                }
+                else{
+                    self.invoiceImage.remove(at: indexNumber - 500  - self.invoiceImageURl.count)
+                    self.invoiceCollectionVIew.reloadData()
+                    
+                }
+                
+                
+            }
+            
+            
+            
+                // ******* CLOSING *************
+                
+                
+            else if (indexNumber >= 600) && (indexNumber < 700){
+                
+                
+                if indexNumber - 600 < self.closingImageURl.count{
+                    self.closingImageURl.remove(at: indexNumber - 600)
+                    self.closingCollectionVIew.reloadData()
+                }
+                else{
+                    self.closingImage.remove(at: indexNumber - 600  - self.closingImageURl.count)
+                    self.closingCollectionVIew.reloadData()
+                    
+                }
+                
+                
+            }
+            
+            
+                // ******* ALL PAGING *************
+                
+                
+            else if (indexNumber >= 700) && (indexNumber < 800){
+                
+                
+                if indexNumber - 700 < self.pageSignedImageURl.count{
+                    self.pageSignedImageURl.remove(at: indexNumber - 700)
+                    self.allPageCollectionVIew.reloadData()
+                }
+                else{
+                    self.pageSignedImage.remove(at: indexNumber - 700  - self.pageSignedImageURl.count)
+                    self.allPageCollectionVIew.reloadData()
+                    
+                }
+                
+                
+            }
+            
+            
+                // ******* ALL PAGING *************
+                
+                
+            else if (indexNumber >= 800){
+                
+                
+                if indexNumber - 800 < self.everythingImageURl.count{
+                    self.everythingImageURl.remove(at: indexNumber - 800)
+                    self.everyCollectionVIew.reloadData()
+                }
+                else{
+                    self.everythingImage.remove(at: indexNumber - 800  - self.everythingImageURl.count)
+                    self.everyCollectionVIew.reloadData()
+                    
+                }
+                
+                
+            }
+            
+            
+            
+            
+            
             
         }
         

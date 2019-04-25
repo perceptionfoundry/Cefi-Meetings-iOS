@@ -83,6 +83,12 @@
 		F2C8F5EC2213DC11006ED05B /* SIGNUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */; };
 		F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */; };
 		F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8F5EF2213F659006ED05B /* CalendarVC.swift */; };
+		F2C960F02271D1420013F8B4 /* EverythingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960EA2271D1410013F8B4 /* EverythingCollectionViewCell.swift */; };
+		F2C960F12271D1420013F8B4 /* ClosingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960EB2271D1410013F8B4 /* ClosingCollectionViewCell.swift */; };
+		F2C960F22271D1420013F8B4 /* AllPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960EC2271D1410013F8B4 /* AllPageCollectionViewCell.swift */; };
+		F2C960F32271D1420013F8B4 /* InsuranceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960ED2271D1420013F8B4 /* InsuranceCollectionViewCell.swift */; };
+		F2C960F42271D1420013F8B4 /* InvoiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960EE2271D1420013F8B4 /* InvoiceCollectionViewCell.swift */; };
+		F2C960F52271D1420013F8B4 /* SignorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C960EF2271D1420013F8B4 /* SignorCollectionViewCell.swift */; };
 		F2CDD1E9221AD69C00DD29D3 /* contactType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1E8221AD69C00DD29D3 /* contactType.swift */; };
 		F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1EA221AE18300DD29D3 /* IndustryType.swift */; };
 		F2CDD1ED221B114500DD29D3 /* NewContractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */; };
@@ -205,6 +211,12 @@
 		F2C8F5EB2213DC11006ED05B /* SIGNUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIGNUP.swift; sourceTree = "<group>"; };
 		F2C8F5ED2213F57E006ED05B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		F2C8F5EF2213F659006ED05B /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		F2C960EA2271D1410013F8B4 /* EverythingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EverythingCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2C960EB2271D1410013F8B4 /* ClosingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosingCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2C960EC2271D1410013F8B4 /* AllPageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2C960ED2271D1420013F8B4 /* InsuranceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2C960EE2271D1420013F8B4 /* InvoiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F2C960EF2271D1420013F8B4 /* SignorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignorCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2CDD1E8221AD69C00DD29D3 /* contactType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactType.swift; sourceTree = "<group>"; };
 		F2CDD1EA221AE18300DD29D3 /* IndustryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustryType.swift; sourceTree = "<group>"; };
 		F2CDD1EC221B114500DD29D3 /* NewContractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContractViewModel.swift; sourceTree = "<group>"; };
@@ -310,6 +322,12 @@
 				F261A784220B37A2001597CE /* TaxCollectionViewCell.swift */,
 				F261A786220B37B0001597CE /* BankCollectionViewCell.swift */,
 				F261A788220B37BD001597CE /* EquipmentCollectionViewCell.swift */,
+				F2C960EC2271D1410013F8B4 /* AllPageCollectionViewCell.swift */,
+				F2C960EB2271D1410013F8B4 /* ClosingCollectionViewCell.swift */,
+				F2C960EA2271D1410013F8B4 /* EverythingCollectionViewCell.swift */,
+				F2C960ED2271D1420013F8B4 /* InsuranceCollectionViewCell.swift */,
+				F2C960EE2271D1420013F8B4 /* InvoiceCollectionViewCell.swift */,
+				F2C960EF2271D1420013F8B4 /* SignorCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -680,14 +698,17 @@
 			files = (
 				F2394EC122426EBA00112FF7 /* MeetingReport.swift in Sources */,
 				F25CB14722205CAE008F96ED /* userFilterViewModel.swift in Sources */,
+				F2C960F42271D1420013F8B4 /* InvoiceCollectionViewCell.swift in Sources */,
 				F2C8F5F02213F659006ED05B /* CalendarVC.swift in Sources */,
 				F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */,
 				F258F68221FB6A5F00269506 /* MainPendingVC.swift in Sources */,
+				F2C960F22271D1420013F8B4 /* AllPageCollectionViewCell.swift in Sources */,
 				F2DABFCB21FA011C009FEFCC /* MainContactVC.swift in Sources */,
 				F24176F72248F80C009329CA /* NewPasswordViewModel.swift in Sources */,
 				F2B02EBF2200201B00E6C76D /* PrivacyVC.swift in Sources */,
 				F284F20E2225037B0062F2C6 /* contractFilterViewModel.swift in Sources */,
 				F280118B2231757B00E42A05 /* MainMeetingViewModel.swift in Sources */,
+				F2C960F12271D1420013F8B4 /* ClosingCollectionViewCell.swift in Sources */,
 				F2867FCC22183ED900AFB19E /* NewContactViewModel.swift in Sources */,
 				F2B02EBB2200164B00E6C76D /* MainSettingsVC.swift in Sources */,
 				F2FBC8EB220084540079C47D /* UnderlinedTextField.swift in Sources */,
@@ -702,6 +723,7 @@
 				F24C3339221D487300F63C62 /* MainContactListViewModel.swift in Sources */,
 				F2B4D66222526E3B00CEB4A7 /* EditPersonVC.swift in Sources */,
 				F274539E224014070024AD0A /* Contract.swift in Sources */,
+				F2C960F32271D1420013F8B4 /* InsuranceCollectionViewCell.swift in Sources */,
 				F288347B21FF615300CA09C6 /* Contact_Filter_TableViewCell.swift in Sources */,
 				F2C8F5EE2213F57E006ED05B /* CalendarTableViewCell.swift in Sources */,
 				F257BCD82245479E00CC8415 /* EditVisitViewModel.swift in Sources */,
@@ -722,7 +744,9 @@
 				F20ACB2B222D6E4B001D8D60 /* ContractVC.swift in Sources */,
 				F288347D21FF61AD00CA09C6 /* UserFilterVC.swift in Sources */,
 				F261A785220B37A2001597CE /* TaxCollectionViewCell.swift in Sources */,
+				F2C960F52271D1420013F8B4 /* SignorCollectionViewCell.swift in Sources */,
 				F21ECBC62230035000987B47 /* ReminderTableViewCell.swift in Sources */,
+				F2C960F02271D1420013F8B4 /* EverythingCollectionViewCell.swift in Sources */,
 				F2DABFC321F9E3D7009FEFCC /* Custom_ImageView.swift in Sources */,
 				F20ACB28222D6481001D8D60 /* PurposeVC.swift in Sources */,
 				F2DABFC921F9EF6D009FEFCC /* DashboardVC.swift in Sources */,
