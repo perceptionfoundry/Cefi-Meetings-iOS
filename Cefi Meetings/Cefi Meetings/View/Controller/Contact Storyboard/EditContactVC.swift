@@ -123,7 +123,23 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
         contactTF.text = contactDetail.contactName
         phoneTF.text = String(contactDetail.phoneNumber!)
         emailTF.text = contactDetail.email
-        industryTF.text = contactDetail.industryType
+        
+        
+        self.industryValue = contactDetail.industryType!
+        
+        if contactDetail!.industryType!.count > 1{
+            
+            let text = "\(contactDetail!.industryType![0]), \(contactDetail!.industryType!.count - 1) more"
+            industryTF.text = text
+        }
+        else if contactDetail!.industryType!.count == 1{
+            industryTF.text = contactDetail!.industryType![0]
+        }
+        
+//        industryTF.text = contactDetail.industryType
+        
+        
+        
         referredTF.text = contactDetail.referredBy ?? "none"
         
         let lat = (contactDetail.lat! as NSString).doubleValue
@@ -263,7 +279,7 @@ class EditContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDele
                                    "contactName" : contactTF.text!,
                                    "phoneNumber" : phoneTF.text!,
                                    "email" : emailTF.text!,
-                                   "industryType" : industryTF.text!,
+                                   "industryType" : self.industryValue,
                                    "contactType" : typeTF.text!,
                                    "lat" : self.chosenPlace!.lat,
                                    "long" : chosenPlace!.long,

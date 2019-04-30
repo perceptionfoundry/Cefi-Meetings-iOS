@@ -26,10 +26,15 @@ class NewContactViewModel{
         Alamofire.request(API, method: .post, parameters: Textfields, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             
             
+            
+            print(API)
+            print(Textfields)
+            print(response.result.value)
+            
             // fetching response result from API
             guard let value = response.result.value  as? [String : Any] else{return}
 
-           
+           print(value)
             
             // Storing Server status
             let check  = value["success"] as? Double

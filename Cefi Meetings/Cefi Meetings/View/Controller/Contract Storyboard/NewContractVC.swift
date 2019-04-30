@@ -113,7 +113,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var tagArray = [String]()
     var date = Date()
-    
+    var VisitID = ""
     
     var taxImage = [UIImage]()
     var bankImage = [UIImage]()
@@ -1176,7 +1176,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "bankStatements": bankImageURl ,
                                                 "closingFees": closingImageURl ?? "",
                                                 "contactId": selectedContactID!,
-                                                "contractNumber": "",
+                                                "contractNumber": contractNumberTF.text,
                                                 "contractStatus": self.ContactStatus.lowercased(),
                                                 "equipmentCost": String(amount!),
                                                 "equipmentDetails": equipmentValue,
@@ -1198,7 +1198,8 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                 "rating": String(Int(ratingStar.value)),
                                                 "signorAndSecretaryId": signorImageURl ?? "",
                                                 "taxReturnImages": taxImageURl,
-                                                "userId": appGlobalVariable.userID
+                                                "userId": appGlobalVariable.userID,
+                                                "visitId": self.VisitID
             ]
             
 //

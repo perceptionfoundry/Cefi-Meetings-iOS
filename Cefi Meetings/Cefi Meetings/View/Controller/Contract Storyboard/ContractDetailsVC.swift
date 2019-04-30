@@ -73,6 +73,22 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     @IBOutlet weak var allPageStateView: UIView!
     @IBOutlet weak var everythingStateView: UIView!
     
+  
+    
+    
+    @IBOutlet weak var taxStatus: Custom_View!
+    @IBOutlet weak var bankStatus: Custom_View!
+    @IBOutlet weak var equipmentStatus: Custom_View!
+    @IBOutlet weak var insuranceStatus: Custom_View!
+    @IBOutlet weak var signorStatus: Custom_View!
+    @IBOutlet weak var invoiceStatus: Custom_View!
+    @IBOutlet weak var closingStatus: Custom_View!
+    @IBOutlet weak var allPagingStatus: Custom_View!
+    @IBOutlet weak var everythingStatus: Custom_View!
+    
+    
+    
+    
     
    
     @IBOutlet weak var taxViewHeight: NSLayoutConstraint!

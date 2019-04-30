@@ -12,6 +12,8 @@ import GooglePlaces
 
 
 class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate, typeDelegate, equipmentTypeDelegate, contactdelegate{
+  
+    
     func typeName(labelName: String, serverName: String) {
         typeTF.text = serverName
 
@@ -100,6 +102,8 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
     var industryValue = [String]()
     var referrredName = ""
     var referredID : String?
+    var visitID = ""
+
     
     var SegueField = ""
     
@@ -317,11 +321,13 @@ class NewContactVC: UIViewController, UITextFieldDelegate,CLLocationManagerDeleg
                                        "contactName" : contactTF.text!,
                                        "phoneNumber" : phoneTF.text!,
                                        "email" : emailTF.text!,
-                                       "industryType" : industryTF.text!,
+                                       "industryType" : self.industryValue,
                                        "contactType" : typeTF.text!,
                                        "referredBy" : referredTF.text ?? "none",
                                        "lat" : self.chosenPlace!.lat,
-                                       "long" : chosenPlace!.long                                    ] as [String : Any]
+                                       "long" : chosenPlace!.long,
+                                       "visitId" : self.visitID
+                ] as [String : Any]
             
             
             //  Hitting ApiLink with required parameter

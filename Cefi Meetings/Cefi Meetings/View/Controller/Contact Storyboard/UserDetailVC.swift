@@ -142,7 +142,18 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         }
         
-        industryCatergory.text = userDetail!.industryType
+        
+        if userDetail!.industryType!.count > 1{
+            
+            let text = "\(userDetail!.industryType![0]), \(userDetail!.industryType!.count - 1) more"
+            industryCatergory.text = text
+        }
+        else if userDetail!.industryType!.count == 1{
+            industryCatergory.text = userDetail!.industryType![0]
+        }
+        
+        
+//        industryCatergory.text = userDetail!.industryType
         referredLabe.text = userDetail!.referredBy
         
         getAddressFromLatLon(pdblLatitude: userDetail!.lat!, withLongitude: userDetail!.longField!) { (place) in

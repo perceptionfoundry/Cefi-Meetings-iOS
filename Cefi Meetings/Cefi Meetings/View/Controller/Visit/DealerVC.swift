@@ -260,6 +260,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         
         vc.referrredName = (meetingDetail?.contactName)!
         vc.referredID = meetingDetail?.contactId
+        vc.visitID = (meetingDetail?.id!)!
         
 
     }
@@ -279,6 +280,7 @@ class DealerVC: UIViewController, UITableViewDelegate, UITableViewDataSource, De
         
         vc.LeadDelegate = self
         vc.leadFlag = true
+        vc.VisitID = (meetingDetail?.id)!
 
     }
     
