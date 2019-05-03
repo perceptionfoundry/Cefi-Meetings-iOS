@@ -447,6 +447,156 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         everyCollectionVIew.reloadData()
        
         
+        // ***** Tax Status **************
+        if userContract?.isTaxReturnsAvailable == true{
+            taxStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                taxStatus.backgroundColor = UIColor.red
+
+            }
+            else{
+                taxStatus.backgroundColor = UIColor.gray
+
+            }
+        }
+        
+        
+        
+        
+        // ***** Bank Status **************
+        if userContract?.isBankStatementAvailable == true{
+            bankStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                bankStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                bankStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        
+        // ***** Equipment Status **************
+        if userContract?.isEquipmentImagesAvailable == true{
+            equipmentStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                equipmentStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                equipmentStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        // ***** Insurance Status **************
+        if userContract?.isInsuranceAvailable == true{
+            insuranceStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                insuranceStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                insuranceStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        
+        // ***** Signor Status **************
+        if userContract?.isSignorAvailable == true{
+            signorStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                signorStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                signorStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        
+        
+        // ***** Invoice Status **************
+        if userContract?.isInvoiceAvailable == true{
+            invoiceStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                invoiceStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                invoiceStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        
+        // ***** Closing Status **************
+        if userContract?.isClosingFees == true{
+            closingStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                closingStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                closingStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        // ***** All Page Status **************
+        if userContract?.isAllPagesSigned == true{
+            allPagingStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                allPagingStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                allPagingStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+        
+        // ***** Everything Status **************
+        if userContract?.isEverythingCompleted == true{
+            everythingStatus.backgroundColor = UIColor.green
+        }
+        else{
+            if userContract?.contractStatus == "Closed"{
+                everythingStatus.backgroundColor = UIColor.red
+                
+            }
+            else{
+                everythingStatus.backgroundColor = UIColor.gray
+                
+            }
+        }
+        
+     
+        
+        
+        
+        
+        
         
       
         
@@ -454,13 +604,11 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         
         purchaseDateTF.delegate = self
-        
-        
-        
-        
         amountTF.delegate = self
         contactTF.delegate = self
-        purchaseDateTF.delegate = self
+        
+        
+        
         let typeButton = UITapGestureRecognizer(target: self, action: #selector(typeSegue))
         
         self.contractTypeTF.addGestureRecognizer(typeButton)
@@ -664,34 +812,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //       if let sendImage = insuranceImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            ////                print("*****************")
-            ////
-            ////                print(imageURL)
-            //                self.insuranceImageURl = imageURL!
-            //
-            //
-            ////                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+
             
             
             
@@ -736,35 +857,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //        if let sendImage = signorImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.signorImageURl = imageURL!
-            //
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+
             
             
             //------------ INVOICE IMAGE UPLOAD ---------------------
@@ -805,35 +898,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //        if let sendImage = invoiceImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.invoiceImageURl = imageURL!
-            //
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+
             
             
             
@@ -874,35 +939,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             }
             
             
-            
-            //        if let sendImage = closingImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.closingImageURl = imageURL!
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+     
             
             
             //------------ PAGE SIGNED IMAGE UPLOAD ------------
@@ -943,34 +980,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //        if let sendImage = pageSignedImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.pageSignedImageURl = imageURL!
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+      
             
             
             
@@ -1015,34 +1025,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //        if let sendImage = everythingImage {
-            //
-            //            let image = sendImage
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //            let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.everythingImageURl = imageURL!
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                    print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
+      
             
             
             
@@ -1087,37 +1070,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
             
-            //        if taxImage.isEmpty == false {
-            //
-            //        for indexNumber in 0...(taxImage.count - 1){
-            //
-            //        let image = taxImage[indexNumber]
-            //            let imgData = image.jpegData(compressionQuality: 0.5)
-            //        let param = ["image":image]
-            //
-            //
-            //            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
-            //
-            //
-            //                self.uploadCount += successCount!
-            //                print("*****************")
-            //
-            ////                print(imageURL)
-            //                self.taxImageURl.append(imageURL!)
-            //
-            //                print("*****************")
-            //                if self.uploadCount == self.totalImageAdded{
-            //                print("DONE")
-            //                    self.createDatabaseRecord()
-            //
-            //                }
-            //                else{
-            //                    print("waiting")
-            //                }
-            //            }
-            //
-            //        }
-            //        }
+           
             
             
             
