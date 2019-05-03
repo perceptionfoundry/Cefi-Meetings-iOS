@@ -282,15 +282,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         selectedContactID = userContract!.id
         
-//        taxSwitch.setOn(userContract!.isTaxReturnsAvailable!, animated: true)
-//        bankSwitch.setOn(userContract!.isBankStatementAvailable!, animated: true)
-//        equipmentSwitch.setOn(userContract!.isEquipmentImagesAvailable!, animated: true)
-//       insuranceSwitch.setOn(userContract!.isInsuranceAvailable!, animated: true)
-//         signorSwitch.setOn(userContract!.isSignorAvailable!, animated: true)
-//      invoiceSwitch.setOn(userContract!.isInvoiceAvailable!, animated: true)
-//       closingSwitch.setOn(userContract!.isClosingFees!, animated: true)
-//    allpageSwitch.setOn(userContract!.isAllPagesSigned!, animated: true)
-//         everythingSwitch.setOn(userContract!.isEverythingCompleted!, animated: true)
+
         
         guard let ratingValue = NumberFormatter().number(from: userContract!.rating!) else { return }
 
@@ -335,17 +327,15 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
          equipmentImageURl = (userContract?.equipmentImages!)!
         
         
-//        print(userContract?.taxReturnImages!)
-//        print(userContract?.bankStatements!)
-//        print(userContract?.equipmentImages!)
+
 
         
-//         insuranceImageURl = (userContract?.insuranceCertificate!)!
-//         signorImageURl = (userContract?.signorAndSecretaryId!)!
-//         invoiceImageURl =( userContract?.invoice!)!
-//         closingImageURl = (userContract?.closingFees!)!
-//        pageSignedImageURl = (userContract?.allPagesSignedImage!)!
-//         everythingImageURl = (userContract?.everyThingCompleted!)!
+         insuranceImageURl = (userContract?.insuranceCertificate!)!
+         signorImageURl = (userContract?.signorAndSecretaryId!)!
+         invoiceImageURl = ( userContract?.invoice!)!
+         closingImageURl = (userContract?.closingFees!)!
+        pageSignedImageURl = (userContract?.allPagesSignedImage!)!
+         everythingImageURl = (userContract?.everyThingCompleted!)!
         
         
         if taxImageURl.count > 0 {
@@ -354,9 +344,6 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
 
 
         }
-  
-     
-        
         if bankImageURl.count > 0 {
             bankViewHeight.constant = 90
             mainViewHeight.constant += 100
@@ -367,8 +354,36 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             mainViewHeight.constant += 100
 
         }
-        
-        
+        if insuranceImageURl.count > 0 {
+            insuranceViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
+        if signorImageURl.count > 0 {
+            signorViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
+        if invoiceImageURl.count > 0 {
+            invoiceViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
+        if closingImageURl.count > 0 {
+            closingViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
+        if pageSignedImageURl.count > 0 {
+            allPageViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
+        if everythingImageURl.count > 0 {
+            everythingViewHeight.constant = 90
+            mainViewHeight.constant += 100
+            
+        }
         
        
         
@@ -1613,7 +1628,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             
             
         // *********** 4. INSURANCE *******************
-        else if collectionView == self.invoiceCollectionVIew{
+        else if collectionView == self.insuranceCollectionVIew{
             
             let insuranceCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Insurance", for: indexPath) as! InsuranceCollectionViewCell
             
@@ -1780,7 +1795,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             // *********** 8. ALL PAGING *******************
         else if collectionView == self.allPageCollectionVIew{
             
-            let allPagingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllPaging", for: indexPath) as! AllPageCollectionViewCell
+            let allPagingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllPage", for: indexPath) as! AllPageCollectionViewCell
             
             
             // for Server

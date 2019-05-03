@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/NewContactViewModel.swift"
-            timestampString = "578334650.183049"
+            filePath = "Cefi Meetings/ViewModel/NewContractViewModel.swift"
+            timestampString = "578500285.50887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "newContactCreate(API:Textfields:completion:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "newContractCreate(API:Textfields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,45 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/NewContactViewModel.swift"
-            timestampString = "578334650.183385"
+            filePath = "Cefi Meetings/ViewModel/NewContractViewModel.swift"
+            timestampString = "578500285.509331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "newContactCreate(API:Textfields:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/NewContactViewModel.swift"
-            timestampString = "578334650.183445"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "newContactCreate(API:Textfields:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cefi Meetings/ViewModel/NewContactViewModel.swift"
-            timestampString = "578334650.183494"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "newContactCreate(API:Textfields:completion:)"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "newContractCreate(API:Textfields:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

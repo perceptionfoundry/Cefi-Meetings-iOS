@@ -1,7 +1,7 @@
 //
 //  Contract.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on April 30, 2019
+//  Created on May 3, 2019
 
 import Foundation
 
@@ -22,7 +22,7 @@ struct Contract : Codable {
         let equipmentCost : Float?
         let equipmentDetails : [String]?
         let equipmentImages : [String]?
-        let everyThingCompleted : String?
+        let everyThingCompleted : [String]?
         let insuranceCertificate : [String]?
         let invoice : [String]?
         let isAllPagesSigned : Bool?
@@ -96,7 +96,7 @@ struct Contract : Codable {
                 equipmentCost = try values.decodeIfPresent(Float.self, forKey: .equipmentCost)
                 equipmentDetails = try values.decodeIfPresent([String].self, forKey: .equipmentDetails)
                 equipmentImages = try values.decodeIfPresent([String].self, forKey: .equipmentImages)
-                everyThingCompleted = try values.decodeIfPresent(String.self, forKey: .everyThingCompleted)
+                everyThingCompleted = try values.decodeIfPresent([String].self, forKey: .everyThingCompleted)
                 insuranceCertificate = try values.decodeIfPresent([String].self, forKey: .insuranceCertificate)
                 invoice = try values.decodeIfPresent([String].self, forKey: .invoice)
                 isAllPagesSigned = try values.decodeIfPresent(Bool.self, forKey: .isAllPagesSigned)
