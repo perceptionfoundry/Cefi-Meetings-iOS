@@ -25,9 +25,9 @@ class NewContractViewModel {
             
             
             
-            print(API)
+//            print(API)
             print(Textfields)
-            print(response.result.value)
+//            print(response.result.value)
             
             // fetching response result from API
             guard let value = response.result.value  as? [String : Any] else{

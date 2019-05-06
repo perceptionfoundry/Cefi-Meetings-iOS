@@ -541,14 +541,25 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
     @IBAction func saveAction(_ sender: Any) {
         
         
+        print("tax: \(taxImage.count)")
+        print("bank: \(bankImage.count)")
+        print("equipment: \(equipmentImage.count)")
+        print("signor: \(signorImage.count)")
+        print("insurance: \(insuranceImage.count)")
+        print("invoice: \(invoiceImage.count)")
+        print("closing: \(closingImage.count)")
+        print("paginng:\(pageSignedImage.count)")
+        print("everything: \(everythingImage.count)")
         
-          if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        
+          if contractTypeTF.text?.isEmpty == false  && contactTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false {
         
         
-        self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
+        self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImage.count + signorImage.count + invoiceImage.count + closingImage.count + pageSignedImage.count + everythingImage.count
         
         
-//        print(self.totalImageAdded)
+        print(self.totalImageAdded)
+            
         mainVIew.isUserInteractionEnabled = false
         activityView.isHidden = false
         
@@ -645,7 +656,6 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
             
             
             
-            
 
         
         
@@ -699,7 +709,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 
                 for indexNumber in 0...(closingImage.count - 1){
                     
-                    let image = closingImage[indexNumber]
+                    let image = invoiceImage[indexNumber]
                     let imgData = image.jpegData(compressionQuality: 0.5)
                     let param = ["image":image]
                     
@@ -865,38 +875,38 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
         
                                             //--------------- BANK UPLOAD ---------------------
 
-        if bankImage.isEmpty == false {
-
-        
-        for indexNumber in 0...(bankImage.count - 1){
-            
-            let image = bankImage[indexNumber]
-            let imgData = image.jpegData(compressionQuality: 0.5)
-            let param = ["image":image]
-            
-            
-            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            if bankImage.isEmpty == false {
                 
                 
-                self.uploadCount += successCount!
-                print("*****************")
-                
-//                print(imageURL)
-                self.bankImageURl.append(imageURL!)
-
-                print("*****************")
-                if self.uploadCount == self.totalImageAdded{
-                    print("DONE")
-                    self.createDatabaseRecord()
-
-                }
-                else{
-                    print("waiting")
+                for indexNumber in 0...(bankImage.count - 1){
+                    
+                    let image = bankImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.bankImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.createDatabaseRecord()
+                            
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
                 }
             }
-            
-        }
-        }
         
         
         
@@ -905,37 +915,37 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                                                         //------------ EQUIPMENT UPLOAD -------------
         
         
-        if equipmentImage.isEmpty == false {
-
-        for indexNumber in 0...(equipmentImage.count - 1){
-            
-            let image = equipmentImage[indexNumber]
-            let imgData = image.jpegData(compressionQuality: 0.5)
-            let param = ["image":image]
-            
-            
-            uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+            if equipmentImage.isEmpty == false {
                 
                 
-                self.uploadCount += successCount!
-                print("*****************")
-                
-//                print(imageURL)
-                
-                self.equipmentImageURl.append(imageURL!)
-                
-                print("*****************")
-                if self.uploadCount == self.totalImageAdded{
-                    print("DONE")
-                    self.createDatabaseRecord()
-
+                for indexNumber in 0...(equipmentImage.count - 1){
+                    
+                    let image = equipmentImage[indexNumber]
+                    let imgData = image.jpegData(compressionQuality: 0.5)
+                    let param = ["image":image]
+                    
+                    
+                    uploadImageViewModel.requestWith(endUrl:"https://testingnodejss.herokuapp.com/api/upload/imgdocs", imageData: imgData, parameters: param) { (imageURL, successCount) in
+                        
+                        
+                        self.uploadCount += successCount!
+                        print("*****************")
+                        
+                        //                print(imageURL)
+                        self.equipmentImageURl.append(imageURL!)
+                        
+                        print("*****************")
+                        if self.uploadCount == self.totalImageAdded{
+                            print("DONE")
+                            self.createDatabaseRecord()
+                            
+                        }
+                        else{
+                            print("waiting")
+                        }
+                    }
+                    
                 }
-                else{
-                    print("waiting")
-                }
-            }
-            
-        }
             }
         }
         

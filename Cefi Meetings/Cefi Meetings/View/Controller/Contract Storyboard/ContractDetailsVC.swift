@@ -757,10 +757,10 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         mainVIew.isUserInteractionEnabled = false
         activityView.isHidden = false
         
-        self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImageCount + signorImageCount + invoiceImageCount + closingImageCount + pageSignedImageCount + everythingImageCount
+        self.totalImageAdded = taxImage.count + bankImage.count + equipmentImage.count + insuranceImage.count + signorImage.count + invoiceImage.count + closingImage.count + pageSignedImage.count + everythingImage.count
         
         
-        //        print(self.totalImageAdded)
+                print(self.totalImageAdded)
         
         
         // ------------- NO IMAGE ------------------
@@ -1312,7 +1312,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         let apiLink = appGlobalVariable.apiBaseURL + "contracts/updatecontract"
 
 
-        if contractTypeTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false && missingText.text?.isEmpty == false{
+        if contractTypeTF.text?.isEmpty == false && purchaseDateTF.text?.isEmpty == false && amountTF.text?.isEmpty == false && equipmentTF.text?.isEmpty == false {
 
             let inputDetail : [String : Any] = ["v": 0,
                                                 "id": userContract!.id!,
@@ -1926,97 +1926,6 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     }
     
     
-    @IBAction func taxSwitchAction(_ sender: UISwitch) {
-        
-        self.editStatus = true
-        saveButton.isHidden = false
-        
-        if sender.isOn == true{
-            taxViewHeight.constant = 90
-            mainViewHeight.constant += 100
-
-        }
-        else{
-            taxViewHeight.constant = 0
-            mainViewHeight.constant -= 100
-
-            
-        }
-        
-    }
-    
-    @IBAction func bankSwitchAction(_ sender: UISwitch) {
-        
-        self.editStatus = true
-        saveButton.isHidden = false
-        
-        if sender.isOn == true{
-            bankViewHeight.constant = 90
-            mainViewHeight.constant += 100
-
-        }
-        else{
-            bankViewHeight.constant = 0
-            mainViewHeight.constant -= 100
-
-            
-        }
-    }
-    
-    @IBAction func equipmentSwitchAction(_ sender: UISwitch) {
-        
-        self.editStatus = true
-        saveButton.isHidden = false
-        
-        if sender.isOn == true{
-            equipmentViewHeight.constant = 90
-            mainViewHeight.constant += 100
-
-        }
-        else{
-            equipmentViewHeight.constant = 0
-            mainViewHeight.constant -= 100
-
-            
-        }
-    }
-    
-    @IBAction func insuranceSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
-    }
-    
-    @IBAction func signorSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
-    }
-    
-    @IBAction func invoiceSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
-    }
-    
-    @IBAction func closeFeeSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
-    }
-    
-    @IBAction func allPageSwitchAction(_ sender: Any) {
-        self.editStatus = true
-        saveButton.isHidden = false
-    }
-    
-    @IBAction func everythingSwitchAction(_ sender: UISwitch) {
-//        self.editStatus = true
-//        saveButton.isHidden = false
-        if sender.isOn {
-            missingTextView.isHidden = true
-        }
-        else{
-            missingTextView.isHidden = false
-        }
-    }
-    
     
     
     
@@ -2062,7 +1971,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
     }
     
     
-    
+    // ******* REMOVE PICTURE ************
     @objc func removePicture(button : UIButton){
         let indexNumber = button.tag
         
