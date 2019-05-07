@@ -26,8 +26,9 @@ class PendingDocumentViewModel{
         
         Alamofire.request(API, method: .get, parameters: TextFields).responseJSON { (response) in
             
-            guard let mainDict = response.result.value  as? [String : Any] else{return}
             
+            
+            guard let mainDict = response.result.value  as? [String : Any] else{return}
             
             
             if mainDict["success"] as! Int == 1 {

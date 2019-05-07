@@ -29,7 +29,6 @@
 		F24176F32248F683009329CA /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24176F22248F683009329CA /* NewPasswordVC.swift */; };
 		F24176F52248F7EF009329CA /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24176F42248F7EF009329CA /* EmailViewModel.swift */; };
 		F24176F72248F80C009329CA /* NewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24176F62248F80C009329CA /* NewPasswordViewModel.swift */; };
-		F24176F922491820009329CA /* Pending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24176F82249181F009329CA /* Pending.swift */; };
 		F24176FD22492CCF009329CA /* Meeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24176FC22492CCF009329CA /* Meeting.swift */; };
 		F24C3339221D487300F63C62 /* MainContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24C3338221D487300F63C62 /* MainContactListViewModel.swift */; };
 		F257BCD82245479E00CC8415 /* EditVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F257BCD72245479E00CC8415 /* EditVisitViewModel.swift */; };
@@ -111,6 +110,7 @@
 		F2EBE419220DC2B800EFAF5B /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EBE418220DC2B800EFAF5B /* FollowUpVC.swift */; };
 		F2ED7596220887AE00C4286F /* DealerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED7595220887AE00C4286F /* DealerVC.swift */; };
 		F2ED75982208921200C4286F /* DealerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED75972208921200C4286F /* DealerTableCell.swift */; };
+		F2EE0D9A22819C3B0029138C /* Pending.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE0D9922819C3B0029138C /* Pending.swift */; };
 		F2F74B102208A69800FE5CF1 /* DealerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */; };
 		F2F74B122208A70600FE5CF1 /* DealerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B112208A70600FE5CF1 /* DealerListVC.swift */; };
 		F2F74B142208AA4B00FE5CF1 /* AddDealerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */; };
@@ -143,7 +143,6 @@
 		F24176F22248F683009329CA /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
 		F24176F42248F7EF009329CA /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		F24176F62248F80C009329CA /* NewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewModel.swift; sourceTree = "<group>"; };
-		F24176F82249181F009329CA /* Pending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pending.swift; sourceTree = "<group>"; };
 		F24176FC22492CCF009329CA /* Meeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meeting.swift; sourceTree = "<group>"; };
 		F24C3338221D487300F63C62 /* MainContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContactListViewModel.swift; sourceTree = "<group>"; };
 		F257BCD72245479E00CC8415 /* EditVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVisitViewModel.swift; sourceTree = "<group>"; };
@@ -239,6 +238,7 @@
 		F2EBE418220DC2B800EFAF5B /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
 		F2ED7595220887AE00C4286F /* DealerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerVC.swift; sourceTree = "<group>"; };
 		F2ED75972208921200C4286F /* DealerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableCell.swift; sourceTree = "<group>"; };
+		F2EE0D9922819C3B0029138C /* Pending.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pending.swift; sourceTree = "<group>"; };
 		F2F74B0F2208A69800FE5CF1 /* DealerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerTableViewCell.swift; sourceTree = "<group>"; };
 		F2F74B112208A70600FE5CF1 /* DealerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerListVC.swift; sourceTree = "<group>"; };
 		F2F74B132208AA4B00FE5CF1 /* AddDealerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDealerVC.swift; sourceTree = "<group>"; };
@@ -437,8 +437,8 @@
 				F2CC54D3227C5DE000E6B70A /* Contract.swift */,
 				F278146D2253E29D0086D5C8 /* Profile.swift */,
 				F24176FC22492CCF009329CA /* Meeting.swift */,
+				F2EE0D9922819C3B0029138C /* Pending.swift */,
 				F2394EC022426EBA00112FF7 /* MeetingReport.swift */,
-				F24176F82249181F009329CA /* Pending.swift */,
 				F274539B22400AA00024AD0A /* Dealer.swift */,
 			);
 			path = Model;
@@ -718,7 +718,6 @@
 				F278146E2253E29D0086D5C8 /* Profile.swift in Sources */,
 				F27442C6223F4B9C00201CDD /* UserSettingViewModel.swift in Sources */,
 				F2CDD1EB221AE18300DD29D3 /* IndustryType.swift in Sources */,
-				F24176F922491820009329CA /* Pending.swift in Sources */,
 				F2623618221C6B2000399A87 /* VerticalCalendarController.swift in Sources */,
 				F24C3339221D487300F63C62 /* MainContactListViewModel.swift in Sources */,
 				F2B4D66222526E3B00CEB4A7 /* EditPersonVC.swift in Sources */,
@@ -796,6 +795,7 @@
 				F2D8F5B7223618E400385C6A /* AddDealerPersonViewModel.swift in Sources */,
 				F2AC6C8321F97F7D00BE90CA /* AppDelegate.swift in Sources */,
 				F2FBC8E9220039DD0079C47D /* MainMeetingVC.swift in Sources */,
+				F2EE0D9A22819C3B0029138C /* Pending.swift in Sources */,
 				F2D8F14322281A160051A02F /* EditContactViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

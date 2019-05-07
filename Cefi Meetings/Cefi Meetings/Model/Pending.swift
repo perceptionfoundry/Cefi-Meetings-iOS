@@ -1,7 +1,7 @@
 //
 //  Pending.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 25, 2019
+//  Created on May 7, 2019
 
 import Foundation
 
@@ -10,10 +10,10 @@ struct Pending : Codable {
         let v : Int?
         let id : String?
         let addedDate : String?
-        let allPagesSignedImage : String?
+        let allPagesSignedImage : [String]?
         let allPendingDocumentCounts : Int?
         let bankStatements : [String]?
-        let closingFees : String?
+        let closingFees : [String]?
         let contactId : String?
         let contactName : String?
         let contractNumber : String?
@@ -22,9 +22,9 @@ struct Pending : Codable {
         let equipmentCost : Int?
         let equipmentDetails : [String]?
         let equipmentImages : [String]?
-        let everyThingCompleted : String?
-        let insuranceCertificate : String?
-        let invoice : String?
+        let everyThingCompleted : [String]?
+        let insuranceCertificate : [String]?
+        let invoice : [String]?
         let isAllPagesSigned : Bool?
         let isBankStatementAvailable : Bool?
         let isClosingFees : Bool?
@@ -37,9 +37,10 @@ struct Pending : Codable {
         let missingText : String?
         let projectedPurchaseDate : String?
         let rating : String?
-        let signorAndSecretaryId : String?
+        let signorAndSecretaryId : [String]?
         let taxReturnImages : [String]?
         let userId : String?
+        let visitId : String?
 
         enum CodingKeys: String, CodingKey {
                 case v = "__v"
@@ -75,6 +76,7 @@ struct Pending : Codable {
                 case signorAndSecretaryId = "signorAndSecretaryId"
                 case taxReturnImages = "taxReturnImages"
                 case userId = "userId"
+                case visitId = "visitId"
         }
     
         init(from decoder: Decoder) throws {
@@ -82,10 +84,10 @@ struct Pending : Codable {
                 v = try values.decodeIfPresent(Int.self, forKey: .v)
                 id = try values.decodeIfPresent(String.self, forKey: .id)
                 addedDate = try values.decodeIfPresent(String.self, forKey: .addedDate)
-                allPagesSignedImage = try values.decodeIfPresent(String.self, forKey: .allPagesSignedImage)
+                allPagesSignedImage = try values.decodeIfPresent([String].self, forKey: .allPagesSignedImage)
                 allPendingDocumentCounts = try values.decodeIfPresent(Int.self, forKey: .allPendingDocumentCounts)
                 bankStatements = try values.decodeIfPresent([String].self, forKey: .bankStatements)
-                closingFees = try values.decodeIfPresent(String.self, forKey: .closingFees)
+                closingFees = try values.decodeIfPresent([String].self, forKey: .closingFees)
                 contactId = try values.decodeIfPresent(String.self, forKey: .contactId)
                 contactName = try values.decodeIfPresent(String.self, forKey: .contactName)
                 contractNumber = try values.decodeIfPresent(String.self, forKey: .contractNumber)
@@ -94,9 +96,9 @@ struct Pending : Codable {
                 equipmentCost = try values.decodeIfPresent(Int.self, forKey: .equipmentCost)
                 equipmentDetails = try values.decodeIfPresent([String].self, forKey: .equipmentDetails)
                 equipmentImages = try values.decodeIfPresent([String].self, forKey: .equipmentImages)
-                everyThingCompleted = try values.decodeIfPresent(String.self, forKey: .everyThingCompleted)
-                insuranceCertificate = try values.decodeIfPresent(String.self, forKey: .insuranceCertificate)
-                invoice = try values.decodeIfPresent(String.self, forKey: .invoice)
+                everyThingCompleted = try values.decodeIfPresent([String].self, forKey: .everyThingCompleted)
+                insuranceCertificate = try values.decodeIfPresent([String].self, forKey: .insuranceCertificate)
+                invoice = try values.decodeIfPresent([String].self, forKey: .invoice)
                 isAllPagesSigned = try values.decodeIfPresent(Bool.self, forKey: .isAllPagesSigned)
                 isBankStatementAvailable = try values.decodeIfPresent(Bool.self, forKey: .isBankStatementAvailable)
                 isClosingFees = try values.decodeIfPresent(Bool.self, forKey: .isClosingFees)
@@ -109,9 +111,10 @@ struct Pending : Codable {
                 missingText = try values.decodeIfPresent(String.self, forKey: .missingText)
                 projectedPurchaseDate = try values.decodeIfPresent(String.self, forKey: .projectedPurchaseDate)
                 rating = try values.decodeIfPresent(String.self, forKey: .rating)
-                signorAndSecretaryId = try values.decodeIfPresent(String.self, forKey: .signorAndSecretaryId)
+                signorAndSecretaryId = try values.decodeIfPresent([String].self, forKey: .signorAndSecretaryId)
                 taxReturnImages = try values.decodeIfPresent([String].self, forKey: .taxReturnImages)
                 userId = try values.decodeIfPresent(String.self, forKey: .userId)
+                visitId = try values.decodeIfPresent(String.self, forKey: .visitId)
         }
 
 }

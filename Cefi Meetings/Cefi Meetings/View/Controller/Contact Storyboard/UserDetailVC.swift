@@ -226,7 +226,14 @@ class UserDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         cell.alertView.isHidden = true
 
-        cell.statuslabel.text = tableContent[indexPath.row].contractStatus?.capitalizingFirstLetter()
+        
+        if tableContent[indexPath.row].contractStatus == "closed"{
+             cell.statuslabel.text = "Booked"
+        }
+        else{
+            cell.statuslabel.text = tableContent[indexPath.row].contractStatus?.capitalizingFirstLetter()
+
+        }
         cell.numberLabel.text = tableContent[indexPath.row].contractNumber
         
         if tableContent[indexPath.row].allPendingDocumentCounts! > 0 && tableContent[indexPath.row].contractStatus == "closed"{

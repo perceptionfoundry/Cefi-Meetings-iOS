@@ -1029,7 +1029,7 @@ class NewContractVC: UIViewController, typeDelegate, contactdelegate,equipmentTy
                 
                 if Status == true{
                     
- self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                     if self.leadFlag == true{
                     self.LeadDelegate.leadDetail(contactName: self.contactTF.text!, businessName: self.businessTitle!, ContractNumber: Result!, Rating: self.ratingStar.value)
                     self.leadFlag = false
