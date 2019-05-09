@@ -85,9 +85,8 @@ class MainPendingVC: UIViewController, UITableViewDataSource,UITableViewDelegate
         viewModel.fetchPendingDocument(API: apiLink, TextFields: paramKey) { (status, err, Result) in
             
             
-            
-//            print(Result.count)
-            
+        
+
             if status == true{
                 self.pendingContent.removeAll()
 

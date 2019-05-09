@@ -228,7 +228,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         mainViewHeight.constant = 1200
 
         
-        
+        print(userContract?.contractStatus)
         
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0
@@ -452,7 +452,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             taxStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 taxStatus.backgroundColor = UIColor.red
 
             }
@@ -470,7 +470,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             bankStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 bankStatus.backgroundColor = UIColor.red
                 
             }
@@ -486,7 +486,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             equipmentStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 equipmentStatus.backgroundColor = UIColor.red
                 
             }
@@ -501,7 +501,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             insuranceStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 insuranceStatus.backgroundColor = UIColor.red
                 
             }
@@ -517,7 +517,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             signorStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 signorStatus.backgroundColor = UIColor.red
                 
             }
@@ -534,7 +534,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             invoiceStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 invoiceStatus.backgroundColor = UIColor.red
                 
             }
@@ -550,7 +550,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             closingStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 closingStatus.backgroundColor = UIColor.red
                 
             }
@@ -565,7 +565,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             allPagingStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 allPagingStatus.backgroundColor = UIColor.red
                 
             }
@@ -581,7 +581,7 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
             everythingStatus.backgroundColor = UIColor.green
         }
         else{
-            if userContract?.contractStatus == "Closed"{
+            if (userContract?.contractStatus)! == "closed"{
                 everythingStatus.backgroundColor = UIColor.red
                 
             }
