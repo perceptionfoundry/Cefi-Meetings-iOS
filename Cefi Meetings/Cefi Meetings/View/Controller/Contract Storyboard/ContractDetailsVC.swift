@@ -228,7 +228,6 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         mainViewHeight.constant = 1200
 
         
-        print(userContract?.contractStatus)
         
         taxViewHeight.constant = 0
         bankViewHeight.constant = 0
