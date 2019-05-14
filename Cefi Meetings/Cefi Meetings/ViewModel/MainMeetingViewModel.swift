@@ -15,13 +15,19 @@ class MainMeetingViewModel{
     func getTodayVisitDetail(API: String, Param : [String : Any], completion : @escaping(_ status : Bool, _ err : String?, _ result : [Meeting]?)->() ){
         
         
-        
-
+   
         
         
         // ****** Hitting ApiLink with required parameter **********
         
         Alamofire.request(API, method: .get).responseJSON { (resp) in
+            
+            
+            
+            print(API)
+            print(Param)
+            
+            print(resp.result.value)
             
             guard let value = resp.result.value as?  [String:Any] else {return}
             

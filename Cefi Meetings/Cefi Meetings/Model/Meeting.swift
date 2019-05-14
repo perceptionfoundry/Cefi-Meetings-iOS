@@ -1,7 +1,7 @@
 //
 //  Meeting.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 25, 2019
+//  Created on May 14, 2019
 
 import Foundation
 

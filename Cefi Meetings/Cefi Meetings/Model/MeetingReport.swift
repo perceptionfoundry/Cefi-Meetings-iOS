@@ -1,7 +1,7 @@
 //
 //  MeetingReport.swift
 //  Model Generated using http://www.jsoncafe.com/ 
-//  Created on March 20, 2019
+//  Created on May 14, 2019
 
 import Foundation
 
@@ -15,7 +15,11 @@ struct MeetingReport : Codable {
         let deadCancel : Bool?
         let dealerPersonName : String?
         let didNotAgreetoTerms : Bool?
+        let duration : String?
         let equipmentNeeds : String?
+        let followUpVisitId : String?
+        let followUpVisitTime : String?
+        let leadsAvailable : String?
         let mainOutcome : String?
         let other : Bool?
         let otherComments : String?
@@ -35,7 +39,11 @@ struct MeetingReport : Codable {
                 case deadCancel = "deadCancel"
                 case dealerPersonName = "dealerPersonName"
                 case didNotAgreetoTerms = "didNotAgreetoTerms"
+                case duration = "duration"
                 case equipmentNeeds = "equipmentNeeds"
+                case followUpVisitId = "followUpVisitId"
+                case followUpVisitTime = "followUpVisitTime"
+                case leadsAvailable = "leadsAvailable"
                 case mainOutcome = "mainOutcome"
                 case other = "other"
                 case otherComments = "otherComments"
@@ -57,7 +65,11 @@ struct MeetingReport : Codable {
                 deadCancel = try values.decodeIfPresent(Bool.self, forKey: .deadCancel)
                 dealerPersonName = try values.decodeIfPresent(String.self, forKey: .dealerPersonName)
                 didNotAgreetoTerms = try values.decodeIfPresent(Bool.self, forKey: .didNotAgreetoTerms)
+                duration = try values.decodeIfPresent(String.self, forKey: .duration)
                 equipmentNeeds = try values.decodeIfPresent(String.self, forKey: .equipmentNeeds)
+                followUpVisitId = try values.decodeIfPresent(String.self, forKey: .followUpVisitId)
+                followUpVisitTime = try values.decodeIfPresent(String.self, forKey: .followUpVisitTime)
+                leadsAvailable = try values.decodeIfPresent(String.self, forKey: .leadsAvailable)
                 mainOutcome = try values.decodeIfPresent(String.self, forKey: .mainOutcome)
                 other = try values.decodeIfPresent(Bool.self, forKey: .other)
                 otherComments = try values.decodeIfPresent(String.self, forKey: .otherComments)

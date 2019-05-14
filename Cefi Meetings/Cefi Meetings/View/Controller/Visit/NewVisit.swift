@@ -661,6 +661,13 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
             var secondsFromGMT: Double { return Double(TimeZone.current.secondsFromGMT()) }
             
             var reminderADD : Double = 0.0
+            
+            
+            print(reminderOn)
+            
+            print(reminderTotalTime)
+            print(reminderTime)
+            
             if reminderOn == true{
             
                 reminderADD  = floor(reminderTotalTime + reminderTime) * 1000 + secondsFromGMT
