@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var userID = ""
     var window: UIWindow?
+    var startTime : Date?
 
     let GoogleAPIKey = "AIzaSyAdcVyixBYtthIiqtpZrSofxxutGgIq8Os"
     

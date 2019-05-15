@@ -17,7 +17,7 @@ protocol contractUpdate{
 
 
 protocol meetingDate{
-    func setDate(Date:String)
+    func setDate(Date:String, apiResult : [String : Any])
 }
 
 
@@ -31,12 +31,14 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
         updateContractVIew.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
     }
     
-    func setDate(Date: String) {
+    func setDate(Date: String , apiResult : [String : Any]) {
         
         setFollowUpLabel.textColor = UIColor.white
         setFollowUpLabel.text! = Date
         followUpImage.image = (UIImage(named: "followUP_white"))
         followUpView.backgroundColor = UIColor(red: 0.349, green: 0.568, blue: 0.227, alpha: 1)
+        
+        self.newFollowUp = apiResult
     }
     
 
@@ -88,13 +90,15 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
     @IBOutlet weak var buttonView_Y_constraint: NSLayoutConstraint!
     
     
+    
+    
     let reportViewModel = MeetingReportViewModel()
     let getContractViewModel = GetSpecificContractViewModel()
     let getReportViewModel = GetVisitReportViewModel()
     let appGlobalVariable = UIApplication.shared.delegate as! AppDelegate
     var meetingDetail : Meeting?
 
-    
+    var newFollowUp = [String : Any]()
     
     var submitTitle = ""
 
@@ -102,6 +106,17 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Start meeting time
+        
+        self.appGlobalVariable.startTime = Date()
+        
+        
+        
+        
+        
+        
         
         
         if meetingDetail?.visitStatus == "Completed"{
@@ -326,6 +341,15 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
 
     @IBAction func submitButtonAction(_ sender: Any) {
         
+        
+        let endTime = Date()
+        
+    
+        let totalDuration = getTimeComponentString(olderDate: self.appGlobalVariable.startTime!, newerDate: endTime)
+        
+        
+        
+        
        
         if submitTitle == "EDIT"{
             
@@ -380,7 +404,10 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
                 "contractError": String(contractErrorSwitch.isOn),
                 "other": String(otherSwitch.isOn),
                 "otherComments": otherComment.text!,
-                "reportStatus" : "Completed"
+                "reportStatus" : "Completed",
+                "followUpVisitId" : newFollowUp["_id"] as! String,
+             "followUpVisitTime" : newFollowUp["dateInString"] as! String,
+             "duration" : totalDuration!
 
   
                 ]
@@ -397,12 +424,18 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
                 "didNotAgreetoTerms": "false",
                 "contractError": "false",
                 "other": "false",
-                "otherComments": ""
+                "otherComments": "",
+                "followUpVisitId" : newFollowUp["_id"] as! String,
+                "followUpVisitTime" : newFollowUp["dateInString"] as! String,
+                "duration" : totalDuration!
 
                 
             ]
         }
         
+            
+            
+            print(paramDict)
         
         
         reportViewModel.addReport(API: apilink, Param: paramDict) { (status, err) in
@@ -483,6 +516,53 @@ class FollowUpVC: UIViewController, contractUpdate, meetingDate {
         
     }
     
+    
+    
+    func getTimeComponentString(olderDate older: Date,newerDate newer: Date) -> (String?)  {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        
+        let componentsLeftTime = Calendar.current.dateComponents([.minute , .hour , .day,.month, .weekOfMonth,.year], from: older, to: newer)
+        
+        let year = componentsLeftTime.year ?? 0
+        if  year > 0 {
+            formatter.allowedUnits = [.year]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        
+        let month = componentsLeftTime.month ?? 0
+        if  month > 0 {
+            formatter.allowedUnits = [.month]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let weekOfMonth = componentsLeftTime.weekOfMonth ?? 0
+        if  weekOfMonth > 0 {
+            formatter.allowedUnits = [.weekOfMonth]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let day = componentsLeftTime.day ?? 0
+        if  day > 0 {
+            formatter.allowedUnits = [.day]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let hour = componentsLeftTime.hour ?? 0
+        if  hour > 0 {
+            formatter.allowedUnits = [.hour]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let minute = componentsLeftTime.minute ?? 0
+        if  minute > 0 {
+            formatter.allowedUnits = [.minute]
+            return formatter.string(from: older, to: newer) ?? ""
+        }
+        
+        return nil
+    }
     
     
     

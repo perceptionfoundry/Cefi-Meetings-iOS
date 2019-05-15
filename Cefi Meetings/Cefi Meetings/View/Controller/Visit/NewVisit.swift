@@ -648,9 +648,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         if contactTF.text?.isEmpty == false && contractTF.text?.isEmpty == false && purposeTF.text?.isEmpty == false && dateTF.text?.isEmpty == false && timeTF.text?.isEmpty == false  {
         
             
-            if segueStatus == true{
-                dateValue.setDate(Date: "Meeting \(dateTF.text!)")
-            }
+           
             
             
         let apiLink = appGlobalVariable.apiBaseURL+"visits/addvisitdetails"
@@ -705,7 +703,7 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
         print(dictValue)
             
             
-            viewModel.newMeetingCreate(API: apiLink, Textfields: dictValue) { (status, err) in
+            viewModel.newMeetingCreate(API: apiLink, Textfields: dictValue) { (status, err, resultData) in
                 
                 
                 if status == false{
@@ -716,6 +714,13 @@ class NewVisit: UIViewController, UITextFieldDelegate,CLLocationManagerDelegate,
                     
                     
                 else{
+                    
+                    if self.segueStatus == true{
+                        
+                        print(resultData)
+                        
+                        self.dateValue.setDate(Date: "Meeting \(self.dateTF.text!)", apiResult: resultData!)
+                    }
                     
                     self.navigationController?.popViewController(animated: true)
                 }

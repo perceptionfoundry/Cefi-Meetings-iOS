@@ -49,6 +49,9 @@ class ProspectingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        appGlobalVariable.startTime = Date()
+        
         if meetingDetail?.visitStatus == "Completed"{
             scrollView.isUserInteractionEnabled = false
             submitButton.setTitle("Edit", for: .normal)
@@ -252,6 +255,13 @@ class ProspectingVC: UIViewController {
         
         
         
+        let endTime = Date()
+        
+        
+        let totalDuration = getTimeComponentString(olderDate: self.appGlobalVariable.startTime!, newerDate: endTime)
+        
+        
+        
         if submitTitle == "EDIT"{
             
             scrollView.isUserInteractionEnabled = true
@@ -318,7 +328,8 @@ class ProspectingVC: UIViewController {
             "visitId": meetingDetail!.id!,
             "outcomeComments": outcomeCommentTF.text!,
             "reportType": (meetingDetail?.purpose!)!,
-            "reportStatus" : "Completed"
+            "reportStatus" : "Completed",
+            "duration" : totalDuration!
 
             
         
@@ -339,6 +350,54 @@ class ProspectingVC: UIViewController {
             }
         }
         }
+    }
+    
+    
+    
+    func getTimeComponentString(olderDate older: Date,newerDate newer: Date) -> (String?)  {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        
+        let componentsLeftTime = Calendar.current.dateComponents([.minute , .hour , .day,.month, .weekOfMonth,.year], from: older, to: newer)
+        
+        let year = componentsLeftTime.year ?? 0
+        if  year > 0 {
+            formatter.allowedUnits = [.year]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        
+        let month = componentsLeftTime.month ?? 0
+        if  month > 0 {
+            formatter.allowedUnits = [.month]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let weekOfMonth = componentsLeftTime.weekOfMonth ?? 0
+        if  weekOfMonth > 0 {
+            formatter.allowedUnits = [.weekOfMonth]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let day = componentsLeftTime.day ?? 0
+        if  day > 0 {
+            formatter.allowedUnits = [.day]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let hour = componentsLeftTime.hour ?? 0
+        if  hour > 0 {
+            formatter.allowedUnits = [.hour]
+            return formatter.string(from: older, to: newer)
+        }
+        
+        let minute = componentsLeftTime.minute ?? 0
+        if  minute > 0 {
+            formatter.allowedUnits = [.minute]
+            return formatter.string(from: older, to: newer) ?? ""
+        }
+        
+        return nil
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {

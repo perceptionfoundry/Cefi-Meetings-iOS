@@ -249,6 +249,23 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
         
         contactTF.isUserInteractionEnabled = false
         contractNumberTF.isUserInteractionEnabled = false
+        
+        
+        
+        
+        saveButton.isHidden = true
+        
+        
+        
+        contractTypeTF.isUserInteractionEnabled = false
+                contractNumberTF.isUserInteractionEnabled = false
+        contactTF.isUserInteractionEnabled = false
+        purchaseDateTF.isUserInteractionEnabled = false
+        amountTF.isUserInteractionEnabled = false
+        ratingStar.isUserInteractionEnabled = false
+        equipmentTF.isUserInteractionEnabled = false
+        missingText.isUserInteractionEnabled = false
+   
 
         
 //        saveButton.setTitle("Edit", for: .normal)
@@ -645,13 +662,13 @@ class ContractDetailsVC: UIViewController, typeDelegate, contactdelegate,equipme
                  bankCollectionView.isUserInteractionEnabled = true
                 equipmentCollectionVIew.isUserInteractionEnabled = true
                 contractTypeTF.isUserInteractionEnabled = true
-        //        contractNumberTF.isUserInteractionEnabled = true
+                contractNumberTF.isUserInteractionEnabled = true
                 contactTF.isUserInteractionEnabled = true
                 purchaseDateTF.isUserInteractionEnabled = true
                 amountTF.isUserInteractionEnabled = true
                     ratingStar.isUserInteractionEnabled = true
                    equipmentTF.isUserInteractionEnabled = true
-                     missingText.isUserInteractionEnabled = true
+//                     missingText.isUserInteractionEnabled = true
                     saveButton.isUserInteractionEnabled = true
                    taxView.isUserInteractionEnabled = true
         

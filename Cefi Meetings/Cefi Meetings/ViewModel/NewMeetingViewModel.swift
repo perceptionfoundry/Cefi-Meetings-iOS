@@ -16,7 +16,7 @@ class NewMeetingViewModel{
     
     
     
-    func newMeetingCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?)->Void){
+    func newMeetingCreate (API : String, Textfields : [String : Any], completion:@escaping(_ loginStatus:Bool,_ errorDescription:String?, _ resultData:[String : Any]?)->Void){
         
         
 //
@@ -55,14 +55,18 @@ class NewMeetingViewModel{
                 let errMessage = errorValue.values.first!
                 
                 
-                completion(false, errMessage)
+                completion(false, errMessage, nil)
                 
                 
             }
                 
                 // NO ERROR OCCUR
             else{
-                completion(true, nil)
+                
+                 guard let fetchValue =  value["visitData"] as? [String : Any] else {return}
+                
+                
+                completion(true, nil, fetchValue)
             }
             
         }
